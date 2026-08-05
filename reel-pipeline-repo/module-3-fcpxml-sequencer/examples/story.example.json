@@ -1,0 +1,173 @@
+{
+  "project": "FCPXML Sequencer \u2014 smoke test",
+  "event": "Sequencer Tests",
+  "frame_rate": "30",
+  "width": 1080,
+  "height": 1920,
+  "assets_root": "/Volumes/Media/SequencerTest",
+  "assets_root_local": "/mnt/media/SequencerTest",
+  "beats": [
+    {
+      "src": "Videos/takeA.mov",
+      "start": 1.0,
+      "duration": 4.0,
+      "role": "dialogue",
+      "volume_db": -60,
+      "overlays": [
+        {
+          "text": "hook line goes here",
+          "lane": 2,
+          "offset": 0.6,
+          "duration": 2.2,
+          "font": "Helvetica Neue",
+          "font_size": 110,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            -640
+          ],
+          "fade_in": 0.15
+        }
+      ],
+      "transition_out": {
+        "name": "Cross Dissolve",
+        "duration": 0.6
+      }
+    },
+    {
+      "type": "image",
+      "src": "Images/plot.png",
+      "duration": 3.5,
+      "kenburns": {
+        "from": {
+          "scale": 1.0,
+          "position": [
+            0,
+            0
+          ]
+        },
+        "to": {
+          "scale": 1.3,
+          "position": [
+            80,
+            -50
+          ]
+        },
+        "duration": 3.5
+      },
+      "overlays": [
+        {
+          "type": "image",
+          "src": "Images/wave.png",
+          "lane": 1,
+          "offset": 0.4,
+          "duration": 2.4,
+          "fade_in": 0.25,
+          "fade_out": 0.25,
+          "transform": {
+            "scale": 0.55,
+            "position": [
+              0,
+              420
+            ]
+          }
+        },
+        {
+          "text": "amplitude",
+          "lane": 2,
+          "offset": 1.2,
+          "duration": 1.6,
+          "font_size": 96,
+          "position": [
+            0,
+            -520
+          ]
+        }
+      ]
+    },
+    {
+      "src": "Videos/takeB.mov",
+      "start": 2.5,
+      "duration": 5.0,
+      "role": "dialogue",
+      "ducking": [
+        {
+          "t": 0,
+          "value": -18
+        },
+        {
+          "t": 0.5,
+          "value": -18
+        },
+        {
+          "t": 3.5,
+          "value": 0
+        },
+        {
+          "t": 5.0,
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "gap",
+      "duration": 0.7,
+      "name": "conceptual blank"
+    },
+    {
+      "type": "image",
+      "src": "Images/wave.png",
+      "duration": 3.0,
+      "fade_in": 0.3,
+      "overlays": [
+        {
+          "text": "so: bow speed, not pressure",
+          "lane": 1,
+          "offset": 0.2,
+          "duration": 2.6,
+          "font_size": 88,
+          "position": [
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "connected": [
+    {
+      "src": "Audio/voice.wav",
+      "lane": -1,
+      "offset": 0,
+      "duration": 16.2,
+      "role": "dialogue",
+      "volume_db": 0
+    },
+    {
+      "src": "Audio/bed.wav",
+      "lane": -2,
+      "offset": 0,
+      "duration": 16.2,
+      "role": "music",
+      "ducking": [
+        {
+          "t": 0,
+          "value": -20
+        },
+        {
+          "t": 15.0,
+          "value": -20
+        },
+        {
+          "t": 16.2,
+          "value": -60
+        }
+      ]
+    }
+  ]
+}

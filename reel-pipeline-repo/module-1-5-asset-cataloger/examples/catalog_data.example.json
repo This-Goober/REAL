@@ -1,0 +1,63 @@
+{
+  "project": "Drone_Part 1",
+  "root": "/Volumes/Media/MyReel",
+  "generated": "2026-08-02",
+
+  "_comment": "script_beats is the spine — the narration broken into beats, reconstructed from the takes (transcribe.py gets you close enough). Every asset then hangs off a beat id. Keep gists in plain language: they are what a future session reads first.",
+  "script_beats": [
+    {"id": "B1", "take": "Audio/1.wav", "dur": 24.78, "gist": "Hook. A compilation of me practicing — and there's an obnoxious buzzing in the background. That sound is called the drone. Why would I voluntarily inflict this? Let me explain."},
+    {"id": "B5", "take": "Audio/5.wav", "dur": 37.8, "gist": "The exception. For a specific set of intervals the overtone frequency is an integer multiple of the pure frequency, so overtones reinforce instead of colliding. The PERFECT INTERVALS — fifth 3:2, fourth 4:3, octave 2:1."}
+  ],
+
+  "_comment_assets": "role = short title; prefix ★ when the video would be materially worse without it. shows = what is literally on screen. use = where it earns its place, tied to a beat and ideally a spoken line. beat = a script beat id, or 'any' (flexible), 'reference' (not source footage), 'patch' (retake fragment), 'unused' (no home found).",
+  "assets": [
+    {
+      "f": "Audio/1.wav",
+      "k": "audio",
+      "role": "Voice take 1 — HOOK",
+      "shows": "Narration, 24.8s. Opens on the practice compilation and names the buzzing as the drone; sets up the 'why inflict this' question.",
+      "use": "B1. The authoritative clock for the opening. Pairs with practice b-roll + suffering memes.",
+      "beat": "B1"
+    },
+    {
+      "f": "Images/figure-17-10-04a.jpg",
+      "k": "image",
+      "role": "★ Wave 1 + Wave 2 = Resultant",
+      "shows": "Three stacked panels: a slow wave, a fast wave, and their sum.",
+      "use": "The single most important diagram in the folder. It is the literal picture of the whole argument. B3 into B4.",
+      "beat": "B3"
+    },
+    {
+      "f": "Images/Screenshot 2026-07-16 at 9.41.25 PM.png",
+      "k": "image",
+      "role": "★ Ratio panel — 3:2 PERFECT FIFTH",
+      "shows": "Dark panel, two labelled sine waves (2f and 3f), caption '3:2 the PERFECT FIFTH'. One of a matched set of three.",
+      "use": "B5. Second in the set — reveal the three in sequence as the ratios are named. NOTE: the real filename contains U+202F before 'PM'; the builder resolves this.",
+      "beat": "B5"
+    },
+    {
+      "f": "Videos/video-867_singular_display.MOV",
+      "k": "video",
+      "role": "★ DEMO — dissonant / wawawa",
+      "shows": "15.6s, 2192x2928 @120fps. POV over the violin: bow, strings, left hand, office background. Short and purpose-shot.",
+      "use": "The dissonant demo — audible beating. Verify by ear before locking. Pairs with B4.",
+      "beat": "B4"
+    },
+    {
+      "f": "v12044gd0000d9e0hmnog65r3jm4ef50.MP4",
+      "k": "video",
+      "role": "★ THE PUBLISHED REEL (reference edit)",
+      "shows": "172s, 576x1024. The finished cut re-downloaded from TikTok, captions burned in. Contains every asset in its final order.",
+      "use": "NOT source footage. Ground truth for how each asset was actually used. Consult before storyboarding a sequel so the visual grammar stays consistent.",
+      "beat": "reference"
+    },
+    {
+      "f": "Images/images-1.jpg",
+      "k": "image",
+      "role": "Stock — man at computer",
+      "shows": "Smiling man at a desktop in an office.",
+      "use": "Low value. No obvious beat. Candidate for deletion.",
+      "beat": "unused"
+    }
+  ]
+}
