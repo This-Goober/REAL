@@ -1,0 +1,156 @@
+{
+ "project": "Drone Part 1",
+ "source_plan": "plan.json",
+ "clock": "estimated",
+ "frame_rate": "30",
+ "width": 1080,
+ "height": 1920,
+ "assets_root": "/Volumes/Media/Reel Vids/Drone_Part 1",
+ "drive_folder": "https://drive.google.com/drive/folders/EXAMPLE",
+ "open_questions": [
+  "Is video-867 really the dissonant clip and 851 the clean one? Identified by beating analysis, never confirmed by ear — S18, S23, S32 and G all invert if they're swapped."
+ ],
+ "scenes": [
+  {
+   "id": "S16",
+   "section": "C — overtone",
+   "role": "explain",
+   "kind": "narr",
+   "t0": 63.15,
+   "t1": 69.72,
+   "duration": 6.57,
+   "clock": "estimated",
+   "words": "Because the soundwaves have similar nature, they will more directly interact and collide with each other,",
+   "word_range": [125, 142],
+   "layers": [
+    {
+     "kind": "media",
+     "id": "waves_apart",
+     "lane": 0,
+     "anchor": "soundwaves",
+     "offset_ms": 0,
+     "fit": "contain",
+     "confidence": "low",
+     "candidates": ["waves_apart", "waves_overlaid", "tuner_plus19"],
+     "chosen_by": "claude",
+     "why": "the line describes the approach, so the separated curves — but waves-overlaid is a defensible read too"
+    },
+    {
+     "kind": "text",
+     "text": "wave 1 + wave 2",
+     "lane": 2,
+     "anchor": "collide",
+     "style": "sub",
+     "duration": 1.6,
+     "chosen_by": "claude",
+     "confidence": "low"
+    }
+   ],
+   "audio": {"bed": null, "note": "narration only"},
+   "stub": null,
+   "notes": ""
+  },
+  {
+   "id": "S17",
+   "section": "C — overtone",
+   "role": "explain",
+   "kind": "narr",
+   "t0": 69.72,
+   "t1": 75.44,
+   "duration": 5.72,
+   "clock": "estimated",
+   "words": "producing a more obvious third soundwave, which has its own frequency and pitch.",
+   "word_range": [143, 156],
+   "layers": [
+    {
+     "kind": "media",
+     "id": "waves_overlaid",
+     "lane": 0,
+     "anchor": "third",
+     "fit": "contain",
+     "confidence": "high",
+     "chosen_by": "director"
+    }
+   ],
+   "audio": {"bed": null},
+   "stub": null,
+   "notes": ""
+  },
+  {
+   "id": "S18",
+   "section": "D — dissonance",
+   "role": "demo",
+   "kind": "demo",
+   "t0": 75.44,
+   "t1": 79.44,
+   "duration": 4.0,
+   "clock": "estimated",
+   "words": null,
+   "layers": [
+    {
+     "kind": "media",
+     "id": "video_867",
+     "lane": 0,
+     "in": 0.0,
+     "duration": 4.0,
+     "confidence": "low",
+     "chosen_by": "claude",
+     "why": "identified by beating analysis, never confirmed by ear — see the flagged note above"
+    }
+   ],
+   "audio": {"bed": "video_867", "db": 0, "note": "full — the sound is the argument, no narration here"},
+   "stub": null,
+   "notes": ""
+  },
+  {
+   "id": "S19",
+   "section": "D — dissonance",
+   "role": "explain",
+   "kind": "narr",
+   "t0": 79.44,
+   "t1": 82.84,
+   "duration": 3.4,
+   "clock": "estimated",
+   "words": "On the spectrum of all possible pitches to combine, including semitones,",
+   "layers": [],
+   "audio": {},
+   "stub": {
+    "filename": "make/S19_piano_slider.png",
+    "spec": "3.40s · 1080×1920 · piano keyboard with a slider sweeping across it; the slider must visibly pass between two keys by 0:02",
+    "tool": "remotion",
+    "status": "todo"
+   },
+   "notes": ""
+  },
+  {
+   "id": "S19b",
+   "section": "D — dissonance",
+   "role": "explain",
+   "kind": "narr",
+   "t0": 82.84,
+   "t1": 85.10,
+   "duration": 2.26,
+   "clock": "estimated",
+   "words": "most are dissonant with each other,",
+   "layers": [],
+   "audio": {},
+   "stub": null,
+   "notes": ""
+  },
+  {
+   "id": "S20",
+   "section": "D — dissonance",
+   "role": "blank",
+   "kind": "blank",
+   "t0": 85.10,
+   "t1": 85.70,
+   "duration": 0.6,
+   "clock": "estimated",
+   "words": null,
+   "layers": [],
+   "audio": {},
+   "stub": null,
+   "notes": "tone shift before the exception — deliberate, blank 1 of 2"
+  }
+ ]
+}

@@ -1,0 +1,76 @@
+# title: How you can start loving practicing with a drone [Part 1: sound]
+# assets: "Reel Vids/Drone_Part 1"
+
+[broll pool: pag(pov, office sitting), bach(pov, office standing), prokofiev(phone, piano), debussy(phone, piano, diff lighting), scales(mirror, office standing) — ~30s each, cuts mid-word]
+
+So this is a compilation of me practicing some of my recent repertoire throughout the
+week. Obviously enough, it's very noticeable that there is this obnoxious buzzing sound
+in the background at all times. That sound is called a drone. [text: "Drone."] You might
+wonder why the hell some people like me voluntarily choose to inflict this aural
+suffering [img: young-schizophrenic-man-ears.webp] both on my family and myself. But
+I'd like to explain why I use it so heavily, and why you also should consider trying it
+too. [black] [text: "FYI, you might need some basic understanding of sinusoidal functions and sound waves to fully understand the rest of this video"]
+
+---
+
+Contrary to what people might think, its helpfulness doesn't have to do with manually
+comparing my pitch to the pitch of the drone mentally — in fact that's what I'm trying
+to avoid. The reason, rather, has more to do with sound quality: despite being like a
+deafening laser, this particular synthetic soundwave option on the app
+[img: tunable-screenshot] Tunable [img: tunable-icon] is most similar to that of
+soundwaves produced by string instruments. Because the soundwaves have similar nature,
+they will more directly [img: two-soundwaves, stage 1] interact and collide with each
+other, producing a more obvious [reveal stage 2: third-soundwave] third soundwave,
+which has its own frequency and pitch.
+
+---
+
+That third soundwave is called an overtone. Overtones are actually audible to us if you
+listen carefully, and its pitch and quality will change depending on its parent
+soundwave frequencies — aka us [img: q6hz57cbg4611.jpg] and
+the drone [img: shopping.webp]. On the spectrum of all possible pitches
+to combine, including semitones [img: piano-slider-metaphor], most are dissonant with
+each other and have soundwaves that collide a lot when placed on top of each other —
+and we're talking about a collision every millionth of a second. As a result, the
+overtone that is produced by them has soundwaves that look like this
+[img: dissonant-overtone-wave] and as you can perhaps intuitively infer from the shape,
+they kinda sound like "wawawawa" [text: "wawawa"] noise in the background.
+
+[clip: me demonstrating dissonant wawawa with drone, for 4s]
+
+---
+
+However, like with any rule, there are exceptions. There's a very specific set of
+intervals where the overtone's frequency is an integer multiple of the parent
+frequencies, meaning the overtone's wave fits synergetically with the parent waves
+rather than constantly colliding with them. These instances are universally referred to
+as perfect intervals. [img: music-intervals] The frequency of soundwaves
+in fifths have a 3:2 ratio, fourths have a 4:3 ratio, and octaves have a 2:1 ratio.
+[img: ratio-diagrams] So the overtone's wave they produce looks more like this
+[img: consonant-overtone-wave], which has a more diffused rather than distinct
+[img again: dissonant-overtone-wave] amplitude fluctuation, thus giving them their
+characteristic "perfectly" stable and pure sound.
+
+[clip: me demonstrating perfect-interval purity with drone, for 4s]
+
+---
+
+The reason why this makes having a drone on helpful for training intonation is because
+since the intervals are perfect, your intonation also has to be perfect
+[suggestion: "face palm — why didn't I think of that" meme] in order to produce the
+clear sound. Even being microscopically out of tune will produce the wacky dissonant
+overtones instead, indicating immediately to you that you have something to work on.
+Because I admittedly only have relative rather than perfect pitch, instead of just
+"listening harder" I'd 1000% prefer saving that mental energy and just react to wiggly
+sounds in the air. [broll: me practicing, putting my bow down]
+
+[black]
+
+So yeah. [text: "practice with a drone"] [sfx: drop]
+
+> shot-list:
+> - first half of last block: practice, be slightly out of tune on a shift, snatch the camera
+> - second half: practice intonation trying to hear, say x, turn drone on, thumbs up yesss
+
+> post-caption:
+> Just equipped with perfect intervals, you can go through most passages setting a drone...
