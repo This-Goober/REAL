@@ -1,0 +1,396 @@
+{
+ "version": "1.0",
+ "reel": {
+  "title": "Why dissonance beats",
+  "aspect": "9:16",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30
+ },
+ "clock": {
+  "mode": "estimated",
+  "rate_wps": 3.11,
+  "rate_source": "rates.json@2026-08-03",
+  "total_s": 20.4,
+  "target_s": 20,
+  "note": "estimated \u2014 worst observed section error 5.8%"
+ },
+ "assets_root": "/Users/creator/Movies/Reel \u2014 dissonance",
+ "assets_root_local": "/mnt/reel-dissonance",
+ "assets": [
+  {
+   "id": "a1",
+   "file": "Videos/hook.mov",
+   "kind": "video",
+   "dur_s": 6.2,
+   "w": 1080,
+   "h": 1920,
+   "fps": 30,
+   "rotation": 0,
+   "catalog": {
+    "role": "\u2605 the hook \u2014 two strings sounding together",
+    "beat": "hook",
+    "shows": "close on the bridge, both strings"
+   }
+  },
+  {
+   "id": "a2",
+   "file": "Videos/demo.mov",
+   "kind": "video",
+   "dur_s": 8.4,
+   "w": 1080,
+   "h": 1920,
+   "fps": 30,
+   "rotation": 0,
+   "catalog": {
+    "role": "\u2605 dissonance demo",
+    "beat": "demo",
+    "shows": "the beating, unmistakable, on open strings"
+   }
+  },
+  {
+   "id": "a3",
+   "file": "Images/plot.png",
+   "kind": "image",
+   "w": 1080,
+   "h": 1350,
+   "catalog": {
+    "role": "the two waves adding up",
+    "beat": "body"
+   }
+  },
+  {
+   "id": "a4",
+   "file": "Images/wave.png",
+   "kind": "image",
+   "w": 1080,
+   "h": 1080,
+   "catalog": {
+    "role": "single wave, for the amplitude callout",
+    "beat": "body"
+   }
+  },
+  {
+   "id": "a5",
+   "file": "Audio/voice.wav",
+   "kind": "audio",
+   "dur_s": 20.4,
+   "catalog": {
+    "role": "narration master (takes 1\u20133 + one patch)"
+   }
+  },
+  {
+   "id": "a6",
+   "file": "Audio/bed.wav",
+   "kind": "audio",
+   "dur_s": 30.0,
+   "catalog": {
+    "role": "music bed"
+   }
+  }
+ ],
+ "beats": [
+  {
+   "id": "B1",
+   "name": "hook",
+   "t0": 0.0,
+   "t1": 5.4,
+   "w0": 0,
+   "w1": 11,
+   "narration": "Have you ever heard two notes that seem to fight each other?",
+   "source": {
+    "cell": "C1",
+    "component": "C1.1"
+   },
+   "moment": "the beating must be unmistakable by ~2s in",
+   "layers": [
+    {
+     "id": "B1.L1",
+     "z": 0,
+     "kind": "video",
+     "asset": "a1",
+     "anchor_word": 0,
+     "offset_ms": 0,
+     "t0": 0.0,
+     "t1": 5.4,
+     "fit": "fill",
+     "chosen_by": "claude",
+     "confidence": "high",
+     "candidates": [
+      "a2"
+     ],
+     "anchor_text": "Have"
+    },
+    {
+     "id": "B1.L2",
+     "z": 1,
+     "kind": "text",
+     "content": "they interfere",
+     "style": "caption",
+     "anchor_word": 6,
+     "t0": 2.1,
+     "t1": 4.0,
+     "anchor_text": "that"
+    }
+   ],
+   "audio": [
+    {
+     "id": "B1.A1",
+     "kind": "narration",
+     "asset": "a5",
+     "t0": 0.0,
+     "t1": 5.4
+    },
+    {
+     "id": "B1.A2",
+     "kind": "bed",
+     "asset": "a6",
+     "t0": 0.0,
+     "t1": 5.4,
+     "duck_db": -12
+    }
+   ]
+  },
+  {
+   "id": "B2",
+   "name": "the picture",
+   "t0": 5.4,
+   "t1": 10.2,
+   "w0": 12,
+   "w1": 24,
+   "narration": "What you are hearing is two sound waves adding up and cancelling out.",
+   "source": {
+    "cell": "C2",
+    "component": "C2.1"
+   },
+   "layers": [
+    {
+     "id": "B2.L1",
+     "z": 0,
+     "kind": "image",
+     "asset": "a3",
+     "anchor_word": 12,
+     "t0": 5.4,
+     "t1": 10.2,
+     "fit": "fill",
+     "chosen_by": "creator",
+     "confidence": "high",
+     "anchor_text": "What"
+    },
+    {
+     "id": "B2.L2",
+     "z": 1,
+     "kind": "image",
+     "asset": "a4",
+     "anchor_word": 17,
+     "t0": 6.2,
+     "t1": 8.6,
+     "fit": "fit",
+     "chosen_by": "claude",
+     "confidence": "low",
+     "candidates": [
+      "a3"
+     ],
+     "anchor_text": "two"
+    },
+    {
+     "id": "B2.L3",
+     "z": 2,
+     "kind": "text",
+     "content": "amplitude",
+     "style": "kicker",
+     "anchor_word": 20,
+     "t0": 7.0,
+     "t1": 9.0,
+     "anchor_text": "adding"
+    }
+   ],
+   "audio": [
+    {
+     "id": "B2.A1",
+     "kind": "narration",
+     "asset": "a5",
+     "t0": 5.4,
+     "t1": 10.2
+    },
+    {
+     "id": "B2.A2",
+     "kind": "bed",
+     "asset": "a6",
+     "t0": 5.4,
+     "t1": 10.2,
+     "duck_db": -18
+    }
+   ],
+   "flags": [
+    {
+     "code": "low-confidence",
+     "layer": "B2.L2",
+     "msg": "two stills fit the amplitude callout; picked the square one"
+    }
+   ]
+  },
+  {
+   "id": "B3",
+   "name": "the drift",
+   "t0": 10.2,
+   "t1": 13.6,
+   "w0": 25,
+   "w1": 36,
+   "narration": "When they are close but not equal the sum swells and fades.",
+   "source": {
+    "cell": "C2",
+    "component": "C2.2"
+   },
+   "moment": "the swell has to be visible, not just audible",
+   "layers": [
+    {
+     "id": "B3.L1",
+     "z": 0,
+     "kind": "image",
+     "asset": null,
+     "anchor_word": 25,
+     "t0": 10.2,
+     "t1": 13.6,
+     "stub": {
+      "spec": "two sine waves drifting apart, visibly separated by 0:02",
+      "w": 1080,
+      "h": 1920,
+      "file": "Stubs/stub-B3-L1.png"
+     },
+     "anchor_text": "When"
+    }
+   ],
+   "audio": [
+    {
+     "id": "B3.A1",
+     "kind": "narration",
+     "asset": "a5",
+     "t0": 10.2,
+     "t1": 13.6
+    },
+    {
+     "id": "B3.A2",
+     "kind": "bed",
+     "asset": "a6",
+     "t0": 10.2,
+     "t1": 13.6,
+     "duck_db": -18
+    }
+   ]
+  },
+  {
+   "id": "B4",
+   "name": "demo",
+   "t0": 13.6,
+   "t1": 19.2,
+   "w0": 37,
+   "w1": 48,
+   "narration": "Listen to what that does on the open strings of the violin.",
+   "source": {
+    "cell": "C3",
+    "component": "C3.1"
+   },
+   "moment": "the demo has to breathe \u2014 nothing over the last second",
+   "layers": [
+    {
+     "id": "B4.L1",
+     "z": 0,
+     "kind": "video",
+     "asset": "a2",
+     "anchor_word": 37,
+     "t0": 13.6,
+     "t1": 19.2,
+     "fit": "fill",
+     "chosen_by": "creator",
+     "confidence": "high",
+     "anchor_text": "Listen"
+    },
+    {
+     "id": "B4.L2",
+     "z": 1,
+     "kind": "text",
+     "content": "listen",
+     "style": "caption",
+     "anchor_word": 37,
+     "t0": 14.0,
+     "t1": 15.2,
+     "anchor_text": "Listen"
+    }
+   ],
+   "audio": [
+    {
+     "id": "B4.A1",
+     "kind": "narration",
+     "asset": "a5",
+     "t0": 13.6,
+     "t1": 19.2
+    },
+    {
+     "id": "B4.A2",
+     "kind": "bed",
+     "asset": "a6",
+     "t0": 13.6,
+     "t1": 19.2,
+     "duck_db": -6
+    }
+   ]
+  },
+  {
+   "id": "B5",
+   "name": "end card",
+   "t0": 19.2,
+   "t1": 20.4,
+   "w0": 49,
+   "w1": 52,
+   "narration": "Bow speed, not pressure.",
+   "source": {
+    "cell": "C4",
+    "component": "C4.1"
+   },
+   "layers": [
+    {
+     "id": "B5.L1",
+     "z": 0,
+     "kind": "text",
+     "content": "bow speed, not pressure",
+     "style": "title",
+     "anchor_word": 49,
+     "t0": 19.2,
+     "t1": 20.4,
+     "anchor_text": "Bow"
+    }
+   ],
+   "audio": [
+    {
+     "id": "B5.A1",
+     "kind": "narration",
+     "asset": "a5",
+     "t0": 19.2,
+     "t1": 20.4
+    }
+   ]
+  }
+ ],
+ "connected": [
+  {
+   "id": "X1",
+   "kind": "bed",
+   "asset": "a6",
+   "t0": 0.0,
+   "t1": 20.4,
+   "duck_db": -20
+  }
+ ],
+ "open": {
+  "unbound_layers": [],
+  "unused_assets": [],
+  "questions": [
+   {
+    "id": "Q1",
+    "beat": "B3",
+    "msg": "no asset for the drifting-waves panel; MAKE stub emitted at 10.2s"
+   }
+  ]
+ }
+}

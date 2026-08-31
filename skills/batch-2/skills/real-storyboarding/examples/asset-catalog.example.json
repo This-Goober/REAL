@@ -1,0 +1,344 @@
+{
+ "project": "Bow speed, not bow pressure",
+ "root": "/Users/creator/Reels/bow-speed",
+ "generated": "2026-08-19",
+ "_comment": "A worked asset-catalog.json as /real-create-catalogue emits it, used to generate examples/reel.example.json. Deliberately imperfect: two clips share one tag (so the binder has to pick and show its runner-up), three components have nothing that fits (so stubs are emitted), one asset is a published reference cut that must never be bound, and one is junk.",
+ "script_beats": [
+  {
+   "id": "T1",
+   "take": "Audio/take-01.wav",
+   "dur": 31.4,
+   "gist": "Takes 1 \u2014 hook through the wrong instinct."
+  },
+  {
+   "id": "T2",
+   "take": "Audio/take-02.wav",
+   "dur": 34.9,
+   "gist": "Take 2 \u2014 what actually makes the sound, through the payoff."
+  }
+ ],
+ "assets": [
+  {
+   "id": "A01",
+   "f": "/Users/creator/Reels/bow-speed/Videos/bow-demo-two-strokes.mov",
+   "k": "video",
+   "exists": true,
+   "dur": 9.6,
+   "w": 1080,
+   "h": 1920,
+   "fps": 30,
+   "rotation": 0,
+   "mb": 84,
+   "role": "\u2605 DEMO \u2014 same note, heavy+slow then light+fast",
+   "shows": "9.6s, 1080x1920. Camera at bow height looking down the string toward the bridge. One continuous take: first stroke slow and pressed and choked, second stroke fast and light and open. The difference is audible.",
+   "use": "The demo the whole reel exists to prove. Runs clean, at full volume, narration stops over it.",
+   "beat": "T2",
+   "binds_to": "a `<video clip of the same note bowed twice in one continuous take>` type component \u2014 the demo",
+   "tags": [
+    "bow-demo",
+    "demo",
+    "violin-pov",
+    "two-strokes"
+   ]
+  },
+  {
+   "id": "A02",
+   "f": "/Users/creator/Reels/bow-speed/Videos/index-finger-press.mov",
+   "k": "video",
+   "exists": true,
+   "dur": 6.2,
+   "w": 1080,
+   "h": 1920,
+   "fps": 30,
+   "rotation": 0,
+   "mb": 41,
+   "role": "\u2605 B-roll \u2014 index finger pressing into the frog",
+   "shows": "6.2s, tight shot on the right hand only, no face. The index finger visibly leans down into the frog mid-note.",
+   "use": "The wrong instinct beat \u2014 the literal picture of 'they lean in'.",
+   "beat": "T1",
+   "binds_to": "a `<video clip of a player's right index finger pressing into the frog>` type component",
+   "tags": [
+    "technique-broll",
+    "right-hand",
+    "pressure"
+   ]
+  },
+  {
+   "id": "A03",
+   "f": "/Users/creator/Reels/bow-speed/Videos/full-bow-stroke-pov.mov",
+   "k": "video",
+   "exists": true,
+   "dur": 7.8,
+   "w": 1080,
+   "h": 1920,
+   "fps": 30,
+   "rotation": 0,
+   "mb": 52,
+   "role": "\u2605 B-roll \u2014 full bow stroke, frog to tip, POV",
+   "shows": "7.8s, filmed over the player's own right shoulder. One unbroken stroke, the arm travelling the whole width of frame.",
+   "use": "The fix beat \u2014 'full bow, same weight'. Pairs with the caption 'same weight. more bow.'",
+   "beat": "T2",
+   "binds_to": "a `<video clip of a full-length bow stroke frog to tip, from the player's point of view>` type component",
+   "tags": [
+    "technique-broll",
+    "full-bow",
+    "pov",
+    "fix"
+   ]
+  },
+  {
+   "id": "A04",
+   "f": "/Users/creator/Reels/bow-speed/Videos/split-screen-two-arms.mov",
+   "k": "video",
+   "exists": true,
+   "dur": 11.2,
+   "w": 1080,
+   "h": 1920,
+   "fps": 30,
+   "rotation": 0,
+   "mb": 96,
+   "role": "Split screen \u2014 two bow arms, same note",
+   "shows": "11.2s. Two bow arms side by side playing the same slow note; left short and stiff, right long and travelling.",
+   "use": "Only used by the question-first hook variant.",
+   "beat": "any",
+   "binds_to": "a `<video clip of two side-by-side bow arms on a split screen>` type component",
+   "tags": [
+    "split-compare",
+    "comparison",
+    "two-arms"
+   ]
+  },
+  {
+   "id": "A05",
+   "f": "/Users/creator/Reels/bow-speed/Images/bow-hair-pressed-macro.jpg",
+   "k": "image",
+   "exists": true,
+   "w": 1080,
+   "h": 1920,
+   "mb": 2.1,
+   "role": "\u2605 Macro \u2014 bow hair pressed flat into the string",
+   "shows": "Extreme close-up, dark background, shallow depth of field. The hair is visibly bending against the string.",
+   "use": "Cold open. The picture of the problem before anybody has named it.",
+   "beat": "T1",
+   "binds_to": "a `<show image of bow hair pressed flat into the string, extreme close-up>` type component",
+   "tags": [
+    "macro",
+    "bow-hair",
+    "cold-open",
+    "pressure"
+   ]
+  },
+  {
+   "id": "A06",
+   "f": "/Users/creator/Reels/bow-speed/Images/string-wide-arc.jpg",
+   "k": "image",
+   "exists": true,
+   "w": 1080,
+   "h": 1920,
+   "mb": 1.8,
+   "role": "\u2605 Diagram \u2014 string vibrating in a wide arc",
+   "shows": "Side view of a single string swinging in a wide arc, motion blurred at the belly, dark background. The width of the arc is the point.",
+   "use": "The explanation beat \u2014 'how much of it you set moving'. First of a matched pair with the collapsed-arc frame.",
+   "beat": "T2",
+   "binds_to": "a `<show image of a single string vibrating in a wide arc>` type component",
+   "tags": [
+    "string-arc",
+    "matched-set",
+    "diagram",
+    "vibration"
+   ]
+  },
+  {
+   "id": "A07",
+   "f": "/Users/creator/Reels/bow-speed/Images/string-collapsed-arc.jpg",
+   "k": "image",
+   "exists": true,
+   "w": 1080,
+   "h": 1920,
+   "mb": 1.7,
+   "role": "\u2605 Diagram \u2014 same string, arc collapsed to nothing",
+   "shows": "Identical framing and colours to the wide-arc frame, but the arc is almost flat. Second of the matched pair; the difference reads at a glance.",
+   "use": "'The string never gets to vibrate freely' \u2014 the crushed sound, drawn.",
+   "beat": "T2",
+   "binds_to": "a `<show image of the same vibrating-string frame with the arc collapsed>` type component",
+   "tags": [
+    "string-arc",
+    "matched-set",
+    "diagram",
+    "collapsed"
+   ]
+  },
+  {
+   "id": "A08",
+   "f": "/Users/creator/Reels/bow-speed/Images/waveforms-pressed-vs-moving.png",
+   "k": "image",
+   "exists": true,
+   "w": 1080,
+   "h": 1080,
+   "mb": 0.6,
+   "role": "Waveform plots \u2014 pressed vs moving",
+   "shows": "Two waveform plots side by side on identical axes. Left: a ragged flattened blob labelled 'pressed'. Right: a clean even oscillation labelled 'moving'.",
+   "use": "'Pressure without speed isn't tone, it's friction.'",
+   "beat": "T1",
+   "binds_to": "a `<show image of two waveform plots side by side, pressed vs moving>` type component",
+   "tags": [
+    "waveform",
+    "plot",
+    "friction",
+    "comparison"
+   ]
+  },
+  {
+   "id": "A09",
+   "f": "/Users/creator/Reels/bow-speed/Images/title-speed-is-tone.png",
+   "k": "image",
+   "exists": true,
+   "w": 1080,
+   "h": 1920,
+   "mb": 0.3,
+   "role": "\u2605 Title card \u2014 SPEED IS TONE",
+   "shows": "Plain series-style title card, white text on black, the words 'SPEED IS TONE'.",
+   "use": "The payoff. Lands on the final line and holds.",
+   "beat": "T2",
+   "binds_to": "a `<show image of a plain title card in the series style>` type component",
+   "tags": [
+    "title-card",
+    "series-style",
+    "payoff"
+   ]
+  },
+  {
+   "id": "A10",
+   "f": "/Users/creator/Reels/bow-speed/Audio/crushed-note-D.wav",
+   "k": "audio",
+   "exists": true,
+   "dur": 3.1,
+   "mb": 0.5,
+   "role": "\u2605 SFX \u2014 one crushed, airless bowed note on the D string",
+   "shows": "3.1s of a single long bowed D, airless and choked, no narration under it.",
+   "use": "Cold open. The bad sound, before anybody knows what they are listening to.",
+   "beat": "T1",
+   "binds_to": "an `<audio of one long crushed, airless bowed note>` type component",
+   "tags": [
+    "sfx",
+    "crushed",
+    "cold-open",
+    "d-string"
+   ]
+  },
+  {
+   "id": "A11",
+   "f": "/Users/creator/Reels/bow-speed/Audio/open-D-ring.wav",
+   "k": "audio",
+   "exists": true,
+   "dur": 4.4,
+   "mb": 0.7,
+   "role": "SFX \u2014 one clean ringing open D, fading",
+   "shows": "4.4s. A single clean open D allowed to ring and fade out.",
+   "use": "Under the title card at the end.",
+   "beat": "T2",
+   "binds_to": "an `<audio of one clean ringing open D fading out>` type component",
+   "tags": [
+    "sfx",
+    "open-d",
+    "ring",
+    "payoff"
+   ]
+  },
+  {
+   "id": "A12",
+   "f": "/Users/creator/Reels/bow-speed/Audio/take-01.wav",
+   "k": "audio",
+   "exists": true,
+   "dur": 31.4,
+   "mb": 5.4,
+   "role": "Voice take 1",
+   "shows": "31.4s of narration: the hook line through the wrong-instinct lines.",
+   "use": "The authoritative clock for the first half once it is aligned.",
+   "beat": "T1",
+   "binds_to": "the narration spine for the opening beats",
+   "tags": [
+    "narration",
+    "take-1",
+    "voice"
+   ]
+  },
+  {
+   "id": "A16",
+   "f": "/Users/creator/Reels/bow-speed/Audio/take-02.wav",
+   "k": "audio",
+   "exists": true,
+   "dur": 34.9,
+   "mb": 6.0,
+   "role": "Voice take 2",
+   "shows": "34.9s of narration: the explanation beat through the payoff line.",
+   "use": "The authoritative clock for the second half once it is aligned.",
+   "beat": "T2",
+   "binds_to": "the narration spine for the explanation, demo, fix and payoff beats",
+   "tags": [
+    "narration",
+    "take-2",
+    "voice"
+   ]
+  },
+  {
+   "id": "A13",
+   "f": "/Users/creator/Reels/bow-speed/Captions/burned-in.srt",
+   "k": "text",
+   "exists": true,
+   "lines": 24,
+   "words": 96,
+   "mb": 0.01,
+   "role": "Caption list from the previous cut",
+   "shows": "24 cues in the creator's own phrasing: IT'S NOT PRESSURE / FRICTION / NO ROOM TO VIBRATE / SAME WEIGHT. MORE BOW. / SPEED IS TONE.",
+   "excerpt": "it's not pressure\nfriction\nno room to vibrate\nsame weight. more bow.\nspeed is tone",
+   "use": "Ready-made on-screen text, already the right length.",
+   "beat": "any",
+   "binds_to": "a `<caption: it's not pressure>` type component \u2014 any on-screen text slot",
+   "tags": [
+    "captions",
+    "on-screen-text",
+    "srt"
+   ]
+  },
+  {
+   "id": "A14",
+   "f": "/Users/creator/Reels/bow-speed/Reference/published-cut.mp4",
+   "k": "video",
+   "exists": true,
+   "dur": 58.0,
+   "w": 576,
+   "h": 1024,
+   "fps": 30,
+   "mb": 22,
+   "role": "\u2605 THE PUBLISHED REEL (reference edit)",
+   "shows": "58s, 576x1024, captions burned in. The finished cut of the previous video in this series.",
+   "use": "NOT source footage. Evidence about the edit, never material for one.",
+   "beat": "reference",
+   "binds_to": "nothing \u2014 never bind a component to this",
+   "tags": [
+    "reference-cut",
+    "published",
+    "do-not-use-as-source"
+   ]
+  },
+  {
+   "id": "A15",
+   "f": "/Users/creator/Reels/bow-speed/Images/stock-violin-desk.jpg",
+   "k": "image",
+   "exists": true,
+   "w": 1600,
+   "h": 1067,
+   "mb": 0.9,
+   "role": "Stock \u2014 violin lying on a desk",
+   "shows": "A violin on a wooden desk beside a laptop. Generic.",
+   "use": "Low value, no obvious beat. Candidate for deletion.",
+   "beat": "unused",
+   "binds_to": "",
+   "tags": [
+    "stock",
+    "generic"
+   ]
+  }
+ ]
+}

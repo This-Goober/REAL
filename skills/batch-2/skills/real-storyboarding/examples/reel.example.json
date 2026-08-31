@@ -1,0 +1,1563 @@
+{
+ "version": "1.0",
+ "reel": {
+  "title": "Bow speed, not bow pressure",
+  "aspect": "9:16",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30
+ },
+ "clock": {
+  "mode": "estimated",
+  "rate_wps": 3.11,
+  "rate_source": "rates.json@2026-08-03 v3",
+  "total_s": 64.868,
+  "target_s": 60.0,
+  "note": "estimated \u2014 worst observed section error 5.8% on Drone Part 1 \u2014 5 sections, 486 words, script reconstructed from takes 1/3/4/5/6"
+ },
+ "assets_root": "/Users/creator/Reels/bow-speed",
+ "assets_root_local": "/Users/creator/Reels/bow-speed",
+ "assets": [
+  {
+   "id": "A01",
+   "file": "/Users/creator/Reels/bow-speed/Videos/bow-demo-two-strokes.mov",
+   "kind": "video",
+   "dur_s": 9.6,
+   "w": 1080,
+   "h": 1920,
+   "fps": 30,
+   "rotation": 0,
+   "exists": true,
+   "catalog": {
+    "role": "\u2605 DEMO \u2014 same note, heavy+slow then light+fast",
+    "beat": "T2",
+    "shows": "9.6s, 1080x1920. Camera at bow height looking down the string toward the bridge. One continuous take: first stroke slow and pressed and choked, second stroke fast and light and open. The difference is audible.",
+    "use": "The demo the whole reel exists to prove. Runs clean, at full volume, narration stops over it.",
+    "binds_to": "a `<video clip of the same note bowed twice in one continuous take>` type component \u2014 the demo",
+    "tags": [
+     "bow-demo",
+     "demo",
+     "violin-pov",
+     "two-strokes"
+    ],
+    "excerpt": ""
+   }
+  },
+  {
+   "id": "A02",
+   "file": "/Users/creator/Reels/bow-speed/Videos/index-finger-press.mov",
+   "kind": "video",
+   "dur_s": 6.2,
+   "w": 1080,
+   "h": 1920,
+   "fps": 30,
+   "rotation": 0,
+   "exists": true,
+   "catalog": {
+    "role": "\u2605 B-roll \u2014 index finger pressing into the frog",
+    "beat": "T1",
+    "shows": "6.2s, tight shot on the right hand only, no face. The index finger visibly leans down into the frog mid-note.",
+    "use": "The wrong instinct beat \u2014 the literal picture of 'they lean in'.",
+    "binds_to": "a `<video clip of a player's right index finger pressing into the frog>` type component",
+    "tags": [
+     "technique-broll",
+     "right-hand",
+     "pressure"
+    ],
+    "excerpt": ""
+   }
+  },
+  {
+   "id": "A03",
+   "file": "/Users/creator/Reels/bow-speed/Videos/full-bow-stroke-pov.mov",
+   "kind": "video",
+   "dur_s": 7.8,
+   "w": 1080,
+   "h": 1920,
+   "fps": 30,
+   "rotation": 0,
+   "exists": true,
+   "catalog": {
+    "role": "\u2605 B-roll \u2014 full bow stroke, frog to tip, POV",
+    "beat": "T2",
+    "shows": "7.8s, filmed over the player's own right shoulder. One unbroken stroke, the arm travelling the whole width of frame.",
+    "use": "The fix beat \u2014 'full bow, same weight'. Pairs with the caption 'same weight. more bow.'",
+    "binds_to": "a `<video clip of a full-length bow stroke frog to tip, from the player's point of view>` type component",
+    "tags": [
+     "technique-broll",
+     "full-bow",
+     "pov",
+     "fix"
+    ],
+    "excerpt": ""
+   }
+  },
+  {
+   "id": "A04",
+   "file": "/Users/creator/Reels/bow-speed/Videos/split-screen-two-arms.mov",
+   "kind": "video",
+   "dur_s": 11.2,
+   "w": 1080,
+   "h": 1920,
+   "fps": 30,
+   "rotation": 0,
+   "exists": true,
+   "catalog": {
+    "role": "Split screen \u2014 two bow arms, same note",
+    "beat": "any",
+    "shows": "11.2s. Two bow arms side by side playing the same slow note; left short and stiff, right long and travelling.",
+    "use": "Only used by the question-first hook variant.",
+    "binds_to": "a `<video clip of two side-by-side bow arms on a split screen>` type component",
+    "tags": [
+     "split-compare",
+     "comparison",
+     "two-arms"
+    ],
+    "excerpt": ""
+   }
+  },
+  {
+   "id": "A05",
+   "file": "/Users/creator/Reels/bow-speed/Images/bow-hair-pressed-macro.jpg",
+   "kind": "image",
+   "dur_s": null,
+   "w": 1080,
+   "h": 1920,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "catalog": {
+    "role": "\u2605 Macro \u2014 bow hair pressed flat into the string",
+    "beat": "T1",
+    "shows": "Extreme close-up, dark background, shallow depth of field. The hair is visibly bending against the string.",
+    "use": "Cold open. The picture of the problem before anybody has named it.",
+    "binds_to": "a `<show image of bow hair pressed flat into the string, extreme close-up>` type component",
+    "tags": [
+     "macro",
+     "bow-hair",
+     "cold-open",
+     "pressure"
+    ],
+    "excerpt": ""
+   }
+  },
+  {
+   "id": "A06",
+   "file": "/Users/creator/Reels/bow-speed/Images/string-wide-arc.jpg",
+   "kind": "image",
+   "dur_s": null,
+   "w": 1080,
+   "h": 1920,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "catalog": {
+    "role": "\u2605 Diagram \u2014 string vibrating in a wide arc",
+    "beat": "T2",
+    "shows": "Side view of a single string swinging in a wide arc, motion blurred at the belly, dark background. The width of the arc is the point.",
+    "use": "The explanation beat \u2014 'how much of it you set moving'. First of a matched pair with the collapsed-arc frame.",
+    "binds_to": "a `<show image of a single string vibrating in a wide arc>` type component",
+    "tags": [
+     "string-arc",
+     "matched-set",
+     "diagram",
+     "vibration"
+    ],
+    "excerpt": ""
+   }
+  },
+  {
+   "id": "A07",
+   "file": "/Users/creator/Reels/bow-speed/Images/string-collapsed-arc.jpg",
+   "kind": "image",
+   "dur_s": null,
+   "w": 1080,
+   "h": 1920,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "catalog": {
+    "role": "\u2605 Diagram \u2014 same string, arc collapsed to nothing",
+    "beat": "T2",
+    "shows": "Identical framing and colours to the wide-arc frame, but the arc is almost flat. Second of the matched pair; the difference reads at a glance.",
+    "use": "'The string never gets to vibrate freely' \u2014 the crushed sound, drawn.",
+    "binds_to": "a `<show image of the same vibrating-string frame with the arc collapsed>` type component",
+    "tags": [
+     "string-arc",
+     "matched-set",
+     "diagram",
+     "collapsed"
+    ],
+    "excerpt": ""
+   }
+  },
+  {
+   "id": "A08",
+   "file": "/Users/creator/Reels/bow-speed/Images/waveforms-pressed-vs-moving.png",
+   "kind": "image",
+   "dur_s": null,
+   "w": 1080,
+   "h": 1080,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "catalog": {
+    "role": "Waveform plots \u2014 pressed vs moving",
+    "beat": "T1",
+    "shows": "Two waveform plots side by side on identical axes. Left: a ragged flattened blob labelled 'pressed'. Right: a clean even oscillation labelled 'moving'.",
+    "use": "'Pressure without speed isn't tone, it's friction.'",
+    "binds_to": "a `<show image of two waveform plots side by side, pressed vs moving>` type component",
+    "tags": [
+     "waveform",
+     "plot",
+     "friction",
+     "comparison"
+    ],
+    "excerpt": ""
+   }
+  },
+  {
+   "id": "A09",
+   "file": "/Users/creator/Reels/bow-speed/Images/title-speed-is-tone.png",
+   "kind": "image",
+   "dur_s": null,
+   "w": 1080,
+   "h": 1920,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "catalog": {
+    "role": "\u2605 Title card \u2014 SPEED IS TONE",
+    "beat": "T2",
+    "shows": "Plain series-style title card, white text on black, the words 'SPEED IS TONE'.",
+    "use": "The payoff. Lands on the final line and holds.",
+    "binds_to": "a `<show image of a plain title card in the series style>` type component",
+    "tags": [
+     "title-card",
+     "series-style",
+     "payoff"
+    ],
+    "excerpt": ""
+   }
+  },
+  {
+   "id": "A10",
+   "file": "/Users/creator/Reels/bow-speed/Audio/crushed-note-D.wav",
+   "kind": "audio",
+   "dur_s": 3.1,
+   "w": null,
+   "h": null,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "catalog": {
+    "role": "\u2605 SFX \u2014 one crushed, airless bowed note on the D string",
+    "beat": "T1",
+    "shows": "3.1s of a single long bowed D, airless and choked, no narration under it.",
+    "use": "Cold open. The bad sound, before anybody knows what they are listening to.",
+    "binds_to": "an `<audio of one long crushed, airless bowed note>` type component",
+    "tags": [
+     "sfx",
+     "crushed",
+     "cold-open",
+     "d-string"
+    ],
+    "excerpt": ""
+   }
+  },
+  {
+   "id": "A11",
+   "file": "/Users/creator/Reels/bow-speed/Audio/open-D-ring.wav",
+   "kind": "audio",
+   "dur_s": 4.4,
+   "w": null,
+   "h": null,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "catalog": {
+    "role": "SFX \u2014 one clean ringing open D, fading",
+    "beat": "T2",
+    "shows": "4.4s. A single clean open D allowed to ring and fade out.",
+    "use": "Under the title card at the end.",
+    "binds_to": "an `<audio of one clean ringing open D fading out>` type component",
+    "tags": [
+     "sfx",
+     "open-d",
+     "ring",
+     "payoff"
+    ],
+    "excerpt": ""
+   }
+  },
+  {
+   "id": "A12",
+   "file": "/Users/creator/Reels/bow-speed/Audio/take-01.wav",
+   "kind": "audio",
+   "dur_s": 31.4,
+   "w": null,
+   "h": null,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "catalog": {
+    "role": "Voice take 1",
+    "beat": "T1",
+    "shows": "31.4s of narration: the hook line through the wrong-instinct lines.",
+    "use": "The authoritative clock for the first half once it is aligned.",
+    "binds_to": "the narration spine for the opening beats",
+    "tags": [
+     "narration",
+     "take-1",
+     "voice"
+    ],
+    "excerpt": ""
+   }
+  },
+  {
+   "id": "A16",
+   "file": "/Users/creator/Reels/bow-speed/Audio/take-02.wav",
+   "kind": "audio",
+   "dur_s": 34.9,
+   "w": null,
+   "h": null,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "catalog": {
+    "role": "Voice take 2",
+    "beat": "T2",
+    "shows": "34.9s of narration: the explanation beat through the payoff line.",
+    "use": "The authoritative clock for the second half once it is aligned.",
+    "binds_to": "the narration spine for the explanation, demo, fix and payoff beats",
+    "tags": [
+     "narration",
+     "take-2",
+     "voice"
+    ],
+    "excerpt": ""
+   }
+  },
+  {
+   "id": "A13",
+   "file": "/Users/creator/Reels/bow-speed/Captions/burned-in.srt",
+   "kind": "text",
+   "dur_s": null,
+   "w": null,
+   "h": null,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "catalog": {
+    "role": "Caption list from the previous cut",
+    "beat": "any",
+    "shows": "24 cues in the creator's own phrasing: IT'S NOT PRESSURE / FRICTION / NO ROOM TO VIBRATE / SAME WEIGHT. MORE BOW. / SPEED IS TONE.",
+    "use": "Ready-made on-screen text, already the right length.",
+    "binds_to": "a `<caption: it's not pressure>` type component \u2014 any on-screen text slot",
+    "tags": [
+     "captions",
+     "on-screen-text",
+     "srt"
+    ],
+    "excerpt": "it's not pressure\nfriction\nno room to vibrate\nsame weight. more bow.\nspeed is tone"
+   }
+  },
+  {
+   "id": "A14",
+   "file": "/Users/creator/Reels/bow-speed/Reference/published-cut.mp4",
+   "kind": "video",
+   "dur_s": 58.0,
+   "w": 576,
+   "h": 1024,
+   "fps": 30,
+   "rotation": 0,
+   "exists": true,
+   "catalog": {
+    "role": "\u2605 THE PUBLISHED REEL (reference edit)",
+    "beat": "reference",
+    "shows": "58s, 576x1024, captions burned in. The finished cut of the previous video in this series.",
+    "use": "NOT source footage. Evidence about the edit, never material for one.",
+    "binds_to": "nothing \u2014 never bind a component to this",
+    "tags": [
+     "reference-cut",
+     "published",
+     "do-not-use-as-source"
+    ],
+    "excerpt": ""
+   }
+  },
+  {
+   "id": "A15",
+   "file": "/Users/creator/Reels/bow-speed/Images/stock-violin-desk.jpg",
+   "kind": "image",
+   "dur_s": null,
+   "w": 1600,
+   "h": 1067,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "catalog": {
+    "role": "Stock \u2014 violin lying on a desk",
+    "beat": "unused",
+    "shows": "A violin on a wooden desk beside a laptop. Generic.",
+    "use": "Low value, no obvious beat. Candidate for deletion.",
+    "binds_to": "",
+    "tags": [
+     "stock",
+     "generic"
+    ],
+    "excerpt": ""
+   }
+  }
+ ],
+ "beats": [
+  {
+   "id": "B1",
+   "name": "hook",
+   "t0": 0.0,
+   "t1": 6.475,
+   "w0": 0,
+   "w1": 16,
+   "narration": "Your tone isn't thin because you're not pressing hard enough. It's thin because your bow isn't moving.",
+   "source": {
+    "cell": "C1",
+    "component": "C1.361"
+   },
+   "layers": [
+    {
+     "id": "B1.L1",
+     "z": 0,
+     "kind": "image",
+     "asset": "A05",
+     "anchor_word": 0,
+     "offset_ms": 0,
+     "t0": 0.0,
+     "t1": 6.475,
+     "fit": "fill",
+     "chosen_by": "claude",
+     "confidence": "high",
+     "candidates": [
+      "A06",
+      "A07",
+      "A08"
+     ],
+     "candidates_why": {
+      "A06": "binds_to shares string (+0.5); role shares string (+0.5)",
+      "A07": "role shares string (+0.5); shows shares flat (+0.9)",
+      "A08": "binds_to shares pressed (+0.7); role shares pressed (+0.7)"
+     },
+     "why": "binds_to shares bow, close-up, extreme, flat, hair (+4.0); role shares bow, flat, hair, pressed, string (+2.5); shows shares background, bending, close-up, dark, depth (+3.0); image component / image asset (+2.0)",
+     "source_component": "C1.4c1",
+     "source_text": "show image of bow hair pressed flat into the string, extreme close-up, the hair visibly bending, dark background, shallow depth of field",
+     "placement": "lead",
+     "dur_source": "to-next",
+     "essential": false,
+     "unsure": false,
+     "base": true,
+     "snapped": false,
+     "anchor_text": "Your"
+    },
+    {
+     "id": "B1.L2",
+     "z": 1,
+     "kind": "text",
+     "asset": "A13",
+     "anchor_word": 0,
+     "offset_ms": 0,
+     "t0": 2.083,
+     "t1": 3.643,
+     "fit": "fit",
+     "chosen_by": "claude",
+     "confidence": "high",
+     "candidates": [
+      "A13"
+     ],
+     "candidates_why": {
+      "A13": "binds_to shares pressure (+0.6); shows shares pressure (+0.6)"
+     },
+     "why": "this caption is already in the creator's own caption list, word for word",
+     "source_component": "C1.525",
+     "source_text": "caption: it's not pressure",
+     "placement": "inline",
+     "dur_source": "text-model",
+     "essential": false,
+     "unsure": false,
+     "base": false,
+     "snapped": false,
+     "content": "it's not pressure",
+     "style": "caption",
+     "anchor_text": "Your"
+    }
+   ],
+   "audio": [
+    {
+     "id": "B1.A1",
+     "kind": "narration",
+     "asset": null,
+     "t0": 0.0,
+     "t1": 6.475,
+     "anchor_word": 0,
+     "offset_ms": 0,
+     "source_component": "C1.361",
+     "text": "Your tone isn't thin because you're not pressing hard enough. It's thin because your bow isn't moving.",
+     "chosen_by": "claude",
+     "confidence": "low",
+     "candidates": [
+      "A12",
+      "A16"
+     ],
+     "why": "no voice take covers this line yet; the clock stays ESTIMATED until one is recorded",
+     "anchor_text": "Your"
+    },
+    {
+     "id": "B1.A2",
+     "kind": "sfx",
+     "asset": "A10",
+     "t0": 0.0,
+     "t1": 2.0,
+     "anchor_word": 0,
+     "offset_ms": 0,
+     "source_component": "C1.41d",
+     "note": "audio of one long crushed, airless bowed note on the D string, no narration,",
+     "chosen_by": "claude",
+     "confidence": "high",
+     "candidates": [
+      "A12",
+      "A16",
+      "A11"
+     ],
+     "why": "binds_to shares airless, bowed, crushed, long, note (+4.0); role shares airless, bowed, crushed, note, string (+2.5); shows shares airless, bowed, long, narration (+3.0); audio component / audio asset (+2.0)",
+     "anchor_text": "Your"
+    }
+   ],
+   "note": "Cold open. No setup, no face \u2014 let them hear the bad sound before they know what they're listening to. Fast cuts here, this is the densest beat in the reel.",
+   "flags": [
+    {
+     "code": "no-take",
+     "layer": null,
+     "msg": "no voice take bound to this line \u2014 the clock is ESTIMATED here"
+    }
+   ]
+  },
+  {
+   "id": "B2",
+   "name": "the wrong instinct",
+   "t0": 7.139,
+   "t1": 13.269,
+   "w0": 17,
+   "w1": 38,
+   "narration": "When a note sounds weak, almost everyone does the same thing \u2014 they lean in. More arm weight, more index finger, more pressure.",
+   "source": {
+    "cell": "C3",
+    "component": "C3.f98"
+   },
+   "layers": [
+    {
+     "id": "B2.L1",
+     "z": 0,
+     "kind": "video",
+     "asset": "A02",
+     "anchor_word": 17,
+     "offset_ms": 0,
+     "t0": 7.222,
+     "t1": 10.177,
+     "fit": "fill",
+     "chosen_by": "claude",
+     "confidence": "high",
+     "candidates": [
+      "A03",
+      "A04"
+     ],
+     "candidates_why": {
+      "A03": "#technique-broll matches the asset's tags (+6.0); binds_to shares frog, player's (+1.7)",
+      "A04": "shows shares right (+0.5); use shares only (+0.9)"
+     },
+     "why": "#technique-broll matches the asset's tags (+6.0); binds_to shares finger, frog, index, player's, pressing (+4.0); role shares finger, frog, index, pressing (+2.5); shows shares down, face, finger, frog, hand (+3.0); video component / video asset (+2.0)",
+     "source_component": "C3.f6c",
+     "source_text": "video clip of a player's right index finger visibly pressing down into the frog mid-note, tight shot on the hand only, no face",
+     "placement": "inline",
+     "dur_source": "to-next",
+     "essential": false,
+     "unsure": false,
+     "base": true,
+     "snapped": false,
+     "anchor_text": "When"
+    },
+    {
+     "id": "B2.L2",
+     "z": 1,
+     "kind": "image",
+     "asset": null,
+     "anchor_word": 28,
+     "offset_ms": 0,
+     "t0": 10.177,
+     "t1": 13.269,
+     "fit": "fill",
+     "chosen_by": "claude",
+     "confidence": "low",
+     "candidates": [
+      "A09",
+      "A06"
+     ],
+     "candidates_why": {
+      "A09": "shows shares black, white (+2.2); image component / image asset (+2.0)",
+      "A06": "binds_to shares string (+0.5); role shares string (+0.5)"
+     },
+     "why": "nothing in the catalogue is about this \u2014 best was A09 (score 1.2, content evidence 2.2, needs 2.5)",
+     "source_component": "C3.269",
+     "source_text": "show image of a hand-drawn arrow labelled \"MORE\" pointing straight down into a string, crude and deliberate, black marker on white",
+     "placement": "inline",
+     "dur_source": "to-next",
+     "essential": false,
+     "unsure": false,
+     "base": true,
+     "snapped": false,
+     "stub": {
+      "file": "stubs/stub-C3-269.png",
+      "spec": "show image of a hand-drawn arrow labelled \"MORE\" pointing straight down into a string, crude and deliberate, black marker on white",
+      "kind": "image",
+      "status": "placeholder",
+      "why": "nothing in the catalogue satisfies this component; it has to be built, filmed or found",
+      "w": 1080,
+      "h": 1920,
+      "dur_s": 3.092
+     },
+     "anchor_text": "\u2014"
+    }
+   ],
+   "audio": [
+    {
+     "id": "B2.A1",
+     "kind": "narration",
+     "asset": null,
+     "t0": 7.139,
+     "t1": 13.269,
+     "anchor_word": 17,
+     "offset_ms": 0,
+     "source_component": "C3.f98",
+     "text": "When a note sounds weak, almost everyone does the same thing \u2014 they lean in. More arm weight, more index finger, more pressure.",
+     "chosen_by": "claude",
+     "confidence": "low",
+     "candidates": [
+      "A12",
+      "A16"
+     ],
+     "why": "no voice take covers this line yet; the clock stays ESTIMATED until one is recorded",
+     "anchor_text": "When"
+    }
+   ],
+   "note": "",
+   "flags": [
+    {
+     "code": "no-take",
+     "layer": null,
+     "msg": "no voice take bound to this line \u2014 the clock is ESTIMATED here"
+    },
+    {
+     "code": "stub",
+     "layer": "B2.L2",
+     "msg": "has to be built: show image of a hand-drawn arrow labelled \"MORE\" pointing straight down into a s"
+    }
+   ]
+  },
+  {
+   "id": "B3",
+   "name": "the wrong instinct",
+   "t0": 13.859,
+   "t1": 17.936,
+   "w0": 39,
+   "w1": 52,
+   "narration": "And it gets worse, not better, because pressure without speed isn't tone. It's friction.",
+   "source": {
+    "cell": "C3",
+    "component": "C3.e4d"
+   },
+   "layers": [
+    {
+     "id": "B3.L1",
+     "z": 0,
+     "kind": "image",
+     "asset": "A08",
+     "anchor_word": 39,
+     "offset_ms": 0,
+     "t0": 13.942,
+     "t1": 17.936,
+     "fit": "fill",
+     "chosen_by": "claude",
+     "confidence": "high",
+     "candidates": [
+      "A07",
+      "A06",
+      "A09"
+     ],
+     "candidates_why": {
+      "A07": "shows shares identical (+0.9); image component / image asset (+2.0)",
+      "A06": "shows shares side (+0.7); image component / image asset (+2.0)",
+      "A09": "image component / image asset (+2.0)"
+     },
+     "why": "binds_to shares moving, plots, pressed, side, waveform (+4.0); role shares moving, plots, pressed, waveform (+2.5); shows shares axes, blob, clean, even, flattened (+3.0); image component / image asset (+2.0)",
+     "source_component": "C3.9fc",
+     "source_text": "show image of two waveform plots side by side, identical axes \u2014 left one a ragged flattened blob labelled \"pressed\", right one a clean even oscillation labelled \"moving\"",
+     "placement": "inline",
+     "dur_source": "to-next",
+     "essential": false,
+     "unsure": false,
+     "base": true,
+     "snapped": false,
+     "anchor_text": "And"
+    },
+    {
+     "id": "B3.L2",
+     "z": 1,
+     "kind": "text",
+     "asset": "A13",
+     "anchor_word": 39,
+     "offset_ms": 0,
+     "t0": 13.942,
+     "t1": 15.142,
+     "fit": "fit",
+     "chosen_by": "claude",
+     "confidence": "high",
+     "candidates": [
+      "A13"
+     ],
+     "candidates_why": {
+      "A13": "shows shares friction (+0.9); this caption appears verbatim in the text asset (+3.0)"
+     },
+     "why": "this caption is already in the creator's own caption list, word for word",
+     "source_component": "C3.9f5",
+     "source_text": "caption: friction",
+     "placement": "inline",
+     "dur_source": "text-model",
+     "essential": false,
+     "unsure": false,
+     "base": false,
+     "snapped": false,
+     "content": "friction",
+     "style": "caption",
+     "anchor_text": "And"
+    }
+   ],
+   "audio": [
+    {
+     "id": "B3.A1",
+     "kind": "narration",
+     "asset": null,
+     "t0": 13.859,
+     "t1": 17.936,
+     "anchor_word": 39,
+     "offset_ms": 0,
+     "source_component": "C3.e4d",
+     "text": "And it gets worse, not better, because pressure without speed isn't tone. It's friction.",
+     "chosen_by": "claude",
+     "confidence": "low",
+     "candidates": [
+      "A12",
+      "A16"
+     ],
+     "why": "no voice take covers this line yet; the clock stays ESTIMATED until one is recorded",
+     "anchor_text": "And"
+    }
+   ],
+   "note": "",
+   "flags": [
+    {
+     "code": "no-take",
+     "layer": null,
+     "msg": "no voice take bound to this line \u2014 the clock is ESTIMATED here"
+    },
+    {
+     "code": "aspect-mismatch",
+     "layer": "B3.L1",
+     "msg": "A08 is 1080x1080 in a 9:16 reel \u2014 it will be cropped or letterboxed"
+    }
+   ]
+  },
+  {
+   "id": "B4",
+   "name": "what actually makes the sound",
+   "t0": 18.6,
+   "t1": 23.593,
+   "w0": 53,
+   "w1": 73,
+   "narration": "The string doesn't care how hard you push it. It cares how much of it you set moving, and how fast.",
+   "source": {
+    "cell": "C4",
+    "component": "C4.563"
+   },
+   "layers": [
+    {
+     "id": "B4.L1",
+     "z": 0,
+     "kind": "image",
+     "asset": "A06",
+     "anchor_word": 53,
+     "offset_ms": 0,
+     "t0": 18.683,
+     "t1": 23.593,
+     "fit": "fill",
+     "chosen_by": "claude",
+     "confidence": "high",
+     "candidates": [
+      "A07",
+      "A05",
+      "A09"
+     ],
+     "candidates_why": {
+      "A07": "binds_to shares arc (+0.9); role shares arc, string (+1.4)",
+      "A05": "binds_to shares string (+0.5); role shares string (+0.5)",
+      "A09": "image component / image asset (+2.0)"
+     },
+     "why": "binds_to shares arc, single, string, vibrating, wide (+4.0); role shares arc, string, vibrating, wide (+2.5); shows shares arc, background, belly, blurred, dark (+3.0); image component / image asset (+2.0)",
+     "source_component": "C4.1d9",
+     "source_text": "show image of a single string vibrating in a wide arc, side view, motion blurred at the belly of the arc, dark background, the width of the arc obvious",
+     "placement": "inline",
+     "dur_source": "to-next",
+     "essential": false,
+     "unsure": false,
+     "base": true,
+     "snapped": false,
+     "anchor_text": "The"
+    }
+   ],
+   "audio": [
+    {
+     "id": "B4.A1",
+     "kind": "narration",
+     "asset": null,
+     "t0": 18.6,
+     "t1": 23.593,
+     "anchor_word": 53,
+     "offset_ms": 0,
+     "source_component": "C4.563",
+     "text": "The string doesn't care how hard you push it. It cares how much of it you set moving, and how fast.",
+     "chosen_by": "claude",
+     "confidence": "low",
+     "candidates": [
+      "A12",
+      "A16"
+     ],
+     "why": "no voice take covers this line yet; the clock stays ESTIMATED until one is recorded",
+     "anchor_text": "The"
+    }
+   ],
+   "note": "Slow this down. This is the explanation beat and it should feel calm after the hook. One idea per visual, no rapid cutting.",
+   "flags": [
+    {
+     "code": "no-take",
+     "layer": null,
+     "msg": "no voice take bound to this line \u2014 the clock is ESTIMATED here"
+    }
+   ]
+  },
+  {
+   "id": "B5",
+   "name": "what actually makes the sound",
+   "t0": 24.183,
+   "t1": 30.873,
+   "w0": 74,
+   "w1": 98,
+   "narration": "Bow speed is what makes a note ring out into the room. Pressure only decides how hard the string grips the hair before it releases.",
+   "source": {
+    "cell": "C4",
+    "component": "C4.c26"
+   },
+   "layers": [
+    {
+     "id": "B5.L1",
+     "z": 0,
+     "kind": "image",
+     "asset": "A05",
+     "anchor_word": 74,
+     "offset_ms": 0,
+     "t0": 24.265,
+     "t1": 30.873,
+     "fit": "fill",
+     "chosen_by": "claude",
+     "confidence": "low",
+     "candidates": [
+      "A06",
+      "A07"
+     ],
+     "candidates_why": {
+      "A06": "binds_to shares string (+0.5); role shares diagram, string (+1.4)",
+      "A07": "role shares diagram, string (+1.4); use shares drawn, string (+1.6)"
+     },
+     "why": "binds_to shares hair, string (+1.6); role shares hair, string (+1.6); shows shares hair, string (+1.6); image component / image asset (+2.0); already placed 1\u00d7 elsewhere (-3.0)",
+     "source_component": "C4.fb0",
+     "source_text": "show image of a rosin-and-hair contact point magnified, hair grabbing and releasing the string, drawn as a simple diagram with two labelled arrows: \"grip\" and \"release\"",
+     "placement": "inline",
+     "dur_source": "to-next",
+     "essential": false,
+     "unsure": false,
+     "base": true,
+     "snapped": false,
+     "anchor_text": "Bow"
+    }
+   ],
+   "audio": [
+    {
+     "id": "B5.A1",
+     "kind": "narration",
+     "asset": null,
+     "t0": 24.183,
+     "t1": 30.873,
+     "anchor_word": 74,
+     "offset_ms": 0,
+     "source_component": "C4.c26",
+     "text": "Bow speed is what makes a note ring out into the room. Pressure only decides how hard the string grips the hair before it releases.",
+     "chosen_by": "claude",
+     "confidence": "low",
+     "candidates": [
+      "A12",
+      "A16"
+     ],
+     "why": "no voice take covers this line yet; the clock stays ESTIMATED until one is recorded",
+     "anchor_text": "Bow"
+    }
+   ],
+   "note": "Slow this down. This is the explanation beat and it should feel calm after the hook. One idea per visual, no rapid cutting.",
+   "flags": [
+    {
+     "code": "no-take",
+     "layer": null,
+     "msg": "no voice take bound to this line \u2014 the clock is ESTIMATED here"
+    },
+    {
+     "code": "low-confidence",
+     "layer": "B5.L1",
+     "msg": "2 other assets could fit; picked A05 \u2014 binds_to shares hair, string (+1.6); role shares hair, string (+1.6); shows shares hair, s"
+    }
+   ]
+  },
+  {
+   "id": "B6",
+   "name": "what actually makes the sound",
+   "t0": 31.463,
+   "t1": 37.615,
+   "w0": 99,
+   "w1": 120,
+   "narration": "Too much grip and too little speed, and the string never gets to vibrate freely. That's the crushed, airless sound you're hearing.",
+   "source": {
+    "cell": "C4",
+    "component": "C4.e81"
+   },
+   "layers": [
+    {
+     "id": "B6.L1",
+     "z": 0,
+     "kind": "image",
+     "asset": "A07",
+     "anchor_word": 99,
+     "offset_ms": 0,
+     "t0": 31.546,
+     "t1": 37.615,
+     "fit": "fill",
+     "chosen_by": "claude",
+     "confidence": "high",
+     "candidates": [
+      "A06"
+     ],
+     "candidates_why": {
+      "A06": "binds_to shares arc (+0.9); role shares arc (+0.9)"
+     },
+     "why": "binds_to shares arc, collapsed, same, vibrating-string (+3.6); role shares arc, collapsed, nothing, same (+2.5); shows shares almost, arc, colours, difference, framing (+3.0); image component / image asset (+2.0)",
+     "source_component": "C4.e0d",
+     "source_text": "show image of the same vibrating-string frame as before, same framing and colours, but the arc collapsed to almost nothing \u2014 the difference has to be obvious at a glance",
+     "placement": "inline",
+     "dur_source": "to-next",
+     "essential": false,
+     "unsure": false,
+     "base": true,
+     "snapped": false,
+     "anchor_text": "Too"
+    },
+    {
+     "id": "B6.L2",
+     "z": 1,
+     "kind": "text",
+     "asset": "A13",
+     "anchor_word": 110,
+     "offset_ms": 0,
+     "t0": 34.353,
+     "t1": 36.233,
+     "fit": "fit",
+     "chosen_by": "claude",
+     "confidence": "high",
+     "candidates": [
+      "A13"
+     ],
+     "candidates_why": {
+      "A13": "shows shares room, vibrate (+2.0); this caption appears verbatim in the text asset (+3.0)"
+     },
+     "why": "this caption is already in the creator's own caption list, word for word",
+     "source_component": "C4.e47",
+     "source_text": "caption: no room to vibrate",
+     "placement": "inline",
+     "dur_source": "text-model",
+     "essential": false,
+     "unsure": false,
+     "base": false,
+     "snapped": false,
+     "content": "no room to vibrate",
+     "style": "caption",
+     "anchor_text": "gets"
+    }
+   ],
+   "audio": [
+    {
+     "id": "B6.A1",
+     "kind": "narration",
+     "asset": null,
+     "t0": 31.463,
+     "t1": 37.615,
+     "anchor_word": 99,
+     "offset_ms": 0,
+     "source_component": "C4.e81",
+     "text": "Too much grip and too little speed, and the string never gets to vibrate freely. That's the crushed, airless sound you're hearing.",
+     "chosen_by": "claude",
+     "confidence": "low",
+     "candidates": [
+      "A12",
+      "A16"
+     ],
+     "why": "no voice take covers this line yet; the clock stays ESTIMATED until one is recorded",
+     "anchor_text": "Too"
+    }
+   ],
+   "note": "Slow this down. This is the explanation beat and it should feel calm after the hook. One idea per visual, no rapid cutting.",
+   "flags": [
+    {
+     "code": "no-take",
+     "layer": null,
+     "msg": "no voice take bound to this line \u2014 the clock is ESTIMATED here"
+    }
+   ]
+  },
+  {
+   "id": "B7",
+   "name": "demo",
+   "t0": 38.279,
+   "t1": 51.94,
+   "w0": 121,
+   "w1": 144,
+   "narration": "Same note twice, same bow, same string. First one heavy and slow. Second one light and fast. Listen to the second one open up.",
+   "source": {
+    "cell": "C5",
+    "component": "C5.6cc"
+   },
+   "layers": [
+    {
+     "id": "B7.L1",
+     "z": 0,
+     "kind": "video",
+     "asset": "A01",
+     "anchor_word": 144,
+     "offset_ms": 0,
+     "t0": 44.94,
+     "t1": 51.94,
+     "fit": "fill",
+     "chosen_by": "claude",
+     "confidence": "high",
+     "candidates": [
+      "A03",
+      "A04",
+      "A02"
+     ],
+     "candidates_why": {
+      "A03": "binds_to shares bow, stroke (+1.4); role shares bow, full, stroke (+2.3)",
+      "A04": "binds_to shares bow (+0.5); role shares bow, note, same (+1.7)",
+      "A02": "shows shares down (+0.9); video component / video asset (+2.0)"
+     },
+     "why": "#bow-demo matches the asset's tags (+6.0); binds_to shares bowed, continuous, note, same, take (+4.0); role shares fast, light, note, same, slow (+2.5); shows shares bow, bridge, camera, continuous, down (+3.0); use shares full (+0.9); video component / video asset (+2.0)",
+     "source_component": "C5.5f3",
+     "source_text": "video clip of the same note bowed twice in one continuous take, camera at bow height looking down the string toward the bridge, first stroke slow and pressed, second stroke fast and light, both full length",
+     "placement": "hold",
+     "dur_source": "explicit",
+     "essential": true,
+     "unsure": false,
+     "base": true,
+     "snapped": false,
+     "anchor_text": "up"
+    },
+    {
+     "id": "B7.L2",
+     "z": 1,
+     "kind": "text",
+     "anchor_word": 144,
+     "offset_ms": 0,
+     "t0": 44.94,
+     "t1": 46.5,
+     "fit": "fit",
+     "chosen_by": "claude",
+     "confidence": "high",
+     "candidates": [
+      "A13"
+     ],
+     "candidates_why": {
+      "A13": "text component / text asset (+2.0)"
+     },
+     "why": "on-screen text is its own content; no asset needed",
+     "source_component": "C5.74e",
+     "source_text": "caption: 1. heavy + slow",
+     "placement": "post",
+     "dur_source": "text-model",
+     "essential": false,
+     "unsure": false,
+     "base": false,
+     "snapped": false,
+     "content": "1. heavy + slow",
+     "style": "caption",
+     "anchor_text": "up"
+    },
+    {
+     "id": "B7.L3",
+     "z": 2,
+     "kind": "text",
+     "anchor_word": 144,
+     "offset_ms": 3500,
+     "t0": 48.44,
+     "t1": 50.0,
+     "fit": "fit",
+     "chosen_by": "claude",
+     "confidence": "high",
+     "candidates": [
+      "A13"
+     ],
+     "candidates_why": {
+      "A13": "text component / text asset (+2.0)"
+     },
+     "why": "on-screen text is its own content; no asset needed",
+     "source_component": "C5.d40",
+     "source_text": "caption: 2. light + fast",
+     "placement": "post",
+     "dur_source": "text-model",
+     "essential": false,
+     "unsure": false,
+     "base": false,
+     "snapped": false,
+     "content": "2. light + fast",
+     "style": "caption",
+     "anchor_text": "up"
+    }
+   ],
+   "audio": [
+    {
+     "id": "B7.A1",
+     "kind": "narration",
+     "asset": null,
+     "t0": 38.279,
+     "t1": 44.94,
+     "anchor_word": 121,
+     "offset_ms": 0,
+     "source_component": "C5.6cc",
+     "text": "Same note twice, same bow, same string. First one heavy and slow. Second one light and fast. Listen to the second one open up.",
+     "chosen_by": "claude",
+     "confidence": "low",
+     "candidates": [
+      "A12",
+      "A16"
+     ],
+     "why": "no voice take covers this line yet; the clock stays ESTIMATED until one is recorded",
+     "anchor_text": "Same"
+    },
+    {
+     "id": "B7.A2",
+     "kind": "source",
+     "asset": "A01",
+     "t0": 44.94,
+     "t1": 51.94,
+     "anchor_word": 144,
+     "offset_ms": 0,
+     "source_component": "C5.47b",
+     "note": "audio of the raw take at full volume, no music under it",
+     "chosen_by": "claude",
+     "confidence": "low",
+     "candidates": [
+      "A12",
+      "A16"
+     ],
+     "why": "the audio of A01 \u2014 this component is parallel to the video it describes, so it is that clip's own sound (a `source` lane, which does not duck like a bed)",
+     "duck_db": 0,
+     "anchor_text": "up"
+    }
+   ],
+   "note": "Let this run clean. Narration stops, the demo goes to full volume \u2014 do not talk over the thing the whole reel exists to prove. The second note has to be audibly more open than the first or the reel doesn't work.",
+   "flags": [
+    {
+     "code": "no-take",
+     "layer": null,
+     "msg": "no voice take bound to this line \u2014 the clock is ESTIMATED here"
+    }
+   ],
+   "moment": "Narration stops, the demo goes to full volume \u2014 do not talk over the thing the whole reel exists to prove."
+  },
+  {
+   "id": "B8",
+   "name": "the fix",
+   "t0": 52.604,
+   "t1": 58.49,
+   "w0": 145,
+   "w1": 167,
+   "narration": "So the next time it sounds thin, don't press harder. Move faster. Full bow, same weight, and let the string do the work.",
+   "source": {
+    "cell": "C6",
+    "component": "C6.a85"
+   },
+   "layers": [
+    {
+     "id": "B8.L1",
+     "z": 0,
+     "kind": "video",
+     "asset": "A03",
+     "anchor_word": 145,
+     "offset_ms": 0,
+     "t0": 52.687,
+     "t1": 56.687,
+     "fit": "fill",
+     "chosen_by": "claude",
+     "confidence": "high",
+     "candidates": [
+      "A02",
+      "A04",
+      "A01"
+     ],
+     "candidates_why": {
+      "A02": "#technique-broll matches the asset's tags (+6.0); binds_to shares frog, player's, right (+2.3)",
+      "A04": "binds_to shares bow (+0.5); role shares bow (+0.5)",
+      "A01": "binds_to shares take (+0.7); shows shares bow, stroke, take (+2.1)"
+     },
+     "why": "#technique-broll matches the asset's tags (+6.0); binds_to shares bow, frog, full-length, player's, point (+4.0); role shares bow, frog, stroke, tip (+2.5); shows shares arm, filmed, own, player's, right (+3.0); use shares bow (+0.5); video component / video asset (+2.0)",
+     "source_component": "C6.de8",
+     "source_text": "video clip of a full-length bow stroke frog to tip, filmed from the player's own point of view over the right shoulder, one unbroken take, arm travelling the whole width of frame",
+     "placement": "inline",
+     "dur_source": "explicit",
+     "essential": false,
+     "unsure": false,
+     "base": true,
+     "snapped": false,
+     "anchor_text": "So"
+    },
+    {
+     "id": "B8.L2",
+     "z": 1,
+     "kind": "text",
+     "asset": "A13",
+     "anchor_word": 156,
+     "offset_ms": 0,
+     "t0": 55.527,
+     "t1": 57.407,
+     "fit": "fit",
+     "chosen_by": "claude",
+     "confidence": "high",
+     "candidates": [
+      "A13"
+     ],
+     "candidates_why": {
+      "A13": "shows shares bow, more, same, weight (+2.8); this caption appears verbatim in the text asset (+3.0)"
+     },
+     "why": "this caption is already in the creator's own caption list, word for word",
+     "source_component": "C6.1c1",
+     "source_text": "caption: same weight. more bow.",
+     "placement": "inline",
+     "dur_source": "text-model",
+     "essential": false,
+     "unsure": false,
+     "base": false,
+     "snapped": false,
+     "content": "same weight. more bow.",
+     "style": "caption",
+     "anchor_text": "faster"
+    }
+   ],
+   "audio": [
+    {
+     "id": "B8.A1",
+     "kind": "narration",
+     "asset": null,
+     "t0": 52.604,
+     "t1": 58.49,
+     "anchor_word": 145,
+     "offset_ms": 0,
+     "source_component": "C6.a85",
+     "text": "So the next time it sounds thin, don't press harder. Move faster. Full bow, same weight, and let the string do the work.",
+     "chosen_by": "claude",
+     "confidence": "low",
+     "candidates": [
+      "A12",
+      "A16"
+     ],
+     "why": "no voice take covers this line yet; the clock stays ESTIMATED until one is recorded",
+     "anchor_text": "So"
+    }
+   ],
+   "note": "",
+   "flags": [
+    {
+     "code": "no-take",
+     "layer": null,
+     "msg": "no voice take bound to this line \u2014 the clock is ESTIMATED here"
+    }
+   ]
+  },
+  {
+   "id": "B9",
+   "name": "the fix",
+   "t0": 59.08,
+   "t1": 62.078,
+   "w0": 168,
+   "w1": 179,
+   "narration": "It will feel like you're doing less. You are. That's the point.",
+   "source": {
+    "cell": "C6",
+    "component": "C6.f00"
+   },
+   "layers": [
+    {
+     "id": "B9.L1",
+     "z": 0,
+     "kind": "image",
+     "asset": null,
+     "anchor_word": 168,
+     "offset_ms": 0,
+     "t0": 59.163,
+     "t1": 62.078,
+     "fit": "fill",
+     "chosen_by": "claude",
+     "confidence": "low",
+     "candidates": [],
+     "candidates_why": {},
+     "why": "nothing in the catalogue is about this \u2014 best was A08 (score 0.4, content evidence 1.4, needs 2.5)",
+     "source_component": "C6.c27",
+     "source_text": "show image of a player's face relaxing mid-note, eyes closed, soft side light \u2014 reaction, not demonstration",
+     "placement": "inline",
+     "dur_source": "to-next",
+     "essential": false,
+     "unsure": true,
+     "base": true,
+     "snapped": false,
+     "stub": {
+      "file": "stubs/stub-C6-c27.png",
+      "spec": "show image of a player's face relaxing mid-note, eyes closed, soft side light \u2014 reaction, not demonstration",
+      "kind": "image",
+      "status": "placeholder",
+      "why": "nothing in the catalogue satisfies this component; it has to be built, filmed or found",
+      "w": 1080,
+      "h": 1920,
+      "dur_s": 2.915
+     },
+     "anchor_text": "It"
+    }
+   ],
+   "audio": [
+    {
+     "id": "B9.A1",
+     "kind": "narration",
+     "asset": null,
+     "t0": 59.08,
+     "t1": 62.078,
+     "anchor_word": 168,
+     "offset_ms": 0,
+     "source_component": "C6.f00",
+     "text": "It will feel like you're doing less. You are. That's the point.",
+     "chosen_by": "claude",
+     "confidence": "low",
+     "candidates": [
+      "A12",
+      "A16"
+     ],
+     "why": "no voice take covers this line yet; the clock stays ESTIMATED until one is recorded",
+     "anchor_text": "It"
+    }
+   ],
+   "note": "",
+   "flags": [
+    {
+     "code": "no-take",
+     "layer": null,
+     "msg": "no voice take bound to this line \u2014 the clock is ESTIMATED here"
+    },
+    {
+     "code": "stub",
+     "layer": "B9.L1",
+     "msg": "has to be built: show image of a player's face relaxing mid-note, eyes closed, soft side light \u2014 "
+    },
+    {
+     "code": "creator-unsure",
+     "layer": "B9.L1",
+     "msg": "the creator marked this `?` \u2014 they want options"
+    }
+   ]
+  },
+  {
+   "id": "B10",
+   "name": "payoff",
+   "t0": 62.742,
+   "t1": 64.868,
+   "w0": 180,
+   "w1": 186,
+   "narration": "Speed is tone. Pressure is only contact.",
+   "source": {
+    "cell": "C7",
+    "component": "C7.74e"
+   },
+   "layers": [
+    {
+     "id": "B10.L1",
+     "z": 0,
+     "kind": "image",
+     "asset": "A09",
+     "anchor_word": 180,
+     "offset_ms": 0,
+     "t0": 62.824,
+     "t1": 64.868,
+     "fit": "fill",
+     "chosen_by": "claude",
+     "confidence": "high",
+     "candidates": [
+      "A07"
+     ],
+     "candidates_why": {
+      "A07": "image component / image asset (+2.0)"
+     },
+     "why": "binds_to shares card, plain, series, style (+3.9); role shares card, speed, tone (+2.3); shows shares black, card, plain, speed, white (+3.0); image component / image asset (+2.0)",
+     "source_component": "C7.bdd",
+     "source_text": "show image of a plain title card in the series style, white text on black, the words \"SPEED IS TONE\"",
+     "placement": "inline",
+     "dur_source": "to-next",
+     "essential": false,
+     "unsure": false,
+     "base": true,
+     "snapped": false,
+     "anchor_text": "Speed"
+    }
+   ],
+   "audio": [
+    {
+     "id": "B10.A1",
+     "kind": "narration",
+     "asset": null,
+     "t0": 62.742,
+     "t1": 64.868,
+     "anchor_word": 180,
+     "offset_ms": 0,
+     "source_component": "C7.74e",
+     "text": "Speed is tone. Pressure is only contact.",
+     "chosen_by": "claude",
+     "confidence": "low",
+     "candidates": [
+      "A12",
+      "A16"
+     ],
+     "why": "no voice take covers this line yet; the clock stays ESTIMATED until one is recorded",
+     "anchor_text": "Speed"
+    },
+    {
+     "id": "B10.A2",
+     "kind": "bed",
+     "asset": "A11",
+     "t0": 62.824,
+     "t1": 64.868,
+     "anchor_word": 180,
+     "offset_ms": 0,
+     "source_component": "C7.ceb",
+     "note": "audio of one clean ringing open D fading out under it",
+     "chosen_by": "claude",
+     "confidence": "high",
+     "candidates": [
+      "A12",
+      "A16"
+     ],
+     "why": "binds_to shares clean, fading, open, ringing (+3.5); role shares clean, fading, open, ringing (+2.5); shows shares clean, open (+1.3); audio component / audio asset (+2.0)",
+     "duck_db": -12,
+     "anchor_text": "Speed"
+    }
+   ],
+   "note": "Land on the line and get out. Text should stay on screen a beat after the narration ends.",
+   "flags": [
+    {
+     "code": "no-take",
+     "layer": null,
+     "msg": "no voice take bound to this line \u2014 the clock is ESTIMATED here"
+    }
+   ]
+  }
+ ],
+ "connected": [],
+ "alternates": [
+  {
+   "cell": "C2",
+   "name": "hook",
+   "variant": "B",
+   "narration": "Why do two people on the same violin, with the same bow, sound completely different?",
+   "words": 15,
+   "components": 3,
+   "est_s": 4.7,
+   "note": "Question-first version. Safer and more explainer-shaped than A \u2014 starts with the comparison instead of the ugly sound. Pick this one if the reel needs to travel to people who don't already play."
+  }
+ ],
+ "open": {
+  "unbound_layers": [
+   "B2.L2",
+   "B9.L1"
+  ],
+  "unused_assets": [
+   "A04",
+   "A12",
+   "A16",
+   "A14",
+   "A15"
+  ],
+  "questions": [
+   {
+    "beat": "B2",
+    "layer": "B2.L2",
+    "code": "make",
+    "msg": "no asset for show image of a hand-drawn arrow labelled \"MORE\" pointing st \u2014 stub emitted at 10.18s (stubs/stub-C3-269.png, 3.09s, 1080x1920). This is a numbered request: film it, find it or build it.",
+    "id": "Q1"
+   },
+   {
+    "beat": "B9",
+    "layer": "B9.L1",
+    "code": "make",
+    "msg": "no asset for show image of a player's face relaxing mid-note, eyes closed \u2014 stub emitted at 59.16s (stubs/stub-C6-c27.png, 2.92s, 1080x1920). This is a numbered request: film it, find it or build it.",
+    "id": "Q2"
+   },
+   {
+    "beat": null,
+    "layer": null,
+    "code": "unused",
+    "msg": "A04 (split-screen-two-arms.mov) is placed nowhere \u2014 bound only inside the unselected variant (C2) \u2014 it comes back if that variant is chosen",
+    "id": "Q3"
+   },
+   {
+    "beat": null,
+    "layer": null,
+    "code": "unused",
+    "msg": "A12 (take-01.wav) is placed nowhere \u2014 a voice take. Which take covers which line is an alignment question, not a binding one \u2014 it resolves when the measured clock arrives",
+    "id": "Q4"
+   },
+   {
+    "beat": null,
+    "layer": null,
+    "code": "unused",
+    "msg": "A16 (take-02.wav) is placed nowhere \u2014 a voice take. Which take covers which line is an alignment question, not a binding one \u2014 it resolves when the measured clock arrives",
+    "id": "Q5"
+   },
+   {
+    "beat": null,
+    "layer": null,
+    "code": "unused",
+    "msg": "A14 (published-cut.mp4) is placed nowhere \u2014 reference material \u2014 correctly unplaced",
+    "id": "Q6"
+   },
+   {
+    "beat": null,
+    "layer": null,
+    "code": "unused",
+    "msg": "A15 (stock-violin-desk.jpg) is placed nowhere \u2014 the catalogue already called this one unused",
+    "id": "Q7"
+   }
+  ]
+ }
+}
