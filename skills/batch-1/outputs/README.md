@@ -1,7 +1,7 @@
-[STORYBOARD-segment.html](https://github.com/user-attachments/files/31657173/STORYBOARD-segment.html)
 # Outputs — demos of what Batch 1 produced
 
 ## `Word_anchor_precision_demo.mov` — the word-anchor precision fix
+[▶️ Watch the demo on YouTube](https://youtube.com/watch?v=Oz6rBUQU4j8&feature=youtu.be)
 
 A screen recording of the fix for one of the report's central findings
 (§1, "coherent errors"): word anchors were not settled and precisely timed
@@ -22,6 +22,7 @@ identity (`anchor_text`), with timestamps derived from measured alignment of
 the actual recording.
 
 ## `STORYBOARD-segment.html` — the interactive review page
+[STORYBOARD-segment.html](https://github.com/user-attachments/files/31657173/STORYBOARD-segment.html)
 
 A real storyboard from a Batch-1 session (a ~20-second segment of a
 production reel), self-contained in one file — open it in any browser. This
