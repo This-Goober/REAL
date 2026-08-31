@@ -28,6 +28,3 @@ page is the pipeline's human control surface: embedded thumbnails, the
 per-scene layer breakdown, candidate alternatives, and the correction
 surface where a click writes a revision line. The Batch-2 tracks page
 described in the gap report grew directly out of this one.
-
-*Sanitized for publication: the only edit is the removal of a private cloud
-folder link; everything else is exactly as the session delivered it.*
