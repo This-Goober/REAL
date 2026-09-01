@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 360" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1180" height="360" rx="12" fill="#0d1117"/>
+  <text x="590" y="38" text-anchor="middle" fill="#e6edf3" font-size="20" font-weight="700">Word anchors — the word is the identity, the timestamp is derived</text>
+
+  <!-- estimated row -->
+  <text x="60" y="86" fill="#d29922" font-size="13" font-weight="700">ESTIMATED CLOCK</text>
+  <text x="230" y="86" fill="#8b949e" font-size="12">(no recording yet — word count × speaking rate, always badged)</text>
+  <line x1="60" y1="120" x2="1120" y2="120" stroke="#30363d" stroke-width="2"/>
+  <g font-size="14" fill="#e6edf3" text-anchor="middle">
+    <text x="140" y="112">That</text><text x="255" y="112">sound</text><text x="380" y="112">has</text><text x="500" y="112">a</text><text x="620" y="112">name…</text>
+    <text x="255" y="112" fill="#f85149" font-weight="700">sound</text>
+  </g>
+  <rect x="205" y="132" width="180" height="30" rx="6" fill="#1f2a37" stroke="#f85149" stroke-width="1.5"/>
+  <text x="295" y="152" text-anchor="middle" fill="#f85149" font-size="12.5">caption “a drone.”  t=4.20s (est)</text>
+  <path d="M255 132 L255 118" stroke="#f85149" stroke-width="2"/>
+
+  <!-- measured row -->
+  <text x="60" y="216" fill="#3fb950" font-size="13" font-weight="700">MEASURED CLOCK</text>
+  <text x="230" y="216" fill="#8b949e" font-size="12">(recording exists — forced alignment measures every word; times move, anchors don’t)</text>
+  <line x1="60" y1="250" x2="1120" y2="250" stroke="#30363d" stroke-width="2"/>
+  <g font-size="14" fill="#e6edf3" text-anchor="middle">
+    <text x="120" y="242">That</text><text x="330" y="242">sound</text><text x="430" y="242">has</text><text x="520" y="242">a</text><text x="660" y="242">name…</text>
+    <text x="330" y="242" fill="#3fb950" font-weight="700">sound</text>
+  </g>
+  <rect x="280" y="262" width="200" height="30" rx="6" fill="#12261b" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="380" y="282" text-anchor="middle" fill="#3fb950" font-size="12.5">same caption  t=5.87s (measured)</text>
+  <path d="M330 262 L330 248" stroke="#3fb950" stroke-width="2"/>
+
+  <!-- the invariant -->
+  <path d="M255 165 C 255 205, 330 215, 330 258" stroke="#8b949e" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
+  <text x="590" y="335" text-anchor="middle" fill="#8b949e" font-size="13">anchor_text: <tspan fill="#e6edf3" font-weight="700">"sound"</tspan> — pinned to the word, so re-timing NEVER moves what the creator approved.  Measured drift is uneven (one real beat: <tspan fill="#f85149">28% off</tspan> while the whole video was 3.8%) — which is why measuring comes first.</text>
+</svg>

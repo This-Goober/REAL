@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 430" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8b949e"/></marker>
+    <marker id="arrg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3fb950"/></marker>
+  </defs>
+  <rect width="1180" height="430" rx="12" fill="#0d1117"/>
+  <text x="590" y="40" text-anchor="middle" fill="#e6edf3" font-size="22" font-weight="700">The REAL Pipeline — idea → editable Final Cut timeline</text>
+  <text x="590" y="64" text-anchor="middle" fill="#8b949e" font-size="13">four Claude skills · one owner per decision · one authoritative handoff · no silent guessing</text>
+
+  <!-- step boxes -->
+  <g font-size="15" font-weight="700" text-anchor="middle">
+    <rect x="40"  y="110" width="230" height="120" rx="10" fill="#161b22" stroke="#d29922" stroke-width="2"/>
+    <text x="155" y="140" fill="#d29922">1 · /real-brainstorm</text>
+    <text x="155" y="166" fill="#e6edf3" font-weight="400" font-size="13">idea → script notebook</text>
+    <text x="155" y="186" fill="#e6edf3" font-weight="400" font-size="13">+ plain-language SHOTLIST</text>
+    <text x="155" y="212" fill="#8b949e" font-weight="400" font-size="12">owns: words &amp; plan</text>
+
+    <rect x="330" y="110" width="230" height="120" rx="10" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+    <text x="445" y="140" fill="#58a6ff">2 · /real-create-catalogue</text>
+    <text x="445" y="166" fill="#e6edf3" font-weight="400" font-size="13">scan · group look-alikes</text>
+    <text x="445" y="186" fill="#e6edf3" font-weight="400" font-size="13">rename (with approval)</text>
+    <text x="445" y="212" fill="#8b949e" font-weight="400" font-size="12">owns: media facts &amp; identity</text>
+
+    <rect x="620" y="110" width="230" height="120" rx="10" fill="#161b22" stroke="#bc8cff" stroke-width="2"/>
+    <text x="735" y="140" fill="#bc8cff">3 · /real-storyboarding</text>
+    <text x="735" y="166" fill="#e6edf3" font-weight="400" font-size="13">measure narration first</text>
+    <text x="735" y="186" fill="#e6edf3" font-weight="400" font-size="13">bind media · review by click</text>
+    <text x="735" y="212" fill="#8b949e" font-weight="400" font-size="12">owns: every editorial decision</text>
+
+    <rect x="910" y="110" width="230" height="120" rx="10" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+    <text x="1025" y="140" fill="#3fb950">4 · /real-compile</text>
+    <text x="1025" y="166" fill="#e6edf3" font-weight="400" font-size="13">translate · validate · parity</text>
+    <text x="1025" y="186" fill="#e6edf3" font-weight="400" font-size="13">refuse rather than guess</text>
+    <text x="1025" y="212" fill="#8b949e" font-weight="400" font-size="12">owns: zero editorial decisions</text>
+  </g>
+
+  <!-- arrows + artifacts -->
+  <g stroke="#8b949e" stroke-width="2" fill="none">
+    <line x1="270" y1="170" x2="326" y2="170" marker-end="url(#arr)"/>
+    <line x1="560" y1="170" x2="616" y2="170" marker-end="url(#arr)"/>
+    <line x1="850" y1="170" x2="906" y2="170" marker-end="url(#arr)"/>
+  </g>
+  <g font-size="11.5" text-anchor="middle" fill="#8b949e">
+    <text x="298" y="152">NOTEBOOK.md</text>
+    <text x="588" y="152">asset-catalog</text>
+    <text x="878" y="140" fill="#bc8cff" font-weight="700">reel.json ★</text>
+    <text x="878" y="154">authoritative</text>
+  </g>
+
+  <!-- human row -->
+  <g font-size="12.5" text-anchor="middle">
+    <rect x="105" y="280" width="390" height="52" rx="9" fill="#0d1117" stroke="#30363d" stroke-dasharray="5 4"/>
+    <text x="300" y="302" fill="#e6edf3">🎬  YOU shoot, record &amp; gather from the SHOTLIST</text>
+    <text x="300" y="320" fill="#8b949e">RECORD · SHOOT · FIND · MAKE — into one project folder</text>
+    <rect x="620" y="280" width="230" height="52" rx="9" fill="#0d1117" stroke="#30363d" stroke-dasharray="5 4"/>
+    <text x="735" y="302" fill="#e6edf3">🖱  YOU review in the tracks page</text>
+    <text x="735" y="320" fill="#8b949e">click to fix · your choices are final</text>
+    <rect x="910" y="280" width="230" height="52" rx="9" fill="#0d1117" stroke="#3fb950"/>
+    <text x="1025" y="302" fill="#3fb950" font-weight="700">🎞  Final Cut Pro</text>
+    <text x="1025" y="320" fill="#8b949e">File → Import → XML → editable project</text>
+  </g>
+  <g stroke="#30363d" stroke-width="2" fill="none">
+    <path d="M155 230 L155 306 L101 306" marker-end="url(#arr)"/>
+    <path d="M499 306 L445 306 L445 234" marker-end="url(#arr)"/>
+    <path d="M735 234 L735 276" marker-end="url(#arr)"/>
+  </g>
+  <path d="M1025 234 L1025 276" stroke="#3fb950" stroke-width="2.5" fill="none" marker-end="url(#arrg)"/>
+  <text x="1052" y="258" fill="#3fb950" font-size="11.5">.fcpxml</text>
+
+  <text x="590" y="405" text-anchor="middle" fill="#8b949e" font-size="12.5" font-style="italic">“A random error looks like noise. A coherent error reads as an editorial fact.” — so every step refuses, flags and asks instead of quietly guessing.</text>
+</svg>

@@ -14,8 +14,10 @@ across four logged sessions.
   - `module-1-5-asset-cataloger` — scan and describe a raw footage folder
   - `module-2-draft-assembler` — place real media into the plan, second by second
   - `module-3-fcpxml-sequencer` — export an editable Final Cut Pro timeline
-- [`outputs/`](./outputs/) — demos of what the pipeline produced, including
-  a screen recording of the word-anchor precision fix landing in Final Cut.
+- [`outputs/`](./outputs/) — **demos**: the word-anchor precision fix on
+  video ([YouTube](https://www.youtube.com/watch?v=Oz6rBUQU4j8)) and a
+  [live interactive storyboard](https://this-goober.github.io/REAL/skills/batch-1/outputs/STORYBOARD-segment.html)
+  from a real session.
 
 These skills are superseded by [Batch 2](../batch-2/), which rebuilds the
 architecture so the documented failures can't recur — but they remain here
