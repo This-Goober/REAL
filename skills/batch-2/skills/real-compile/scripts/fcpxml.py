@@ -27,32 +27,27 @@ references/fcpxml-notes.md. The short version:
     not in sequence time. Everything here goes through `_child_offset`.
 """
 
+from real_core import read_json
 import json
 import math
 import os
 import subprocess
 import sys
 from fractions import Fraction
+from real_core import FRAME_DURATIONS
 from xml.sax.saxutils import escape, quoteattr
 
 FCPXML_VERSION = "1.13"
 
 # name -> (frameDuration numerator, denominator)
-FRAME_DURATIONS = {
-    "23.976": (1001, 24000),
-    "24": (100, 2400),
-    "25": (100, 2500),
-    "29.97": (1001, 30000),
-    "30": (100, 3000),
-    "50": (100, 5000),
-    "59.94": (1001, 60000),
-    "60": (100, 6000),
-}
 
 BASIC_TITLE_UID = (
     ".../Titles.localized/Bumper:Opener.localized/"
     "Basic Title.localized/Basic Title.moti"
 )
+# Basic Title's style object path, observed in a native FCP 1.14 export.
+# Child channel IDs are defined by Apple's installed Basic Title.moti.
+BASIC_TITLE_STYLE_KEY = "9999/999166631/999166633/5/999166635"
 CROSS_DISSOLVE_UID = "FFTransition_CrossDissolve"
 
 # FCP's own convention: generators/titles/gaps live on an internal timeline
@@ -62,6 +57,59 @@ GENERATOR_START_FRAMES_SECONDS = 3600
 
 class BuildError(Exception):
     pass
+
+
+def basic_title_appearance(spec):
+    """Motion-channel mapping for Face/Glow; v4 Glow confirmed by the creator.
+
+    FCPXML has no glowColor attribute. Its param elements address channels
+    inside the Basic Title style. Paths derive from a creator-exported title;
+    IDs 38/39/40/43/45/77 are Apple's Glow group/fill/color/opacity/radius/blur.
+    These exact Glow paths are inferred, not specified by Apple's public
+    FCPXML reference. The authors confirmed visible Glow after importing Paganini
+    v4 on 2026-10-18. Individual checkbox states and export round-trip fidelity
+    are not covered by that confirmation (see references/fcpxml-notes.md).
+    """
+    params = []
+    def add(name, channel, **attrs):
+        params.append(El("param", name=name,
+                         key=BASIC_TITLE_STYLE_KEY + "/" + channel, **attrs))
+    if "face" in spec:
+        if not isinstance(spec["face"], bool):
+            raise BuildError("title face must be true or false")
+        add("Face", "14", enabled="1" if spec["face"] else "0")
+    glow = spec.get("glow")
+    if glow is None:
+        return params
+    if not isinstance(glow, dict):
+        raise BuildError("title glow must be an object with color, opacity, blur and radius")
+    unknown = set(glow) - {"color", "opacity", "blur", "radius"}
+    if unknown:
+        raise BuildError("unknown title glow field(s): " + ", ".join(sorted(unknown)))
+    color = glow.get("color", [1, 0.8784313725, 0.262745098, 1])
+    def number(value, name, maximum):
+        if (isinstance(value, bool) or not isinstance(value, (int, float))
+                or not math.isfinite(value) or not 0 <= value <= maximum):
+            raise BuildError("title glow %s must be a finite number from 0 to %s" % (name, maximum))
+        return value
+    if not isinstance(color, (list, tuple)) or len(color) != 4:
+        raise BuildError("title glow color must contain four RGBA components")
+    for value in color:
+        number(value, "color component", 1)
+    opacity = number(glow.get("opacity", 1), "opacity", 1) * color[3]
+    blur = number(glow.get("blur", 1), "blur", 100)
+    radius = number(glow.get("radius", 0), "radius", 100)
+    add("Glow", "38", enabled="1")
+    add("Fill with", "38/39", value="0 (Color)")
+    add("Color", "38/40", value=" ".join(str(v) for v in color[:3]))
+    add("Opacity", "38/43", value=opacity)
+    add("Blur", "38/77", value="%s %s" % (blur, blur))
+    add("Radius", "38/45", value=radius)
+    if not (spec.get("stroke_color") or spec.get("stroke_width")):
+        add("Outline", "30", enabled="0")
+    if not spec.get("shadow"):
+        add("Drop Shadow", "21", enabled="0")
+    return params
 
 
 # --------------------------------------------------------------------------
@@ -141,6 +189,8 @@ def probe(path):
             capture_output=True, text=True, timeout=60,
         )
         data = json.loads(out.stdout or "{}")
+        if out.returncode or not data.get("streams"):
+            return {}
     except Exception:
         return {}
     info = {"probed": True}
@@ -154,8 +204,8 @@ def probe(path):
             info["fps"] = float(Fraction(rate))
         except Exception:
             info["fps"] = 0.0
+    info["has_audio"] = a is not None
     if a:
-        info["has_audio"] = True
         info["audio_channels"] = int(a.get("channels") or 2)
         info["audio_rate"] = int(a.get("sample_rate") or 48000)
     dur = (data.get("format") or {}).get("duration")
@@ -350,6 +400,7 @@ class Resources:
                                      media.get("fps_key") or self.clock.key)
             dur_f = media["asset_frames"]
             attrs.update(duration=self.clock.t(dur_f), hasVideo="1",
+                         hasAudio="1" if media.get("has_audio") else "0",
                          format=fmt, videoSources="1")
             if media.get("has_audio"):
                 attrs.update(hasAudio="1", audioSources="1",
@@ -389,8 +440,31 @@ def _keyframe_param(name, keyframes, clock, base_frames):
     return p
 
 
-def build_transform(spec, clock, base_frames):
-    """spec: {'from': {...}, 'to': {...}, 'duration': s} or a static dict."""
+def position_percent(value, frame_height):
+    """REAL uses sequence pixels; FCPXML uses percent of project height on both axes.
+
+    Apple reference: professional-video-applications/animation. A position of
+    -5 10 moves left 5% and up 10% of project height. Scale remains a ratio;
+    raw story transform.anchor retains its native FCPXML percentage units.
+    """
+    if isinstance(value, str):
+        value = value.split()
+    elif isinstance(value, (int, float)):
+        value = [value, value]
+    if not isinstance(value, (list, tuple)) or len(value) != 2:
+        raise BuildError("position must contain two pixel coordinates")
+    try:
+        height = float(frame_height)
+        coordinates = [float(x) for x in value]
+    except (TypeError, ValueError):
+        raise BuildError("position and frame height must be finite numbers")
+    if not math.isfinite(height) or height <= 0 or not all(math.isfinite(x) for x in coordinates):
+        raise BuildError("position and frame height must be finite; height must be positive")
+    return _vec([x * 100 / height for x in coordinates])
+
+
+def build_transform(spec, clock, base_frames, frame_height):
+    """Static or animated transform; serialize pixel positions in FCPXML units."""
     if not spec:
         return None
     if "from" in spec or "to" in spec:
@@ -406,16 +480,17 @@ def build_transform(spec, clock, base_frames):
                 continue
             va = a.get(key, b.get(key))
             vb = b.get(key, a.get(key))
+            serialize = (lambda v: position_percent(v, frame_height)) if key == "position" else _vec
             el.add(_keyframe_param(
                 param,
-                [{"t": 0, "value": _vec(va)},
-                 {"t": dur, "value": _vec(vb), "curve": "smooth"}],
+                [{"t": 0, "value": serialize(va)},
+                 {"t": dur, "value": serialize(vb), "curve": "smooth"}],
                 clock, base_frames))
         return el
     attrs = {}
     for key in ("position", "scale", "anchor"):
         if key in spec:
-            attrs[key] = _vec(spec[key])
+            attrs[key] = position_percent(spec[key], frame_height) if key == "position" else _vec(spec[key])
     if "rotation" in spec:
         attrs["rotation"] = str(spec["rotation"])
     return El("adjust-transform", **attrs) if attrs else None
@@ -458,13 +533,14 @@ def build_blend(item, clock, base_frames, dur_frames):
         return el
     if fi or fo:
         total = clock.seconds(dur_frames)
+        peak = item.get("opacity", 1)
         pts = []
         if fi:
-            pts += [{"t": 0, "value": 0}, {"t": fi, "value": 1, "curve": "smooth"}]
+            pts += [{"t": 0, "value": 0}, {"t": fi, "value": peak, "curve": "smooth"}]
         else:
-            pts += [{"t": 0, "value": 1}]
+            pts += [{"t": 0, "value": peak}]
         if fo:
-            pts += [{"t": max(0, total - fo), "value": 1},
+            pts += [{"t": max(0, total - fo), "value": peak},
                     {"t": total, "value": 0, "curve": "smooth"}]
         el = El("adjust-blend")
         el.add(_keyframe_param("amount", pts, clock, base_frames))
@@ -589,7 +665,7 @@ class Story:
             "exists_locally": os.path.exists(local_path),
         }
         if kind == "video" and info.get("has_audio") is None:
-            media["has_audio"] = True  # assume; FCP tolerates the claim
+            media["has_audio"] = True  # legacy fallback only when probing is unavailable
         self._media_cache[key] = media
         return media
 
@@ -651,6 +727,8 @@ class Story:
                          start=self.clock.t(start_f))
             if media["has_audio"]:
                 attrs["audioRole"] = spec.get("role", "dialogue")
+            else:
+                attrs["srcEnable"] = "video"
             if spec.get("video_role"):
                 attrs["videoRole"] = spec["video_role"]
             # srcEnable="audio" takes just the sound of a movie — a demo
@@ -687,14 +765,14 @@ class Story:
         if kind == "gap":
             return el, start_f, off_f
         t = build_transform(spec.get("kenburns") or spec.get("transform"),
-                            self.clock, start_f)
+                            self.clock, start_f, self.height)
         if t is not None:
             el.add(t)
         b = build_blend(spec, self.clock, start_f, dur_f)
         if b is not None:
             el.add(b)
         v = build_volume(spec, self.clock, start_f)
-        if v is not None and kind in ("video", "audio"):
+        if v is not None and kind in ("video", "audio") and media["has_audio"]:
             el.add(v)
 
         # Child order is fixed up globally by order_children() at render time.
@@ -709,21 +787,28 @@ class Story:
         el = El("title", ref=eff,
                 name=spec.get("name", (text[:40] or "Title")),
                 start=self.clock.t(start_f), **common)
+        for param in basic_title_appearance(spec):
+            el.add(param)
         pos = spec.get("position")
         if pos is not None:
-            el.add(El("adjust-transform", position=_vec(pos)))
+            el.add(El("adjust-transform", position=position_percent(pos, self.height)))
         txt = El("text")
         txt.add(_text_style_ref(sid, text))
         el.add(txt)
         style = El("text-style",
                    font=spec.get("font", "Helvetica Neue"),
-                   fontSize=spec.get("font_size", 96),
+                   fontSize=spec.get("font_size", 40),
                    fontFace=spec.get("font_face", "Bold"),
-                   fontColor=_color(spec.get("color", [1, 1, 1, 1])),
+                   # Do not re-enable Face by supplying a fill when the
+                   # creator explicitly requested Glow only.
+                   fontColor=(_color(spec.get("color", [1, 1, 1, 1]))
+                              if spec.get("face", True) else None),
                    alignment=spec.get("align", "center"),
                    lineSpacing=spec.get("line_spacing"))
-        if spec.get("stroke_color"):
-            style.set(strokeColor=_color(spec["stroke_color"]),
+        # Outline only when the layer asks for it (either field); the presets
+        # no longer carry a stroke, so default text renders as Final Cut "Face".
+        if spec.get("stroke_color") or spec.get("stroke_width"):
+            style.set(strokeColor=_color(spec.get("stroke_color", [0, 0, 0, 1])),
                       strokeWidth=spec.get("stroke_width", 6))
         if spec.get("shadow"):
             style.set(shadowColor=_color(spec.get("shadow_color", [0, 0, 0, 0.75])),
@@ -986,7 +1071,7 @@ def main(argv):
     if cmd == "build":
         story_path, out_path = argv[2], argv[3]
         do_probe = "--no-probe" not in argv
-        story = json.load(open(story_path))
+        story = read_json(story_path, "story")
         s = Story(story, base_dir=os.path.dirname(os.path.abspath(story_path)),
                   do_probe=do_probe)
         xml = s.build()

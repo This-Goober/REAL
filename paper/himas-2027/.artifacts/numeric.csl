@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" default-locale="en-US">
+  <info>
+    <title>REAL numeric review style</title>
+    <id>https://github.com/htansetiawan/REAL/numeric-review</id>
+    <updated>2026-10-18T00:00:00+00:00</updated>
+    <rights license="https://opensource.org/licenses/MIT">MIT</rights>
+  </info>
+  <citation collapse="citation-number">
+    <sort><key variable="citation-number"/></sort>
+    <layout prefix="[" suffix="]" delimiter=", "><text variable="citation-number"/></layout>
+  </citation>
+  <bibliography entry-spacing="0" second-field-align="flush">
+    <layout suffix=".">
+      <text variable="citation-number" prefix="[" suffix="]"/>
+      <group delimiter=". ">
+        <names variable="author"><name initialize-with=". " and="text"/><et-al/></names>
+        <text variable="title" font-style="italic"/>
+        <group delimiter=", ">
+          <text variable="container-title"/>
+          <text variable="collection-title"/>
+          <group><text variable="volume"/><text variable="issue" prefix="(" suffix=")"/></group>
+          <text variable="page" prefix="pp. "/>
+          <text variable="publisher"/>
+          <text variable="number"/>
+        </group>
+        <text variable="note"/>
+        <date variable="issued"><date-part name="year"/></date>
+        <choose><if variable="DOI"><text variable="DOI" prefix="https://doi.org/"/></if><else><text variable="URL"/></else></choose>
+      </group>
+    </layout>
+  </bibliography>
+</style>

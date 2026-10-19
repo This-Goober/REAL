@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "files_sha256": {
+    "REAL-HIMAS-2027.pdf": "710f4cf433a06b2769d2a2c9c18d78830c1428d33ac20206b6962e3dfac0de1f",
+    "REAL-HIMAS-2027-source.zip": "c8391f129654fd16151605689ff3fdd6be8cf4a038202153af07ace26c27f1bc",
+    "REAL-HIMAS-2027.html": "ba424ced7e02d81e0cef346b6c5ced5d404bf8e8887dc985f03d2f57b982fe95",
+    "catalogue-path.pdf": "f9448cd2b061976570a7e1ff21f22b6589f5913ce8d9014ccaa8c4b0d8b2aec6"
+  },
+  "checked": [
+    "REAL-HIMAS-2027.md",
+    "REAL-HIMAS-2027.html",
+    "REAL-HIMAS-2027.tex",
+    "PDF text",
+    "PDF document information",
+    "PDF XMP metadata",
+    "standalone ZIP filenames and all non-PDF source/license text"
+  ],
+  "author_contributions_and_acknowledgments_absent": true,
+  "raw_photo_files_in_source_zip": false,
+  "figure_redaction": "Raster face masks applied before embedding; visual inspection recorded separately.",
+  "scope": "Known author identifiers only. Scholarly references and third-party tools remain. Internal repository and evidence archives are not anonymous."
+}

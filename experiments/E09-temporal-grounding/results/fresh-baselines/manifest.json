@@ -1,0 +1,49 @@
+{
+  "dataset": "QVHighlights",
+  "split": "val",
+  "scope": "component pilot",
+  "inputs_sha256": "2d7806e1d083c80ac087c838a478932eb5b8e9f6b6c4673b6865307fcb6d5fa4",
+  "qids": [
+    2428,
+    10243,
+    1678,
+    2967,
+    1548
+  ],
+  "model": "claude-sonnet-5-5",
+  "max_cost_per_call_usd": 1.0,
+  "conditions": [
+    "real-binder",
+    "direct-vision",
+    "random-window",
+    "full-video"
+  ],
+  "source_hashes": {
+    "bench/academic/pilot.py": "1796e659a36c5f2b820487685fb2b7895d6fd22cf6553f803601a3f8a997bc36",
+    "bench/academic/model.py": "eb6404d7af7ef626b11f9eac43ce5d719238cbd09dec85e399c378aa3f6186b4",
+    "bench/academic/common.py": "790fcc931efd734ee584e293b5665bcbfe3c7add741e8a32266af63edc070f45",
+    "skills/batch-2/skills/real-storyboarding/scripts/bind.py": "a05aa4828645c5bbe3c9d77c2ea8e7f92a73f87366de9138cee45c6c2d09b331",
+    "skills/batch-2/skills/real-storyboarding/scripts/real_core.py": "26a8d60f6b9df884743f24916473e96c4f7dc717c5f43d4617db8d7b99839850"
+  },
+  "protocol": "2s proposals, 1 centre frame/window, visual only; one model call/condition/case",
+  "baseline_control": "same model, sampled images and per-call cost cap; prompts differ by condition",
+  "replayed_from": {
+    "path": "/media/shared/seagate/REAL/codex-hardening/bench/work/academic-fresh/qvh/runs/pilot-v1",
+    "manifest_sha256": "33c543342c5bdaa5e612fa872bc56220f654e02dd7bb503628b876afcfc3ed94",
+    "reason": "decode intact JSON and stably rank by unmodified model confidence; no coordinate or confidence edits",
+    "new_model_calls": 0
+  },
+  "replay_source_hashes": {
+    "__init__.py": "3ac995372c89f0aeb5489e769b336227e4f3fe04758bdd041da18aa6b72b29e8",
+    "common.py": "790fcc931efd734ee584e293b5665bcbfe3c7add741e8a32266af63edc070f45",
+    "data.py": "e5c1cccfd1ad407cf565f3a59dadbef3db47255ad61717a7af255d7b7e5bf49b",
+    "qvh.py": "f776e4e65d1b39941ec52decb75e08cf4d3c2e6362e4756c4af1722a96a0c767",
+    "medit.py": "781943d4315d6a2190164eb38e955c1327b3646de0961d8f5711e68463358327",
+    "model.py": "eb6404d7af7ef626b11f9eac43ce5d719238cbd09dec85e399c378aa3f6186b4",
+    "pilot.py": "796008713eba2dce57d379aca3aee3dce2ecf3ebb36d3fb117cf85dc7742084a",
+    "test_academic.py": "8f0a313a0c81bf7d495fe48313f8b55a35d4364e83492a2c95db26bb33189f58",
+    "report.py": "0362273b20fc18cd6cc55c20dc7f7e29fc0cad58dc83a13cfef778645a157daa",
+    "replay.py": "fa093a2c0f7cafa79e02d5de9595cf625d90ab1e800a619a13e75059cd98d7e2",
+    "temporal.py": "6ee1ed45b50e1dde006a4b454faa8f05b72f8222ac8c8ca6a5b16d5a2249c0fe"
+  }
+}

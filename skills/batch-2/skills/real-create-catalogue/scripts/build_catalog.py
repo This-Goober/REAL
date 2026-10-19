@@ -12,6 +12,7 @@ Runs where the media lives, so nothing large moves.
 Handles four asset kinds: video, image, audio and text. Text assets get a
 readable excerpt card in place of a thumbnail.
 """
+from real_core import read_json, write_json
 import base64, html, io, json, os, subprocess, sys
 
 THUMB = 220
@@ -148,7 +149,7 @@ BEAT_COLORS = {"B1": "#c85a54", "B2": "#c8913f", "B3": "#3f9e78", "B4": "#3d76d4
 
 
 def main(data_path, outdir):
-    D = json.load(open(data_path))
+    D = read_json(data_path, "asset-catalog")
     os.makedirs(outdir, exist_ok=True)
     rows, jrows = [], []
     for i, a in enumerate(D["assets"], 1):
@@ -233,7 +234,7 @@ def main(data_path, outdir):
         "takes": len(D["script_beats"]),
         "total": f"{total:.1f}", "beats": beats, "rows": "".join(rows)}
     open(os.path.join(outdir, "ASSET-CATALOG.html"), "w").write(doc)
-    json.dump({**D, "assets": jrows}, open(os.path.join(outdir, "asset-catalog.json"), "w"), indent=1)
+    write_json(os.path.join(outdir, "asset-catalog.json"), {**D, "assets": jrows}, "asset-catalog")
     print("wrote", os.path.join(outdir, "ASSET-CATALOG.html"))
     print("wrote", os.path.join(outdir, "asset-catalog.json"))
     missing = [r["f"] for r in jrows if not r["exists"]]

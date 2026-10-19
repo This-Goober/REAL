@@ -33,11 +33,13 @@ Hard rules that survived the migration:
 Stdlib only.
 """
 
+from real_core import read_json, write_json
 import argparse
 import json
 import os
 import re
 import sys
+from real_core import WORD_RE, tokenize, measured_words
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RATES_PATH = os.path.join(HERE, "rates.json")
@@ -106,29 +108,6 @@ def token_syllables(tok):
         n += tok.count(":")           # a ratio's ':' is spoken as "to"
         return max(1, n)
     return syllables(tok)
-
-
-WORD_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9'’\-:/]*")
-
-
-def tokenize(chunk):
-    """-> [(word, trailing_punctuation)] preserving what follows each word."""
-    out = []
-    for m in WORD_RE.finditer(chunk):
-        w = m.group(0)
-        tail = chunk[m.end():m.end() + 3]
-        punct = ""
-        for ch in tail:
-            if ch in ".!?,;:—–":
-                punct += ch
-            elif ch in " \"')”’":
-                continue
-            else:
-                break
-        if "--" in tail[:2]:
-            punct += "—"
-        out.append((w, punct))
-    return out
 
 
 def word_dur(tok, rates):
@@ -208,6 +187,11 @@ def split_blocks(cell):
             cur["groups"].append(g)
     if cur is not None:
         blocks.append(cur)
+    if not blocks and not cell.get("groups"):
+        # A cell with no components at all (typically prose before the first
+        # heading) is a note, not a beat. Planning it produced an empty,
+        # zero-length beat that overlapped the first real one (journal 003).
+        return []
     if not blocks:                      # a wordless cell is still one beat
         blocks = [{"narr_group": None, "narration": [], "extra": [],
                    "groups": [g for g, _ in flatten(cell)], "lead": []}]
@@ -222,7 +206,7 @@ def group_dur(g):
     return max(ds) if ds else None
 
 
-def plan(nb, rates, variants=None):
+def plan(nb, rates, variants=None, measured=None):
     """Build the placement plan: beats, words (untimed), placements with word
     anchors. This is where the editorial decisions are made — ONCE. Re-timing
     re-derives seconds from this and never revisits it."""
@@ -322,11 +306,24 @@ def plan(nb, rates, variants=None):
             # Relative word clock inside this beat, used ONLY to decide which
             # groups fit. The decision is frozen here; re-timing never redoes it.
             rel, acc, span = {}, 0.0, 0.0
-            for w in (words[beat["w0"]:beat["w1"] + 1] if not wordless else []):
-                rel[w["i"]] = acc
-                acc += word_dur(w["w"], rates)
-                span = acc                      # audible end of the last word
-                acc += pause_after(w["punct"], rates)
+            bw = words[beat["w0"]:beat["w1"] + 1] if not wordless else []
+            if measured and bw and all(w["i"] in measured for w in bw):
+                # Measure first: when the narration is already recorded, the
+                # inline-versus-hold decision is made on the recording, not on
+                # the estimate. Deciding on the estimate and swapping later
+                # misclassified a timed overlay as a hold whenever the read was
+                # faster than the model, and the hold then ran into the next
+                # beat (bench finding 002-D).
+                base = measured[bw[0]["i"]][0]
+                for w in bw:
+                    rel[w["i"]] = measured[w["i"]][0] - base
+                span = measured[bw[-1]["i"]][1] - base
+            else:
+                for w in bw:
+                    rel[w["i"]] = acc
+                    acc += word_dur(w["w"], rates)
+                    span = acc                  # audible end of the last word
+                    acc += pause_after(w["punct"], rates)
             L = beat["w1"] - beat["w0"] + 1
 
             def anchor_at(i, n):
@@ -356,8 +353,14 @@ def plan(nb, rates, variants=None):
             for i, g in enumerate(inline):
                 for c in g["components"]:
                     dur, src = resolved_dur(c, g)
+                    # The first visual of a group is the base of the primary
+                    # storyline — unless it carries an explicit duration. A
+                    # timed visual written after a running shot is an INSERT
+                    # that sits over the shot and lets it continue underneath;
+                    # treating it as a base cut the shot short and left the
+                    # beat black once the insert ended (bench finding 002-B).
                     add(c, g, "inline", anchor_at(i, n), dur, src,
-                        base=(c is first_visual(g)))
+                        base=(c is first_visual(g) and c["dur_s"] is None))
 
             hold_total = 0.0
             for g in holds:
@@ -383,7 +386,7 @@ def plan(nb, rates, variants=None):
                 for c in g["components"]:
                     dur, src = resolved_dur(c, g)
                     p = add(c, g, "post", beat["w1"], dur, src,
-                            base=(c is first_visual(g)))
+                            base=(c is first_visual(g) and c["dur_s"] is None))
                     p["offset_ms"] = off
 
             if wordless and not any(p["placement"] == "hold"
@@ -418,6 +421,7 @@ def plan(nb, rates, variants=None):
 
 
 # ----------------------------------------------------------- estimated pass
+
 
 def lay_out_estimated(P, rates):
     """Give every word an absolute estimated start/end, with lead-ins, holds
@@ -455,7 +459,11 @@ def lay_out_estimated(P, rates):
 
 def derive(C, rates):
     """Recompute every second from the word times + the frozen plan. This is the
-    ONLY place t0/t1 are written, in both estimated and measured mode."""
+    shared placement derivation in both estimated and measured mode.
+
+    Preserve sub-millisecond results: rounding to milliseconds here can cross
+    a half-frame boundary. The compiler snaps absolute boundaries to frames.
+    """
     words = C["words"]
     n = len(words)
     cut = rates.get("cut_into_word", 0.4)
@@ -493,13 +501,13 @@ def derive(C, rates):
             narr0 = narr1 = wend(b["w0"])
         else:
             narr0, narr1 = wstart(b["w0"]), wend(b["w1"])
-        b["t0"] = round(max(0.0, narr0 - lead_s), 3)
+        b["t0"] = (max(0.0, narr0 - lead_s))
         # In measured mode the recording decides where the first word is. If it
         # leaves less room than the cold open asked for, squeeze the lead and
         # say so — never push a beat to a negative time, and never silently
         # drop the creator's `~2s`.
         avail = max(0.0, narr0 - b["t0"])
-        b["lead_clipped_s"] = round(max(0.0, lead_s - avail), 3)
+        b["lead_clipped_s"] = (max(0.0, lead_s - avail))
 
         # Leads run BACKWARDS from the first word, one lane at a time, so an
         # explicit `~2s` keeps its full 2s. If the recording leaves less room
@@ -512,10 +520,10 @@ def derive(C, rates):
                 own = sum(q["dur_s"] for q in leads
                           if q["lane"] == p["lane"] and q["dur_source"] == "explicit")
                 start = max(0.0, narr0 - own) if own else b["t0"]
-            p["t0"] = round(start, 3)
+            p["t0"] = (start)
             p["_fixed"] = False
             if p["dur_source"] == "explicit":
-                p["t1"] = round(p["t0"] + p["dur_s"], 3)
+                p["t1"] = (p["t0"] + p["dur_s"])
                 p["_fixed"] = True
                 cursor[p["lane"]] = p["t1"]
 
@@ -526,8 +534,8 @@ def derive(C, rates):
             if p["group"] not in group_t:
                 group_t[p["group"]] = t
                 t += p["dur_s"] or 0.0
-            p["t0"] = round(group_t[p["group"]], 3)
-            p["t1"] = round(group_t[p["group"]] + (p["dur_s"] or 0.0), 3)
+            p["t0"] = (group_t[p["group"]])
+            p["t1"] = (group_t[p["group"]] + (p["dur_s"] or 0.0))
             p["anchor_word"] = b["w1"]
         hold_end = t
 
@@ -536,14 +544,23 @@ def derive(C, rates):
                 p["t0"], p["t1"] = b["t0"], narr1
                 p["anchor_word"] = b["w0"]
             elif p["placement"] == "inline":
-                p["t0"] = round(cut_point(p["anchor_word"])
-                                + (p["offset_ms"] or 0) / 1000.0, 3)
+                # A cue on the first word of a line lands on the beat
+                # boundary, not 40% into that word: otherwise every beat
+                # opened with three or four black frames and the shot rode a
+                # connected lane over a gap instead of sitting on the primary
+                # storyline (bench finding 002-A).
+                if p["anchor_word"] == b["w0"] and not p["offset_ms"] \
+                        and not b["wordless"]:
+                    p["t0"] = (narr0)
+                else:
+                    p["t0"] = (cut_point(p["anchor_word"])
+                                    + (p["offset_ms"] or 0) / 1000.0)
             elif p["placement"] == "post":
-                p["t0"] = round(narr1 + (p["offset_ms"] or 0) / 1000.0, 3)
+                p["t0"] = (narr1 + (p["offset_ms"] or 0) / 1000.0)
 
-        b["t1"] = round(max(narr1, hold_end,
+        b["t1"] = (max(narr1, hold_end,
                             max([p["t0"] + (p["dur_s"] or 0.0) for p in ps
-                                 if p["placement"] == "post"] or [0.0])), 3)
+                                 if p["placement"] == "post"] or [0.0])))
 
         # two cues inside the snap window read as one event, so make them one
         cued = sorted([p for p in ps if p["placement"] in ("inline", "post")],
@@ -559,26 +576,42 @@ def derive(C, rates):
         for i, p in enumerate(bases):
             if p.get("_fixed"):
                 continue
-            nxt = bases[i + 1]["t0"] if i + 1 < len(bases) else None
+            nxt = next((q["t0"] for q in bases[i + 1:]
+                        if q["dur_source"] != "explicit"), None)
             end = min(x for x in [nxt, b["t1"]] if x is not None)
             if p["dur_source"] == "explicit":
-                p["t1"] = round(p["t0"] + p["dur_s"], 3)
+                p["t1"] = (p["t0"] + p["dur_s"])
             else:
-                p["t1"] = round(max(end, p["t0"] + 0.4), 3)
+                p["t1"] = (max(end, p["t0"] + 0.4))
         for p in ps:
             if p["base"] or p["placement"] in ("narration", "hold") or p.get("_fixed"):
                 continue
             if p["dur_source"] == "explicit":
-                p["t1"] = round(p["t0"] + p["dur_s"], 3)
+                p["t1"] = (p["t0"] + p["dur_s"])
+                if p["placement"] == "inline" and p["t1"] > b["t1"]:
+                    # the line ended first (a measured read can be shorter
+                    # than the estimate the hold decision was made on); an
+                    # inline cue cannot outlive its beat, so say so
+                    p["t1"] = b["t1"]
+                    p["clipped"] = True
             elif p["dur_s"] is not None:
-                p["t1"] = round(min(p["t0"] + p["dur_s"], b["t1"]), 3)
+                p["t1"] = (min(p["t0"] + p["dur_s"], b["t1"]))
             else:
                 p["t1"] = b["t1"]
         for p in ps:
             p.pop("_fixed", None)
-            p["dur_s"] = round(max(0.0, p["t1"] - p["t0"]), 3)
+            # `span_s` is what the layer occupies on this clock; `dur_s` stays
+            # the creator's explicit number when there is one, so a `~1.7s`
+            # that was clipped by a short estimated line is still 1.7s when
+            # the measured clock makes room for it (bench finding 002-C).
+            p["span_s"] = (max(0.0, p["t1"] - p["t0"]))
+            if p["dur_source"] != "explicit":
+                p["dur_s"] = p["span_s"]
 
-    C["total_s"] = round(max([b["t1"] for b in C["beats"]] or [0.0]), 3)
+    if (C.get("pause_policy") or rates.get("pause_policy") or "blank") == "hold":
+        hold_pauses(C, P, rates)
+
+    C["total_s"] = (max([b["t1"] for b in C["beats"]] or [0.0]))
     C["total_words"] = len(words)
     # rate_wps is the SPEAKING rate — words over the time words are actually
     # being spoken. Runtime includes holds and the silence between beats, so
@@ -599,24 +632,98 @@ def derive(C, rates):
     return C
 
 
+def hold_pauses(C, P, rates):
+    """Pause policy `hold`: the picture never goes black between lines.
+
+    Each beat's shot holds through the pause that follows its line and the
+    cut to the next beat lands `cut_lead_s` before the next line's first word
+    (an editor's pre-lap; 0.1 s by default). The first beat starts at 0; the
+    last holds to the end of the recording when its length is known
+    (`audio_total_s`, from measured.json). Words, anchors and every placement
+    decision are unchanged: only base visuals and beds that ran to a beat
+    boundary move with it. The default policy, `blank`, keeps the original
+    behaviour: real silence between beats is a named black gap.
+    """
+    lead = float(rates.get("cut_lead_s", 0.1))
+    beats = C["beats"]
+    old = [(b["t0"], b["t1"]) for b in beats]
+    new = []
+    for k, b in enumerate(beats):
+        t0, t1 = old[k]
+        n0 = 0.0 if k == 0 else max(new[k - 1][1], 0.0)
+        if k == 0:
+            n0 = 0.0
+        if k + 1 < len(beats):
+            nb = beats[k + 1]
+            nxt0 = old[k + 1][0] - (0.0 if nb.get("lead_s") else lead)
+            n1 = max(t1, (nxt0))
+        else:
+            end = C.get("audio_total_s")
+            n1 = max(t1, (float(end))) if end else t1
+        if k > 0 and new[k - 1][1] > t0 + 1e-6:
+            n0 = t0                     # previous beat already runs into this one
+        new.append(((n0), (n1)))
+    for (t0, t1), (n0, n1), b in zip(old, new, beats):
+        for p in P[b["id"]]:
+            if p["placement"] == "narration":
+                continue
+            if p["base"] and abs(p["t0"] - t0) < 1e-6:
+                p["t0"] = n0
+            if abs(p["t1"] - t1) < 1e-6 and (p["base"] or p["dur_source"] != "explicit"):
+                p["t1"] = n1
+            p["span_s"] = (max(0.0, p["t1"] - p["t0"]))
+            if p["dur_source"] != "explicit":
+                p["dur_s"] = p["span_s"]
+        b["t0"], b["t1"] = n0, n1
+        b["held_to"] = n1
+
+
 # ------------------------------------------------------------------ cli
 
 def cmd_time(args):
     rates = load_rates()
     with open(args.notebook) as fh:
-        nb = json.load(fh)
+        nb = read_json(fh, "notebook")
     variants = {}
     for v in args.variant or []:
         if "=" in v:
             k, val = v.split("=", 1)
             variants[k] = val
-    P = plan(nb, rates, variants)
+    measured = None
+    if getattr(args, "measured", None):
+        with open(args.measured) as fh:
+            M = read_json(fh, "measured")
+        if not (isinstance(M.get("words"), list) and M["words"]):
+            sys.stderr.write("--measured needs a word-level alignment (a `words` "
+                             "list); per-beat durations can only be swapped in "
+                             "later with `clock.py swap`\n")
+            raise SystemExit(2)
+        measured = measured_words(M)
+    P = plan(nb, rates, variants, measured=measured)
     lay_out_estimated(P, rates)
+    est_total = None
+    if measured:
+        # keep the estimate for the report, then put the recording under it
+        tmp = {"words": P["words"], "beats": P["beats"],
+               "placements": [dict(p) for p in P["placements"]]}
+        derive(tmp, rates)
+        est_total = tmp.get("total_s")
+        missing = [w["i"] for w in P["words"] if w["i"] not in measured]
+        for w in P["words"]:
+            if w["i"] in measured:
+                w["start"], w["end"] = (round(measured[w["i"]][0], 3),
+                                        round(measured[w["i"]][1], 3))
+        if missing:
+            P["warnings"].append("%d narration words have no measured time and "
+                                 "keep their estimate; the beats around them will "
+                                 "be off" % len(missing))
     C = {
-        "mode": "estimated",
+        "mode": "measured" if measured else "estimated",
         "rate_wps": 0.0,
         "rate_source": rate_source(rates),
-        "note": clock_note(rates),
+        "note": ("measured first — word-level alignment (%d words); placement "
+                 "decided on the recording" % len(measured)) if measured
+                else clock_note(rates),
         "rates": rates,
         "reel": nb.get("meta", {}).get("reel"),
         "aspect": nb.get("meta", {}).get("aspect", "9:16"),
@@ -625,11 +732,17 @@ def cmd_time(args):
         "placements": P["placements"], "alternates": P["alternates"],
         "warnings": P["warnings"] + [w["msg"] for w in nb.get("warnings", [])],
     }
+    if est_total is not None:
+        C["estimated_total_s"] = est_total
+    if getattr(args, "pauses", None):
+        C["pause_policy"] = args.pauses
+    if measured and M.get("total_s"):
+        C["audio_total_s"] = float(M["total_s"])
     derive(C, rates)
-    with open(args.out, "w") as fh:
-        json.dump(C, fh, indent=1)
+    write_json(args.out, C, "clock")
 
-    print("ESTIMATED — %s (%s)" % (C["note"], C["rate_source"]))
+    print("%s — %s (%s)" % ("MEASURED" if measured else "ESTIMATED",
+                           C["note"], C["rate_source"]))
     print("%d beats · %d narration words · %.2f s estimated runtime "
           "(%.2f s of it spoken, %.2f w/s effective vs %.2f w/s calibrated) -> %s"
           % (len(C["beats"]), C["total_words"], C["total_s"], C["narration_s"],
@@ -653,9 +766,9 @@ def cmd_time(args):
 def cmd_swap(args):
     rates = load_rates()
     with open(args.clock) as fh:
-        C = json.load(fh)
+        C = read_json(fh, "clock")
     with open(args.measured) as fh:
-        M = json.load(fh)
+        M = read_json(fh, "measured")
     rates.update(C.get("rates") or {})
 
     est = {w["i"]: (w["start"], w["end"]) for w in C["words"]}
@@ -664,12 +777,12 @@ def cmd_swap(args):
     applied = None
 
     if isinstance(M.get("words"), list) and M["words"]:
-        idx = {int(w["i"]): w for w in M["words"] if "i" in w}
+        idx = measured_words(M)
         missing = [w["i"] for w in words if w["i"] not in idx]
         for w in words:
             m = idx.get(w["i"])
             if m:
-                w["start"], w["end"] = round(float(m["start"]), 3), round(float(m["end"]), 3)
+                w["start"], w["end"] = round(m[0], 3), round(m[1], 3)
         if missing:
             print("  ! %d words had no measured entry; they keep their estimated "
                   "times and the beat around them will be off" % len(missing))
@@ -697,14 +810,15 @@ def cmd_swap(args):
                          "nothing to swap\n")
         raise SystemExit(2)
 
+    if M.get("total_s"):
+        C["audio_total_s"] = float(M["total_s"])
     before = C["total_s"]
     C["mode"] = "measured"
     C["note"] = "measured — %s" % applied
     C["estimated_total_s"] = before
     derive(C, rates)
     out = args.out or args.clock
-    with open(out, "w") as fh:
-        json.dump(C, fh, indent=1)
+    write_json(out, C, "clock")
 
     for b in C["beats"]:
         if b.get("lead_clipped_s"):
@@ -760,6 +874,14 @@ def main():
     t = sub.add_parser("time")
     t.add_argument("notebook")
     t.add_argument("-o", "--out", default="clock.json")
+    t.add_argument("--measured", default=None, metavar="MEASURED_JSON",
+                   help="a word-level alignment of the recorded narration "
+                        "(voice.py measure). When the voice exists, measure "
+                        "first: placement is then decided on the recording")
+    t.add_argument("--pauses", choices=("blank", "hold"), default=None,
+                   help="blank (default): silence between lines is a named black "
+                        "gap. hold: each shot holds through the pause and the "
+                        "cut lands cut_lead_s before the next line")
     t.add_argument("--variant", action="append",
                    help="cell=LABEL, e.g. --variant hook=B")
     s = sub.add_parser("swap")

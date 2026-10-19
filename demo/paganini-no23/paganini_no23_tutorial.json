@@ -1,0 +1,12 @@
+{
+  "archive": "paganini_no23_tutorial.zip",
+  "archive_bytes": 22409232,
+  "archive_sha256": "bf4767fdadc34554c1a3d6057fbd177f7c1cf7e44522a92b48105de4f213dfab",
+  "media_files": 14,
+  "media_bytes": 24335650,
+  "confirmed_source_xml_sha256": "4818312007c9c27d478bc6ca792c0d33767e44fdfcfda5ea3666fe2a157384c3",
+  "media_reencoded": false,
+  "native_glow_visible_confirmed_by": "the authors",
+  "native_glow_confirmation": "ok the v4 has glow in it.",
+  "confirmation_scope": "Visible Glow in the source v4 import; relocated package requires a new import."
+}

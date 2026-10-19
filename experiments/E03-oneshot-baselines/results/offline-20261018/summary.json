@@ -1,0 +1,508 @@
+{
+  "n_seeds": 30,
+  "conditions": {
+    "real-revised-measured": {
+      "outputs": 30,
+      "parsed": 30,
+      "dtd_valid": 30,
+      "semantic_valid": 30,
+      "both_valid": 30,
+      "all_exact": 30,
+      "valid_all_exact": 30,
+      "raw": {
+        "f1@1.0": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "f1@0.5": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "frame_exact_acc": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "validity_gated": {
+        "f1@1.0": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "f1@0.5": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "frame_exact_acc": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "recorded_attempt_valuation_usd": null,
+      "failure_counts": {}
+    },
+    "oneshot-claude-sonnet-5-5": {
+      "outputs": 30,
+      "parsed": 30,
+      "dtd_valid": 30,
+      "semantic_valid": 30,
+      "both_valid": 30,
+      "all_exact": 27,
+      "valid_all_exact": 27,
+      "raw": {
+        "f1@1.0": {
+          "mean": 0.9907407407407407,
+          "ci95": [
+            0.9796296296296295,
+            1.0
+          ]
+        },
+        "f1@0.5": {
+          "mean": 0.9962962962962963,
+          "ci95": [
+            0.9888888888888889,
+            1.0
+          ]
+        },
+        "frame_exact_acc": {
+          "mean": 0.9977146094305825,
+          "ci95": [
+            0.9937958250317641,
+            1.0
+          ]
+        }
+      },
+      "validity_gated": {
+        "f1@1.0": {
+          "mean": 0.9907407407407407,
+          "ci95": [
+            0.9796296296296295,
+            1.0
+          ]
+        },
+        "f1@0.5": {
+          "mean": 0.9962962962962963,
+          "ci95": [
+            0.9888888888888889,
+            1.0
+          ]
+        },
+        "frame_exact_acc": {
+          "mean": 0.9977146094305825,
+          "ci95": [
+            0.9937958250317641,
+            1.0
+          ]
+        }
+      },
+      "recorded_attempt_valuation_usd": 2.7395699000000002,
+      "failure_counts": {}
+    },
+    "oneshot-claude-opus-5-5": {
+      "outputs": 30,
+      "parsed": 30,
+      "dtd_valid": 30,
+      "semantic_valid": 30,
+      "both_valid": 30,
+      "all_exact": 30,
+      "valid_all_exact": 30,
+      "raw": {
+        "f1@1.0": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "f1@0.5": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "frame_exact_acc": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "validity_gated": {
+        "f1@1.0": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "f1@0.5": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "frame_exact_acc": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "recorded_attempt_valuation_usd": 5.8934864000000005,
+      "failure_counts": {}
+    },
+    "oneshot-claude-fable-5-1": {
+      "outputs": 30,
+      "parsed": 30,
+      "dtd_valid": 30,
+      "semantic_valid": 30,
+      "both_valid": 30,
+      "all_exact": 30,
+      "valid_all_exact": 30,
+      "raw": {
+        "f1@1.0": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "f1@0.5": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "frame_exact_acc": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "validity_gated": {
+        "f1@1.0": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "f1@0.5": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "frame_exact_acc": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "recorded_attempt_valuation_usd": 15.031738,
+      "failure_counts": {}
+    },
+    "oneshot-claude-sonnet-5-5-norules": {
+      "outputs": 30,
+      "parsed": 30,
+      "dtd_valid": 28,
+      "semantic_valid": 22,
+      "both_valid": 22,
+      "all_exact": 24,
+      "valid_all_exact": 21,
+      "raw": {
+        "f1@1.0": {
+          "mean": 0.9483333333333334,
+          "ci95": [
+            0.9074074074074076,
+            0.9837037037037037
+          ]
+        },
+        "f1@0.5": {
+          "mean": 0.9505555555555556,
+          "ci95": [
+            0.9101805555555555,
+            0.9851851851851853
+          ]
+        },
+        "frame_exact_acc": {
+          "mean": 0.9740389974149528,
+          "ci95": [
+            0.9521848294603139,
+            0.992624396001623
+          ]
+        }
+      },
+      "validity_gated": {
+        "f1@1.0": {
+          "mean": 0.725925925925926,
+          "ci95": [
+            0.5592592592592592,
+            0.8666666666666667
+          ]
+        },
+        "f1@0.5": {
+          "mean": 0.725925925925926,
+          "ci95": [
+            0.5592592592592592,
+            0.8666666666666667
+          ]
+        },
+        "frame_exact_acc": {
+          "mean": 0.7304761904761905,
+          "ci95": [
+            0.5638095238095239,
+            0.8666666666666667
+          ]
+        }
+      },
+      "recorded_attempt_valuation_usd": 2.3727156000000003,
+      "failure_counts": {}
+    },
+    "oneshot-claude-opus-5-5-norules": {
+      "outputs": 30,
+      "parsed": 30,
+      "dtd_valid": 30,
+      "semantic_valid": 26,
+      "both_valid": 26,
+      "all_exact": 26,
+      "valid_all_exact": 26,
+      "raw": {
+        "f1@1.0": {
+          "mean": 0.9641612200435731,
+          "ci95": [
+            0.9279411764705884,
+            0.9925925925925926
+          ]
+        },
+        "f1@0.5": {
+          "mean": 0.9641612200435731,
+          "ci95": [
+            0.9279411764705884,
+            0.9925925925925926
+          ]
+        },
+        "frame_exact_acc": {
+          "mean": 0.9800313119115298,
+          "ci95": [
+            0.9595171853154961,
+            0.9962906504065041
+          ]
+        }
+      },
+      "validity_gated": {
+        "f1@1.0": {
+          "mean": 0.8666666666666667,
+          "ci95": [
+            0.7333333333333333,
+            0.9666666666666667
+          ]
+        },
+        "f1@0.5": {
+          "mean": 0.8666666666666667,
+          "ci95": [
+            0.7333333333333333,
+            0.9666666666666667
+          ]
+        },
+        "frame_exact_acc": {
+          "mean": 0.8666666666666667,
+          "ci95": [
+            0.7333333333333333,
+            0.9666666666666667
+          ]
+        }
+      },
+      "recorded_attempt_valuation_usd": 5.1787872,
+      "failure_counts": {}
+    },
+    "oneshot-claude-fable-5-1-norules": {
+      "outputs": 29,
+      "parsed": 29,
+      "dtd_valid": 27,
+      "semantic_valid": 28,
+      "both_valid": 26,
+      "all_exact": 28,
+      "valid_all_exact": 26,
+      "raw": {
+        "f1@1.0": {
+          "mean": 0.9583333333333334,
+          "ci95": [
+            0.8833333333333333,
+            1.0
+          ]
+        },
+        "f1@0.5": {
+          "mean": 0.9583333333333334,
+          "ci95": [
+            0.8833333333333333,
+            1.0
+          ]
+        },
+        "frame_exact_acc": {
+          "mean": 0.9621434392828035,
+          "ci95": [
+            0.8909535452322738,
+            1.0
+          ]
+        }
+      },
+      "validity_gated": {
+        "f1@1.0": {
+          "mean": 0.8666666666666667,
+          "ci95": [
+            0.7333333333333333,
+            0.9666666666666667
+          ]
+        },
+        "f1@0.5": {
+          "mean": 0.8666666666666667,
+          "ci95": [
+            0.7333333333333333,
+            0.9666666666666667
+          ]
+        },
+        "frame_exact_acc": {
+          "mean": 0.8666666666666667,
+          "ci95": [
+            0.7333333333333333,
+            0.9666666666666667
+          ]
+        }
+      },
+      "recorded_attempt_valuation_usd": 16.82757425,
+      "failure_counts": {
+        "missing XML in retained response": 1
+      }
+    }
+  },
+  "paired_real_minus_model": {
+    "oneshot-claude-sonnet-5-5": {
+      "quality": {
+        "mean": 0.009259259259259264,
+        "ci95": [
+          0.0,
+          0.02037037037037038
+        ]
+      },
+      "valid_quality": {
+        "mean": 0.009259259259259264,
+        "ci95": [
+          0.0,
+          0.02037037037037038
+        ]
+      }
+    },
+    "oneshot-claude-opus-5-5": {
+      "quality": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "valid_quality": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "oneshot-claude-fable-5-1": {
+      "quality": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "valid_quality": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "oneshot-claude-sonnet-5-5-norules": {
+      "quality": {
+        "mean": 0.05166666666666667,
+        "ci95": [
+          0.016296296296296295,
+          0.09259259259259259
+        ]
+      },
+      "valid_quality": {
+        "mean": 0.274074074074074,
+        "ci95": [
+          0.13333333333333333,
+          0.4407407407407407
+        ]
+      }
+    },
+    "oneshot-claude-opus-5-5-norules": {
+      "quality": {
+        "mean": 0.035838779956427015,
+        "ci95": [
+          0.007407407407407407,
+          0.07205882352941176
+        ]
+      },
+      "valid_quality": {
+        "mean": 0.13333333333333333,
+        "ci95": [
+          0.03333333333333333,
+          0.26666666666666666
+        ]
+      }
+    },
+    "oneshot-claude-fable-5-1-norules": {
+      "quality": {
+        "mean": 0.041666666666666664,
+        "ci95": [
+          0.0,
+          0.11666666666666667
+        ]
+      },
+      "valid_quality": {
+        "mean": 0.13333333333333333,
+        "ci95": [
+          0.03333333333333333,
+          0.26666666666666666
+        ]
+      }
+    }
+  },
+  "inference": "retrospective development comparison; pointwise exploratory intervals",
+  "bootstrap": "10000 paired project-seed draws, percentile 95%, seed 20261018",
+  "raw_failure_policy": "zero for missing or unparseable XML; parsable invalid XML retains temporal scores",
+  "gated_failure_policy": "zero unless both DTD and semantic validation pass"
+}

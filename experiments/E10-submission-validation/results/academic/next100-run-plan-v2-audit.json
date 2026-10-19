@@ -1,0 +1,12 @@
+{
+  "active_plan_sha256": "435e0a59d7c955a45a4def61389e5f48c399a30f72d89462dd7e3d77839f092f",
+  "prior_plan_sha256": "ae57c74176001870d0a2b6d0a8b7ef603267603178c8d85e1915cbfa83ac1464",
+  "unchanged_query_ids": true,
+  "unchanged_input_hash": true,
+  "unchanged_media": true,
+  "frozen_sources_verified": 15,
+  "runtime_verified": true,
+  "both_preparations_have_zero_model_calls": true,
+  "reason": "Cost-overrun review persists on cached resume; scoring rechecks costs; whole-run lock; schema and runtime freeze",
+  "benchmark_tests": 48
+}

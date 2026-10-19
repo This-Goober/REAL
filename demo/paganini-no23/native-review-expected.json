@@ -1,0 +1,65 @@
+{
+  "status": "Expected source state; reported playback is recorded separately",
+  "source_xml_sha256": "4818312007c9c27d478bc6ca792c0d33767e44fdfcfda5ea3666fe2a157384c3",
+  "intro_frames": 419,
+  "total_frames": 2441,
+  "fps": 30,
+  "expected_caption_font_size": 55,
+  "captions": [
+    {
+      "id": "B1.L3",
+      "t0": 19.60666666666667,
+      "t1": 21.486666666666668,
+      "text": "fingered octaves,\nPaganini 23"
+    },
+    {
+      "id": "B2.L3",
+      "t0": 37.202666666666666,
+      "t1": 38.36666666666667,
+      "text": "same interval,\nsmaller space"
+    },
+    {
+      "id": "B3.L2",
+      "t0": 47.19466666666667,
+      "t1": 49.07466666666667,
+      "text": "octaves:\ndon't just squeeze"
+    },
+    {
+      "id": "B4.L3",
+      "t0": 58.63666666666667,
+      "t1": 60.83666666666667,
+      "text": "the first finger\ntravels further"
+    },
+    {
+      "id": "B5.L2",
+      "t0": 79.12066666666666,
+      "t1": 81.32066666666667,
+      "text": "let the first\nfinger lead"
+    }
+  ],
+  "stills": [
+    {
+      "id": "B1.L2",
+      "asset": "A13",
+      "t0": 17.510666666666665,
+      "t1": 21.510666666666665
+    },
+    {
+      "id": "B2.L2",
+      "asset": "A11",
+      "t0": 30.95066666666667,
+      "t1": 34.95066666666667
+    },
+    {
+      "id": "B4.L2",
+      "asset": "A12",
+      "t0": 51.882666666666665,
+      "t1": 55.882666666666665
+    }
+  ],
+  "observed_by": null,
+  "native_export": null,
+  "observations": null,
+  "scope": "Expected source state only. Native import, appearance, audio and re-export observations are separate evidence.",
+  "playback_observation_path": "demo/paganini-no23/native-playback-confirmation.json"
+}

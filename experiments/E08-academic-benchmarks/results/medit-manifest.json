@@ -1,0 +1,14 @@
+{
+  "dataset": "MEDit-Bench",
+  "hf_split_name": "train",
+  "usage": "evaluation only",
+  "videos": 60,
+  "cases": 180,
+  "references": 540,
+  "cuts": 6231,
+  "videos_with_frame_field_above_29": 18,
+  "source_sha256": "0f46bfb60c6ae2c1075af847338f702ed9ac61578ed659592bfe90c05dee2351",
+  "timecodes": "HH:MM:SS:FF; timebase required; never assume 30fps",
+  "inputs_sha256": "80b3e90a17fcf0e89338a3c565961cb798628773a981a3c290b39a3f2baedf43",
+  "references_sha256": "19afc63315c66b7a79862cd8e08b90d9890a49ecd44c46019c97b05b38dd589b"
+}

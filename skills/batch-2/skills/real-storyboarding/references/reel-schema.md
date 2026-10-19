@@ -137,3 +137,27 @@ reason this file exists at all.
 - **`chosen_by`** distinguishes a placement the skill made from one the creator
   made. The creator's choices are not up for reconsideration; the skill's always
   are. Keep the distinction through every revision.
+
+### Source intervals
+
+Video layers and audio entries may carry `src_in` and `src_out` in original-media
+seconds. Their timeline `t0`/`t1` stays independent. Compile starts at `src_in`
+(default zero for video) and refuses a placement that exceeds the selected
+source range. `temporal_evidence` records the selected event and its limitations.
+Source audio linked by `source_video_component` follows picture source revisions,
+except conflicting creator choices are reported.
+
+### Static compositing
+
+Visual layers can specify `opacity` (0–1) and `transform` with `scale` (positive
+number or x/y pair), `position` ([x,y], sequence pixels from centre, positive y
+up), and `rotation` (degrees). Scale multiplies the chosen `fit` behavior.
+These are storyboard decisions, preserved on creator rebuilds and forwarded
+to FCPXML. At that export boundary, positions become percentages of project
+height on both axes (`100 * pixels / height`); scale stays a ratio.
+Unsupported transform fields refuse rather than disappear.
+
+Visual layers also accept `fade_in` and `fade_out` in seconds, each nonnegative.
+Their sum must fit the layer span. Fades preserve the layer's peak opacity and
+compile to editable opacity keyframes; text retains its font, stroke, and
+shadow overrides. The tracks preview follows the same fade windows.

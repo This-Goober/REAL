@@ -1,0 +1,8 @@
+test_failed_cases_stay_in_denominator (bench.test_assembly_study.StudyTests.test_failed_cases_stay_in_denominator) ... ok
+test_missing_and_duplicate_conditions_refused (bench.test_assembly_study.StudyTests.test_missing_and_duplicate_conditions_refused) ... ok
+test_paired_differences_use_seed_identity_not_input_order (bench.test_assembly_study.StudyTests.test_paired_differences_use_seed_identity_not_input_order) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.045s
+
+OK

@@ -1,0 +1,31 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# Local-only material. Never published: pipeline scratch, media, evidence
+# archives and the patch/ZIP handoffs exchanged between collaborators.
+bench/work/
+**/handoffs/
+*.mbox
+REAL-PR*-*.patch
+REAL-PR*-*.zip
+REAL-experiments-hardening-*.zip
+
+# Collaboration logs and evidence packages stay on the collaborators' machines.
+chat/
+chats/
+paper/artifacts/
+paper/submission/*.zip
+paper/submission/*.sha256
+experiments/E03-oneshot-baselines/results/offline-20261018/replay-inputs.zip
+
+# Demos keep their source media and compiled timelines only; pipeline outputs,
+# reports and packaged deliverables are regenerated, never committed.
+demo/*/pipeline/*
+!demo/*/pipeline/timeline.fcpxml
+!demo/*/pipeline/timeline.otio
+!demo/*/pipeline/narration.txt
+demo/*/media/ASSET-CATALOG.html
+demo/**/*.zip
+demo/**/*.fcpbundle
+demo/**/*.command

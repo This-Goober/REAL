@@ -25,6 +25,7 @@ Stdlib + PIL only (PIL only for making thumbnails; a missing file just renders
 as a card).
 """
 
+from real_core import read_json
 import argparse
 import base64
 import io
@@ -56,7 +57,7 @@ def thumb_image(path):
         return None
 
 
-def thumb_video(path):
+def thumb_video(path, source_s=1):
     exe = None
     for cand in ("ffmpeg", "/usr/bin/ffmpeg", "/opt/homebrew/bin/ffmpeg"):
         if os.path.exists(cand) or cand == "ffmpeg":
@@ -64,7 +65,7 @@ def thumb_video(path):
             break
     tmp = os.path.join(tempfile.gettempdir(), "reel-thumb.jpg")
     try:
-        subprocess.run([exe, "-y", "-loglevel", "error", "-ss", "1", "-i", path,
+        subprocess.run([exe, "-y", "-loglevel", "error", "-ss", str(source_s), "-i", path,
                         "-frames:v", "1", "-vf", "scale=%d:-1" % THUMB_W, tmp],
                        check=True, timeout=25,
                        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
@@ -86,6 +87,12 @@ def collect_thumbs(reel):
             out[a["id"]] = t
     for b in reel.get("beats", []):
         for L in b.get("layers", []):
+            if L.get("kind") == "video" and "src_in" in L:
+                a = next((a for a in reel.get("assets", []) if a["id"] == L.get("asset")), {})
+                if a.get("file") and os.path.exists(a["file"]):
+                    t = thumb_video(a["file"], L["src_in"])
+                    if t:
+                        out["source:" + L["id"]] = t
             st = L.get("stub") or {}
             f = st.get("file")
             if f and os.path.exists(f):
@@ -138,7 +145,7 @@ h1{font-size:23px;margin:0 0 4px;letter-spacing:-.02em}
 .panel.warn a{color:var(--amber);cursor:pointer}
 .frame{position:relative;width:100%;background:#000;border:1px solid #333a49;border-radius:10px;overflow:hidden}
 .ly{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat}
-.ly.fit{background-size:contain;background-color:#08090c}
+.ly.fit{background-size:contain;background-color:transparent}
 .ly.card{display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;
  background:repeating-linear-gradient(45deg,#23262c,#23262c 8px,#1a1d22 8px,#1a1d22 16px)}
 .ly.card span{font-size:11px;color:#c3cad6;line-height:1.4}
@@ -305,7 +312,7 @@ function tracks(){
       if(x.stub) cls+=" stub";
       else if(x.confidence==="low") cls+=" low";
       if(x.chosen_by==="creator") cls+=" creator";
-      var th=TH[x.asset]||TH["stub:"+x.id];
+      var th=TH["source:"+x.id]||TH[x.asset]||TH["stub:"+x.id];
       var label = x.content || (x.stub?"TO BUILD · "+(x.stub.file||"").split("/").pop():"")
         || (x.asset||"") || (x.text||x.note||"").slice(0,44) || "—";
       blocks+='<div class="'+cls+'" id="blk-'+x.id+'" style="left:'+(x.t0/TOTAL*100)+'%;width:'+w+'%" '
@@ -341,6 +348,19 @@ function movePh(){
 function activeAt(t){
   return allItems().filter(function(it){ return it.x.t0<=t && t<it.x.t1; });
 }
+function layerOpacity(x){
+  var a=x.opacity==null?1:x.opacity;
+  if(x.fade_in) a*=Math.max(0,Math.min(1,(playhead-x.t0)/x.fade_in));
+  if(x.fade_out) a*=Math.max(0,Math.min(1,(x.t1-playhead)/x.fade_out));
+  return a;
+}
+function layoutStyle(x){
+  var t=x.transform||{}, p=t.position||[0,0], scale=t.scale==null?1:t.scale;
+  var sx=Array.isArray(scale)?scale[0]:scale, sy=Array.isArray(scale)?scale[1]:scale;
+  return 'opacity:'+layerOpacity(x)+';transform:translate('
+    +(p[0]/R.reel.width*100)+'%,'+(-p[1]/R.reel.height*100)+'%) scale('
+    +sx+','+sy+') rotate('+(-(t.rotation||0))+'deg);';
+}
 function preview(){
   var f=document.getElementById("frame");
   f.style.aspectRatio=R.reel.width+" / "+R.reel.height;
@@ -350,11 +370,16 @@ function preview(){
   vis.forEach(function(it){
     var x=it.x;
     if(x.kind==="text"){
-      h+='<div class="ly txt '+(x.style==="title"?"title":"")+'"><span>'+esc(x.content||"")+'</span></div>';
+      var tx=x.position ? 'inset:auto 0 auto 0;top:'+(50-x.position[1]/R.reel.height*100)+'%;left:'+(x.position[0]/R.reel.width*100)+'%;transform:translateY(-50%);padding:0;background:none;align-items:center;' : '';
+      tx+='opacity:'+layerOpacity(x)+';';
+      var fs=x.font_size ? 'font-size:'+(x.font_size*f.clientWidth/R.reel.width)+'px;' : '';
+      if(x.color) fs+='color:rgba('+x.color.slice(0,3).map(function(c){return Math.round(c*255);}).join(',')+','+(x.color.length>3?x.color[3]:1)+');';
+      if(x.stroke_width) fs+='-webkit-text-stroke:'+(x.stroke_width*f.clientWidth/R.reel.width)+'px rgba(0,0,0,.9);paint-order:stroke fill;';
+      h+='<div class="ly txt '+(x.style==="title"?"title":"")+'" style="'+tx+'"><span style="white-space:pre-line;'+fs+(x.font_face==='Bold'?'font-weight:700;':x.style==='subtitle'?'font-weight:400;':'')+'">'+esc(x.content||"")+'</span></div>';
       return;
     }
-    var th=TH[x.asset]||TH["stub:"+x.id];
-    if(th){ h+='<div class="ly '+(x.fit==="fit"?"fit":"")+'" style="background-image:url('+th+')"></div>'; return; }
+    var th=TH["source:"+x.id]||TH[x.asset]||TH["stub:"+x.id];
+    if(th){ h+='<div class="ly '+(x.fit==="fit"?"fit":"")+'" style="'+layoutStyle(x)+'background-image:url('+th+')"></div>'; return; }
     if(x.stub){
       h+='<div class="ly card"><span><b>TO BUILD</b>'+esc(x.stub.spec||"").slice(0,150)
         +'<br><i style="color:#8894a8">'+esc(x.stub.file||"")+'</i></span></div>'; return;
@@ -416,6 +441,7 @@ function details(it){
         +(a.dur_s?(" · "+a.dur_s+"s"):"")+(a.w?(" · "+a.w+"×"+a.h):""));
   if(x.stub) h+=row("stub","<code>"+esc(x.stub.file)+"</code><br>"+esc(x.stub.spec)
         +"<br><i>"+esc(x.stub.dur_s)+"s · "+esc(x.stub.w)+"×"+esc(x.stub.h)+" · "+esc(x.stub.status)+"</i>");
+  if(x.src_in!=null) h+=row("source", tc(x.src_in)+(x.src_out!=null?"–"+tc(x.src_out):""));
   if(x.why) h+=row("why", esc(x.why));
   h+="</table>";
 
@@ -427,7 +453,16 @@ function details(it){
   var verb = (it.lane==="audio"||it.lane==="narration") ? "audio " : "layer ";
   var pre = b.id+": ";
 
-  if((x.candidates||[]).length){
+  if((x.source_candidates||[]).length){
+    h+='<h2 style="margin-top:12px">Other source events</h2><div class="chips">';
+    x.source_candidates.forEach(function(c){
+      h+='<button class="cand" data-act="line" data-key="'+esc(x.id)+':asset" data-line="'
+        +esc(pre+verb+slot+" = "+c.asset+"; "+slot+" source = "+c.source_in+"-"+c.source_out)+'">'
+        +esc(c.asset)+" · "+tc(c.source_in)+"–"+tc(c.source_out)+" · "+esc(c.why||"")+"</button>";
+    });
+    h+='</div>';
+  }
+  if(!(x.source_candidates||[]).length && (x.candidates||[]).length){
     h+='<h2 style="margin-top:12px">Instead of this, use…</h2><div class="chips">';
     x.candidates.forEach(function(cid){
       var ca=assetById(cid), th=TH[cid];
@@ -594,8 +629,8 @@ def main():
                    help="clock.json — gives the preview exact word highlighting")
     args = ap.parse_args()
 
-    reel = json.load(open(args.reel))
-    clock = json.load(open(args.clock)) if args.clock else None
+    reel = read_json(args.reel, "reel")
+    clock = read_json(args.clock, "clock") if args.clock else None
     n, misses = build(reel, args.out, clock)
     size = os.path.getsize(args.out) / 1024.0
     print("%d beats · %d thumbnails embedded · %.0f KB -> %s"

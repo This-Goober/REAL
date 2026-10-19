@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fcpxml>
+<fcpxml version="1.13">
+    <resources>
+        <format id="r1" name="FFVideoFormatRateUndefined" frameDuration="100/3000s" width="1080" height="1920" colorSpace="1-1-1 (Rec. 709)"/>
+        <format id="r3" name="FFVideoFormatRateUndefined" width="1080" height="1920" colorSpace="1-13-1"/>
+        <asset id="r2" name="img-grid" start="0s" hasVideo="1" duration="0s" format="r3" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/binary_search/media/Images/img-grid.png"/>
+        </asset>
+        <format id="r5" name="FFVideoFormatRateUndefined" frameDuration="100/3000s" width="1080" height="1920" colorSpace="1-1-1 (Rec. 709)"/>
+        <asset id="r4" name="clip-one-by-one" start="0s" hasVideo="1" hasAudio="0" duration="7s" format="r5" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/binary_search/media/Videos/clip-one-by-one.mp4"/>
+        </asset>
+        <asset id="r6" name="clip-halve" start="0s" hasVideo="1" hasAudio="0" duration="7s" format="r5" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/binary_search/media/Videos/clip-halve.mp4"/>
+        </asset>
+        <asset id="r7" name="img-again" start="0s" hasVideo="1" duration="0s" format="r3" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/binary_search/media/Images/img-again.png"/>
+        </asset>
+        <asset id="r8" name="img-halving" start="0s" hasVideo="1" duration="0s" format="r3" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/binary_search/media/Images/img-halving.png"/>
+        </asset>
+        <effect id="r9" name="Basic Title" uid=".../Titles.localized/Bumper:Opener.localized/Basic Title.localized/Basic Title.moti"/>
+        <asset id="r10" name="narration" start="0s" hasAudio="1" duration="422/15s" audioSources="1" audioChannels="2" audioRate="48000">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/binary_search/media/Audio/narration.wav"/>
+        </asset>
+    </resources>
+    <library>
+        <event name="REAL">
+            <project name="Binary search, for a five-year-old">
+                <sequence format="r1" duration="422/15s" tcStart="0s" tcFormat="NDF" audioLayout="stereo" audioRate="48k">
+                    <spine>
+                        <video ref="r2" name="B1 hook" start="0s" offset="0s" duration="64/15s">
+                            <note>narration: Let's play a guessing game. I'm thinking of a number from one to one hundred.  |  from C1/C1.a67  |  words 0–14  |  flag text-type: classified as 'caption' by heuristic — confirm title / caption / subtitle in the tracks page</note>
+                            <title ref="r9" name="B1.L2 — guess my number" start="3600s" offset="23/10s" duration="23/15s" lane="1">
+                                <text>
+                                    <text-style ref="ts1">guess my number</text-style>
+                                </text>
+                                <text-style-def id="ts1">
+                                    <text-style font="Helvetica Neue" fontSize="55" fontFace="Medium" fontColor="0.21568627450980393 0.20784313725490197 0.1843137254901961 1" alignment="center"/>
+                                </text-style-def>
+                                <adjust-transform position="0 30"/>
+                            </title>
+                            <asset-clip ref="r10" name="narration — narration.wav" start="0s" audioRole="dialogue" offset="1/5s" duration="56/15s" lane="-1">
+                                <note>voice take — which take covers this line has to be confirmed by ear; shows shares game, guessing, hundred, i'm, let's (+3.0); narration component / audio asset (+2.0)</note>
+                            </asset-clip>
+                            <asset-clip ref="r10" name="narration — narration.wav" start="25/6s" audioRole="dialogue" offset="131/30s" duration="133/30s" lane="-1">
+                                <note>voice take — which take covers this line has to be confirmed by ear; binds_to shares take (+0.7); role shares take (+0.7)</note>
+                            </asset-clip>
+                            <asset-clip ref="r10" name="narration — narration.wav" start="28/3s" audioRole="dialogue" offset="143/15s" duration="28/5s" lane="-1">
+                                <note>voice take — which take covers this line has to be confirmed by ear; shows shares all, away, bigger, fifty, guess (+3.0); narration component / audio asset (+2.0)</note>
+                            </asset-clip>
+                            <asset-clip ref="r10" name="narration — narration.wav" start="236/15s" audioRole="dialogue" offset="239/15s" duration="26/5s" lane="-1">
+                                <note>voice take — which take covers this line has to be confirmed by ear; shows shares away, five, guess, left, low (+3.0); narration component / audio asset (+2.0)</note>
+                            </asset-clip>
+                            <asset-clip ref="r10" name="narration — narration.wav" start="317/15s" audioRole="dialogue" offset="64/3s" duration="86/15s" lane="-1">
+                                <note>voice take — which take covers this line has to be confirmed by ear; binds_to shares every (+0.5); shows shares binary, cuts, every, found, guess (+3.0)</note>
+                            </asset-clip>
+                        </video>
+                        <asset-clip ref="r4" name="B2 the slow way" start="0s" srcEnable="video" offset="64/15s" duration="31/6s">
+                            <note>narration: You could guess one, two, three, four. That could take a hundred tries.  |  moment: The ticking has to feel slow and endless; it must not finish.  |  from C2/C2.495  |  words 15–27  |  flag text-type: classified as 'caption' by heuristic — confirm title / caption / subtitle in the tracks page</note>
+                            <title ref="r9" name="B2.L2 — one at a time is slow" start="3600s" offset="73/30s" duration="41/15s" lane="1">
+                                <text>
+                                    <text-style ref="ts2">one at a time is slow</text-style>
+                                </text>
+                                <text-style-def id="ts2">
+                                    <text-style font="Helvetica Neue" fontSize="55" fontFace="Medium" fontColor="0.21568627450980393 0.20784313725490197 0.1843137254901961 1" alignment="center"/>
+                                </text-style-def>
+                                <adjust-transform position="0 30"/>
+                            </title>
+                            <marker start="0s" duration="1/30s" value="The ticking has to feel slow and endless; it must not finish."/>
+                        </asset-clip>
+                        <asset-clip ref="r6" name="B3 the trick" start="0s" srcEnable="video" offset="283/30s" duration="193/30s">
+                            <note>narration: Here is the trick. Guess the middle, fifty. Too high? Then throw away all the bigger numbers.  |  from C3/C3.f08  |  words 28–44  |  flag text-type: classified as 'caption' by heuristic — confirm title / caption / subtitle in the tracks page</note>
+                            <title ref="r9" name="B3.L2 — guess the middle" start="3600s" offset="19/6s" duration="47/30s" lane="1">
+                                <text>
+                                    <text-style ref="ts3">guess the middle</text-style>
+                                </text>
+                                <text-style-def id="ts3">
+                                    <text-style font="Helvetica Neue" fontSize="55" fontFace="Medium" fontColor="0.21568627450980393 0.20784313725490197 0.1843137254901961 1" alignment="center"/>
+                                </text-style-def>
+                                <adjust-transform position="0 30"/>
+                            </title>
+                        </asset-clip>
+                        <video ref="r7" name="B4 again" start="0s" offset="238/15s" duration="27/5s">
+                            <note>narration: Guess the middle of what is left. Twenty five. Too low? Throw away the smaller ones.  |  from C4/C4.c1b  |  words 45–60  |  flag text-type: classified as 'caption' by heuristic — confirm title / caption / subtitle in the tracks page</note>
+                            <title ref="r9" name="B4.L2 — half again" start="3600s" offset="67/30s" duration="37/30s" lane="1">
+                                <text>
+                                    <text-style ref="ts4">half again</text-style>
+                                </text>
+                                <text-style-def id="ts4">
+                                    <text-style font="Helvetica Neue" fontSize="55" fontFace="Medium" fontColor="0.21568627450980393 0.20784313725490197 0.1843137254901961 1" alignment="center"/>
+                                </text-style-def>
+                                <adjust-transform position="0 30"/>
+                            </title>
+                        </video>
+                        <video ref="r8" name="B5 payoff" start="0s" offset="319/15s" duration="103/15s">
+                            <note>narration: Every guess cuts the pile in half. Seven guesses and you have found it. That is binary search.  |  from C5/C5.59a  |  words 61–78</note>
+                            <title ref="r9" name="B5.L2 — Binary search" start="3600s" offset="46/15s" duration="37/30s" lane="1">
+                                <text>
+                                    <text-style ref="ts5">Binary search</text-style>
+                                </text>
+                                <text-style-def id="ts5">
+                                    <text-style font="Helvetica Neue" fontSize="96" fontFace="Medium" fontColor="0.21568627450980393 0.20784313725490197 0.1843137254901961 1" alignment="center"/>
+                                </text-style-def>
+                                <adjust-transform position="0 30"/>
+                            </title>
+                        </video>
+                    </spine>
+                </sequence>
+            </project>
+        </event>
+    </library>
+</fcpxml>

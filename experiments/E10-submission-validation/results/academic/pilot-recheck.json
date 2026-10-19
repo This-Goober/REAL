@@ -1,0 +1,160 @@
+{
+  "date": "2026-10-18",
+  "status": "replay only; no new inference",
+  "sets": {
+    "development": {
+      "qids": [
+        193,
+        3666,
+        6383,
+        7416,
+        9823
+      ],
+      "conditions": {
+        "real-temporal": {
+          "n": 5,
+          "failed": 0,
+          "empty_predictions": 0,
+          "out_of_bounds_proposals": 0,
+          "units": "percent",
+          "evaluator": "unmodified pinned Moment-DETR MR functions; serial execution",
+          "metrics": {
+            "MR-full-mAP": 56.88,
+            "MR-full-mAP@0.5": 72.92,
+            "MR-full-mAP@0.75": 70.83,
+            "MR-full-R1@0.5": 80.0,
+            "MR-full-R1@0.7": 80.0
+          },
+          "prediction_sha256": "0142caa96bacd708a639b42bdf47f25e673d4a704784fb49c5d4e870efb84152",
+          "path": "experiments/E09-temporal-grounding/results/development/real-temporal.jsonl"
+        },
+        "direct-vision": {
+          "n": 5,
+          "failed": 0,
+          "empty_predictions": 0,
+          "out_of_bounds_proposals": 0,
+          "units": "percent",
+          "evaluator": "unmodified pinned Moment-DETR MR functions; serial execution",
+          "metrics": {
+            "MR-full-mAP": 46.93,
+            "MR-full-mAP@0.5": 67.19,
+            "MR-full-mAP@0.75": 62.08,
+            "MR-full-R1@0.5": 60.0,
+            "MR-full-R1@0.7": 60.0
+          },
+          "prediction_sha256": "4e663a026925085864d3d797158742e42bcc207bfa0b922d1f8b74d248cc7369",
+          "path": "experiments/E08-academic-benchmarks/results/direct-vision.jsonl"
+        },
+        "real-binder": {
+          "n": 5,
+          "failed": 0,
+          "empty_predictions": 1,
+          "out_of_bounds_proposals": 0,
+          "units": "percent",
+          "evaluator": "unmodified pinned Moment-DETR MR functions; serial execution",
+          "metrics": {
+            "MR-full-mAP": 0.0,
+            "MR-full-mAP@0.5": 0.0,
+            "MR-full-mAP@0.75": 0.0,
+            "MR-full-R1@0.5": 0.0,
+            "MR-full-R1@0.7": 0.0
+          },
+          "prediction_sha256": "2dd1015f4ddf4709297246bdff6bb1eb38358e9c461af9a2147abc21368d68cc",
+          "path": "experiments/E08-academic-benchmarks/results/real-binder.jsonl"
+        },
+        "official-sample-supervised-context": {
+          "n": 5,
+          "failed": 0,
+          "empty_predictions": 0,
+          "out_of_bounds_proposals": 0,
+          "units": "percent",
+          "evaluator": "unmodified pinned Moment-DETR MR functions; serial execution",
+          "metrics": {
+            "MR-full-mAP": 44.87,
+            "MR-full-mAP@0.5": 79.07,
+            "MR-full-mAP@0.75": 40.62,
+            "MR-full-R1@0.5": 80.0,
+            "MR-full-R1@0.7": 40.0
+          }
+        }
+      }
+    },
+    "fresh": {
+      "qids": [
+        1548,
+        1678,
+        2428,
+        2967,
+        10243
+      ],
+      "conditions": {
+        "real-temporal": {
+          "n": 5,
+          "failed": 0,
+          "empty_predictions": 0,
+          "out_of_bounds_proposals": 0,
+          "units": "percent",
+          "evaluator": "unmodified pinned Moment-DETR MR functions; serial execution",
+          "metrics": {
+            "MR-full-mAP": 25.75,
+            "MR-full-mAP@0.5": 35.83,
+            "MR-full-mAP@0.75": 30.0,
+            "MR-full-R1@0.5": 60.0,
+            "MR-full-R1@0.7": 40.0
+          },
+          "prediction_sha256": "02ef9a03d902a8e7790323ff3f629f268b090616d9d0c4d05859bb5b16f79c75",
+          "path": "experiments/E09-temporal-grounding/results/fresh/real-temporal.jsonl"
+        },
+        "direct-vision": {
+          "n": 5,
+          "failed": 0,
+          "empty_predictions": 0,
+          "out_of_bounds_proposals": 0,
+          "units": "percent",
+          "evaluator": "unmodified pinned Moment-DETR MR functions; serial execution",
+          "metrics": {
+            "MR-full-mAP": 32.83,
+            "MR-full-mAP@0.5": 60.83,
+            "MR-full-mAP@0.75": 29.17,
+            "MR-full-R1@0.5": 60.0,
+            "MR-full-R1@0.7": 20.0
+          },
+          "prediction_sha256": "0cff4dee9b547e0e07f2ad80c98af08413f656a9dd28069c4fd21c6af805bbb6",
+          "path": "experiments/E09-temporal-grounding/results/fresh-baselines/direct-vision.jsonl"
+        },
+        "real-binder": {
+          "n": 5,
+          "failed": 0,
+          "empty_predictions": 2,
+          "out_of_bounds_proposals": 0,
+          "units": "percent",
+          "evaluator": "unmodified pinned Moment-DETR MR functions; serial execution",
+          "metrics": {
+            "MR-full-mAP": 0.0,
+            "MR-full-mAP@0.5": 0.0,
+            "MR-full-mAP@0.75": 0.0,
+            "MR-full-R1@0.5": 0.0,
+            "MR-full-R1@0.7": 0.0
+          },
+          "prediction_sha256": "2b87e52a1c368e09c681af7b24bf0fc6b8e7685288be1767feaa935a2d92f83e",
+          "path": "experiments/E09-temporal-grounding/results/fresh-baselines/real-binder.jsonl"
+        },
+        "official-sample-supervised-context": {
+          "n": 5,
+          "failed": 0,
+          "empty_predictions": 0,
+          "out_of_bounds_proposals": 0,
+          "units": "percent",
+          "evaluator": "unmodified pinned Moment-DETR MR functions; serial execution",
+          "metrics": {
+            "MR-full-mAP": 35.97,
+            "MR-full-mAP@0.5": 64.0,
+            "MR-full-mAP@0.75": 35.19,
+            "MR-full-R1@0.5": 80.0,
+            "MR-full-R1@0.7": 60.0
+          }
+        }
+      }
+    }
+  }
+}

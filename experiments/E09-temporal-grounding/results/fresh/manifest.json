@@ -1,0 +1,32 @@
+{
+  "dataset": "QVHighlights",
+  "split": "val",
+  "scope": "temporal component development",
+  "qids": [
+    2428,
+    10243,
+    1678,
+    2967,
+    1548
+  ],
+  "inputs_sha256": "2d7806e1d083c80ac087c838a478932eb5b8e9f6b6c4673b6865307fcb6d5fa4",
+  "conditions": [
+    "real-temporal"
+  ],
+  "model": "claude-sonnet-5-5",
+  "max_cost_per_call_usd": 1.0,
+  "protocol": "blind visual catalogue plus one text-only event grounding call; 2s grid",
+  "source_hashes": {
+    "bench/academic/temporal.py": "6ee1ed45b50e1dde006a4b454faa8f05b72f8222ac8c8ca6a5b16d5a2249c0fe",
+    "bench/academic/model.py": "eb6404d7af7ef626b11f9eac43ce5d719238cbd09dec85e399c378aa3f6186b4",
+    "skills/batch-2/skills/real-storyboarding/scripts/ground.py": "128067e87090c65d5ded1ee12411ad005f0d0f16e81a0d3ef47a0181ab60bc43"
+  },
+  "catalogue_hashes": {
+    "2428": "2e82a1486523a80e97d264b12bb2d8248533558bed11cf6aeb1f8d195ee2e1ee",
+    "10243": "36ded62d1a90fc23f4a88746a3d4b3e0264fbfd058c1d1502001b60adb1433d8",
+    "1678": "9eebd5b6c8bd50647bfee56d678e5c05bfb4ed954d15ce380b89d3eff77f220b",
+    "2967": "47003d8df0591834022be34c2ac81e1c06c83fb04b994f7e9968016959e69062",
+    "1548": "3741a38fe4231df255917cc30fc86c41c99e471c638c59df8ae42d2fe6ad1e51"
+  },
+  "cached_run_manifest_sha256": "33c543342c5bdaa5e612fa872bc56220f654e02dd7bb503628b876afcfc3ed94"
+}

@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:real:clock:1",
+  "title": "clock.json",
+  "description": "Narration words and planned placements. Seconds retain current precision; schema validation does not change timing.",
+  "type": "object",
+  "properties": {
+    "mode": {
+      "enum": [
+        "estimated",
+        "measured"
+      ]
+    },
+    "total_s": {
+      "type": "number",
+      "minimum": 0
+    },
+    "reel": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "aspect": {
+      "type": "string"
+    },
+    "target_s": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "audio_total_s": {
+      "type": "number",
+      "minimum": 0
+    },
+    "pause_policy": {
+      "enum": [
+        "hold",
+        "blank"
+      ]
+    },
+    "rates": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "words": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/word"
+      }
+    },
+    "beats": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/beat"
+      }
+    },
+    "placements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/placement"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "alternates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  "required": [
+    "mode",
+    "total_s",
+    "words",
+    "beats",
+    "placements"
+  ],
+  "$defs": {
+    "word": {
+      "type": "object",
+      "properties": {
+        "i": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "w": {
+          "type": "string"
+        },
+        "start": {
+          "type": "number",
+          "minimum": 0
+        },
+        "end": {
+          "type": "number",
+          "minimum": 0
+        },
+        "beat": {
+          "type": "string"
+        },
+        "component": {
+          "type": "string"
+        },
+        "punct": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "i",
+        "w",
+        "start",
+        "end"
+      ]
+    },
+    "beat": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "w0": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "w1": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "wordless": {
+          "type": "boolean"
+        },
+        "narration": {
+          "type": "string"
+        },
+        "t0": {
+          "type": "number",
+          "minimum": 0
+        },
+        "t1": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "id",
+        "t0",
+        "t1"
+      ]
+    },
+    "placement": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "beat": {
+          "type": "string"
+        },
+        "component": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "narration",
+            "image",
+            "video",
+            "audio",
+            "text",
+            "unknown"
+          ]
+        },
+        "lane": {
+          "enum": [
+            "narration",
+            "visual",
+            "audio",
+            "text"
+          ]
+        },
+        "anchor_word": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "offset_ms": {
+          "type": "number"
+        },
+        "dur_s": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "span_s": {
+          "type": "number",
+          "minimum": 0
+        },
+        "base": {
+          "type": "boolean"
+        },
+        "placement": {
+          "type": "string"
+        },
+        "dur_source": {
+          "type": "string"
+        },
+        "t0": {
+          "type": "number",
+          "minimum": 0
+        },
+        "t1": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "id",
+        "beat",
+        "component",
+        "type",
+        "anchor_word",
+        "t0",
+        "t1"
+      ]
+    }
+  }
+}

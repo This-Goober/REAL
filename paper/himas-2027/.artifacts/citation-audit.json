@@ -1,0 +1,78 @@
+{
+  "bibliography_entries": 21,
+  "citation_occurrences": 27,
+  "missing_keys": [],
+  "uncited_references": [],
+  "unkeyed_author_year": [],
+  "occurrences": {
+    "apple-animation": [
+      "03-system.md"
+    ],
+    "brynjolfsson2022turing": [
+      "01-introduction.md"
+    ],
+    "chi2013democut": [
+      "02-related-work.md"
+    ],
+    "engelbart1962augmenting": [
+      "02-related-work.md"
+    ],
+    "haupt2025centaur": [
+      "02-related-work.md",
+      "06-discussion.md"
+    ],
+    "horvitz1999mixed": [
+      "02-related-work.md"
+    ],
+    "huang2024vbench": [
+      "02-related-work.md"
+    ],
+    "huber2019bscript": [
+      "01-introduction.md",
+      "02-related-work.md"
+    ],
+    "koh2020concept": [
+      "02-related-work.md"
+    ],
+    "lei2021qvhighlights": [
+      "02-related-work.md",
+      "04-evaluation.md"
+    ],
+    "ogata2026medit": [
+      "02-related-work.md"
+    ],
+    "sandoval2025editduet": [
+      "02-related-work.md"
+    ],
+    "shneiderman2020human": [
+      "02-related-work.md"
+    ],
+    "tilekbay2024express": [
+      "02-related-work.md"
+    ],
+    "truong2016quickcut": [
+      "01-introduction.md",
+      "02-related-work.md"
+    ],
+    "vaswani2017attention": [
+      "02-related-work.md"
+    ],
+    "wang2024lave": [
+      "01-introduction.md",
+      "02-related-work.md"
+    ],
+    "yan2026crayotter": [
+      "01-introduction.md",
+      "02-related-work.md"
+    ],
+    "yuan2026yue2": [
+      "02-related-work.md"
+    ],
+    "donahue2019piano": [
+      "02-related-work.md"
+    ],
+    "donahue2024aria": [
+      "02-related-work.md"
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+--- a/skills/batch-2/skills/real-storyboarding/scripts/build.py
++++ b/skills/batch-2/skills/real-storyboarding/scripts/build.py
+@@ -578,7 +578,7 @@
+ # ------------------------------------------------------------------ retime
+ 
+ PRESERVE_FIELDS = ("asset", "anchor_word", "anchor_text", "offset_ms", "fit",
+-                   "style", "content", "stagger", "transform", "opacity", "fade_in", "fade_out", "stroke_color", "shadow", "shadow_color", "shadow_offset", "shadow_blur", "font", "font_face", "stroke_width", "font_size", "position", "color", "align", "t0", "t1", "src_in", "src_out", "temporal_evidence", "source_video_component")
++                   "style", "style_by", "content", "stagger", "transform", "opacity", "fade_in", "fade_out", "stroke_color", "shadow", "shadow_color", "shadow_offset", "shadow_blur", "font", "font_face", "stroke_width", "font_size", "position", "color", "align", "t0", "t1", "src_in", "src_out", "temporal_evidence", "source_video_component")
+ 
+ 
+ def preserve_creator(reel, old_reel):
+--- a/skills/batch-2/skills/real-storyboarding/scripts/real_core.py
++++ b/skills/batch-2/skills/real-storyboarding/scripts/real_core.py
+@@ -174,7 +174,9 @@
+         self.num, self.den = FRAME_DURATIONS[fps_key]
+ 
+     def f(self, seconds):
+-        return int(round(float(seconds) * self.den / self.num))
++        # Form the rate first: an extra multiply/divide can move an exact
++        # half-frame (e.g. 8.55s at 30 fps) above the ties-to-even boundary.
++        return int(round(float(seconds) * (self.den / self.num)))
+ 
+     def s(self, frames):
+         return round(frames * self.num / self.den, 6)
+--- a/skills/batch-2/skills/real-compile/scripts/real_core.py
++++ b/skills/batch-2/skills/real-compile/scripts/real_core.py
+@@ -174,7 +174,9 @@
+         self.num, self.den = FRAME_DURATIONS[fps_key]
+ 
+     def f(self, seconds):
+-        return int(round(float(seconds) * self.den / self.num))
++        # Form the rate first: an extra multiply/divide can move an exact
++        # half-frame (e.g. 8.55s at 30 fps) above the ties-to-even boundary.
++        return int(round(float(seconds) * (self.den / self.num)))
+ 
+     def s(self, frames):
+         return round(frames * self.num / self.den, 6)
+--- a/skills/batch-2/skills/real-create-catalogue/scripts/real_core.py
++++ b/skills/batch-2/skills/real-create-catalogue/scripts/real_core.py
+@@ -174,7 +174,9 @@
+         self.num, self.den = FRAME_DURATIONS[fps_key]
+ 
+     def f(self, seconds):
+-        return int(round(float(seconds) * self.den / self.num))
++        # Form the rate first: an extra multiply/divide can move an exact
++        # half-frame (e.g. 8.55s at 30 fps) above the ties-to-even boundary.
++        return int(round(float(seconds) * (self.den / self.num)))
+ 
+     def s(self, frames):
+         return round(frames * self.num / self.den, 6)
+--- a/skills/batch-2/skills/real-storyboarding/tests/test_timing_precision.py
++++ b/skills/batch-2/skills/real-storyboarding/tests/test_timing_precision.py
+@@ -13,6 +13,14 @@
+ 
+ 
+ class PrecisionTests(unittest.TestCase):
++    def test_exact_half_frame_endpoints_use_ties_to_even(self):
++        # These measured endpoints failed the frozen E11 retiming run. At
++        # 30 fps they are exactly 256.5 and 610.5 frames respectively.
++        frames = Frames('30')
++        for seconds, expected in [(8.55, 256), (20.35, 610), (8.65, 260)]:
++            with self.subTest(seconds=seconds):
++                self.assertEqual(frames.f(seconds), expected)
++
+     def fixture(self):
+         # 7.270 + .4 * (7.470 - 7.270) = 7.350; use a non-tie
+         # whose explicit end is immediately below the half-frame at 9.25.
+--- /dev/null
++++ b/skills/batch-2/skills/real-storyboarding/tests/test_preserve_style_ownership.py
+@@ -0,0 +1,43 @@
++"""Rebuilding must retain who selected a saved text style."""
++import copy
++from pathlib import Path
++import sys
++import unittest
++
++sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
++from build import preserve_creator
++
++
++class StyleOwnershipTests(unittest.TestCase):
++    def fixture(self, owner='creator', style_owner='creator'):
++        layer = dict(id='B1.L2', kind='text', chosen_by=owner, style='title', style_by=style_owner)
++        old = dict(beats=[dict(id='B1', layers=[layer], audio=[])])
++        new = dict(assets=[], open=dict(questions=[]),
++                   beats=[dict(id='B1', layers=[dict(id='B1.L2', kind='text', chosen_by='claude',
++                               style='caption', style_by='claude')], audio=[], flags=[])])
++        return old, new
++
++    def test_human_selected_style_keeps_its_owner_on_rebuild(self):
++        old, new = self.fixture()
++        original = copy.deepcopy(old)
++        kept, conflicts = preserve_creator(new, old)
++        layer = new['beats'][0]['layers'][0]
++        self.assertEqual((kept, conflicts), (1, []))
++        self.assertEqual((layer['style'], layer['style_by']), ('title', 'creator'))
++        self.assertEqual(old, original)
++
++    def test_model_style_is_not_relabelled_as_human_selected(self):
++        old, new = self.fixture(style_owner='claude')
++        preserve_creator(new, old)
++        layer = new['beats'][0]['layers'][0]
++        self.assertEqual((layer['style'], layer['style_by']), ('title', 'claude'))
++
++    def test_unconfirmed_layer_uses_new_plan(self):
++        old, new = self.fixture(owner='claude')
++        kept, conflicts = preserve_creator(new, old)
++        self.assertEqual((kept, conflicts), (0, []))
++        self.assertEqual(new['beats'][0]['layers'][0]['style'], 'caption')
++
++
++if __name__ == '__main__':
++    unittest.main()

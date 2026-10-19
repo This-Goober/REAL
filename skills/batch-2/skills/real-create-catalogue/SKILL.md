@@ -357,3 +357,13 @@ on the fields; never skip them either.
 
 If a script hits an edge case, fix the script rather than working around it by
 hand, so the next folder is cheaper than this one.
+
+## Ordered observations for long videos
+
+For a source containing several events, retain chronological `observations` in
+the catalogue: `{id, start, end, description}` with source-time seconds and unique
+IDs. State the actual sampling method in `sampling`. Describe visible evidence
+without conditioning it on a later editing query; keep partial inspection marked.
+Do not invent motion between sparse frames or label unseen intervals as observed.
+The builder preserves these fields, and storyboarding can select full source
+events from them instead of matching an entire file by keywords.

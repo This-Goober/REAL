@@ -1,0 +1,12 @@
+{
+ "frames_compared": 300,
+ "len_truth": 900,
+ "len_pred": 900,
+ "ssim_mean": 0.995530556097847,
+ "ssim_min": 0.991181630524947,
+ "ssim_match_rate@0.95": 1.0,
+ "psnr_mean": 41.84601110107559,
+ "psnr_median": 42.16190960851526,
+ "lpips_mean": 0.0021053738178064426,
+ "lpips_max": 0.00423957034945488
+}

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "rows_recomputed": 200,
+  "recorded_inputs_and_source_unchanged": true,
+  "projects_with_changed_style_owner": 0,
+  "unrecorded_generated_input_files": [],
+  "results_sha256": "3cf1e6dda843b156e97ad0d36fb0bc8c7a61eaa7b1b9e437c9cdb772b48ea034",
+  "summary_sha256": "9c21b213271eb8cbdefc910f8eadc68162a2a682036a99c75739a690180a6353",
+  "run_manifest_sha256": "a49663e1c0c25d25f376b3828c618bb4bd1b52c2ce82d2683b9e3ce52cf6e954",
+  "audit_source_sha256": "a835dccb9aaf882c83e5c8ca6581793378c29015196647490465b6281694c128"
+}

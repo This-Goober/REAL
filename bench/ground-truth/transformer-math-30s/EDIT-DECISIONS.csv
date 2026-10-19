@@ -1,0 +1,15 @@
+kind,asset,start_frame,end_frame,source_in,z
+video,clip01,0,120,0,0
+image,img01,12,114,0,1
+video,clip02,120,270,0,0
+image,img02,132,264,0,1
+video,clip03,270,390,0,0
+image,img03,282,384,0,1
+video,clip04,390,540,0,0
+image,img04,402,534,0,1
+video,clip05,540,690,0,0
+image,img05,552,684,0,1
+video,clip06,690,810,0,0
+image,img06,702,804,0,1
+video,clip07,810,900,0,0
+image,img07,822,894,0,1

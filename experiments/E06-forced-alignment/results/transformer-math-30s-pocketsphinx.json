@@ -1,0 +1,14 @@
+{
+ "matched_words": 70,
+ "words_clock": 70,
+ "words_onsets": 70,
+ "onset_err_ms_median": 51.3499999999989,
+ "onset_err_ms_p95": 90.86499999999783,
+ "onset_err_ms_max": 100.00000000000142,
+ "onset_bias_ms_mean": -50.43999999999995,
+ "within_1_frame": 0.24285714285714285,
+ "within_3_frames": 0.9857142857142858,
+ "project": "transformer-math-30s",
+ "aligner": "pocketsphinx (voice.py measure)",
+ "reference": "ElevenLabs character alignment grouped into words (provider-supplied)"
+}

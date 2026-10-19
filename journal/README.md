@@ -35,6 +35,7 @@ impressions.** Every entry says what was measured and how to reproduce it.
 | # | Capability | Question | Verdict |
 |---|---|---|---|
 | [001](001-word-anchor-snapping/) | Word-anchor snapping | Can media placements land on the *exact spoken word*, and how accurate is the clock that puts them there? | ✅ Works with a **measured** clock; estimated clocks drift coherently (28% on one beat) — measurement is non-optional |
+| [002](002-assembly-benchmark/) | Assembly correctness | Does the compiled project describe the approved edit frame for frame, and do corrections stay local? | ✅ Frame-exact on 30/30 synthetic reels **after three fixes the probe forced** (late beat heads, inserts cutting the base short, clipped explicit durations); the published scripts were wrong in every beat, coherently |
 
 ## Entry template
 

@@ -1,0 +1,198 @@
+{
+ "project": "binary-search-5yo-30s",
+ "root": "/Users/Shared/REAL/demo/binary_search/media",
+ "generated": "2026-10-18",
+ "_comment": "Judgement fields written by Claude alongside make_visuals.py; facts are probed by build_catalog.py.",
+ "script_beats": [
+  {
+   "id": "B1",
+   "take": "Audio/narration.wav",
+   "dur": 0,
+   "gist": "hook. Let's play a guessing game. I'm thinking of a number from one to one hundred."
+  },
+  {
+   "id": "B2",
+   "take": "Audio/narration.wav",
+   "dur": 0,
+   "gist": "the slow way. You could guess one, two, three, four. That could take a hundred tries."
+  },
+  {
+   "id": "B3",
+   "take": "Audio/narration.wav",
+   "dur": 0,
+   "gist": "the trick. Guess the middle, fifty. Too high? Throw away all the bigger numbers."
+  },
+  {
+   "id": "B4",
+   "take": "Audio/narration.wav",
+   "dur": 0,
+   "gist": "again. Guess the middle of what is left. Twenty five. Too low? Throw away the smaller ones."
+  },
+  {
+   "id": "B5",
+   "take": "Audio/narration.wav",
+   "dur": 0,
+   "gist": "payoff. Every guess cuts the pile in half. Seven guesses. That is binary search."
+  }
+ ],
+ "assets": [
+  {
+   "f": "Images/img-grid.png",
+   "k": "image",
+   "role": "\u2605 The hundred numbers",
+   "shows": "A ten by ten grid of cells numbered 1 to 100, gray on a white page; 'pick a number from 1 to 100' beneath. Top third empty.",
+   "use": "B1, under the hook line.",
+   "beat": "B1",
+   "binds_to": "a `<show image of the numbers one to one hundred as a ten by ten grid\u2026>` component",
+   "tags": [
+    "img-grid",
+    "grid",
+    "hundred",
+    "numbers",
+    "hook"
+   ],
+   "id": "A01",
+   "specs": "1080x1920 png 25fps \u00b7 0.1 MB",
+   "exists": true,
+   "dur": 0.0,
+   "mb": 0.1,
+   "v": "1080x1920 png 25fps",
+   "w": 1080,
+   "h": 1920,
+   "fps": 25.0,
+   "rotation": 0,
+   "codec": "png"
+  },
+  {
+   "f": "Videos/clip-one-by-one.mp4",
+   "k": "video",
+   "role": "Crossing out one at a time (animated)",
+   "shows": "The same grid; from 0.2 s a number is crossed out every three frames from the top left, a 'tries: N' counter climbing beneath; 69 crossed by 7 s, never finishing. Silent, 7.0 s, longer than the beat on purpose.",
+   "use": "B2, the whole beat.",
+   "beat": "B2",
+   "binds_to": "a `<video clip of the same grid with the numbers being crossed out one at a time\u2026>` component",
+   "tags": [
+    "clip-one-by-one",
+    "linear",
+    "slow",
+    "crossed",
+    "counter"
+   ],
+   "id": "A02",
+   "specs": "7.0s \u00b7 1080x1920 h264 30fps \u00b7 0.1 MB",
+   "exists": true,
+   "dur": 7.0,
+   "mb": 0.1,
+   "v": "1080x1920 h264 30fps",
+   "w": 1080,
+   "h": 1920,
+   "fps": 30.0,
+   "rotation": 0,
+   "codec": "h264"
+  },
+  {
+   "f": "Videos/clip-halve.mp4",
+   "k": "video",
+   "role": "\u2605 Guess the middle (animated)",
+   "shows": "The grid; cell 50 ringed from 0.7 s, 'too high' beneath from 1.5 s, numbers 51-100 fade to pale gray between 2.5 and 3.7 s, then the frame holds. Silent, 7.0 s, longer than the beat.",
+   "use": "B3, the whole beat.",
+   "beat": "B3",
+   "binds_to": "a `<video clip of the grid with the cell for fifty ringed\u2026 fading to pale gray>` component",
+   "tags": [
+    "clip-halve",
+    "middle",
+    "fifty",
+    "too-high",
+    "halve"
+   ],
+   "id": "A03",
+   "specs": "7.0s \u00b7 1080x1920 h264 30fps \u00b7 0.2 MB",
+   "exists": true,
+   "dur": 7.0,
+   "mb": 0.2,
+   "v": "1080x1920 h264 30fps",
+   "w": 1080,
+   "h": 1920,
+   "fps": 30.0,
+   "rotation": 0,
+   "codec": "h264"
+  },
+  {
+   "f": "Images/img-again.png",
+   "k": "image",
+   "role": "Half again",
+   "shows": "Grid with 51-100 pale, cell 25 ringed, 'too low  the smaller ones go' beneath, 1-24 pale as well; only 26-50 still dark.",
+   "use": "B4, under 'twenty five'.",
+   "beat": "B4",
+   "binds_to": "a `<show image of the grid with the numbers above fifty already pale, the cell for twenty five ringed\u2026>` component",
+   "tags": [
+    "img-again",
+    "twenty-five",
+    "too-low",
+    "again"
+   ],
+   "id": "A04",
+   "specs": "1080x1920 png 25fps \u00b7 0.1 MB",
+   "exists": true,
+   "dur": 0.0,
+   "mb": 0.1,
+   "v": "1080x1920 png 25fps",
+   "w": 1080,
+   "h": 1920,
+   "fps": 25.0,
+   "rotation": 0,
+   "codec": "png"
+  },
+  {
+   "f": "Images/img-halving.png",
+   "k": "image",
+   "role": "\u2605 The halving staircase",
+   "shows": "Eight bars each half the width of the one above, labelled 100 50 25 13 7 4 2 1, the last one dark; '7 guesses' and 'each guess cuts the pile in half' beneath.",
+   "use": "B5, under the closing title.",
+   "beat": "B5",
+   "binds_to": "a `<show image of a column of gray bars each half the width of the one above\u2026>` component",
+   "tags": [
+    "img-halving",
+    "staircase",
+    "seven",
+    "guesses",
+    "payoff"
+   ],
+   "id": "A05",
+   "specs": "1080x1920 png 25fps \u00b7 0.1 MB",
+   "exists": true,
+   "dur": 0.0,
+   "mb": 0.1,
+   "v": "1080x1920 png 25fps",
+   "w": 1080,
+   "h": 1920,
+   "fps": 25.0,
+   "rotation": 0,
+   "codec": "png"
+  },
+  {
+   "f": "Audio/narration.wav",
+   "k": "audio",
+   "role": "Voice take 1 \u2014 full script",
+   "shows": "ElevenLabs neural narration (George, eleven_multilingual_v2) of the five lines of NOTEBOOK.md in order as one take, 150 ms lead-in, 1 s of silence at the end. Says: Let's play a guessing game. I'm thinking of a number from one to one hundred.\nYou could guess one, two, three, four. That could take a hundred tries.\nHere is the trick. Guess the middle, fifty. Too high? Then throw away all the bigger numbers.\nGuess the middle of what is left. Twenty five. Too low? Throw away the smaller ones.\nEvery guess cuts the pile in half. Seven guesses and you have found it. That is binary search.",
+   "use": "B1-B5. The measured clock for the whole reel.",
+   "beat": "any",
+   "binds_to": "the narration spine \u2014 every spoken `<\u2026>` line in the notebook, as one continuous take",
+   "tags": [
+    "narration",
+    "take-1",
+    "voice",
+    "full-script"
+   ],
+   "id": "A06",
+   "specs": "28.12s \u00b7 pcm_s16le 2ch 48k \u00b7 5.4 MB",
+   "exists": true,
+   "dur": 28.12,
+   "mb": 5.4,
+   "a": "pcm_s16le 2ch 48k",
+   "audio_channels": 2,
+   "audio_rate": 48000,
+   "audio_codec": "pcm_s16le"
+  }
+ ]
+}

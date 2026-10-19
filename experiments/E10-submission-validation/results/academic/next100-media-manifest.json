@@ -1,0 +1,702 @@
+[
+  {
+    "vid": "yuj1y5__jXg_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/yuj1y5__jXg_60.0_210.0.mp4",
+    "sha256": "8a11339335026015c9be1a949addd1374f58a62de6b9e706e4d7b8bb558ac81f",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "uSAGSbauHBs_60.0_210.0",
+    "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/u/uSAGSbauHBs_60.0_210.0.mp4",
+    "sha256": "e4c1e1a9bc0fbfb942357e8eacf35ad4a4b49159690e59a0c3ce17517946aaea",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "lWO0pIpnmIw_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/lWO0pIpnmIw_210.0_360.0.mp4",
+    "sha256": "482c205d65a5d0e3d659565abab06fb3a8d40525b20dc1b04752d648347afd6f",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "VUV77-5ERxA_360.0_510.0",
+    "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/v/VUV77-5ERxA_360.0_510.0.mp4",
+    "sha256": "c12d8e1ff6f3b4e7d218f6498f47ebf95fbfd8b059bc92462f8540ca16d318af",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "xHypiQpL2yQ_360.0_510.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/xHypiQpL2yQ_360.0_510.0.mp4",
+    "sha256": "b51537f731ab72860b7e8601ba311def78212a85da7210ea9bf10545d8cd905c",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "CPdeKuaTMoU_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/CPdeKuaTMoU_60.0_210.0.mp4",
+    "sha256": "d09edc8dd5f2392678edb3a8d711acb7b2640a0e0bc8e6605fccf50323b8f5b1",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "WEpnzfufxJQ_360.0_510.0",
+    "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/w/WEpnzfufxJQ_360.0_510.0.mp4",
+    "sha256": "35edcb7bd68dbb83625640f171660aaccf2b6fecc79575669c36da13ebc13338",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "ACMKgn5w2HY_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/ACMKgn5w2HY_210.0_360.0.mp4",
+    "sha256": "627e3aa54a60b343706bcdac3c39f1fd097e2af4e7acd867e689ff70b8a032c6",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "gY3GOIn80k8_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/gY3GOIn80k8_210.0_360.0.mp4",
+    "sha256": "051ee3e2a58303e1e1d3ff84dd83cc906e5593b507888a537de111d6fa5c0705",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "r7A-cfBq2Xw_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/r7A-cfBq2Xw_60.0_210.0.mp4",
+    "sha256": "5fa82b18ff327745ec9aa2bef6cacc4e83f5ec60f694394d89663ea000c5882b",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "T9ptpjvuIP8_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/T9ptpjvuIP8_60.0_210.0.mp4",
+    "sha256": "c8c5980d718a7271cee29c95cb64c93c0845cf086099052ac5441704972c97c4",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "2vFzBa_WKNg_60.0_210.0",
+    "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/2/2vFzBa_WKNg_60.0_210.0.mp4",
+    "sha256": "540a98cf043c75bd03cb1e8a5bde8e10b92bf4915465f90479911058bedc4ca9",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "PMm8xTk8ofI_210.0_360.0",
+    "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/p/PMm8xTk8ofI_210.0_360.0.mp4",
+    "sha256": "5a5a988a124923bddf3f69f3d9b41cf195033ef32aa935662ade54ceab6eb1c5",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "iWBU-K5dbhE_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/iWBU-K5dbhE_60.0_210.0.mp4",
+    "sha256": "65f7185621b8308c7bfdc83e727dabb0d51a6d98ffd09ce0d8ee6b4ccb908fd5",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "BanSEQnGfFg_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/BanSEQnGfFg_60.0_210.0.mp4",
+    "sha256": "1913dce520532fc9dec096dc4350d42e38298e2cfd070081a15f6b34065739d4",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "8yHwJ3f7Fi4_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/8yHwJ3f7Fi4_210.0_360.0.mp4",
+    "sha256": "a536daac67739c524e623713a0ae291a10d110f040ec5e7b1d77a2dc98d709cf",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "wQd4FV4AZa0_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/wQd4FV4AZa0_60.0_210.0.mp4",
+    "sha256": "7fc11fa95b540f8e0c4ade7f5367b8c4f9f896f339ce6b2c3b02ed289393f35c",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "zKs0TO6ZTBI_360.0_510.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/zKs0TO6ZTBI_360.0_510.0.mp4",
+    "sha256": "17d513ba564ad1c61a8a096fd9245fa396a7a0bca786f10bd56d168658a4860c",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "xXWKd1b3SHM_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/xXWKd1b3SHM_60.0_210.0.mp4",
+    "sha256": "8a75dd9a260fd58afd634dd577d81f1ffa866caed04501a26363ebcc3b0ee86f",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "q4WEUoz2wHc_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/q4WEUoz2wHc_60.0_210.0.mp4",
+    "sha256": "4d9fff01f0464fa984b750bc7d94774d0b0de50785129fbff44b3697067a591e",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "S1DZb9SkrK8_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/S1DZb9SkrK8_60.0_210.0.mp4",
+    "sha256": "27663aee7ed21d801767d0aa488944f6d92ac9bb8452cb23faf1163c8595b18c",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "raTrFwJMoJo_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/raTrFwJMoJo_210.0_360.0.mp4",
+    "sha256": "26cf2cb6f0fcff095ca7c32383c37cbeedaf1d43aa53d07973a94551514056ec",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "_OiTj9QUt_g_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/_OiTj9QUt_g_60.0_210.0.mp4",
+    "sha256": "b93b979f77e3780aec873b2d1ccf8f22822de99baeffbc2dac8b3c84e31bb5b2",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "TQ0nr6gTX6w_360.0_510.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/TQ0nr6gTX6w_360.0_510.0.mp4",
+    "sha256": "76b0f16499a98c0710f24116b846aa882d6c9dd963344bba5ccd3fa6c790154a",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "m0cZFcXa5sc_360.0_510.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/m0cZFcXa5sc_360.0_510.0.mp4",
+    "sha256": "50db6c22f974fd6dbd5390176e62d418e4296496c18d50f81a75cc72eb79179f",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "GrxpxImALZo_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/GrxpxImALZo_60.0_210.0.mp4",
+    "sha256": "b2099e194ee9a6197a1ccd3429332101d256ec64bfc59b64efddaf71f498ef40",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "RoripwjYFp8_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/RoripwjYFp8_210.0_360.0.mp4",
+    "sha256": "4b39b15158dc20c0bc6f1758a9239c8f3eed20ba4a90953338eec2246fa8f1f0",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "DTrwYYi25Dc_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/DTrwYYi25Dc_60.0_210.0.mp4",
+    "sha256": "edbb640ad12daa3b6a1efe83d05466bab8fd68e04d7846481df0cb822302973e",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "GOzEeIvLZO4_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/GOzEeIvLZO4_60.0_210.0.mp4",
+    "sha256": "7a2a4e6a40876c611680162fce5c65f22b08da8ff277e2a370ee08315075cef3",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "uE1ciE0PCIU_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/uE1ciE0PCIU_210.0_360.0.mp4",
+    "sha256": "a16b6bd628cf1871b622e40e371ef36b036c3df7d67d4c4a20049a52b585040a",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "AWoPkPjhxSo_360.0_510.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/AWoPkPjhxSo_360.0_510.0.mp4",
+    "sha256": "588de75b98ecb40e0396b31060cae993b47b3b3c7fb6c09f432a6289c754db0a",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "Iu7nF2VLF3c_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/Iu7nF2VLF3c_210.0_360.0.mp4",
+    "sha256": "2099683e17b0c064cd8d679a5107800f4fea873f55c9b94b4f47dc3732dbac83",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "3UPP_WRL86c_360.0_510.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/3UPP_WRL86c_360.0_510.0.mp4",
+    "sha256": "08cbd57b21c2bead9eb495e843af41a16ead718b355e9e1ea116ae17f2140ae2",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "UvgDldse9KU_510.0_660.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/UvgDldse9KU_510.0_660.0.mp4",
+    "sha256": "2f3c1f6d3d941e8adb5d5ab16ad721f486ca5c392e4e705f4dd0141cb10ef7f3",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "UvgDldse9KU_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/UvgDldse9KU_60.0_210.0.mp4",
+    "sha256": "2b9131aaaaea6e4d72e250ceae4d3a95f3f955338b92976f597b833819ce3108",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "DLSkojSiAPs_360.0_510.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/DLSkojSiAPs_360.0_510.0.mp4",
+    "sha256": "d1370842b23bffa38cf09b22e53f0bd7bc519c0f56a658234a0549127f695f0e",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "IoNLqyYnO8k_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/IoNLqyYnO8k_60.0_210.0.mp4",
+    "sha256": "62dfd459afcb9f9cea92196e7e8e7561542cc6581c4f0ca3447669f07c243714",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "iWBU-K5dbhE_360.0_510.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/iWBU-K5dbhE_360.0_510.0.mp4",
+    "sha256": "7613703eba9841174e2e114bd934a6c37a606cf0485f67b7775538f616c729c1",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "A_MFAuOwK5k_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/A_MFAuOwK5k_60.0_210.0.mp4",
+    "sha256": "bd8cf50333415f413b6106de9c88230f8697366ca818cbf30bbd7773eb370924",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "CltHKz3Zfxc_360.0_510.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/CltHKz3Zfxc_360.0_510.0.mp4",
+    "sha256": "4d0a6668a14712cd7dbc48c4ed86b5523115b4a9605f4c3a2a887625289f9512",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "idvZpkYWOMQ_210.0_360.0",
+    "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/i/idvZpkYWOMQ_210.0_360.0.mp4",
+    "sha256": "1e6643e374bee9f08b3f103a991e606b395359aba4135f3339261a6e4b027681",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "6SdLxtywo4s_360.0_510.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/6SdLxtywo4s_360.0_510.0.mp4",
+    "sha256": "d4cf4a08695d4a3bcf93d1b3bc3e7caba3e00fdde7a7bf2ea43c0e98b576e947",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "a6NmGMEsCWM_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/a6NmGMEsCWM_60.0_210.0.mp4",
+    "sha256": "b8ea0176b7a707484e5db6a567acbb132b76a91fcf07113931a77a278b93e10e",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "UdiR9BWQKew_360.0_510.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/UdiR9BWQKew_360.0_510.0.mp4",
+    "sha256": "32ba8b91dfc2d05f404429bdce237f99469255cd578e7b9df8413132f9d0576d",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "jdhIgsf5X5o_360.0_510.0",
+    "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/j/jdhIgsf5X5o_360.0_510.0.mp4",
+    "sha256": "2a7465a9b7385f77eb8a3b4bb04494b9b981e25b31a9e37ef90bb6be6f282fac",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "_t21xx94wZw_60.0_210.0",
+    "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/_/_t21xx94wZw_60.0_210.0.mp4",
+    "sha256": "8f2675f07a7e9a65eace2a279666cc34d319b63e28c46d4b57cbc2945b2e4968",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "KWBfQjuwp4E_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/KWBfQjuwp4E_210.0_360.0.mp4",
+    "sha256": "5b469b71aefc363e7e80829f7200d895c44002ccde431145e3f0ecd16f6cbc71",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "AWoPkPjhxSo_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/AWoPkPjhxSo_60.0_210.0.mp4",
+    "sha256": "2fa672ac1eb6dda04af4cc8bb55b8b25dcfc81b38c6cdef7384cf74153c87926",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "wFPaHOAoGzI_510.0_660.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/wFPaHOAoGzI_510.0_660.0.mp4",
+    "sha256": "0bb3a0e023672f59927baf4e2b84fc9cac359ee697786222e5762c279e49dc60",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "H15bUc-1LJo_60.0_210.0",
+    "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/h/H15bUc-1LJo_60.0_210.0.mp4",
+    "sha256": "9411a28903f1d73b195a75a75ed595b1902d164269e95640e49a5ad45cf89991",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "m0cZFcXa5sc_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/m0cZFcXa5sc_210.0_360.0.mp4",
+    "sha256": "2dd10d738aa41a3a5aea5fe43b402ec2c67dd1211b12cfb99b784a867ed35438",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "trcIoufeEgM_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/trcIoufeEgM_210.0_360.0.mp4",
+    "sha256": "0b9cb794ce72cd7febb62efdc6bc1c7e365a9fced77d925e776831939e280aac",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "CkWOpyrAXdw_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/CkWOpyrAXdw_60.0_210.0.mp4",
+    "sha256": "771ea17235cd55c572300168a57d533da96f0d0fecd4a7bb81286d02ac61e3db",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "DTrwYYi25Dc_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/DTrwYYi25Dc_210.0_360.0.mp4",
+    "sha256": "c30f9d39454cbb70a7fb0f443465f5ee5a88906f3e277a316e295a37b6303c62",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "N5g7D9Qk7WI_510.0_660.0",
+    "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/n/N5g7D9Qk7WI_510.0_660.0.mp4",
+    "sha256": "7b9c10c8afcee1030da989d0987aa7b4406f482525dde2bdc6f340312dfa4792",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "gpDpN44mky0_360.0_510.0",
+    "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/g/gpDpN44mky0_360.0_510.0.mp4",
+    "sha256": "a116c1e8fd524f4d111d503edfb80b438d5e27e64cec984027b974f1b1a26e7a",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "DTrwYYi25Dc_660.0_810.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/DTrwYYi25Dc_660.0_810.0.mp4",
+    "sha256": "3a1187a8b21974c4d5abec234a0d530bd02f6cc67bb01babf1b812f92121c1e1",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "nJUP36AmrSM_660.0_810.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/nJUP36AmrSM_660.0_810.0.mp4",
+    "sha256": "5194938413ac2bfe892d7824fc02addee2984930521574eebe87ec6d70fe6e1c",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "XcJPd4NhhCs_510.0_660.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/XcJPd4NhhCs_510.0_660.0.mp4",
+    "sha256": "d5cdcf443cd8a3306e852874c0a007050860773769128b17f1b18b8e3300f3e6",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "2vFzBa_WKNg_510.0_660.0",
+    "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/2/2vFzBa_WKNg_510.0_660.0.mp4",
+    "sha256": "527e810083f0dfd6e37be67a66a8c4c40da0c9fc3dfd3411b9021772f6ce8693",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "a2KIsaS9iJg_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/a2KIsaS9iJg_210.0_360.0.mp4",
+    "sha256": "7736b19612b981a2b15df0090752e2e8bdce4dd7bc29334124244f77acca10fc",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "HkLfNhgP0TM_660.0_810.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/HkLfNhgP0TM_660.0_810.0.mp4",
+    "sha256": "5f9ec60b9b5c2f0d235465610f3680216c42c87ce777a6698a78f263711bde36",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "koupdIrQ4Xg_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/koupdIrQ4Xg_210.0_360.0.mp4",
+    "sha256": "b1e7c2f3275de87b4e4d561b0c2fd69ef8cb442dde5c6463ff40d91157401632",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "qHSeudOaXwk_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/qHSeudOaXwk_60.0_210.0.mp4",
+    "sha256": "ab735a03669be4ebb5243285cf49ace23a455a00cc7a5b18eae42d1e8c7faade",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "0_eIFN2FDoU_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/0_eIFN2FDoU_210.0_360.0.mp4",
+    "sha256": "ead25059f670ccc4a119d8834c04e8908238feeb1088a5a0501fc129a4591815",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "SwIB-QlxNCo_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/SwIB-QlxNCo_60.0_210.0.mp4",
+    "sha256": "a777df51f8bde70337317482b2cfc171c2c4e103bb8df4dd0b6da9cf72f30a77",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "xivzc8l7O_A_210.0_360.0",
+    "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/x/xivzc8l7O_A_210.0_360.0.mp4",
+    "sha256": "5c7d43efed54aa035f33fe229543b7b11f5a1f9e3cba8418d8658a025d599705",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "iB1iaveR00c_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/iB1iaveR00c_60.0_210.0.mp4",
+    "sha256": "6c4eb4101ec77666a546e77e964e83a9261f34493cfe06dcf8cf99dd016dc31d",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "j9NNAmqweOA_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/j9NNAmqweOA_60.0_210.0.mp4",
+    "sha256": "d7184988531241c6b54862d262af8294dbff122d9e37b10557fa63247653304c",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "nY42UppPhhg_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/nY42UppPhhg_210.0_360.0.mp4",
+    "sha256": "30fd4c705723a9ff72ee50e73ad82b0678c9592d45f4bf50658c492555298aca",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "q4WEUoz2wHc_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/q4WEUoz2wHc_210.0_360.0.mp4",
+    "sha256": "a1ed903f84fe7b1658ed7885ad67d6cbf323f73e74527ccccdc1817de5eaafe8",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "mr9kK0_7x08_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/mr9kK0_7x08_210.0_360.0.mp4",
+    "sha256": "344c9f0a72a3f11c1c7ea3be9d83672f4be0746869096a406c96b00b4e9d668a",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "2X46BBkcCeY_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/2X46BBkcCeY_210.0_360.0.mp4",
+    "sha256": "2f1fbb712aa142b52f5c9191e91ef191f2dba87036ee0a3d838a0ab56c19c455",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "x4kKIm8WWOA_660.0_810.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/x4kKIm8WWOA_660.0_810.0.mp4",
+    "sha256": "d8f2b243cb37e3da9ca2a94a1bd00d49d4a3403b412cee1ede5e118bc2538b5a",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "ACMKgn5w2HY_60.0_210.0",
+    "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/a/ACMKgn5w2HY_60.0_210.0.mp4",
+    "sha256": "779abef9cec68d9395459c373d731644d12bac242014a8f32f870578d2bcf751",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "X326z_D4OyE_510.0_660.0",
+    "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/x/X326z_D4OyE_510.0_660.0.mp4",
+    "sha256": "990f18f9a090512578abcd78bb06c2ce79e11fa297cfbbaec9e715ac948991a6",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "m0cZFcXa5sc_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/m0cZFcXa5sc_60.0_210.0.mp4",
+    "sha256": "090fe5e3c3e4a04dd253cef82afba2b4f03fe0a0712186c2c94f8457896cf7c1",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "XcJPd4NhhCs_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/XcJPd4NhhCs_60.0_210.0.mp4",
+    "sha256": "d1c62c57dd6dfd94db5a205e8145e37fe72fa079b122d420c4e316cdb5140715",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "DU3E7tTt0_s_60.0_210.0",
+    "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/d/DU3E7tTt0_s_60.0_210.0.mp4",
+    "sha256": "15f3c2dde336c774cc06f6d8418651334883e7e8fb5cd1cb606a35c7626b1620",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "13U4xVzZFQ8_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/13U4xVzZFQ8_60.0_210.0.mp4",
+    "sha256": "59183f81240c56075cb5f0131a93fe5339fb2e81a1d902e59c43152d5a08f40f",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "DTInxNfWXVc_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/DTInxNfWXVc_60.0_210.0.mp4",
+    "sha256": "a58416eaf5beeafeb36c33f441e88882d19cbebf230c14c3d8786a0c0ae3c270",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "NUsG9BgSes0_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/NUsG9BgSes0_60.0_210.0.mp4",
+    "sha256": "5f76b07c95735fe617264b2c03b9c33ad94402afa52dac9e2e1f0e797087dc5d",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "M7mePz5cXDk_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/M7mePz5cXDk_60.0_210.0.mp4",
+    "sha256": "f8740a0c6c94dcf46ca77f9a6908f6660e1400e932e104c44146ef907ada7391",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "Uw8hpJfV-uQ_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/Uw8hpJfV-uQ_210.0_360.0.mp4",
+    "sha256": "78a130481a18e37e313a6abea7856c1f70f75a1a08a2aac3eec67f03724d96a7",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "K3lDAtwYt_4_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/K3lDAtwYt_4_210.0_360.0.mp4",
+    "sha256": "db01e8ce294db903bc3fd3679d9cc27c06fdcadf40eb2fbd63d7f64f1e52336f",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "tb6Br2F4KQM_360.0_510.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/tb6Br2F4KQM_360.0_510.0.mp4",
+    "sha256": "0cd402ec6554243d94d4f98ce5e7371b4883e2d296091efde7ca21572a15013c",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "UDEfgewcr5E_360.0_510.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/UDEfgewcr5E_360.0_510.0.mp4",
+    "sha256": "5d54c44e5018ba087e0c50a99e9c3ddc30a0f2d207b2f34dd1800b83fd2d3a36",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "00DH3yn5C30_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/00DH3yn5C30_210.0_360.0.mp4",
+    "sha256": "c12895f168c00faf3fa7bab1c3a69a62e3ce3a1f5e735baee9f003928489b93a",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "j9NNAmqweOA_360.0_510.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/j9NNAmqweOA_360.0_510.0.mp4",
+    "sha256": "d602b962fbea56ff2678bdf04a08d09f9db0066318c64d5e38abbd66a2a391fa",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "T9ptpjvuIP8_510.0_660.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/T9ptpjvuIP8_510.0_660.0.mp4",
+    "sha256": "4cfc7bbc13584952bd07e360bfaf21d78f2543cb1889fd8dba49878dc82dbbe1",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "wFPaHOAoGzI_660.0_810.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/wFPaHOAoGzI_660.0_810.0.mp4",
+    "sha256": "55425dbe55a91b9276cdeed94b1547ccc85e24d92b7ddff090714d1378a0b0f5",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "uoVRb7a58GU_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/uoVRb7a58GU_60.0_210.0.mp4",
+    "sha256": "c76da8266b370c24b1eee3fea7d39d791454bfd72626ec99a6f325965f90d516",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "gpDpN44mky0_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/gpDpN44mky0_210.0_360.0.mp4",
+    "sha256": "0955ca57dab74124f7b34f163b900a683d6af3ba8a15c07c608bc8476493bb52",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "uE1ciE0PCIU_510.0_660.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/uE1ciE0PCIU_510.0_660.0.mp4",
+    "sha256": "7864c5e58f57ae99d7dc615bc98a3fffb5388a95d954f51a61b6e2ae339b7f2e",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "Y2GVVC_cD_E_360.0_510.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/Y2GVVC_cD_E_360.0_510.0.mp4",
+    "sha256": "db905f1b79ec7d3771a363a0ef9788b05170a0358a6df9d5d7d1f767a17e3638",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "DHHHHFojz3E_210.0_360.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/DHHHHFojz3E_210.0_360.0.mp4",
+    "sha256": "df5ef06aede7e94b4fa9582a3b209e353e3a439a5abf6590a05276c03b2f23bf",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "bowYAwxuG-c_360.0_510.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/bowYAwxuG-c_360.0_510.0.mp4",
+    "sha256": "a9d1169af5cbff58f3e00950d659a5b68d79d209185a504316079e101f97d3a8",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "yeCaAL4uM-U_60.0_210.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/yeCaAL4uM-U_60.0_210.0.mp4",
+    "sha256": "cd02701caa3cd85829257b295f3f19774e8b256e062da42077112d590d97cf5a",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "gY3GOIn80k8_510.0_660.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/gY3GOIn80k8_510.0_660.0.mp4",
+    "sha256": "3cdc147d02bb3a9202674ae76712a35d187cc6ca368086772eb9779dd905818e",
+    "origin": "community mirror",
+    "ok": true
+  },
+  {
+    "vid": "nJUP36AmrSM_360.0_510.0",
+    "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/nJUP36AmrSM_360.0_510.0.mp4",
+    "sha256": "98161a7dcd36008e89a6617ecab3e958368136de75a1cb2729a5f1965a449f8d",
+    "origin": "community mirror",
+    "ok": true
+  }
+]

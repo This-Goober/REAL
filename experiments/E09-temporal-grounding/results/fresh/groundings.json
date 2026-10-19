@@ -1,0 +1,722 @@
+{
+  "2428": {
+    "protocol": "real-temporal-v1",
+    "request_sha256": "4ba62901ff7c32fde7111af58343a0425d6e080cc9cb71f13d1b4eca01e9c525",
+    "answer": {
+      "bindings": [
+        {
+          "component": "request",
+          "candidates": [
+            {
+              "asset": "source",
+              "first": "A000",
+              "last": "A074",
+              "confidence": 0.6,
+              "reason": "The whole video is a handlebar-camera, rider's-eye view of a motorcycle in transit: it queues in traffic, turns, and rides through residential and main roads, with the dashboard, glove and flag decal visible throughout.",
+              "limitations": [
+                "The request is generic and the whole video matches it, so the exact boundaries are uncertain",
+                "A056 is a black frame"
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A019",
+              "last": "A055",
+              "confidence": 0.4,
+              "reason": "This stretch shows continuous riding through neighborhoods, curves and an intersection turn, from the rider's viewpoint.",
+              "limitations": [
+                "Ignores the earlier queued segment, which also shows the rider's view"
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A000",
+              "last": "A018",
+              "confidence": 0.3,
+              "reason": "Cockpit view of the motorcycle in traffic, with the dashboard, glove and flag decal visible.",
+              "limitations": [
+                "The motorcycle is mostly stopped or queued, so there is little transit"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "bindings": {
+      "request": [
+        {
+          "asset": "source",
+          "source_in": 0,
+          "source_out": 150,
+          "confidence": 0.6,
+          "evidence": [
+            "A000",
+            "A001",
+            "A002",
+            "A003",
+            "A004",
+            "A005",
+            "A006",
+            "A007",
+            "A008",
+            "A009",
+            "A010",
+            "A011",
+            "A012",
+            "A013",
+            "A014",
+            "A015",
+            "A016",
+            "A017",
+            "A018",
+            "A019",
+            "A020",
+            "A021",
+            "A022",
+            "A023",
+            "A024",
+            "A025",
+            "A026",
+            "A027",
+            "A028",
+            "A029",
+            "A030",
+            "A031",
+            "A032",
+            "A033",
+            "A034",
+            "A035",
+            "A036",
+            "A037",
+            "A038",
+            "A039",
+            "A040",
+            "A041",
+            "A042",
+            "A043",
+            "A044",
+            "A045",
+            "A046",
+            "A047",
+            "A048",
+            "A049",
+            "A050",
+            "A051",
+            "A052",
+            "A053",
+            "A054",
+            "A055",
+            "A056",
+            "A057",
+            "A058",
+            "A059",
+            "A060",
+            "A061",
+            "A062",
+            "A063",
+            "A064",
+            "A065",
+            "A066",
+            "A067",
+            "A068",
+            "A069",
+            "A070",
+            "A071",
+            "A072",
+            "A073",
+            "A074"
+          ],
+          "why": "The whole video is a handlebar-camera, rider's-eye view of a motorcycle in transit: it queues in traffic, turns, and rides through residential and main roads, with the dashboard, glove and flag decal visible throughout.",
+          "limitations": [
+            "The request is generic and the whole video matches it, so the exact boundaries are uncertain",
+            "A056 is a black frame"
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 38,
+          "source_out": 112,
+          "confidence": 0.4,
+          "evidence": [
+            "A019",
+            "A020",
+            "A021",
+            "A022",
+            "A023",
+            "A024",
+            "A025",
+            "A026",
+            "A027",
+            "A028",
+            "A029",
+            "A030",
+            "A031",
+            "A032",
+            "A033",
+            "A034",
+            "A035",
+            "A036",
+            "A037",
+            "A038",
+            "A039",
+            "A040",
+            "A041",
+            "A042",
+            "A043",
+            "A044",
+            "A045",
+            "A046",
+            "A047",
+            "A048",
+            "A049",
+            "A050",
+            "A051",
+            "A052",
+            "A053",
+            "A054",
+            "A055"
+          ],
+          "why": "This stretch shows continuous riding through neighborhoods, curves and an intersection turn, from the rider's viewpoint.",
+          "limitations": [
+            "Ignores the earlier queued segment, which also shows the rider's view"
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 0,
+          "source_out": 38,
+          "confidence": 0.3,
+          "evidence": [
+            "A000",
+            "A001",
+            "A002",
+            "A003",
+            "A004",
+            "A005",
+            "A006",
+            "A007",
+            "A008",
+            "A009",
+            "A010",
+            "A011",
+            "A012",
+            "A013",
+            "A014",
+            "A015",
+            "A016",
+            "A017",
+            "A018"
+          ],
+          "why": "Cockpit view of the motorcycle in traffic, with the dashboard, glove and flag decal visible.",
+          "limitations": [
+            "The motorcycle is mostly stopped or queued, so there is little transit"
+          ]
+        }
+      ]
+    }
+  },
+  "1678": {
+    "protocol": "real-temporal-v1",
+    "request_sha256": "24d71c9f94489f731cf121d4be57602a85a00683d74e3d69eb02fd54b746493b",
+    "answer": {
+      "bindings": [
+        {
+          "component": "request",
+          "candidates": [
+            {
+              "asset": "source",
+              "first": "A041",
+              "last": "A053",
+              "confidence": 0.6,
+              "reason": "Toddler rides the red trike through slushy snowy park path, pushed by the man, with splashes and playground; shows the child enjoying trike riding in snow.",
+              "limitations": [
+                "Toddler is pushed on a trike rather than clearly pedaling",
+                "Enjoyment is not clearly visible in every frame"
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A004",
+              "last": "A007",
+              "confidence": 0.45,
+              "reason": "Smiling, laughing toddler on trike with snow patches behind, then riding away.",
+              "limitations": [
+                "Snow is only patches on a wet parking lot",
+                "Short segment"
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A060",
+              "last": "A064",
+              "confidence": 0.3,
+              "reason": "Woman pushes toddler on red trike across snowy park.",
+              "limitations": [
+                "Duck focus in part; toddler enjoyment not clearly visible"
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A073",
+              "last": "A074",
+              "confidence": 0.3,
+              "reason": "Toddler on trike approaching camera along snowy path.",
+              "limitations": [
+                "Very brief; no visible cycling action beyond approach"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "bindings": {
+      "request": [
+        {
+          "asset": "source",
+          "source_in": 82,
+          "source_out": 108,
+          "confidence": 0.6,
+          "evidence": [
+            "A041",
+            "A042",
+            "A043",
+            "A044",
+            "A045",
+            "A046",
+            "A047",
+            "A048",
+            "A049",
+            "A050",
+            "A051",
+            "A052",
+            "A053"
+          ],
+          "why": "Toddler rides the red trike through slushy snowy park path, pushed by the man, with splashes and playground; shows the child enjoying trike riding in snow.",
+          "limitations": [
+            "Toddler is pushed on a trike rather than clearly pedaling",
+            "Enjoyment is not clearly visible in every frame"
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 8,
+          "source_out": 16,
+          "confidence": 0.45,
+          "evidence": [
+            "A004",
+            "A005",
+            "A006",
+            "A007"
+          ],
+          "why": "Smiling, laughing toddler on trike with snow patches behind, then riding away.",
+          "limitations": [
+            "Snow is only patches on a wet parking lot",
+            "Short segment"
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 120,
+          "source_out": 130,
+          "confidence": 0.3,
+          "evidence": [
+            "A060",
+            "A061",
+            "A062",
+            "A063",
+            "A064"
+          ],
+          "why": "Woman pushes toddler on red trike across snowy park.",
+          "limitations": [
+            "Duck focus in part; toddler enjoyment not clearly visible"
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 146,
+          "source_out": 150,
+          "confidence": 0.3,
+          "evidence": [
+            "A073",
+            "A074"
+          ],
+          "why": "Toddler on trike approaching camera along snowy path.",
+          "limitations": [
+            "Very brief; no visible cycling action beyond approach"
+          ]
+        }
+      ]
+    }
+  },
+  "10243": {
+    "protocol": "real-temporal-v1",
+    "request_sha256": "611379d4546f196c06492c906eb0795523dd21e434501c11efe4c341641e31ec",
+    "answer": {
+      "bindings": [
+        {
+          "component": "request",
+          "candidates": [
+            {
+              "asset": "source",
+              "first": "A003",
+              "last": "A007",
+              "confidence": 0.55,
+              "reason": "Tracked rocket launcher with smoke, then a ship deck gun firing: military vehicles/vessels visibly firing weapons.",
+              "limitations": [
+                "Launcher firing is inferred from smoke, not clearly shown",
+                "Ship is a vessel, not a land vehicle"
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A029",
+              "last": "A031",
+              "confidence": 0.5,
+              "reason": "Tanks on a foggy field with tracer sparks and smoke suggest tanks firing during the drill.",
+              "limitations": [
+                "Sparks may be flares or fireworks-like effects",
+                "Firing not directly visible"
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A046",
+              "last": "A050",
+              "confidence": 0.5,
+              "reason": "Tank with smoke at rear, a launcher with raised rack, and ground explosions suggest weapons being fired.",
+              "limitations": [
+                "Mix of separate shots",
+                "Launch moment not directly visible"
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A014",
+              "last": "A017",
+              "confidence": 0.35,
+              "reason": "Tanks and an armored vehicle with smoke plumes on a range.",
+              "limitations": [
+                "No explicit firing visible"
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A051",
+              "last": "A052",
+              "confidence": 0.2,
+              "reason": "Helicopters release flares, which are military vehicles discharging countermeasures rather than weapons.",
+              "limitations": [
+                "Flares are not weapons fire"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "bindings": {
+      "request": [
+        {
+          "asset": "source",
+          "source_in": 6,
+          "source_out": 16,
+          "confidence": 0.55,
+          "evidence": [
+            "A003",
+            "A004",
+            "A005",
+            "A006",
+            "A007"
+          ],
+          "why": "Tracked rocket launcher with smoke, then a ship deck gun firing: military vehicles/vessels visibly firing weapons.",
+          "limitations": [
+            "Launcher firing is inferred from smoke, not clearly shown",
+            "Ship is a vessel, not a land vehicle"
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 58,
+          "source_out": 64,
+          "confidence": 0.5,
+          "evidence": [
+            "A029",
+            "A030",
+            "A031"
+          ],
+          "why": "Tanks on a foggy field with tracer sparks and smoke suggest tanks firing during the drill.",
+          "limitations": [
+            "Sparks may be flares or fireworks-like effects",
+            "Firing not directly visible"
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 92,
+          "source_out": 102,
+          "confidence": 0.5,
+          "evidence": [
+            "A046",
+            "A047",
+            "A048",
+            "A049",
+            "A050"
+          ],
+          "why": "Tank with smoke at rear, a launcher with raised rack, and ground explosions suggest weapons being fired.",
+          "limitations": [
+            "Mix of separate shots",
+            "Launch moment not directly visible"
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 28,
+          "source_out": 36,
+          "confidence": 0.35,
+          "evidence": [
+            "A014",
+            "A015",
+            "A016",
+            "A017"
+          ],
+          "why": "Tanks and an armored vehicle with smoke plumes on a range.",
+          "limitations": [
+            "No explicit firing visible"
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 102,
+          "source_out": 106,
+          "confidence": 0.2,
+          "evidence": [
+            "A051",
+            "A052"
+          ],
+          "why": "Helicopters release flares, which are military vehicles discharging countermeasures rather than weapons.",
+          "limitations": [
+            "Flares are not weapons fire"
+          ]
+        }
+      ]
+    }
+  },
+  "2967": {
+    "protocol": "real-temporal-v1",
+    "request_sha256": "a9d311a79d84ad264751c3b1afeb897b212ba6ecedfa86d06be4191a0bc35a3a",
+    "answer": {
+      "bindings": [
+        {
+          "component": "request",
+          "candidates": [
+            {
+              "asset": "source",
+              "first": "A006",
+              "last": "A011",
+              "confidence": 0.8,
+              "reason": "A bag of frozen mixed berries is held above the glass granola bowl on the counter. Berries fall onto the granola (A007), pile up (A008), and the filled bowl is shown (A009-A011).",
+              "limitations": [
+                "The 'to be added to a dish' purpose is not stated; the berries are added directly onto granola in the bowl.",
+                "The bowl already holds granola, so the berries are not placed into an empty bowl."
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A007",
+              "last": "A008",
+              "confidence": 0.6,
+              "reason": "Berries pour from a bag onto granola in a glass bowl, then form a heap.",
+              "limitations": [
+                "Covers only the pouring action, with no setup or conclusion beyond the pile."
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A055",
+              "last": "A060",
+              "confidence": 0.2,
+              "reason": "A berry-topped glass bowl sits on the counter beside the plate, but no placing action is visible.",
+              "limitations": [
+                "This shows the finished bowl only, not the berries being placed."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "bindings": {
+      "request": [
+        {
+          "asset": "source",
+          "source_in": 12,
+          "source_out": 24,
+          "confidence": 0.8,
+          "evidence": [
+            "A006",
+            "A007",
+            "A008",
+            "A009",
+            "A010",
+            "A011"
+          ],
+          "why": "A bag of frozen mixed berries is held above the glass granola bowl on the counter. Berries fall onto the granola (A007), pile up (A008), and the filled bowl is shown (A009-A011).",
+          "limitations": [
+            "The 'to be added to a dish' purpose is not stated; the berries are added directly onto granola in the bowl.",
+            "The bowl already holds granola, so the berries are not placed into an empty bowl."
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 14,
+          "source_out": 18,
+          "confidence": 0.6,
+          "evidence": [
+            "A007",
+            "A008"
+          ],
+          "why": "Berries pour from a bag onto granola in a glass bowl, then form a heap.",
+          "limitations": [
+            "Covers only the pouring action, with no setup or conclusion beyond the pile."
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 110,
+          "source_out": 122,
+          "confidence": 0.2,
+          "evidence": [
+            "A055",
+            "A056",
+            "A057",
+            "A058",
+            "A059",
+            "A060"
+          ],
+          "why": "A berry-topped glass bowl sits on the counter beside the plate, but no placing action is visible.",
+          "limitations": [
+            "This shows the finished bowl only, not the berries being placed."
+          ]
+        }
+      ]
+    }
+  },
+  "1548": {
+    "protocol": "real-temporal-v1",
+    "request_sha256": "9166da8e10b6ca80ae92dfd068b72cd2fa41dfa8d8ff16050357272d1b6c79b5",
+    "answer": {
+      "bindings": [
+        {
+          "component": "request",
+          "candidates": [
+            {
+              "asset": "source",
+              "first": "A052",
+              "last": "A060",
+              "confidence": 0.88,
+              "reason": "Girl in pink hat sits in green train seat, looks out window, holds candy, faces camera; clearly riding a train wearing pink hat.",
+              "limitations": [
+                "Candy and gloves not mentioned in request"
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A052",
+              "last": "A072",
+              "confidence": 0.6,
+              "reason": "Extends through scenery views and the girl sleeping on the train with pink hat pulled over her eyes; same train ride.",
+              "limitations": [
+                "Includes scenery shots and sleeping segment, may exceed intended event"
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A066",
+              "last": "A072",
+              "confidence": 0.5,
+              "reason": "Girl in pink hat asleep on the train, riding.",
+              "limitations": [
+                "Hat is pulled over eyes; focus is sleeping rather than riding"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "bindings": {
+      "request": [
+        {
+          "asset": "source",
+          "source_in": 104,
+          "source_out": 122,
+          "confidence": 0.88,
+          "evidence": [
+            "A052",
+            "A053",
+            "A054",
+            "A055",
+            "A056",
+            "A057",
+            "A058",
+            "A059",
+            "A060"
+          ],
+          "why": "Girl in pink hat sits in green train seat, looks out window, holds candy, faces camera; clearly riding a train wearing pink hat.",
+          "limitations": [
+            "Candy and gloves not mentioned in request"
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 104,
+          "source_out": 146,
+          "confidence": 0.6,
+          "evidence": [
+            "A052",
+            "A053",
+            "A054",
+            "A055",
+            "A056",
+            "A057",
+            "A058",
+            "A059",
+            "A060",
+            "A061",
+            "A062",
+            "A063",
+            "A064",
+            "A065",
+            "A066",
+            "A067",
+            "A068",
+            "A069",
+            "A070",
+            "A071",
+            "A072"
+          ],
+          "why": "Extends through scenery views and the girl sleeping on the train with pink hat pulled over her eyes; same train ride.",
+          "limitations": [
+            "Includes scenery shots and sleeping segment, may exceed intended event"
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 132,
+          "source_out": 146,
+          "confidence": 0.5,
+          "evidence": [
+            "A066",
+            "A067",
+            "A068",
+            "A069",
+            "A070",
+            "A071",
+            "A072"
+          ],
+          "why": "Girl in pink hat asleep on the train, riding.",
+          "limitations": [
+            "Hat is pulled over eyes; focus is sleeping rather than riding"
+          ]
+        }
+      ]
+    }
+  }
+}

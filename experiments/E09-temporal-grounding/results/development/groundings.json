@@ -1,0 +1,687 @@
+{
+  "193": {
+    "protocol": "real-temporal-v1",
+    "request_sha256": "581c3bdbe58f4339b25f61bd74df6c27c80ce538c782b1ce2d64b1996d67b7c6",
+    "answer": {
+      "bindings": [
+        {
+          "component": "request",
+          "candidates": [
+            {
+              "asset": "source",
+              "first": "A054",
+              "last": "A061",
+              "confidence": 0.88,
+              "reason": "A hand holds up the turmeric ghee jar toward the camera, shows the label, nutrition panel and lid. The woman herself is not visible in these frames, only a hand.",
+              "limitations": [
+                "Only a hand is visible, not the woman's face; it is presumed to be hers from the preceding footage."
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A052",
+              "last": "A058",
+              "confidence": 0.5,
+              "reason": "Covers the hand reaching in and then holding the ghee jar up, but it ends before the label and lid views.",
+              "limitations": [
+                "Shorter coverage of the holding-up action; the early frames show only a hand reaching in."
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A054",
+              "last": "A054",
+              "confidence": 0.4,
+              "reason": "A single frame clearly showing the ghee jar held toward the camera.",
+              "limitations": [
+                "Single frame, so the event's full duration is not captured."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "bindings": {
+      "request": [
+        {
+          "asset": "source",
+          "source_in": 108,
+          "source_out": 124,
+          "confidence": 0.88,
+          "evidence": [
+            "A054",
+            "A055",
+            "A056",
+            "A057",
+            "A058",
+            "A059",
+            "A060",
+            "A061"
+          ],
+          "why": "A hand holds up the turmeric ghee jar toward the camera, shows the label, nutrition panel and lid. The woman herself is not visible in these frames, only a hand.",
+          "limitations": [
+            "Only a hand is visible, not the woman's face; it is presumed to be hers from the preceding footage."
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 104,
+          "source_out": 118,
+          "confidence": 0.5,
+          "evidence": [
+            "A052",
+            "A053",
+            "A054",
+            "A055",
+            "A056",
+            "A057",
+            "A058"
+          ],
+          "why": "Covers the hand reaching in and then holding the ghee jar up, but it ends before the label and lid views.",
+          "limitations": [
+            "Shorter coverage of the holding-up action; the early frames show only a hand reaching in."
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 108,
+          "source_out": 110,
+          "confidence": 0.4,
+          "evidence": [
+            "A054"
+          ],
+          "why": "A single frame clearly showing the ghee jar held toward the camera.",
+          "limitations": [
+            "Single frame, so the event's full duration is not captured."
+          ]
+        }
+      ]
+    }
+  },
+  "3666": {
+    "protocol": "real-temporal-v1",
+    "request_sha256": "f4930ece84ff8274a64ebad08198af4c0c1d24fb1a52cb86584ffc9ab93a43ba",
+    "answer": {
+      "bindings": [
+        {
+          "component": "request",
+          "candidates": [
+            {
+              "asset": "source",
+              "first": "A060",
+              "last": "A065",
+              "confidence": 0.8,
+              "reason": "Man walks along a warmly lit, curving hotel hallway with exit signs, room plaques and patterned carpet, shown from behind; this matches a walk down a winding hallway.",
+              "limitations": [
+                "The vlogger is not clearly visible as the narrator.",
+                "The walk may continue into the door-unlocking sequence."
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A060",
+              "last": "A069",
+              "confidence": 0.55,
+              "reason": "The hallway walk continues to the room door, unlocking and entering, so this covers the whole corridor trip through arrival.",
+              "limitations": [
+                "Includes door unlocking and entry, which go beyond the walk itself."
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A042",
+              "last": "A050",
+              "confidence": 0.35,
+              "reason": "A curved enclosed bridge walkway is shown, which is a winding corridor, though it is a skybridge and not a hallway.",
+              "limitations": [
+                "Described as a bridge, not a hallway.",
+                "No vlogger is clearly shown walking."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "bindings": {
+      "request": [
+        {
+          "asset": "source",
+          "source_in": 120,
+          "source_out": 132,
+          "confidence": 0.8,
+          "evidence": [
+            "A060",
+            "A061",
+            "A062",
+            "A063",
+            "A064",
+            "A065"
+          ],
+          "why": "Man walks along a warmly lit, curving hotel hallway with exit signs, room plaques and patterned carpet, shown from behind; this matches a walk down a winding hallway.",
+          "limitations": [
+            "The vlogger is not clearly visible as the narrator.",
+            "The walk may continue into the door-unlocking sequence."
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 120,
+          "source_out": 140,
+          "confidence": 0.55,
+          "evidence": [
+            "A060",
+            "A061",
+            "A062",
+            "A063",
+            "A064",
+            "A065",
+            "A066",
+            "A067",
+            "A068",
+            "A069"
+          ],
+          "why": "The hallway walk continues to the room door, unlocking and entering, so this covers the whole corridor trip through arrival.",
+          "limitations": [
+            "Includes door unlocking and entry, which go beyond the walk itself."
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 84,
+          "source_out": 102,
+          "confidence": 0.35,
+          "evidence": [
+            "A042",
+            "A043",
+            "A044",
+            "A045",
+            "A046",
+            "A047",
+            "A048",
+            "A049",
+            "A050"
+          ],
+          "why": "A curved enclosed bridge walkway is shown, which is a winding corridor, though it is a skybridge and not a hallway.",
+          "limitations": [
+            "Described as a bridge, not a hallway.",
+            "No vlogger is clearly shown walking."
+          ]
+        }
+      ]
+    }
+  },
+  "9823": {
+    "protocol": "real-temporal-v1",
+    "request_sha256": "bc3afefa6cd669983046be3be291f2b0150865766a9f8fa563253fb42f011f27",
+    "answer": {
+      "bindings": [
+        {
+          "component": "request",
+          "candidates": [
+            {
+              "asset": "source",
+              "first": "A000",
+              "last": "A015",
+              "confidence": 0.6,
+              "reason": "Woman in maroon/red top with headphones speaks and gestures at a BBC studio mic, which fits an interview in the studio. This is the first continuous segment of her speaking.",
+              "limitations": [
+                "Maroon rather than clearly red",
+                "The interviewer is not shown in this segment"
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A000",
+              "last": "A074",
+              "confidence": 0.5,
+              "reason": "The whole sequence is a studio interview alternating between the woman in maroon and the male host, with a news graphic inserted. The woman is the main speaker throughout.",
+              "limitations": [
+                "Includes the male host and graphic segments",
+                "Event boundaries are broad"
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A036",
+              "last": "A051",
+              "confidence": 0.4,
+              "reason": "Woman in maroon speaks and gestures in the studio at length after the laughter, as the interviewee.",
+              "limitations": [
+                "Sub-segment chosen arbitrarily",
+                "Maroon rather than clearly red"
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A055",
+              "last": "A064",
+              "confidence": 0.35,
+              "reason": "Woman continues speaking and gesturing in the studio, answering the host.",
+              "limitations": [
+                "Partial, similar to other segments"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "bindings": {
+      "request": [
+        {
+          "asset": "source",
+          "source_in": 0,
+          "source_out": 32,
+          "confidence": 0.6,
+          "evidence": [
+            "A000",
+            "A001",
+            "A002",
+            "A003",
+            "A004",
+            "A005",
+            "A006",
+            "A007",
+            "A008",
+            "A009",
+            "A010",
+            "A011",
+            "A012",
+            "A013",
+            "A014",
+            "A015"
+          ],
+          "why": "Woman in maroon/red top with headphones speaks and gestures at a BBC studio mic, which fits an interview in the studio. This is the first continuous segment of her speaking.",
+          "limitations": [
+            "Maroon rather than clearly red",
+            "The interviewer is not shown in this segment"
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 0,
+          "source_out": 150,
+          "confidence": 0.5,
+          "evidence": [
+            "A000",
+            "A001",
+            "A002",
+            "A003",
+            "A004",
+            "A005",
+            "A006",
+            "A007",
+            "A008",
+            "A009",
+            "A010",
+            "A011",
+            "A012",
+            "A013",
+            "A014",
+            "A015",
+            "A016",
+            "A017",
+            "A018",
+            "A019",
+            "A020",
+            "A021",
+            "A022",
+            "A023",
+            "A024",
+            "A025",
+            "A026",
+            "A027",
+            "A028",
+            "A029",
+            "A030",
+            "A031",
+            "A032",
+            "A033",
+            "A034",
+            "A035",
+            "A036",
+            "A037",
+            "A038",
+            "A039",
+            "A040",
+            "A041",
+            "A042",
+            "A043",
+            "A044",
+            "A045",
+            "A046",
+            "A047",
+            "A048",
+            "A049",
+            "A050",
+            "A051",
+            "A052",
+            "A053",
+            "A054",
+            "A055",
+            "A056",
+            "A057",
+            "A058",
+            "A059",
+            "A060",
+            "A061",
+            "A062",
+            "A063",
+            "A064",
+            "A065",
+            "A066",
+            "A067",
+            "A068",
+            "A069",
+            "A070",
+            "A071",
+            "A072",
+            "A073",
+            "A074"
+          ],
+          "why": "The whole sequence is a studio interview alternating between the woman in maroon and the male host, with a news graphic inserted. The woman is the main speaker throughout.",
+          "limitations": [
+            "Includes the male host and graphic segments",
+            "Event boundaries are broad"
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 72,
+          "source_out": 104,
+          "confidence": 0.4,
+          "evidence": [
+            "A036",
+            "A037",
+            "A038",
+            "A039",
+            "A040",
+            "A041",
+            "A042",
+            "A043",
+            "A044",
+            "A045",
+            "A046",
+            "A047",
+            "A048",
+            "A049",
+            "A050",
+            "A051"
+          ],
+          "why": "Woman in maroon speaks and gestures in the studio at length after the laughter, as the interviewee.",
+          "limitations": [
+            "Sub-segment chosen arbitrarily",
+            "Maroon rather than clearly red"
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 110,
+          "source_out": 130,
+          "confidence": 0.35,
+          "evidence": [
+            "A055",
+            "A056",
+            "A057",
+            "A058",
+            "A059",
+            "A060",
+            "A061",
+            "A062",
+            "A063",
+            "A064"
+          ],
+          "why": "Woman continues speaking and gesturing in the studio, answering the host.",
+          "limitations": [
+            "Partial, similar to other segments"
+          ]
+        }
+      ]
+    }
+  },
+  "6383": {
+    "protocol": "real-temporal-v1",
+    "request_sha256": "617f98c6018731ccaccb41e21c1d4fee6b6fd4d385b7a39476c17b728ff45e10",
+    "answer": {
+      "bindings": [
+        {
+          "component": "request",
+          "candidates": [
+            {
+              "asset": "source",
+              "first": "A056",
+              "last": "A069",
+              "confidence": 0.85,
+              "reason": "Thrift store clothes racks, shoppers browsing garments, mirror showing two women among racks, and a woman holding an armful of clothes and a bag. This is the clothes-shopping event with companions.",
+              "limitations": [
+                "Friendship is inferred from two women appearing together in the mirror",
+                "Only one woman is clearly the main shopper"
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A061",
+              "last": "A069",
+              "confidence": 0.6,
+              "reason": "Narrower span focused on shoppers browsing and trying clothes, with two women reflected in the mirror and a shopper holding clothes.",
+              "limitations": [
+                "Omits the store establishing shots at the start",
+                "Second friend is only seen in the mirror"
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A018",
+              "last": "A029",
+              "confidence": 0.12,
+              "reason": "Two friends are together in a square, but they are playing around and not shopping.",
+              "limitations": [
+                "No shopping visible"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "bindings": {
+      "request": [
+        {
+          "asset": "source",
+          "source_in": 112,
+          "source_out": 140,
+          "confidence": 0.85,
+          "evidence": [
+            "A056",
+            "A057",
+            "A058",
+            "A059",
+            "A060",
+            "A061",
+            "A062",
+            "A063",
+            "A064",
+            "A065",
+            "A066",
+            "A067",
+            "A068",
+            "A069"
+          ],
+          "why": "Thrift store clothes racks, shoppers browsing garments, mirror showing two women among racks, and a woman holding an armful of clothes and a bag. This is the clothes-shopping event with companions.",
+          "limitations": [
+            "Friendship is inferred from two women appearing together in the mirror",
+            "Only one woman is clearly the main shopper"
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 122,
+          "source_out": 140,
+          "confidence": 0.6,
+          "evidence": [
+            "A061",
+            "A062",
+            "A063",
+            "A064",
+            "A065",
+            "A066",
+            "A067",
+            "A068",
+            "A069"
+          ],
+          "why": "Narrower span focused on shoppers browsing and trying clothes, with two women reflected in the mirror and a shopper holding clothes.",
+          "limitations": [
+            "Omits the store establishing shots at the start",
+            "Second friend is only seen in the mirror"
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 36,
+          "source_out": 60,
+          "confidence": 0.12,
+          "evidence": [
+            "A018",
+            "A019",
+            "A020",
+            "A021",
+            "A022",
+            "A023",
+            "A024",
+            "A025",
+            "A026",
+            "A027",
+            "A028",
+            "A029"
+          ],
+          "why": "Two friends are together in a square, but they are playing around and not shopping.",
+          "limitations": [
+            "No shopping visible"
+          ]
+        }
+      ]
+    }
+  },
+  "7416": {
+    "protocol": "real-temporal-v1",
+    "request_sha256": "ab34c9ecc9fa7dd24295749a1d456cadffa1e5543071fb13b956eb4ab270ebc0",
+    "answer": {
+      "bindings": [
+        {
+          "component": "request",
+          "candidates": [
+            {
+              "asset": "source",
+              "first": "A009",
+              "last": "A024",
+              "confidence": 0.8,
+              "reason": "After the woman's intro, the laptop shows the supplement product page (Balance bottle, price, subscription options), then scrolls through description and reviews, and returns to the product lineup and a review. This is a screen-recording-style showing of the product page.",
+              "limitations": [
+                "The product is a supplement, not explicitly a beauty cream.",
+                "The woman is not visible during the product page segment; only the laptop screen is shown."
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A009",
+              "last": "A014",
+              "confidence": 0.55,
+              "reason": "This covers only the core product page: the Balance bottle page, price, subscription options and scrolling description.",
+              "limitations": [
+                "Excludes the reviews and product lineup.",
+                "The product is a supplement, not a beauty cream."
+              ]
+            },
+            {
+              "asset": "source",
+              "first": "A000",
+              "last": "A012",
+              "confidence": 0.35,
+              "reason": "Combines the woman's talking intro, with her hand on the laptop, and the transition into the product page.",
+              "limitations": [
+                "Most of this span is a talking head rather than a product page display.",
+                "The product is not a cream."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "bindings": {
+      "request": [
+        {
+          "asset": "source",
+          "source_in": 18,
+          "source_out": 50,
+          "confidence": 0.8,
+          "evidence": [
+            "A009",
+            "A010",
+            "A011",
+            "A012",
+            "A013",
+            "A014",
+            "A015",
+            "A016",
+            "A017",
+            "A018",
+            "A019",
+            "A020",
+            "A021",
+            "A022",
+            "A023",
+            "A024"
+          ],
+          "why": "After the woman's intro, the laptop shows the supplement product page (Balance bottle, price, subscription options), then scrolls through description and reviews, and returns to the product lineup and a review. This is a screen-recording-style showing of the product page.",
+          "limitations": [
+            "The product is a supplement, not explicitly a beauty cream.",
+            "The woman is not visible during the product page segment; only the laptop screen is shown."
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 18,
+          "source_out": 30,
+          "confidence": 0.55,
+          "evidence": [
+            "A009",
+            "A010",
+            "A011",
+            "A012",
+            "A013",
+            "A014"
+          ],
+          "why": "This covers only the core product page: the Balance bottle page, price, subscription options and scrolling description.",
+          "limitations": [
+            "Excludes the reviews and product lineup.",
+            "The product is a supplement, not a beauty cream."
+          ]
+        },
+        {
+          "asset": "source",
+          "source_in": 0,
+          "source_out": 26,
+          "confidence": 0.35,
+          "evidence": [
+            "A000",
+            "A001",
+            "A002",
+            "A003",
+            "A004",
+            "A005",
+            "A006",
+            "A007",
+            "A008",
+            "A009",
+            "A010",
+            "A011",
+            "A012"
+          ],
+          "why": "Combines the woman's talking intro, with her hand on the laptop, and the transition into the product page.",
+          "limitations": [
+            "Most of this span is a talking head rather than a product page display.",
+            "The product is not a cream."
+          ]
+        }
+      ]
+    }
+  }
+}

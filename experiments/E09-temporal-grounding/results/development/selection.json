@@ -1,0 +1,19 @@
+{
+  "dataset": "QVHighlights",
+  "split": "val",
+  "seed": "real-academic-pilot-v1",
+  "selection": "sha256(seed:qid), ascending; no replacement for unavailable videos",
+  "n_selected": 5,
+  "n_split": 1550,
+  "qids": [
+    193,
+    9823,
+    3666,
+    6383,
+    7416
+  ],
+  "source_sha256": "f668a1eaea156ec5315e14718999cea043a8cf948d3cafbd8e8d655318c3cd02",
+  "inputs_sha256": "161ddb1089b6b790563a085b327feb06c7924fb02c55f6f8fc8ab6c6a4a293e4",
+  "references_sha256": "b4cd8da93cc6270429586ae9348c40f4136474db9b6adf0c37a9023b5a84e893",
+  "status": "development pilot"
+}

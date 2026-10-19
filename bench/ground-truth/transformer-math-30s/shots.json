@@ -1,0 +1,58 @@
+[
+  {
+    "scene": 1,
+    "name": "hook",
+    "start_frame": 0,
+    "end_frame": 120,
+    "narration": "Attention starts with one line of math. Here is how it works.",
+    "caption": "one line"
+  },
+  {
+    "scene": 2,
+    "name": "vectors",
+    "start_frame": 120,
+    "end_frame": 270,
+    "narration": "Each token becomes a query, a key, and a value, using three learned projections.",
+    "caption": "Q · K · V"
+  },
+  {
+    "scene": 3,
+    "name": "scores",
+    "start_frame": 270,
+    "end_frame": 390,
+    "narration": "Dot products compare each query with every key.",
+    "caption": "compare tokens"
+  },
+  {
+    "scene": 4,
+    "name": "softmax",
+    "start_frame": 390,
+    "end_frame": 540,
+    "narration": "Divide by the square root of the key dimension, then apply softmax.",
+    "caption": "weights sum to 1"
+  },
+  {
+    "scene": 5,
+    "name": "mix",
+    "start_frame": 540,
+    "end_frame": 690,
+    "narration": "The weights blend the values into a new vector for each token.",
+    "caption": "weighted sum"
+  },
+  {
+    "scene": 6,
+    "name": "context",
+    "start_frame": 690,
+    "end_frame": 810,
+    "narration": "Transformers add feed-forward layers and residual paths.",
+    "caption": "one part of a transformer"
+  },
+  {
+    "scene": 7,
+    "name": "formula",
+    "start_frame": 810,
+    "end_frame": 900,
+    "narration": "That is scaled dot-product attention.",
+    "caption": "that's attention"
+  }
+]

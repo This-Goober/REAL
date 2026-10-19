@@ -1,0 +1,58 @@
+[
+  {
+    "scene": 1,
+    "name": "clutter",
+    "start_frame": 0,
+    "end_frame": 120,
+    "narration": "REAL helps assemble your footage into an editable project.",
+    "caption": "it shows its work"
+  },
+  {
+    "scene": 2,
+    "name": "notebook",
+    "start_frame": 120,
+    "end_frame": 240,
+    "narration": "First, a notebook holds your script and shot ideas.",
+    "caption": "NOTEBOOK.md"
+  },
+  {
+    "scene": 3,
+    "name": "catalogue",
+    "start_frame": 240,
+    "end_frame": 360,
+    "narration": "A catalogue describes your media and flags what is unknown.",
+    "caption": "asset-catalog.json"
+  },
+  {
+    "scene": 4,
+    "name": "anchor",
+    "start_frame": 360,
+    "end_frame": 570,
+    "narration": "The reel pins pictures to narration words. Re-record the line, and timing follows those anchors.",
+    "caption": "pinned to words"
+  },
+  {
+    "scene": 5,
+    "name": "compile",
+    "start_frame": 570,
+    "end_frame": 720,
+    "narration": "Compile the approved edit into a Final Cut project, with editable clips and titles.",
+    "caption": "timeline.fcpxml"
+  },
+  {
+    "scene": 6,
+    "name": "refuse",
+    "start_frame": 720,
+    "end_frame": 810,
+    "narration": "Unsupported edits are flagged instead of guessed.",
+    "caption": "refuses, never guesses"
+  },
+  {
+    "scene": 7,
+    "name": "end",
+    "start_frame": 810,
+    "end_frame": 900,
+    "narration": "This reference is the target for REAL.",
+    "caption": "REFERENCE FOR REAL"
+  }
+]

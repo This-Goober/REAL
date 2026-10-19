@@ -1,0 +1,21 @@
+{
+  "retained_prompt_audits_passed": 180,
+  "matched_catalogue_asset_lists": 30,
+  "matched_reference_inputs": {
+    "NOTEBOOK.md": 30,
+    "revisions.txt": 30,
+    "measured.json": 30,
+    "spec.json": 30,
+    "truth.json": 30
+  },
+  "comparator_run_records_successful": 30,
+  "retained_attempts": 180,
+  "retained_xml_outputs": 179,
+  "reader_coverage_unsupported_cases": 0,
+  "portable_replay_summary_matches": true,
+  "portable_replay_summary_sha256": "835d73629d690191949621e8027f934301c99b7f7bd4bf52d4e9ec3ba1244242",
+  "input_snapshot_unchanged": true,
+  "accounting_tests_passed": 6,
+  "model_calls_during_scoring": 0,
+  "replay_inputs_zip_sha256": "9f93ff17c23ac28a20a409ca9bfbc6d1dbeaa69b1666170897dbdf5dffa04422"
+}

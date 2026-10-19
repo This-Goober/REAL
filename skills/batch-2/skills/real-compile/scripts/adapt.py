@@ -31,14 +31,16 @@ reel did not state is printed as a numbered note, and anything it cannot decide
 is a numbered refusal.
 """
 
+from real_core import read_json, write_json
 import json
+import math
 import os
 import subprocess
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from fcpxml import FRAME_DURATIONS  # noqa: E402
+from real_core import FRAME_DURATIONS, Frames  # noqa: E402
 
 VISUAL_KINDS = ("video", "image", "text")
 
@@ -56,21 +58,24 @@ SILENCE_RATE = 48000
 
 # Text styles. A layer may override any of these inline; anything unrecognised
 # falls back to "caption" WITH A NOTE — never silently.
+# Defaults render as Final Cut "Face" (filled text with a drop shadow) and no
+# "Outline": a layer that wants a stroke sets stroke_color/stroke_width itself.
+# Creator decision 2026-10-18: default caption size 40 (was 96).
 STYLES = {
-    "caption": dict(font_size=96, position=[0, -620], font_face="Bold",
-                    stroke_color=[0, 0, 0, 1], stroke_width=8, shadow=True),
+    "caption": dict(font_size=40, position=[0, -620], font_face="Bold",
+                    shadow=True),
     "title": dict(font_size=132, position=[0, 0], font_face="Bold",
-                  stroke_color=[0, 0, 0, 1], stroke_width=10, shadow=True),
+                  shadow=True),
     "lower-third": dict(font_size=72, position=[0, -760], font_face="Bold",
-                        stroke_color=[0, 0, 0, 1], stroke_width=6, shadow=True),
+                        shadow=True),
     "kicker": dict(font_size=64, position=[0, 720], font_face="Regular",
                    shadow=True),
     "word": dict(font_size=110, position=[0, 0], font_face="Bold",
-                 stroke_color=[0, 0, 0, 1], stroke_width=8, shadow=True),
+                 shadow=True),
     # subtitle: small, bottom-anchored, regular weight — spoken-word transcript
     # text, visually distinct from a caption (editorial emphasis) and a title.
     "subtitle": dict(font_size=58, position=[0, -830], font_face="Regular",
-                     stroke_color=[0, 0, 0, 1], stroke_width=4, shadow=True),
+                     shadow=True),
 }
 
 IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".tif", ".tiff", ".webp", ".bmp"}
@@ -84,29 +89,6 @@ class Refusal(Exception):
 # --------------------------------------------------------------------------
 # frame-exact time
 # --------------------------------------------------------------------------
-
-class Frames:
-    """Snap every boundary to a whole frame HERE, in one place.
-
-    The generator lays the primary storyline out sequentially, so if each beat
-    rounded on its own the spine would drift away from the audio, which is
-    placed at absolute offsets. Snapping every boundary once, up front, means
-    beat n's start on the timeline is exactly the sum of what came before it.
-    """
-
-    def __init__(self, fps_key):
-        self.key = fps_key
-        self.num, self.den = FRAME_DURATIONS[fps_key]
-
-    def f(self, seconds):
-        return int(round(float(seconds) * self.den / self.num))
-
-    def s(self, frames):
-        return round(frames * self.num / self.den, 6)
-
-    @property
-    def one(self):
-        return self.s(1)
 
 
 def fps_key(value, problems):
@@ -138,6 +120,73 @@ def fps_key(value, problems):
 
 def _num(v):
     return isinstance(v, (int, float)) and not isinstance(v, bool)
+
+
+def layout_problems(layer):
+    """Static layout is editorial data; refuse unsupported values, never drop it."""
+    errors = []
+    def finite(v):
+        return _num(v) and not isinstance(v, bool) and math.isfinite(v)
+    def pair(v):
+        return isinstance(v, (list, tuple)) and len(v) == 2 and all(finite(x) for x in v)
+    if "opacity" in layer and not (finite(layer["opacity"]) and 0 <= layer["opacity"] <= 1):
+        errors.append("opacity must be a finite number from 0 to 1")
+    for field in ("fade_in", "fade_out"):
+        if field in layer and not (finite(layer[field]) and layer[field] >= 0):
+            errors.append(field + " must be finite nonnegative seconds")
+    if not errors and any(field in layer for field in ("fade_in", "fade_out")):
+        if finite(layer.get("t0")) and finite(layer.get("t1")):
+            if layer.get("fade_in", 0) + layer.get("fade_out", 0) > layer["t1"] - layer["t0"] + 1e-6:
+                errors.append("fade durations exceed the layer duration")
+    if "transform" in layer:
+        t = layer["transform"]
+        if not isinstance(t, dict):
+            return errors + ["transform must be a static layout object"]
+        unknown = set(t) - {"position", "scale", "rotation"}
+        if unknown:
+            errors.append("unsupported transform fields: " + ", ".join(sorted(unknown)))
+        if "position" in t and not pair(t["position"]):
+            errors.append("transform.position must contain two finite coordinates")
+        if "rotation" in t and not finite(t["rotation"]):
+            errors.append("transform.rotation must be finite")
+        if "scale" in t:
+            v = t["scale"]
+            if not ((finite(v) and v > 0) or (pair(v) and all(x > 0 for x in v))):
+                errors.append("transform.scale must be positive, as a number or pair")
+    return errors
+
+
+def apply_layout(spec, layer):
+    problems = layout_problems(layer)
+    if problems:
+        raise Refusal("layer %s: %s" % (layer.get("id"), "; ".join(problems)))
+    if "transform" in layer:
+        transform = dict(layer["transform"])
+        fill_scale = spec.get("transform", {}).get("scale", 1)
+        scale = transform.get("scale", 1)
+        transform["scale"] = ([x * fill_scale for x in scale]
+                              if isinstance(scale, (list, tuple)) else scale * fill_scale)
+        spec["transform"] = transform
+    for field in ("opacity", "fade_in", "fade_out"):
+        if field in layer:
+            spec[field] = layer[field]
+    return spec
+
+
+def source_problems(entry, asset, duration):
+    """Source coordinates are independent of timeline placement and its clock."""
+    start = entry.get("src_in", 0)
+    limit = entry.get("src_out", asset.get("dur_s"))
+    finite = lambda x: _num(x) and math.isfinite(x)
+    if not finite(start) or start < 0:
+        return ["invalid src_in; expected a finite nonnegative source time"]
+    if limit is not None and (not finite(limit) or limit <= start):
+        return ["invalid src_out; expected a source time after src_in"]
+    if finite(asset.get("dur_s")) and limit is not None and limit > asset["dur_s"] + 1e-3:
+        return ["src_out exceeds source file duration"]
+    if limit is not None and start + duration > limit + 1e-3:
+        return ["placement exceeds selected source window; shorten it or choose a longer event"]
+    return []
 
 
 def check(reel, local_root):
@@ -276,6 +325,7 @@ def check(reel, local_root):
             if not isinstance(l, dict):
                 P.append("%s is not an object." % lid)
                 continue
+            P.extend("layer %s: %s" % (lid, problem) for problem in layout_problems(l))
             kind = l.get("kind")
             if kind == "audio":
                 P.append("layer %s has kind \"audio\". Sound belongs in the "
@@ -360,10 +410,9 @@ def check(reel, local_root):
                          "crossing them over is a hard rejection, not a warning."
                          % (lid, kind, aid, a.get("kind")))
                 continue
-            if kind == "video" and _num(a.get("dur_s")) \
-                    and dur > a["dur_s"] + 1e-3:
-                P.append("layer %s asks for %.2fs of %s but the file is only "
-                         "%.2fs long." % (lid, dur, a.get("file"), a["dur_s"]))
+            if kind == "video":
+                P.extend("layer %s: %s" % (lid, problem)
+                         for problem in source_problems(l, a, dur))
         for z, ids in zs.items():
             if len(ids) > 1:
                 N.append("beat %s: %s share z=%s — stacking them in the order "
@@ -421,6 +470,9 @@ def check(reel, local_root):
                      "still and a block of text have no sound."
                      % (eid, aid, a.get("kind")))
             continue
+        if "src_in" in entry or "src_out" in entry:
+            P.extend("audio %s: %s" % (eid, problem)
+                     for problem in source_problems(entry, a, entry["t1"] - entry["t0"]))
         kind, note = norm_audio_kind(raw_kind, a)
         if note:
             N.append("audio %s: %s" % (eid, note))
@@ -784,12 +836,13 @@ def layer_spec(l, b, by_id, F, W, H, opts, notes, stub_dir):
         spec = dict(style)
         spec["text"] = l["content"]
         spec["name"] = "%s — %s" % (l["id"], l["content"][:32])
-        for k_reel, k_story in (("font_size", "font_size"),
+        for k_reel, k_story in (("stroke_color", "stroke_color"), ("shadow", "shadow"), ("shadow_color", "shadow_color"), ("shadow_offset", "shadow_offset"), ("shadow_blur", "shadow_blur"), ("font", "font"), ("font_face", "font_face"), ("stroke_width", "stroke_width"), ("font_size", "font_size"),
+                                ("face", "face"), ("glow", "glow"),
                                 ("position", "position"),
                                 ("color", "color"), ("align", "align")):
             if l.get(k_reel) is not None:
                 spec[k_story] = l[k_reel]
-        return spec, 0
+        return apply_layout(spec, l), 0
 
     asset = by_id.get(l.get("asset")) if l.get("asset") else None
     if asset is None:
@@ -829,7 +882,7 @@ def layer_spec(l, b, by_id, F, W, H, opts, notes, stub_dir):
             spec["asset_duration"] = length
         else:
             spec["width"], spec["height"] = w, h
-        return spec, 0
+        return apply_layout(spec, l), 0
 
     src = asset["file"]
     name = "%s — %s" % (l["id"], (asset.get("catalog") or {}).get(
@@ -849,7 +902,7 @@ def layer_spec(l, b, by_id, F, W, H, opts, notes, stub_dir):
         # when the reel does want a clip's own sound it says so with a
         # `source` lane pointing at that asset. -60 dB, not removed: one click
         # in Final Cut brings it back.
-        spec = {"type": "video", "src": src, "name": name, "start": 0,
+        spec = {"type": "video", "src": src, "name": name, "start": l.get("src_in", 0),
                 "asset_duration": asset["dur_s"], "role": "effects",
                 "volume_db": -60}
         muted = 1
@@ -867,7 +920,7 @@ def layer_spec(l, b, by_id, F, W, H, opts, notes, stub_dir):
             l.get("confidence", "unstated"),
             "; also considered " + ", ".join(l["candidates"])
             if l.get("candidates") else "")
-    return spec, (muted if kind == "video" else 0)
+    return apply_layout(spec, l), (muted if kind == "video" else 0)
 
 
 def unvoiced_clips(entries, F, opts, notes):
@@ -960,7 +1013,9 @@ def audio_clips(reel, by_id, F, opts, notes):
 
         runs, cur, cur_end = [], None, None
         for e in entries:
-            if cur is not None and F.f(e["t0"]) <= cur_end + 1:
+            if (cur is not None and F.f(e["t0"]) <= cur_end + 1
+                    and "src_in" not in e and "src_in" not in cur[0]
+                    and "src_out" not in e and "src_out" not in cur[0]):
                 cur.append(e)
                 cur_end = max(cur_end, F.f(e["t1"]))
             else:
@@ -971,8 +1026,12 @@ def audio_clips(reel, by_id, F, opts, notes):
         for run in runs:
             r0 = F.f(run[0]["t0"])
             r1 = max(F.f(e["t1"]) for e in run)
-            src_in = F.s(r0 - base)
+            src_in = float(run[0]["src_in"]) if "src_in" in run[0] else F.s(r0 - base)
             dur = F.s(r1 - r0)
+            if "src_in" in run[0] or "src_out" in run[0]:
+                problems = source_problems(dict(run[0], src_in=src_in), asset, dur)
+                if problems:
+                    raise Refusal("audio %s: %s" % (run[0].get("id", aid), "; ".join(problems)))
             if src_in + dur > asset["dur_s"] + 0.05:
                 raise Refusal(
                     "audio %s reads %.2f–%.2fs of %s but that file is only "
@@ -981,8 +1040,6 @@ def audio_clips(reel, by_id, F, opts, notes):
                     "give the entry an explicit \"src_in\"."
                     % (run[0].get("id", aid), src_in, src_in + dur,
                        asset["file"], asset["dur_s"]))
-            if run[0].get("src_in") is not None:
-                src_in = float(run[0]["src_in"])
             clip = {"src": asset["file"], "lane": lane, "role": role,
                     "offset": F.s(r0), "duration": dur, "start": src_in,
                     "asset_duration": asset["dur_s"],
@@ -1042,7 +1099,7 @@ def main(argv):
     quiet = "--quiet" in argv
 
     try:
-        reel = json.load(open(reel_path))
+        reel = read_json(reel_path, "reel")
     except Exception as e:
         print("REFUSED — could not read %s: %s" % (reel_path, e))
         return 2
@@ -1076,8 +1133,7 @@ def main(argv):
         print("\nNothing was written.")
         return 2
 
-    with open(out_path, "w") as f:
-        json.dump(story, f, indent=2)
+    write_json(out_path, story, "story", indent=2)
     if not quiet:
         n_beats = len(story["beats"])
         print("wrote %s — %d spine item(s), %d connected clip(s), %.2fs @ %s fps"

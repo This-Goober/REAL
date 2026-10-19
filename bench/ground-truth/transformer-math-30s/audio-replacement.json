@@ -1,0 +1,8 @@
+{
+  "engine": "elevenlabs",
+  "model": "eleven_multilingual_v2",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "video_stream_unchanged": true,
+  "video_packet_hash": "SHA256=fb439498d7431d0380310047deed89959b55f7b5801b82397d913bb6ab5ec521",
+  "previous_audio_backup": "/tmp/real-pre-elevenlabs-transformer-math-30s-if0rzlze"
+}

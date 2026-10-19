@@ -1,0 +1,238 @@
+{
+  "asset": {
+    "id": "A02",
+    "role": "Passage 2: intervals shrink up the fingerboard",
+    "shows": "Speaker brings violin under chin; left hand is visible along the fingerboard, then moves closer to the violin body. Low-resolution proxy; 16 sampled frames, not continuous inspection.",
+    "use": "B2; existing excerpt from the same recording; repetition is intentional.",
+    "dur": 16.53,
+    "w": 128,
+    "h": 224,
+    "fps": 15.0,
+    "temporal": {
+      "duration": 16.53,
+      "method": "seek-sample",
+      "frames_sampled": 16,
+      "sampled_at": [
+        0.52,
+        1.55,
+        2.58,
+        3.62,
+        4.65,
+        5.68,
+        6.72,
+        7.75,
+        8.78,
+        9.81,
+        10.85,
+        11.88,
+        12.91,
+        13.95,
+        14.98,
+        16.01
+      ],
+      "first_sampled_s": 0.52,
+      "last_sampled_s": 16.01
+    },
+    "source_window": {
+      "file": "paganini_no23_fingering.mov",
+      "t0": 29.0,
+      "t1": 45.5
+    }
+  },
+  "binding": {
+    "component": "C2.a01",
+    "cell": "C2",
+    "type": "video",
+    "text": "video clip of the close-up of the left hand showing a whole step in first position and then high on the fingerboard, from the recording",
+    "tags": [
+      "passage-2"
+    ],
+    "asset": "A02",
+    "confidence": "high",
+    "chosen_by": "claude",
+    "why": "#passage-2 matches the asset's tags (+6.0); binds_to shares close-up, fingerboard, first, hand, high (+4.0); role shares fingerboard (+0.4); shows shares fingerboard, hand, left (+1.2); use shares recording (+0.0); video component / video asset (+2.0)",
+    "signals": [
+      "#passage-2 matches the asset's tags (+6.0)",
+      "binds_to shares close-up, fingerboard, first, hand, high (+4.0)",
+      "role shares fingerboard (+0.4)",
+      "shows shares fingerboard, hand, left (+1.2)",
+      "use shares recording (+0.0)",
+      "video component / video asset (+2.0)"
+    ],
+    "candidates": [
+      {
+        "asset": "A04",
+        "score": 5.646,
+        "why": "binds_to shares hand, left, recording, step, whole (+1.6); role shares first (+0.2)"
+      },
+      {
+        "asset": "A03",
+        "score": 3.261,
+        "why": "binds_to shares fingerboard, hand, recording (+0.8); shows shares left (+0.4)"
+      },
+      {
+        "asset": "A05",
+        "score": 3.094,
+        "why": "binds_to shares first, recording (+0.3); shows shares hand, left (+0.8)"
+      }
+    ],
+    "stub": null
+  },
+  "changes": [
+    {
+      "id": "B1.L2",
+      "kind": "image",
+      "before": [
+        1,
+        121
+      ],
+      "after": [
+        106,
+        226
+      ],
+      "text": "",
+      "anchor_before": "So",
+      "anchor_after": "performing"
+    },
+    {
+      "id": "B1.L3",
+      "kind": "text",
+      "before": [
+        89,
+        145
+      ],
+      "after": [
+        169,
+        226
+      ],
+      "text": "fingered octaves, Paganini 23",
+      "anchor_before": "going",
+      "anchor_after": "Caprice"
+    },
+    {
+      "id": "B2.L2",
+      "kind": "image",
+      "before": [
+        237,
+        357
+      ],
+      "after": [
+        510,
+        630
+      ],
+      "text": "",
+      "anchor_before": "So",
+      "anchor_after": "larger"
+    },
+    {
+      "id": "B2.L3",
+      "kind": "text",
+      "before": [
+        510,
+        566
+      ],
+      "after": [
+        697,
+        732
+      ],
+      "text": "same interval, smaller space",
+      "anchor_before": "larger",
+      "anchor_after": "intervals"
+    },
+    {
+      "id": "B3.L2",
+      "kind": "text",
+      "before": [
+        732,
+        788
+      ],
+      "after": [
+        997,
+        1053
+      ],
+      "text": "octaves: don't just squeeze",
+      "anchor_before": "Now",
+      "anchor_after": "simple"
+    },
+    {
+      "id": "B4.L2",
+      "kind": "image",
+      "before": [
+        1068,
+        1188
+      ],
+      "after": [
+        1137,
+        1257
+      ],
+      "text": "",
+      "anchor_before": "the",
+      "anchor_after": "shifting"
+    },
+    {
+      "id": "B4.L3",
+      "kind": "text",
+      "before": [
+        1211,
+        1277
+      ],
+      "after": [
+        1340,
+        1406
+      ],
+      "text": "the first finger travels further",
+      "anchor_before": "our",
+      "anchor_after": "traveling"
+    },
+    {
+      "id": "B5.L2",
+      "kind": "text",
+      "before": [
+        1452,
+        1518
+      ],
+      "after": [
+        1955,
+        2021
+      ],
+      "text": "let the first finger lead",
+      "anchor_before": "I'm",
+      "anchor_after": "leading"
+    }
+  ],
+  "fps": 30,
+  "total_s": 67.39999999999999,
+  "beats": [
+    {
+      "id": "B1",
+      "t0": 0,
+      "t1": 7.9,
+      "name": "hook"
+    },
+    {
+      "id": "B2",
+      "t0": 7.9,
+      "t1": 24.4,
+      "name": "intervals shrink up the fingerboard"
+    },
+    {
+      "id": "B3",
+      "t0": 24.4,
+      "t1": 35.599999999999994,
+      "name": "octaves are not that simple"
+    },
+    {
+      "id": "B4",
+      "t0": 35.599999999999994,
+      "t1": 48.39999999999999,
+      "name": "the first finger travels further"
+    },
+    {
+      "id": "B5",
+      "t0": 48.39999999999999,
+      "t1": 67.39999999999999,
+      "name": "payoff"
+    }
+  ],
+  "status": "Claude-proposed revisions; not accepted by a participant or creator"
+}

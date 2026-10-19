@@ -11,6 +11,7 @@ the same block:
 
     B7: layer L1 = A03            bind this layer to that asset
     B7: audio A1 = A11            same, for an audio lane
+    B7: L1 source = 12-18         select a source interval, preserving timeline duration
     B7: L1 anchor = 144           move it to another word (index, or the word)
     B7: L1 anchor = pressure
     B7: L1 offset = +200          nudge, in ms
@@ -35,10 +36,12 @@ Exit code 1 if anything went unhandled or was refused, so a caller notices.
 Stdlib only.
 """
 
+from real_core import read_json, write_json
 import argparse
 import json
 import re
 import sys
+from real_core import narration_end, refit_beat
 
 CLOCK_WORDS = re.compile(
     r"^(duration|length|time|t0|t1|hold|longer|shorter|trim|retime|tempo|pace|"
@@ -65,6 +68,7 @@ def touched(item, beat, why="the creator chose this"):
     provisional. Their choices are not up for reconsideration; ours always are."""
     item["chosen_by"] = "creator"
     item["confidence"] = "high"
+    item.pop("source_candidates", None)
     item.pop("candidates", None)
     item.pop("candidates_why", None)
     item["why"] = why
@@ -81,8 +85,8 @@ def word_time(clock, i, offset_ms=0):
     cut = (clock.get("rates") or {}).get("cut_into_word", 0.4)
     for w in clock.get("words", []):
         if w["i"] == i:
-            return round(w["start"] + cut * max(0.0, w["end"] - w["start"])
-                         + (offset_ms or 0) / 1000.0, 3)
+            return (w["start"] + cut * max(0.0, w["end"] - w["start"])
+                         + (offset_ms or 0) / 1000.0)
     return None
 
 
@@ -97,8 +101,21 @@ def reanchor(item, beat, clock, log):
                    "`build.py retime reel.json clock.json` runs" % item["id"])
         return
     length = max(0.0, item.get("t1", 0) - item.get("t0", 0))
-    item["t0"], item["t1"] = t0, round(min(t0 + length, beat["t1"]), 3)
+    if item.get("dur_source") == "explicit" and item.get("dur_s") is not None:
+        length = item["dur_s"]
+    if item.get("placement") == "hold" and item.get("anchor_word") is not None \
+            and item["anchor_word"] < beat.get("w1", item["anchor_word"]):
+        # A hold re-anchored onto a word inside the line is now an insert over
+        # the running shot, not something that plays after the words stop.
+        item["placement"] = "inline"
+        item["base"] = False
+        item["fit"] = "fit"
+        log.append("%s: moved into the line — now an insert, not a hold" % item["id"])
+    item["t0"] = t0
+    item["t1"] = (t0 + length)
     item.pop("stale", None)
+    refit_beat(beat, log)
+    item["t1"] = (min(item["t1"], beat["t1"]))
 
 
 def word_text(clock, i):
@@ -155,12 +172,49 @@ def apply_one(reel, bid, instr, clock, log, unhandled):
             unhandled.append("%s: %s is not an asset id in this reel"
                              % (beat["id"], val))
             return
+        if item.get("asset") != val:
+            for key in ("src_in", "src_out", "temporal_evidence"):
+                item.pop(key, None)
         item["asset"] = val
         item.pop("stub", None)
         touched(item, beat)
         reel["open"]["unbound_layers"] = [x for x in reel["open"]["unbound_layers"]
                                           if x != item["id"]]
         log.append("%s %s -> %s" % (beat["id"], item["id"], val))
+        return
+
+    m = re.fullmatch(r"([LA]?\d+)\s+source\s*=\s*(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)", t, re.I)
+    if m:
+        item = find_item(beat, m.group(1))
+        asset = next((a for a in reel.get("assets", []) if item and a["id"] == item.get("asset")), None)
+        start, end = float(m.group(2)), float(m.group(3))
+        if (not item or not asset or asset.get("kind") not in ("video", "audio")
+                or not asset.get("dur_s") or not 0 <= start < end <= asset["dur_s"]
+                or item["t1"] - item["t0"] > end - start + 1e-6):
+            unhandled.append("%s: source interval must exist in the bound file and cover the placement" % beat["id"])
+            return
+        linked = [a for a in beat.get("audio", []) if item.get("source_component")
+                  and a.get("source_video_component") == item["source_component"]]
+        if any(a.get("chosen_by") == "creator" and
+               (a.get("asset") != item["asset"] or a.get("src_in") != start + a["t0"] - item["t0"]
+                or a.get("src_out") != end) for a in linked):
+            unhandled.append("%s: the linked source audio has a creator choice; revise picture and sound explicitly" % beat["id"])
+            return
+        if any(start + a["t0"] - item["t0"] < 0 or start + a["t1"] - item["t0"] > end + 1e-6 for a in linked):
+            unhandled.append("%s: source interval is too short for the linked source audio" % beat["id"])
+            return
+        for a in linked:
+            a.update(src_in=start + a["t0"] - item["t0"], src_out=end, asset=item["asset"])
+            a.pop("temporal_evidence", None)
+            touched(a, beat, "the creator selected this picture and source-audio interval")
+        item.update(src_in=start, src_out=end)
+        item.pop("temporal_evidence", None)
+        touched(item, beat, "the creator selected this source interval")
+        log.append("%s %s source -> %.3f–%.3fs" % (beat["id"], item["id"], start, end))
+        return
+
+    if re.match(r"[LA]?\d+\s+source\s*=", t, re.I):
+        unhandled.append("%s: expected source = start-end in nonnegative seconds" % beat["id"])
         return
 
     m = re.match(r"^([LA]?\d+)\s+anchor\s*=\s*(.+)$", t, re.I)
@@ -323,8 +377,8 @@ def apply_one(reel, bid, instr, clock, log, unhandled):
 
 
 def cmd_apply(args):
-    reel = json.load(open(args.reel))
-    clock = json.load(open(args.clock)) if args.clock else None
+    reel = read_json(args.reel, "reel")
+    clock = read_json(args.clock, "clock") if args.clock else None
     log, unhandled = [], []
 
     for raw in open(args.revisions):
@@ -342,7 +396,7 @@ def cmd_apply(args):
             if instr.strip():
                 apply_one(reel, m.group(1), instr, clock, log, unhandled)
 
-    json.dump(reel, open(args.out or args.reel, "w"), indent=1)
+    write_json(args.out or args.reel, reel, "reel")
     for l in log:
         print("  " + l)
     print("%d applied, %d unhandled -> %s"

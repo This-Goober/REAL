@@ -19,11 +19,15 @@ missing media, and the real render drops in later without re-sequencing.
 Stdlib + PIL only.
 """
 
+from real_core import read_json, write_json
 import argparse
 import json
 import os
 import re
 import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from real_core import refit_beat, words_of  # noqa: E402
 
 ASPECTS = {"9:16": (1080, 1920), "16:9": (1920, 1080), "1:1": (1080, 1080),
            "4:5": (1080, 1350), "5:4": (1350, 1080), "2:3": (1080, 1620),
@@ -261,6 +265,9 @@ def assemble(nb, C, BND, args):
                     "candidates": [c["asset"] for c in bind.get("candidates", [])],
                     "why": bind.get("why", ""),
                 }
+                for key in ("src_in", "src_out", "temporal_evidence", "source_video_component"):
+                    if key in bind:
+                        entry[key] = bind[key]
                 if entry["kind"] == "bed":
                     entry["duck_db"] = -12
                 elif entry["kind"] == "source":
@@ -311,6 +318,19 @@ def assemble(nb, C, BND, args):
                 "base": p["base"],
                 "snapped": p.get("snapped", False),
             }
+            for key in ("src_in", "src_out", "temporal_evidence", "source_video_component"):
+                if key in bind:
+                    layer[key] = bind[key]
+            source_candidates = [c for c in bind.get("candidates", [])
+                                 if "source_in" in c and "source_out" in c]
+            if source_candidates:
+                layer["source_candidates"] = source_candidates
+            if "src_out" in layer and layer["t1"] - layer["t0"] > layer["src_out"] - layer.get("src_in", 0) + 1e-6:
+                flags.append({"code": "source-too-short", "layer": lid,
+                              "msg": "the selected source event is shorter than this placement; shorten the placement or choose another event"})
+            if p["dur_source"] == "explicit":
+                # Keep the requested duration separately from its clipped span.
+                layer["dur_s"] = p["dur_s"]
             if layer["kind"] == "text":
                 layer["content"] = comp.get("content") or comp.get("text", "")
                 if not asset:
@@ -387,6 +407,7 @@ def assemble(nb, C, BND, args):
             "narration": b["narration"],
             "source": {"cell": b["cell"], "component": b["component"]},
             "layers": layers, "audio": audio,
+            "held_to": b.get("held_to"),
             "note": b.get("note", ""),
             "flags": flags,
         }
@@ -480,6 +501,7 @@ def assemble(nb, C, BND, args):
                  "aspect": aspect, "width": W, "height": H,
                  "fps": args.fps},
         "clock": {
+            "pause_policy": C.get("pause_policy") or "blank",
             "mode": C.get("mode", "estimated"),
             "rate_wps": C.get("rate_wps"),
             "rate_source": C.get("rate_source"),
@@ -505,10 +527,58 @@ def assemble(nb, C, BND, args):
     return reel
 
 
+def clamp_held_cuts(reel):
+    """Pause policy `hold`: a shot held through the pause cannot outlast its
+    footage. When the base clip runs out before the planned cut, the cut moves
+    earlier to where the footage ends, provided that is still after the line
+    finishes; the next beat starts there. Each move is flagged. A clip too short
+    to cover its own line is left alone, and /real-compile refuses it, because
+    that one needs a person (journal 003)."""
+    if (reel.get("clock") or {}).get("pause_policy") != "hold":
+        return 0
+    assets = {a["id"]: a for a in reel.get("assets", [])}
+    beats = reel.get("beats", [])
+    moved = 0
+    for k, b in enumerate(beats):
+        base = next((l for l in b.get("layers", []) if l.get("kind") == "video"
+                     and l.get("base") and abs(l["t1"] - b["t1"]) < 1e-6), None)
+        if not base or not base.get("asset"):
+            continue
+        dur = (assets.get(base["asset"]) or {}).get("dur_s")
+        if dur:
+            dur = min(dur, base.get("src_out", dur)) - base.get("src_in", 0)
+        if not dur or dur <= 0 or base["t1"] - base["t0"] <= dur + 1e-6:
+            continue
+        narr = [a["t1"] for a in b.get("audio", []) if a.get("kind") == "narration"]
+        line_end = max(narr) if narr else b["t0"]
+        cut = round(base["t0"] + dur - 0.001, 3)   # stay strictly inside the file
+        if cut < line_end:
+            continue
+        old = b["t1"]
+        for l in b.get("layers", []) + b.get("audio", []):
+            if l.get("kind") == "narration":
+                continue
+            if abs(l.get("t1", 0) - old) < 1e-6 or l.get("t1", 0) > cut:
+                l["t1"] = cut
+        b["t1"] = b["held_to"] = cut
+        b.setdefault("flags", []).append({
+            "code": "cut-moved", "layer": base["id"],
+            "msg": "the footage ends %.3fs before the planned cut, so the cut moved "
+                   "earlier to %.3fs (still after the line ends)" % (old - cut, cut)})
+        if k + 1 < len(beats):
+            nb = beats[k + 1]
+            for l in nb.get("layers", []):
+                if l.get("base") and abs(l["t0"] - nb["t0"]) < 1e-6:
+                    l["t0"] = cut
+            nb["t0"] = cut
+        moved += 1
+    return moved
+
+
 # ------------------------------------------------------------------ retime
 
 PRESERVE_FIELDS = ("asset", "anchor_word", "anchor_text", "offset_ms", "fit",
-                   "style", "content", "stagger", "t0", "t1")
+                   "style", "style_by", "content", "stagger", "transform", "opacity", "fade_in", "fade_out", "stroke_color", "shadow", "shadow_color", "shadow_offset", "shadow_blur", "font", "font_face", "stroke_width", "font_size", "position", "color", "align", "t0", "t1", "src_in", "src_out", "temporal_evidence", "source_video_component")
 
 
 def preserve_creator(reel, old_reel):
@@ -539,12 +609,16 @@ def preserve_creator(reel, old_reel):
                                  "the rebuilt catalogue — kept the new binding; "
                                  "your call" % (it["id"], it["asset"]))
                 continue
+            for key in ("src_in", "src_out", "temporal_evidence", "source_video_component"):
+                if key not in it:
+                    t.pop(key, None)
             for k in PRESERVE_FIELDS:
                 if it.get(k) is not None:
                     t[k] = it[k]
             t["chosen_by"] = "creator"
             t["confidence"] = "high"
             t["why"] = it.get("why", "the creator chose this")
+            t.pop("source_candidates", None)
             t.pop("candidates", None)
             t.pop("candidates_why", None)
             tb["flags"] = [f for f in tb.get("flags", [])
@@ -569,16 +643,19 @@ def retime(reel, C):
     bybeat = {b["id"]: b for b in C["beats"]}
     moved = 0
 
-    def cut_point(i):
+    def cut_point(i, beat):
         w = words.get(i)
         if not w:
             return None
-        return round(w["start"] + cut * max(0.0, w["end"] - w["start"]), 3)
+        if i == beat.get("w0") and not beat.get("wordless"):
+            return (w["start"])      # first word: start with the line
+        return (w["start"] + cut * max(0.0, w["end"] - w["start"]))
 
     for beat in reel["beats"]:
         cb = bybeat.get(beat["id"])
         if cb:
             beat["t0"], beat["t1"] = cb["t0"], cb["t1"]
+            beat["held_to"] = cb.get("held_to")
         for item in beat["layers"] + beat["audio"]:
             p = byid.get((beat["id"], item.get("source_component")))
             same = (p and p["anchor_word"] == item.get("anchor_word")
@@ -587,12 +664,18 @@ def retime(reel, C):
                 item["t0"], item["t1"] = p["t0"], p["t1"]
             else:
                 length = max(0.0, item.get("t1", 0) - item.get("t0", 0))
-                t0 = cut_point(item.get("anchor_word", beat["w0"]))
+                t0 = cut_point(item.get("anchor_word", beat["w0"]), cb or beat)
                 if t0 is None:
                     continue
-                t0 = round(t0 + (item.get("offset_ms") or 0) / 1000.0, 3)
-                item["t0"], item["t1"] = t0, round(t0 + length, 3)
+                t0 = (t0 + (item.get("offset_ms") or 0) / 1000.0)
+                # an explicit duration is the creator's number: keep it
+                # rather than a length that an earlier clock may have clipped
+                if p and p.get("dur_source") == "explicit" and p.get("dur_s"):
+                    length = p["dur_s"]
+                item["t0"] = t0
+                item["t1"] = (min(t0 + length, beat["t1"]))
                 moved += 1
+        refit_beat(beat)
     for x in reel.get("connected", []):
         x["t1"] = C["total_s"]
     reel["clock"].update({"mode": C.get("mode"), "rate_wps": C.get("rate_wps"),
@@ -652,7 +735,7 @@ def validate(reel):
                             "export refuses unclassified text)"
                             % (b.get("id"), L.get("id"), L.get("style")))
             if L.get("anchor_word") is not None and L.get("anchor_text"):
-                words = (b.get("narration") or "").split()
+                words = words_of(b.get("narration"))
                 i = L["anchor_word"] - b.get("w0", 0)
                 if 0 <= i < len(words):
                     have = words[i].lower().strip(".,;:!?\"'")
@@ -700,18 +783,22 @@ def validate(reel):
 # --------------------------------------------------------------------- cli
 
 def cmd_build(args):
-    nb = json.load(open(args.notebook))
-    C = json.load(open(args.clock))
+    nb = read_json(args.notebook, "notebook")
+    C = read_json(args.clock, "clock")
     BND = json.load(open(args.bindings))
     reel = assemble(nb, C, BND, args)
     if getattr(args, "preserve", None):
-        old = json.load(open(args.preserve))
+        old = read_json(args.preserve, "reel")
         kept, conflicts = preserve_creator(reel, old)
         print("preserved %d creator-chosen placement(s) from %s"
               % (kept, args.preserve))
         for c in conflicts:
             print("  CONFLICT " + c)
-    json.dump(reel, open(args.out, "w"), indent=1)
+    n_moved = clamp_held_cuts(reel)
+    write_json(args.out, reel, "reel")
+    if n_moved:
+        print("  %d held cut(s) moved earlier where the footage ran out "
+              "(flagged cut-moved)" % n_moved)
 
     L = sum(len(b["layers"]) for b in reel["beats"])
     stubs = sum(1 for b in reel["beats"] for x in b["layers"] if x.get("stub"))
@@ -742,11 +829,12 @@ def cmd_build(args):
 
 
 def cmd_retime(args):
-    reel = json.load(open(args.reel))
-    C = json.load(open(args.clock))
+    reel = read_json(args.reel, "reel")
+    C = read_json(args.clock, "clock")
     before = reel["clock"].get("total_s")
     reel, moved = retime(reel, C)
-    json.dump(reel, open(args.out or args.reel, "w"), indent=1)
+    clamp_held_cuts(reel)
+    write_json(args.out or args.reel, reel, "reel")
     print("re-timed %s: %.2fs -> %.2fs (%s clock). %d layers re-derived from "
           "their own anchor; every anchor unchanged."
           % (args.reel, before or 0.0, reel["clock"]["total_s"],
@@ -754,7 +842,7 @@ def cmd_retime(args):
 
 
 def cmd_validate(args):
-    reel = json.load(open(args.reel))
+    reel = read_json(args.reel, "reel")
     errs, warns = validate(reel)
     for w in warns:
         print("  ~ " + w)

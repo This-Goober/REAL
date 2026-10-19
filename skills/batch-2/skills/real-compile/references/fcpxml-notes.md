@@ -114,10 +114,31 @@ it means their children's offsets are computed off 3600 s too (rule 3).
 uid=".../Titles.localized/Bumper:Opener.localized/Basic Title.localized/Basic Title.moti"
 ```
 
-Child order inside a title matters: all `adjust-*` elements first, then
-`<text>`, then `<text-style-def>`. Position comes from `<adjust-transform
+Child order inside a title matters: `<text>` and `<text-style-def>` come
+before the `adjust-*` elements. Position comes from `<adjust-transform
 position="x y"/>` rather than the Motion `<param name="Position" key="9999/…">`
 form, because the transform is version-stable and the magic key paths are not.
+
+**Native Font Glow (18 October 2026; v4 rendering confirmed by the authors).**
+The optional reel text fields `face: false`, `shadow: false`, and
+`glow: {color: [1, 0.8784313725, 0.262745098, 1], opacity: 1, blur: 1, radius: 0}`
+now survive adaptation. The compiler addresses Basic Title's style at
+`9999/999166631/999166633/5/999166635`, observed in a native Final Cut Pro 1.14 export.
+The installed Apple Motion resources define Glow group 38, Fill 39, Color 40,
+Opacity 43, Blur 77 (two components), and Radius 45. FCPXML `param.enabled`
+expresses group enablement. Face, Outline and Drop Shadow use groups 14, 30,
+and 21. No `fontColor` is emitted when Face is explicitly disabled.
+
+These paths and channel names have offline conformance tests against Apple's
+installed Basic Title and Deep Glow resources; the resulting XML passes the
+Apple 1.13 DTD. The authors subsequently imported Paganini v4 and confirmed:
+“ok the v4 has glow in it.” This verifies visible Glow in that delivered edit.
+Individual checkbox states, all caption instances, exact color/radius, and
+export round-trip fidelity were not separately confirmed. The two earlier
+creator exports have identical appearance data; they do **not** constitute
+a verified Glow round trip.
+Do not use `glowColor` or `glowRadius` attributes on `text-style`: neither is
+in Apple's FCPXML 1.13 or 1.14 DTD.
 
 **Transitions** sit *between* two clips in the spine and overlap both:
 `offset = cut_point − duration/2`. The neighbouring clips keep their own
@@ -127,8 +148,15 @@ when a handle isn't there. Duration is forced to an even frame count so the
 two halves are equal. Stills have infinite handles, so image-to-image
 dissolves are always safe.
 
-**`<adjust-transform>`** — `position` is in FCP inspector units (pixels at the
-sequence size, origin at centre); `scale` is `"1 1"` for 100%. Animate by
+**`<adjust-transform>`** — XML `position` is a percentage of project height
+on **both** axes, origin at centre and positive y upward. REAL story/reel
+positions are sequence pixels, so export converts with `100 * pixels / height`.
+For a 720×1280 project, y=-475 pixels becomes `-37.109375`, not `-475`.
+Title positions and animated position keyframes require the same conversion.
+`scale` stays a ratio (`"1 1"` means 100%); rotation stays degrees. A raw story
+`anchor` is already in FCPXML units (percentage of scaled image height).
+See [Apple's animation example](https://developer.apple.com/documentation/professional-video-applications/animation).
+Animate by
 replacing the attribute with `<param name="position"><keyframeAnimation>…`.
 Keyframe `time` values are in the clip's own start-based timebase, so they
 begin at the clip's `start`, not at zero.

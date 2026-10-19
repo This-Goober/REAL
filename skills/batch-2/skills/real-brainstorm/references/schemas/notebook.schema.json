@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:real:notebook:1",
+  "title": "notebook.json",
+  "description": "Parsed notebook: production notes and typed components remain separate. Unknown components are explicit, not silently narration.",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "reel": {
+          "type": "string"
+        },
+        "aspect": {
+          "type": "string"
+        },
+        "target_s": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+      "required": []
+    },
+    "cells": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/cell"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "msg": {
+            "type": "string"
+          },
+          "line": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "cell": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      }
+    }
+  },
+  "required": [
+    "meta",
+    "cells"
+  ],
+  "$defs": {
+    "cell": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "uid": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "variant": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "alternate": {
+          "type": "boolean"
+        },
+        "line": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "note": {
+          "type": "string"
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/group"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "groups"
+      ]
+    },
+    "group": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "parallel": {
+          "type": "boolean"
+        },
+        "components": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/component"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "components"
+      ]
+    },
+    "component": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "narration",
+            "image",
+            "video",
+            "audio",
+            "text",
+            "unknown"
+          ]
+        },
+        "text": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "dur_s": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "essential": {
+          "type": "boolean"
+        },
+        "unsure": {
+          "type": "boolean"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "words": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "line": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "raw": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "text"
+      ]
+    }
+  }
+}

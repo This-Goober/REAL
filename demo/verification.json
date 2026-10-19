@@ -1,0 +1,40 @@
+{
+  "fixture": "development seed 1, seven beats",
+  "timing": "estimated; no recorded narration",
+  "target": "B4.L3",
+  "asset": "img07",
+  "revision": "B4: L3 anchor = velvet",
+  "old_anchor": "nickel",
+  "new_anchor": "velvet",
+  "before_frames": [
+    607,
+    631
+  ],
+  "after_frames": [
+    562,
+    586
+  ],
+  "fps": 30,
+  "requested_duration_s": 0.8,
+  "target_correct": true,
+  "collateral_identity_or_boundary_changes": 0,
+  "unchanged_other_placements": 15,
+  "creator_choice_survives_rebuild": true,
+  "clock_unchanged": true,
+  "limits": "Illustrative synthetic demo; no participant or native-editor validation; frame identity/boundary metric excludes effects, color and audio quality",
+  "browser_anchor_control_checked": true,
+  "queued_revision": "B4: L3 anchor = velvet",
+  "thumbnails_embedded_per_state": 12,
+  "xml_errors": 0,
+  "xml_warnings": 0,
+  "all_media_paths_exist": true,
+  "native_final_cut_import_tested": false,
+  "files_sha256": {
+    "project/before/reel.json": "5ba16799bacd7511a5c3c530ec0598b2d25c6dde95a5062e87961b76f9aacaff",
+    "project/before/timeline.fcpxml": "25e494203c5d5c82f2ea949df56ce9d8b33dbf4c809a81e54896dd3946d57af4",
+    "project/before/REEL-TRACKS.html": "f8096e50bfeb2682df0ec64e53f1d76b1949ff614d72566675625ad9dbe4f75b",
+    "project/after/reel.json": "6b10d5a820df24dd1575be032de1641cd0b34b6702fb5a5d32060ffabea14085",
+    "project/after/timeline.fcpxml": "08c6fe8a52be69a7b400a21ca9ddd5c7254c1f287f6d5cdc90b65d6b27e95935",
+    "project/after/REEL-TRACKS.html": "f1f9a915c4653385f332c015eb6bf6de0541e3ef7ad5cfbf10b95799ecd24ba2"
+  }
+}

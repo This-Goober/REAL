@@ -1,0 +1,18 @@
+{
+  "pdf_sha256": "710f4cf433a06b2769d2a2c9c18d78830c1428d33ac20206b6962e3dfac0de1f",
+  "profile": "PDF/A-1b validation profile",
+  "compliant": true,
+  "validator": "veraPDF 1.30.3",
+  "passed_rules": 129,
+  "failed_rules": 0,
+  "passed_checks": 47152,
+  "failed_checks": 0,
+  "template_unchanged": true,
+  "page_count": 10,
+  "main_text_pages": 9,
+  "reference_pages": 2,
+  "shared_body_reference_pages": [
+    9
+  ],
+  "accessibility_conformance_claimed": false
+}

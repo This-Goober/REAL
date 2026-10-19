@@ -1,0 +1,462 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:real:reel:1",
+  "title": "reel.json",
+  "description": "The approved editorial handoff. t0/t1 are timeline seconds; requested dur_s is distinct from a clipped span. Semantic media, anchor and overlap checks still run in build/adapt.",
+  "type": "object",
+  "properties": {
+    "version": {
+      "enum": [
+        "1.0"
+      ]
+    },
+    "reel": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "aspect": {
+          "type": "string"
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "fps": {
+          "anyOf": [
+            {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            {
+              "enum": [
+                "23.976",
+                "24",
+                "25",
+                "29.97",
+                "30",
+                "50",
+                "59.94",
+                "60"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "width",
+        "height",
+        "fps"
+      ]
+    },
+    "clock": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "enum": [
+            "estimated",
+            "measured"
+          ]
+        },
+        "total_s": {
+          "type": "number",
+          "minimum": 0
+        },
+        "target_s": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "pause_policy": {
+          "enum": [
+            "hold",
+            "blank"
+          ]
+        }
+      },
+      "required": [
+        "mode",
+        "total_s"
+      ]
+    },
+    "assets_root": {
+      "type": "string"
+    },
+    "assets_root_local": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/asset"
+      }
+    },
+    "beats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "narration": {
+            "type": "string"
+          },
+          "w0": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "w1": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "layers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/layer"
+            }
+          },
+          "audio": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/audio"
+            }
+          },
+          "t0": {
+            "type": "number",
+            "minimum": 0
+          },
+          "t1": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "id",
+          "t0",
+          "t1",
+          "layers",
+          "audio"
+        ]
+      }
+    },
+    "connected": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/audio"
+      }
+    },
+    "open": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  "required": [
+    "version",
+    "reel",
+    "clock",
+    "assets",
+    "beats",
+    "open"
+  ],
+  "$defs": {
+    "asset": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "file": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "image",
+            "video",
+            "audio",
+            "text",
+            "other"
+          ]
+        },
+        "dur_s": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "w": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "h": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "fps": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "rotation": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "exists": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "file",
+        "kind"
+      ]
+    },
+    "layer": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "z": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "kind": {
+          "enum": [
+            "image",
+            "video",
+            "text",
+            "unknown"
+          ]
+        },
+        "asset": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "anchor_word": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "anchor_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "offset_ms": {
+          "type": "number"
+        },
+        "dur_s": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "dur_source": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "style": {
+          "enum": [
+            "title",
+            "caption",
+            "subtitle",
+            "lower-third",
+            "kicker",
+            "word"
+          ]
+        },
+        "chosen_by": {
+          "enum": [
+            "claude",
+            "creator"
+          ]
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "source_component": {
+          "type": "string"
+        },
+        "fit": {
+          "enum": [
+            "fit",
+            "fill"
+          ]
+        },
+        "t0": {
+          "type": "number",
+          "minimum": 0
+        },
+        "t1": {
+          "type": "number",
+          "minimum": 0
+        },
+        "src_in": {
+          "type": "number",
+          "minimum": 0
+        },
+        "src_out": {
+          "type": "number",
+          "minimum": 0
+        },
+        "opacity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "transform": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "position": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {
+                "type": "number"
+              }
+            },
+            "rotation": {
+              "type": "number"
+            },
+            "scale": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                {
+                  "type": "array",
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "items": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "fade_in": {
+          "type": "number",
+          "minimum": 0
+        },
+        "fade_out": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "id",
+        "z",
+        "kind",
+        "anchor_word",
+        "t0",
+        "t1"
+      ]
+    },
+    "audio": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "narration",
+            "source",
+            "bed",
+            "sfx"
+          ]
+        },
+        "asset": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "anchor_word": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "offset_ms": {
+          "type": "number"
+        },
+        "text": {
+          "type": "string"
+        },
+        "t0": {
+          "type": "number",
+          "minimum": 0
+        },
+        "t1": {
+          "type": "number",
+          "minimum": 0
+        },
+        "src_in": {
+          "type": "number",
+          "minimum": 0
+        },
+        "src_out": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "t0",
+        "t1"
+      ]
+    }
+  }
+}

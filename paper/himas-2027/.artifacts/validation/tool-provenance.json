@@ -1,0 +1,6 @@
+{
+  "jre_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_aarch64_mac_hotspot_17.0.20.1_1.tar.gz",
+  "jre_sha256": "190480874ccceb358cbc840393207f77ac3e63a4c5f8129d0e23e9518b96ad05",
+  "verapdf_url": "https://software.verapdf.org/releases/verapdf-installer.zip",
+  "verapdf_sha256": "b512bf24945503a33fc10738ecffc1f2dccaaf8593a448e94ee9ac86a9559a59"
+}

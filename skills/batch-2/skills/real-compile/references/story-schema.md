@@ -102,9 +102,12 @@ A text overlay is anything with a `text` key:
  "shadow": true}
 ```
 
-Colours are `[r, g, b, a]` in 0–1. `position` is in FCP inspector units:
-origin at frame centre, so `[0, -620]` is near the bottom of a 1080×1920
-frame. Every title lands as a real editable Basic Title, so restyling in FCP
+Colours are `[r, g, b, a]` in 0–1. Story `position` values use sequence pixels,
+origin at frame centre and positive y upward: `[0, -620]` is near the bottom
+of a 1080×1920 frame. The FCPXML exporter converts static, animated and title
+positions to percentages of project height on both axes. Scale is a ratio;
+the optional raw-story transform `anchor` retains native FCPXML percentage
+units (scaled image height). Every title lands as a real editable Basic Title, so restyling in FCP
 afterwards is normal and expected.
 
 ## Connected clips

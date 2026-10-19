@@ -1,0 +1,21 @@
+..FF..
+======================================================================
+FAIL: test_exact_half_frame_endpoints_use_ties_to_even (__main__.PrecisionTests.test_exact_half_frame_endpoints_use_ties_to_even) (seconds=8.55)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Shared/REAL/skills/batch-2/skills/real-storyboarding/tests/test_timing_precision.py", line 22, in test_exact_half_frame_endpoints_use_ties_to_even
+    self.assertEqual(frames.f(seconds), expected)
+AssertionError: 257 != 256
+
+======================================================================
+FAIL: test_exact_half_frame_endpoints_use_ties_to_even (__main__.PrecisionTests.test_exact_half_frame_endpoints_use_ties_to_even) (seconds=20.35)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Shared/REAL/skills/batch-2/skills/real-storyboarding/tests/test_timing_precision.py", line 22, in test_exact_half_frame_endpoints_use_ties_to_even
+    self.assertEqual(frames.f(seconds), expected)
+AssertionError: 611 != 610
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+FAILED (failures=2)

@@ -1,0 +1,10 @@
+{
+  "assembly_seed_counts": {
+    "assembly-initial": 30,
+    "assembly-development": 30,
+    "assembly-validation": 100
+  },
+  "current_skill_files_verified": 66,
+  "next100_source_disjoint": true,
+  "next100_answer_free": true
+}

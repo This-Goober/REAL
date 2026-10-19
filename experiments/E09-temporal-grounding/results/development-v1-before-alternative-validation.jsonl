@@ -1,0 +1,5 @@
+{"qid": 193, "vid": "Ps1SNAGQTc0_210.0_360.0", "pred_relevant_windows": [[108, 124, 0.85], [104, 108, 0.3]]}
+{"qid": 9823, "vid": "eRqYUTA5JJo_60.0_210.0", "pred_relevant_windows": [[0, 32, 0.6], [62, 130, 0.5], [42, 48, 0.3]]}
+{"qid": 3666, "vid": "yJLmek6euTA_360.0_510.0", "pred_relevant_windows": [[120, 132, 0.8], [84, 102, 0.35]]}
+{"qid": 6383, "vid": "xqe9FSBJDx0_210.0_360.0", "pred_relevant_windows": [], "error": "ValueError: duplicate or overlapping event proposals"}
+{"qid": 7416, "vid": "Ps1SNAGQTc0_510.0_660.0", "pred_relevant_windows": [], "error": "ValueError: duplicate or overlapping event proposals"}

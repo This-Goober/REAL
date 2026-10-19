@@ -1,0 +1,30 @@
+{
+  "dataset": "QVHighlights",
+  "split": "val",
+  "scope": "component pilot",
+  "inputs_sha256": "2d7806e1d083c80ac087c838a478932eb5b8e9f6b6c4673b6865307fcb6d5fa4",
+  "qids": [
+    2428,
+    10243,
+    1678,
+    2967,
+    1548
+  ],
+  "model": "claude-sonnet-5-5",
+  "max_cost_per_call_usd": 1.0,
+  "conditions": [
+    "real-binder",
+    "direct-vision",
+    "random-window",
+    "full-video"
+  ],
+  "source_hashes": {
+    "bench/academic/pilot.py": "1796e659a36c5f2b820487685fb2b7895d6fd22cf6553f803601a3f8a997bc36",
+    "bench/academic/model.py": "eb6404d7af7ef626b11f9eac43ce5d719238cbd09dec85e399c378aa3f6186b4",
+    "bench/academic/common.py": "790fcc931efd734ee584e293b5665bcbfe3c7add741e8a32266af63edc070f45",
+    "skills/batch-2/skills/real-storyboarding/scripts/bind.py": "a05aa4828645c5bbe3c9d77c2ea8e7f92a73f87366de9138cee45c6c2d09b331",
+    "skills/batch-2/skills/real-storyboarding/scripts/real_core.py": "26a8d60f6b9df884743f24916473e96c4f7dc717c5f43d4617db8d7b99839850"
+  },
+  "protocol": "2s proposals, 1 centre frame/window, visual only; one model call/condition/case",
+  "baseline_control": "same model, sampled images and per-call cost cap; prompts differ by condition"
+}

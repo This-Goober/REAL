@@ -1,0 +1,98 @@
+test_actual_binder_selects_visible_content_without_oracle_tags (bench.academic.test_academic.AdapterTests.test_actual_binder_selects_visible_content_without_oracle_tags) ... ok
+test_direct_confidence_order_is_canonical_and_values_unchanged (bench.academic.test_academic.AdapterTests.test_direct_confidence_order_is_canonical_and_values_unchanged) ... ok
+test_fresh_selection_excludes_entire_original_source_videos (bench.academic.test_academic.AdapterTests.test_fresh_selection_excludes_entire_original_source_videos) ... ok
+test_selection_is_answer_independent_and_public_inputs_have_no_answers (bench.academic.test_academic.AdapterTests.test_selection_is_answer_independent_and_public_inputs_have_no_answers) ... ok
+test_bad_spans_fail (bench.academic.test_academic.MetricsTests.test_bad_spans_fail) ... ok
+test_duplicate_predictions_cannot_claim_one_reference_twice (bench.academic.test_academic.MetricsTests.test_duplicate_predictions_cannot_claim_one_reference_twice) ... ok
+test_empty_prediction_scores_zero (bench.academic.test_academic.MetricsTests.test_empty_prediction_scores_zero) ... ok
+test_greedy_matching_is_by_iou_not_input_order (bench.academic.test_academic.MetricsTests.test_greedy_matching_is_by_iou_not_input_order) ... ok
+test_invalid_timecodes_fail_instead_of_guessing (bench.academic.test_academic.MetricsTests.test_invalid_timecodes_fail_instead_of_guessing) ... ok
+test_medit_averages_all_editors (bench.academic.test_academic.MetricsTests.test_medit_averages_all_editors) ... ok
+test_perfect_and_disjoint (bench.academic.test_academic.MetricsTests.test_perfect_and_disjoint) ... ok
+test_timecodes_integer_and_fractional (bench.academic.test_academic.MetricsTests.test_timecodes_integer_and_fractional) ... ok
+test_union_does_not_fill_gaps_or_double_count (bench.academic.test_academic.MetricsTests.test_union_does_not_fill_gaps_or_double_count) ... ok
+test_json_surrounding_prose_is_not_a_failed_prediction (bench.academic.test_academic.TransportTests.test_json_surrounding_prose_is_not_a_failed_prediction) ... ok
+test_stream_transport_and_no_tool_context (bench.academic.test_academic.TransportTests.test_stream_transport_and_no_tool_context) ... ok
+test_transport_failure_is_preserved_and_not_reused (bench.academic.test_academic.TransportTests.test_transport_failure_is_preserved_and_not_reused) ... ok
+test_failures_count_and_ids_are_strict (bench.academic.test_academic.UpstreamTests.test_failures_count_and_ids_are_strict) ... ok
+test_perfect_qvh_predictions_score_100 (bench.academic.test_academic.UpstreamTests.test_perfect_qvh_predictions_score_100) ... ok
+test_reproduces_official_sample_scores (bench.academic.test_academic.UpstreamTests.test_reproduces_official_sample_scores) ... ok
+test_bad_refinement_does_not_fall_back_and_keeps_cost (bench.academic.test_refine.RefinementTests.test_bad_refinement_does_not_fall_back_and_keeps_cost) ... 1 ValueError: direct proposal is not on the declared 2s grid
+ok
+test_changed_cached_predictions_refused (bench.academic.test_refine.RefinementTests.test_changed_cached_predictions_refused) ... 1 ValueError: first-call saved answer differs from prediction
+ok
+test_failed_first_call_remains_in_denominator_without_retry (bench.academic.test_refine.RefinementTests.test_failed_first_call_remains_in_denominator_without_retry) ... 1 RuntimeError: first call failed: timeout
+ok
+test_model_drift_and_reference_leakage_refused_before_inference (bench.academic.test_refine.RefinementTests.test_model_drift_and_reference_leakage_refused_before_inference) ... ok
+test_same_images_both_call_costs_and_no_answers (bench.academic.test_refine.RefinementTests.test_same_images_both_call_costs_and_no_answers) ... 1 refinement recorded
+ok
+test_one_source_is_not_treated_as_many_independent_queries (bench.academic.test_compare.ClusterTests.test_one_source_is_not_treated_as_many_independent_queries) ... ok
+test_original_source_id_survives_underscores_and_different_excerpts (bench.academic.test_compare.ClusterTests.test_original_source_id_survives_underscores_and_different_excerpts) ... ok
+test_pairing_removes_shared_variation_and_is_repeatable (bench.academic.test_compare.ClusterTests.test_pairing_removes_shared_variation_and_is_repeatable) ... ok
+test_preserves_query_weighting_with_unequal_cluster_sizes (bench.academic.test_compare.ClusterTests.test_preserves_query_weighting_with_unequal_cluster_sizes) ... ok
+test_full_1550_sample_reproduced_from_unrounded_query_contributions (bench.academic.test_compare.OfficialTests.test_full_1550_sample_reproduced_from_unrounded_query_contributions) ... ok
+test_reordered_ids_pair_correctly_and_failed_cases_score_zero (bench.academic.test_compare.OfficialTests.test_reordered_ids_pair_correctly_and_failed_cases_score_zero) ... ok
+test_missing_media_retained_without_replacing_frozen_cases (bench.academic.test_preflight.PreflightTests.test_missing_media_retained_without_replacing_frozen_cases) ... ok
+test_uppercase_source_preserves_filename_but_uses_lowercase_folder (bench.academic.test_preflight.PreflightTests.test_uppercase_source_preserves_filename_but_uses_lowercase_folder) ... ok
+test_cap_and_cached_reuse (bench.academic.test_budget.BudgetTests.test_cap_and_cached_reuse) ... ok
+test_interruption_is_never_automatically_retried (bench.academic.test_budget.BudgetTests.test_interruption_is_never_automatically_retried) ... ok
+test_lock_blocks_concurrent_caller (bench.academic.test_budget.BudgetTests.test_lock_blocks_concurrent_caller) ... ok
+test_missing_catalogue_is_retained_as_a_failed_temporal_case (bench.academic.test_budget.BudgetTests.test_missing_catalogue_is_retained_as_a_failed_temporal_case) ... 1 FileNotFoundError: [Errno 2] No such file or directory: '/var/folders/bc/qppvc66x4j39dskwwnvv4y080000gn/T/tmpoe07fhj4/cached/1/asset-catalog.json'
+ok
+test_overrun_preserves_actual_cost_and_stops (bench.academic.test_budget.BudgetTests.test_overrun_preserves_actual_cost_and_stops) ... ok
+test_unknown_cost_and_actual_model_drift_halt_further_calls (bench.academic.test_budget.BudgetTests.test_unknown_cost_and_actual_model_drift_halt_further_calls) ... ok
+test_all_media_failures_stay_in_every_condition_and_never_call_model (bench.academic.test_suite.SuiteTests.test_all_media_failures_stay_in_every_condition_and_never_call_model) ... 1 real-binder FAILED: RuntimeError: FileNotFoundError: [Errno 2] No such file or directory: '/private/var/folders/bc/qppvc66x4j39dskwwnvv4y080000gn/T/tmpyp6xd0r4/data/qvh/media/video1_0.0_10.0.source.json'
+1 direct-vision FAILED: RuntimeError: FileNotFoundError: [Errno 2] No such file or directory: '/private/var/folders/bc/qppvc66x4j39dskwwnvv4y080000gn/T/tmpyp6xd0r4/data/qvh/media/video1_0.0_10.0.source.json'
+2 real-binder FAILED: RuntimeError: FileNotFoundError: [Errno 2] No such file or directory: '/private/var/folders/bc/qppvc66x4j39dskwwnvv4y080000gn/T/tmpyp6xd0r4/data/qvh/media/video2_0.0_10.0.source.json'
+2 direct-vision FAILED: RuntimeError: FileNotFoundError: [Errno 2] No such file or directory: '/private/var/folders/bc/qppvc66x4j39dskwwnvv4y080000gn/T/tmpyp6xd0r4/data/qvh/media/video2_0.0_10.0.source.json'
+1 FileNotFoundError: [Errno 2] No such file or directory: '/private/var/folders/bc/qppvc66x4j39dskwwnvv4y080000gn/T/tmpyp6xd0r4/run/baseline/1/asset-catalog.json'
+2 FileNotFoundError: [Errno 2] No such file or directory: '/private/var/folders/bc/qppvc66x4j39dskwwnvv4y080000gn/T/tmpyp6xd0r4/run/baseline/2/asset-catalog.json'
+1 RuntimeError: first call failed: RuntimeError: FileNotFoundError: [Errno 2] No such file or directory: '/private/var/folders/bc/qppvc66x4j39dskwwnvv4y080000gn/T/tmpyp6xd0r4/data/qvh/media/video1_0.0_10.0.source.json'
+2 RuntimeError: first call failed: RuntimeError: FileNotFoundError: [Errno 2] No such file or directory: '/private/var/folders/bc/qppvc66x4j39dskwwnvv4y080000gn/T/tmpyp6xd0r4/data/qvh/media/video2_0.0_10.0.source.json'
+ok
+test_complete_four_condition_workflow_scores_and_resumes_without_new_calls (bench.academic.test_suite.SuiteTests.test_complete_four_condition_workflow_scores_and_resumes_without_new_calls) ... 1 real-binder 0 proposals
+1 direct-vision 1 proposals
+2 real-binder 0 proposals
+2 direct-vision 1 proposals
+1 [[2, 4, 0.9]]
+2 [[2, 4, 0.9]]
+1 refinement recorded
+2 refinement recorded
+1 real-binder 0 proposals
+1 direct-vision 1 proposals
+2 real-binder 0 proposals
+2 direct-vision 1 proposals
+1 [[2, 4, 0.9]]
+2 [[2, 4, 0.9]]
+1 refinement recorded
+2 refinement recorded
+ok
+test_input_changes_refused_before_inference_and_incomplete_runs_cannot_score (bench.academic.test_suite.SuiteTests.test_input_changes_refused_before_inference_and_incomplete_runs_cannot_score) ... ok
+test_last_call_overrun_cannot_be_cleared_by_cached_resume_or_stale_complete_state (bench.academic.test_suite.SuiteTests.test_last_call_overrun_cannot_be_cleared_by_cached_resume_or_stale_complete_state) ... 1 real-binder 0 proposals
+1 direct-vision 1 proposals
+2 real-binder 0 proposals
+2 direct-vision 1 proposals
+1 [[2, 4, 0.9]]
+2 [[2, 4, 0.9]]
+1 refinement recorded
+2 BudgetStopped: call cost or reported model revision requires review
+1 real-binder 0 proposals
+1 direct-vision 1 proposals
+2 real-binder 0 proposals
+2 direct-vision 1 proposals
+1 [[2, 4, 0.9]]
+2 [[2, 4, 0.9]]
+1 refinement recorded
+2 refinement recorded
+ok
+test_prepare_is_answer_free_and_freezes_code_and_media_availability (bench.academic.test_suite.SuiteTests.test_prepare_is_answer_free_and_freezes_code_and_media_availability) ... ok
+test_runtime_and_catalogue_schema_are_frozen (bench.academic.test_suite.SuiteTests.test_runtime_and_catalogue_schema_are_frozen) ... ok
+test_whole_run_lock_prevents_concurrent_writes (bench.academic.test_suite.SuiteTests.test_whole_run_lock_prevents_concurrent_writes) ... ok
+test_failed_cases_stay_in_denominator (bench.test_assembly_study.StudyTests.test_failed_cases_stay_in_denominator) ... ok
+test_missing_and_duplicate_conditions_refused (bench.test_assembly_study.StudyTests.test_missing_and_duplicate_conditions_refused) ... ok
+test_paired_differences_use_seed_identity_not_input_order (bench.test_assembly_study.StudyTests.test_paired_differences_use_seed_identity_not_input_order) ... ok
+
+----------------------------------------------------------------------
+Ran 48 tests in 3.779s
+
+OK

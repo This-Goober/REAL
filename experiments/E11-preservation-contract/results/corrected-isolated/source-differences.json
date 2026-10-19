@@ -1,0 +1,28 @@
+{
+  "changed": {
+    "real-compile/scripts/real_core.py": {
+      "e10": "cb54f186006ca8146e64c2c4aafd1f58ff0d3b3043cc2e52c27c17f524cfde95",
+      "candidate": "3eb791ff743e048da8ec6ee9c7dc4d5dc41a13483f8f87a8dc48fbe96232ba16"
+    },
+    "real-create-catalogue/scripts/real_core.py": {
+      "e10": "cb54f186006ca8146e64c2c4aafd1f58ff0d3b3043cc2e52c27c17f524cfde95",
+      "candidate": "3eb791ff743e048da8ec6ee9c7dc4d5dc41a13483f8f87a8dc48fbe96232ba16"
+    },
+    "real-storyboarding/scripts/build.py": {
+      "e10": "d4e607392b46a578b4f80235919d0db5c65ca2a5d9b3e01715b010cccca399a0",
+      "candidate": "082f5df63b1a53ca15df87d2b8554a39ed2504062f6188aef182685012c15082"
+    },
+    "real-storyboarding/scripts/real_core.py": {
+      "e10": "cb54f186006ca8146e64c2c4aafd1f58ff0d3b3043cc2e52c27c17f524cfde95",
+      "candidate": "3eb791ff743e048da8ec6ee9c7dc4d5dc41a13483f8f87a8dc48fbe96232ba16"
+    },
+    "real-storyboarding/tests/test_timing_precision.py": {
+      "e10": "c7b48d349f48370173c2b599e3daa2360e51b34d65c2e246b27932554b55245a",
+      "candidate": "03392314496e62ef5acefec9184081e3b88e2ac86d38c11a1f512dfb16188699"
+    }
+  },
+  "added": {
+    "real-storyboarding/tests/test_preserve_style_ownership.py": "2fbfe1f06d3194b806276e0ad87f279ce8890e95643daf901aa3c03ad19905fd"
+  },
+  "missing": []
+}

@@ -1,0 +1,15 @@
+test_failed_cases_stay_in_fixed_denominator (bench.test_preservation_study.AccountingTests.test_failed_cases_stay_in_fixed_denominator) ... ok
+test_ineligible_case_is_retained (bench.test_preservation_study.AccountingTests.test_ineligible_case_is_retained) ... ok
+test_missing_duplicate_or_unexpected_rows_rejected (bench.test_preservation_study.AccountingTests.test_missing_duplicate_or_unexpected_rows_rejected) ... ok
+test_result_does_not_depend_on_row_order (bench.test_preservation_study.AccountingTests.test_result_does_not_depend_on_row_order) ... ok
+test_derived_times_may_change (bench.test_preservation_study.ChoiceTests.test_derived_times_may_change) ... ok
+test_missing_or_duplicate_layers_are_visible (bench.test_preservation_study.ChoiceTests.test_missing_or_duplicate_layers_are_visible) ... ok
+test_saved_choices_and_ownership_must_not_change (bench.test_preservation_study.ChoiceTests.test_saved_choices_and_ownership_must_not_change) ... ok
+test_duplicate_placements_are_not_collapsed (bench.test_preservation_study.ComparisonTests.test_duplicate_placements_are_not_collapsed) ... ok
+test_one_frame_boundary_error_fails (bench.test_preservation_study.ComparisonTests.test_one_frame_boundary_error_fails) ... ok
+test_source_in_and_project_format_errors_fail (bench.test_preservation_study.ComparisonTests.test_source_in_and_project_format_errors_fail) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK

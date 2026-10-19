@@ -1,0 +1,22 @@
+test_actual_binder_selects_visible_content_without_oracle_tags (bench.academic.test_academic.AdapterTests.test_actual_binder_selects_visible_content_without_oracle_tags) ... ok
+test_selection_is_answer_independent_and_public_inputs_have_no_answers (bench.academic.test_academic.AdapterTests.test_selection_is_answer_independent_and_public_inputs_have_no_answers) ... ok
+test_bad_spans_fail (bench.academic.test_academic.MetricsTests.test_bad_spans_fail) ... ok
+test_duplicate_predictions_cannot_claim_one_reference_twice (bench.academic.test_academic.MetricsTests.test_duplicate_predictions_cannot_claim_one_reference_twice) ... ok
+test_empty_prediction_scores_zero (bench.academic.test_academic.MetricsTests.test_empty_prediction_scores_zero) ... ok
+test_greedy_matching_is_by_iou_not_input_order (bench.academic.test_academic.MetricsTests.test_greedy_matching_is_by_iou_not_input_order) ... ok
+test_invalid_timecodes_fail_instead_of_guessing (bench.academic.test_academic.MetricsTests.test_invalid_timecodes_fail_instead_of_guessing) ... ok
+test_medit_averages_all_editors (bench.academic.test_academic.MetricsTests.test_medit_averages_all_editors) ... ok
+test_perfect_and_disjoint (bench.academic.test_academic.MetricsTests.test_perfect_and_disjoint) ... ok
+test_timecodes_integer_and_fractional (bench.academic.test_academic.MetricsTests.test_timecodes_integer_and_fractional) ... ok
+test_union_does_not_fill_gaps_or_double_count (bench.academic.test_academic.MetricsTests.test_union_does_not_fill_gaps_or_double_count) ... ok
+test_json_surrounding_prose_is_not_a_failed_prediction (bench.academic.test_academic.TransportTests.test_json_surrounding_prose_is_not_a_failed_prediction) ... ok
+test_stream_transport_and_no_tool_context (bench.academic.test_academic.TransportTests.test_stream_transport_and_no_tool_context) ... ok
+test_transport_failure_is_preserved_and_not_reused (bench.academic.test_academic.TransportTests.test_transport_failure_is_preserved_and_not_reused) ... ok
+test_failures_count_and_ids_are_strict (bench.academic.test_academic.UpstreamTests.test_failures_count_and_ids_are_strict) ... ok
+test_perfect_qvh_predictions_score_100 (bench.academic.test_academic.UpstreamTests.test_perfect_qvh_predictions_score_100) ... ok
+test_reproduces_official_sample_scores (bench.academic.test_academic.UpstreamTests.test_reproduces_official_sample_scores) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 1.418s
+
+OK

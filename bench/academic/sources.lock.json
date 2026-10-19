@@ -1,0 +1,59 @@
+{
+  "qvh_commit": "b7e553ac3b0c898ee6b85e03ee507c064eab89ca",
+  "medit_revision": "87c88bc316ac457088342fa988383f0c3400e091",
+  "files": [
+    {
+      "path": "sources/qvh/data/highlight_val_release.jsonl",
+      "url": "https://raw.githubusercontent.com/jayleicn/moment_detr/b7e553ac3b0c898ee6b85e03ee507c064eab89ca/data/highlight_val_release.jsonl",
+      "sha256": "f668a1eaea156ec5315e14718999cea043a8cf948d3cafbd8e8d655318c3cd02"
+    },
+    {
+      "path": "sources/qvh/standalone_eval/eval.py",
+      "url": "https://raw.githubusercontent.com/jayleicn/moment_detr/b7e553ac3b0c898ee6b85e03ee507c064eab89ca/standalone_eval/eval.py",
+      "sha256": "679e43d8f83ca08a682dbe2e4e3f4629ddc2e6911981bcd0c0e54cf1c0cfabca"
+    },
+    {
+      "path": "sources/qvh/standalone_eval/utils.py",
+      "url": "https://raw.githubusercontent.com/jayleicn/moment_detr/b7e553ac3b0c898ee6b85e03ee507c064eab89ca/standalone_eval/utils.py",
+      "sha256": "7cb2f9733ffb3fe22d0b4044ef7ba82679b85972a3e7e0ac88b3eee44904d637"
+    },
+    {
+      "path": "sources/qvh/standalone_eval/sample_val_preds.jsonl",
+      "url": "https://raw.githubusercontent.com/jayleicn/moment_detr/b7e553ac3b0c898ee6b85e03ee507c064eab89ca/standalone_eval/sample_val_preds.jsonl",
+      "sha256": "df3227ef84985db846f102e75cda43b5f9f962d12b95b990028eed88f1901b40"
+    },
+    {
+      "path": "sources/qvh/standalone_eval/sample_val_preds_metrics_raw.json",
+      "url": "https://raw.githubusercontent.com/jayleicn/moment_detr/b7e553ac3b0c898ee6b85e03ee507c064eab89ca/standalone_eval/sample_val_preds_metrics_raw.json",
+      "sha256": "ddd5e405c480c6bde6abe2d54561d68ce7098bc7c10a42ed40a9e72e2eda5841"
+    },
+    {
+      "path": "sources/medit/train.parquet",
+      "url": "https://huggingface.co/datasets/kattyan/MEDit-Bench/resolve/87c88bc316ac457088342fa988383f0c3400e091/data/train.parquet",
+      "sha256": "0f46bfb60c6ae2c1075af847338f702ed9ac61578ed659592bfe90c05dee2351"
+    },
+    {
+      "path": "sources/qvh/LICENSE",
+      "url": "https://raw.githubusercontent.com/jayleicn/moment_detr/b7e553ac3b0c898ee6b85e03ee507c064eab89ca/LICENSE",
+      "sha256": "7e46ea42ece13fd153d63c72bef744b1ec0a378dcf008b075b8a989e640825eb"
+    },
+    {
+      "path": "sources/qvh/data/LICENSE",
+      "url": "https://raw.githubusercontent.com/jayleicn/moment_detr/b7e553ac3b0c898ee6b85e03ee507c064eab89ca/data/LICENSE",
+      "sha256": "9e502ba75fd0fd30cea5497b438a4bc12f07f02bc932a7a6041fd6a18b8f46a0"
+    },
+    {
+      "path": "sources/medit/README.md",
+      "url": "https://huggingface.co/datasets/kattyan/MEDit-Bench/resolve/87c88bc316ac457088342fa988383f0c3400e091/README.md",
+      "sha256": "502599cb190b5d1f04d3f19e241469ac9bcff5aa683bbc51ea6357e41fc19f70"
+    }
+  ],
+  "qvh_video_mirrors": [
+    {
+      "template": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/{vid}.mp4"
+    },
+    {
+      "template": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/{initial}/{vid}.mp4"
+    }
+  ]
+}

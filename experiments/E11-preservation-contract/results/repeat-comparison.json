@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "all_four_runs_same_selected_interventions": true,
+  "identical_outcomes_after_audio_isolation": {
+    "frozen-e10_vs_control-isolated/results.jsonl": "c9e9fd04dae9b0403b78467a54a28a04ea2cd614319b9fea5e587c3f02c64cbc",
+    "frozen-e10_vs_control-isolated/summary.json": "046d69f7ffdfedeaeca6a69f660fa27f5deaac2f5f6fee981e5b2ce4f43298c1",
+    "corrected_vs_corrected-isolated/results.jsonl": "3cf1e6dda843b156e97ad0d36fb0bc8c7a61eaa7b1b9e437c9cdb772b48ea034",
+    "corrected_vs_corrected-isolated/summary.json": "9c21b213271eb8cbdefc910f8eadc68162a2a682036a99c75739a690180a6353"
+  }
+}

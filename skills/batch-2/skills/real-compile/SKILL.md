@@ -102,6 +102,14 @@ the wrong timebase, children out of DTD order, clips reading past the end of
 their source. **Never deliver a file with errors.** "Not found from here"
 warnings are expected when the footage only lives on the Mac.
 
+**Geometry is part of export correctness.** REAL positions are pixels relative
+to the project center (positive y upward). FCPXML `adjust-transform.position`
+uses percentages of project height on both axes: `100 * pixels / height`.
+Convert static video/still positions, title positions, and animated position
+keyframes; leave scale ratios unchanged. A timeline can import with every lane
+present while its contents are offscreen. Validate position semantics as well
+as structure; a local FFmpeg preview is not proof of Final Cut render parity.
+
 **3. Deliver the report, take the veto, then the file.** The `.fcpxml` imports
 with **File → Import → XML…**.
 
@@ -248,7 +256,7 @@ and fold the answer back into `references/fcpxml-notes.md`.
   Refuses on anything incomplete; never invents a time.
 - `scripts/compile.py` — `build` / `validate` / `report` / `targets`, per target.
 - `scripts/targets/` — the registry; `fcpxml_target.py` is the one entry.
-- `scripts/fcpxml.py` — the verified FCPXML generator (`build`, `probe`,
+- `scripts/fcpxml.py` — the FCPXML generator (`build`, `probe`,
   `schema`). All timeline math is integer frames. **Port it, don't rewrite it.**
 - `scripts/validate.py` — semantic checks, optional `--dtd`. Non-zero on errors.
 - `scripts/report.py` — the HTML timeline strip, read from the built file.

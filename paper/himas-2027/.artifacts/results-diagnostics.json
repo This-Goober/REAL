@@ -1,0 +1,13 @@
+{
+  "scope": "Retabulation of saved estimated-clock diagnostics; no scorer or predictions changed",
+  "projects": 100,
+  "reference_placements": 1269,
+  "exact_matches": 14,
+  "matched_at_iou_half": 641,
+  "unmatched_excluded_from_boundary_error": 628,
+  "boundary_error_aggregation": "Mean of each project's IoU>=.5-matched-event absolute errors; not a pooled event mean",
+  "mean_project_start_error_s": 0.30981122257372257,
+  "mean_project_end_error_s": 0.6553835090835091,
+  "worst_matched_error_frames": 71,
+  "source_sha256": "3f27b370dd4a176b4dc0acb274365c30024b1155b6973c2605542cf2b15fd2e4"
+}

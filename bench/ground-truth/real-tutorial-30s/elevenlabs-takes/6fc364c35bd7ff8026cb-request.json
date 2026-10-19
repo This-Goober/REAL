@@ -1,0 +1,14 @@
+{
+  "voice": "JBFqnCBsd6RMkjVDRZzb",
+  "text": "Compile the approved edit into a Final Cut project, with editable clips and titles.",
+  "model_id": "eleven_multilingual_v2",
+  "voice_settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true,
+    "speed": 1.11
+  },
+  "seed": 46,
+  "previous_text": "The reel pins pictures to narration words. Re-record the line, and timing follows those anchors."
+}

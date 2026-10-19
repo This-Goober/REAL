@@ -1,0 +1,52 @@
+{
+  "pipeline_source_id": "0efbfed5ac0cb3fa73a2dfaf6a73d6cd6f98cd8a0e6a2b7261e97972a2509181",
+  "cohorts": {
+    "assembly-development": {
+      "summary_equal": false,
+      "new_summary_sha256": "6d32002d7afa99868cfe63f0e29a7dbc07ded54d61bda7ebc1f5415435ca20c5",
+      "old_summary_sha256": "61e1ad477c11b475e060d7a6ddb0ecd6deb62b7739b485666ea22a4dcf3f034f",
+      "same_specs_and_truth": true,
+      "quality_differences": [
+        {
+          "seed": 21,
+          "condition": "estimated",
+          "old_quality": {
+            "f1@0.5": 0.25,
+            "f1@1.0": 0.0,
+            "frame_exact_acc": 0.1111111111111111,
+            "boundaries_within_1f": 0.125,
+            "time_coverage": 0.8991674375578168
+          },
+          "new_quality": {
+            "f1@0.5": 0.25,
+            "f1@1.0": 0.0,
+            "frame_exact_acc": 0.1111111111111111,
+            "boundaries_within_1f": 0.125,
+            "time_coverage": 0.8983364140480592
+          },
+          "old_total_frames": 1081,
+          "new_total_frames": 1082
+        }
+      ]
+    },
+    "assembly-validation": {
+      "summary_equal": true,
+      "new_summary_sha256": "00bac71e02819cb67666b9d734a781952a95d7851a96d2ea7976a35c08ebeadd",
+      "old_summary_sha256": "00bac71e02819cb67666b9d734a781952a95d7851a96d2ea7976a35c08ebeadd",
+      "same_specs_and_truth": true,
+      "quality_differences": []
+    },
+    "oneshot": {
+      "summary_equal": true,
+      "new_summary_sha256": "835d73629d690191949621e8027f934301c99b7f7bd4bf52d4e9ec3ba1244242",
+      "old_summary_sha256": "835d73629d690191949621e8027f934301c99b7f7bd4bf52d4e9ec3ba1244242"
+    }
+  },
+  "scope": "Existing fixtures rerun after E11-informed fixes; not fresh held-out evaluation",
+  "repairs": {
+    "denominator": 30,
+    "target_correct": 30,
+    "collateral_changes": 0
+  },
+  "e11_pipeline_tree_identical": true
+}

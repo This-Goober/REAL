@@ -1,0 +1,5 @@
+Let's play a guessing game. I'm thinking of a number from one to one hundred.
+You could guess one, two, three, four. That could take a hundred tries.
+Here is the trick. Guess the middle, fifty. Too high? Then throw away all the bigger numbers.
+Guess the middle of what is left. Twenty five. Too low? Throw away the smaller ones.
+Every guess cuts the pile in half. Seven guesses and you have found it. That is binary search.

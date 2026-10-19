@@ -1,0 +1,231 @@
+{
+  "passed": true,
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 30,
+    "frames": 900,
+    "seconds": 30
+  },
+  "audio": "30-second non-silent synthetic narration, AAC and WAV",
+  "audio_engine": "elevenlabs",
+  "audio_wav_match_snr_db": 38.417,
+  "primary_coverage": "exactly one shot on every frame",
+  "asset_hashes": "all match",
+  "full_decode": "passed",
+  "boundary_frames_checked": 42,
+  "minimum_boundary_psnr_db": 44.998,
+  "boundary_psnr": [
+    {
+      "frame": 0,
+      "psnr_db": 49.88,
+      "caption_mae": 0.0
+    },
+    {
+      "frame": 11,
+      "psnr_db": 51.088,
+      "caption_mae": 0.0003
+    },
+    {
+      "frame": 12,
+      "psnr_db": 50.891,
+      "caption_mae": 0.0838
+    },
+    {
+      "frame": 113,
+      "psnr_db": 50.969,
+      "caption_mae": 0.0801
+    },
+    {
+      "frame": 114,
+      "psnr_db": 51.124,
+      "caption_mae": 0.0001
+    },
+    {
+      "frame": 119,
+      "psnr_db": 51.101,
+      "caption_mae": 0.0001
+    },
+    {
+      "frame": 120,
+      "psnr_db": 45.82,
+      "caption_mae": 0.0001
+    },
+    {
+      "frame": 131,
+      "psnr_db": 48.08,
+      "caption_mae": 0.0001
+    },
+    {
+      "frame": 132,
+      "psnr_db": 48.062,
+      "caption_mae": 0.0687
+    },
+    {
+      "frame": 263,
+      "psnr_db": 51.872,
+      "caption_mae": 0.0566
+    },
+    {
+      "frame": 264,
+      "psnr_db": 51.998,
+      "caption_mae": 0.0
+    },
+    {
+      "frame": 269,
+      "psnr_db": 51.987,
+      "caption_mae": 0.0
+    },
+    {
+      "frame": 270,
+      "psnr_db": 50.717,
+      "caption_mae": 0.0
+    },
+    {
+      "frame": 281,
+      "psnr_db": 51.782,
+      "caption_mae": 0.0
+    },
+    {
+      "frame": 282,
+      "psnr_db": 51.253,
+      "caption_mae": 0.1827
+    },
+    {
+      "frame": 383,
+      "psnr_db": 50.809,
+      "caption_mae": 0.1726
+    },
+    {
+      "frame": 384,
+      "psnr_db": 51.136,
+      "caption_mae": 0.0
+    },
+    {
+      "frame": 389,
+      "psnr_db": 51.109,
+      "caption_mae": 0.0
+    },
+    {
+      "frame": 390,
+      "psnr_db": 50.951,
+      "caption_mae": 0.0
+    },
+    {
+      "frame": 401,
+      "psnr_db": 51.272,
+      "caption_mae": 0.0
+    },
+    {
+      "frame": 402,
+      "psnr_db": 50.636,
+      "caption_mae": 0.1848
+    },
+    {
+      "frame": 533,
+      "psnr_db": 53.048,
+      "caption_mae": 0.1381
+    },
+    {
+      "frame": 534,
+      "psnr_db": 53.402,
+      "caption_mae": 0.0
+    },
+    {
+      "frame": 539,
+      "psnr_db": 53.272,
+      "caption_mae": 0.0
+    },
+    {
+      "frame": 540,
+      "psnr_db": 44.998,
+      "caption_mae": 0.0
+    },
+    {
+      "frame": 551,
+      "psnr_db": 48.044,
+      "caption_mae": 0.0
+    },
+    {
+      "frame": 552,
+      "psnr_db": 47.8,
+      "caption_mae": 0.1664
+    },
+    {
+      "frame": 683,
+      "psnr_db": 50.092,
+      "caption_mae": 0.1523
+    },
+    {
+      "frame": 684,
+      "psnr_db": 49.847,
+      "caption_mae": 0.0
+    },
+    {
+      "frame": 689,
+      "psnr_db": 50.313,
+      "caption_mae": 0.0
+    },
+    {
+      "frame": 690,
+      "psnr_db": 51.092,
+      "caption_mae": 0.0
+    },
+    {
+      "frame": 701,
+      "psnr_db": 52.904,
+      "caption_mae": 0.0001
+    },
+    {
+      "frame": 702,
+      "psnr_db": 51.604,
+      "caption_mae": 0.2927
+    },
+    {
+      "frame": 803,
+      "psnr_db": 52.156,
+      "caption_mae": 0.2716
+    },
+    {
+      "frame": 804,
+      "psnr_db": 52.913,
+      "caption_mae": 0.0001
+    },
+    {
+      "frame": 809,
+      "psnr_db": 52.776,
+      "caption_mae": 0.0001
+    },
+    {
+      "frame": 810,
+      "psnr_db": 51.078,
+      "caption_mae": 0.0001
+    },
+    {
+      "frame": 821,
+      "psnr_db": 52.067,
+      "caption_mae": 0.0001
+    },
+    {
+      "frame": 822,
+      "psnr_db": 51.116,
+      "caption_mae": 0.21
+    },
+    {
+      "frame": 893,
+      "psnr_db": 51.628,
+      "caption_mae": 0.1889
+    },
+    {
+      "frame": 894,
+      "psnr_db": 52.076,
+      "caption_mae": 0.0002
+    },
+    {
+      "frame": 899,
+      "psnr_db": 52.076,
+      "caption_mae": 0.0002
+    }
+  ],
+  "scope": "Verifies independent reference construction, not REAL reproduction or Final Cut import."
+}

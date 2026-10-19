@@ -22,6 +22,8 @@ Exercises, with real script invocations on synthetic data:
 14  unresolved technical properties surfaced                     [storyboarding]
 15  storyboarding producing the authoritative finalized reel     [contract]
 16  compile consuming it without editorial decisions             [compile]
+17  visual descriptions ending in "." are not counted as speech  [storyboarding]
+18  the shipped example rebuilds to the shipped example reel      [docs]
 """
 import json, os, shutil, subprocess, sys, tempfile
 
@@ -282,6 +284,219 @@ r = run(os.path.join(CO, "adapt.py"), "bad.json", "-o", "badstory.json",
         "--local-root", os.path.abspath("media"), ok=False)
 check(12, "REFUSES unclassified text (no silent caption default)",
       r.returncode != 0 and "no style" in (r.stdout + r.stderr))
+
+# 17 — a visual description ending in a full stop is still a visual, and a
+# spoken sentence that mentions a media word is still narration
+sys.path.insert(0, SB)
+import notebook as _nb
+check(17, "directive openings beat the full-sentence rule; spoken sentences stay spoken",
+      _nb.classify("video clip of One line. Many connections.") == "video"
+      and _nb.classify("show image of caption one line, large and centred.") == "image"
+      and _nb.classify("audio of rain on a tin roof, close and loud.") == "audio"
+      and _nb.classify("That sound is called a drone, and you hear it.") == "narration"
+      and _nb.classify("Every transformer is built on one line of math.") == "narration")
+
+# 18 — the shipped example still rebuilds to the shipped example reel. The
+# example files are documentation; if the scripts drift, the docs lie.
+ex = os.path.join(W, "example")
+os.makedirs(ex, exist_ok=True)
+shutil.copy(os.path.join(ROOT, "real-brainstorm", "examples", "NOTEBOOK.example.md"),
+            os.path.join(ex, "NOTEBOOK.md"))
+run(os.path.join(SB, "notebook.py"), "parse", "NOTEBOOK.md", "-o", "nb.json", cwd=ex)
+run(os.path.join(SB, "clock.py"), "time", "nb.json", "-o", "clock.json", cwd=ex)
+shipped = json.load(open(os.path.join(ROOT, "real-storyboarding", "examples", "reel.example.json")))
+ck = json.load(open(os.path.join(ex, "clock.json")))
+check(18, "the example notebook still times to the shipped example reel (beats, runtime)",
+      len(ck["beats"]) == len(shipped["beats"])
+      and abs(ck["total_s"] - shipped["clock"]["total_s"]) < 0.01
+      and all(abs(a["t0"] - b["t0"]) < 0.01 and abs(a["t1"] - b["t1"]) < 0.01
+              for a, b in zip(ck["beats"], shipped["beats"])),
+      "got %d beats / %.3fs, shipped %d / %.3fs"
+      % (len(ck["beats"]), ck["total_s"], len(shipped["beats"]), shipped["clock"]["total_s"]))
+
+# A1 — vendored code must remain identical; every repository notebook must
+# use the same word identities at the timing and voice-export handoff.
+from pathlib import Path
+import clock as _clock
+from real_core import words_of
+check(19, "vendored real_core copies are byte-identical",
+      len({Path(folder, "real_core.py").read_bytes() for folder in (SB, CO, CAT)}) == 1)
+repo = Path(ROOT).parents[2]
+if not (repo / ".git").exists():
+    repo = Path(ROOT)  # the suite also works in an extracted standalone bundle
+notebooks = []
+for folder, dirs, files in os.walk(repo):
+    dirs[:] = [d for d in dirs if d not in (".git", "work", "node_modules", ".venv", "__pycache__")]
+    notebooks.extend(Path(folder, name) for name in files
+                     if "NOTEBOOK" in name and name.endswith(".md"))
+failures = []
+for i, path in enumerate(sorted(notebooks)):
+    plan = _clock.plan(_nb.parse(path.read_text()), _clock.load_rates())
+    if not plan["words"]:
+        continue
+    fixture = Path(W, "tokens-%d.json" % i)
+    exported = Path(W, "tokens-%d.txt" % i)
+    fixture.write_text(json.dumps({
+        "version": "1.0", "reel": {"title": "Token check", "width": 1080, "height": 1920, "fps": 30},
+        "clock": {"mode": "estimated", "total_s": 0}, "assets": [], "open": {},
+        "beats": [{**b, "t0": 0, "t1": 0, "layers": [], "audio": []} for b in plan["beats"]]}))
+    result = run(os.path.join(CO, "voice.py"), "script", str(fixture),
+                 "-o", str(exported), ok=False)
+    if result.returncode or words_of(exported.read_text()) != [w["w"] for w in plan["words"]]:
+        failures.append(str(path))
+    elif exported.read_text().strip() != "\n".join(
+            b["narration"].strip() for b in plan["beats"] if b.get("narration")):
+        failures.append(str(path) + " (recording punctuation changed)")
+check(20, "voice export matches clock tokens across %d repository notebooks" % len(notebooks),
+      bool(notebooks) and not failures, ", ".join(failures))
+check(21, "narration token identities handle punctuation without whitespace boundaries",
+      words_of("Wait—don't cut.Now re-enter; 16:9, Q/K, it’s ready!")
+      == ["Wait", "don't", "cut", "Now", "re-enter", "16:9", "Q/K", "it’s", "ready"])
+
+# Defect 13 — moving a previously clipped caption must recover the requested
+# duration. Repeated late/early moves must not progressively shorten it.
+import build as _build
+import revise as _revise
+from types import SimpleNamespace
+n13 = _nb.parse("## beat\n\n<Lantern ferry cobalt signal willow dune nickel yarrow pepper glacier basalt lotus quiver.>\n<caption: candle oyster ~1.6s>\n")
+c13 = _clock.plan(n13, _clock.load_rates())
+for w in c13["words"]:
+    w["start"], w["end"] = w["i"] * 0.25, (w["i"] + 1) * 0.25
+c13["mode"] = "measured"
+_clock.derive(c13, _clock.load_rates())
+# Pin the original cue late, exactly as the reported failure does.
+p13 = next(p for p in c13["placements"] if p["type"] == "text")
+p13["t0"], p13["t1"] = 2.5, 3.25
+r13 = _build.assemble(n13, c13, {"assets": [], "bindings": {
+                           p13["component"]: {"confidence": "high"}}},
+                       SimpleNamespace(stubs_dir=None, fps=30,
+                                       assets_root="", assets_root_local=""))
+b13 = r13["beats"][0]
+l13 = b13["layers"][0]
+check(22, "build retains a caption's explicit duration after clipping",
+      l13.get("dur_s") == 1.6 and l13["t1"] - l13["t0"] < 1.6)
+for anchor in (2, 11, 2):
+    l13["anchor_word"] = anchor
+    _revise.reanchor(l13, b13, c13, [])
+    expected = min(l13["t0"] + 1.6, b13["t1"])
+    assert abs(l13["t1"] - expected) < 1e-8
+check(23, "reanchoring restores requested duration while respecting beat bounds",
+      abs(l13["t1"] - l13["t0"] - 1.6) < 1e-8)
+
+# A2 — each handoff accepts real producer output and refuses a damaged
+# nested field before its consumer can overwrite the previous result.
+import copy
+from real_core import validate_document, write_json, SchemaError
+contracts = {
+    "notebook": json.load(open("notebook.json")),
+    "clock": json.load(open("clock.json")),
+    "measured": json.load(open("measured.json")),
+    "asset-catalog": json.load(open("asset-catalog.json")),
+    "reel": json.load(open("reel2.json")),
+    "story": json.load(open("story.json")),
+}
+broken = copy.deepcopy(contracts)
+broken["notebook"]["cells"][0]["groups"][0]["components"][0]["type"] = "naration"
+broken["clock"]["words"][0]["start"] = "yesterday"
+for word in broken["measured"]["words"]:
+    word["starts_at"] = word.pop("start")
+broken["asset-catalog"]["assets"][0]["dur"] = -1
+broken["reel"]["beats"][0]["layers"][0].pop("t1")
+broken["story"]["beats"][0]["duration"] = -1
+fields = {"notebook": ".type", "clock": ".start", "measured": "start",
+          "asset-catalog": ".dur", "reel": ".t1", "story": ".duration"}
+for n, (name, data) in enumerate(contracts.items(), 24):
+    validate_document(data, name)
+    bad_path = "contract-bad-" + name + ".json"
+    output = "contract-protected-" + name
+    Path(bad_path).write_text(json.dumps(broken[name]))
+    sentinel = "previous successful output\n"
+    Path(output).write_text(sentinel)
+    commands = {
+        "notebook": (os.path.join(SB, "clock.py"), "time", bad_path, "-o", output),
+        "clock": (os.path.join(SB, "build.py"), "retime", "reel2.json", bad_path, "-o", output),
+        "measured": (os.path.join(SB, "clock.py"), "swap", "clock.json", bad_path, "-o", output),
+        "asset-catalog": (os.path.join(SB, "bind.py"), "bind", "notebook.json", bad_path, "-o", output),
+        "reel": (os.path.join(CO, "adapt.py"), bad_path, "-o", output),
+        "story": (os.path.join(CO, "compile.py"), "build", bad_path, output, "--no-probe"),
+    }
+    result = run(*commands[name], ok=False)
+    message = result.stdout + result.stderr
+    check(n, name + " schema accepts producer output and refuses its damaged handoff",
+          result.returncode != 0 and "REFUSED" in message and fields[name] in message
+          and "Traceback" not in message and Path(output).read_text() == sentinel,
+          message)
+
+# Documentation examples must satisfy the same contracts as generated files.
+examples = list(Path(ROOT).glob("*/examples/*.json"))
+for path in examples:
+    validate_document(json.loads(path.read_text()), "reel" if "reel" in path.name else "asset-catalog")
+check(30, "every shipped JSON example validates", len(examples) == 4)
+schema_copies = {}
+for path in Path(ROOT).glob("*/references/schemas/*.schema.json"):
+    schema_copies.setdefault(path.name, []).append(path.read_bytes())
+check(31, "all six schema definitions are vendored without drift",
+      len(schema_copies) == 6 and all(len(set(copies)) == 1 for copies in schema_copies.values()))
+
+# The writer must refuse BEFORE opening a destination, including when updating
+# an existing handoff in place. Test every schema, not only a toy schema.
+protected = Path("contract-write-protected.json")
+for name, data in broken.items():
+    protected.write_text(sentinel)
+    try:
+        write_json(protected, data, name)
+    except SystemExit as error:
+        assert "REFUSED" in str(error) and fields[name] in str(error)
+    else:
+        raise AssertionError("invalid " + name + " was written")
+    assert protected.read_text() == sentinel
+check(32, "invalid handoff writes preserve all previous outputs", True)
+
+# Measured-word consumers must agree on both aliases and use index identity,
+# even if the provider emits its word entries out of order.
+original = contracts["measured"]
+alias = {"words": [{"i": w["i"], "s": w["start"], "e": w["end"]}
+                   for w in reversed(original["words"])]}
+Path("measured-alias.json").write_text(json.dumps(alias))
+for measured_path, out in (("measured.json", "delta-long.json"), ("measured-alias.json", "delta-short.json")):
+    result = run(os.path.join(CO, "voice.py"), "delta", "reel2.json", measured_path,
+                 "-o", out, "--tolerance", "100", ok=False)
+    assert result.returncode == 0, result.stdout + result.stderr
+check(33, "voice delta accepts either timestamp spelling and shuffled word entries",
+      json.load(open("delta-long.json")) == json.load(open("delta-short.json")))
+
+# Numeric, union and reference validation must not let non-finite values,
+# booleans-as-times, duplicate indices or conflicting aliases slip through.
+invalid_measurements = [
+    {"words": [{"i": 0, "s": True, "e": 1}]},
+    {"words": [{"i": 0, "s": float("nan"), "e": 1}]},
+    {"words": [{"i": 0, "s": 0, "e": float("inf")}]},
+    {"words": [{"i": 0, "s": 2, "e": 1}]},
+    {"words": [{"i": 0, "s": 0, "e": 1}, {"i": 0, "s": 1, "e": 2}]},
+    {"words": [{"i": 0, "start": 0, "s": 1, "end": 2}]},
+]
+for bad_measurement in invalid_measurements:
+    try:
+        validate_document(bad_measurement, "measured")
+    except SchemaError:
+        pass
+    else:
+        raise AssertionError("malformed word alignment was accepted")
+for legacy in ({"beats": {"B1": 2.0}}, {"sections": {"0": 2.0}}):
+    validate_document(legacy, "measured")
+check(34, "measured contract rejects ambiguous or invalid times and keeps legacy beat durations", True)
+
+# Standalone packaging: each executable must find its own core and schemas
+# without any sibling skill directories or repository imports.
+for skill, args in (
+    ("real-storyboarding", ("clock.py", "time", os.path.join(W, "notebook.json"), "-o", os.path.join(W, "isolated-clock.json"))),
+    ("real-compile", ("fcpxml.py", "build", os.path.join(W, "story.json"), os.path.join(W, "isolated.fcpxml"), "--no-probe")),
+    ("real-create-catalogue", ("build_catalog.py", os.path.join(W, "asset-catalog.json"), os.path.join(W, "isolated-catalog"))),
+):
+    isolated = Path(W, "standalone-" + skill)
+    shutil.copytree(Path(ROOT, skill), isolated, ignore=shutil.ignore_patterns("__pycache__"))
+    run(str(isolated / "scripts" / args[0]), *args[1:], cwd=str(isolated))
+check(35, "standalone skills load their own vendored core and schemas", True)
 
 print("\nALL %d CHECKS PASS (spec items covered: %s)"
       % (len(PASS), sorted(set(PASS))))

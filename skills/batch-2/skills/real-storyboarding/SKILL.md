@@ -103,6 +103,8 @@ it by shifting times.
 ```
 python3 scripts/notebook.py parse NOTEBOOK.md -o notebook.json
 python3 scripts/clock.py    time  notebook.json -o clock.json          # [--variant hook=B]
+#   narration already recorded? measure first, so placement is decided on the recording:
+#   python3 scripts/clock.py time notebook.json -o clock.json --measured measured.json
 python3 scripts/bind.py     bind  notebook.json asset-catalog.json -o bindings.json
 python3 scripts/build.py    build notebook.json clock.json bindings.json \
                                   -o reel.json --stubs-dir stubs --assets-root "<NLE path>"
@@ -131,6 +133,16 @@ before.
 Explain any binding on demand: `python3 scripts/bind.py explain bindings.json C5.5f3`
 prints the exact signals that produced it. A human must always be able to see
 why a file was picked.
+
+### Select the event inside a long source
+
+When a video contains several events, whole-file keyword matching is insufficient.
+If the catalogue has ordered `observations`, follow
+[temporal-grounding.md](references/temporal-grounding.md): prepare the model request,
+validate its event choices, then bind with `--groundings groundings.json`.
+The selected source range survives build, creator preservation and compile.
+Keep uncertainty visible, and leave unsupported events as stubs. The word clock
+continues to determine timeline duration independently of source selection.
 
 ### The tracks page is the interview
 

@@ -1,0 +1,22 @@
+{
+  "bench/work/himas-demo-ready/project/before/reel.json": "5ba16799bacd7511a5c3c530ec0598b2d25c6dde95a5062e87961b76f9aacaff",
+  "bench/work/himas-demo-ready/project/before/timeline.fcpxml": "25e494203c5d5c82f2ea949df56ce9d8b33dbf4c809a81e54896dd3946d57af4",
+  "bench/work/himas-demo-ready/project/after/reel.json": "6b10d5a820df24dd1575be032de1641cd0b34b6702fb5a5d32060ffabea14085",
+  "bench/work/himas-demo-ready/project/after/timeline.fcpxml": "08c6fe8a52be69a7b400a21ca9ddd5c7254c1f287f6d5cdc90b65d6b27e95935",
+  "bench/work/himas-demo-ready/project/NOTEBOOK.md": "c595748ba82de7c243e246e76e5caadb3c34abd0209a7e5c5bf8f26b8f9fea81",
+  "bench/work/himas-demo-tracks.png": "b95d07db1d39cd7032272b5e90dc82bfbdca6078bb1585778058cce5e09f0321",
+  "experiments/E05-tier2-codex-reproduction/results/transformer-math-30s-mode-A.json": "c35bbf28df3c93d5a3cdbed061c4ec96b547db61161dab472a0ffde17dcd47eb",
+  "experiments/E05-tier2-codex-reproduction/results/transformer-math-30s-mode-B.json": "6a7b6533e228781f8e4ade5d9715844b372d7bf7e5ac482854f03fca407937da",
+  "bench/work/media/paganini-23-octaves-60s/asset-catalog.json": "c58666cdcbc441690d3f5e87e2d51e01cae17ea51a73daa346d7a3fa8f47f00c",
+  "bench/work/media/paganini-23-octaves-60s/bindings.json": "8ce05bd42f5ebd9ba16d22d58cbd3f7b21820a5ec01a812da7b8bad2b011e45d",
+  "bench/work/media/paganini-23-octaves-60s/reel.json": "6650aa43ce52c7df0ca56f14f7008427733b0312d1b7e952337948bec6a4733b",
+  "bench/work/media/paganini-23-octaves-60s/review-claude/reel.json": "e842aced5f982cccb51dc18ce2337bd4276f9fc7dba6f2599fc96db06bd8e656",
+  "bench/work/media/paganini-23-octaves-60s/takes/P-src-02.mov": "708bc886f37ba9ee5ff0c3dff6533c116b5373aa945a5f695dcded3883762853",
+  "paper/himas-2027/.artifacts/figure-data/paganini-sample-1.jpg": "0ca461d3bc7bc9c7a7c4d755723a86462687ba8c2e1ae8b873e94608114f4481",
+  "paper/himas-2027/.artifacts/figure-data/paganini-sample-2.jpg": "95b2e85722c3a36f05d7a0c6e8a1c0a08cb95655065cf33ed6236a43a63aa00d",
+  "paper/himas-2027/.artifacts/figure-data/paganini-sample-3.jpg": "e238544072e788ab18d06183dac8e60cac2e7dde2a1d64721e038139a9af92a7",
+  "paper/himas-2027/.artifacts/figure-data/paganini-sample-4.jpg": "32d14517efaba169f018f31fcb6784744d3a6427e350181d4781d7565ebbef63",
+  "paper/himas-2027/.artifacts/figure-data/paganini-sample-5.jpg": "58e6ef85b5651490b185defceb3b9e84ab0de0f6d923783930c8dc7304f43d7b",
+  "paper/himas-2027/.artifacts/figure-data/placement.json": "0c7bcadf82daac7dffb8f7a1828a86841d3d0a81d3288e8f340cdc4fa319a5f0",
+  "paper/himas-2027/.artifacts/figure-data/paganini.json": "f37a0dd6bd1fb4d48999434a3acd18561bedbe6fe7536f0f3a58f74b8ad27214"
+}

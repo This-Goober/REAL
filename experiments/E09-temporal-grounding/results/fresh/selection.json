@@ -1,0 +1,24 @@
+{
+  "dataset": "QVHighlights",
+  "split": "val",
+  "n_split": 1550,
+  "n_selected": 5,
+  "selection": "first five SHA256(real-academic-pilot-v1:qid), excluding all four original source videos; no replacement",
+  "excluded_source_videos": [
+    "Ps1SNAGQTc0",
+    "eRqYUTA5JJo",
+    "xqe9FSBJDx0",
+    "yJLmek6euTA"
+  ],
+  "qids": [
+    2428,
+    10243,
+    1678,
+    2967,
+    1548
+  ],
+  "inputs_sha256": "2d7806e1d083c80ac087c838a478932eb5b8e9f6b6c4673b6865307fcb6d5fa4",
+  "references_sha256": "abde98ee028165bf5ceb62f5326fb852853fabb7df68b3a3e69e91346a6ed82d",
+  "source_sha256": "f668a1eaea156ec5315e14718999cea043a8cf948d3cafbd8e8d655318c3cd02",
+  "status": "fresh validation subset; freeze before inference, no labels inspected"
+}

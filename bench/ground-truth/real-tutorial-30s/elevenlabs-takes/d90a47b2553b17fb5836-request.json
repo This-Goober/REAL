@@ -1,0 +1,14 @@
+{
+  "voice": "JBFqnCBsd6RMkjVDRZzb",
+  "text": "First, a notebook holds your script and shot ideas.",
+  "model_id": "eleven_multilingual_v2",
+  "voice_settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true,
+    "speed": 1.0
+  },
+  "seed": 43,
+  "previous_text": "Real helps assemble your footage into an editable project."
+}

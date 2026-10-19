@@ -1,0 +1,12 @@
+{
+  "source": "https://github.com/GoncaloBFM/himas-workshop/raw/refs/heads/main/CEURART.zip",
+  "retrieved": "2026-10-18",
+  "files": {
+    "ceurart.cls": "d5af3d070a94d455fe51e1c86597ee07d88ec09fd71077b31003af0abd122136",
+    "cc-by.pdf": "a2eea10321efc44ad974effc8159f69b4467397ca5df4991a7e879dd82dc62a1",
+    "Copyright.txt": "e0940096aa9952eab3ea37438024133b6e831be700369e5e30c860cfb1ecf1f6",
+    "Copyright.lppl": "5f05fcf6ef25a6c31bccd2df7c0c46b23107bbeb2ce5cdba74efb5cc357f4dbb",
+    "Copyright.logo": "b228122c8d090fbf2e2fc67233a0fe381634c555d2a77c8ca78c02f0d1d2e09f",
+    "Copyright.cc-by-sa": "3b2890eacd851373001c4a14623458e3adaf1b1967939aa9c38a318e28d61c00"
+  }
+}

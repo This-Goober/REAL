@@ -101,6 +101,11 @@ when the measured clock arrives:
 - **hold** — its explicit duration would run past the last word, so it plays
   *after* the words stop. This is what a demo that must not be talked over
   actually needs, and it is why beat length is not the same as narration length.
+- A **hold the creator re-anchors onto a word inside the line** becomes an
+  insert over the running shot, and the beat gives back the time the hold had
+  added. (`revise.py` and `build.py retime` recompute a beat's end from what is
+  actually in it: the line, plus any remaining holds. Before this, the beat kept
+  a phantom extension and ran into the next beat; journal entry 002-E.)
 - **post** — written after a hold, so it rides the hold (the two captions
   labelling the two strokes of a demo), spread across the hold's length rather
   than jumping back over narration that has already finished.
@@ -114,6 +119,18 @@ why the rule works. Two consequences worth knowing:
 - The **first visual in a group is the base** (`fit: "fill"`); later visuals in
   the same group are overlays (`fit: "fit"`). Successive base visuals form the
   primary storyline and each holds until the next one starts.
+- **A timed visual written after a running shot is an insert, not a cut.**
+  `<video clip of the demo>` followed by `<show image of the diagram ~2s>` keeps
+  the demo running underneath and puts the diagram over it for two seconds;
+  the demo does not end when the diagram starts, and the beat is never left
+  black when the diagram ends. Only an *untimed* visual starts a new base.
+  (Measured in the assembly benchmark, journal entry 002: treating the insert
+  as a base cut the running shot short and left up to a third of the beat
+  black, silently.)
+- **A cue on the first word of a line starts with the line.** The 40 % rule
+  above is for cues inside a line; a base shot anchored to the beat's first
+  word lands on the beat boundary, so the primary storyline has no black head
+  frames and the shot sits on the spine rather than on a lane over a gap.
 - A caption written *before* an image in the same group will sit under it. That
   is what the notebook said, so do it — but flag it, because it is more often a
   typo than an intention.

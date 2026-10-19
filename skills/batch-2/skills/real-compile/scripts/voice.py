@@ -41,10 +41,12 @@ Splices are 12 ms crossfades, which is what stops a splice from clicking.
 the recorded read matches the plan at all before you spend time aligning it.
 """
 
+from real_core import read_json, write_json, measured_words
 import json
 import os
 import subprocess
 import sys
+from real_core import words_of
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -54,20 +56,9 @@ sys.path.insert(0, HERE)
 # script — the token stream the word indices index
 # --------------------------------------------------------------------------
 
-def words_of(text):
-    """Tokenise narration the way the word index is counted upstream.
-
-    Whitespace split, minus anything with no letter or digit in it. A dashed
-    aside — like this one — puts a bare em dash between two spaces, and if that
-    counted as a word every index after it would be off by one against
-    /real-storyboarding's clock. It is also not a word the aligner can look up,
-    so filtering here fixes both problems at once.
-    """
-    return [t for t in str(text or "").split() if any(c.isalnum() for c in t)]
-
 
 def cmd_script(argv):
-    reel = json.load(open(argv[2]))
+    reel = read_json(argv[2], "reel")
     out = argv[argv.index("-o") + 1] if "-o" in argv else "narration.txt"
     beats = reel.get("beats") or []
     words, ranges, problems = [], [], []
@@ -97,7 +88,10 @@ def cmd_script(argv):
         print("\nFix in /real-storyboarding. Nothing was written.")
         return 2
     with open(out, "w") as f:
-        f.write(" ".join(words) + "\n")
+        # The shared tokens define indices; the recording script keeps the
+        # author's punctuation so readers and TTS retain sentence prosody.
+        f.write("\n".join(str(b.get("narration") or "").strip()
+                           for b in beats if b.get("narration")) + "\n")
     print("wrote %s — %d words across %d beat(s)" % (out, len(words), len(ranges)))
     print("word ranges: " + ", ".join("%s %d–%d" % r for r in ranges[:8])
           + (" …" if len(ranges) > 8 else ""))
@@ -193,8 +187,7 @@ def cmd_measure(argv):
         "words": [{"i": i, "w": w["w"], "s": w["s"], "e": w["e"]}
                   for i, w in enumerate(words)],
     }
-    with open(out, "w") as f:
-        json.dump(measured, f, indent=1)
+    write_json(out, measured, "measured")
     print("wrote %s — %d words, %.3fs of audio, first word at %.3fs, last ends "
           "at %.3fs" % (out, len(words), measured["total_s"],
                         words[0]["s"], words[-1]["e"]))
@@ -219,8 +212,8 @@ def _duration(path):
 # --------------------------------------------------------------------------
 
 def cmd_delta(argv):
-    reel = json.load(open(argv[2]))
-    measured = json.load(open(argv[3]))
+    reel = read_json(argv[2], "reel")
+    measured = read_json(argv[3], "measured")
     out = argv[argv.index("-o") + 1] if "-o" in argv else None
     tol = float(argv[argv.index("--tolerance") + 1]) if "--tolerance" in argv \
         else 0.35
@@ -229,7 +222,8 @@ def cmd_delta(argv):
     if not words:
         print("REFUSED — %s has no words." % argv[3])
         return 2
-    n = len(words)
+    index = measured_words(measured)
+    n = len(index)
     beats = reel.get("beats") or []
     missing = [b.get("id") for b in beats
                if b.get("w0") is None or b.get("w1") is None]
@@ -244,13 +238,13 @@ def cmd_delta(argv):
     rows, worst, drift_max = [], 0.0, 0.0
     for b in beats:
         w0, w1 = int(b["w0"]), int(b["w1"])
-        if w0 >= n or w1 >= n:
+        if w0 not in index or w1 not in index:
             print("REFUSED — beat %s indexes word %d but the measured track "
                   "has %d words. The script that was read is not the script "
                   "that was planned; re-derive it with `voice.py script`."
                   % (b.get("id"), max(w0, w1), n))
             return 2
-        m0, m1 = words[w0]["s"], words[w1]["e"]
+        m0, m1 = index[w0][0], index[w1][1]
         e0, e1 = float(b["t0"]), float(b["t1"])
         d_start = m0 - e0
         d_dur = (m1 - m0) - (e1 - e0)
@@ -264,7 +258,7 @@ def cmd_delta(argv):
                      "over_tolerance": abs(d_dur) > tol})
 
     est_total = float((reel.get("clock") or {}).get("total_s") or 0)
-    meas_total = float(measured.get("total_s") or words[-1]["e"])
+    meas_total = float(measured.get("total_s") or max(end for _, end in index.values()))
     d_total = meas_total - est_total
 
     print("estimate vs measured — per beat, in seconds  (tolerance %.2fs)\n"

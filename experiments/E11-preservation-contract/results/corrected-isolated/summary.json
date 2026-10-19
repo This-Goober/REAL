@@ -1,0 +1,95 @@
+{
+  "planned_seeds": 100,
+  "planned_rows": 200,
+  "scales": {
+    "faster": {
+      "factor": 0.8,
+      "denominator": 100,
+      "eligible": 100,
+      "stage_complete": 100,
+      "ineligible": 0,
+      "failed": 0,
+      "checks_passed": {
+        "initial_repair_exact": 100,
+        "initial_target_correct": 100,
+        "noop_exact": 100,
+        "noop_choices_preserved": 100,
+        "retimed_exact": 100,
+        "retimed_choices_preserved": 100,
+        "rebuilt_exact": 100,
+        "rebuilt_choices_preserved": 100,
+        "compile_deterministic": 100
+      },
+      "additional_style_by_changed": 0,
+      "all_checks_passed": 100
+    },
+    "slower": {
+      "factor": 1.2,
+      "denominator": 100,
+      "eligible": 100,
+      "stage_complete": 100,
+      "ineligible": 0,
+      "failed": 0,
+      "checks_passed": {
+        "initial_repair_exact": 100,
+        "initial_target_correct": 100,
+        "noop_exact": 100,
+        "noop_choices_preserved": 100,
+        "retimed_exact": 100,
+        "retimed_choices_preserved": 100,
+        "rebuilt_exact": 100,
+        "rebuilt_choices_preserved": 100,
+        "compile_deterministic": 100
+      },
+      "additional_style_by_changed": 0,
+      "all_checks_passed": 100
+    }
+  },
+  "clipped_recovery_fixture": {
+    "status": "complete",
+    "passed": true,
+    "target": "B1.L2",
+    "observations": [
+      {
+        "stage": "late",
+        "requested_s": 1.4,
+        "expected_start_s": 4.0292,
+        "expected_end_s": 4.19,
+        "actual_start_s": 4.0292,
+        "actual_end_s": 4.19,
+        "visible_s": 0.16080000000000005,
+        "passed": true
+      },
+      {
+        "stage": "early",
+        "requested_s": 1.4,
+        "expected_start_s": 0.3502,
+        "expected_end_s": 1.7502,
+        "actual_start_s": 0.3502,
+        "actual_end_s": 1.7502,
+        "visible_s": 1.4,
+        "passed": true
+      },
+      {
+        "stage": "retimed-late",
+        "requested_s": 1.4,
+        "expected_start_s": 3.2236,
+        "expected_end_s": 3.352,
+        "actual_start_s": 3.2236,
+        "actual_end_s": 3.352,
+        "visible_s": 0.12840000000000007,
+        "passed": true
+      },
+      {
+        "stage": "retimed-early",
+        "requested_s": 1.4,
+        "expected_start_s": 0.28,
+        "expected_end_s": 1.68,
+        "actual_start_s": 0.28,
+        "actual_end_s": 1.68,
+        "visible_s": 1.4,
+        "passed": true
+      }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 # Export targets — how to add a second one
 
-FCPXML is the only target today. It is not the only target the pipeline is
-allowed to have, and the reason for the seam is worth stating: **the sequencing
+FCPXML was the only target until 18 October 2026; `otio` (OpenTimelineIO) is
+the second, described at the end of this file. The reason for the seam is worth stating: **the sequencing
 logic must never learn about output formats.** Everything up to and including
 `story.json` is a description of an edit. A target turns that description into
 a file some particular application opens. Those are different jobs and they
@@ -110,3 +110,39 @@ That is the entire surface. No other file changes.
   is how the *target* machine sees the folder; `assets_root_local` is only for
   probing from here. Writing the local path into the file is the mistake that
   makes an import look fine and then show red Missing Media.
+
+## `otio` — the second target (OpenTimelineIO, added 18 October 2026)
+
+`scripts/targets/otio_target.py` writes an `.otio` timeline with the
+OpenTimelineIO library (`pip install opentimelineio`; without it the target
+shows as `UNAVAILABLE` and FCPXML is unaffected). DaVinci Resolve 18.5+ (free
+edition included) and Premiere Pro 25.6+ import `.otio` natively.
+
+| story.json | .otio |
+|---|---|
+| beats, in order | video track `V1`; a `gap` beat is an OTIO Gap |
+| overlay on lane *n* | video track `V(n+1)`, Gaps between placements |
+| connected clip on lane −*n* | audio track `A(n)` (A1 narration, A2 source, A3 bed, A4 sfx) |
+| text overlay | Clip with a `REAL.title` GeneratorReference; words, font, size, colour, alignment and pixel position are generator parameters |
+| `note`, `markers` | `metadata.REAL.note`, OTIO Markers |
+| transform, opacity, fades, volume, ducking, transitions | `metadata.REAL` only — one build warning says so; the editor does not apply them |
+
+Times are integer frames at the sequence rate (`RationalTime(frames, rate)`),
+computed with the same layout arithmetic as the FCPXML target, and media facts
+come from the same resolver (`fcpxml.Story._resolve_media`), so the two files
+cannot disagree about a boundary or a duration without the cross-check noticing:
+
+```
+python3 bench/otio_edl.py timeline.otio --against timeline.fcpxml
+```
+
+reads both files with two independent readers (plain JSON for `.otio`,
+`bench/fcpxml_edl.py` for FCPXML) and reports whether the visual events and
+audio lanes are identical frame for frame.
+
+`validate` re-reads the file with the OTIO library and refuses when an item is
+off the frame grid, a clip reads past its source, a media path is not an
+absolute file URL, a title has no text, an overlay track outruns `V1`, or the
+declared total does not match. Missing local files are warnings, as for FCPXML.
+No `report` renderer: review the FCPXML `report.html`, which describes the
+same edit.

@@ -1,0 +1,116 @@
+{
+  "dataset": "QVHighlights",
+  "split": "val",
+  "status": "development component pilot",
+  "n": 5,
+  "n_full_split": 1550,
+  "source_videos": 4,
+  "run_manifest_sha256": "7a43e1c53defe29f79728b0ce97010897fd64b41c85c3efc0ad45f57b46a4754",
+  "references_sha256": "b4cd8da93cc6270429586ae9348c40f4136474db9b6adf0c37a9023b5a84e893",
+  "conditions": {
+    "real-temporal": {
+      "n": 5,
+      "failed": 0,
+      "empty_predictions": 0,
+      "out_of_bounds_proposals": 0,
+      "units": "percent",
+      "evaluator": "unmodified pinned Moment-DETR MR functions; serial execution",
+      "metrics": {
+        "MR-full-mAP": 56.88,
+        "MR-full-mAP@0.5": 72.92,
+        "MR-full-mAP@0.75": 70.83,
+        "MR-full-R1@0.5": 80.0,
+        "MR-full-R1@0.7": 80.0
+      },
+      "predictions_sha256": "0142caa96bacd708a639b42bdf47f25e673d4a704784fb49c5d4e870efb84152",
+      "per_case": [
+        {
+          "n": 1,
+          "failed": 0,
+          "empty_predictions": 0,
+          "out_of_bounds_proposals": 0,
+          "units": "percent",
+          "evaluator": "unmodified pinned Moment-DETR MR functions; serial execution",
+          "metrics": {
+            "MR-full-mAP": 80.0,
+            "MR-full-mAP@0.5": 100.0,
+            "MR-full-mAP@0.75": 100.0,
+            "MR-full-R1@0.5": 100.0,
+            "MR-full-R1@0.7": 100.0
+          },
+          "qid": 193
+        },
+        {
+          "n": 1,
+          "failed": 0,
+          "empty_predictions": 0,
+          "out_of_bounds_proposals": 0,
+          "units": "percent",
+          "evaluator": "unmodified pinned Moment-DETR MR functions; serial execution",
+          "metrics": {
+            "MR-full-mAP": 21.04,
+            "MR-full-mAP@0.5": 31.25,
+            "MR-full-mAP@0.75": 20.83,
+            "MR-full-R1@0.5": 100.0,
+            "MR-full-R1@0.7": 100.0
+          },
+          "qid": 9823
+        },
+        {
+          "n": 1,
+          "failed": 0,
+          "empty_predictions": 0,
+          "out_of_bounds_proposals": 0,
+          "units": "percent",
+          "evaluator": "unmodified pinned Moment-DETR MR functions; serial execution",
+          "metrics": {
+            "MR-full-mAP": 23.33,
+            "MR-full-mAP@0.5": 33.33,
+            "MR-full-mAP@0.75": 33.33,
+            "MR-full-R1@0.5": 0.0,
+            "MR-full-R1@0.7": 0.0
+          },
+          "qid": 3666
+        },
+        {
+          "n": 1,
+          "failed": 0,
+          "empty_predictions": 0,
+          "out_of_bounds_proposals": 0,
+          "units": "percent",
+          "evaluator": "unmodified pinned Moment-DETR MR functions; serial execution",
+          "metrics": {
+            "MR-full-mAP": 80.0,
+            "MR-full-mAP@0.5": 100.0,
+            "MR-full-mAP@0.75": 100.0,
+            "MR-full-R1@0.5": 100.0,
+            "MR-full-R1@0.7": 100.0
+          },
+          "qid": 6383
+        },
+        {
+          "n": 1,
+          "failed": 0,
+          "empty_predictions": 0,
+          "out_of_bounds_proposals": 0,
+          "units": "percent",
+          "evaluator": "unmodified pinned Moment-DETR MR functions; serial execution",
+          "metrics": {
+            "MR-full-mAP": 80.0,
+            "MR-full-mAP@0.5": 100.0,
+            "MR-full-mAP@0.75": 100.0,
+            "MR-full-R1@0.5": 100.0,
+            "MR-full-R1@0.7": 100.0
+          },
+          "qid": 7416
+        }
+      ],
+      "model_calls": 5,
+      "reported_cost_usd": 0.142902,
+      "calls_without_cost": 0,
+      "models_reported": [
+        "claude-sonnet-5-5"
+      ]
+    }
+  }
+}

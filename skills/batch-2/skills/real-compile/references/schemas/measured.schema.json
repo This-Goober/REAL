@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:real:measured:1",
+  "title": "measured.json",
+  "description": "Word alignment accepts i plus start/end or s/e (including mixed aliases). Legacy per-beat durations are supported by clock swap. Duplicate indices, reversed spans and conflicting aliases are refused by the shared reader.",
+  "type": "object",
+  "properties": {
+    "words": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "i": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "w": {
+            "type": "string"
+          },
+          "start": {
+            "type": "number",
+            "minimum": 0
+          },
+          "end": {
+            "type": "number",
+            "minimum": 0
+          },
+          "s": {
+            "type": "number",
+            "minimum": 0
+          },
+          "e": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "i"
+        ],
+        "allOf": [
+          {
+            "anyOf": [
+              {
+                "required": [
+                  "start"
+                ]
+              },
+              {
+                "required": [
+                  "s"
+                ]
+              }
+            ]
+          },
+          {
+            "anyOf": [
+              {
+                "required": [
+                  "end"
+                ]
+              },
+              {
+                "required": [
+                  "e"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "beats": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0
+      },
+      "minProperties": 1
+    },
+    "sections": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0
+      },
+      "minProperties": 1
+    },
+    "total_s": {
+      "type": "number",
+      "minimum": 0
+    },
+    "n_words": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "mode": {
+      "enum": [
+        "measured"
+      ]
+    },
+    "source": {
+      "type": "string"
+    },
+    "audio": {
+      "type": "string"
+    }
+  },
+  "required": [],
+  "anyOf": [
+    {
+      "required": [
+        "words"
+      ],
+      "properties": {
+        "words": {
+          "minItems": 1
+        }
+      }
+    },
+    {
+      "required": [
+        "beats"
+      ]
+    },
+    {
+      "required": [
+        "sections"
+      ]
+    }
+  ]
+}

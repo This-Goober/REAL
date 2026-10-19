@@ -161,7 +161,11 @@ def count_words(text):
 
 def make_component(raw, line_no):
     clean, flags = strip_modifiers(raw)
-    kind = classify(clean)
+    explicit = re.match(r"^narration\s*:\s*(.*)$", clean, re.I)
+    if explicit:
+        clean, kind = explicit.group(1), "narration"
+    else:
+        kind = classify(clean)
     comp = {
         "type": kind,
         "text": clean,

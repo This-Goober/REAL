@@ -25,6 +25,7 @@ Deterministic: same inputs, same output, every time. No network, no model call.
 Stdlib only.
 """
 
+from real_core import read_json
 import argparse
 import json
 import math
@@ -329,6 +330,11 @@ def bind(nb, cat, args):
                                 % comp["id"])
         bindings[comp["id"]] = entry
 
+    if getattr(args, "groundings", None):
+        from ground import apply
+        with open(args.groundings) as fh:
+            apply(nb, cat, bindings, json.load(fh))
+
     # An audio component in the same `|` group as a bound video is the sound OF
     # that video — a `source` lane, not a second asset and not a bed. Binding it
     # to the clip beats stubbing a sound that already exists in a file we have.
@@ -350,6 +356,12 @@ def bind(nb, cat, args):
                         "video it describes, so it is that clip's own sound "
                         "(a `source` lane, which does not duck like a bed)" % sib)
         e["audio_kind"] = "source"
+        sibling = next((bindings[c["id"]] for c in g["components"]
+                        if c["type"] == "video" and bindings[c["id"]]["asset"] == sib), {})
+        e["source_video_component"] = sibling.get("component")
+        for key in ("src_in", "src_out", "temporal_evidence"):
+            if key in sibling:
+                e[key] = sibling[key]
 
     placed = {b["asset"] for b in bindings.values() if b["asset"]}
     unused = [a["id"] for a in assets if a["id"] not in placed]
@@ -384,10 +396,10 @@ def bind(nb, cat, args):
 
 def cmd_bind(args):
     with open(args.notebook) as fh:
-        nb = json.load(fh)
+        nb = read_json(fh, "notebook")
     try:
         with open(args.catalog) as fh:
-            cat = json.load(fh)
+            cat = read_json(fh, "asset-catalog")
     except Exception as exc:
         sys.stderr.write("no usable catalogue (%s) — sequencing is still "
                          "possible, but every layer will be a stub and the "
@@ -450,6 +462,7 @@ def main():
     b.add_argument("catalog")
     b.add_argument("-o", "--out", default="bindings.json")
     b.add_argument("--candidates", type=int, default=3)
+    b.add_argument("--groundings", help="validated temporal groundings from ground.py")
     e = sub.add_parser("explain")
     e.add_argument("bindings")
     e.add_argument("component")

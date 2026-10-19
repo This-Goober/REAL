@@ -154,3 +154,9 @@ everything.
 Component ids are **stable across edits** as long as the component's text is
 unchanged — they are content-addressed, so a creator inserting a beat in the
 middle does not renumber everything downstream.
+
+### Explicit spoken or sung text
+
+Use `<narration: I see it now>` when a short lyric or a media-related word
+could be mistaken for a direction. The prefix declares the type and is not
+part of the words or the measured clock. The lyric itself stays unchanged.

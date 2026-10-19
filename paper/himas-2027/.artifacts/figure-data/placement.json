@@ -1,0 +1,46 @@
+{
+  "before": {
+    "layer": {
+      "id": "B4.L3",
+      "asset": "img07",
+      "anchor_word": 53,
+      "anchor_text": "nickel",
+      "t0": 20.2468,
+      "t1": 21.0468,
+      "dur_s": 0.8,
+      "chosen_by": "claude"
+    },
+    "xml": {
+      "ref": "r15",
+      "name": "B4.L3 \u2014 placeholder image 7",
+      "start": "0s",
+      "offset": "56/15s",
+      "duration": "4/5s",
+      "lane": "2"
+    },
+    "absolute_start_frame": 607
+  },
+  "after": {
+    "layer": {
+      "id": "B4.L3",
+      "asset": "img07",
+      "anchor_word": 49,
+      "anchor_text": "velvet",
+      "t0": 18.7178,
+      "t1": 19.5178,
+      "dur_s": 0.8,
+      "chosen_by": "creator"
+    },
+    "xml": {
+      "ref": "r15",
+      "name": "B4.L3 \u2014 placeholder image 7",
+      "start": "0s",
+      "offset": "67/30s",
+      "duration": "4/5s",
+      "lane": "2"
+    },
+    "absolute_start_frame": 562
+  },
+  "notebook_line": "<show image of a chart about the amber ~0.8s #img07>",
+  "revision": "B4: L3 anchor = velvet"
+}

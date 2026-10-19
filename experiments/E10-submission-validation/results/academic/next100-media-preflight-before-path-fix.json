@@ -1,0 +1,906 @@
+{
+  "checked_at": "2026-10-18T16:17:40.934113+00:00",
+  "inputs_sha256": "16890667248492bae6078f174b32a68d1c7dbd02527158d50e3a32113cf144fd",
+  "selection_manifest_sha256": "e59631c8622953565136e39ed98c72afd2c6bb6043bac5d4d5073b1e52190162",
+  "mirrors_lock_sha256": "f7db0a56fac65d50173108fe18e5f71bb59c95c1fb357f8034ffd95de66a3aa7",
+  "n_queries": 100,
+  "n_video_excerpts": 100,
+  "n_original_sources": 82,
+  "available_excerpts": 92,
+  "available_queries": 92,
+  "known_bytes_total": 1052766427,
+  "available_excerpts_without_size": 0,
+  "media_downloaded": false,
+  "new_model_calls": 0,
+  "note": "HTTP availability only; media hashes and duration must be verified after download. Unavailable inputs remain selected; no replacements.",
+  "media": [
+    {
+      "vid": "yuj1y5__jXg_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/yuj1y5__jXg_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 11757800,
+      "previous_attempts": []
+    },
+    {
+      "vid": "uSAGSbauHBs_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/u/uSAGSbauHBs_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 11518579,
+      "previous_attempts": [
+        {
+          "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/uSAGSbauHBs_60.0_210.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "vid": "lWO0pIpnmIw_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/lWO0pIpnmIw_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 10889486,
+      "previous_attempts": []
+    },
+    {
+      "vid": "VUV77-5ERxA_360.0_510.0",
+      "available": false,
+      "attempts": [
+        {
+          "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/VUV77-5ERxA_360.0_510.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/V/VUV77-5ERxA_360.0_510.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "vid": "xHypiQpL2yQ_360.0_510.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/xHypiQpL2yQ_360.0_510.0.mp4",
+      "status": 200,
+      "reported_bytes": 19763372,
+      "previous_attempts": []
+    },
+    {
+      "vid": "CPdeKuaTMoU_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/CPdeKuaTMoU_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 16111675,
+      "previous_attempts": []
+    },
+    {
+      "vid": "WEpnzfufxJQ_360.0_510.0",
+      "available": false,
+      "attempts": [
+        {
+          "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/WEpnzfufxJQ_360.0_510.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/W/WEpnzfufxJQ_360.0_510.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "vid": "ACMKgn5w2HY_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/ACMKgn5w2HY_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 9754418,
+      "previous_attempts": []
+    },
+    {
+      "vid": "gY3GOIn80k8_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/gY3GOIn80k8_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 9788817,
+      "previous_attempts": []
+    },
+    {
+      "vid": "r7A-cfBq2Xw_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/r7A-cfBq2Xw_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 10430916,
+      "previous_attempts": []
+    },
+    {
+      "vid": "T9ptpjvuIP8_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/T9ptpjvuIP8_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 8557785,
+      "previous_attempts": []
+    },
+    {
+      "vid": "2vFzBa_WKNg_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/2/2vFzBa_WKNg_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 8446824,
+      "previous_attempts": [
+        {
+          "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/2vFzBa_WKNg_60.0_210.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "vid": "PMm8xTk8ofI_210.0_360.0",
+      "available": false,
+      "attempts": [
+        {
+          "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/PMm8xTk8ofI_210.0_360.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/P/PMm8xTk8ofI_210.0_360.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "vid": "iWBU-K5dbhE_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/iWBU-K5dbhE_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 8992160,
+      "previous_attempts": []
+    },
+    {
+      "vid": "BanSEQnGfFg_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/BanSEQnGfFg_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 10780285,
+      "previous_attempts": []
+    },
+    {
+      "vid": "8yHwJ3f7Fi4_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/8yHwJ3f7Fi4_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 12650581,
+      "previous_attempts": []
+    },
+    {
+      "vid": "wQd4FV4AZa0_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/wQd4FV4AZa0_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 9080042,
+      "previous_attempts": []
+    },
+    {
+      "vid": "zKs0TO6ZTBI_360.0_510.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/zKs0TO6ZTBI_360.0_510.0.mp4",
+      "status": 200,
+      "reported_bytes": 16233674,
+      "previous_attempts": []
+    },
+    {
+      "vid": "xXWKd1b3SHM_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/xXWKd1b3SHM_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 11263374,
+      "previous_attempts": []
+    },
+    {
+      "vid": "q4WEUoz2wHc_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/q4WEUoz2wHc_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 14438063,
+      "previous_attempts": []
+    },
+    {
+      "vid": "S1DZb9SkrK8_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/S1DZb9SkrK8_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 10417923,
+      "previous_attempts": []
+    },
+    {
+      "vid": "raTrFwJMoJo_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/raTrFwJMoJo_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 9306634,
+      "previous_attempts": []
+    },
+    {
+      "vid": "_OiTj9QUt_g_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/_OiTj9QUt_g_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 11526163,
+      "previous_attempts": []
+    },
+    {
+      "vid": "TQ0nr6gTX6w_360.0_510.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/TQ0nr6gTX6w_360.0_510.0.mp4",
+      "status": 200,
+      "reported_bytes": 13898641,
+      "previous_attempts": []
+    },
+    {
+      "vid": "m0cZFcXa5sc_360.0_510.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/m0cZFcXa5sc_360.0_510.0.mp4",
+      "status": 200,
+      "reported_bytes": 8373596,
+      "previous_attempts": []
+    },
+    {
+      "vid": "GrxpxImALZo_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/GrxpxImALZo_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 6577381,
+      "previous_attempts": []
+    },
+    {
+      "vid": "RoripwjYFp8_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/RoripwjYFp8_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 9287252,
+      "previous_attempts": []
+    },
+    {
+      "vid": "DTrwYYi25Dc_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/DTrwYYi25Dc_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 8797242,
+      "previous_attempts": []
+    },
+    {
+      "vid": "GOzEeIvLZO4_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/GOzEeIvLZO4_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 10366328,
+      "previous_attempts": []
+    },
+    {
+      "vid": "uE1ciE0PCIU_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/uE1ciE0PCIU_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 13723590,
+      "previous_attempts": []
+    },
+    {
+      "vid": "AWoPkPjhxSo_360.0_510.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/AWoPkPjhxSo_360.0_510.0.mp4",
+      "status": 200,
+      "reported_bytes": 11980892,
+      "previous_attempts": []
+    },
+    {
+      "vid": "Iu7nF2VLF3c_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/Iu7nF2VLF3c_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 17463723,
+      "previous_attempts": []
+    },
+    {
+      "vid": "3UPP_WRL86c_360.0_510.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/3UPP_WRL86c_360.0_510.0.mp4",
+      "status": 200,
+      "reported_bytes": 8673992,
+      "previous_attempts": []
+    },
+    {
+      "vid": "UvgDldse9KU_510.0_660.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/UvgDldse9KU_510.0_660.0.mp4",
+      "status": 200,
+      "reported_bytes": 12003257,
+      "previous_attempts": []
+    },
+    {
+      "vid": "UvgDldse9KU_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/UvgDldse9KU_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 14435206,
+      "previous_attempts": []
+    },
+    {
+      "vid": "DLSkojSiAPs_360.0_510.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/DLSkojSiAPs_360.0_510.0.mp4",
+      "status": 200,
+      "reported_bytes": 11727752,
+      "previous_attempts": []
+    },
+    {
+      "vid": "IoNLqyYnO8k_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/IoNLqyYnO8k_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 23717229,
+      "previous_attempts": []
+    },
+    {
+      "vid": "iWBU-K5dbhE_360.0_510.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/iWBU-K5dbhE_360.0_510.0.mp4",
+      "status": 200,
+      "reported_bytes": 8447503,
+      "previous_attempts": []
+    },
+    {
+      "vid": "A_MFAuOwK5k_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/A_MFAuOwK5k_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 9806035,
+      "previous_attempts": []
+    },
+    {
+      "vid": "CltHKz3Zfxc_360.0_510.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/CltHKz3Zfxc_360.0_510.0.mp4",
+      "status": 200,
+      "reported_bytes": 10616177,
+      "previous_attempts": []
+    },
+    {
+      "vid": "idvZpkYWOMQ_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/i/idvZpkYWOMQ_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 14580111,
+      "previous_attempts": [
+        {
+          "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/idvZpkYWOMQ_210.0_360.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "vid": "6SdLxtywo4s_360.0_510.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/6SdLxtywo4s_360.0_510.0.mp4",
+      "status": 200,
+      "reported_bytes": 7956298,
+      "previous_attempts": []
+    },
+    {
+      "vid": "a6NmGMEsCWM_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/a6NmGMEsCWM_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 21617258,
+      "previous_attempts": []
+    },
+    {
+      "vid": "UdiR9BWQKew_360.0_510.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/UdiR9BWQKew_360.0_510.0.mp4",
+      "status": 200,
+      "reported_bytes": 15291465,
+      "previous_attempts": []
+    },
+    {
+      "vid": "jdhIgsf5X5o_360.0_510.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/j/jdhIgsf5X5o_360.0_510.0.mp4",
+      "status": 200,
+      "reported_bytes": 11364548,
+      "previous_attempts": [
+        {
+          "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/jdhIgsf5X5o_360.0_510.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "vid": "_t21xx94wZw_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/_/_t21xx94wZw_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 19045974,
+      "previous_attempts": [
+        {
+          "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/_t21xx94wZw_60.0_210.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "vid": "KWBfQjuwp4E_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/KWBfQjuwp4E_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 3825882,
+      "previous_attempts": []
+    },
+    {
+      "vid": "AWoPkPjhxSo_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/AWoPkPjhxSo_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 17776754,
+      "previous_attempts": []
+    },
+    {
+      "vid": "wFPaHOAoGzI_510.0_660.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/wFPaHOAoGzI_510.0_660.0.mp4",
+      "status": 200,
+      "reported_bytes": 6212763,
+      "previous_attempts": []
+    },
+    {
+      "vid": "H15bUc-1LJo_60.0_210.0",
+      "available": false,
+      "attempts": [
+        {
+          "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/H15bUc-1LJo_60.0_210.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/H/H15bUc-1LJo_60.0_210.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "vid": "m0cZFcXa5sc_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/m0cZFcXa5sc_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 7862829,
+      "previous_attempts": []
+    },
+    {
+      "vid": "trcIoufeEgM_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/trcIoufeEgM_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 19820275,
+      "previous_attempts": []
+    },
+    {
+      "vid": "CkWOpyrAXdw_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/CkWOpyrAXdw_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 10627165,
+      "previous_attempts": []
+    },
+    {
+      "vid": "DTrwYYi25Dc_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/DTrwYYi25Dc_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 14008640,
+      "previous_attempts": []
+    },
+    {
+      "vid": "N5g7D9Qk7WI_510.0_660.0",
+      "available": false,
+      "attempts": [
+        {
+          "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/N5g7D9Qk7WI_510.0_660.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/N/N5g7D9Qk7WI_510.0_660.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "vid": "gpDpN44mky0_360.0_510.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/g/gpDpN44mky0_360.0_510.0.mp4",
+      "status": 200,
+      "reported_bytes": 13252599,
+      "previous_attempts": [
+        {
+          "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/gpDpN44mky0_360.0_510.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "vid": "DTrwYYi25Dc_660.0_810.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/DTrwYYi25Dc_660.0_810.0.mp4",
+      "status": 200,
+      "reported_bytes": 13611102,
+      "previous_attempts": []
+    },
+    {
+      "vid": "nJUP36AmrSM_660.0_810.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/nJUP36AmrSM_660.0_810.0.mp4",
+      "status": 200,
+      "reported_bytes": 8734558,
+      "previous_attempts": []
+    },
+    {
+      "vid": "XcJPd4NhhCs_510.0_660.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/XcJPd4NhhCs_510.0_660.0.mp4",
+      "status": 200,
+      "reported_bytes": 8196127,
+      "previous_attempts": []
+    },
+    {
+      "vid": "2vFzBa_WKNg_510.0_660.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/2/2vFzBa_WKNg_510.0_660.0.mp4",
+      "status": 200,
+      "reported_bytes": 10199179,
+      "previous_attempts": [
+        {
+          "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/2vFzBa_WKNg_510.0_660.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "vid": "a2KIsaS9iJg_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/a2KIsaS9iJg_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 10363579,
+      "previous_attempts": []
+    },
+    {
+      "vid": "HkLfNhgP0TM_660.0_810.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/HkLfNhgP0TM_660.0_810.0.mp4",
+      "status": 200,
+      "reported_bytes": 5166216,
+      "previous_attempts": []
+    },
+    {
+      "vid": "koupdIrQ4Xg_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/koupdIrQ4Xg_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 20200799,
+      "previous_attempts": []
+    },
+    {
+      "vid": "qHSeudOaXwk_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/qHSeudOaXwk_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 9737688,
+      "previous_attempts": []
+    },
+    {
+      "vid": "0_eIFN2FDoU_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/0_eIFN2FDoU_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 7434299,
+      "previous_attempts": []
+    },
+    {
+      "vid": "SwIB-QlxNCo_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/SwIB-QlxNCo_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 7963611,
+      "previous_attempts": []
+    },
+    {
+      "vid": "xivzc8l7O_A_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/x/xivzc8l7O_A_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 5396849,
+      "previous_attempts": [
+        {
+          "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/xivzc8l7O_A_210.0_360.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "vid": "iB1iaveR00c_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/iB1iaveR00c_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 10724072,
+      "previous_attempts": []
+    },
+    {
+      "vid": "j9NNAmqweOA_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/j9NNAmqweOA_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 11788989,
+      "previous_attempts": []
+    },
+    {
+      "vid": "nY42UppPhhg_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/nY42UppPhhg_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 21946178,
+      "previous_attempts": []
+    },
+    {
+      "vid": "q4WEUoz2wHc_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/q4WEUoz2wHc_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 14160930,
+      "previous_attempts": []
+    },
+    {
+      "vid": "mr9kK0_7x08_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/mr9kK0_7x08_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 11522304,
+      "previous_attempts": []
+    },
+    {
+      "vid": "2X46BBkcCeY_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/2X46BBkcCeY_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 10935764,
+      "previous_attempts": []
+    },
+    {
+      "vid": "x4kKIm8WWOA_660.0_810.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/x4kKIm8WWOA_660.0_810.0.mp4",
+      "status": 200,
+      "reported_bytes": 16922758,
+      "previous_attempts": []
+    },
+    {
+      "vid": "ACMKgn5w2HY_60.0_210.0",
+      "available": false,
+      "attempts": [
+        {
+          "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/ACMKgn5w2HY_60.0_210.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/A/ACMKgn5w2HY_60.0_210.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "vid": "X326z_D4OyE_510.0_660.0",
+      "available": false,
+      "attempts": [
+        {
+          "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/X326z_D4OyE_510.0_660.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/X/X326z_D4OyE_510.0_660.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "vid": "m0cZFcXa5sc_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/m0cZFcXa5sc_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 7144430,
+      "previous_attempts": []
+    },
+    {
+      "vid": "XcJPd4NhhCs_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/XcJPd4NhhCs_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 8411911,
+      "previous_attempts": []
+    },
+    {
+      "vid": "DU3E7tTt0_s_60.0_210.0",
+      "available": false,
+      "attempts": [
+        {
+          "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/DU3E7tTt0_s_60.0_210.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://huggingface.co/datasets/ayushsdev/qvhighlights-videos/resolve/085b603a6b9fdf3db7508398614307c24ba5600d/D/DU3E7tTt0_s_60.0_210.0.mp4",
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "vid": "13U4xVzZFQ8_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/13U4xVzZFQ8_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 15173674,
+      "previous_attempts": []
+    },
+    {
+      "vid": "DTInxNfWXVc_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/DTInxNfWXVc_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 8034034,
+      "previous_attempts": []
+    },
+    {
+      "vid": "NUsG9BgSes0_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/NUsG9BgSes0_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 6515906,
+      "previous_attempts": []
+    },
+    {
+      "vid": "M7mePz5cXDk_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/M7mePz5cXDk_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 18882060,
+      "previous_attempts": []
+    },
+    {
+      "vid": "Uw8hpJfV-uQ_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/Uw8hpJfV-uQ_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 12595621,
+      "previous_attempts": []
+    },
+    {
+      "vid": "K3lDAtwYt_4_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/K3lDAtwYt_4_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 12445291,
+      "previous_attempts": []
+    },
+    {
+      "vid": "tb6Br2F4KQM_360.0_510.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/tb6Br2F4KQM_360.0_510.0.mp4",
+      "status": 200,
+      "reported_bytes": 14145697,
+      "previous_attempts": []
+    },
+    {
+      "vid": "UDEfgewcr5E_360.0_510.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/UDEfgewcr5E_360.0_510.0.mp4",
+      "status": 200,
+      "reported_bytes": 5637114,
+      "previous_attempts": []
+    },
+    {
+      "vid": "00DH3yn5C30_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/00DH3yn5C30_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 6425480,
+      "previous_attempts": []
+    },
+    {
+      "vid": "j9NNAmqweOA_360.0_510.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/j9NNAmqweOA_360.0_510.0.mp4",
+      "status": 200,
+      "reported_bytes": 11597716,
+      "previous_attempts": []
+    },
+    {
+      "vid": "T9ptpjvuIP8_510.0_660.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/T9ptpjvuIP8_510.0_660.0.mp4",
+      "status": 200,
+      "reported_bytes": 11236778,
+      "previous_attempts": []
+    },
+    {
+      "vid": "wFPaHOAoGzI_660.0_810.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/wFPaHOAoGzI_660.0_810.0.mp4",
+      "status": 200,
+      "reported_bytes": 6355694,
+      "previous_attempts": []
+    },
+    {
+      "vid": "uoVRb7a58GU_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/uoVRb7a58GU_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 10841319,
+      "previous_attempts": []
+    },
+    {
+      "vid": "gpDpN44mky0_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/gpDpN44mky0_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 9413951,
+      "previous_attempts": []
+    },
+    {
+      "vid": "uE1ciE0PCIU_510.0_660.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/uE1ciE0PCIU_510.0_660.0.mp4",
+      "status": 200,
+      "reported_bytes": 12612869,
+      "previous_attempts": []
+    },
+    {
+      "vid": "Y2GVVC_cD_E_360.0_510.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/Y2GVVC_cD_E_360.0_510.0.mp4",
+      "status": 200,
+      "reported_bytes": 9732406,
+      "previous_attempts": []
+    },
+    {
+      "vid": "DHHHHFojz3E_210.0_360.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/DHHHHFojz3E_210.0_360.0.mp4",
+      "status": 200,
+      "reported_bytes": 12855527,
+      "previous_attempts": []
+    },
+    {
+      "vid": "bowYAwxuG-c_360.0_510.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/bowYAwxuG-c_360.0_510.0.mp4",
+      "status": 200,
+      "reported_bytes": 11228753,
+      "previous_attempts": []
+    },
+    {
+      "vid": "yeCaAL4uM-U_60.0_210.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/yeCaAL4uM-U_60.0_210.0.mp4",
+      "status": 200,
+      "reported_bytes": 5884948,
+      "previous_attempts": []
+    },
+    {
+      "vid": "gY3GOIn80k8_510.0_660.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/gY3GOIn80k8_510.0_660.0.mp4",
+      "status": 200,
+      "reported_bytes": 9564355,
+      "previous_attempts": []
+    },
+    {
+      "vid": "nJUP36AmrSM_360.0_510.0",
+      "available": true,
+      "url": "https://huggingface.co/datasets/gradguy/qvhilights/resolve/ef095754b67762d447525e1d8854be6b0aaf1023/nJUP36AmrSM_360.0_510.0.mp4",
+      "status": 200,
+      "reported_bytes": 6178963,
+      "previous_attempts": []
+    }
+  ]
+}

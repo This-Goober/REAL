@@ -1,0 +1,10 @@
+*.aux
+*.log
+*.out
+*.abs
+*.xmpi
+*.xmpdata
+*.toc
+creationdate.lua
+*-render.*
+.artifacts/build/

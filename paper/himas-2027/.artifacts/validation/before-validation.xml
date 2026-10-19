@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.30.3" buildDate="2026-10-07T10:02:00-04:00"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.30.3" buildDate="2026-10-07T13:44:00-04:00"></releaseDetails>
+    <releaseDetails id="apps" version="1.30.3" buildDate="2026-10-07T13:52:00-04:00"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="118105">
+        <name>/Users/Shared/REAL/paper/himas-2027/REAL-HIMAS-2027.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/A-1a validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="131" failedRules="4" passedChecks="41643" failedChecks="5">
+          <rule specification="ISO 19005-1:2005" clause="6.8.3.3" testNumber="1" status="failed" failedChecks="1">
+            <description>The logical structure of the conforming file shall be described by a structure hierarchy rooted in the StructTreeRoot entry of the document catalog dictionary, as described in PDF Reference 9.6</description>
+            <object>PDDocument</object>
+            <test>containsStructTreeRoot == true</test>
+            <check status="failed">
+              <context>root/document[0]</context>
+              <errorMessage>StructTreeRoot entry is not present in the document catalog</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-1:2005" clause="6.3.8" testNumber="1" status="failed" failedChecks="1">
+            <description>The font dictionary shall include a ToUnicode entry whose value is a CMap stream object that maps character codes to Unicode values, as described in PDF Reference 5.9, unless the font meets any of the following three conditions: (*) fonts that use the predefined encodings MacRomanEncoding, MacExpertEncoding or WinAnsiEncoding, or that use the predefined Identity-H or Identity-V CMaps; (*) Type 1 fonts whose character names are taken from the Adobe standard Latin character set or the set of named characters in the Symbol font, as defined in PDF Reference Appendix D; (*) Type 0 fonts whose descendant CIDFont uses the Adobe-GB1, Adobe-CNS1, Adobe-Japan1 or Adobe-Korea1 character collections</description>
+            <object>Glyph</object>
+            <test>toUnicode != null</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0]/operators[248]/usedGlyphs[0](YEUUOC+FontAwesome5Free-Regular YEUUOC+FontAwesome5Free-Regular 163 0  0 false)</context>
+              <errorMessage>The font does not define Unicode character map</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-1:2005" clause="6.8.2.2" testNumber="1" status="failed" failedChecks="1">
+            <description>The document catalog dictionary shall include a MarkInfo dictionary with a Marked entry in it, whose value shall be true</description>
+            <object>CosDocument</object>
+            <test>Marked == true</test>
+            <check status="failed">
+              <context>root</context>
+              <errorMessage>MarkInfo dictionary is not present in the document catalog, or Marked entry is set to false or is not present in the MarkInfo dictionary (MarkInfo = null, Marked = null)</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-1:2005" clause="6.3.4" testNumber="1" status="failed" failedChecks="2">
+            <description>The font programs for all fonts used within a conforming file shall be embedded within that file, as defined in PDF Reference 5.8, except when the fonts are used exclusively with text rendering mode 3</description>
+            <object>PDFont</object>
+            <test>Subtype == "Type3" || Subtype == "Type0" || renderingMode == 3 || containsFontFile == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[2](29 0 obj PDPage)/contentStream[0]/operators[16]/xObject[0]/contentStream[0](33 0 obj PDContentStream)/operators[15]/font[0](Helvetica-Bold)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](29 0 obj PDPage)/contentStream[0]/operators[16]/xObject[0]/contentStream[0](33 0 obj PDContentStream)/operators[25]/font[0](Helvetica)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1792341190290" finish="1792341190680">00:00:00.390</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1792341190259" finish="1792341190688">00:00:00.429</duration>
+  </batchSummary>
+</report>

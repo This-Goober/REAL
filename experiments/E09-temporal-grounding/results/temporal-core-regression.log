@@ -1,0 +1,43 @@
+  ok  1  only bracketed narration counts as spoken; prose notes & visual components excluded
+  ok  2  clock starts estimated and says so
+  ok  5  windowed clip marked partial, never presented as fully analyzed
+  ok  6  creator window recorded structurally (t0/t1/by)
+  ok  7  temporal evidence in catalogue JSON (duration, sampled times, method)
+  ok  8  near-identical takes share a shot_group; uncertain pairs go to review
+  ok  8  distance in the 11-20 band is 'uncertain', never asserted
+  ok 13  asset_id survives a rename via rename-map.json
+  ok 15  storyboarding emits the authoritative reel.json (beats+audio+open)
+  ok 14  unresolved technical properties surfaced before handoff
+  ok  3  layers carry anchor_text (the word is the identity)
+  ok  4  creator anchor-by-word applied; anchor_text follows
+  ok 12  creator text-type classification (subtitle) recorded
+  ok  2  measured clock swaps in and mode says measured
+  ok  3  timing replacement moved t0 but not the textual anchor
+  ok  9  creator-selected placement survives the rebuild via --preserve
+  ok 10  parity: every storyboard layer represented, nothing dropped
+  ok 11  audio placement survives the handoff (lanes -> connected/unvoiced)
+  ok 12  subtitle maps to its own distinct FCP styling in story.json
+  ok 16  compile made no editorial decisions (generated marker + clock passthrough)
+  ok 12  REFUSES unclassified text (no silent caption default)
+  ok 17  directive openings beat the full-sentence rule; spoken sentences stay spoken
+  ok 18  the example notebook still times to the shipped example reel (beats, runtime)
+  ok 19  vendored real_core copies are byte-identical
+  ok 20  voice export matches clock tokens across 8 repository notebooks
+  ok 21  narration token identities handle punctuation without whitespace boundaries
+  ok 22  build retains a caption's explicit duration after clipping
+  ok 23  reanchoring restores requested duration while respecting beat bounds
+  ok 24  notebook schema accepts producer output and refuses its damaged handoff
+  ok 25  clock schema accepts producer output and refuses its damaged handoff
+  ok 26  measured schema accepts producer output and refuses its damaged handoff
+  ok 27  asset-catalog schema accepts producer output and refuses its damaged handoff
+  ok 28  reel schema accepts producer output and refuses its damaged handoff
+  ok 29  story schema accepts producer output and refuses its damaged handoff
+  ok 30  every shipped JSON example validates
+  ok 31  all six schema definitions are vendored without drift
+  ok 32  invalid handoff writes preserve all previous outputs
+  ok 33  voice delta accepts either timestamp spelling and shuffled word entries
+  ok 34  measured contract rejects ambiguous or invalid times and keeps legacy beat durations
+  ok 35  standalone skills load their own vendored core and schemas
+
+ALL 40 CHECKS PASS (spec items covered: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35])
+workdir: /media/shared/seagate/REAL/codex-hardening/bench/work/tmp/real-regression-5hfcy0hn

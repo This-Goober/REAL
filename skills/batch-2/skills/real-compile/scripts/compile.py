@@ -19,6 +19,7 @@ delivering a broken timeline costs the creator a trip to Final Cut to find out.
 Use --no-validate only when you are deliberately inspecting a bad build.
 """
 
+from real_core import read_json
 import json
 import os
 import sys
@@ -57,7 +58,7 @@ def main(argv):
 
     if cmd == "build":
         story_path, out_path = argv[2], argv[3]
-        story = json.load(open(story_path))
+        story = read_json(story_path, "story")
         local_root = story.get("assets_root_local") or None
         if local_root == story.get("assets_root"):
             local_root = None  # same folder: the baked paths are the real ones

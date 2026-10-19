@@ -23,6 +23,7 @@ in the middle does not renumber everything downstream.
 Stdlib only.
 """
 
+from real_core import read_json, write_json
 import argparse
 import hashlib
 import json
@@ -43,9 +44,21 @@ KEYWORDS = [
     ("text",  {"caption", "title", "text", "on-screen", "onscreen",
                "overlay", "label", "subtitle"}),
 ]
+# Directive openings. These win over everything below, including the "full
+# sentence is spoken" rule: a description that happens to end in a full stop
+# ("video clip of One line. Many connections.") is still a visual. Before
+# this list held them, such descriptions were counted as narration — spoken
+# words that were never spoken, inflating the clock and breaking forced
+# alignment (journal entry 003).
 HEAD_PHRASES = [
-    ("video", ("shot of", "cut to", "b roll")),
-    ("text",  ("text on", "on screen", "words on")),
+    ("video", ("shot of", "cut to", "b roll", "video clip", "video of", "clip of",
+               "footage of", "b-roll of", "broll of")),
+    ("image", ("show image", "show an image", "show a picture", "image of",
+               "picture of", "photo of", "screenshot of", "diagram of", "meme of",
+               "still of", "graphic of", "chart of")),
+    ("audio", ("audio of", "sound of", "sfx of", "music of", "sound effect")),
+    ("text",  ("text on", "on screen", "words on", "caption", "title card",
+               "subtitle")),
 ]
 
 DUR_RE = re.compile(r"~\s*([0-9]+(?:\.[0-9]+)?)\s*s\b", re.I)
@@ -206,7 +219,11 @@ def caption_text(text):
 
 def make_component(raw, line_no, cell_id, seen):
     clean, flags = strip_modifiers(raw)
-    kind = classify(clean)
+    explicit = re.match(r"^narration\s*:\s*(.*)$", clean, re.I)
+    if explicit:
+        clean, kind = explicit.group(1), "narration"
+    else:
+        kind = classify(clean)
     key = h(norm(clean) or norm(raw), 3)
     n = 3
     while ("%s.%s" % (cell_id, key)) in seen and n < 12:
@@ -445,13 +462,12 @@ def main():
     if args.prev:
         try:
             with open(args.prev) as fh:
-                doc = carry_ids(doc, json.load(fh))
-        except Exception as exc:      # a bad --prev is never fatal
+                doc = carry_ids(doc, read_json(fh, "notebook"))
+        except OSError as exc:        # missing --prev recovers; malformed JSON is refused
             doc["warnings"].append({"cell": None, "line": 0,
                                     "msg": "could not read --prev (%s); ids "
                                            "assigned fresh" % exc})
-    with open(args.out, "w") as fh:
-        json.dump(doc, fh, indent=1)
+    write_json(args.out, doc, "notebook")
 
     s = summarise(doc)
     alts = [c for c in doc["cells"] if c["alternate"]]

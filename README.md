@@ -1,11 +1,20 @@
 <h1 align="center">🎬 REAL Pipeline</h1>
 
+**2026-10-18 research update:** [HIMAS 2027 paper draft](paper/) and
+[E10 reproducible validation](experiments/E10-submission-validation/): the frozen
+revised pipeline matches all reference placement boundaries on 100 additional
+synthetic projects. Public-dataset retrieval remains a small preliminary pilot;
+native-editor and human-interaction outcomes are evaluated separately.
+
+**Editable tutorial download:** [Paganini No. 23 — v4](demo/paganini-no23/)
+includes a 22.4 MB ZIP with the Final Cut timeline, all media, and setup instructions.
+
 <p align="center"><b>A vision for AI-assisted video editing — and a running journal testing whether it's reachable, one capability at a time.</b></p>
 
 <p align="center">
   <img alt="vision" src="https://img.shields.io/badge/vision-2%20iterations%20published-blueviolet">
   <img alt="batch1" src="https://img.shields.io/badge/batch%201-field--tested-success">
-  <img alt="batch2" src="https://img.shields.io/badge/batch%202-regression%20tested%2021%2F21-yellow">
+  <img alt="batch2" src="https://img.shields.io/badge/batch%202-regression%20tested%2040%2F40-yellow">
   <img alt="journal" src="https://img.shields.io/badge/capability%20journal-1%20entry-blue">
   <img alt="python" src="https://img.shields.io/badge/python-3.10%2B-blue">
 </p>
@@ -32,7 +41,8 @@ demo video, one journal entry at a time. Capabilities that hold up get folded ba
 the next revision of the skills.
 
 📓 **[Read the Capability Journal →](journal/)** — the ongoing track. Entry 001: can
-media placements land on the exact spoken word?
+media placements land on the exact spoken word? Entry 002: does the compiled project
+match the approved edit frame for frame? (**[`bench/`](bench/)** reproduces it from a seed.)
 
 The finding that started it all, from batch 1's field sessions:
 
@@ -94,13 +104,13 @@ Then follow the **[step-by-step user manual](skills/batch-2/REAL-PIPELINE-MANUAL
 
 ### B. Reproduce our verification (no footage needed)
 
-The regression suite builds a synthetic project — generated test video, near-duplicate images, a real notebook — and drives every script end-to-end, pinning all 16 findings-derived checks:
+The regression suite builds a synthetic project — generated test video, near-duplicate images, a real notebook — and drives every script end-to-end, exercising 40 regression checks:
 
 ```bash
 cd REAL/skills/batch-2/skills
 pip install pillow            # ffmpeg also required (brew install ffmpeg / winget install ffmpeg)
 python3 real-storyboarding/tests/regression.py
-# expected: ALL 21 CHECKS PASS (spec items covered: [1..16])
+# expected: ALL 40 CHECKS PASS
 ```
 
 ## 🧭 Current state & limitations
@@ -112,7 +122,8 @@ Honesty is the point of this repo, so, plainly:
 | **The vision** (the four-step workflow) | ✅ Stated & illustrated across two full iterations; installable today |
 | **Batch 1 findings** ([gap report](skills/batch-1/GAP-REPORT.md)) | ✅ **Field-verified** on real productions — the trustworthy core of this repo |
 | Batch 2 architecture (the four `/real` skills) | ✅ Implemented; every finding maps to a code change |
-| Batch 2 regression suite | ✅ 21/21 green (synthetic end-to-end) |
+| Batch 2 regression suite | ✅ 40/40 green (synthetic end-to-end, handoff validation, standalone packaging) |
+| Assembly benchmark ([E10](experiments/E10-submission-validation/)) | 100/100 new synthetic projects have exact structural placement identities/boundaries; 30/30 development re-anchor repairs have correct targets and no collateral identity/boundary changes. Native-editor rendering and human benefit remain separate claims |
 | **Capability journal** ([journal/](journal/)) | 🔄 **The ongoing track** — small measured probes of individual capabilities, added roughly one unit at a time as a part-time student project. Batch 2 as a whole remains a well-founded hypothesis until enough of its capabilities have been probed and a full field run is logged. |
 | Export targets | Final Cut Pro (`.fcpxml`) only; the target layer is pluggable but nothing else is implemented |
 | Voice alignment | Word-level measurement is built for recorded narration; unrecorded projects run on a clearly-badged estimate |
@@ -125,6 +136,9 @@ Honesty is the point of this repo, so, plainly:
 ```
 REAL/
 ├── assets/                        diagrams & thumbnails used in the docs
+├── bench/                         🧪 the assembly benchmark (synthetic labelled footage,
+│                                  reference EDL, FCPXML reader, 3-level scoring, baselines)
+├── paper/                         workshop-paper sections and figures
 ├── journal/                       📓 ONGOING — the capability journal
 │   └── 001-word-anchor-snapping/  ★ entry 001: placements landing on the spoken word
 └── skills/
@@ -135,7 +149,7 @@ REAL/
     │   └── outputs/               demos: FCP screen recording + live storyboard page
     └── batch-2/                   🏗 VISION, ITERATION 2 — rebuilt from the findings
         ├── REAL-PIPELINE-MANUAL.md  step-by-step user manual
-        └── skills/                the four real-* skills (+ 21-check regression suite)
+        └── skills/                the four real-* skills (+ 40-check regression suite)
 ```
 
 ## 🛣 Roadmap
@@ -144,6 +158,7 @@ The cadence is deliberately small — this is a part-time project and the unit o
 is the journal entry, not the release:
 
 - [x] Journal 001 — word-anchor snapping (filed retroactively from the batch-1 sessions)
+- [x] Journal 002 — assembly correctness: a reproducible benchmark (`bench/`) that compiles 30 synthetic reels and scores the project file at three levels; it found and fixed three coherent-error defects in batch 2
 - [ ] Journal 002+ — next capability probes (shot-group discrimination, partial-inspection cataloguing, measured-vs-estimated clock drift across narrators, …)
 - [ ] Fold proven capabilities into a batch-2 revision
 - [ ] Eventually: field-test the full batch-2 workflow on a complete real production, and publish that log the way batch 1's was

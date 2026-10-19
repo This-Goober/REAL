@@ -2,9 +2,9 @@
 """The `fcpxml` target — Final Cut Pro 11, FCPXML 1.13.
 
 This is a thin adapter. All of the real work is in ../fcpxml.py, ../validate.py
-and ../report.py, which are verified against Final Cut Pro 11 and are not to be
-rewritten. If something here needs changing, it is almost certainly the adapter
-and not the generator.
+and ../report.py. Local validation checks structure and timing, but does not
+prove Final Cut rendering parity. Import and visibility reports can expose
+generator defects; reproduce those against Apple's documented semantics.
 """
 
 import io

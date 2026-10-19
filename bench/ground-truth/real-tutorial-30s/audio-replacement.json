@@ -1,0 +1,8 @@
+{
+  "engine": "elevenlabs",
+  "model": "eleven_multilingual_v2",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "video_stream_unchanged": true,
+  "video_packet_hash": "SHA256=9bedfea94ad73c5797a051ed1a94a737b5c4204c93199e515b3fc227b0e3859f",
+  "previous_audio_backup": "/tmp/real-pre-elevenlabs-real-tutorial-30s-nzby1zrl"
+}

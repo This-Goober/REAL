@@ -1,0 +1,17 @@
+test_bad_ids_confidence_and_duplicate_proposals_refused (__main__.GroundTests.test_bad_ids_confidence_and_duplicate_proposals_refused) ... ok
+test_complete_event_and_alternative_boundaries (__main__.GroundTests.test_complete_event_and_alternative_boundaries) ... ok
+test_confidence_ranking_is_stable_without_changing_values (__main__.GroundTests.test_confidence_ranking_is_stable_without_changing_values) ... ok
+test_empty_grounding_stubs_and_creator_choice_survives (__main__.GroundTests.test_empty_grounding_stubs_and_creator_choice_survives) ... ok
+test_explicit_tags_and_reference_exclusions (__main__.GroundTests.test_explicit_tags_and_reference_exclusions) ... ok
+test_partial_match_cannot_be_high_confidence_binding (__main__.GroundTests.test_partial_match_cannot_be_high_confidence_binding) ... ok
+test_stale_and_tampered_groundings_rejected (__main__.GroundTests.test_stale_and_tampered_groundings_rejected) ... ok
+test_unobserved_gaps_and_invalid_catalogue_refused (__main__.GroundTests.test_unobserved_gaps_and_invalid_catalogue_refused) ... ok
+test_cli_to_fcpxml_keeps_video_and_own_audio_source_in (__main__.SourceTests.test_cli_to_fcpxml_keeps_video_and_own_audio_source_in) ... ok
+test_creator_revision_keeps_linked_audio_in_sync_and_clears_swapped_source (__main__.SourceTests.test_creator_revision_keeps_linked_audio_in_sync_and_clears_swapped_source) ... ok
+test_source_coordinates_survive_creator_preservation (__main__.SourceTests.test_source_coordinates_survive_creator_preservation) ... ok
+test_window_bounds_for_video_and_explicit_audio (__main__.SourceTests.test_window_bounds_for_video_and_explicit_audio) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.555s
+
+OK

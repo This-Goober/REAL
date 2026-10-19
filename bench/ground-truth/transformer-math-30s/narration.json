@@ -1,0 +1,497 @@
+{
+  "provenance": "ElevenLabs API neural narration",
+  "engine": "elevenlabs",
+  "model": "eleven_multilingual_v2",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "sample_rate": 44100,
+  "duration": 30,
+  "normalization_gain": 1.5761550538126783,
+  "scenes": [
+    {
+      "scene": 1,
+      "text": "Attention starts with one line of math. Here is how it works.",
+      "start": 0.1,
+      "end": 3.5599,
+      "speed": 1.0,
+      "post_tempo": 1.0,
+      "cached_take": "c7f9acf1e3af3ad73fd1"
+    },
+    {
+      "scene": 2,
+      "text": "Each token becomes a query, a key, and a value, using three learned projections.",
+      "start": 4.1,
+      "end": 8.8239,
+      "speed": 1.101,
+      "post_tempo": 1.0,
+      "cached_take": "9d14631de0e41dc379ae"
+    },
+    {
+      "scene": 3,
+      "text": "Dot products compare each query with every key.",
+      "start": 9.1,
+      "end": 12.0655,
+      "speed": 1.0,
+      "post_tempo": 1.0,
+      "cached_take": "fc24b64446f9b7681d2a"
+    },
+    {
+      "scene": 4,
+      "text": "Divide by the square root of the key dimension, then apply softmax.",
+      "start": 13.1,
+      "end": 17.0456,
+      "speed": 1.0,
+      "post_tempo": 1.0,
+      "cached_take": "8c078354926c147738fb"
+    },
+    {
+      "scene": 5,
+      "text": "The weights blend the values into a new vector for each token.",
+      "start": 18.1,
+      "end": 21.3582,
+      "speed": 1.0,
+      "post_tempo": 1.0,
+      "cached_take": "b3ab94c7e37c5d0856b7"
+    },
+    {
+      "scene": 6,
+      "text": "Transformers add feed-forward layers and residual paths.",
+      "start": 23.1,
+      "end": 26.532,
+      "speed": 1.0,
+      "post_tempo": 1.0,
+      "cached_take": "87d88da8686be4417556"
+    },
+    {
+      "scene": 7,
+      "text": "That is scaled dot-product attention.",
+      "start": 27.1,
+      "end": 29.3046,
+      "speed": 1.0,
+      "post_tempo": 1.0,
+      "cached_take": "e62b1025068c64a7a966"
+    }
+  ],
+  "word_onsets": [
+    {
+      "text": "Attention",
+      "start": 0.1452,
+      "end": 0.5982,
+      "scene": 1
+    },
+    {
+      "text": "starts",
+      "start": 0.6792,
+      "end": 1.0052,
+      "scene": 1
+    },
+    {
+      "text": "with",
+      "start": 1.0392,
+      "end": 1.1672,
+      "scene": 1
+    },
+    {
+      "text": "one",
+      "start": 1.2372,
+      "end": 1.3992,
+      "scene": 1
+    },
+    {
+      "text": "line",
+      "start": 1.4462,
+      "end": 1.6322,
+      "scene": 1
+    },
+    {
+      "text": "of",
+      "start": 1.6662,
+      "end": 1.7132,
+      "scene": 1
+    },
+    {
+      "text": "math.",
+      "start": 1.7822,
+      "end": 2.2242,
+      "scene": 1
+    },
+    {
+      "text": "Here",
+      "start": 2.4672,
+      "end": 2.6652,
+      "scene": 1
+    },
+    {
+      "text": "is",
+      "start": 2.7002,
+      "end": 2.7812,
+      "scene": 1
+    },
+    {
+      "text": "how",
+      "start": 2.8272,
+      "end": 2.9202,
+      "scene": 1
+    },
+    {
+      "text": "it",
+      "start": 2.9782,
+      "end": 3.0362,
+      "scene": 1
+    },
+    {
+      "text": "works.",
+      "start": 3.0712,
+      "end": 3.5599,
+      "scene": 1
+    },
+    {
+      "text": "Each",
+      "start": 4.135,
+      "end": 4.332,
+      "scene": 2
+    },
+    {
+      "text": "token",
+      "start": 4.39,
+      "end": 4.68,
+      "scene": 2
+    },
+    {
+      "text": "becomes",
+      "start": 4.739,
+      "end": 5.029,
+      "scene": 2
+    },
+    {
+      "text": "a",
+      "start": 5.064,
+      "end": 5.087,
+      "scene": 2
+    },
+    {
+      "text": "query,",
+      "start": 5.145,
+      "end": 5.656,
+      "scene": 2
+    },
+    {
+      "text": "a",
+      "start": 5.76,
+      "end": 5.818,
+      "scene": 2
+    },
+    {
+      "text": "key,",
+      "start": 5.9,
+      "end": 6.19,
+      "scene": 2
+    },
+    {
+      "text": "and",
+      "start": 6.225,
+      "end": 6.341,
+      "scene": 2
+    },
+    {
+      "text": "a",
+      "start": 6.399,
+      "end": 6.422,
+      "scene": 2
+    },
+    {
+      "text": "value,",
+      "start": 6.48,
+      "end": 6.956,
+      "scene": 2
+    },
+    {
+      "text": "using",
+      "start": 7.119,
+      "end": 7.386,
+      "scene": 2
+    },
+    {
+      "text": "three",
+      "start": 7.455,
+      "end": 7.711,
+      "scene": 2
+    },
+    {
+      "text": "learned",
+      "start": 7.769,
+      "end": 8.036,
+      "scene": 2
+    },
+    {
+      "text": "projections.",
+      "start": 8.071,
+      "end": 8.8239,
+      "scene": 2
+    },
+    {
+      "text": "Dot",
+      "start": 9.146,
+      "end": 9.402,
+      "scene": 3
+    },
+    {
+      "text": "products",
+      "start": 9.46,
+      "end": 9.901,
+      "scene": 3
+    },
+    {
+      "text": "compare",
+      "start": 9.959,
+      "end": 10.354,
+      "scene": 3
+    },
+    {
+      "text": "each",
+      "start": 10.412,
+      "end": 10.598,
+      "scene": 3
+    },
+    {
+      "text": "query",
+      "start": 10.656,
+      "end": 11.074,
+      "scene": 3
+    },
+    {
+      "text": "with",
+      "start": 11.132,
+      "end": 11.283,
+      "scene": 3
+    },
+    {
+      "text": "every",
+      "start": 11.341,
+      "end": 11.561,
+      "scene": 3
+    },
+    {
+      "text": "key.",
+      "start": 11.619,
+      "end": 12.0655,
+      "scene": 3
+    },
+    {
+      "text": "Divide",
+      "start": 13.123,
+      "end": 13.53,
+      "scene": 4
+    },
+    {
+      "text": "by",
+      "start": 13.576,
+      "end": 13.68,
+      "scene": 4
+    },
+    {
+      "text": "the",
+      "start": 13.739,
+      "end": 13.808,
+      "scene": 4
+    },
+    {
+      "text": "square",
+      "start": 13.866,
+      "end": 14.168,
+      "scene": 4
+    },
+    {
+      "text": "root",
+      "start": 14.203,
+      "end": 14.424,
+      "scene": 4
+    },
+    {
+      "text": "of",
+      "start": 14.47,
+      "end": 14.528,
+      "scene": 4
+    },
+    {
+      "text": "the",
+      "start": 14.574,
+      "end": 14.644,
+      "scene": 4
+    },
+    {
+      "text": "key",
+      "start": 14.691,
+      "end": 14.865,
+      "scene": 4
+    },
+    {
+      "text": "dimension,",
+      "start": 14.911,
+      "end": 15.573,
+      "scene": 4
+    },
+    {
+      "text": "then",
+      "start": 15.747,
+      "end": 15.921,
+      "scene": 4
+    },
+    {
+      "text": "apply",
+      "start": 15.956,
+      "end": 16.223,
+      "scene": 4
+    },
+    {
+      "text": "softmax.",
+      "start": 16.304,
+      "end": 17.036,
+      "scene": 4
+    },
+    {
+      "text": "The",
+      "start": 18.1117,
+      "end": 18.2287,
+      "scene": 5
+    },
+    {
+      "text": "weights",
+      "start": 18.2867,
+      "end": 18.5767,
+      "scene": 5
+    },
+    {
+      "text": "blend",
+      "start": 18.6227,
+      "end": 18.8897,
+      "scene": 5
+    },
+    {
+      "text": "the",
+      "start": 18.9367,
+      "end": 19.0057,
+      "scene": 5
+    },
+    {
+      "text": "values",
+      "start": 19.0527,
+      "end": 19.4007,
+      "scene": 5
+    },
+    {
+      "text": "into",
+      "start": 19.4587,
+      "end": 19.6217,
+      "scene": 5
+    },
+    {
+      "text": "a",
+      "start": 19.7027,
+      "end": 19.7257,
+      "scene": 5
+    },
+    {
+      "text": "new",
+      "start": 19.7837,
+      "end": 19.9237,
+      "scene": 5
+    },
+    {
+      "text": "vector",
+      "start": 19.9927,
+      "end": 20.3527,
+      "scene": 5
+    },
+    {
+      "text": "for",
+      "start": 20.3997,
+      "end": 20.5037,
+      "scene": 5
+    },
+    {
+      "text": "each",
+      "start": 20.5507,
+      "end": 20.7477,
+      "scene": 5
+    },
+    {
+      "text": "token.",
+      "start": 20.8057,
+      "end": 21.3397,
+      "scene": 5
+    },
+    {
+      "text": "Transformers",
+      "start": 23.123,
+      "end": 23.866,
+      "scene": 6
+    },
+    {
+      "text": "add",
+      "start": 23.924,
+      "end": 24.122,
+      "scene": 6
+    },
+    {
+      "text": "feed-forward",
+      "start": 24.191,
+      "end": 24.841,
+      "scene": 6
+    },
+    {
+      "text": "layers",
+      "start": 24.888,
+      "end": 25.225,
+      "scene": 6
+    },
+    {
+      "text": "and",
+      "start": 25.283,
+      "end": 25.399,
+      "scene": 6
+    },
+    {
+      "text": "residual",
+      "start": 25.468,
+      "end": 25.921,
+      "scene": 6
+    },
+    {
+      "text": "paths.",
+      "start": 25.979,
+      "end": 26.513,
+      "scene": 6
+    },
+    {
+      "text": "That",
+      "start": 27.112,
+      "end": 27.321,
+      "scene": 7
+    },
+    {
+      "text": "is",
+      "start": 27.39,
+      "end": 27.483,
+      "scene": 7
+    },
+    {
+      "text": "scaled",
+      "start": 27.53,
+      "end": 27.948,
+      "scene": 7
+    },
+    {
+      "text": "dot-product",
+      "start": 28.017,
+      "end": 28.609,
+      "scene": 7
+    },
+    {
+      "text": "attention.",
+      "start": 28.656,
+      "end": 29.271,
+      "scene": 7
+    }
+  ],
+  "timing_note": "ElevenLabs character alignment grouped into words and adjusted for padding/tempo. Provider-supplied alignment, not independent forced alignment."
+}

@@ -1,0 +1,8 @@
+{
+  "file": "elsarticle-num-names.bst",
+  "source": "https://mirrors.ctan.org/macros/latex/contrib/elsarticle/elsarticle-num-names.bst",
+  "retrieved": "2026-10-18",
+  "sha256": "c6c0d83707463ac6ebed7f43a754e38b7a38b17a8e58897e8057f8af0dc35024",
+  "license": "LPPL 1.3 or later; copyright notice retained in the unmodified file",
+  "use": "Default numbered bibliography style named by the unmodified CEURART class"
+}

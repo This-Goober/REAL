@@ -1,0 +1,24 @@
+F..
+======================================================================
+FAIL: test_human_selected_style_keeps_its_owner_on_rebuild (__main__.StyleOwnershipTests.test_human_selected_style_keeps_its_owner_on_rebuild)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Shared/REAL/skills/batch-2/skills/real-storyboarding/tests/test_preserve_style_ownership.py", line 26, in test_human_selected_style_keeps_its_owner_on_rebuild
+    self.assertEqual((layer['style'], layer['style_by']), ('title', 'creator'))
+AssertionError: Tuples differ: ('title', 'claude') != ('title', 'creator')
+
+First differing element 1:
+'claude'
+'creator'
+
+- ('title', 'claude')
+?             ^ ^^^
+
++ ('title', 'creator')
+?             ^^ ^^^
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=1)

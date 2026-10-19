@@ -1,0 +1,26 @@
+{
+  "exact": false,
+  "missing": [
+    [
+      "video",
+      "clip04",
+      "",
+      136,
+      256,
+      0
+    ]
+  ],
+  "extra": [
+    [
+      "video",
+      "clip04",
+      "",
+      136,
+      257,
+      0
+    ]
+  ],
+  "format_equal": true,
+  "expected_total_f": 532,
+  "actual_total_f": 532
+}

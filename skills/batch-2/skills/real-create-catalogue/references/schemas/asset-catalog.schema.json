@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:real:asset-catalog:1",
+  "title": "asset-catalog.json",
+  "description": "Catalogue handoff and authoring input. Legacy f/k and file/kind aliases are supported. Stable ids may be assigned by the catalogue builder.",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string"
+    },
+    "root": {
+      "type": "string"
+    },
+    "generated": {
+      "type": "string"
+    },
+    "script_beats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "take": {
+            "type": "string"
+          },
+          "dur": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "gist": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "f": {
+            "type": "string"
+          },
+          "file": {
+            "type": "string"
+          },
+          "k": {
+            "enum": [
+              "image",
+              "video",
+              "audio",
+              "text",
+              "other"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "image",
+              "video",
+              "audio",
+              "text",
+              "other"
+            ]
+          },
+          "dur": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "w": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "h": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "fps": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "exists": {
+            "type": "boolean"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "shows": {
+            "type": "string"
+          },
+          "use": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "binds_to": {
+            "type": "string"
+          },
+          "inspection": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "temporal": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "sampling": {
+            "type": "string"
+          },
+          "observations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "start": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "end": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "description": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "id",
+                "start",
+                "end",
+                "description"
+              ]
+            }
+          }
+        },
+        "required": [],
+        "allOf": [
+          {
+            "anyOf": [
+              {
+                "required": [
+                  "f"
+                ]
+              },
+              {
+                "required": [
+                  "file"
+                ]
+              }
+            ]
+          },
+          {
+            "anyOf": [
+              {
+                "required": [
+                  "k"
+                ]
+              },
+              {
+                "required": [
+                  "kind"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "assets"
+  ]
+}

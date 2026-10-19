@@ -9,7 +9,7 @@ directly for oovcheck and for free-transcribing a take you can't identify.
   align.py align <script.txt> <audio> <out.json> [--oov oov.json]
   align.py transcribe <audio>
 
-align: script.txt is the DISPLAY text (case/punct kept). Output JSON is a list of
+align: script.txt uses the shared narration tokenizer (case kept). Output JSON is a list of
 {"w": display_token, "n": normalized, "s": start_sec, "e": end_sec}.
 Fails loudly if the audio doesn't match the text (that usually means the spoken words
 differ from the script — free-transcribe the region to find out what was said).
@@ -18,6 +18,7 @@ differ from the script — free-transcribe the region to find out what was said)
 are built in. Check first with: align.py oovcheck <script.txt>
 """
 import sys, json, wave, subprocess, tempfile, re, os
+from real_core import words_of
 
 BUILTIN_OOV = {
  "soundwave": "S AW N D W EY V", "soundwaves": "S AW N D W EY V Z",
@@ -50,13 +51,47 @@ def make_decoder(extra_oov=None):
             pass
     return d
 
+def compose_oov(d, words):
+    """Pronounce a compound from its dictionary parts, and say so.
+
+    Technical narration is full of compounds the dictionary lacks but whose
+    parts it has: "dot-product", "feed-forward", "softmax", "pre-lap". A
+    hyphenated word is the concatenation of its parts; an unhyphenated one is
+    tried as two dictionary words, longest first part first. Anything that
+    still has no pronunciation is left for the refusal below (journal 003).
+    Returns {word: phones} for the words it composed and added."""
+    out = {}
+    for w in words:
+        parts = [p for p in w.split("-") if p]
+        phones = None
+        if len(parts) > 1 and all(d.lookup_word(p) for p in parts):
+            phones = " ".join(d.lookup_word(p) for p in parts)
+        elif "-" not in w and len(w) >= 6:
+            for k in range(len(w) - 3, 2, -1):
+                a, b = w[:k], w[k:]
+                if d.lookup_word(a) and d.lookup_word(b):
+                    phones = d.lookup_word(a) + " " + d.lookup_word(b)
+                    break
+        if phones:
+            try:
+                d.add_word(w, phones, False)
+                out[w] = phones
+            except Exception:
+                pass
+    return out
+
+
 def align(script_path, audio_path, out_path, oov_path=None):
-    display = open(script_path).read().split()
+    display = words_of(open(script_path).read())
     toks = [norm(t) for t in display]
     toks_d = [t for t in toks if t]
     extra = json.load(open(oov_path)) if oov_path else None
     d = make_decoder(extra)
     missing = sorted({t for t in toks_d if d.lookup_word(t) is None})
+    composed = compose_oov(d, missing)
+    for w, ph in composed.items():
+        print(f"composed pronunciation for {w!r} from its parts: {ph}")
+    missing = [t for t in missing if t not in composed]
     if missing:
         sys.exit(f"OOV words with no phones (supply via --oov): {missing}")
     d.set_align_text(" ".join(toks_d))
@@ -99,7 +134,7 @@ if __name__ == "__main__":
         transcribe(sys.argv[2])
     elif cmd == "oovcheck":
         d = make_decoder()
-        toks = {norm(t) for t in open(sys.argv[2]).read().split()}
+        toks = {norm(t) for t in words_of(open(sys.argv[2]).read())}
         print(sorted(t for t in toks if t and d.lookup_word(t) is None))
     else:
         sys.exit(__doc__)

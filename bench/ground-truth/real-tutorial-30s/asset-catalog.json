@@ -1,0 +1,261 @@
+{
+  "project": "real-tutorial-30s",
+  "root": "media",
+  "generated": "independent reference generator",
+  "script_beats": [
+    "clutter",
+    "notebook",
+    "catalogue",
+    "anchor",
+    "compile",
+    "refuse",
+    "end"
+  ],
+  "assets": [
+    {
+      "id": "clip01",
+      "f": "Videos/clip01.mp4",
+      "k": "video",
+      "dur": 4,
+      "w": 720,
+      "h": 1280,
+      "fps": 30,
+      "rotation": 0,
+      "exists": true,
+      "role": "Your footage. A clear plan.",
+      "shows": "Code-rendered clutter animation",
+      "tags": [
+        "clip01",
+        "clutter"
+      ],
+      "use": "B1 primary"
+    },
+    {
+      "id": "img01",
+      "f": "Images/img01.png",
+      "k": "image",
+      "dur": null,
+      "w": 720,
+      "h": 1280,
+      "fps": null,
+      "rotation": 0,
+      "exists": true,
+      "role": "caption: it shows its work",
+      "shows": "it shows its work",
+      "tags": [
+        "img01"
+      ],
+      "use": "B1 transparent caption"
+    },
+    {
+      "id": "clip02",
+      "f": "Videos/clip02.mp4",
+      "k": "video",
+      "dur": 4,
+      "w": 720,
+      "h": 1280,
+      "fps": 30,
+      "rotation": 0,
+      "exists": true,
+      "role": "01 / Notebook",
+      "shows": "Code-rendered notebook animation",
+      "tags": [
+        "clip02",
+        "notebook"
+      ],
+      "use": "B2 primary"
+    },
+    {
+      "id": "img02",
+      "f": "Images/img02.png",
+      "k": "image",
+      "dur": null,
+      "w": 720,
+      "h": 1280,
+      "fps": null,
+      "rotation": 0,
+      "exists": true,
+      "role": "caption: NOTEBOOK.md",
+      "shows": "NOTEBOOK.md",
+      "tags": [
+        "img02"
+      ],
+      "use": "B2 transparent caption"
+    },
+    {
+      "id": "clip03",
+      "f": "Videos/clip03.mp4",
+      "k": "video",
+      "dur": 4,
+      "w": 720,
+      "h": 1280,
+      "fps": 30,
+      "rotation": 0,
+      "exists": true,
+      "role": "02 / Catalogue",
+      "shows": "Code-rendered catalogue animation",
+      "tags": [
+        "clip03",
+        "catalogue"
+      ],
+      "use": "B3 primary"
+    },
+    {
+      "id": "img03",
+      "f": "Images/img03.png",
+      "k": "image",
+      "dur": null,
+      "w": 720,
+      "h": 1280,
+      "fps": null,
+      "rotation": 0,
+      "exists": true,
+      "role": "caption: asset-catalog.json",
+      "shows": "asset-catalog.json",
+      "tags": [
+        "img03"
+      ],
+      "use": "B3 transparent caption"
+    },
+    {
+      "id": "clip04",
+      "f": "Videos/clip04.mp4",
+      "k": "video",
+      "dur": 7,
+      "w": 720,
+      "h": 1280,
+      "fps": 30,
+      "rotation": 0,
+      "exists": true,
+      "role": "03 / Reel",
+      "shows": "Code-rendered anchor animation",
+      "tags": [
+        "clip04",
+        "anchor"
+      ],
+      "use": "B4 primary"
+    },
+    {
+      "id": "img04",
+      "f": "Images/img04.png",
+      "k": "image",
+      "dur": null,
+      "w": 720,
+      "h": 1280,
+      "fps": null,
+      "rotation": 0,
+      "exists": true,
+      "role": "caption: pinned to words",
+      "shows": "pinned to words",
+      "tags": [
+        "img04"
+      ],
+      "use": "B4 transparent caption"
+    },
+    {
+      "id": "clip05",
+      "f": "Videos/clip05.mp4",
+      "k": "video",
+      "dur": 5,
+      "w": 720,
+      "h": 1280,
+      "fps": 30,
+      "rotation": 0,
+      "exists": true,
+      "role": "04 / Compile",
+      "shows": "Code-rendered compile animation",
+      "tags": [
+        "clip05",
+        "compile"
+      ],
+      "use": "B5 primary"
+    },
+    {
+      "id": "img05",
+      "f": "Images/img05.png",
+      "k": "image",
+      "dur": null,
+      "w": 720,
+      "h": 1280,
+      "fps": null,
+      "rotation": 0,
+      "exists": true,
+      "role": "caption: timeline.fcpxml",
+      "shows": "timeline.fcpxml",
+      "tags": [
+        "img05"
+      ],
+      "use": "B5 transparent caption"
+    },
+    {
+      "id": "clip06",
+      "f": "Videos/clip06.mp4",
+      "k": "video",
+      "dur": 3,
+      "w": 720,
+      "h": 1280,
+      "fps": 30,
+      "rotation": 0,
+      "exists": true,
+      "role": "Make uncertainty visible.",
+      "shows": "Code-rendered refuse animation",
+      "tags": [
+        "clip06",
+        "refuse"
+      ],
+      "use": "B6 primary"
+    },
+    {
+      "id": "img06",
+      "f": "Images/img06.png",
+      "k": "image",
+      "dur": null,
+      "w": 720,
+      "h": 1280,
+      "fps": null,
+      "rotation": 0,
+      "exists": true,
+      "role": "caption: refuses, never guesses",
+      "shows": "refuses, never guesses",
+      "tags": [
+        "img06"
+      ],
+      "use": "B6 transparent caption"
+    },
+    {
+      "id": "clip07",
+      "f": "Videos/clip07.mp4",
+      "k": "video",
+      "dur": 3,
+      "w": 720,
+      "h": 1280,
+      "fps": 30,
+      "rotation": 0,
+      "exists": true,
+      "role": "Now reproduce this edit.",
+      "shows": "Code-rendered end animation",
+      "tags": [
+        "clip07",
+        "end"
+      ],
+      "use": "B7 primary"
+    },
+    {
+      "id": "img07",
+      "f": "Images/img07.png",
+      "k": "image",
+      "dur": null,
+      "w": 720,
+      "h": 1280,
+      "fps": null,
+      "rotation": 0,
+      "exists": true,
+      "role": "caption: REFERENCE FOR REAL",
+      "shows": "REFERENCE FOR REAL",
+      "tags": [
+        "img07"
+      ],
+      "use": "B7 transparent caption"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+ "mode": "A",
+ "validate_ok": true,
+ "revisions": 0,
+ "shots": {
+  "n_truth": 7,
+  "n_pred": 7,
+  "matched@0.5": 7,
+  "f1@0.5": 1.0,
+  "f1@0.9": 0.14285714285714285,
+  "f1@1.0": 0.0,
+  "in_err_mean_f": 4.0,
+  "out_err_mean_f": 25.857142857142858,
+  "max_err_f": 53,
+  "within_1f": 0.0,
+  "within_3f": 0.0
+ },
+ "captions": {
+  "n_truth": 7,
+  "n_pred": 7,
+  "matched@0.5": 7,
+  "f1@0.5": 1.0,
+  "f1@0.9": 0.14285714285714285,
+  "f1@1.0": 0.0,
+  "in_err_mean_f": 8.0,
+  "out_err_mean_f": 19.857142857142858,
+  "max_err_f": 47,
+  "within_1f": 0.0,
+  "within_3f": 0.07142857142857142
+ },
+ "frames": 900,
+ "base_frame_acc": 0.7677777777777778,
+ "black_frames_truth": 0,
+ "black_frames_pred": 209,
+ "total_f_truth": 900,
+ "total_f_pred": 875,
+ "pixel_vs_reference": {
+  "frames_compared": 292,
+  "len_truth": 900,
+  "len_pred": 876,
+  "ssim_mean": 0.7867128216012222,
+  "ssim_min": 0.02075351512208078,
+  "ssim_match_rate@0.95": 0.7842465753424658,
+  "psnr_mean": 39.378017375757054,
+  "psnr_median": 48.323057077722666,
+  "lpips_mean": 0.18413434700599046,
+  "lpips_max": 0.910111665725708
+ },
+ "pixel_vs_truth_render": {
+  "frames_compared": 292,
+  "len_truth": 900,
+  "len_pred": 876,
+  "ssim_mean": 0.7846685190715404,
+  "ssim_min": 0.020563708093363817,
+  "ssim_match_rate@0.95": 0.7842465753424658,
+  "psnr_mean": 35.1198101529693,
+  "psnr_median": 41.156583873840745,
+  "lpips_mean": 0.18445338866169475,
+  "lpips_max": 0.9076751470565796
+ }
+}

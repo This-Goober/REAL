@@ -1,0 +1,261 @@
+{
+  "project": "transformer-math-30s",
+  "root": "media",
+  "generated": "independent reference generator",
+  "script_beats": [
+    "hook",
+    "vectors",
+    "scores",
+    "softmax",
+    "mix",
+    "context",
+    "formula"
+  ],
+  "assets": [
+    {
+      "id": "clip01",
+      "f": "Videos/clip01.mp4",
+      "k": "video",
+      "dur": 4,
+      "w": 720,
+      "h": 1280,
+      "fps": 30,
+      "rotation": 0,
+      "exists": true,
+      "role": "One line. Many connections.",
+      "shows": "Code-rendered hook animation",
+      "tags": [
+        "clip01",
+        "hook"
+      ],
+      "use": "B1 primary"
+    },
+    {
+      "id": "img01",
+      "f": "Images/img01.png",
+      "k": "image",
+      "dur": null,
+      "w": 720,
+      "h": 1280,
+      "fps": null,
+      "rotation": 0,
+      "exists": true,
+      "role": "caption: one line",
+      "shows": "one line",
+      "tags": [
+        "img01"
+      ],
+      "use": "B1 transparent caption"
+    },
+    {
+      "id": "clip02",
+      "f": "Videos/clip02.mp4",
+      "k": "video",
+      "dur": 5,
+      "w": 720,
+      "h": 1280,
+      "fps": 30,
+      "rotation": 0,
+      "exists": true,
+      "role": "Three views of each token.",
+      "shows": "Code-rendered vectors animation",
+      "tags": [
+        "clip02",
+        "vectors"
+      ],
+      "use": "B2 primary"
+    },
+    {
+      "id": "img02",
+      "f": "Images/img02.png",
+      "k": "image",
+      "dur": null,
+      "w": 720,
+      "h": 1280,
+      "fps": null,
+      "rotation": 0,
+      "exists": true,
+      "role": "caption: Q · K · V",
+      "shows": "Q · K · V",
+      "tags": [
+        "img02"
+      ],
+      "use": "B2 transparent caption"
+    },
+    {
+      "id": "clip03",
+      "f": "Videos/clip03.mp4",
+      "k": "video",
+      "dur": 4,
+      "w": 720,
+      "h": 1280,
+      "fps": 30,
+      "rotation": 0,
+      "exists": true,
+      "role": "Compare a query to every key.",
+      "shows": "Code-rendered scores animation",
+      "tags": [
+        "clip03",
+        "scores"
+      ],
+      "use": "B3 primary"
+    },
+    {
+      "id": "img03",
+      "f": "Images/img03.png",
+      "k": "image",
+      "dur": null,
+      "w": 720,
+      "h": 1280,
+      "fps": null,
+      "rotation": 0,
+      "exists": true,
+      "role": "caption: compare tokens",
+      "shows": "compare tokens",
+      "tags": [
+        "img03"
+      ],
+      "use": "B3 transparent caption"
+    },
+    {
+      "id": "clip04",
+      "f": "Videos/clip04.mp4",
+      "k": "video",
+      "dur": 5,
+      "w": 720,
+      "h": 1280,
+      "fps": 30,
+      "rotation": 0,
+      "exists": true,
+      "role": "Turn scores into weights.",
+      "shows": "Code-rendered softmax animation",
+      "tags": [
+        "clip04",
+        "softmax"
+      ],
+      "use": "B4 primary"
+    },
+    {
+      "id": "img04",
+      "f": "Images/img04.png",
+      "k": "image",
+      "dur": null,
+      "w": 720,
+      "h": 1280,
+      "fps": null,
+      "rotation": 0,
+      "exists": true,
+      "role": "caption: weights sum to 1",
+      "shows": "weights sum to 1",
+      "tags": [
+        "img04"
+      ],
+      "use": "B4 transparent caption"
+    },
+    {
+      "id": "clip05",
+      "f": "Videos/clip05.mp4",
+      "k": "video",
+      "dur": 5,
+      "w": 720,
+      "h": 1280,
+      "fps": 30,
+      "rotation": 0,
+      "exists": true,
+      "role": "Mix the values.",
+      "shows": "Code-rendered mix animation",
+      "tags": [
+        "clip05",
+        "mix"
+      ],
+      "use": "B5 primary"
+    },
+    {
+      "id": "img05",
+      "f": "Images/img05.png",
+      "k": "image",
+      "dur": null,
+      "w": 720,
+      "h": 1280,
+      "fps": null,
+      "rotation": 0,
+      "exists": true,
+      "role": "caption: weighted sum",
+      "shows": "weighted sum",
+      "tags": [
+        "img05"
+      ],
+      "use": "B5 transparent caption"
+    },
+    {
+      "id": "clip06",
+      "f": "Videos/clip06.mp4",
+      "k": "video",
+      "dur": 4,
+      "w": 720,
+      "h": 1280,
+      "fps": 30,
+      "rotation": 0,
+      "exists": true,
+      "role": "Attention adds context.",
+      "shows": "Code-rendered context animation",
+      "tags": [
+        "clip06",
+        "context"
+      ],
+      "use": "B6 primary"
+    },
+    {
+      "id": "img06",
+      "f": "Images/img06.png",
+      "k": "image",
+      "dur": null,
+      "w": 720,
+      "h": 1280,
+      "fps": null,
+      "rotation": 0,
+      "exists": true,
+      "role": "caption: one part of a transformer",
+      "shows": "one part of a transformer",
+      "tags": [
+        "img06"
+      ],
+      "use": "B6 transparent caption"
+    },
+    {
+      "id": "clip07",
+      "f": "Videos/clip07.mp4",
+      "k": "video",
+      "dur": 3,
+      "w": 720,
+      "h": 1280,
+      "fps": 30,
+      "rotation": 0,
+      "exists": true,
+      "role": "That is attention.",
+      "shows": "Code-rendered formula animation",
+      "tags": [
+        "clip07",
+        "formula"
+      ],
+      "use": "B7 primary"
+    },
+    {
+      "id": "img07",
+      "f": "Images/img07.png",
+      "k": "image",
+      "dur": null,
+      "w": 720,
+      "h": 1280,
+      "fps": null,
+      "rotation": 0,
+      "exists": true,
+      "role": "caption: that's attention",
+      "shows": "that's attention",
+      "tags": [
+        "img07"
+      ],
+      "use": "B7 transparent caption"
+    }
+  ]
+}

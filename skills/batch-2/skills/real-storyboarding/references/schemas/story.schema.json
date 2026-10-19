@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:real:story:1",
+  "title": "story.json",
+  "description": "Compiler-internal timeline. Unknown metadata remains allowed. Source/type inference, optional duration and numeric-string seconds retain the documented compiler interface.",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string"
+    },
+    "event": {
+      "type": "string"
+    },
+    "frame_rate": {
+      "anyOf": [
+        {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        {
+          "enum": [
+            "23.976",
+            "24",
+            "25",
+            "29.97",
+            "30",
+            "50",
+            "59.94",
+            "60"
+          ]
+        }
+      ]
+    },
+    "width": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "height": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "assets_root": {
+      "type": "string"
+    },
+    "assets_root_local": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "audio_layout": {
+      "enum": [
+        "mono",
+        "stereo"
+      ]
+    },
+    "beats": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    },
+    "connected": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    }
+  },
+  "required": [
+    "project",
+    "beats"
+  ],
+  "$defs": {
+    "item": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "image",
+            "video",
+            "audio",
+            "gap",
+            "title"
+          ]
+        },
+        "src": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "start": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "string",
+              "pattern": "^\\+?(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            }
+          ]
+        },
+        "offset": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "string",
+              "pattern": "^\\+?(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            }
+          ]
+        },
+        "duration": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "string",
+              "pattern": "^\\+?(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            }
+          ]
+        },
+        "asset_duration": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "string",
+              "pattern": "^\\+?(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            }
+          ]
+        },
+        "lane": {
+          "type": "integer"
+        },
+        "font_size": {
+          "type": "number",
+          "minimum": 0
+        },
+        "opacity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "overlays": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/item"
+          }
+        }
+      },
+      "required": [],
+      "anyOf": [
+        {
+          "required": [
+            "src"
+          ]
+        },
+        {
+          "required": [
+            "text"
+          ]
+        },
+        {
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "gap",
+                "title"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

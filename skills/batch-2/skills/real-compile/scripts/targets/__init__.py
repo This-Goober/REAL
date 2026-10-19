@@ -25,6 +25,7 @@ import importlib
 # name -> module path, relative to this package. One line per target.
 REGISTRY = {
     "fcpxml": ".fcpxml_target",
+    "otio": ".otio_target",
 }
 
 DEFAULT = "fcpxml"

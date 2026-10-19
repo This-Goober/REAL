@@ -1,0 +1,866 @@
+{
+  "schema": "real-paper-recorded-case-evidence-1",
+  "date": "2026-10-18",
+  "scope": "Recorded project history, not participant evidence, acoustic ground truth or general native-export compatibility.",
+  "alignment": {
+    "whisper_reference_path": "local-project-folder/whisper-reference.json",
+    "whisper_reference_sha256": "81d8eabeb031a6f987dbdc2d4823149eab75f4e2ca5d97ca56de046b913be58f",
+    "whisper_reference_source": "faster-whisper small int8, local, word timestamps on the full proxy recording; times here are relative to each take's start (take k = window k cut with ffmpeg -ss)",
+    "pairing": "Identical ordered words after lowercasing and removing punctuation except apostrophes; take-relative raw onset values, including a negative Whisper onset.",
+    "completed_takes": [
+      {
+        "take": "take-02.wav",
+        "word_count": 35,
+        "median_absolute_disagreement_ms": 90.0,
+        "maximum_absolute_disagreement_ms": 1190.0,
+        "mean_signed_disagreement_ms": 163.142857,
+        "source_path": "bench/work/media/paganini-23-octaves-60s/measured-02.json",
+        "source_sha256": "2fb99cefe946d70ad9c99350b44f4fac91fe77e8405816f6910a4d3f0cb44697",
+        "paired_onsets": [
+          {
+            "word": "so",
+            "pocketsphinx_onset_s": 0.0,
+            "whisper_onset_s": -0.04
+          },
+          {
+            "word": "we",
+            "pocketsphinx_onset_s": 1.54,
+            "whisper_onset_s": 0.8
+          },
+          {
+            "word": "all",
+            "pocketsphinx_onset_s": 1.65,
+            "whisper_onset_s": 1.64
+          },
+          {
+            "word": "know",
+            "pocketsphinx_onset_s": 1.84,
+            "whisper_onset_s": 1.82
+          },
+          {
+            "word": "that",
+            "pocketsphinx_onset_s": 2.14,
+            "whisper_onset_s": 2.06
+          },
+          {
+            "word": "for",
+            "pocketsphinx_onset_s": 4.07,
+            "whisper_onset_s": 2.88
+          },
+          {
+            "word": "example",
+            "pocketsphinx_onset_s": 4.19,
+            "whisper_onset_s": 4.18
+          },
+          {
+            "word": "a",
+            "pocketsphinx_onset_s": 4.6,
+            "whisper_onset_s": 4.48
+          },
+          {
+            "word": "whole",
+            "pocketsphinx_onset_s": 4.65,
+            "whisper_onset_s": 4.72
+          },
+          {
+            "word": "step",
+            "pocketsphinx_onset_s": 5.1,
+            "whisper_onset_s": 5.06
+          },
+          {
+            "word": "down",
+            "pocketsphinx_onset_s": 5.84,
+            "whisper_onset_s": 5.48
+          },
+          {
+            "word": "here",
+            "pocketsphinx_onset_s": 6.24,
+            "whisper_onset_s": 6.14
+          },
+          {
+            "word": "in",
+            "pocketsphinx_onset_s": 7.06,
+            "whisper_onset_s": 6.58
+          },
+          {
+            "word": "first",
+            "pocketsphinx_onset_s": 7.36,
+            "whisper_onset_s": 7.32
+          },
+          {
+            "word": "position",
+            "pocketsphinx_onset_s": 7.63,
+            "whisper_onset_s": 7.54
+          },
+          {
+            "word": "is",
+            "pocketsphinx_onset_s": 8.12,
+            "whisper_onset_s": 7.98
+          },
+          {
+            "word": "obviously",
+            "pocketsphinx_onset_s": 8.64,
+            "whisper_onset_s": 8.54
+          },
+          {
+            "word": "larger",
+            "pocketsphinx_onset_s": 9.0,
+            "whisper_onset_s": 8.9
+          },
+          {
+            "word": "than",
+            "pocketsphinx_onset_s": 9.73,
+            "whisper_onset_s": 9.36
+          },
+          {
+            "word": "a",
+            "pocketsphinx_onset_s": 10.12,
+            "whisper_onset_s": 10.04
+          },
+          {
+            "word": "whole",
+            "pocketsphinx_onset_s": 10.15,
+            "whisper_onset_s": 10.3
+          },
+          {
+            "word": "step",
+            "pocketsphinx_onset_s": 10.54,
+            "whisper_onset_s": 10.5
+          },
+          {
+            "word": "up",
+            "pocketsphinx_onset_s": 10.99,
+            "whisper_onset_s": 10.84
+          },
+          {
+            "word": "here",
+            "pocketsphinx_onset_s": 11.12,
+            "whisper_onset_s": 11.14
+          },
+          {
+            "word": "so",
+            "pocketsphinx_onset_s": 12.68,
+            "whisper_onset_s": 12.12
+          },
+          {
+            "word": "as",
+            "pocketsphinx_onset_s": 12.97,
+            "whisper_onset_s": 12.86
+          },
+          {
+            "word": "you",
+            "pocketsphinx_onset_s": 13.21,
+            "whisper_onset_s": 13.18
+          },
+          {
+            "word": "go",
+            "pocketsphinx_onset_s": 13.32,
+            "whisper_onset_s": 13.3
+          },
+          {
+            "word": "up",
+            "pocketsphinx_onset_s": 13.6,
+            "whisper_onset_s": 13.46
+          },
+          {
+            "word": "the",
+            "pocketsphinx_onset_s": 13.74,
+            "whisper_onset_s": 13.72
+          },
+          {
+            "word": "fingerboard",
+            "pocketsphinx_onset_s": 13.81,
+            "whisper_onset_s": 13.84
+          },
+          {
+            "word": "the",
+            "pocketsphinx_onset_s": 14.92,
+            "whisper_onset_s": 14.36
+          },
+          {
+            "word": "intervals",
+            "pocketsphinx_onset_s": 15.09,
+            "whisper_onset_s": 15.12
+          },
+          {
+            "word": "get",
+            "pocketsphinx_onset_s": 15.9,
+            "whisper_onset_s": 15.66
+          },
+          {
+            "word": "smaller",
+            "pocketsphinx_onset_s": 16.07,
+            "whisper_onset_s": 16.04
+          }
+        ]
+      },
+      {
+        "take": "take-03.wav",
+        "word_count": 30,
+        "median_absolute_disagreement_ms": 65.0,
+        "maximum_absolute_disagreement_ms": 820.0,
+        "mean_signed_disagreement_ms": 124.0,
+        "source_path": "bench/work/media/paganini-23-octaves-60s/measured-03.json",
+        "source_sha256": "a38c9358e33d2f7a4be4324c62dbe8e2f3648feae3d225fd7b23dcafd117d388",
+        "paired_onsets": [
+          {
+            "word": "now",
+            "pocketsphinx_onset_s": 0.15,
+            "whisper_onset_s": -0.04
+          },
+          {
+            "word": "you",
+            "pocketsphinx_onset_s": 0.36,
+            "whisper_onset_s": 0.34
+          },
+          {
+            "word": "obviously",
+            "pocketsphinx_onset_s": 0.89,
+            "whisper_onset_s": 0.62
+          },
+          {
+            "word": "would",
+            "pocketsphinx_onset_s": 1.53,
+            "whisper_onset_s": 1.32
+          },
+          {
+            "word": "think",
+            "pocketsphinx_onset_s": 1.64,
+            "whisper_onset_s": 1.64
+          },
+          {
+            "word": "why",
+            "pocketsphinx_onset_s": 2.76,
+            "whisper_onset_s": 1.94
+          },
+          {
+            "word": "didn't",
+            "pocketsphinx_onset_s": 3.0,
+            "whisper_onset_s": 2.62
+          },
+          {
+            "word": "you",
+            "pocketsphinx_onset_s": 3.25,
+            "whisper_onset_s": 3.18
+          },
+          {
+            "word": "apply",
+            "pocketsphinx_onset_s": 3.34,
+            "whisper_onset_s": 3.32
+          },
+          {
+            "word": "this",
+            "pocketsphinx_onset_s": 3.64,
+            "whisper_onset_s": 3.58
+          },
+          {
+            "word": "to",
+            "pocketsphinx_onset_s": 3.82,
+            "whisper_onset_s": 3.82
+          },
+          {
+            "word": "octaves",
+            "pocketsphinx_onset_s": 3.9,
+            "whisper_onset_s": 3.98
+          },
+          {
+            "word": "but",
+            "pocketsphinx_onset_s": 5.57,
+            "whisper_onset_s": 5.06
+          },
+          {
+            "word": "the",
+            "pocketsphinx_onset_s": 5.69,
+            "whisper_onset_s": 5.68
+          },
+          {
+            "word": "thing",
+            "pocketsphinx_onset_s": 5.75,
+            "whisper_onset_s": 5.76
+          },
+          {
+            "word": "is",
+            "pocketsphinx_onset_s": 5.95,
+            "whisper_onset_s": 5.92
+          },
+          {
+            "word": "when",
+            "pocketsphinx_onset_s": 6.12,
+            "whisper_onset_s": 6.1
+          },
+          {
+            "word": "you're",
+            "pocketsphinx_onset_s": 6.29,
+            "whisper_onset_s": 6.26
+          },
+          {
+            "word": "tuning",
+            "pocketsphinx_onset_s": 6.44,
+            "whisper_onset_s": 6.44
+          },
+          {
+            "word": "octaves",
+            "pocketsphinx_onset_s": 7.29,
+            "whisper_onset_s": 6.78
+          },
+          {
+            "word": "it's",
+            "pocketsphinx_onset_s": 8.05,
+            "whisper_onset_s": 7.96
+          },
+          {
+            "word": "not",
+            "pocketsphinx_onset_s": 8.21,
+            "whisper_onset_s": 8.24
+          },
+          {
+            "word": "as",
+            "pocketsphinx_onset_s": 8.51,
+            "whisper_onset_s": 8.4
+          },
+          {
+            "word": "simple",
+            "pocketsphinx_onset_s": 8.6,
+            "whisper_onset_s": 8.66
+          },
+          {
+            "word": "as",
+            "pocketsphinx_onset_s": 9.3,
+            "whisper_onset_s": 9.08
+          },
+          {
+            "word": "just",
+            "pocketsphinx_onset_s": 9.62,
+            "whisper_onset_s": 9.54
+          },
+          {
+            "word": "making",
+            "pocketsphinx_onset_s": 9.88,
+            "whisper_onset_s": 9.78
+          },
+          {
+            "word": "your",
+            "pocketsphinx_onset_s": 10.28,
+            "whisper_onset_s": 10.16
+          },
+          {
+            "word": "finger",
+            "pocketsphinx_onset_s": 10.37,
+            "whisper_onset_s": 10.4
+          },
+          {
+            "word": "smaller",
+            "pocketsphinx_onset_s": 10.66,
+            "whisper_onset_s": 10.6
+          }
+        ]
+      },
+      {
+        "take": "take-04.wav",
+        "word_count": 30,
+        "median_absolute_disagreement_ms": 60.0,
+        "maximum_absolute_disagreement_ms": 3490.0,
+        "mean_signed_disagreement_ms": 217.0,
+        "source_path": "bench/work/media/paganini-23-octaves-60s/measured-04.json",
+        "source_sha256": "67a64a163b4a6e95e84b734e541a6399055046a19fe7e237d7b224d4d81934ba",
+        "paired_onsets": [
+          {
+            "word": "the",
+            "pocketsphinx_onset_s": 0.38,
+            "whisper_onset_s": 0.0
+          },
+          {
+            "word": "interval",
+            "pocketsphinx_onset_s": 0.61,
+            "whisper_onset_s": 0.54
+          },
+          {
+            "word": "that",
+            "pocketsphinx_onset_s": 1.1,
+            "whisper_onset_s": 0.96
+          },
+          {
+            "word": "we",
+            "pocketsphinx_onset_s": 1.5,
+            "whisper_onset_s": 1.28
+          },
+          {
+            "word": "go",
+            "pocketsphinx_onset_s": 1.63,
+            "whisper_onset_s": 1.62
+          },
+          {
+            "word": "from",
+            "pocketsphinx_onset_s": 1.82,
+            "whisper_onset_s": 1.78
+          },
+          {
+            "word": "just",
+            "pocketsphinx_onset_s": 2.02,
+            "whisper_onset_s": 2.0
+          },
+          {
+            "word": "shifting",
+            "pocketsphinx_onset_s": 2.19,
+            "whisper_onset_s": 2.18
+          },
+          {
+            "word": "maybe",
+            "pocketsphinx_onset_s": 2.85,
+            "whisper_onset_s": 2.52
+          },
+          {
+            "word": "one",
+            "pocketsphinx_onset_s": 3.1,
+            "whisper_onset_s": 3.02
+          },
+          {
+            "word": "whole",
+            "pocketsphinx_onset_s": 3.34,
+            "whisper_onset_s": 3.3
+          },
+          {
+            "word": "step",
+            "pocketsphinx_onset_s": 3.57,
+            "whisper_onset_s": 3.52
+          },
+          {
+            "word": "in",
+            "pocketsphinx_onset_s": 3.86,
+            "whisper_onset_s": 3.78
+          },
+          {
+            "word": "an",
+            "pocketsphinx_onset_s": 3.97,
+            "whisper_onset_s": 3.96
+          },
+          {
+            "word": "octave",
+            "pocketsphinx_onset_s": 4.06,
+            "whisper_onset_s": 4.08
+          },
+          {
+            "word": "our",
+            "pocketsphinx_onset_s": 7.83,
+            "whisper_onset_s": 4.34
+          },
+          {
+            "word": "first",
+            "pocketsphinx_onset_s": 8.02,
+            "whisper_onset_s": 7.97
+          },
+          {
+            "word": "finger",
+            "pocketsphinx_onset_s": 8.34,
+            "whisper_onset_s": 8.27
+          },
+          {
+            "word": "is",
+            "pocketsphinx_onset_s": 8.61,
+            "whisper_onset_s": 8.57
+          },
+          {
+            "word": "actually",
+            "pocketsphinx_onset_s": 8.69,
+            "whisper_onset_s": 8.69
+          },
+          {
+            "word": "traveling",
+            "pocketsphinx_onset_s": 8.97,
+            "whisper_onset_s": 8.95
+          },
+          {
+            "word": "more",
+            "pocketsphinx_onset_s": 9.38,
+            "whisper_onset_s": 9.25
+          },
+          {
+            "word": "distance",
+            "pocketsphinx_onset_s": 9.56,
+            "whisper_onset_s": 9.51
+          },
+          {
+            "word": "than",
+            "pocketsphinx_onset_s": 10.11,
+            "whisper_onset_s": 9.91
+          },
+          {
+            "word": "our",
+            "pocketsphinx_onset_s": 10.42,
+            "whisper_onset_s": 10.31
+          },
+          {
+            "word": "fourth",
+            "pocketsphinx_onset_s": 11.38,
+            "whisper_onset_s": 10.73
+          },
+          {
+            "word": "finger",
+            "pocketsphinx_onset_s": 11.74,
+            "whisper_onset_s": 11.63
+          },
+          {
+            "word": "in",
+            "pocketsphinx_onset_s": 12.19,
+            "whisper_onset_s": 12.09
+          },
+          {
+            "word": "this",
+            "pocketsphinx_onset_s": 12.3,
+            "whisper_onset_s": 12.29
+          },
+          {
+            "word": "case",
+            "pocketsphinx_onset_s": 12.49,
+            "whisper_onset_s": 12.47
+          }
+        ]
+      }
+    ],
+    "failed_takes": {
+      "take-01.wav": "Paganini's",
+      "take-05.wav": "23rd"
+    },
+    "failure_evidence": {
+      "path": "local-project-folder/RUN-LOG.md",
+      "sha256": "e6b2eddf0be1160d952eef6868bf67e324ceb77d9cba5b20b1106e356f105706",
+      "type": "Historical run-log report; original exception logs not included."
+    }
+  },
+  "intro_integration": {
+    "fps": 30,
+    "shift_frames": 419,
+    "placements_verified": 18,
+    "old_source_sha256": "3fbd092a1fbdf48cc3a5e46062c54140b22f3cacb43a067a172457c97f116baf",
+    "old_source_description": "Preserved pre-intro v3 reel in cleanup backup; extracted identity/source/anchor fields and frame bounds retained here. Caption content, typography and appearance were intentionally revised.",
+    "new_source_path": "local-project-folder/v4/reel.json",
+    "new_source_sha256": "00d07b86ee901bc918a6f536946be21a70e01b470ca820fbf29c689c11231916",
+    "receipt_path": "local-project-folder/v4/INTRO-CAPTIONS-INTEGRATION.json",
+    "receipt_sha256": "24acb2ebb6ec447ad4f7e39a082ec26c56af33fedc2894078efc0422f52eb2e6",
+    "placement_pairs": [
+      {
+        "id": "B1.L1",
+        "before_frames": [
+          0,
+          237
+        ],
+        "after_frames": [
+          419,
+          656
+        ],
+        "unchanged_fields": {
+          "asset": "A01",
+          "anchor_word": 0,
+          "anchor_text": "So",
+          "offset_ms": 0
+        }
+      },
+      {
+        "id": "B1.L2",
+        "before_frames": [
+          106,
+          226
+        ],
+        "after_frames": [
+          525,
+          645
+        ],
+        "unchanged_fields": {
+          "asset": "A13",
+          "anchor_word": 12,
+          "anchor_text": "performing",
+          "offset_ms": 0
+        }
+      },
+      {
+        "id": "B1.L3",
+        "before_frames": [
+          169,
+          226
+        ],
+        "after_frames": [
+          588,
+          645
+        ],
+        "unchanged_fields": {
+          "anchor_word": 15,
+          "anchor_text": "Caprice",
+          "offset_ms": 0
+        }
+      },
+      {
+        "id": "B1.A1",
+        "before_frames": [
+          0,
+          237
+        ],
+        "after_frames": [
+          419,
+          656
+        ],
+        "unchanged_fields": {
+          "asset": "A06",
+          "anchor_word": 0,
+          "anchor_text": "So",
+          "offset_ms": 0
+        }
+      },
+      {
+        "id": "B2.L1",
+        "before_frames": [
+          237,
+          732
+        ],
+        "after_frames": [
+          656,
+          1151
+        ],
+        "unchanged_fields": {
+          "asset": "A02",
+          "anchor_word": 19,
+          "anchor_text": "So",
+          "offset_ms": 0
+        }
+      },
+      {
+        "id": "B2.L2",
+        "before_frames": [
+          510,
+          630
+        ],
+        "after_frames": [
+          929,
+          1049
+        ],
+        "unchanged_fields": {
+          "asset": "A11",
+          "anchor_word": 36,
+          "anchor_text": "larger",
+          "offset_ms": 0
+        }
+      },
+      {
+        "id": "B2.L3",
+        "before_frames": [
+          697,
+          732
+        ],
+        "after_frames": [
+          1116,
+          1151
+        ],
+        "unchanged_fields": {
+          "anchor_word": 51,
+          "anchor_text": "intervals",
+          "offset_ms": 0
+        }
+      },
+      {
+        "id": "B2.A1",
+        "before_frames": [
+          237,
+          732
+        ],
+        "after_frames": [
+          656,
+          1151
+        ],
+        "unchanged_fields": {
+          "asset": "A07",
+          "anchor_word": 19,
+          "anchor_text": "So",
+          "offset_ms": 0
+        }
+      },
+      {
+        "id": "B3.L1",
+        "before_frames": [
+          732,
+          1068
+        ],
+        "after_frames": [
+          1151,
+          1487
+        ],
+        "unchanged_fields": {
+          "asset": "A03",
+          "anchor_word": 54,
+          "anchor_text": "Now",
+          "offset_ms": 0
+        }
+      },
+      {
+        "id": "B3.L2",
+        "before_frames": [
+          997,
+          1053
+        ],
+        "after_frames": [
+          1416,
+          1472
+        ],
+        "unchanged_fields": {
+          "anchor_word": 77,
+          "anchor_text": "simple",
+          "offset_ms": 0
+        }
+      },
+      {
+        "id": "B3.A1",
+        "before_frames": [
+          732,
+          1068
+        ],
+        "after_frames": [
+          1151,
+          1487
+        ],
+        "unchanged_fields": {
+          "asset": "A08",
+          "anchor_word": 54,
+          "anchor_text": "Now",
+          "offset_ms": 0
+        }
+      },
+      {
+        "id": "B4.L1",
+        "before_frames": [
+          1068,
+          1452
+        ],
+        "after_frames": [
+          1487,
+          1871
+        ],
+        "unchanged_fields": {
+          "asset": "A04",
+          "anchor_word": 84,
+          "anchor_text": "the",
+          "offset_ms": 0
+        }
+      },
+      {
+        "id": "B4.L2",
+        "before_frames": [
+          1137,
+          1257
+        ],
+        "after_frames": [
+          1556,
+          1676
+        ],
+        "unchanged_fields": {
+          "asset": "A12",
+          "anchor_word": 91,
+          "anchor_text": "shifting",
+          "offset_ms": 0
+        }
+      },
+      {
+        "id": "B4.L3",
+        "before_frames": [
+          1340,
+          1406
+        ],
+        "after_frames": [
+          1759,
+          1825
+        ],
+        "unchanged_fields": {
+          "anchor_word": 104,
+          "anchor_text": "traveling",
+          "offset_ms": 0
+        }
+      },
+      {
+        "id": "B4.A1",
+        "before_frames": [
+          1068,
+          1452
+        ],
+        "after_frames": [
+          1487,
+          1871
+        ],
+        "unchanged_fields": {
+          "asset": "A09",
+          "anchor_word": 84,
+          "anchor_text": "the",
+          "offset_ms": 0
+        }
+      },
+      {
+        "id": "B5.L1",
+        "before_frames": [
+          1452,
+          2022
+        ],
+        "after_frames": [
+          1871,
+          2441
+        ],
+        "unchanged_fields": {
+          "asset": "A05",
+          "anchor_word": 114,
+          "anchor_text": "I'm",
+          "offset_ms": 0
+        }
+      },
+      {
+        "id": "B5.L2",
+        "before_frames": [
+          1955,
+          2021
+        ],
+        "after_frames": [
+          2374,
+          2440
+        ],
+        "unchanged_fields": {
+          "anchor_word": 149,
+          "anchor_text": "leading",
+          "offset_ms": 0
+        }
+      },
+      {
+        "id": "B5.A1",
+        "before_frames": [
+          1452,
+          2022
+        ],
+        "after_frames": [
+          1871,
+          2441
+        ],
+        "unchanged_fields": {
+          "asset": "A10",
+          "anchor_word": 114,
+          "anchor_text": "I'm",
+          "offset_ms": 0
+        }
+      }
+    ],
+    "user_verification": {
+      "confirmed_by": "the authors",
+      "date": "2026-10-18",
+      "quote": "ok the v4 has glow in it.",
+      "xml_sha256": "4818312007c9c27d478bc6ca792c0d33767e44fdfcfda5ea3666fe2a157384c3",
+      "glow_visible": true,
+      "scope": "User observed Glow in imported v4. Individual checkbox states, every caption instance, exact color/radius and XML re-export fidelity were not separately confirmed."
+    },
+    "playback_verification": {
+      "reported_by": "the authors",
+      "date": "2026-10-18",
+      "quote": "Checked: everything works",
+      "checks": {
+        "opening": true,
+        "all_stills": true,
+        "all_captions": true,
+        "clean_audio": true
+      },
+      "evidence_path": "demo/paganini-no23/native-playback-confirmation.json",
+      "evidence_sha256": "747a90daff0ad160e5da9e18ce49b2480b6cf1248cd393fd8e5d7c2fe4d670f6",
+      "scope": "The authors report that the full named v4 opening, stills/captions and audio work in Final Cut. The source hash identifies the supplied v4, not a compared native export. No new timing measurement, inspector-state inspection, native XML comparison or participant study is implied."
+    }
+  }
+}

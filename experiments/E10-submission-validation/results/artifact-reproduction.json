@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-18",
+  "archive_sha256": "0be66196be604d5670305da9673150796b503ef558e785e1e95fda4d3390dbbd",
+  "archive_bytes": 5668074,
+  "archive_members": 703,
+  "packaged_files_verified": 702,
+  "original_repository_git_available_to_extracted_run": false,
+  "assembly_validation_seeds": 100,
+  "assembly_development_seeds": 30,
+  "all_three_condition_summaries_exactly_reproduced": true,
+  "repairs": 30,
+  "repair_rows_exactly_reproduced": true,
+  "public_pilot_and_official_parity_exactly_reproduced": true,
+  "frozen_next100_ids_unchanged": true,
+  "paper_results_regenerated_identically": true,
+  "offline_benchmark_tests": 48,
+  "altered_baseline_refused": true,
+  "no_model_inference_performed": true,
+  "final_archive_changes_after_execution": [
+    "paper/README.md",
+    "paper/himas-2027/REVIEW.md",
+    "experiments/E10-submission-validation/README.md"
+  ],
+  "final_archive_sources_identical_to_tested_sources": true,
+  "source": "Extracted ZIP in a fresh directory outside the repository; existing Python dependency environment reused",
+  "limits": [
+    "Synthetic structural reproduction, not native-editor rendering or human evaluation",
+    "No new public-dataset model performance results",
+    "Artifact not published; author review and final PDF archival check remain"
+  ]
+}
