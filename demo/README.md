@@ -3,7 +3,7 @@
 | folder | what |
 |---|---|
 | [`binary_search/`](binary_search/README.md) | 30 s "binary search for a five-year-old", white gray-on-white look, ElevenLabs narration, compiled to **FCPXML and OpenTimelineIO** and cross-checked frame for frame |
-| `paganini-no23/` | the recorded violin tutorial case: package build script and the native playback receipts (the package and footage stay with the authors) |
+| [`paganini-no23/`](paganini-no23/README.md) | the recorded violin tutorial (Paganini Caprice No. 23, fingered octaves), eleven captions, closing clip: one storyboard compiled to **FCPXML and OpenTimelineIO**, imported into Final Cut Pro and DaVinci Resolve, both renders measured against each other (cuts and caption edges frame-exact, SSIM 0.99); prompts, media, timelines, report and the YouTube links |
 | this page | the two-minute local-correction walkthrough on synthetic seed 1 (`build.py`) |
 
 # REAL local-correction walkthrough

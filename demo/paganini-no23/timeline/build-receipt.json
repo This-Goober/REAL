@@ -1,0 +1,315 @@
+{
+  "project": "Paganini No. 23 tutorial",
+  "built_from": {
+    "start_storyboard_sha256": "342b74797ec72a9996880b3083e9196a741c787ac1df92eae2b9dba93f904a86",
+    "start_clock_sha256": "20228945aeeffb939b68064f7f12d278532ab26aea9ee711cce6d447da4b1ea5"
+  },
+  "face": "off",
+  "checks": {
+    "equivalence": "cross-target: EQUIVALENT — 21/21 visual events, 7/7 audio clips, total 2747/2747 frames",
+    "total_s": 91.5667,
+    "total_frames": 2747
+  },
+  "captions_added": [
+    {
+      "id": "B2.L4",
+      "text": "a whole step\nin first position",
+      "anchor_word": 32,
+      "anchor_text": "first",
+      "t0": 29.2747,
+      "t1": 31.7947,
+      "line_widths_px": [
+        335.0,
+        391.0
+      ]
+    },
+    {
+      "id": "B2.L5",
+      "text": "the same step,\nhigher up",
+      "anchor_word": 41,
+      "anchor_text": "up",
+      "t0": 32.8267,
+      "t1": 35.0267,
+      "line_widths_px": [
+        388.0,
+        249.0
+      ]
+    },
+    {
+      "id": "B3.L3",
+      "text": "why not\noctaves?",
+      "anchor_word": 59,
+      "anchor_text": "why",
+      "t0": 40.5787,
+      "t1": 42.1387,
+      "line_widths_px": [
+        208.0,
+        239.0
+      ]
+    },
+    {
+      "id": "B4.L4",
+      "text": "shift one\nwhole step",
+      "anchor_word": 91,
+      "anchor_text": "shifting",
+      "t0": 51.8827,
+      "t1": 53.7627,
+      "line_widths_px": [
+        228.0,
+        288.0
+      ]
+    },
+    {
+      "id": "B5.L3",
+      "text": "the first finger\nmoves more",
+      "anchor_word": 119,
+      "anchor_text": "first",
+      "t0": 65.5167,
+      "t1": 67.7167,
+      "line_widths_px": [
+        368.0,
+        327.0
+      ]
+    },
+    {
+      "id": "B5.L4",
+      "text": "third and fourth\nmove less",
+      "anchor_word": 129,
+      "anchor_text": "not",
+      "t0": 71.3327,
+      "t1": 73.5327,
+      "line_widths_px": [
+        408.0,
+        266.0
+      ]
+    }
+  ],
+  "asset_swaps": [
+    {
+      "asset": "A01",
+      "old": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-01.mov",
+      "new": "/Users/Shared/REAL/demo/paganini-no23/media/Videos/P-studio-01.mov",
+      "new_dur_s": 7.9,
+      "beat_s": 7.9,
+      "audio_reference": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-01.mov",
+      "audio_lag_ms": 0.0,
+      "audio_corr": 1.0
+    },
+    {
+      "asset": "A02",
+      "old": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-02.mov",
+      "new": "/Users/Shared/REAL/demo/paganini-no23/media/Videos/P-studio-02.mov",
+      "new_dur_s": 16.5,
+      "beat_s": 16.5,
+      "audio_reference": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-02.mov",
+      "audio_lag_ms": 0.0,
+      "audio_corr": 1.0
+    },
+    {
+      "asset": "A03",
+      "old": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-03.mov",
+      "new": "/Users/Shared/REAL/demo/paganini-no23/media/Videos/P-studio-03.mov",
+      "new_dur_s": 11.2,
+      "beat_s": 11.2,
+      "audio_reference": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-03.mov",
+      "audio_lag_ms": 0.0,
+      "audio_corr": 1.0
+    },
+    {
+      "asset": "A04",
+      "old": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-04.mov",
+      "new": "/Users/Shared/REAL/demo/paganini-no23/media/Videos/P-studio-04.mov",
+      "new_dur_s": 12.8,
+      "beat_s": 12.8,
+      "audio_reference": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-04.mov",
+      "audio_lag_ms": 0.0,
+      "audio_corr": 1.0
+    },
+    {
+      "asset": "A05",
+      "old": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-05.mov",
+      "new": "/Users/Shared/REAL/demo/paganini-no23/media/Videos/P-studio-05.mov",
+      "new_dur_s": 19.0,
+      "beat_s": 19.0,
+      "audio_reference": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-05.mov",
+      "audio_lag_ms": 0.0,
+      "audio_corr": 1.0
+    }
+  ],
+  "captions": [
+    {
+      "id": "B1.L3",
+      "text": "fingered octaves,\nPaganini 23",
+      "t0": 19.607,
+      "t1": 21.487,
+      "font_size": 55,
+      "glow": true,
+      "face": false,
+      "shadow": true,
+      "line_widths_px": [
+        456.0,
+        306.0
+      ]
+    },
+    {
+      "id": "B2.L3",
+      "text": "same interval,\nsmaller space",
+      "t0": 37.203,
+      "t1": 38.367,
+      "font_size": 55,
+      "glow": true,
+      "face": false,
+      "shadow": true,
+      "line_widths_px": [
+        368.0,
+        368.0
+      ]
+    },
+    {
+      "id": "B2.L4",
+      "text": "a whole step\nin first position",
+      "t0": 29.275,
+      "t1": 31.795,
+      "font_size": 55,
+      "glow": true,
+      "face": false,
+      "shadow": true,
+      "line_widths_px": [
+        335.0,
+        391.0
+      ]
+    },
+    {
+      "id": "B2.L5",
+      "text": "the same step,\nhigher up",
+      "t0": 32.827,
+      "t1": 35.027,
+      "font_size": 55,
+      "glow": true,
+      "face": false,
+      "shadow": true,
+      "line_widths_px": [
+        388.0,
+        249.0
+      ]
+    },
+    {
+      "id": "B3.L2",
+      "text": "octaves:\ndon't just squeeze",
+      "t0": 47.195,
+      "t1": 49.075,
+      "font_size": 55,
+      "glow": true,
+      "face": false,
+      "shadow": true,
+      "line_widths_px": [
+        223.0,
+        484.0
+      ]
+    },
+    {
+      "id": "B3.L3",
+      "text": "why not\noctaves?",
+      "t0": 40.579,
+      "t1": 42.139,
+      "font_size": 55,
+      "glow": true,
+      "face": false,
+      "shadow": true,
+      "line_widths_px": [
+        208.0,
+        239.0
+      ]
+    },
+    {
+      "id": "B4.L3",
+      "text": "the first finger\ntravels further",
+      "t0": 58.637,
+      "t1": 60.837,
+      "font_size": 55,
+      "glow": true,
+      "face": false,
+      "shadow": true,
+      "line_widths_px": [
+        368.0,
+        369.0
+      ]
+    },
+    {
+      "id": "B4.L4",
+      "text": "shift one\nwhole step",
+      "t0": 51.883,
+      "t1": 53.763,
+      "font_size": 55,
+      "glow": true,
+      "face": false,
+      "shadow": true,
+      "line_widths_px": [
+        228.0,
+        288.0
+      ]
+    },
+    {
+      "id": "B5.L2",
+      "text": "let the first\nfinger lead",
+      "t0": 79.121,
+      "t1": 81.321,
+      "font_size": 55,
+      "glow": true,
+      "face": false,
+      "shadow": true,
+      "line_widths_px": [
+        281.0,
+        279.0
+      ]
+    },
+    {
+      "id": "B5.L3",
+      "text": "the first finger\nmoves more",
+      "t0": 65.517,
+      "t1": 67.717,
+      "font_size": 55,
+      "glow": true,
+      "face": false,
+      "shadow": true,
+      "line_widths_px": [
+        368.0,
+        327.0
+      ]
+    },
+    {
+      "id": "B5.L4",
+      "text": "third and fourth\nmove less",
+      "t0": 71.333,
+      "t1": 73.533,
+      "font_size": 55,
+      "glow": true,
+      "face": false,
+      "shadow": true,
+      "line_widths_px": [
+        408.0,
+        266.0
+      ]
+    }
+  ],
+  "closure": {
+    "file": "/Users/Shared/REAL/demo/paganini-no23/media/Videos/P-closure.mov",
+    "probe": {
+      "dur_s": 10.221,
+      "w": 550,
+      "h": 978,
+      "fps": 60.0
+    },
+    "beat": "B6",
+    "t0": 81.3667,
+    "t1": 91.5667,
+    "frames": 306
+  },
+  "outputs": {
+    "fcpxml": "/Users/Shared/REAL/demo/paganini-no23/timeline/paganini-no23.fcpxml",
+    "fcpxml_sha256": "98d0f6dbace46e90b5a5ce603c5a096bceb10dcef7136d95f8f66d103a788b40",
+    "otio": "/Users/Shared/REAL/demo/paganini-no23/timeline/paganini-no23.otio",
+    "otio_sha256": "9f8f73f49f0de6c5c14e49e4af2b13553013c347e6032084cdd5fd726086b009",
+    "titles_dir": "/Users/Shared/REAL/demo/paganini-no23/timeline/paganini-no23-titles"
+  }
+}

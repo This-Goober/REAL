@@ -1,0 +1,536 @@
+{
+  "a": {
+    "file": "~/Downloads/Paganini 23 \u2014 by REAL v5 - finalcutpro.mov",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "color_space": "bt709",
+    "color_transfer": "bt709",
+    "duration_s": 91.566667,
+    "audio": {
+      "codec": "aac",
+      "rate": "48000",
+      "channels": 2
+    },
+    "label": "Final Cut Pro (FCPXML)"
+  },
+  "b": {
+    "file": "~/Downloads/Paganini-23-STUDIO-v5-davinci-resolve.mp4",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "color_space": "bt709",
+    "color_transfer": "bt709",
+    "duration_s": 91.648,
+    "audio": {
+      "codec": "aac",
+      "rate": "48000",
+      "channels": 2
+    },
+    "label": "DaVinci Resolve (OTIO)"
+  },
+  "expected": {
+    "fps": 30.0,
+    "frames": 2747,
+    "cuts": [
+      419,
+      656,
+      1151,
+      1487,
+      1871,
+      2441
+    ],
+    "captions": [
+      [
+        1416,
+        1472,
+        "octaves:\ndon't just squeeze"
+      ],
+      [
+        2374,
+        2440,
+        "let the first\nfinger lead"
+      ],
+      [
+        588,
+        645,
+        "fingered octaves,\nPaganini 23"
+      ],
+      [
+        1116,
+        1151,
+        "same interval,\nsmaller space"
+      ],
+      [
+        1217,
+        1264,
+        "why not\noctaves?"
+      ],
+      [
+        1759,
+        1825,
+        "the first finger\ntravels further"
+      ],
+      [
+        1966,
+        2032,
+        "the first finger\nmoves more"
+      ],
+      [
+        878,
+        954,
+        "a whole step\nin first position"
+      ],
+      [
+        1556,
+        1613,
+        "shift one\nwhole step"
+      ],
+      [
+        2140,
+        2206,
+        "third and fourth\nmove less"
+      ],
+      [
+        985,
+        1051,
+        "the same step,\nhigher up"
+      ]
+    ],
+    "stills": [
+      [
+        525,
+        645
+      ],
+      [
+        929,
+        1049
+      ],
+      [
+        1556,
+        1676
+      ]
+    ]
+  },
+  "frames": {
+    "a": 2747,
+    "b": 2747,
+    "expected": 2747
+  },
+  "cuts": [
+    {
+      "expected": 419,
+      "a": 419,
+      "a_minus_expected": 0,
+      "a_strength": 72.1,
+      "b": 419,
+      "b_minus_expected": 0,
+      "b_strength": 71.2
+    },
+    {
+      "expected": 656,
+      "a": 656,
+      "a_minus_expected": 0,
+      "a_strength": 15.8,
+      "b": 656,
+      "b_minus_expected": 0,
+      "b_strength": 15.1
+    },
+    {
+      "expected": 1151,
+      "a": 1151,
+      "a_minus_expected": 0,
+      "a_strength": 11.3,
+      "b": 1151,
+      "b_minus_expected": 0,
+      "b_strength": 11.7
+    },
+    {
+      "expected": 1487,
+      "a": 1487,
+      "a_minus_expected": 0,
+      "a_strength": 4.7,
+      "b": 1487,
+      "b_minus_expected": 0,
+      "b_strength": 4.7
+    },
+    {
+      "expected": 1871,
+      "a": 1871,
+      "a_minus_expected": 0,
+      "a_strength": 7.5,
+      "b": 1871,
+      "b_minus_expected": 0,
+      "b_strength": 7.5
+    },
+    {
+      "expected": 2441,
+      "a": 2441,
+      "a_minus_expected": 0,
+      "a_strength": 35.9,
+      "b": 2441,
+      "b_minus_expected": 0,
+      "b_strength": 35.4
+    }
+  ],
+  "shift_b_minus_a_frames": 0,
+  "picture": {
+    "frames_compared": 2747,
+    "mad_luma": {
+      "all": {
+        "n": 2747,
+        "mean": 1.791,
+        "median": 0.452,
+        "p05": 0.2681,
+        "p95": 11.793,
+        "min": 0.2375,
+        "max": 12.3553
+      },
+      "with_caption": {
+        "n": 658,
+        "mean": 4.3343,
+        "median": 1.7089,
+        "p05": 1.1947,
+        "p95": 12.1489,
+        "min": 1.1666,
+        "max": 12.3553
+      },
+      "without_caption": {
+        "n": 2089,
+        "mean": 0.9899,
+        "median": 0.3063,
+        "p05": 0.2655,
+        "p95": 4.8189,
+        "min": 0.2375,
+        "max": 10.8916
+      }
+    },
+    "ssim": {
+      "all": {
+        "n": 2747,
+        "mean": 0.9853,
+        "median": 0.9921,
+        "p05": 0.9585,
+        "p95": 0.9939,
+        "min": 0.9529,
+        "max": 0.9951
+      },
+      "with_caption": {
+        "n": 658,
+        "mean": 0.9645,
+        "median": 0.9647,
+        "p05": 0.9576,
+        "p95": 0.9749,
+        "min": 0.9529,
+        "max": 0.9755
+      },
+      "without_caption": {
+        "n": 2089,
+        "mean": 0.9918,
+        "median": 0.9923,
+        "p05": 0.9868,
+        "p95": 0.994,
+        "min": 0.9813,
+        "max": 0.9951
+      }
+    },
+    "psnr_db": {
+      "all": {
+        "n": 2747,
+        "mean": 40.2127,
+        "median": 44.51,
+        "p05": 24.02,
+        "p95": 46.9,
+        "min": 23.77,
+        "max": 47.64
+      },
+      "with_caption": {
+        "n": 658,
+        "mean": 29.6147,
+        "median": 31.48,
+        "p05": 23.8785,
+        "p95": 33.35,
+        "min": 23.77,
+        "max": 33.42
+      },
+      "without_caption": {
+        "n": 2089,
+        "mean": 43.5509,
+        "median": 44.79,
+        "p05": 28.39,
+        "p95": 46.96,
+        "min": 24.55,
+        "max": 47.64
+      }
+    },
+    "worst_frames_by_ssim": [
+      947,
+      941,
+      946,
+      951,
+      945,
+      948,
+      950,
+      953,
+      952,
+      949
+    ]
+  },
+  "captions": [
+    {
+      "text": "octaves: / don't just squeeze",
+      "expected_on": 1416,
+      "expected_off": 1472,
+      "a_on": 1416,
+      "a_off": 1472,
+      "b_on": 1416,
+      "b_off": 1472,
+      "a_box_w": 842,
+      "a_box_h": 197,
+      "a_center_y": 906.0,
+      "b_box_w": 848,
+      "b_box_h": 198,
+      "b_center_y": 902.5,
+      "a_on_err": 0,
+      "b_on_err": 0,
+      "a_off_err": 0,
+      "b_off_err": 0,
+      "b_over_a_width": 1.007,
+      "b_over_a_height": 1.005
+    },
+    {
+      "text": "let the first / finger lead",
+      "expected_on": 2374,
+      "expected_off": 2440,
+      "a_on": 2374,
+      "a_off": 2440,
+      "b_on": 2374,
+      "b_off": 2440,
+      "a_box_w": 489,
+      "a_box_h": 203,
+      "a_center_y": 905.0,
+      "b_box_w": 493,
+      "b_box_h": 203,
+      "b_center_y": 901.0,
+      "a_on_err": 0,
+      "b_on_err": 0,
+      "a_off_err": 0,
+      "b_off_err": 0,
+      "b_over_a_width": 1.008,
+      "b_over_a_height": 1.0
+    },
+    {
+      "text": "fingered octaves, / Paganini 23",
+      "expected_on": 588,
+      "expected_off": 645,
+      "a_on": 588,
+      "a_off": 645,
+      "b_on": 588,
+      "b_off": 645,
+      "a_box_w": 791,
+      "a_box_h": 203,
+      "a_center_y": 905.0,
+      "b_box_w": 797,
+      "b_box_h": 203,
+      "b_center_y": 901.0,
+      "a_on_err": 0,
+      "b_on_err": 0,
+      "a_off_err": 0,
+      "b_off_err": 0,
+      "b_over_a_width": 1.008,
+      "b_over_a_height": 1.0
+    },
+    {
+      "text": "same interval, / smaller space",
+      "expected_on": 1116,
+      "expected_off": 1151,
+      "a_on": 1116,
+      "a_off": 1151,
+      "b_on": 1116,
+      "b_off": 1151,
+      "a_box_w": 638,
+      "a_box_h": 201,
+      "a_center_y": 904.0,
+      "b_box_w": 643,
+      "b_box_h": 202,
+      "b_center_y": 900.5,
+      "a_on_err": 0,
+      "b_on_err": 0,
+      "a_off_err": 0,
+      "b_off_err": 0,
+      "b_over_a_width": 1.008,
+      "b_over_a_height": 1.005
+    },
+    {
+      "text": "why not / octaves?",
+      "expected_on": 1217,
+      "expected_off": 1264,
+      "a_on": 1217,
+      "a_off": 1264,
+      "b_on": 1217,
+      "b_off": 1264,
+      "a_box_w": 408,
+      "a_box_h": 185,
+      "a_center_y": 896.0,
+      "b_box_w": 411,
+      "b_box_h": 186,
+      "b_center_y": 892.5,
+      "a_on_err": 0,
+      "b_on_err": 0,
+      "a_off_err": 0,
+      "b_off_err": 0,
+      "b_over_a_width": 1.007,
+      "b_over_a_height": 1.005
+    },
+    {
+      "text": "the first finger / travels further",
+      "expected_on": 1759,
+      "expected_off": 1825,
+      "a_on": 1759,
+      "a_off": 1825,
+      "b_on": 1759,
+      "b_off": 1825,
+      "a_box_w": 648,
+      "a_box_h": 185,
+      "a_center_y": 896.0,
+      "b_box_w": 654,
+      "b_box_h": 186,
+      "b_center_y": 892.5,
+      "a_on_err": 0,
+      "b_on_err": 0,
+      "a_off_err": 0,
+      "b_off_err": 0,
+      "b_over_a_width": 1.009,
+      "b_over_a_height": 1.005
+    },
+    {
+      "text": "the first finger / moves more",
+      "expected_on": 1966,
+      "expected_off": 2032,
+      "a_on": 1966,
+      "a_off": 2032,
+      "b_on": 1966,
+      "b_off": 2032,
+      "a_box_w": 648,
+      "a_box_h": 185,
+      "a_center_y": 896.0,
+      "b_box_w": 654,
+      "b_box_h": 185,
+      "b_center_y": 892.0,
+      "a_on_err": 0,
+      "b_on_err": 0,
+      "a_off_err": 0,
+      "b_off_err": 0,
+      "b_over_a_width": 1.009,
+      "b_over_a_height": 1.0
+    },
+    {
+      "text": "a whole step / in first position",
+      "expected_on": 878,
+      "expected_off": 954,
+      "a_on": 878,
+      "a_off": 954,
+      "b_on": 878,
+      "b_off": 954,
+      "a_box_w": 679,
+      "a_box_h": 201,
+      "a_center_y": 904.0,
+      "b_box_w": 682,
+      "b_box_h": 202,
+      "b_center_y": 900.5,
+      "a_on_err": 0,
+      "b_on_err": 0,
+      "a_off_err": 0,
+      "b_off_err": 0,
+      "b_over_a_width": 1.004,
+      "b_over_a_height": 1.005
+    },
+    {
+      "text": "shift one / whole step",
+      "expected_on": 1556,
+      "expected_off": 1613,
+      "a_on": 1556,
+      "a_off": 1613,
+      "b_on": 1556,
+      "b_off": 1613,
+      "a_box_w": 498,
+      "a_box_h": 201,
+      "a_center_y": 904.0,
+      "b_box_w": 502,
+      "b_box_h": 202,
+      "b_center_y": 900.5,
+      "a_on_err": 0,
+      "b_on_err": 0,
+      "a_off_err": 0,
+      "b_off_err": 0,
+      "b_over_a_width": 1.008,
+      "b_over_a_height": 1.005
+    },
+    {
+      "text": "third and fourth / move less",
+      "expected_on": 2140,
+      "expected_off": 2206,
+      "a_on": 2140,
+      "a_off": 2206,
+      "b_on": 2140,
+      "b_off": 2206,
+      "a_box_w": 711,
+      "a_box_h": 185,
+      "a_center_y": 896.0,
+      "b_box_w": 716,
+      "b_box_h": 185,
+      "b_center_y": 892.0,
+      "a_on_err": 0,
+      "b_on_err": 0,
+      "a_off_err": 0,
+      "b_off_err": 0,
+      "b_over_a_width": 1.007,
+      "b_over_a_height": 1.0
+    },
+    {
+      "text": "the same step, / higher up",
+      "expected_on": 985,
+      "expected_off": 1051,
+      "a_on": 985,
+      "a_off": 1051,
+      "b_on": 985,
+      "b_off": 1051,
+      "a_box_w": 674,
+      "a_box_h": 203,
+      "a_center_y": 905.0,
+      "b_box_w": 680,
+      "b_box_h": 203,
+      "b_center_y": 901.0,
+      "a_on_err": 0,
+      "b_on_err": 0,
+      "a_off_err": 0,
+      "b_off_err": 0,
+      "b_over_a_width": 1.009,
+      "b_over_a_height": 1.0
+    }
+  ],
+  "audio": [
+    {
+      "t0": 10.0,
+      "lag_ms": 0.0,
+      "corr": null,
+      "level_b_minus_a_db": null
+    },
+    {
+      "t0": 50.0,
+      "lag_ms": 0.0,
+      "corr": null,
+      "level_b_minus_a_db": null
+    },
+    {
+      "t0": 85.0,
+      "lag_ms": 0.0,
+      "corr": null,
+      "level_b_minus_a_db": null
+    }
+  ]
+}

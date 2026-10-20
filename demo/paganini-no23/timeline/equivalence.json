@@ -1,0 +1,41 @@
+{
+ "equal": true,
+ "header": {
+  "fps": {
+   "otio": 30,
+   "fcpxml": 30
+  },
+  "w": {
+   "otio": 1080,
+   "fcpxml": 1080
+  },
+  "h": {
+   "otio": 1920,
+   "fcpxml": 1920
+  },
+  "total_f": {
+   "otio": 2747,
+   "fcpxml": 2747
+  },
+  "spine_end_f": {
+   "otio": 2747,
+   "fcpxml": 2747
+  }
+ },
+ "events": {
+  "n_otio": 21,
+  "n_fcpxml": 21,
+  "only_in_otio": [],
+  "only_in_fcpxml": []
+ },
+ "audio": {
+  "n_otio": 7,
+  "n_fcpxml": 7,
+  "only_in_otio": [],
+  "only_in_fcpxml": []
+ },
+ "files": {
+  "otio": "/Users/Shared/REAL/demo/paganini-no23/timeline/paganini-no23.otio",
+  "fcpxml": "/Users/Shared/REAL/demo/paganini-no23/timeline/paganini-no23.fcpxml"
+ }
+}

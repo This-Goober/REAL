@@ -148,7 +148,7 @@
     "short_paper_fable_review_received": true,
     "native_editor_check_type": "The authors reported full v4 opening, all stills/captions and clean audio work; no new native XML comparison or inspector result.",
     "native_playback_confirmation_path": "demo/paganini-no23/native-playback-confirmation.json",
-    "native_playback_confirmation_sha256": "e847d9dfba3cd9da1210aec6defca873c50d23ca1b42cb8af465f0e463c87812",
+    "native_playback_confirmation_sha256": "69d50d3aa5130f88a1cc80e14753e6e251f09a552dd150e28ef25a322e77c9cc",
     "anonymous_candidate": true,
     "author_contributions_removed": true,
     "acknowledgments_removed": true,

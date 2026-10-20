@@ -1,0 +1,1050 @@
+{
+  "version": "1.0",
+  "reel": {
+    "title": "Paganini No. 23 tutorial (earlier edit)",
+    "aspect": "9:16",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "clock": {
+    "pause_policy": "blank",
+    "mode": "measured",
+    "rate_wps": 2.288,
+    "rate_source": "rates.json@2026-08-03 v3",
+    "total_s": 81.36666666666666,
+    "target_s": 81.36666666666666,
+    "note": "PROXY: Whisper word anchors; explicit excerpt windows preserve lip sync; inspect timing before use. Full performance opening prepended; all tutorial times shifted by 419 frames.",
+    "estimated_total_s": 45.542,
+    "intro_s": 13.966666666666667
+  },
+  "assets_root": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s",
+  "assets_root_local": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s",
+  "assets": [
+    {
+      "id": "A01",
+      "file": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-01.mov",
+      "kind": "video",
+      "dur_s": 7.93,
+      "w": 540,
+      "h": 960,
+      "fps": 30.0,
+      "rotation": 0,
+      "exists": true,
+      "catalog": {
+        "role": "Passage 1: hook",
+        "beat": "B1",
+        "shows": "Speaker faces camera holding a violin upright; mouth and head positions change across samples. Observation from 16 frames of the earlier proxy; current media uses the same source window. Not continuous inspection.",
+        "use": "B1; existing excerpt from the same recording; repetition is intentional.",
+        "binds_to": "video clip of the creator speaking to camera with the violin, from the recording",
+        "tags": [
+          "passage-1"
+        ],
+        "excerpt": ""
+      }
+    },
+    {
+      "id": "A02",
+      "file": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-02.mov",
+      "kind": "video",
+      "dur_s": 16.53,
+      "w": 540,
+      "h": 960,
+      "fps": 30.0,
+      "rotation": 0,
+      "exists": true,
+      "catalog": {
+        "role": "Passage 2: intervals shrink up the fingerboard",
+        "beat": "B2",
+        "shows": "Speaker brings violin under chin; left hand is visible along the fingerboard, then moves closer to the violin body. Observation from 16 frames of the earlier proxy; current media uses the same source window. Not continuous inspection.",
+        "use": "B2; existing excerpt from the same recording; repetition is intentional.",
+        "binds_to": "video clip of the close-up of the left hand showing a whole step in first position and then high on the fingerboard, from the recording",
+        "tags": [
+          "passage-2"
+        ],
+        "excerpt": ""
+      }
+    },
+    {
+      "id": "A03",
+      "file": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-03.mov",
+      "kind": "video",
+      "dur_s": 11.23,
+      "w": 540,
+      "h": 960,
+      "fps": 30.0,
+      "rotation": 0,
+      "exists": true,
+      "catalog": {
+        "role": "Passage 3: octaves are not that simple",
+        "beat": "B3",
+        "shows": "Violin remains under chin; the left fingers change spacing and the bow briefly lifts. Observation from 16 frames of the earlier proxy; current media uses the same source window. Not continuous inspection.",
+        "use": "B3; existing excerpt from the same recording; repetition is intentional.",
+        "binds_to": "video clip of the creator explaining with her hand on the fingerboard, from the recording",
+        "tags": [
+          "passage-3"
+        ],
+        "excerpt": ""
+      }
+    },
+    {
+      "id": "A04",
+      "file": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-04.mov",
+      "kind": "video",
+      "dur_s": 12.83,
+      "w": 540,
+      "h": 960,
+      "fps": 30.0,
+      "rotation": 0,
+      "exists": true,
+      "catalog": {
+        "role": "Passage 4: the first finger travels further",
+        "beat": "B4",
+        "shows": "Left hand and fingerboard occupy the lower half; fingers extend and change position across samples. Observation from 16 frames of the earlier proxy; current media uses the same source window. Not continuous inspection.",
+        "use": "B4; existing excerpt from the same recording; repetition is intentional.",
+        "binds_to": "video clip of the left hand shifting an octave up by a whole step, from the recording",
+        "tags": [
+          "passage-4"
+        ],
+        "excerpt": ""
+      }
+    },
+    {
+      "id": "A05",
+      "file": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-05.mov",
+      "kind": "video",
+      "dur_s": 19.03,
+      "w": 540,
+      "h": 960,
+      "fps": 30.0,
+      "rotation": 0,
+      "exists": true,
+      "catalog": {
+        "role": "Passage 5: payoff",
+        "beat": "B5",
+        "shows": "Left fingers change spacing; a free hand gestures near the middle; violin is lowered near the end. Observation from 16 frames of the earlier proxy; current media uses the same source window. Not continuous inspection.",
+        "use": "B5; existing excerpt from the same recording; repetition is intentional.",
+        "binds_to": "video clip of the final demonstration, the first finger leading the shift, from the recording",
+        "tags": [
+          "passage-5"
+        ],
+        "excerpt": ""
+      }
+    },
+    {
+      "id": "A06",
+      "file": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/take-01.wav",
+      "kind": "audio",
+      "dur_s": 7.9,
+      "w": null,
+      "h": null,
+      "fps": null,
+      "rotation": 0,
+      "exists": true,
+      "catalog": {
+        "role": "Narration take 1",
+        "beat": "B1",
+        "shows": "So I have a community performance today and I'm going to be performing Paganini's 23rd Caprice for solo violin.",
+        "use": "B1; existing excerpt from the same recording; repetition is intentional.",
+        "binds_to": "So I have a community performance today and I'm going to be performing Paganini's 23rd Caprice for solo violin.",
+        "tags": [
+          "take-1",
+          "narration"
+        ],
+        "excerpt": ""
+      }
+    },
+    {
+      "id": "A07",
+      "file": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/take-02.wav",
+      "kind": "audio",
+      "dur_s": 16.5,
+      "w": null,
+      "h": null,
+      "fps": null,
+      "rotation": 0,
+      "exists": true,
+      "catalog": {
+        "role": "Narration take 2",
+        "beat": "B2",
+        "shows": "So we all know that for example a whole step down here in first position is obviously larger than a whole step up here. So as you go up the fingerboard the intervals get smaller.",
+        "use": "B2; existing excerpt from the same recording; repetition is intentional.",
+        "binds_to": "So we all know that for example a whole step down here in first position is obviously larger than a whole step up here. So as you go up the fingerboard the intervals get smaller.",
+        "tags": [
+          "take-2",
+          "narration"
+        ],
+        "excerpt": ""
+      }
+    },
+    {
+      "id": "A08",
+      "file": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/take-03.wav",
+      "kind": "audio",
+      "dur_s": 11.2,
+      "w": null,
+      "h": null,
+      "fps": null,
+      "rotation": 0,
+      "exists": true,
+      "catalog": {
+        "role": "Narration take 3",
+        "beat": "B3",
+        "shows": "Now you obviously would think why didn't you apply this to octaves? But the thing is when you're tuning octaves it's not as simple as just making your finger smaller.",
+        "use": "B3; existing excerpt from the same recording; repetition is intentional.",
+        "binds_to": "Now you obviously would think why didn't you apply this to octaves? But the thing is when you're tuning octaves it's not as simple as just making your finger smaller.",
+        "tags": [
+          "take-3",
+          "narration"
+        ],
+        "excerpt": ""
+      }
+    },
+    {
+      "id": "A09",
+      "file": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/take-04.wav",
+      "kind": "audio",
+      "dur_s": 12.8,
+      "w": null,
+      "h": null,
+      "fps": null,
+      "rotation": 0,
+      "exists": true,
+      "catalog": {
+        "role": "Narration take 4",
+        "beat": "B4",
+        "shows": "the interval that we go from just shifting maybe one whole step in an octave our first finger is actually traveling more distance than our fourth finger in this case.",
+        "use": "B4; existing excerpt from the same recording; repetition is intentional.",
+        "binds_to": "the interval that we go from just shifting maybe one whole step in an octave our first finger is actually traveling more distance than our fourth finger in this case.",
+        "tags": [
+          "take-4",
+          "narration"
+        ],
+        "excerpt": ""
+      }
+    },
+    {
+      "id": "A10",
+      "file": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/take-05.wav",
+      "kind": "audio",
+      "dur_s": 19.0,
+      "w": null,
+      "h": null,
+      "fps": null,
+      "rotation": 0,
+      "exists": true,
+      "catalog": {
+        "role": "Narration take 5",
+        "beat": "B5",
+        "shows": "I'm moving more of my first finger along and my third and fourth finger are not moving as far so they just consequentially get closer to my first finger but actually my first finger is leading majority of the movement.",
+        "use": "B5; existing excerpt from the same recording; repetition is intentional.",
+        "binds_to": "I'm moving more of my first finger along and my third and fourth finger are not moving as far so they just consequentially get closer to my first finger but actually my first finger is leading majority of the movement.",
+        "tags": [
+          "take-5",
+          "narration"
+        ],
+        "excerpt": ""
+      }
+    },
+    {
+      "id": "A11",
+      "file": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/stills/P02-intervals-shrink.png",
+      "kind": "image",
+      "dur_s": 0.0,
+      "w": 1080,
+      "h": 1920,
+      "fps": 25.0,
+      "rotation": 0,
+      "exists": true,
+      "catalog": {
+        "role": "Same whole-step interval with a wider first-position span and a narrower high-position span.",
+        "beat": "B2",
+        "shows": "Same whole-step interval with a wider first-position span and a narrower high-position span.",
+        "use": "Upper-frame transparent overlay; follows the existing reviewed anchor.",
+        "binds_to": "show image of a fingerboard diagram with the same whole step marked low and high, the high one visibly narrower, flat vector style, one accent colour",
+        "tags": [
+          "intervals-diagram"
+        ],
+        "excerpt": ""
+      }
+    },
+    {
+      "id": "A12",
+      "file": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/stills/P03-first-finger-travels.png",
+      "kind": "image",
+      "dur_s": 0.0,
+      "w": 1080,
+      "h": 1920,
+      "fps": 25.0,
+      "rotation": 0,
+      "exists": true,
+      "catalog": {
+        "role": "An octave shape on the D and A strings before and after an upward whole-step shift; first-finger travel is longer than fourth-finger travel.",
+        "beat": "B4",
+        "shows": "An octave shape on the D and A strings before and after an upward whole-step shift; first-finger travel is longer than fourth-finger travel.",
+        "use": "Upper-frame transparent overlay; follows the existing reviewed anchor.",
+        "binds_to": "show image of a diagram of an octave shape shifted up one whole step, the first finger's travel drawn visibly longer than the fourth finger's, same style as the fingerboard diagram",
+        "tags": [
+          "octave-diagram"
+        ],
+        "excerpt": ""
+      }
+    },
+    {
+      "id": "A13",
+      "file": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/stills/P01-score-excerpt.png",
+      "kind": "image",
+      "dur_s": 0.0,
+      "w": 1080,
+      "h": 1920,
+      "fps": 25.0,
+      "rotation": 0,
+      "exists": true,
+      "catalog": {
+        "role": "Existing crop from the supplied annotated Paganini Caprice No. 23 score, labelled Minore, bars 17–20. Provisional excerpt selection for review.",
+        "beat": "B1",
+        "shows": "Existing crop from the supplied annotated Paganini Caprice No. 23 score, labelled Minore, bars 17–20. Provisional excerpt selection for review.",
+        "use": "Upper-frame transparent overlay; follows the existing reviewed anchor.",
+        "binds_to": "show image of the fingered-octave passage from Paganini's Caprice No. 23, a few bars cropped from a public-domain score, as an inset in the lower half",
+        "tags": [
+          "score-excerpt"
+        ],
+        "excerpt": ""
+      }
+    },
+    {
+      "id": "A14",
+      "file": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-intro-performance-30fps.mov",
+      "kind": "video",
+      "dur_s": 13.966666666666667,
+      "w": 334,
+      "h": 584,
+      "fps": 30,
+      "rotation": 0,
+      "exists": true,
+      "catalog": {
+        "role": "Opening performance, supplied by creator",
+        "beat": "B0",
+        "shows": "Violin performance; orientation checked in a sampled frame.",
+        "use": "Full supplied opening, original audio, before the tutorial.",
+        "original_file": "~/Downloads/paganini_no23_performance.mov"
+      }
+    }
+  ],
+  "beats": [
+    {
+      "id": "B0",
+      "name": "opening performance",
+      "t0": 0,
+      "t1": 13.966666666666667,
+      "w0": null,
+      "w1": null,
+      "narration": "",
+      "wordless": true,
+      "source": {
+        "cell": "C0",
+        "component": "C0.performance"
+      },
+      "note": "Creator-requested full performance intro. Fixed duration, no speech anchor.",
+      "flags": [],
+      "held_to": null,
+      "layers": [
+        {
+          "id": "B0.L1",
+          "z": 0,
+          "kind": "video",
+          "asset": "A14",
+          "t0": 0,
+          "t1": 13.966666666666667,
+          "src_in": 0,
+          "src_out": 13.966666666666667,
+          "fit": "fit",
+          "base": true,
+          "chosen_by": "creator",
+          "confidence": "high",
+          "anchor_word": null,
+          "anchor_text": "",
+          "offset_ms": 0,
+          "why": "Full performance clip requested before the existing tutorial."
+        }
+      ],
+      "audio": [
+        {
+          "id": "B0.A1",
+          "kind": "source",
+          "asset": "A14",
+          "t0": 0,
+          "t1": 13.966666666666667,
+          "src_in": 0,
+          "src_out": 13.966666666666667,
+          "gain_db": 0,
+          "chosen_by": "creator",
+          "confidence": "high",
+          "why": "Original performance audio, heard once."
+        }
+      ]
+    },
+    {
+      "id": "B1",
+      "name": "hook",
+      "t0": 13.966666666666667,
+      "t1": 21.866666666666667,
+      "w0": 0,
+      "w1": 18,
+      "narration": "So I have a community performance today and I'm going to be performing Paganini's 23rd Caprice for solo violin.",
+      "source": {
+        "cell": "C1",
+        "component": "C1.ef4"
+      },
+      "layers": [
+        {
+          "id": "B1.L1",
+          "z": 0,
+          "kind": "video",
+          "asset": "A01",
+          "anchor_word": 0,
+          "anchor_text": "So",
+          "offset_ms": 0,
+          "t0": 13.966666666666667,
+          "t1": 21.866666666666667,
+          "fit": "fill",
+          "chosen_by": "claude",
+          "confidence": "high",
+          "candidates": [
+            "A03",
+            "A05",
+            "A04"
+          ],
+          "candidates_why": {
+            "A03": "binds_to shares creator, recording (+0.9); shows shares violin (+0.4)",
+            "A05": "binds_to shares recording (+0.1); shows shares violin (+0.4)",
+            "A04": "binds_to shares recording (+0.1); use shares recording (+0.1)"
+          },
+          "why": "#passage-1 matches the asset's tags (+6.0); binds_to shares camera, creator, recording, speaking, violin (+3.4); shows shares camera, violin (+1.4); use shares recording (+0.1); video component / video asset (+2.0)",
+          "source_component": "C1.88a",
+          "source_text": "video clip of the creator speaking to camera with the violin, from the recording",
+          "placement": "lead",
+          "dur_source": "to-next",
+          "essential": true,
+          "unsure": false,
+          "base": true,
+          "snapped": false
+        },
+        {
+          "id": "B1.L2",
+          "z": 1,
+          "kind": "image",
+          "asset": "A13",
+          "anchor_word": 12,
+          "anchor_text": "performing",
+          "offset_ms": 0,
+          "t0": 17.510666666666665,
+          "t1": 21.510666666666665,
+          "fit": "fit",
+          "chosen_by": "creator",
+          "confidence": "high",
+          "why": "Existing provisional score crop inserted for review; prior word anchor and timing preserved.",
+          "source_component": "C1.f8b",
+          "source_text": "show image of the fingered-octave passage from Paganini's Caprice No. 23, a few bars cropped from a public-domain score, as an inset in the lower half",
+          "placement": "inline",
+          "dur_source": "explicit",
+          "essential": false,
+          "unsure": false,
+          "base": false,
+          "snapped": false,
+          "dur_s": 4.0
+        },
+        {
+          "id": "B1.L3",
+          "z": 2,
+          "kind": "text",
+          "anchor_word": 15,
+          "anchor_text": "Caprice",
+          "offset_ms": 0,
+          "t0": 19.60666666666667,
+          "t1": 21.486666666666668,
+          "fit": "fit",
+          "chosen_by": "creator",
+          "confidence": "high",
+          "why": "the creator chose this",
+          "source_component": "C1.707",
+          "source_text": "caption: fingered octaves, Paganini 23",
+          "placement": "inline",
+          "dur_source": "text-model",
+          "essential": false,
+          "unsure": false,
+          "base": false,
+          "snapped": false,
+          "content": "fingered octaves,\nPaganini 23",
+          "style": "caption",
+          "style_by": "creator",
+          "font": "Helvetica Neue",
+          "font_face": "Bold",
+          "font_size": 55,
+          "position": [
+            0,
+            90
+          ],
+          "shadow": false,
+          "face": false,
+          "glow": {
+            "color": [
+              1,
+              0.8784313725,
+              0.262745098,
+              1
+            ],
+            "opacity": 1,
+            "blur": 1,
+            "radius": 0
+          }
+        }
+      ],
+      "audio": [
+        {
+          "id": "B1.A1",
+          "kind": "narration",
+          "asset": "A06",
+          "t0": 13.966666666666667,
+          "t1": 21.866666666666667,
+          "anchor_word": 0,
+          "anchor_text": "So",
+          "offset_ms": 0,
+          "source_component": "C1.ef4",
+          "text": "So I have a community performance today and I'm going to be performing Paganini's 23rd Caprice for solo violin.",
+          "chosen_by": "claude",
+          "confidence": "low",
+          "candidates": [
+            "A06",
+            "A10",
+            "A07"
+          ],
+          "why": "voice take — which take covers this line has to be confirmed by ear; #take-1 matches the asset's tags (+6.0); binds_to shares 23rd, caprice, community, going, i'm (+4.0)"
+        }
+      ],
+      "held_to": null,
+      "note": "Source: the recording from 0.2 s to 8.1 s (7.8 s). Keep her on camera; the score appears as an inset under her.",
+      "flags": []
+    },
+    {
+      "id": "B2",
+      "name": "intervals shrink up the fingerboard",
+      "t0": 21.866666666666667,
+      "t1": 38.36666666666667,
+      "w0": 19,
+      "w1": 53,
+      "narration": "So we all know that for example a whole step down here in first position is obviously larger than a whole step up here. So as you go up the fingerboard the intervals get smaller.",
+      "source": {
+        "cell": "C2",
+        "component": "C2.bf0"
+      },
+      "layers": [
+        {
+          "id": "B2.L1",
+          "z": 0,
+          "kind": "video",
+          "asset": "A02",
+          "anchor_word": 19,
+          "anchor_text": "So",
+          "offset_ms": 0,
+          "t0": 21.866666666666667,
+          "t1": 38.36666666666667,
+          "fit": "fill",
+          "chosen_by": "claude",
+          "confidence": "high",
+          "candidates": [
+            "A04",
+            "A03",
+            "A05"
+          ],
+          "candidates_why": {
+            "A04": "binds_to shares hand, left, recording, step, whole (+1.9); role shares first (+0.3)",
+            "A03": "binds_to shares fingerboard, hand, recording (+1.0); shows shares left (+0.5)",
+            "A05": "binds_to shares first, recording (+0.4); shows shares hand, left (+1.0)"
+          },
+          "why": "#passage-2 matches the asset's tags (+6.0); binds_to shares close-up, fingerboard, first, hand, high (+4.0); role shares fingerboard (+0.3); shows shares fingerboard, hand, left (+1.4); use shares recording (+0.1); video component / video asset (+2.0)",
+          "source_component": "C2.a01",
+          "source_text": "video clip of the close-up of the left hand showing a whole step in first position and then high on the fingerboard, from the recording",
+          "placement": "lead",
+          "dur_source": "to-next",
+          "essential": true,
+          "unsure": false,
+          "base": true,
+          "snapped": false
+        },
+        {
+          "id": "B2.L2",
+          "z": 1,
+          "kind": "image",
+          "asset": "A11",
+          "anchor_word": 36,
+          "anchor_text": "larger",
+          "offset_ms": 0,
+          "t0": 30.95066666666667,
+          "t1": 34.95066666666667,
+          "fit": "fit",
+          "chosen_by": "creator",
+          "confidence": "high",
+          "why": "Requested finished diagram bound by explicit tag; prior reviewed word anchor and timing preserved.",
+          "source_component": "C2.643",
+          "source_text": "show image of a fingerboard diagram with the same whole step marked low and high, the high one visibly narrower, flat vector style, one accent colour",
+          "placement": "inline",
+          "dur_source": "explicit",
+          "essential": false,
+          "unsure": false,
+          "base": false,
+          "snapped": false,
+          "dur_s": 4.0
+        },
+        {
+          "id": "B2.L3",
+          "z": 2,
+          "kind": "text",
+          "anchor_word": 51,
+          "anchor_text": "intervals",
+          "offset_ms": 0,
+          "t0": 37.202666666666666,
+          "t1": 38.36666666666667,
+          "fit": "fit",
+          "chosen_by": "creator",
+          "confidence": "high",
+          "why": "the creator chose this",
+          "source_component": "C2.85e",
+          "source_text": "caption: same interval, smaller space",
+          "placement": "inline",
+          "dur_source": "text-model",
+          "essential": false,
+          "unsure": false,
+          "base": false,
+          "snapped": false,
+          "content": "same interval,\nsmaller space",
+          "style": "caption",
+          "style_by": "creator",
+          "font": "Helvetica Neue",
+          "font_face": "Bold",
+          "font_size": 55,
+          "position": [
+            0,
+            90
+          ],
+          "shadow": false,
+          "face": false,
+          "glow": {
+            "color": [
+              1,
+              0.8784313725,
+              0.262745098,
+              1
+            ],
+            "opacity": 1,
+            "blur": 1,
+            "radius": 0
+          }
+        }
+      ],
+      "audio": [
+        {
+          "id": "B2.A1",
+          "kind": "narration",
+          "asset": "A07",
+          "t0": 21.866666666666667,
+          "t1": 38.36666666666667,
+          "anchor_word": 19,
+          "anchor_text": "So",
+          "offset_ms": 0,
+          "source_component": "C2.bf0",
+          "text": "So we all know that for example a whole step down here in first position is obviously larger than a whole step up here. So as you go up the fingerboard the intervals get smaller.",
+          "chosen_by": "claude",
+          "confidence": "low",
+          "candidates": [
+            "A07",
+            "A08",
+            "A10"
+          ],
+          "why": "voice take — which take covers this line has to be confirmed by ear; #take-2 matches the asset's tags (+6.0); binds_to shares all, down, example, fingerboard, first (+4.0)"
+        }
+      ],
+      "held_to": null,
+      "note": "Source: the recording from 29.0 s to 45.5 s (16.6 s). She demonstrates a whole step low, then high. The diagram overlays the second sentence.",
+      "flags": []
+    },
+    {
+      "id": "B3",
+      "name": "octaves are not that simple",
+      "t0": 38.36666666666667,
+      "t1": 49.56666666666666,
+      "w0": 54,
+      "w1": 83,
+      "narration": "Now you obviously would think why didn't you apply this to octaves? But the thing is when you're tuning octaves it's not as simple as just making your finger smaller.",
+      "source": {
+        "cell": "C3",
+        "component": "C3.afc"
+      },
+      "layers": [
+        {
+          "id": "B3.L1",
+          "z": 0,
+          "kind": "video",
+          "asset": "A03",
+          "anchor_word": 54,
+          "anchor_text": "Now",
+          "offset_ms": 0,
+          "t0": 38.36666666666667,
+          "t1": 49.56666666666666,
+          "fit": "fill",
+          "chosen_by": "claude",
+          "confidence": "high",
+          "candidates": [
+            "A02"
+          ],
+          "candidates_why": {
+            "A02": "binds_to shares fingerboard, hand, recording (+1.0); role shares fingerboard (+0.3)"
+          },
+          "why": "#passage-3 matches the asset's tags (+6.0); binds_to shares creator, explaining, fingerboard, hand, her (+3.8); use shares recording (+0.1); video component / video asset (+2.0)",
+          "source_component": "C3.4f6",
+          "source_text": "video clip of the creator explaining with her hand on the fingerboard, from the recording",
+          "placement": "lead",
+          "dur_source": "to-next",
+          "essential": false,
+          "unsure": false,
+          "base": true,
+          "snapped": false
+        },
+        {
+          "id": "B3.L2",
+          "z": 1,
+          "kind": "text",
+          "anchor_word": 77,
+          "anchor_text": "simple",
+          "offset_ms": 0,
+          "t0": 47.19466666666667,
+          "t1": 49.07466666666667,
+          "fit": "fit",
+          "chosen_by": "creator",
+          "confidence": "high",
+          "why": "the creator chose this",
+          "source_component": "C3.f35",
+          "source_text": "caption: octaves: don't just squeeze",
+          "placement": "inline",
+          "dur_source": "text-model",
+          "essential": false,
+          "unsure": false,
+          "base": false,
+          "snapped": false,
+          "content": "octaves:\ndon't just squeeze",
+          "style": "caption",
+          "style_by": "creator",
+          "font": "Helvetica Neue",
+          "font_face": "Bold",
+          "font_size": 55,
+          "position": [
+            0,
+            90
+          ],
+          "shadow": false,
+          "face": false,
+          "glow": {
+            "color": [
+              1,
+              0.8784313725,
+              0.262745098,
+              1
+            ],
+            "opacity": 1,
+            "blur": 1,
+            "radius": 0
+          }
+        }
+      ],
+      "audio": [
+        {
+          "id": "B3.A1",
+          "kind": "narration",
+          "asset": "A08",
+          "t0": 38.36666666666667,
+          "t1": 49.56666666666666,
+          "anchor_word": 54,
+          "anchor_text": "Now",
+          "offset_ms": 0,
+          "source_component": "C3.afc",
+          "text": "Now you obviously would think why didn't you apply this to octaves? But the thing is when you're tuning octaves it's not as simple as just making your finger smaller.",
+          "chosen_by": "claude",
+          "confidence": "low",
+          "candidates": [
+            "A08",
+            "A07",
+            "A09"
+          ],
+          "why": "voice take — which take covers this line has to be confirmed by ear; #take-3 matches the asset's tags (+6.0); binds_to shares apply, didn't, finger, making, now (+4.0)"
+        }
+      ],
+      "held_to": null,
+      "note": "Source: the recording from 61.2 s to 72.4 s (11.2 s). The pivot of the piece. Stay on her.",
+      "flags": []
+    },
+    {
+      "id": "B4",
+      "name": "the first finger travels further",
+      "t0": 49.56666666666666,
+      "t1": 62.36666666666666,
+      "w0": 84,
+      "w1": 113,
+      "narration": "the interval that we go from just shifting maybe one whole step in an octave our first finger is actually traveling more distance than our fourth finger in this case.",
+      "source": {
+        "cell": "C4",
+        "component": "C4.bdb"
+      },
+      "layers": [
+        {
+          "id": "B4.L1",
+          "z": 0,
+          "kind": "video",
+          "asset": "A04",
+          "anchor_word": 84,
+          "anchor_text": "the",
+          "offset_ms": 0,
+          "t0": 49.56666666666666,
+          "t1": 62.36666666666666,
+          "fit": "fill",
+          "chosen_by": "claude",
+          "confidence": "high",
+          "candidates": [
+            "A03",
+            "A05",
+            "A02"
+          ],
+          "candidates_why": {
+            "A03": "binds_to shares hand, recording (+0.6); shows shares left (+0.5)",
+            "A05": "binds_to shares recording (+0.1); shows shares hand, left (+1.0)",
+            "A02": "binds_to shares hand, left, recording, step, whole (+1.9); shows shares hand, left (+1.0)"
+          },
+          "why": "#passage-4 matches the asset's tags (+6.0); binds_to shares hand, left, octave, recording, shifting (+3.3); shows shares hand, left (+1.0); use shares recording (+0.1); video component / video asset (+2.0)",
+          "source_component": "C4.bb4",
+          "source_text": "video clip of the left hand shifting an octave up by a whole step, from the recording",
+          "placement": "lead",
+          "dur_source": "to-next",
+          "essential": true,
+          "unsure": false,
+          "base": true,
+          "snapped": false
+        },
+        {
+          "id": "B4.L2",
+          "z": 1,
+          "kind": "image",
+          "asset": "A12",
+          "anchor_word": 91,
+          "anchor_text": "shifting",
+          "offset_ms": 0,
+          "t0": 51.882666666666665,
+          "t1": 55.882666666666665,
+          "fit": "fit",
+          "chosen_by": "creator",
+          "confidence": "high",
+          "why": "Requested finished diagram bound by explicit tag; prior reviewed word anchor and timing preserved.",
+          "source_component": "C4.aef",
+          "source_text": "show image of a diagram of an octave shape shifted up one whole step, the first finger's travel drawn visibly longer than the fourth finger's, same style as the fingerboard diagram",
+          "placement": "inline",
+          "dur_source": "explicit",
+          "essential": false,
+          "unsure": false,
+          "base": false,
+          "snapped": false,
+          "dur_s": 4.0
+        },
+        {
+          "id": "B4.L3",
+          "z": 2,
+          "kind": "text",
+          "anchor_word": 104,
+          "anchor_text": "traveling",
+          "offset_ms": 0,
+          "t0": 58.63666666666667,
+          "t1": 60.83666666666667,
+          "fit": "fit",
+          "chosen_by": "creator",
+          "confidence": "high",
+          "why": "the creator chose this",
+          "source_component": "C4.ff4",
+          "source_text": "caption: the first finger travels further",
+          "placement": "inline",
+          "dur_source": "text-model",
+          "essential": false,
+          "unsure": false,
+          "base": false,
+          "snapped": false,
+          "content": "the first finger\ntravels further",
+          "style": "caption",
+          "style_by": "creator",
+          "font": "Helvetica Neue",
+          "font_face": "Bold",
+          "font_size": 55,
+          "position": [
+            0,
+            90
+          ],
+          "shadow": false,
+          "face": false,
+          "glow": {
+            "color": [
+              1,
+              0.8784313725,
+              0.262745098,
+              1
+            ],
+            "opacity": 1,
+            "blur": 1,
+            "radius": 0
+          }
+        }
+      ],
+      "audio": [
+        {
+          "id": "B4.A1",
+          "kind": "narration",
+          "asset": "A09",
+          "t0": 49.56666666666666,
+          "t1": 62.36666666666666,
+          "anchor_word": 84,
+          "anchor_text": "the",
+          "offset_ms": 0,
+          "source_component": "C4.bdb",
+          "text": "the interval that we go from just shifting maybe one whole step in an octave our first finger is actually traveling more distance than our fourth finger in this case.",
+          "chosen_by": "claude",
+          "confidence": "low",
+          "candidates": [
+            "A09",
+            "A10",
+            "A07"
+          ],
+          "why": "voice take — which take covers this line has to be confirmed by ear; #take-4 matches the asset's tags (+6.0); binds_to shares actually, case, distance, finger, first (+4.0)"
+        }
+      ],
+      "held_to": null,
+      "note": "Source: the recording from 150.4 s to 163.2 s (12.8 s). The diagram carries this beat; her hands stay visible behind it.",
+      "flags": []
+    },
+    {
+      "id": "B5",
+      "name": "payoff",
+      "t0": 62.36666666666666,
+      "t1": 81.36666666666666,
+      "w0": 114,
+      "w1": 153,
+      "narration": "I'm moving more of my first finger along and my third and fourth finger are not moving as far so they just consequentially get closer to my first finger but actually my first finger is leading majority of the movement.",
+      "source": {
+        "cell": "C5",
+        "component": "C5.372"
+      },
+      "layers": [
+        {
+          "id": "B5.L1",
+          "z": 0,
+          "kind": "video",
+          "asset": "A05",
+          "anchor_word": 114,
+          "anchor_text": "I'm",
+          "offset_ms": 0,
+          "t0": 62.36666666666666,
+          "t1": 81.36666666666666,
+          "fit": "fill",
+          "chosen_by": "claude",
+          "confidence": "high",
+          "candidates": [
+            "A03"
+          ],
+          "candidates_why": {
+            "A03": "binds_to shares recording (+0.1); use shares recording (+0.1)"
+          },
+          "why": "#passage-5 matches the asset's tags (+6.0); binds_to shares demonstration, final, finger, first, leading (+4.0); use shares recording (+0.1); video component / video asset (+2.0)",
+          "source_component": "C5.bed",
+          "source_text": "video clip of the final demonstration, the first finger leading the shift, from the recording",
+          "placement": "lead",
+          "dur_source": "to-next",
+          "essential": true,
+          "unsure": false,
+          "base": true,
+          "snapped": false
+        },
+        {
+          "id": "B5.L2",
+          "z": 1,
+          "kind": "text",
+          "anchor_word": 149,
+          "anchor_text": "leading",
+          "offset_ms": 0,
+          "t0": 79.12066666666666,
+          "t1": 81.32066666666667,
+          "fit": "fit",
+          "chosen_by": "creator",
+          "confidence": "high",
+          "why": "the creator chose this",
+          "source_component": "C5.cfd",
+          "source_text": "caption: let the first finger lead",
+          "placement": "inline",
+          "dur_source": "text-model",
+          "essential": false,
+          "unsure": false,
+          "base": false,
+          "snapped": false,
+          "content": "let the first\nfinger lead",
+          "style": "caption",
+          "style_by": "creator",
+          "font": "Helvetica Neue",
+          "font_face": "Bold",
+          "font_size": 55,
+          "position": [
+            0,
+            90
+          ],
+          "shadow": false,
+          "face": false,
+          "glow": {
+            "color": [
+              1,
+              0.8784313725,
+              0.262745098,
+              1
+            ],
+            "opacity": 1,
+            "blur": 1,
+            "radius": 0
+          }
+        }
+      ],
+      "audio": [
+        {
+          "id": "B5.A1",
+          "kind": "narration",
+          "asset": "A10",
+          "t0": 62.36666666666666,
+          "t1": 81.36666666666666,
+          "anchor_word": 114,
+          "anchor_text": "I'm",
+          "offset_ms": 0,
+          "source_component": "C5.372",
+          "text": "I'm moving more of my first finger along and my third and fourth finger are not moving as far so they just consequentially get closer to my first finger but actually my first finger is leading majority of the movement.",
+          "chosen_by": "claude",
+          "confidence": "low",
+          "candidates": [
+            "A10",
+            "A09",
+            "A07"
+          ],
+          "why": "voice take — which take covers this line has to be confirmed by ear; #take-5 matches the asset's tags (+6.0); binds_to shares actually, along, closer, consequentially, far (+4.0)"
+        }
+      ],
+      "held_to": null,
+      "note": "Source: the recording from 201.3 s to 220.3 s (19.0 s). Hold on her hands after the last word.",
+      "flags": []
+    }
+  ],
+  "connected": [],
+  "alternates": [],
+  "open": {
+    "unbound_layers": [],
+    "unused_assets": [],
+    "unresolved_specs": [],
+    "questions": []
+  }
+}

@@ -1,10 +1,10 @@
 {
   "project": "Paganini 23 — INTRO + GLOW v4",
-  "reported_by": "the authors",
+  "reported_by": "The creator",
   "recorded_at": "2026-10-18T19:16:27-04:00",
   "question": "Has the full “Paganini 23 — INTRO + GLOW v4” project been checked in Final Cut for the opening, all stills/captions and clean audio? We need this observation because XML checks alone cannot confirm playback.",
   "answer": "Checked: everything works",
-  "source_xml_path": "local-project-folder/v4/Paganini-23-INTRO-GLOW-v4.fcpxml",
+  "source_xml_path": "chat/projects/paganini-23-octaves-60s/v4/Paganini-23-INTRO-GLOW-v4.fcpxml",
   "source_xml_sha256": "4818312007c9c27d478bc6ca792c0d33767e44fdfcfda5ea3666fe2a157384c3",
   "report_type": "User-reported native playback observation",
   "reported_checks": {
@@ -15,5 +15,5 @@
   },
   "native_export": null,
   "native_editor_version": null,
-  "scope": "The authors report that the full named v4 opening, stills/captions and audio work in Final Cut. The source hash identifies the supplied v4, not a compared native export. No new timing measurement, inspector-state inspection, native XML comparison or participant study is implied."
+  "scope": "The creator reports that the full named v4 opening, stills/captions and audio work in Final Cut. The source hash identifies the supplied v4, not a compared native export. No new timing measurement, inspector-state inspection, native XML comparison or participant study is implied."
 }
