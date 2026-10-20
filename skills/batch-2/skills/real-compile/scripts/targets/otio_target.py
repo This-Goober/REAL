@@ -19,6 +19,12 @@ Mapping, chosen to mirror the FCPXML target element for element:
                                     so the words, font, size, colour, alignment
                                     and pixel position travel as generator
                                     parameters and the timing is a real clip
+                                    (titles="native", the default). With
+                                    titles="raster" the same text is drawn to a
+                                    transparent PNG at the sequence size and the
+                                    clip references that file, so an editor with
+                                    no title importer (DaVinci Resolve) shows it;
+                                    the parameters stay in metadata["REAL"]["title"]
     note, markers                -> clip metadata["REAL"]["note"], OTIO Markers
     transform, opacity, fades,
     volume, ducking, transitions -> metadata["REAL"] (NOT interpreted by OTIO
@@ -49,8 +55,10 @@ import fcpxml  # noqa: E402
 from real_core import FRAME_DURATIONS  # noqa: E402
 
 from . import BuildResult, ValidateResult  # noqa: E402
+from . import title_raster  # noqa: E402
 
 GENERATOR_KIND = "REAL.title"
+TITLE_MODES = ("native", "raster")
 META = "REAL"
 # Story fields OTIO cannot express. They are copied into metadata so nothing is
 # lost, and the build says once that the importing editor will not apply them.
@@ -59,7 +67,8 @@ PASSTHROUGH = ("transform", "kenburns", "opacity", "fade_in", "fade_out",
                "transition_out", "video_role")
 TEXT_FIELDS = ("font", "font_size", "font_face", "color", "align", "position",
                "stroke_color", "stroke_width", "shadow", "shadow_color",
-               "shadow_offset", "shadow_blur", "line_spacing", "face", "style")
+               "shadow_offset", "shadow_blur", "line_spacing", "face", "style",
+               "glow", "wrap_width")
 TEXT_DEFAULTS = {"font": "Helvetica Neue", "font_size": 40, "font_face": "Bold",
                  "color": [1, 1, 1, 1], "align": "center"}
 
@@ -86,7 +95,16 @@ class OTIOTarget:
 
     # ---- build -----------------------------------------------------------
 
-    def build(self, story, out_path, base_dir=".", probe=True):
+    def build(self, story, out_path, base_dir=".", probe=True,
+              titles="native", titles_dir=None):
+        if titles not in TITLE_MODES:
+            raise OTIOBuildError("titles must be one of %s, not %r"
+                                 % ("/".join(TITLE_MODES), titles))
+        self._titles = titles
+        # rendered captions sit next to the timeline: <out>-titles/<slug>-<hash>.png
+        self._titles_dir = (os.path.abspath(titles_dir) if titles_dir else
+                            os.path.splitext(os.path.abspath(out_path))[0] + "-titles")
+        self._rendered = []
         S = fcpxml.Story(story, base_dir=base_dir, do_probe=probe)
         F = S.clock
         rate = rate_of(F.key)
@@ -202,12 +220,23 @@ class OTIOTarget:
                       "A1": "narration", "A2": "source (a clip's own sound)",
                       "A3": "bed", "A4": "sfx"},
             "parity": story.get("_parity"),
-            "text": "text overlays are %s generator clips: words, timing and "
-                    "requested styling are in the parameters; the importing "
-                    "editor shows them as generators, not as native titles"
-                    % GENERATOR_KIND,
+            "titles": titles,
+            "text": (("text overlays are %s generator clips: words, timing and "
+                      "requested styling are in the parameters; the importing "
+                      "editor shows them as generators, not as native titles"
+                      % GENERATOR_KIND) if titles == "native" else
+                     ("text overlays are rendered to transparent PNG stills "
+                      "(metadata.REAL.kind == 'title'); the requested styling is "
+                      "kept in metadata.REAL.title and the files live in %s"
+                      % self._titles_dir)),
         })
         otio.adapters.write_to_file(tl, out_path)
+        if titles == "raster" and titles_dir is None and os.path.isdir(self._titles_dir):
+            # the default folder is ours: drop stills left by earlier builds
+            keep = {os.path.basename(p) for p in self._rendered}
+            for f in os.listdir(self._titles_dir):
+                if f.endswith(".png") and f not in keep:
+                    os.remove(os.path.join(self._titles_dir, f))
 
         warnings = list(S.warnings) + warnings
         if tally:
@@ -223,6 +252,12 @@ class OTIOTarget:
                 "%d text overlay(s) exported as %s generator clips — timing and "
                 "words import; native title styling has to be re-applied"
                 % (n_text, GENERATOR_KIND))
+        if self._rendered:
+            warnings.append(
+                "%d text overlay(s) rendered to %d PNG still(s) under %s — they import "
+                "as pictures with the requested look, not as editable titles; the "
+                "styling is kept in metadata['REAL']['title']"
+                % (len(self._rendered), len(set(self._rendered)), self._titles_dir))
         self.total_frames = total_f
         summary = ("%dx%d, %.2fs, %d frames @ %s fps, %d tracks"
                    % (S.width, S.height, F.seconds(total_f), total_f, F.key, len(tracks)))
@@ -262,9 +297,19 @@ class OTIOTarget:
                 if spec.get(k) is not None:
                     params[k] = _plain(spec[k])
             params["text"] = text
-            ref = otio.schema.GeneratorReference(
-                name=text[:40] or "Title", generator_kind=GENERATOR_KIND,
-                available_range=TR(0, dur_f), parameters=params)
+            if getattr(self, "_titles", "native") == "raster" and text.strip():
+                png = title_raster.render(params, S.width, S.height, self._titles_dir,
+                                          warnings=warnings)
+                self._rendered.append(png)
+                ref = otio.schema.ExternalReference(
+                    target_url=title_raster.file_url(png), available_range=TR(0, dur_f))
+                ref.metadata[META] = {"kind": "title", "rendered": "png",
+                                      "width": S.width, "height": S.height,
+                                      "title": params}
+            else:
+                ref = otio.schema.GeneratorReference(
+                    name=text[:40] or "Title", generator_kind=GENERATOR_KIND,
+                    available_range=TR(0, dur_f), parameters=params)
             clip = otio.schema.Clip(name=spec.get("name", text[:40] or "Title"),
                                     media_reference=ref, source_range=TR(0, dur_f))
         elif kind == "image":
@@ -368,6 +413,21 @@ class OTIOTarget:
                                    ar.start_time.value, ar.end_time_exclusive().value))
                     if url.startswith("file:///") and not os.path.exists(local_path(url)):
                         missing.append(local_path(url))
+                    rm = dict(mr.metadata.get(META) or {})
+                    if rm.get("kind") == "title":
+                        if not str((rm.get("title") or {}).get("text", "")).strip():
+                            errors.append("%s is a rendered title with no text" % label)
+                        lp = local_path(url)
+                        if os.path.exists(lp):
+                            size = title_raster.png_size(lp)
+                            want = (int(meta.get("width") or rm.get("width") or 0),
+                                    int(meta.get("height") or rm.get("height") or 0))
+                            if size is None:
+                                errors.append("%s: rendered title %s is not a readable image"
+                                              % (label, lp))
+                            elif want[0] and size != want:
+                                errors.append("%s: rendered title is %dx%d, the sequence is %dx%d"
+                                              % ((label,) + tuple(size) + want))
                 elif isinstance(mr, otio.schema.GeneratorReference):
                     if mr.generator_kind == GENERATOR_KIND and not str(
                             mr.parameters.get("text", "")).strip():

@@ -48,7 +48,8 @@ def main(argv):
         return 2
     out = os.path.abspath(argv[1])
     pattern = _arg(argv, "--pattern", "p*/cond-revised/story.json")
-    roots = [a for a in argv[2:] if not a.startswith("--") and a != pattern]
+    titles = _arg(argv, "--titles", "native")   # otio title mode: native | raster
+    roots = [a for a in argv[2:] if not a.startswith("--") and a not in (pattern, titles)]
     os.makedirs(out, exist_ok=True)
     fx, ot = targets.get("fcpxml"), targets.get("otio")
     rows = []
@@ -71,7 +72,7 @@ def main(argv):
                 base = os.path.dirname(sp)
                 rf = fx.build(story, fp, base_dir=base, probe=True)
                 vf = fx.validate(fp, local_root)
-                ro = ot.build(story, op, base_dir=base, probe=True)
+                ro = ot.build(story, op, base_dir=base, probe=True, titles=titles)
                 vo = ot.validate(op, local_root)
                 ef, eo = fcpxml_edl.parse(fp), otio_edl.parse(op)
                 rep = otio_edl.compare(eo, ef)

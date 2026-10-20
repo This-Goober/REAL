@@ -1,50 +1,111 @@
-# Paganini No. 23 tutorial — v4
+# Paganini No. 23 tutorial — one storyboard, two editors
 
-[Download paganini_no23_tutorial.zip](paganini_no23_tutorial.zip?raw=true)
-(22.4 MB). It includes the editable timeline and all 14 required media files.
+A 91-second violin tutorial (fingered octaves in Paganini's Caprice No. 23),
+cut by REAL from the creator's recording and compiled from **one storyboard**
+to **two public timeline specifications**: FCPXML 1.13 for Final Cut Pro and
+OpenTimelineIO for DaVinci Resolve. Both editors imported their file, both
+exports were measured against each other, and every cut and every caption
+edge lands on the frame the storyboard specifies. This folder holds the
+prompts that produced it, the source media, both timelines, the measurement
+report and the scripts, so the result can be rebuilt and re-measured.
 
-1. Unzip the download.
-2. Double-click **Prepare for Final Cut.command** in the extracted folder.
-3. In Final Cut Pro, choose **File → Import → XML** and select the newly created
-   **OPEN-IN-FINAL-CUT.fcpxml**.
+## Watch
 
-Open **Paganini 23 — INTRO + GLOW v4**. Keep the extracted folder together;
-rerun the helper if you move or rename it. The helper uses built-in macOS tools
-and does not launch or edit a Final Cut library.
+| | |
+|---|---|
+| https://youtu.be/8C-FRg3pOzM | **side by side**: Final Cut Pro (left) and DaVinci Resolve (right) rendering the same storyboard |
+| https://youtu.be/lE2qhSmuxRM | DaVinci Resolve replaying the loaded `.otio` timeline |
+| https://youtu.be/cChPjcEszls | Final Cut Pro replaying the loaded `.fcpxml` timeline |
+| https://youtube.com/shorts/1_Fog3CpI6k | the tutorial as rendered by DaVinci Resolve from the `.otio` |
+| https://youtube.com/shorts/6htK6-DoPHM | the tutorial as rendered by Final Cut Pro from the `.fcpxml` |
 
-The 81.37-second, 30 fps timeline includes the performance intro, five tutorial
-sections, three stills and five editable 55-point captions with yellow Glow.
-The media is unchanged: this package does not re-encode it. Use Final Cut Pro
-with FCPXML 1.13 support.
+The rendered movies are not in the repository; the links above are the
+outputs. Everything that produced them is.
 
-The authors confirmed visible Glow and subsequently reported that the full v4
-opening, all stills/captions and clean audio work in Final Cut. The exact report
-and its limits are in `native-playback-confirmation.json`. Packaging changes only
-media URLs. The relocated XML passed the Apple 1.13 DTD and semantic validator
-with zero errors or warnings; importing this package remains a creator check.
-Extraction was checked with macOS `ditto`, including executable permissions,
-all media hashes, renamed folders and paths containing spaces and Unicode.
-Repeated setup is stable, and missing media stops setup before replacing XML.
+## What the measurement found
 
-`paganini_no23_tutorial.json` records sizes and SHA-256 hashes. The ZIP's hash is
-`bf4767fdadc34554c1a3d6057fbd177f7c1cf7e44522a92b48105de4f213dfab`.
+Both exports: 1080×1920, 30 fps, 2747 frames, no offset between them.
 
-For the workshop demonstration, the [short native-review checklist](NATIVE-REVIEW.md)
-provides expected caption/still windows, the recorded playback confirmation and
-optional instructions for a native XML comparison. Inspector-state and native
-re-export equivalence remain unverified; the playback check is complete as reported.
+| check | result |
+|---|---|
+| picture changes (6 cuts) | on the specified frame in both exports, 0 frames of error |
+| caption on/off (11 captions, 22 edges) | on the specified frame in both exports, 0 frames of error |
+| caption glyph boxes, Resolve vs Final Cut | 0.4–0.9 % wider, ≤ 0.5 % taller, same centre line (two font engines) |
+| SSIM per frame, Resolve vs Final Cut | median 0.992 overall; 0.992 plain frames, 0.982 with a diagram card, 0.966 with a caption, 0.958 with both; worst frame 0.953 |
+| PSNR per frame | median 44.5 dB (31.5 dB on caption frames) |
+| audio | lag 0.0 ms, correlation 0.994–1.000; levels equal except 2 dB lower in Resolve during the intro |
 
-## Rebuild the download
+The one rendering difference worth knowing: the semi-transparent diagram cards
+are darker in Resolve (mean RGB 129 vs 166) while the uncovered wall and the
+opaque drawing match within one level. Final Cut blends the 45 %-black card in
+linear light and Resolve in display values. That is an editor policy, not
+something either timeline file can express. Details: `comparison/COMPARISON.md`.
 
-From the repository root, with the media extracted:
+## Files
+
+| | |
+|---|---|
+| `PROMPTS.md` | the requests, verbatim, that produced this demo, and what each one did |
+| `timeline/paganini-no23.fcpxml` | Final Cut Pro: File → Import → XML |
+| `timeline/paganini-no23.otio` | DaVinci Resolve: File → Import → Timeline. Captions are PNG stills in `timeline/paganini-no23-titles/`, drawn by the compiler to match Final Cut's rendering (OTIO has no title type) |
+| `timeline/reel.json` | the storyboard this build produced: every placement with its word anchor, owner and reason |
+| `timeline/equivalence.json`, `build-receipt.json` | the cross-target check (two independent readers) and the build receipt with file hashes |
+| `source/storyboard.json`, `source/word-clock.json` | the approved earlier edit this one starts from (five passages, three stills, five captions, opening performance) and its measured word clock, which places each caption on the word it belongs to |
+| `source/NOTEBOOK.md`, `source/TRANSCRIPT.md` | the script and the chosen windows of the recording |
+| `media/Videos`, `media/Audio`, `media/Images` | the five studio-background excerpts, the opening and closing clips, the five narration takes, the three stills (26 MB) |
+| `comparison/` | `COMPARISON.md`, `report.json`, `cuts.csv`, `captions.csv`, `captions-sheet.png` (caption band, Final Cut above Resolve, at each caption) |
+| `native-playback-confirmation.json` | the creator's playback check of the earlier edit in Final Cut (18 October 2026), cited by the paper |
+| `scripts/build_timelines.py` | rebuilds both timelines from `source/` and `media/` |
+| `scripts/compare_exports.py` | measures two native exports against the timeline |
+| `scripts/cut_excerpts.sh` | how the excerpts and the closing clip were cut |
+
+Both timelines reference the media by absolute path under this folder, so
+open them on the machine that holds the checkout or relink after moving.
+
+## Reproduce
+
+Python 3.10+, Pillow, NumPy, OpenTimelineIO 0.18, ffmpeg/ffprobe; Helvetica
+Neue for the rendered captions (macOS). From this folder:
 
 ```sh
-python3 demo/paganini-no23/build_zip.py \
-  --xml <local project folder>/v4/Paganini-23-INTRO-GLOW-v4.fcpxml \
-  --media-root /absolute/path/paganini_no23_tutorial/Media
+# 1. both timelines from the storyboard and the media (10 s)
+python3 scripts/build_timelines.py --from-dir source --media-root media --out timeline \
+    --no-publish --public --name paganini-no23 --title "Paganini No. 23 tutorial"
+
+# 2. Final Cut Pro: File → Import → XML → timeline/paganini-no23.fcpxml
+#    File → Share → Export File, Video and Audio, H.264, 1080×1920 → finalcut.mov
+
+# 3. DaVinci Resolve (free): new project; Project Settings → Master Settings →
+#    timeline resolution Custom 1080×1920, 30 fps, "Scale entire image to fit";
+#    File → Import → Timeline → timeline/paganini-no23.otio (keep the
+#    project settings); Deliver → Custom, QuickTime H.264, 1080×1920, 30 fps → resolve.mp4
+
+# 4. measure the two exports against the timeline (3 min)
+python3 scripts/compare_exports.py finalcut.mov resolve.mp4 timeline/paganini-no23.otio comparison-rerun
+
+# 5. the clean two-panel movie (Final Cut | Resolve, Final Cut's audio)
+ffmpeg -i finalcut.mov -i resolve.mp4 -filter_complex \
+  "[0:v]fps=30,scale=1080:1920[a];[1:v]fps=30,scale=1080:1920[b];[a][b]hstack=inputs=2[v]" \
+  -map "[v]" -map 0:a:0 -c:v libx264 -crf 18 -pix_fmt yuv420p -c:a aac -shortest side-by-side.mp4
 ```
 
-This makes a deterministic ZIP from the confirmed XML and unchanged media.
-The v4 reel, clock and verification records are in
-the local project folder (not in the repository). The project rebuild script reads
-those v4 inputs directly; older v2/v3 exports are unnecessary.
+Step 1 checks, before it compiles, that the excerpts' audio is the same
+recording as the narration takes (cross-correlation lag under 1 ms), that
+every caption line fits the frame in the actual font, that no two captions
+overlap on a lane, and after compiling that the two exports describe the same
+frames (`timeline/equivalence.json`). The FCPXML passes Apple's 1.13 DTD.
+
+## What is and is not claimed
+
+- The timing claim is exact: cuts and caption edges on the specified frames in
+  both editors' renders. The appearance claim is bounded: same glyph size and
+  place within 1 %, with font-engine, shadow and codec differences visible in
+  SSIM, and one compositing-policy difference on semi-transparent stills.
+- Captions reach Resolve as pictures because OpenTimelineIO has no title type;
+  they stay editable titles in Final Cut. The words and styling travel in the
+  `.otio` clip metadata either way, where the independent reader checks them.
+- One project, two editors, one free licence. Nothing here depends on an
+  editor's scripting API or a paid feature; the second export target was one
+  module in the compiler and no change to the sequencing code.
+- The edit starts from an earlier approved storyboard (`source/`); the
+  recording itself, 3 min 41 s, is not in the repository, only the excerpts.

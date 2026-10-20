@@ -5,10 +5,13 @@ for whichever editor is the target.
 
     python3 compile.py targets
     python3 compile.py build story.json out.fcpxml [--target fcpxml] [--no-probe]
+    python3 compile.py build story.json out.otio --target otio [--titles native|raster] [--titles-dir DIR]
     python3 compile.py validate out.fcpxml [--local-root /path]
     python3 compile.py report out.fcpxml report.html [--target fcpxml]
 
-`--target` defaults to fcpxml, the only target implemented today. The point of
+`--target` defaults to fcpxml; `otio` is the second target. `--titles raster`
+(otio only) draws each caption to a transparent PNG next to the timeline, so
+an editor with no title importer (DaVinci Resolve) shows it. The point of
 routing through here rather than calling fcpxml.py directly is that the
 sequencing side (reel.json -> story.json, in adapt.py) stays format-blind:
 adding Premiere XML or an EDL is one module in scripts/targets/ and one line in
@@ -62,10 +65,20 @@ def main(argv):
         local_root = story.get("assets_root_local") or None
         if local_root == story.get("assets_root"):
             local_root = None  # same folder: the baked paths are the real ones
+        kwargs = {}
+        titles = _arg(argv, "--titles")
+        if titles is not None:
+            import inspect
+            if "titles" not in inspect.signature(target.build).parameters:
+                print("ERROR target %r has no --titles option" % tname)
+                return 2
+            kwargs["titles"] = titles
+            if _arg(argv, "--titles-dir"):
+                kwargs["titles_dir"] = _arg(argv, "--titles-dir")
         res = target.build(
             story, out_path,
             base_dir=os.path.dirname(os.path.abspath(story_path)),
-            probe="--no-probe" not in argv)
+            probe="--no-probe" not in argv, **kwargs)
         print("wrote %s  (%s)" % (res.path, res.summary))
         if story.get("unvoiced"):
             import adapt
