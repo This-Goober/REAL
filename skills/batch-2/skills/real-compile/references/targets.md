@@ -123,7 +123,7 @@ edition included) and Premiere Pro 25.6+ import `.otio` natively.
 | beats, in order | video track `V1`; a `gap` beat is an OTIO Gap |
 | overlay on lane *n* | video track `V(n+1)`, Gaps between placements |
 | connected clip on lane −*n* | audio track `A(n)` (A1 narration, A2 source, A3 bed, A4 sfx) |
-| text overlay | Clip with a `REAL.title` GeneratorReference; words, font, size, colour, alignment and pixel position are generator parameters |
+| text overlay | `titles="native"` (default): Clip with a `REAL.title` GeneratorReference; words, font, size, colour, alignment and pixel position are generator parameters. `titles="raster"` (`compile.py build … --target otio --titles raster`): the same text drawn by `targets/title_raster.py` to a transparent PNG at the sequence size in `<out>-titles/`, referenced as an ordinary still; the parameters stay in `metadata.REAL.title` with `metadata.REAL.kind == "title"` |
 | `note`, `markers` | `metadata.REAL.note`, OTIO Markers |
 | transform, opacity, fades, volume, ducking, transitions | `metadata.REAL` only — one build warning says so; the editor does not apply them |
 
@@ -138,11 +138,30 @@ python3 bench/otio_edl.py timeline.otio --against timeline.fcpxml
 
 reads both files with two independent readers (plain JSON for `.otio`,
 `bench/fcpxml_edl.py` for FCPXML) and reports whether the visual events and
-audio lanes are identical frame for frame.
+audio lanes are identical frame for frame. A rendered title is read back as a
+text event from its metadata, so the check is the same in both title modes.
+
+Why two title modes: OpenTimelineIO has no title schema, and DaVinci Resolve
+imports an unknown generator as missing media, a red clip of the right length
+(observed 19 October 2026 on the binary-search demo). Resolve does not
+round-trip its own Text+ titles through OTIO either, so there is no generator
+form it would render. `raster` trades editability inside the editor for a
+correct picture; `native` keeps the text as text for tools that can use it.
+Fonts are located by family and face through Pillow (`Helvetica Neue` +
+`Medium` picks the face Final Cut would); a missing family or face falls back
+with one build warning. `font_size` is Final Cut's title size: Final Cut lays a
+title out on a 1920×1080 template canvas and scales the template to the project
+height, so the drawn em is `font_size × height/1080` (1.78 in a 1080×1920
+project; a Final Cut export of five 55-pt captions measured 1.73×, the rest
+being font-engine spread), and the block sits 0.2 em below the nominal centre
+as Final Cut's layout box does (same export). `position` is pixels from the
+frame centre, y up, exactly as for FCPXML. Calibration record: the Final Cut export measured in `demo/paganini-no23/comparison/` (19 October 2026); the
+renderer constants are `TEMPLATE_HEIGHT` and `BASELINE_SHIFT_EM` in `targets/title_raster.py`.
 
 `validate` re-reads the file with the OTIO library and refuses when an item is
 off the frame grid, a clip reads past its source, a media path is not an
-absolute file URL, a title has no text, an overlay track outruns `V1`, or the
-declared total does not match. Missing local files are warnings, as for FCPXML.
+absolute file URL, a title has no text, a rendered title is unreadable or not
+the sequence size, an overlay track outruns `V1`, or the declared total does
+not match. Missing local files are warnings, as for FCPXML.
 No `report` renderer: review the FCPXML `report.html`, which describes the
 same edit.

@@ -94,11 +94,22 @@ def parse(path):
             elif ms == "ExternalReference":
                 url = mr.get("target_url") or ""
                 aid = asset_id_from_src(url)
-                kind = ((mr.get("metadata") or {}).get("REAL") or {}).get("kind")
+                real = (mr.get("metadata") or {}).get("REAL") or {}
+                kind = real.get("kind")
                 if not kind:
                     ext = os.path.splitext(unquote(urlparse(url).path))[1].lower()
                     kind = "image" if ext in IMAGE_EXTS else "video"
-                if kind == "image":
+                if kind == "title":
+                    # a title rendered to a still (titles="raster"): the words and
+                    # the requested styling travel in metadata, the picture is media
+                    p = real.get("title") or {}
+                    pos = p.get("position") or [0, 0]
+                    events.append({"kind": "text", "asset": None, "f0": cursor,
+                                   "f1": cursor + d, "z": z, "text": str(p.get("text", "")),
+                                   "font_size": int(float(p.get("font_size", 96))),
+                                   "position": (float(pos[0]), float(pos[1])),
+                                   "name": it.get("name"), "rendered": url})
+                elif kind == "image":
                     events.append({"kind": "image", "asset": aid, "f0": cursor,
                                    "f1": cursor + d, "z": z, "scale": scale_of(it),
                                    "name": it.get("name")})
