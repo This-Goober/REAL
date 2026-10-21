@@ -4,9 +4,10 @@
 
 | file | |
 |---|---|
-| `REAL-HIMAS-2027.pdf` | the current anonymous candidate (nine body pages, references on pages 9–10) |
+| `REAL-HIMAS-2027.pdf` | the current anonymous candidate (nine body pages, references on pages 9–10, Appendix A on pages 10–14; 14 pages in all) |
 | `abstract.md` | abstract |
 | `01-introduction.md` … `07-conclusion.md` | the seven sections, in order (`05-results.md` is generated from the frozen experiment records; edit `.artifacts/make_results.py`, not the file) |
+| `08-appendix.md` | the technical appendix (skill anatomy, definitions, timing model, frame arithmetic, binding, preservation contract, validation, defect catalogue, tests, second target); built after the references as Appendix A |
 | `references.bib` | the 21 references |
 | `architecture.*`, `catalogue-path.*`, `placement-trace.*` | the three figures (PDF for print, PNG for the web view) |
 

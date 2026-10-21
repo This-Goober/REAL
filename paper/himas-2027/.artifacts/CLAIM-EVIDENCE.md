@@ -62,3 +62,19 @@ projects still receive zero in the all-case F1 summaries.
 The repair result covers re-anchoring. E11 adds two artificial word-time scales
 on the same 100 projects and a clipped-duration fixture, reviewed at that scope
 by the reviewer. New recordings, other edits and native round trips remain evidence gaps.
+
+## Appendix A claims
+
+| Appendix claim | Retained evidence | Interpretation limit |
+|---|---|---|
+| Repository size, 10,508 lines of Python; six handoff schemas | `skills/batch-2/skills/*/scripts/`, `skills/batch-2/skills/*/references/schemas/` | Count of the tree as published with this PDF |
+| Estimated-clock constants and calibration (486 words, 3.11 w/s, worst section 5.8%) | `skills/batch-2/skills/real-storyboarding/scripts/rates.json` (`calibration` block) | One speaker, five sections; take lengths include leading and trailing silence; text-duration rates are conventions |
+| Placement, pause, snap, clipping and preservation rules | `real-storyboarding/scripts/clock.py`, `build.py`, `revise.py`, `real_core.py` | Describes the implemented rules; their editorial quality is not evaluated |
+| Frame arithmetic and the two rounding failures | `real_core.py` (`Frames`); `experiments/E11-preservation-contract/README.md` | Same evidence as the body's retiming paragraph |
+| Binder weights and thresholds | `real-storyboarding/scripts/bind.py` | Binding accuracy without reference tags is not measured in this paper |
+| Validator checks, DTD child order, position units | `real-compile/scripts/validate.py`, `fcpxml.py`, `adapt.py` | Validity checks, not native-import evidence |
+| Failure-mode table, 16 rows | The rule column is implemented in the scripts above and pinned by `real-storyboarding/tests/` | Failure modes the checks catch, not a defect rate |
+| 40 regression checks over 35 rules; 38 unit tests with 48 subtests | `real-storyboarding/tests/regression.py` and `tests/test_*.py` | Rerun on the published tree |
+| OTIO mapping and raster-title calibration (1.78 em in portrait, 0.2 em shift, 1.73 measured) | `real-compile/scripts/targets/otio_target.py`, `title_raster.py`, `real-compile/references/targets.md` | Calibration measured on one export |
+| 130/130 projects equivalent across the two targets | `bench/cross_target_check.py`, `bench/otio_edl.py` | Independent readers of the two files; no editor import of the 130 |
+| Paganini renders in Final Cut and Resolve: 2,747 frames, 6/6 cuts, 22/22 caption edges, glyph boxes within 1%, median SSIM 0.992, audio lag 0 ms, translucent still darker in Resolve | `demo/paganini-no23/comparison/` (`COMPARISON.md`, `report.json`, `cuts.csv`, `captions.csv`) | One tutorial, two editors, one import each |
