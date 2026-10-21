@@ -11,13 +11,16 @@ report and the scripts, so the result can be rebuilt and re-measured.
 
 ## Watch
 
-| | |
+<a href="https://youtu.be/8C-FRg3pOzM"><img src="https://img.youtube.com/vi/8C-FRg3pOzM/hqdefault.jpg" alt="Final Cut Pro and DaVinci Resolve side by side" width="560"/></a>
+
+**Side by side:** Final Cut Pro (left) and DaVinci Resolve (right) rendering the same storyboard. [Watch on YouTube](https://youtu.be/8C-FRg3pOzM)
+
+| Final Cut Pro (`.fcpxml`) | DaVinci Resolve (`.otio`) |
 |---|---|
-| https://youtu.be/8C-FRg3pOzM | **side by side**: Final Cut Pro (left) and DaVinci Resolve (right) rendering the same storyboard |
-| https://youtu.be/lE2qhSmuxRM | DaVinci Resolve replaying the loaded `.otio` timeline |
-| https://youtu.be/cChPjcEszls | Final Cut Pro replaying the loaded `.fcpxml` timeline |
-| https://youtube.com/shorts/1_Fog3CpI6k | the tutorial as rendered by DaVinci Resolve from the `.otio` |
-| https://youtube.com/shorts/6htK6-DoPHM | the tutorial as rendered by Final Cut Pro from the `.fcpxml` |
+| <a href="https://youtu.be/cChPjcEszls"><img src="https://img.youtube.com/vi/cChPjcEszls/hqdefault.jpg" alt="Final Cut Pro timeline" width="280"/></a> | <a href="https://youtu.be/lE2qhSmuxRM"><img src="https://img.youtube.com/vi/lE2qhSmuxRM/hqdefault.jpg" alt="DaVinci Resolve timeline" width="280"/></a> |
+| [The imported timeline, played in the editor](https://youtu.be/cChPjcEszls) | [The imported timeline, played in the editor](https://youtu.be/lE2qhSmuxRM) |
+| <a href="https://youtube.com/shorts/6htK6-DoPHM"><img src="https://img.youtube.com/vi/6htK6-DoPHM/hqdefault.jpg" alt="Rendered by Final Cut Pro" width="280"/></a> | <a href="https://youtube.com/shorts/1_Fog3CpI6k"><img src="https://img.youtube.com/vi/1_Fog3CpI6k/hqdefault.jpg" alt="Rendered by DaVinci Resolve" width="280"/></a> |
+| [The tutorial as rendered by Final Cut Pro](https://youtube.com/shorts/6htK6-DoPHM) | [The tutorial as rendered by DaVinci Resolve](https://youtube.com/shorts/1_Fog3CpI6k) |
 
 The rendered movies are not in the repository; the links above are the
 outputs. Everything that produced them is.
