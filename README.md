@@ -1,14 +1,6 @@
 <h1 align="center">🎬 REAL Pipeline</h1>
 
-**2026-10-18 research update:** [HIMAS 2027 paper draft](paper/) and
-[E10 reproducible validation](experiments/E10-submission-validation/): the frozen
-revised pipeline matches all reference placement boundaries on 100 additional
-synthetic projects. Public-dataset retrieval remains a small preliminary pilot;
-native-editor and human-interaction outcomes are evaluated separately.
-
-**Demo:** [Paganini No. 23 tutorial](demo/paganini-no23/), one storyboard compiled to
-FCPXML and OpenTimelineIO, imported into Final Cut Pro and DaVinci Resolve, with every cut
-and caption edge on the same frame in both. [Watch it below](#-see-it-work).
+📄 [Technical report](paper/himas-2027/REAL-HIMAS-2027.pdf)
 
 <p align="center"><b>A vision for AI-assisted video editing — and a running journal testing whether it's reachable, one capability at a time.</b></p>
 

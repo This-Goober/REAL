@@ -55,11 +55,13 @@ def main():
     abstract = (SRC/'abstract.md').read_text().strip()
     sections = sorted(SRC.glob('0[1-7]-*.md'))
     body = '\n\n'.join(s.read_text().strip() for s in sections)
+    appendix = (SRC/'08-appendix.md').read_text().strip()
     subprocess.run([sys.executable, str(HERE/'audit_citations.py')], check=True)
     front = (f'# {TITLE}\n\n{AUTHORS}\n\n'
              'HIMAS at IUI Workshops 2027, Helsinki, Finland — submission draft\n\n'
              '## Abstract\n\n'+abstract+'\n\n')
-    (HERE/'REAL-HIMAS-2027.md').write_text(front+body+'\n\n# References {.unnumbered}\n\n::: {#refs}\n:::\n')
+    (HERE/'REAL-HIMAS-2027.md').write_text(front+body+'\n\n# References {.unnumbered}\n\n::: {#refs}\n:::\n\n'
+                                           + '# Appendix {.unnumbered}\n\n' + appendix + '\n')
     subprocess.run(['pandoc','REAL-HIMAS-2027.md','-s','--embed-resources',
                     '--citeproc','--bibliography='+str(SRC/'references.bib'),'--csl=numeric.csl',
                     '--resource-path='+str(SRC),
@@ -96,6 +98,17 @@ AI-assisted video editing \sep human-AI collaboration \sep intermediate represen
     # Loosen line breaking for the reference list only, so DOI tokens do not overflow.
     tex = tex.replace('\\section*{References}',
                       '\\section*{References}\n\\emergencystretch=3em\n')
+    # The technical appendix follows the references, numbered A, A.1, A.2 ...
+    # Its tables are long; keep them as longtables, set small.
+    appendix_tex = convert(appendix, 'latex')
+    appendix_tex = appendix_tex.replace('\\begin{longtable}', '\\begingroup\\small\\begin{longtable}')
+    appendix_tex = appendix_tex.replace('\\end{longtable}', '\\end{longtable}\\endgroup')
+    appendix_tex = appendix_tex.replace('\\begin{verbatim}', '\\begingroup\\small\\begin{verbatim}')
+    appendix_tex = appendix_tex.replace('\\end{verbatim}', '\\end{verbatim}\\endgroup')
+    marker = '\\bibliography{references}\n'
+    if tex.count(marker) != 1:
+        raise ValueError('bibliography marker not found once')
+    tex = tex.replace(marker, marker + '\\appendix\n\\emergencystretch=1em\n' + appendix_tex + '\n')
     (HERE/'REAL-HIMAS-2027.tex').write_text(tex)
     # Standalone LaTeX package: no repository-relative files are required.
     with zipfile.ZipFile(HERE/'REAL-HIMAS-2027-source.zip', 'w', zipfile.ZIP_DEFLATED) as package:

@@ -882,5 +882,405 @@ Applications: Animation</span></em>. Apple Developer Documentation.
 Accessed 18 October 2026. n.d. <a href="https://developer.apple.com/documentation/professional-video-applications/animation">https://developer.apple.com/documentation/professional-video-applications/animation</a>.</div>
 </div>
 </div>
+<h1 class="unnumbered" id="appendix">Appendix</h1>
+<h1 id="implementation-of-the-skills">Implementation of the skills</h1>
+<p>The code is public at <code>github.com/This-Goober/REAL</code> under
+<code>skills/batch-2/skills/</code>: four skills, 10,508 lines of
+Python, standard library plus Pillow, ffmpeg and PocketSphinx. This
+appendix states the representations and rules the results depend on, as
+pseudo-code where a sentence would be ambiguous.</p>
+<h2 id="division-of-labour">Division of labour</h2>
+<table>
+<caption>Who decides what. The model is whichever model the host runs;
+the structural experiments supply descriptions and word times and call
+none.</caption>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 26%" />
+<col style="width: 33%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr>
+<th>Stage</th>
+<th>The model</th>
+<th>The scripts</th>
+<th>Refuses when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>brainstorm</td>
+<td>Drafts sequence and mock components with the creator</td>
+<td>A words-per-second ballpark, badged as such</td>
+<td>Asked for media, ids or times</td>
+</tr>
+<tr>
+<td>catalogue</td>
+<td>Describes sampled frames; suggests uses</td>
+<td>Probes facts; samples 16 frames per clip; groups near-duplicate
+takes by perceptual hash; assigns stable ids</td>
+<td>Sameness is uncertain (asks); unknown facts stay
+<code>unresolved</code></td>
+</tr>
+<tr>
+<td>storyboarding</td>
+<td>Interprets loose notes; reviews the tracks page; picks a source
+event from listed observations</td>
+<td>Parse, bind, clock, place, revise, preserve, validate, render the
+tracks page</td>
+<td>No notebook; unknown revision; anchor text and index disagree;
+unclassified text; a line that would change the clock</td>
+</tr>
+<tr>
+<td>compile</td>
+<td>Nothing</td>
+<td>Adapt, parity, validate, align, assemble voice, report</td>
+<td>No reel; a dropped element; a validator error; any request for a
+time</td>
+</tr>
+</tbody>
+</table>
+<p>Handoffs: <code>NOTEBOOK.md</code> to <code>notebook.json</code> to
+<code>bindings.json</code> and <code>clock.json</code> to
+<code>reel.json</code> to <code>story.json</code> to the timeline file.
+Each is validated against a JSON schema on write and on read. The reel
+is the only editorial handoff; the story is regenerated from it on every
+run and never edited.</p>
+<h2 id="vocabulary">Vocabulary</h2>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 84%" />
+</colgroup>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>beat</td>
+<td>One narration block with its visuals and sounds; spans first to last
+word, extended by holds</td>
+</tr>
+<tr>
+<td>component</td>
+<td>One annotation such as <code>&lt;show image of two waves&gt;</code>;
+typed from its first four words; id is a hash of its text; modifiers
+<code>~4s</code>, <code>!</code>, <code>?</code>, <code>#tag</code>;
+<code>\|</code> means simultaneous</td>
+</tr>
+<tr>
+<td>word anchor</td>
+<td>Token index plus its text; placements store anchors, times are
+derived; text and index must agree</td>
+</tr>
+<tr>
+<td>clock</td>
+<td>Word times, estimated from the syllable model or measured by forced
+alignment; swapping re-derives every placement without re-planning</td>
+</tr>
+<tr>
+<td>layer</td>
+<td>One visual on one lane: asset, source interval, anchor, requested
+duration <code>dur</code>, occupied span, style, <code>chosen_by</code>,
+runner-ups</td>
+</tr>
+<tr>
+<td>ownership</td>
+<td><code>chosen_by: creator</code>, set by any revision; preserved by
+id across rebuilds; a conflict is asked once</td>
+</tr>
+<tr>
+<td>stub</td>
+<td>A grey placeholder file at the exact size and duration for an
+unbound component, so the import shows a hole, not missing media</td>
+</tr>
+</tbody>
+</table>
+<p>Revision lines, written by the tracks page on a click or typed by the
+creator, one per instruction:</p>
+<pre><code>B7: L1 anchor = pressure      B7: L1 source = 12-18      B7: L1 offset = +200
+B7: layer L1 = A03            B7: remove L1              B7: confirm L1
+B7: stagger L1                B7: add text = &quot;...&quot; anchor 150
+B7: &lt;free text&gt;               -&gt; a note on the layer or beat
+B7: duration = 6.0 | hold longer | trim 2s   -&gt; refused: the clock is not a placement</code></pre>
+<h2 id="timing">Timing</h2>
+<p>Estimated word duration is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow><mspace width="0.167em"></mspace><mo stretchy="false" form="prefix">(</mo><msub><mi>W</mi><mn>0</mn></msub><mo>+</mo><msub><mi>K</mi><mi>s</mi></msub><mspace width="0.167em"></mspace><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">y</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi></mrow><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathrm{speed}\,(W_0 + K_s\,\mathrm{syllables})</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mn>0</mn></msub><mo>=</mo><mn>0.0665</mn></mrow><annotation encoding="application/x-tex">W_0 = 0.0665</annotation></semantics></math>
+s,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>s</mi></msub><mo>=</mo><mn>0.1403</mn></mrow><annotation encoding="application/x-tex">K_s = 0.1403</annotation></semantics></math>
+s, plus a pause after punctuation (0.111 s comma, 0.148 s dash, 0.258 s
+sentence, 0.332 s paragraph, 0.406 s beat). Fitted to 486 recorded words
+in five sections: 3.11 words per second, worst section error 5.8%. Text
+durations (0.6 s plus 0.32 s per word, minimum 1.2 s) are conventions,
+not measurements.</p>
+<pre><code>derive(plan, words):                 # plan is fixed; only word times change
+  for beat in plan:
+    n0, n1 = start(first word), end(last word)
+    beat.t0 = max(0, n0 - longest explicit cold open)
+    leads: laid backwards from n0, one cursor per lane; flagged if they no longer fit
+    holds: after n1, in written order
+    inline p:    p.t0 = n0 if anchored on the first word, else cue(anchor) + offset
+    post p:      p.t0 = n1 + offset
+    beat.t1 = max(n1, end of holds, end of post layers)
+    cued a, b consecutive by t0: if 0 &lt; b.t0 - a.t0 &lt; 0.3 and not b.stagger: b.t0 = a.t0
+    base visual: runs to the next base or beat.t1, never under 0.4 s; explicit lengths fixed
+    overlay:     t1 = min(t0 + requested, beat.t1), flagged clipped when cut
+    every p:     span = t1 - t0; dur keeps the creator&#39;s explicit number
+  if pause policy = hold: each base runs to 0.1 s before the next beat&#39;s first word
+cue(i) = s_i + 0.4 (e_i - s_i) for word bounds s_i, e_i
+
+swap(clock, measured):
+  s_i, e_i = measured[i] where present (missing words keep estimates, warned)
+  derive(plan, words)                # anchors untouched
+  report per beat: estimated vs measured span; a coherent same-sign error is a clock fault</code></pre>
+<p>Measurement runs PocketSphinx forced alignment on the assembled take,
+with a built-in out-of-vocabulary list for music terms and compounds
+spelled from their parts; it fails rather than guess when audio and
+script disagree.</p>
+<h2 id="frames">Frames</h2>
+<pre><code>frames(t) = round_half_even(t * (den / num))   # rate formed first; called once per boundary
+duration = frames(t1) - frames(t0)             # never a separately rounded length</code></pre>
+<p>Snapping happens once, in the adapter; the story carries integer
+frames and both targets write exact rationals of the frame duration.
+Rounding derived seconds to milliseconds first moved 9.2498 s across a
+half frame; evaluating <code>t * 3000 / 100</code> turned 8.55 s into
+256.50000000000006, rounding to 257 against the reference’s 256 (failure
+14).</p>
+<h2 id="binding">Binding</h2>
+<pre><code>score(c, a):                          # component c, catalogued asset a
+  s = 0
+  for tag in c.tags: s += 6 if tag in a.tags else 2.5 if tag in a.text else 0
+  for field, cap in (binds_to 4, shows 3, role 2.5, use 2):
+    s += min(cap, sum(idf(w) for shared w) / 2.2)        # idf(w) = log((N+1)/(df(w)+0.5))
+  if c is text and c.content in a.excerpt: s += 3
+  content = s                                            # evidence about content only
+  s += kind(c.type, a.kind)   # +2 same; -1.5 / -2.5 image-video; -9 incompatible
+  s -= 8 if a.reference, 3 if a.unused, 20 if a.do_not_use, 4 if file missing
+
+bind(c): rank assets by s, ties by id
+  text:      own content; an asset attaches only on a verbatim match
+  narration: top if s &gt;= 2 and content &gt;= 1, confidence low (confirmed by ear)
+  else:      top if s &gt;= 2 and content &gt;= 2.5; high iff s &gt;= 5, margin &gt;= 1.5, kinds agree
+             otherwise a stub and a numbered request</code></pre>
+<p>Type words (image, clip, show, caption) are stop words. Kind alone
+never binds. Runner-ups and signals are kept for the tracks page.</p>
+<h2 id="preservation">Preservation</h2>
+<pre><code>rebuild(notebook, catalogue, old_reel):
+  reel = assemble(bind(notebook, catalogue), derive(plan, words))
+  for item in old_reel where chosen_by = creator:
+    if item.asset exists: copy asset, anchor, dur, style, style_by, chosen_by into reel[item.id]
+    else: ask once
+retime(reel, words):
+  creator-moved layers keep anchor and length; the rest take derive()&#39;s times
+  each beat: t1 = max(narration end, ends of holds and post layers, held pause)
+apply(reel, lines):
+  refuse a line that changes the clock; apply the rest; mark the item creator&#39;s; refit the beat
+  report every unparsed line; exit non-zero if anything was refused or unhandled</code></pre>
+<p>A re-anchor restores <code>dur</code> when the beat has room, because
+<code>dur</code> is kept apart from the span the layer last occupied
+(failure 13). The same inputs compile to the same bytes.</p>
+<h2 id="compile">Compile</h2>
+<pre><code>compile(reel, target):
+  validate(reel): schema; anchor text equals the word at its index; a style on every
+                  text layer; an asset or a stub on every other layer; audio kinds
+  story = adapt(reel): snap boundaries once; resolve media facts; compute no time
+  assert layers in = elements out and lanes in = clips out     # parity, or refuse
+  file = target.build(story); target.validate(file) reports 0 errors or nothing is delivered</code></pre>
+<p>The FCPXML validator checks well-formedness and Apple’s DTD,
+reference and id integrity, every time on a whole frame, stills as
+<code>video</code> with zero duration and timed media as
+<code>asset-clip</code>, a contiguous spine, children inside the
+parent’s timebase, in and out points inside the source, and media files
+present. Children are emitted in the order the DTD’s own error text
+prescribes. Positions are converted from pixels to percent of project
+height on both axes (failure 16).</p>
+<h2 id="failure-modes-the-checks-catch">Failure modes the checks
+catch</h2>
+<p>Table 4 lists the failure modes the conformance checks are built to
+catch and the rule that prevents each. Every one produces a
+valid-looking timeline or is caught only by the compile step’s
+refusal.</p>
+<table>
+<caption>Failure modes and the rule that prevents each. The assembly
+benchmark catches 1 to 5 and 13, the narrated reconstruction 7 to 12,
+the retiming check 14 and 15, the shipped example 6, and an editor
+import 16.</caption>
+<colgroup>
+<col style="width: 2%" />
+<col style="width: 28%" />
+<col style="width: 12%" />
+<col style="width: 26%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Failure</th>
+<th>Kind</th>
+<th>Symptom</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Base shot cued 40% into its first word</td>
+<td>placement</td>
+<td>Every beat opens 3 to 4 frames late</td>
+<td>A cue on a line’s first word lands on the beat boundary</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A timed still after a running shot taken as the next base</td>
+<td>notebook semantics</td>
+<td>Shot cut short, up to a third of the beat black</td>
+<td>An image interrupting a running shot is an overlay, not a cut</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Explicit <code>~1.7s</code> overwritten by the span the first clock
+allows</td>
+<td>state</td>
+<td>Clipped durations stay clipped after re-timing</td>
+<td><code>dur</code> is the creator’s number; the span is recomputed per
+clock</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Instructions say “measure first”; the code can only estimate, then
+swap</td>
+<td>instruction-code drift</td>
+<td>Inline versus hold decided on estimated lengths</td>
+<td>The clock takes measured times directly; every stated rule has a
+regression check</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Re-anchoring a hold leaves the beat stretched</td>
+<td>state</td>
+<td>Beat overlaps the next; compile refuses</td>
+<td>The beat end is recomputed from its contents after every
+revision</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Validation splits narration on whitespace, the clock with a
+regex</td>
+<td>interface</td>
+<td>A valid notebook fails validation</td>
+<td>One shared tokeniser</td>
+</tr>
+<tr>
+<td>7</td>
+<td>A visual description ending in “.” typed as narration</td>
+<td>type inference</td>
+<td>Descriptions counted as speech, 2.0 s on a 60 s example</td>
+<td>Type from the first four words; a component is never speech</td>
+</tr>
+<tr>
+<td>8</td>
+<td>The aligner writes <code>s</code>/<code>e</code>; the clock reads
+<code>start</code>/<code>end</code></td>
+<td>interface</td>
+<td>The measured path cannot consume the aligner’s output</td>
+<td>A schema on the measured handoff; the reader accepts both
+spellings</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Technical compounds absent from the aligner’s dictionary</td>
+<td>algorithm</td>
+<td>Alignment refuses technical vocabulary</td>
+<td>Compounds pronounced from their parts; a built-in out-of-vocabulary
+list</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Prose before the first heading becomes an empty beat</td>
+<td>representation</td>
+<td>Zero-length beat; compile refuses</td>
+<td>Leading prose is a note, not a beat</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Silence between lines is always a black gap</td>
+<td>representation</td>
+<td>209 of 900 frames black against an editor’s cut</td>
+<td>The <code>hold</code> pause policy</td>
+</tr>
+<tr>
+<td>12</td>
+<td>A held shot outlasts its clip</td>
+<td>representation</td>
+<td>A one-frame alignment difference makes compile refuse</td>
+<td>The cut moves to where the footage ends, flagged; a clip shorter
+than its line is refused</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Re-anchoring a clipped cue keeps the clipped length</td>
+<td>state</td>
+<td>Requested duration lost after a move</td>
+<td><code>dur</code> kept apart from the occupied span</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Half-frame rounding, 8.55 s to 256.50000000000006 frames</td>
+<td>arithmetic</td>
+<td>One-frame errors on exact half frames</td>
+<td>Rate formed first; one snap per boundary</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Style ownership relabelled as model-selected on rebuild</td>
+<td>state</td>
+<td>Values survive, provenance lost</td>
+<td><code>style_by</code> on the preservation list</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Positions written in pixels; Final Cut expects percent of
+height</td>
+<td>target</td>
+<td>Overlays off-position while exporter and reader agree</td>
+<td>Conversion at the target</td>
+</tr>
+</tbody>
+</table>
+<p>Three rules generalise the table. A skill is two artifacts,
+instructions and scripts, so every rule stated in an instruction file
+has a regression check. Handoffs drift without types, so every handoff
+has a schema and the skills share one core module. Where a fixed rule
+would stand in for something the format cannot say, the notebook gets
+the word for it, and what remains is a declared convention.</p>
+<h2 id="tests">Tests</h2>
+<p>A 40-check end-to-end suite runs the scripts on synthetic data, one
+check per stated rule (35 rules), and 38 unit tests with 48 subtests
+cover timing precision, layout, geometry, titles, style ownership and
+grounding. All pass.</p>
+<h2 id="second-target">Second target</h2>
+<p>The sequencing logic never learns an output format: the adapter
+produces the story, and a target is a module with <code>build</code> and
+<code>validate</code>. Two targets exist. FCPXML is the primary.
+OpenTimelineIO, which DaVinci Resolve and Premiere Pro import natively,
+is mapped element for element (beats to the first video track, overlay
+lanes to further tracks, four audio lanes to four tracks). It has no
+title schema, so text travels as a generator clip with its parameters
+or, for editors without a title importer, as a transparent PNG drawn at
+sequence size and calibrated to Final Cut’s template (1.78 em per
+nominal em in a 1080 by 1920 project, block 0.2 em below the glyph
+centre; 1.73 measured on an export). All 130 benchmark projects read
+back equivalent through the two independent readers. The Paganini
+tutorial imported into both editors renders to 2,747 frames in each, all
+6 cuts and 22 caption edges on the expected frame, glyph boxes within
+1%, median SSIM 0.992 between renders, audio lag 0 ms; a
+semi-transparent still is 22% darker in Resolve, a renderer property.
+One tutorial in two editors, not systematic compatibility evidence.</p>
 </body>
 </html>
