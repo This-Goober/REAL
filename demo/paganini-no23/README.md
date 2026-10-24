@@ -19,11 +19,13 @@ report and the scripts, so the result can be rebuilt and re-measured.
 |---|---|
 | <a href="https://youtu.be/cChPjcEszls"><img src="https://img.youtube.com/vi/cChPjcEszls/hqdefault.jpg" alt="Final Cut Pro timeline" width="280"/></a> | <a href="https://youtu.be/lE2qhSmuxRM"><img src="https://img.youtube.com/vi/lE2qhSmuxRM/hqdefault.jpg" alt="DaVinci Resolve timeline" width="280"/></a> |
 | [The imported timeline, played in the editor](https://youtu.be/cChPjcEszls) | [The imported timeline, played in the editor](https://youtu.be/lE2qhSmuxRM) |
-| <a href="https://youtube.com/shorts/6htK6-DoPHM"><img src="https://img.youtube.com/vi/6htK6-DoPHM/hqdefault.jpg" alt="Rendered by Final Cut Pro" width="280"/></a> | <a href="https://youtube.com/shorts/1_Fog3CpI6k"><img src="https://img.youtube.com/vi/1_Fog3CpI6k/hqdefault.jpg" alt="Rendered by DaVinci Resolve" width="280"/></a> |
-| [The tutorial as rendered by Final Cut Pro](https://youtube.com/shorts/6htK6-DoPHM) | [The tutorial as rendered by DaVinci Resolve](https://youtube.com/shorts/1_Fog3CpI6k) |
+| <a href="https://youtube.com/shorts/w9lWkhKRVTI"><img src="https://img.youtube.com/vi/w9lWkhKRVTI/hqdefault.jpg" alt="Rendered by Final Cut Pro" width="280"/></a> | <a href="https://youtube.com/shorts/h0sJ6EmI2Ho"><img src="https://img.youtube.com/vi/h0sJ6EmI2Ho/hqdefault.jpg" alt="Rendered by DaVinci Resolve" width="280"/></a> |
+| [The tutorial as rendered by Final Cut Pro](https://youtube.com/shorts/w9lWkhKRVTI) | [The tutorial as rendered by DaVinci Resolve](https://youtube.com/shorts/h0sJ6EmI2Ho) |
 
 The rendered movies are not in the repository; the links above are the
-outputs. Everything that produced them is.
+outputs. Everything that produced them is. The two rendered tutorials show
+the current build, with the dissolve; the side-by-side and the two editor
+views were recorded from the earlier one.
 
 ## What the measurement found
 
