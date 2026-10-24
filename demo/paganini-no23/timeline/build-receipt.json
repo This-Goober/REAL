@@ -213,6 +213,9 @@
       "name": "Cross Dissolve",
       "dur_s": 1.0,
       "cut_s": 46.2,
+      "clipped": [
+        "B3.L2"
+      ],
       "why": "The cut from beat 3 to beat 4 joins two moments of the same framing; a one-second dissolve softens the jump."
     }
   ],
@@ -277,7 +280,7 @@
       "id": "B3.L2",
       "text": "octaves:\ndon't just squeeze",
       "t0": 44.195,
-      "t1": 46.075,
+      "t1": 45.7,
       "font_size": 55,
       "glow": true,
       "face": false,
@@ -387,9 +390,9 @@
   },
   "outputs": {
     "fcpxml": "/Users/Shared/REAL/demo/paganini-no23/timeline/paganini-no23.fcpxml",
-    "fcpxml_sha256": "0ebb724eb64cd4c9c241f38517f1817e1bce60002f8941d8e072c839ecdc0026",
+    "fcpxml_sha256": "bf8723c565c91a8089ab4756d1764ace142ff890a39414efeb4b29fc678e9097",
     "otio": "/Users/Shared/REAL/demo/paganini-no23/timeline/paganini-no23.otio",
-    "otio_sha256": "6de35f969d9c11979a5c1b6e89dba529b38f480fc0386b3e89c032a22b7a5009",
+    "otio_sha256": "91f1f025f957b34f4d304cc25704109b4262f0bfbde54bbfb24401248dee8868",
     "titles_dir": "/Users/Shared/REAL/demo/paganini-no23/timeline/paganini-no23-titles"
   }
 }

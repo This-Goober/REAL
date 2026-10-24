@@ -40,7 +40,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from real_core import FRAME_DURATIONS, Frames, transition_problems  # noqa: E402
+from real_core import FRAME_DURATIONS, Frames, transition_problems, transition_overlap  # noqa: E402
 
 VISUAL_KINDS = ("video", "image", "text")
 
@@ -722,6 +722,10 @@ def adapt(reel, opts, notes):
             problems = transition_problems(b, prev_b, by_id)
             if backing.get("type") == "gap":
                 problems.append("this beat's picture is a gap; a dissolve needs a shot")
+            for L, side, over in transition_overlap(prev_b, b):
+                problems.append("%s %s the dissolve by %.2f s; the storyboard clips an overlay "
+                                "where a dissolve starts and does not start one inside it"
+                                % (L.get("id"), "runs into" if side == "before" else "starts inside", over))
             if problems:
                 raise Refusal("%s: transition in: %s" % (b["id"], "; ".join(problems)))
             backing["transition_in"] = {

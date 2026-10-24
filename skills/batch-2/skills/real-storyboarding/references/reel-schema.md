@@ -149,7 +149,11 @@ point and this beat's shot must start that far into its file (`src_in`).
 Stills and stubs have unlimited handles. `validate` refuses a dissolve without
 its handles; the revision line is `B4: transition in = dissolve 1s`
 (`= none` removes it); a creator's dissolve survives a rebuild like any other
-creator choice, and compile carries it to both targets.
+creator choice, and compile carries it to both targets. Overlays keep out of
+the mix: a caption or still of the beat before ends where the dissolve starts
+(the span rule, applied when the line is accepted), and one of the later beat
+may not start inside it (re-anchor it or shorten the dissolve); `validate`
+and the compiler refuse either.
 
 ### Source intervals
 

@@ -321,3 +321,46 @@ def transition_problems(beat, prev_beat, assets_by_id):
                        % (b.get("id"), float(file_s) - (src_in + used), shot.get("asset"),
                           dur, half))
     return out
+
+
+def transition_overlap(prev_beat, beat):
+    """Overlays that run into a dissolve. The dissolve into `beat` occupies the
+    half-duration before and after the cut: an overlay of the beat before must
+    end by the time it starts, and an overlay of this beat must not begin until
+    it has ended, or the caption or still pops while the pictures are mixing.
+    Returns [(layer, side, seconds)]: side "before" (ends too late, can be
+    clipped) or "into" (starts too early, needs a later anchor)."""
+    tr = beat.get("transition_in") or {}
+    dur = float(tr.get("dur_s") or tr.get("duration") or 0)
+    if dur <= 0 or prev_beat is None:
+        return []
+    half = dur / 2.0
+    cut = float(beat.get("t0", 0))
+    out = []
+    for L in prev_beat.get("layers") or []:
+        if L.get("base") or L.get("kind") == "video":
+            continue
+        if float(L.get("t1", 0)) > cut - half + 1e-6:
+            out.append((L, "before", float(L["t1"]) - (cut - half)))
+    for L in beat.get("layers") or []:
+        if L.get("base") or L.get("kind") == "video":
+            continue
+        if float(L.get("t0", 0)) < cut + half - 1e-6:
+            out.append((L, "into", (cut + half) - float(L["t0"])))
+    return out
+
+
+def clip_to_transition(prev_beat, beat):
+    """Apply the span rule at a dissolve: overlays of the beat before end where
+    the dissolve starts. Returns the ids clipped. Overlays of the later beat
+    that start inside the dissolve are left alone (their start is derived from
+    an anchor); `transition_overlap` still reports them."""
+    clipped = []
+    for L, side, _over in transition_overlap(prev_beat, beat):
+        if side == "before":
+            tr = beat.get("transition_in") or {}
+            half = float(tr.get("dur_s") or tr.get("duration") or 0) / 2.0
+            L["t1"] = float(beat["t0"]) - half
+            L["snapped"] = False
+            clipped.append(L["id"])
+    return clipped

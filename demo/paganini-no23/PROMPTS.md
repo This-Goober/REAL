@@ -202,6 +202,24 @@ clean; only the picture dissolves. The tutorial is 2629 frames, 87.6 s; both
 timelines rebuilt, 0 errors, 21/21 events, 7/7 audio clips and 1/1
 transitions equivalent across the two targets.
 
+## 10. The dissolve rendered black
+
+> the transition is a black screen I dont think it looks good especially the
+> caption from previous frames was showing dissapears very quickly
+
+Two causes, both fixed in the skills. The FCPXML named the Cross Dissolve
+effect by an identifier from Apple's early samples
+(`FFTransition_CrossDissolve`); Final Cut imports that as a missing effect
+and renders the transition black. The compiler now writes the identifier
+Final Cut itself exports for its Cross Dissolve
+(`FxPlug:4731E73A-8DAC-4113-9A30-AE85B1761265`). And the caption of beat 3
+("octaves: don't just squeeze") ran 0.375 s into the mix: the storyboard now
+keeps overlays out of a dissolve. A caption or still of the beat before ends
+where the dissolve starts (the span rule), one of the later beat may not
+start inside it, and the validator and the compiler refuse either. Here the
+caption ends at 45.7 s instead of 46.075 s, 1.5 s on screen. Same frame
+count, 0 errors, 21/21 events, 7/7 audio clips, 1/1 transitions.
+
 ## Before this demo: the edit it starts from (18 October 2026)
 
 The storyboard in `source/` was built from the team's notes

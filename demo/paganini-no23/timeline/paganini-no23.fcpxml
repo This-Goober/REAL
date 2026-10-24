@@ -53,7 +53,7 @@
         <asset id="r21" name="take-05" start="0s" hasAudio="1" duration="19s" audioSources="1" audioChannels="1" audioRate="48000">
             <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/paganini-no23/media/Audio/take-05.wav"/>
         </asset>
-        <effect id="r22" name="Cross Dissolve" uid="FFTransition_CrossDissolve"/>
+        <effect id="r22" name="Cross Dissolve" uid="FxPlug:4731E73A-8DAC-4113-9A30-AE85B1761265"/>
     </resources>
     <library>
         <event name="REAL">
@@ -170,7 +170,7 @@ higher up</text-style>
                         <asset-clip ref="r7" name="B3 octaves are not that simple" start="0s" audioRole="effects" offset="1061/30s" duration="65/6s">
                             <note>narration: Now you obviously would think why didn't you apply this to octaves? But the thing is when you're tuning octaves it's not as simple as just making your finger smaller.  |  from C3/C3.afc  |  words 49–78</note>
                             <adjust-volume amount="-60dB"/>
-                            <title ref="r14" name="B3.L2 — octaves: don't just squeeze" start="3600s" offset="53/6s" duration="28/15s" lane="1">
+                            <title ref="r14" name="B3.L2 — octaves: don't just squeeze" start="3600s" offset="53/6s" duration="3/2s" lane="1">
                                 <param name="Face" key="9999/999166631/999166633/5/999166635/14" enabled="0"/>
                                 <param name="Glow" key="9999/999166631/999166633/5/999166635/38" enabled="1"/>
                                 <param name="Fill with" key="9999/999166631/999166633/5/999166635/38/39" value="0 (Color)"/>

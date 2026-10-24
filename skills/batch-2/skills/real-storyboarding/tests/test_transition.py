@@ -75,6 +75,27 @@ class TransitionTests(unittest.TestCase):
         self.assertEqual(transition_problems(dict(r['beats'][1], transition_in={'dur_s': 1.0}),
                                              r['beats'][0], {a['id']: a for a in r['assets']}), [])
 
+    def test_overlays_at_the_seam(self):
+        # a caption of the beat before that runs into the dissolve is clipped to where it starts
+        r = reel(src_in=0.5)
+        cap = dict(id='B1.L2', z=1, kind='text', asset=None, content='hi', style='caption',
+                   style_by='creator', anchor_word=0, anchor_text='one', offset_ms=0,
+                   t0=3.0, t1=4.9, fit='fit', chosen_by='creator', confidence='high', why='')
+        r['beats'][0]['layers'].append(cap)
+        log, unhandled = self.apply(r, 'transition in = dissolve 1s')
+        self.assertEqual(unhandled, [])
+        self.assertAlmostEqual(cap['t1'], 4.5)
+        self.assertIn('B1.L2 clipped', log[-1])
+        self.assertEqual(build.validate(r)[0], [])
+        # an overlay of this beat that would start inside the dissolve is refused
+        r = reel(src_in=0.5)
+        r['beats'][1]['layers'].append(dict(cap, id='B2.L2', anchor_text='two', t0=5.2, t1=7.0))
+        log, unhandled = self.apply(r, 'transition in = dissolve 1s')
+        self.assertTrue(unhandled and 'start inside' in unhandled[0], unhandled)
+        self.assertNotIn('transition_in', r['beats'][1])
+        r['beats'][1]['transition_in'] = {'name': 'Cross Dissolve', 'dur_s': 1.0, 'chosen_by': 'creator'}
+        self.assertTrue(any('starts inside' in e for e in build.validate(r)[0]))
+
     def test_preserved_across_a_rebuild(self):
         old = reel(src_in=0.5)
         old['beats'][1]['transition_in'] = {'name': 'Cross Dissolve', 'dur_s': 1.0, 'chosen_by': 'creator',

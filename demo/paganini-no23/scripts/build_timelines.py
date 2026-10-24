@@ -378,14 +378,24 @@ def main():
             x["dur_s"] = round(audio_dur(x["file"]), 4)
 
     # ---- 0b. transitions: a dissolve into a beat, a decision on the beat ---
+    sys.path.insert(0, str(STORY))
+    from real_core import transition_overlap, clip_to_transition   # the storyboard's own rules
     receipt["transitions"] = []
+    order = [b["id"] for b in reel["beats"]]
     for t in transitions:
         beat = beats[t["beat"]]
+        prev = beats[order[order.index(t["beat"]) - 1]] if order.index(t["beat"]) else None
         beat["transition_in"] = {"name": t.get("name", "Cross Dissolve"), "dur_s": float(t["dur_s"]),
                                  "chosen_by": "creator", "why": t.get("why", "the creator asked for a dissolve")}
+        early = [L["id"] for L, side, _o in transition_overlap(prev, beat) if side == "into"]
+        if early:
+            sys.exit("%s: %s would start inside the dissolve; anchor it on a later word or shorten "
+                     "the dissolve" % (t["beat"], ", ".join(early)))
+        clipped = clip_to_transition(prev, beat)     # an overlay ends where a dissolve starts
         receipt["transitions"].append({"beat": t["beat"], "name": beat["transition_in"]["name"],
                                        "dur_s": beat["transition_in"]["dur_s"],
-                                       "cut_s": round(beat["t0"], 4), "why": t.get("why", "")})
+                                       "cut_s": round(beat["t0"], 4), "clipped": clipped,
+                                       "why": t.get("why", "")})
 
     # ---- 2. more captions ------------------------------------------------
     words = clock["words"]

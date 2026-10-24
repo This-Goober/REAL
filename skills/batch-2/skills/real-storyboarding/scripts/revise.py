@@ -41,7 +41,7 @@ import argparse
 import json
 import re
 import sys
-from real_core import narration_end, refit_beat, transition_problems
+from real_core import narration_end, refit_beat, transition_problems, transition_overlap, clip_to_transition
 
 CLOCK_WORDS = re.compile(
     r"^(duration|length|time|t0|t1|hold|longer|shorter|trim|retime|tempo|pace|"
@@ -346,9 +346,16 @@ def apply_one(reel, bid, instr, clock, log, unhandled):
         if problems:
             unhandled.append("%s: %s" % (beat["id"], "; ".join(problems)))
             return
+        early = [L["id"] for L, side, _o in transition_overlap(prev, trial) if side == "into"]
+        if early:
+            unhandled.append("%s: %s would start inside the dissolve; anchor it on a later word or "
+                             "shorten the dissolve" % (beat["id"], ", ".join(early)))
+            return
         beat["transition_in"] = {"name": "Cross Dissolve", "dur_s": dur, "chosen_by": "creator",
                                  "why": "the creator asked for a dissolve into this beat"}
-        log.append("%s transition in -> dissolve %.2fs" % (beat["id"], dur))
+        clipped = clip_to_transition(prev, beat)
+        log.append("%s transition in -> dissolve %.2fs%s"
+                   % (beat["id"], dur, ("; %s clipped to where it starts" % ", ".join(clipped)) if clipped else ""))
         return
 
     m = re.match(r"^stub\s+([LA]?\d+)\s+spec\s*=\s*(.+)$", t, re.I)

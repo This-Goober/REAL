@@ -20,7 +20,7 @@ Stdlib + PIL only.
 """
 
 from real_core import read_json, write_json
-from real_core import transition_problems  # noqa: E402
+from real_core import transition_problems, transition_overlap  # noqa: E402
 import argparse
 import json
 import os
@@ -774,6 +774,12 @@ def validate(reel):
             prev = reel["beats"][idx - 1] if idx else None
             for msg in transition_problems(b, prev, assets_by_id):
                 errs.append("%s: transition in: %s" % (b["id"], msg))
+            for L, side, over in transition_overlap(prev, b):
+                errs.append("%s: transition in: %s %s the dissolve by %.2f s — %s"
+                            % (b["id"], L.get("id"),
+                               "runs into" if side == "before" else "starts inside",
+                               over, "end it where the dissolve starts" if side == "before"
+                               else "anchor it on a later word or shorten the dissolve"))
         for A in b.get("audio", []):
             if A.get("asset") and A["asset"] not in ids:
                 errs.append("%s: audio %s binds unknown asset %s"
