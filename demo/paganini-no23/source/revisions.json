@@ -1,0 +1,39 @@
+{
+  "note": "The creator's revisions to the approved storyboard, applied by scripts/build_timelines.py before anything else. Trims: a beat's source window in the recording starts later or ends earlier; the words outside the window leave the clock, every other anchor is kept, and the beats that follow move up by the time removed. A handle is extra media cut into the excerpt file beyond the window (for a dissolve); the beat's shot then starts src_in = head_handle_s into its file. Transitions: a cross dissolve into a beat, centred on the cut, half its length borrowed from each side. Times are whole frames at 30 fps; the excerpts and takes are cut by scripts/cut_excerpts.sh to match.",
+  "trims": [
+    {
+      "beat": "B2",
+      "was_src_in_s": 29.0,
+      "was_src_out_s": 45.5,
+      "src_in_s": 32.0,
+      "drops": ["So", "we", "all", "know", "that"],
+      "why": "The opening 'So we all know that' is cut; the beat starts on 'for example'. The cut sits in the pause after 'that'."
+    },
+    {
+      "beat": "B3",
+      "was_src_in_s": 61.2,
+      "was_src_out_s": 72.4,
+      "src_out_s": 72.033333,
+      "tail_handle_s": 0.5,
+      "drops": [],
+      "why": "The window ran 11 frames into the next word ('because'); it now ends in the closure before it, after 'smaller'. The excerpt carries half a second more picture for the dissolve that follows."
+    },
+    {
+      "beat": "B4",
+      "was_src_in_s": 150.4,
+      "was_src_out_s": 163.2,
+      "src_in_s": 150.966667,
+      "head_handle_s": 0.5,
+      "drops": ["the"],
+      "why": "The first 17 frames held a word fragment and a click; the beat starts just before 'interval'. The excerpt carries half a second of picture before that for the dissolve."
+    }
+  ],
+  "transitions": [
+    {
+      "beat": "B4",
+      "name": "Cross Dissolve",
+      "dur_s": 1.0,
+      "why": "The cut from beat 3 to beat 4 joins two moments of the same framing; a one-second dissolve softens the jump."
+    }
+  ]
+}

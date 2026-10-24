@@ -149,8 +149,9 @@ videos linked from `README.md` were rendered from the earlier excerpts.
 > take 03-04.wav transition is not smooth. The beginning 0.5 sec of 04 sounds
 > also like a blip noise.
 
-Produced: `source/narration-trims.json`, the three trims as data, and a step
-in `scripts/build_timelines.py` that applies them before anything else. A trim
+Produced: the three trims as data (`source/narration-trims.json`, since folded
+into `source/revisions.json`) and a step in `scripts/build_timelines.py` that
+applies them before anything else. A trim
 moves a beat's source window by whole frames; the words outside the window
 leave the clock, the remaining words are renumbered, every caption and still
 keeps its anchor word, the beat's base shot and narration move to the new
@@ -170,6 +171,36 @@ their audio checked against the earlier recording at the declared offsets
 (0 ms lag). The tutorial is 103 frames shorter: 2644 frames, 88.1 s. All
 eleven captions keep their anchors; both timelines rebuilt, 0 errors,
 21/21 events equivalent across the two targets.
+
+## 9. The cut in beat 2 moved, and a dissolve between beats 3 and 4
+
+> narration 002 still have beginning of "That! ..." Actually can I also ask
+> you to add 1s transition between take 03 and take 04 the seam just too
+> sudden
+
+> maybe this should be part of the skills itself to consider adding
+> transitions?
+
+Produced, in the skills: a dissolve is now a decision the storyboard carries.
+A beat may ask for a cross dissolve into it (`B4: transition in = dissolve 1s`
+on the tracks page, or `transition_in` on the beat); a dissolve borrows half
+its length of picture on each side of the cut, so the storyboard's validator
+and the compiler both refuse it unless the shot before has that much file
+after its out point and the shot after starts that far into its file; a
+creator's dissolve survives a rebuild like any other creator choice; the FCPXML
+target writes the `<transition>` it already knew, the OpenTimelineIO target
+now writes a real `Transition` (it used to park it in metadata), and the two
+independent readers read both back and count them in the cross-target check.
+
+Produced, in this folder: `source/revisions.json` (the trims and the
+transition together). Beat 2 now starts at 32.0 s in the recording, in the
+pause after "that", so it opens on "for example"; beats 3 and 4 are cut with
+half a second of extra picture beyond their windows, beat 4's shot starts
+0.5 s into its file, and a one-second cross dissolve joins them, centred on
+the cut. The narration takes are unchanged at the cut, so the words stay
+clean; only the picture dissolves. The tutorial is 2629 frames, 87.6 s; both
+timelines rebuilt, 0 errors, 21/21 events, 7/7 audio clips and 1/1
+transitions equivalent across the two targets.
 
 ## Before this demo: the edit it starts from (18 October 2026)
 

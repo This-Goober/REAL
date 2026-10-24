@@ -25,7 +25,7 @@
             "rate": 30.0,
             "text": "text overlays are rendered to transparent PNG stills (metadata.REAL.kind == 'title'); the requested styling is kept in metadata.REAL.title and the files live in /Users/Shared/REAL/demo/paganini-no23/timeline/paganini-no23-titles",
             "titles": "raster",
-            "total_frames": 2644,
+            "total_frames": 2629,
             "width": 1080
         }
     },
@@ -188,7 +188,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 420.0
+                                "value": 405.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -205,7 +205,7 @@
                                 "OTIO_SCHEMA": "ExternalReference.1",
                                 "metadata": {
                                     "REAL": {
-                                        "asset_seconds": 14.0,
+                                        "asset_seconds": 13.5,
                                         "has_audio": true,
                                         "height": 960,
                                         "kind": "video",
@@ -218,7 +218,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 420.0
+                                        "value": 405.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -264,7 +264,7 @@
                                 "OTIO_SCHEMA": "ExternalReference.1",
                                 "metadata": {
                                     "REAL": {
-                                        "asset_seconds": 10.833,
+                                        "asset_seconds": 11.333,
                                         "has_audio": true,
                                         "height": 960,
                                         "kind": "video",
@@ -277,7 +277,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 325.0
+                                        "value": 340.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -290,6 +290,28 @@
                             }
                         },
                         "active_media_reference_key": "DEFAULT_MEDIA"
+                    },
+                    {
+                        "OTIO_SCHEMA": "Transition.1",
+                        "metadata": {
+                            "REAL": {
+                                "duration_s": 1.0,
+                                "name": "Cross Dissolve",
+                                "uid": "FFTransition_CrossDissolve"
+                            }
+                        },
+                        "name": "Cross Dissolve",
+                        "in_offset": {
+                            "OTIO_SCHEMA": "RationalTime.1",
+                            "rate": 30.0,
+                            "value": 15.0
+                        },
+                        "out_offset": {
+                            "OTIO_SCHEMA": "RationalTime.1",
+                            "rate": 30.0,
+                            "value": 15.0
+                        },
+                        "transition_type": "SMPTE_Dissolve"
                     },
                     {
                         "OTIO_SCHEMA": "Clip.2",
@@ -311,7 +333,7 @@
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 0.0
+                                "value": 15.0
                             }
                         },
                         "effects": [],
@@ -323,7 +345,7 @@
                                 "OTIO_SCHEMA": "ExternalReference.1",
                                 "metadata": {
                                     "REAL": {
-                                        "asset_seconds": 12.233,
+                                        "asset_seconds": 12.7333,
                                         "has_audio": true,
                                         "height": 960,
                                         "kind": "video",
@@ -336,7 +358,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 367.0
+                                        "value": 382.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -563,7 +585,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 209.0
+                                "value": 194.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -1056,7 +1078,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 396.0
+                                "value": 381.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -1507,7 +1529,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 803.0
+                                "value": 788.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -1854,7 +1876,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 910.0
+                                "value": 895.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -2078,7 +2100,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 420.0
+                                "value": 405.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -2095,7 +2117,7 @@
                                 "OTIO_SCHEMA": "ExternalReference.1",
                                 "metadata": {
                                     "REAL": {
-                                        "asset_seconds": 14.0,
+                                        "asset_seconds": 13.5,
                                         "has_audio": true,
                                         "height": null,
                                         "kind": "audio",
@@ -2108,7 +2130,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 420.0
+                                        "value": 405.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -2399,7 +2421,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 1919.0
+                                "value": 1904.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",

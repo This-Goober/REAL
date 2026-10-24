@@ -45,9 +45,9 @@ linear light and Resolve in display values. That is an editor policy, not
 something either timeline file can express. Details: `comparison/COMPARISON.md`.
 
 The renders measured here were made from the excerpts' earlier composite and
-before the narration trims in `source/narration-trims.json`. The current
-timeline is 103 frames shorter, so the frame counts above describe that earlier
-build; re-render and re-measure with the steps under Reproduce.
+before the revisions in `source/revisions.json`. The current timeline is 118
+frames shorter and has a dissolve, so the frame counts above describe that
+earlier build; re-render and re-measure with the steps under Reproduce.
 
 ## Files
 
@@ -60,7 +60,7 @@ build; re-render and re-measure with the steps under Reproduce.
 | `timeline/equivalence.json`, `build-receipt.json` | the cross-target check (two independent readers) and the build receipt with file hashes |
 | `source/storyboard.json`, `source/word-clock.json` | the approved earlier edit this one starts from (five passages, three stills, five captions, opening performance) and its measured word clock, which places each caption on the word it belongs to |
 | `source/NOTEBOOK.md`, `source/TRANSCRIPT.md` | the script and the chosen windows of the recording |
-| `source/narration-trims.json` | the creator's three narration trims, applied by the build before anything else: beat 2 starts on "for example", beat 3 ends after "smaller", beat 4 starts just before "interval" |
+| `source/revisions.json` | the creator's revisions, applied by the build before anything else: three narration trims (beat 2 starts on "for example", beat 3 ends after "smaller", beat 4 starts just before "interval") and a one-second cross dissolve from beat 3 into beat 4 |
 | `media/Videos`, `media/Audio`, `media/Images` | the five studio-background excerpts, the opening and closing clips, the five narration takes, the three stills (26 MB) |
 | `comparison/` | `COMPARISON.md`, `report.json`, `cuts.csv`, `captions.csv`, `captions-sheet.png` (caption band, Final Cut above Resolve, at each caption) |
 | `native-playback-confirmation.json` | the creator's playback check of the earlier edit in Final Cut (18 October 2026), cited by the paper |
@@ -98,9 +98,11 @@ ffmpeg -i finalcut.mov -i resolve.mp4 -filter_complex \
   -map "[v]" -map 0:a:0 -c:v libx264 -crf 18 -pix_fmt yuv420p -c:a aac -shortest side-by-side.mp4
 ```
 
-Step 1 applies the narration trims in `source/narration-trims.json`, then
-checks, before it compiles, that the excerpts' audio is the same recording as
-the earlier excerpts at the declared offsets (cross-correlation lag under 1 ms), that
+Step 1 applies the revisions in `source/revisions.json` (the trims, then the
+dissolve, which the compiler refuses unless both shots carry the half second
+of picture it borrows), then checks, before it compiles, that the excerpts'
+audio is the same recording as the earlier excerpts at the declared offsets
+(cross-correlation lag under 1 ms), that
 every caption line fits the frame in the actual font, that no two captions
 overlap on a lane, and after compiling that the two exports describe the same
 frames (`timeline/equivalence.json`). The FCPXML passes Apple's 1.13 DTD.

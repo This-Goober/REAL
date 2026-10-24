@@ -11,13 +11,13 @@
         <asset id="r4" name="P-studio-01" start="0s" hasVideo="1" hasAudio="1" duration="79/10s" format="r5" videoSources="1" audioSources="1" audioChannels="1" audioRate="48000">
             <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/paganini-no23/media/Videos/P-studio-01.mov"/>
         </asset>
-        <asset id="r6" name="P-studio-02" start="0s" hasVideo="1" hasAudio="1" duration="14s" format="r5" videoSources="1" audioSources="1" audioChannels="1" audioRate="48000">
+        <asset id="r6" name="P-studio-02" start="0s" hasVideo="1" hasAudio="1" duration="27/2s" format="r5" videoSources="1" audioSources="1" audioChannels="1" audioRate="48000">
             <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/paganini-no23/media/Videos/P-studio-02.mov"/>
         </asset>
-        <asset id="r7" name="P-studio-03" start="0s" hasVideo="1" hasAudio="1" duration="65/6s" format="r5" videoSources="1" audioSources="1" audioChannels="1" audioRate="48000">
+        <asset id="r7" name="P-studio-03" start="0s" hasVideo="1" hasAudio="1" duration="34/3s" format="r5" videoSources="1" audioSources="1" audioChannels="1" audioRate="48000">
             <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/paganini-no23/media/Videos/P-studio-03.mov"/>
         </asset>
-        <asset id="r8" name="P-studio-04" start="0s" hasVideo="1" hasAudio="1" duration="367/30s" format="r5" videoSources="1" audioSources="1" audioChannels="1" audioRate="48000">
+        <asset id="r8" name="P-studio-04" start="0s" hasVideo="1" hasAudio="1" duration="191/15s" format="r5" videoSources="1" audioSources="1" audioChannels="1" audioRate="48000">
             <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/paganini-no23/media/Videos/P-studio-04.mov"/>
         </asset>
         <asset id="r9" name="P-studio-05" start="0s" hasVideo="1" hasAudio="1" duration="19s" format="r5" videoSources="1" audioSources="1" audioChannels="1" audioRate="48000">
@@ -41,7 +41,7 @@
         <asset id="r17" name="take-01" start="0s" hasAudio="1" duration="79/10s" audioSources="1" audioChannels="1" audioRate="48000">
             <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/paganini-no23/media/Audio/take-01.wav"/>
         </asset>
-        <asset id="r18" name="take-02" start="0s" hasAudio="1" duration="14s" audioSources="1" audioChannels="1" audioRate="48000">
+        <asset id="r18" name="take-02" start="0s" hasAudio="1" duration="27/2s" audioSources="1" audioChannels="1" audioRate="48000">
             <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/paganini-no23/media/Audio/take-02.wav"/>
         </asset>
         <asset id="r19" name="take-03" start="0s" hasAudio="1" duration="65/6s" audioSources="1" audioChannels="1" audioRate="48000">
@@ -53,11 +53,12 @@
         <asset id="r21" name="take-05" start="0s" hasAudio="1" duration="19s" audioSources="1" audioChannels="1" audioRate="48000">
             <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/paganini-no23/media/Audio/take-05.wav"/>
         </asset>
+        <effect id="r22" name="Cross Dissolve" uid="FFTransition_CrossDissolve"/>
     </resources>
     <library>
         <event name="REAL">
             <project name="Paganini No. 23 tutorial">
-                <sequence format="r1" duration="1322/15s" tcStart="0s" tcFormat="NDF" audioLayout="stereo" audioRate="48k">
+                <sequence format="r1" duration="2629/30s" tcStart="0s" tcFormat="NDF" audioLayout="stereo" audioRate="48k">
                     <spine>
                         <asset-clip ref="r2" name="B0 opening performance" start="0s" audioRole="effects" offset="0s" duration="419/30s">
                             <note>from C0/C0.performance</note>
@@ -65,22 +66,22 @@
                             <asset-clip ref="r17" name="narration — take-01.wav" start="0s" audioRole="dialogue" offset="419/30s" duration="79/10s" lane="-1">
                                 <note>voice take — which take covers this line has to be confirmed by ear; #take-1 matches the asset's tags (+6.0); binds_to shares 23rd, caprice, community, going, i'm (+4.0)</note>
                             </asset-clip>
-                            <asset-clip ref="r18" name="narration — take-02.wav" start="0s" audioRole="dialogue" offset="328/15s" duration="14s" lane="-1">
+                            <asset-clip ref="r18" name="narration — take-02.wav" start="0s" audioRole="dialogue" offset="328/15s" duration="27/2s" lane="-1">
                                 <note>voice take — which take covers this line has to be confirmed by ear; #take-2 matches the asset's tags (+6.0); binds_to shares all, down, example, fingerboard, first (+4.0)</note>
                             </asset-clip>
-                            <asset-clip ref="r19" name="narration — take-03.wav" start="0s" audioRole="dialogue" offset="538/15s" duration="65/6s" lane="-1">
+                            <asset-clip ref="r19" name="narration — take-03.wav" start="0s" audioRole="dialogue" offset="1061/30s" duration="65/6s" lane="-1">
                                 <note>voice take — which take covers this line has to be confirmed by ear; #take-3 matches the asset's tags (+6.0); binds_to shares apply, didn't, finger, making, now (+4.0)</note>
                             </asset-clip>
-                            <asset-clip ref="r20" name="narration — take-04.wav" start="0s" audioRole="dialogue" offset="467/10s" duration="367/30s" lane="-1">
+                            <asset-clip ref="r20" name="narration — take-04.wav" start="0s" audioRole="dialogue" offset="231/5s" duration="367/30s" lane="-1">
                                 <note>voice take — which take covers this line has to be confirmed by ear; #take-4 matches the asset's tags (+6.0); binds_to shares actually, case, distance, finger, first (+4.0)</note>
                             </asset-clip>
-                            <asset-clip ref="r21" name="narration — take-05.wav" start="0s" audioRole="dialogue" offset="884/15s" duration="19s" lane="-1">
+                            <asset-clip ref="r21" name="narration — take-05.wav" start="0s" audioRole="dialogue" offset="1753/30s" duration="19s" lane="-1">
                                 <note>voice take — which take covers this line has to be confirmed by ear; #take-5 matches the asset's tags (+6.0); binds_to shares actually, along, closer, consequentially, far (+4.0)</note>
                             </asset-clip>
                             <asset-clip ref="r2" name="source — P-intro-performance-30fps.mov (audio only)" start="0s" audioRole="effects" srcEnable="audio" offset="0s" duration="419/30s" lane="-2">
                                 <note>Original performance audio, heard once.</note>
                             </asset-clip>
-                            <asset-clip ref="r10" name="source — P-closure.mov (audio only)" start="0s" audioRole="effects" srcEnable="audio" offset="1169/15s" duration="51/5s" lane="-2">
+                            <asset-clip ref="r10" name="source — P-closure.mov (audio only)" start="0s" audioRole="effects" srcEnable="audio" offset="2323/30s" duration="51/5s" lane="-2">
                                 <note>Original audio of the closing clip.</note>
                             </asset-clip>
                         </asset-clip>
@@ -107,11 +108,11 @@ Paganini 23</text-style>
                                 <adjust-transform position="0 4.6875"/>
                             </title>
                         </asset-clip>
-                        <asset-clip ref="r6" name="B2 intervals shrink up the fingerboard" start="0s" audioRole="effects" offset="328/15s" duration="14s">
+                        <asset-clip ref="r6" name="B2 intervals shrink up the fingerboard" start="0s" audioRole="effects" offset="328/15s" duration="27/2s">
                             <note>narration: For example a whole step down here in first position is obviously larger than a whole step up here. So as you go up the fingerboard the intervals get smaller.  |  from C2/C2.bf0  |  words 19–48</note>
                             <adjust-volume amount="-60dB"/>
-                            <video ref="r15" name="B2.L2 — Same whole-step interval with a wider first-position span and a narrower high-position span." start="0s" offset="33/5s" duration="4s" lane="1"/>
-                            <title ref="r14" name="B2.L3 — same interval, smaller space" start="3600s" offset="77/6s" duration="7/6s" lane="2">
+                            <video ref="r15" name="B2.L2 — Same whole-step interval with a wider first-position span and a narrower high-position span." start="0s" offset="61/10s" duration="4s" lane="1"/>
+                            <title ref="r14" name="B2.L3 — same interval, smaller space" start="3600s" offset="37/3s" duration="7/6s" lane="2">
                                 <param name="Face" key="9999/999166631/999166633/5/999166635/14" enabled="0"/>
                                 <param name="Glow" key="9999/999166631/999166633/5/999166635/38" enabled="1"/>
                                 <param name="Fill with" key="9999/999166631/999166633/5/999166635/38/39" value="0 (Color)"/>
@@ -129,7 +130,7 @@ smaller space</text-style>
                                 </text-style-def>
                                 <adjust-transform position="0 4.6875"/>
                             </title>
-                            <title ref="r14" name="B2.L4 — a whole step in first position" start="3600s" offset="49/10s" duration="38/15s" lane="3">
+                            <title ref="r14" name="B2.L4 — a whole step in first position" start="3600s" offset="22/5s" duration="38/15s" lane="3">
                                 <param name="Face" key="9999/999166631/999166633/5/999166635/14" enabled="0"/>
                                 <param name="Glow" key="9999/999166631/999166633/5/999166635/38" enabled="1"/>
                                 <param name="Fill with" key="9999/999166631/999166633/5/999166635/38/39" value="0 (Color)"/>
@@ -147,7 +148,7 @@ in first position</text-style>
                                 </text-style-def>
                                 <adjust-transform position="0 4.6875"/>
                             </title>
-                            <title ref="r14" name="B2.L5 — the same step, higher up" start="3600s" offset="127/15s" duration="11/5s" lane="4">
+                            <title ref="r14" name="B2.L5 — the same step, higher up" start="3600s" offset="239/30s" duration="11/5s" lane="4">
                                 <param name="Face" key="9999/999166631/999166633/5/999166635/14" enabled="0"/>
                                 <param name="Glow" key="9999/999166631/999166633/5/999166635/38" enabled="1"/>
                                 <param name="Fill with" key="9999/999166631/999166633/5/999166635/38/39" value="0 (Color)"/>
@@ -166,7 +167,7 @@ higher up</text-style>
                                 <adjust-transform position="0 4.6875"/>
                             </title>
                         </asset-clip>
-                        <asset-clip ref="r7" name="B3 octaves are not that simple" start="0s" audioRole="effects" offset="538/15s" duration="65/6s">
+                        <asset-clip ref="r7" name="B3 octaves are not that simple" start="0s" audioRole="effects" offset="1061/30s" duration="65/6s">
                             <note>narration: Now you obviously would think why didn't you apply this to octaves? But the thing is when you're tuning octaves it's not as simple as just making your finger smaller.  |  from C3/C3.afc  |  words 49–78</note>
                             <adjust-volume amount="-60dB"/>
                             <title ref="r14" name="B3.L2 — octaves: don't just squeeze" start="3600s" offset="53/6s" duration="28/15s" lane="1">
@@ -206,11 +207,14 @@ octaves?</text-style>
                                 <adjust-transform position="0 4.6875"/>
                             </title>
                         </asset-clip>
-                        <asset-clip ref="r8" name="B4 the first finger travels further" start="0s" audioRole="effects" offset="467/10s" duration="367/30s">
+                        <transition name="Cross Dissolve" offset="457/10s" duration="1s">
+                            <filter-video ref="r22" name="Cross Dissolve"/>
+                        </transition>
+                        <asset-clip ref="r8" name="B4 the first finger travels further" start="1/2s" audioRole="effects" offset="231/5s" duration="367/30s">
                             <note>narration: Interval that we go from just shifting maybe one whole step in an octave our first finger is actually traveling more distance than our fourth finger in this case.  |  from C4/C4.bdb  |  words 79–107</note>
                             <adjust-volume amount="-60dB"/>
-                            <video ref="r16" name="B4.L2 — An octave shape on the D and A strings before and after an upward whole-step shift; first-finger travel is longer than fourth-finger travel." start="0s" offset="26/15s" duration="4s" lane="1"/>
-                            <title ref="r14" name="B4.L3 — the first finger travels further" start="3600s" offset="17/2s" duration="11/5s" lane="2">
+                            <video ref="r16" name="B4.L2 — An octave shape on the D and A strings before and after an upward whole-step shift; first-finger travel is longer than fourth-finger travel." start="0s" offset="67/30s" duration="4s" lane="1"/>
+                            <title ref="r14" name="B4.L3 — the first finger travels further" start="3600s" offset="9s" duration="11/5s" lane="2">
                                 <param name="Face" key="9999/999166631/999166633/5/999166635/14" enabled="0"/>
                                 <param name="Glow" key="9999/999166631/999166633/5/999166635/38" enabled="1"/>
                                 <param name="Fill with" key="9999/999166631/999166633/5/999166635/38/39" value="0 (Color)"/>
@@ -228,7 +232,7 @@ travels further</text-style>
                                 </text-style-def>
                                 <adjust-transform position="0 4.6875"/>
                             </title>
-                            <title ref="r14" name="B4.L4 — shift one whole step" start="3600s" offset="26/15s" duration="19/10s" lane="3">
+                            <title ref="r14" name="B4.L4 — shift one whole step" start="3600s" offset="67/30s" duration="19/10s" lane="3">
                                 <param name="Face" key="9999/999166631/999166633/5/999166635/14" enabled="0"/>
                                 <param name="Glow" key="9999/999166631/999166633/5/999166635/38" enabled="1"/>
                                 <param name="Fill with" key="9999/999166631/999166633/5/999166635/38/39" value="0 (Color)"/>
@@ -247,7 +251,7 @@ whole step</text-style>
                                 <adjust-transform position="0 4.6875"/>
                             </title>
                         </asset-clip>
-                        <asset-clip ref="r9" name="B5 payoff" start="0s" audioRole="effects" offset="884/15s" duration="19s">
+                        <asset-clip ref="r9" name="B5 payoff" start="0s" audioRole="effects" offset="1753/30s" duration="19s">
                             <note>narration: I'm moving more of my first finger along and my third and fourth finger are not moving as far so they just consequentially get closer to my first finger but actually my first finger is leading majority of the movement.  |  from C5/C5.372  |  words 108–147</note>
                             <adjust-volume amount="-60dB"/>
                             <title ref="r14" name="B5.L2 — let the first finger lead" start="3600s" offset="503/30s" duration="11/5s" lane="1">
@@ -305,7 +309,7 @@ move less</text-style>
                                 <adjust-transform position="0 4.6875"/>
                             </title>
                         </asset-clip>
-                        <asset-clip ref="r10" name="B6 closing" start="0s" audioRole="effects" offset="1169/15s" duration="51/5s">
+                        <asset-clip ref="r10" name="B6 closing" start="0s" audioRole="effects" offset="2323/30s" duration="51/5s">
                             <note>from C6/C6.closure</note>
                             <adjust-volume amount="-60dB"/>
                         </asset-clip>

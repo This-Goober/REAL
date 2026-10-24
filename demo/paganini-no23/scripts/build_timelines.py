@@ -18,10 +18,12 @@ measured word clock source/word-clock.json) and changes exactly three things:
      on a lane; every caption line is measured in the actual font.
   3. a closing beat: media/Videos/P-closure.mov, full length, its own sound.
 
-Before those three it applies the creator's narration trims
-(source/narration-trims.json): a beat's source window starts later or ends
-earlier, the words outside it leave the clock, every other anchor is kept, and
-the beats that follow move up by the time removed.
+Before those three it applies the creator's revisions (source/revisions.json):
+narration trims, where a beat's source window starts later or ends earlier,
+the words outside it leave the clock, every other anchor is kept, and the
+beats that follow move up by the time removed; and transitions, a cross
+dissolve into a beat, which the compiler refuses unless both shots carry the
+handles it borrows (the excerpts are cut with them).
 
 Everything else — the opening performance, the three stills, the earlier
 captions and their anchors — is carried over, and the script checks that
@@ -133,7 +135,7 @@ def apply_trims(reel, clock, trims):
     cbeats = {b["id"]: b for b in clock["beats"]}
     by_beat = {t["beat"]: t for t in trims}
     words = clock["words"]
-    dropped, report, heads = set(), [], {}
+    dropped, report, heads = set(), [], {}        # heads: beat -> (trim at the head, handle in the file)
     shift = 0.0                                    # seconds removed before this beat
     for b in reel["beats"]:
         bid, cb, t = b["id"], cbeats[b["id"]], by_beat.get(b["id"])
@@ -194,6 +196,13 @@ def apply_trims(reel, clock, trims):
                 p["dur_s"] = p["span_s"]
         b["t0"], b["t1"] = new_t0, new_t1
         cb["t0"], cb["t1"] = new_t0, new_t1
+        head_handle = float((t or {}).get("head_handle_s") or 0)
+        if head_handle:
+            # the excerpt file carries picture before the window: the shot starts that far in
+            shot = next((L for L in b["layers"] if L.get("base")), None)
+            if shot is None:
+                sys.exit("%s: a head handle needs a base shot to apply src_in to" % bid)
+            shot["src_in"] = head_handle
         if drops:
             prefix = " ".join(drops)
             narr = b["narration"]
@@ -215,10 +224,11 @@ def apply_trims(reel, clock, trims):
                 if ew["beat"] == bid:
                     ew.update({"start": new_t0, "end": new_t1, "duration": round(new_t1 - new_t0, 4),
                                "source_start": ew["source_start"] + head})
-            heads[bid] = head
+            heads[bid] = (head, head_handle)
             report.append({"beat": bid, "source_window_s": [round(win[0], 6), round(win[1], 6)],
                            "was_source_window_s": [t["was_src_in_s"], t["was_src_out_s"]],
                            "frames_removed": frames(head + tail), "dropped_words": drops,
+                           "head_handle_s": head_handle, "tail_handle_s": float(t.get("tail_handle_s") or 0),
                            "beat_s": [round(new_t0, 4), round(new_t1, 4)], "why": t.get("why", "")})
         else:
             for ew in clock.get("excerpt_windows", []):
@@ -316,12 +326,14 @@ def main():
                                                  "start_clock_sha256": start_hash["clock"]},
                "face": a.face, "checks": {}, "captions_added": [], "asset_swaps": []}
 
-    # ---- 0. the creator's narration trims --------------------------------
-    trims_path = start / "narration-trims.json"
-    heads = {}
-    if trims_path.is_file():
-        receipt["built_from"]["narration_trims_sha256"] = sha256(trims_path)
-        receipt["narration_trims"], heads = apply_trims(reel, clock, json.loads(trims_path.read_text())["trims"])
+    # ---- 0. the creator's revisions: narration trims, then transitions ----
+    rev_path = start / "revisions.json"
+    heads, transitions = {}, []
+    if rev_path.is_file():
+        revisions = json.loads(rev_path.read_text())
+        receipt["built_from"]["revisions_sha256"] = sha256(rev_path)
+        receipt["narration_trims"], heads = apply_trims(reel, clock, revisions.get("trims") or [])
+        transitions = revisions.get("transitions") or []
 
     # ---- 1. the studio excerpts replace A01–A05 ---------------------------
     for i in range(1, 6):
@@ -334,17 +346,17 @@ def main():
             sys.exit("missing %s — cut it from the studio file first (see SHOTLIST.md)" % new)
         p = probe(new)
         beat = beats["B%d" % i]
-        need = beat["t1"] - beat["t0"]
+        head, head_handle = heads.get("B%d" % i, (0.0, 0.0))   # a trimmed window starts later; a handle is extra file before it
+        need = beat["t1"] - beat["t0"] + head_handle
         if p["dur_s"] + 0.5 / FPS < need:
-            sys.exit("%s is %.3fs, shorter than beat B%d (%.3fs)" % (new.name, p["dur_s"], i, need))
+            sys.exit("%s is %.3fs, shorter than beat B%d needs (%.3fs)" % (new.name, p["dur_s"], i, need))
         swap = {"asset": aid, "old": str(old), "new": str(new),
                 "new_dur_s": p["dur_s"], "beat_s": round(need, 4)}
         # the earlier bedroom excerpt, when present, proves the audio is the same recording
         take = Path(assets["A%02d" % (i + 5)]["file"])
         ref = old if old.is_file() else (take if take.is_file() else None)
-        head = heads.get("B%d" % i, 0.0)          # a trimmed window starts later in the same recording
         if ref is not None:
-            lag, corr = audio_lag_ms(ref, new, t0=1.0 + head, b_t0=1.0)
+            lag, corr = audio_lag_ms(ref, new, t0=1.0 + head - head_handle, b_t0=1.0)
             if abs(lag) > 1.0 or corr < 0.98:
                 sys.exit("%s audio does not line up with %s (lag %.2f ms, corr %.3f)"
                          % (new.name, ref.name, lag, corr))
@@ -364,6 +376,16 @@ def main():
     for x in reel["assets"]:                      # the takes' durations follow their files
         if x.get("kind") == "audio" and Path(x["file"]).is_file():
             x["dur_s"] = round(audio_dur(x["file"]), 4)
+
+    # ---- 0b. transitions: a dissolve into a beat, a decision on the beat ---
+    receipt["transitions"] = []
+    for t in transitions:
+        beat = beats[t["beat"]]
+        beat["transition_in"] = {"name": t.get("name", "Cross Dissolve"), "dur_s": float(t["dur_s"]),
+                                 "chosen_by": "creator", "why": t.get("why", "the creator asked for a dissolve")}
+        receipt["transitions"].append({"beat": t["beat"], "name": beat["transition_in"]["name"],
+                                       "dur_s": beat["transition_in"]["dur_s"],
+                                       "cut_s": round(beat["t0"], 4), "why": t.get("why", "")})
 
     # ---- 2. more captions ------------------------------------------------
     words = clock["words"]
