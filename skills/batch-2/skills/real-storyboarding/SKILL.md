@@ -162,7 +162,9 @@ confidence, anchor word), and every low-confidence or stub item marked on sight.
 
 Corrections happen *in the page*: click a candidate chip, pick from the dropdown
 of every asset, edit a stub spec, or type a note; then "copy revision block" and
-paste it back. Glancing at the page and clicking what looks wrong **is** the
+paste it back. `REEL-TRACKS.html#t=12.4` opens with the playhead at 12.4 s, so
+a note can point at a moment ("look at #t=12.4") and a headless browser can
+capture the page at any time. Glancing at the page and clicking what looks wrong **is** the
 review. There is no separate interview and no revision language to learn.
 
 ### Revising

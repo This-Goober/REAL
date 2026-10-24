@@ -80,7 +80,7 @@ reason this file exists at all.
   ],
 
   "connected": [
-    {"id": "X1", "kind": "audio", "asset": "a9", "t0": 0.0, "t1": 61.24, "duck_db": -14}
+    {"id": "X1", "kind": "bed", "asset": "a9", "t0": 0.0, "t1": 61.24, "duck_db": -14}
   ],
 
   "open": {
@@ -121,7 +121,10 @@ reason this file exists at all.
   complete timeline with visible grey holes instead of red missing media, and
   the real render drops in later by filename without re-sequencing.
 - **`audio[].kind` is one of `narration | source | bed | sfx`**, and the four
-  are treated differently downstream, so the distinction is not cosmetic.
+  are treated differently downstream, so the distinction is not cosmetic. A
+  `connected[]` span (audio the notebook describes as running *under the whole
+  reel*, or tagged `#bed`) carries the same kinds, is built once for the whole
+  reel, and is not also a lane inside the beat it was written in.
   - `narration` — the spoken line. `asset: null` is the normal state before a
     voice take exists: the export builds a silent gap and badges itself
     UNVOICED rather than refusing.

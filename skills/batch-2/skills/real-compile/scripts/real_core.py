@@ -263,13 +263,21 @@ def refit_beat(beat, log=None):
         log.append("%s: beat now ends at %.3fs (was %.3fs)" % (beat["id"], new_t1, old_t1))
 
 
-def base_shot(beat):
-    """The layer that carries a beat's picture: the one flagged `base`, else the
-    lowest layer that spans the whole beat."""
+def base_shot(beat, at=None):
+    """The layer that carries a beat's picture: the layer flagged `base`, else
+    the lowest layer that spans the whole beat. A beat may hold several base
+    shots in sequence (two shots under one line); `at="start"` picks the one
+    that opens the beat and `at="end"` the one that closes it, which is what a
+    dissolve into the next beat borrows from."""
     layers = beat.get("layers") or []
-    for L in layers:
-        if L.get("base"):
-            return L
+    bases = [L for L in layers if L.get("base")]
+    if bases:
+        edge = "t0" if at == "start" else "t1"
+        if at in ("start", "end"):
+            for L in bases:
+                if abs(float(L.get(edge, 0)) - float(beat.get(edge, 0))) < 1e-6:
+                    return L
+        return bases[0]
     for L in sorted(layers, key=lambda l: l.get("z", 0)):
         if (L.get("kind") in ("video", "image")
                 and abs(float(L.get("t0", 0)) - float(beat.get("t0", 0))) < 1e-6
@@ -295,7 +303,7 @@ def transition_problems(beat, prev_beat, assets_by_id):
     tol = 0.02          # container durations are written to the millisecond; a probe can read a hair short
     out = []
     for side, b in (("before", prev_beat), ("into", beat)):
-        shot = base_shot(b)
+        shot = base_shot(b, at="end" if side == "before" else "start")
         if shot is None or (shot.get("asset") is None and not shot.get("stub")):
             out.append("%s has no shot to dissolve %s" % (b.get("id"), side))
             continue

@@ -1,6 +1,6 @@
 <h1 align="center">🎬 REAL Pipeline</h1>
 
-<p align="center">📄 <a href="paper/himas-2027/REAL-HIMAS-2027.pdf">Technical report</a></p>
+<p align="center">🌐 <a href="https://this-goober.github.io/REAL/">Project page</a> · 📄 <a href="paper/himas-2027/REAL-HIMAS-2027.pdf">Technical report</a></p>
 
 <p align="center"><b>A vision for AI-assisted video editing — and a running journal testing whether it's reachable, one capability at a time.</b></p>
 
@@ -54,6 +54,7 @@ bugs, and more).
 
 | | |
 |---|---|
+| <a href="https://this-goober.github.io/REAL/"><img src="assets/trailer/poster.jpg" alt="REAL in 30 seconds, the trailer" width="200"/></a> | **REAL in 30 seconds** — a trailer of REAL, made with REAL: its own notebook, catalogue, tracks page and timelines, cut by the four skills from the pipeline's own outputs and the Paganini demo. <br/>▶ [Watch on the project page](https://this-goober.github.io/REAL/) · [demo folder: notebook, catalogue, storyboard, both timelines](demo/real-trailer/) |
 | <a href="https://youtu.be/a0LTt26_SCA"><img src="https://img.youtube.com/vi/a0LTt26_SCA/hqdefault.jpg" alt="Final Cut Pro and DaVinci Resolve side by side" width="420"/></a> | **One storyboard, two editors** — the Paganini No. 23 tutorial compiled to FCPXML and to OpenTimelineIO, rendered by Final Cut Pro (left) and DaVinci Resolve (right). Every cut and caption edge lands on the same frame. <br/>▶ [Watch on YouTube](https://youtu.be/a0LTt26_SCA) · [with the difference as a third panel](https://youtu.be/MrtiP02ugpc) · [demo folder and measurements](demo/paganini-no23/) |
 | <a href="https://youtu.be/cChPjcEszls"><img src="https://img.youtube.com/vi/cChPjcEszls/hqdefault.jpg" alt="Final Cut Pro timeline" width="200"/></a> <a href="https://youtu.be/lE2qhSmuxRM"><img src="https://img.youtube.com/vi/lE2qhSmuxRM/hqdefault.jpg" alt="DaVinci Resolve timeline" width="200"/></a> | **The imported timelines** — the `.fcpxml` in Final Cut Pro and the `.otio` in DaVinci Resolve, each played back in the editor. <br/>▶ [Final Cut Pro](https://youtu.be/cChPjcEszls) · [DaVinci Resolve](https://youtu.be/lE2qhSmuxRM) |
 | <a href="https://youtube.com/shorts/w9lWkhKRVTI"><img src="https://img.youtube.com/vi/w9lWkhKRVTI/hqdefault.jpg" alt="Rendered by Final Cut Pro" width="200"/></a> <a href="https://youtube.com/shorts/h0sJ6EmI2Ho"><img src="https://img.youtube.com/vi/h0sJ6EmI2Ho/hqdefault.jpg" alt="Rendered by DaVinci Resolve" width="200"/></a> | **The finished tutorial**, rendered by each editor from its own timeline file. <br/>▶ [Final Cut Pro render](https://youtube.com/shorts/w9lWkhKRVTI) · [DaVinci Resolve render](https://youtube.com/shorts/h0sJ6EmI2Ho) |

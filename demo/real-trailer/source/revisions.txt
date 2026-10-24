@@ -1,0 +1,15 @@
+# The creator's corrections, in the tracks page's own revision grammar
+# (python3 .../revise.py apply reel.json revisions.txt). Applied after the
+# second catalogue pass bound the two page captures.
+
+# the three landscape captures are letterboxed, not cropped to fill the portrait frame
+B4: L1 fit = fit
+B5: L1 fit = fit
+B5: L2 fit = fit
+
+# captions land on the word they are about
+B4: L2 anchor = pinned
+B5: L3 anchor = cannot
+
+# the title card dissolves in over the last shot
+B6: transition in = dissolve 1s

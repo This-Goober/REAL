@@ -1,0 +1,76 @@
+# The prompt that produced this trailer
+
+One request, on 24 October 2026, from the creator to the REAL assistant
+(Claude), after the GitHub Pages site for the project had been set up:
+
+> Now I want to also setup the github pages landing for REAL. Can you create a
+> japanese style demo page illustrating what REAL is and create a video
+> trailer of REAL created by REAL
+
+Everything in this folder follows from the second half of that sentence. The
+landing page is `index.html` at the repository root; the trailer is this
+folder, made by running the four REAL skills on REAL's own material.
+
+## What was done, in order
+
+1. **Notebook.** A draft notebook for "REAL in 30 seconds" existed from 18
+   October (six lines, the same shape). It was refreshed for today's REAL: two
+   editors instead of one, the finished tutorial as the opening picture
+   instead of an abstract animation, a music bed from the creator's own
+   performance, and a closing card. `source/NOTEBOOK.md`; `ballpark.py` said
+   93 words, about 31 s at 3 words/s.
+2. **Media.** Excerpts were cut from the Paganini No. 23 demo's Final Cut Pro
+   export, from its two-panel comparison movie and from the creator's screen
+   recording of the `.fcpxml` import; the bed was joined from two performance
+   passages of the creator's recording; the closing card was drawn; the
+   notebook was captured in an editor-style page. `scripts/cut_media.sh`,
+   `scripts/make_title_card.py`, `scripts/capture_pages.py notebook`.
+3. **Narration.** The six lines were synthesized with a neural voice
+   (edge-tts, en-US-AndrewMultilingualNeural, +12 %) as a stand-in for a human
+   read, trimmed to start on their first word, and force-aligned to the script
+   with the compile skill's `voice.py measure`. Three words were missing from
+   the aligner's dictionary (`source/oov.json`).
+4. **Catalogue, pass one.** `scan.py` over `media/`, the judgement in
+   `scripts/catalogue_judgement.py`, `build_catalog.py`. Twelve files.
+5. **Storyboard, pass one.** `notebook.py parse`, `clock.py time --measured
+   --pauses hold`, `bind.py`, `build.py`, `tracks.py`. The tracks-page clip was
+   a numbered stub request; the catalogue-page slot had bound low-confidence
+   to the notebook capture.
+6. **Captures.** The catalogue page and the tracks page were captured by
+   Chrome, the tracks page at 15 captures per second of reel time through its
+   `#t=` deep link, 108 captures assembled into a 30 fps movie.
+7. **Catalogue and storyboard, pass two.** Both captures catalogued and bound
+   by tag; `revise.py` applied `source/revisions.txt` (three captures
+   letterboxed, two captions re-anchored to "pinned" and "cannot", a 1 s
+   dissolve into the card); `build.py validate`: 0 errors.
+8. **Compile.** `adapt.py`, `compile.py build` for FCPXML (0 errors) and OTIO
+   with rastered captions (0 errors); `bench/otio_edl.py --against`:
+   EQUIVALENT, 10/10 visual events, 7/7 audio clips, 1/1 transitions,
+   1190/1190 frames.
+9. **Preview.** `scripts/render_preview.py` rendered the `.otio` to
+   `assets/trailer/real-trailer.mp4` for the landing page.
+
+## What the pipeline refused or got wrong on the way, and the fix
+
+- `build.py` wrote the whole-reel bed as `kind: audio` and its own validator
+  refused the reel; the span is now a `bed` (one of the four audio kinds) and
+  is no longer also a lane in the hook beat. Test:
+  `real-storyboarding/tests/test_connected_bed.py`.
+- The compile beat holds two shots in sequence. The compiler only put a layer
+  on the primary storyline when it spanned the whole beat, so the beat became
+  a gap with both shots connected above it, and the OTIO validator refused the
+  dissolve into the card ("needs a clip on both sides of the cut"). Base shots
+  that tile a beat are now consecutive spine items. Test:
+  `bench/test_adapt_tiled_base.py`.
+- The dissolve check looked at the first base shot of the beat before; it now
+  looks at the one that ends it.
+- The tracks page checked asset paths relative to the working directory and
+  rendered every thumbnail as a card; it now resolves them against the reel's
+  local root. The `#t=` deep link was added for the capture.
+- Headless Chrome hung once on the 106th of 108 captures; the capture tool now
+  times each capture out, retries with a fresh profile, and resumes from the
+  frames already on disk.
+- The notebook first carried explicit durations (`~5s`, `~6s`) on the base
+  shots; the clock treats a timed visual that outruns its line as a hold after
+  the words, and a timed visual after a running shot as an insert, so the base
+  shots are untimed and hold until the next one.

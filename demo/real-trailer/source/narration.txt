@@ -1,0 +1,6 @@
+Most AI video tools generate a video. REAL edits yours, and shows its work.
+Four steps, four files you can read. A notebook: your script, with the shots marked inline.
+A catalogue: every clip described, anything unverified marked unknown.
+Then the reel. Every picture is pinned to a word, not a timestamp, so re-recording the voice moves nothing you approved.
+Last, a real timeline for Final Cut Pro or DaVinci Resolve: editable clips, titles, lanes. What it cannot represent, it refuses.
+This trailer was made with REAL. Its notebook is in the repository.

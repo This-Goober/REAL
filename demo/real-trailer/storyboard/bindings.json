@@ -1,0 +1,916 @@
+{
+ "generated_from": {
+  "notebook": "storyboard/notebook.json",
+  "catalog": "catalogue/asset-catalog.json"
+ },
+ "assets_root": "/Users/henrytan/Documents/git/REAL/demo/real-trailer/media",
+ "project": "REAL in 30 seconds (trailer)",
+ "assets": [
+  {
+   "id": "A13",
+   "file": "Images/T-catalogue.png",
+   "name": "T-catalogue.png",
+   "kind": "image",
+   "role": "\u2605 This trailer's own ASSET-CATALOG.html",
+   "shows": "1080x1920 capture of catalogue/ASSET-CATALOG.html as Chrome renders it: the six script beats as cards, then the asset table with thumbnails, file specs, what each file is and shows, where it earns its place, what it binds to, its tags and its beat. Taken before this capture and the tracks capture were added to the folder, which is the catalogue the trailer is talking about.",
+   "use": "B3, under 'A catalogue: every clip described, anything unverified marked unknown'.",
+   "beat": "B3",
+   "binds_to": "a `<show image of a screenshot of REAL's own ASSET-CATALOG.html ...>` type component",
+   "tags": [
+    "real-catalogue",
+    "catalogue",
+    "screenshot",
+    "four-files"
+   ],
+   "dur": 0.0,
+   "w": 1080,
+   "h": 1920,
+   "fps": 25.0,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "1080x1920 png 25fps \u00b7 0.5 MB"
+  },
+  {
+   "id": "A01",
+   "file": "Images/T-notebook.png",
+   "name": "T-notebook.png",
+   "kind": "image",
+   "role": "\u2605 This trailer's own NOTEBOOK.md, in a dark editor",
+   "shows": "1080x1920 capture of source/NOTEBOOK.md as Chrome renders it in an editor-style page: line numbers, the front matter, the hook and four-files cells; narration lines in blue, components in green, captions in violet, notes in grey italics. Lines 1-27 are visible.",
+   "use": "B2, under 'A notebook: your script, with the shots marked inline'. The file the trailer is talking about.",
+   "beat": "B2",
+   "binds_to": "a `<show image of a screenshot of REAL's own NOTEBOOK.md ...>` type component",
+   "tags": [
+    "real-notebook",
+    "notebook",
+    "screenshot",
+    "editor",
+    "four-files"
+   ],
+   "dur": 0.0,
+   "w": 1080,
+   "h": 1920,
+   "fps": 25.0,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "1080x1920 png 25fps \u00b7 0.3 MB"
+  },
+  {
+   "id": "A02",
+   "file": "Images/T-title-made-with-real.png",
+   "name": "T-title-made-with-real.png",
+   "kind": "image",
+   "role": "\u2605 Closing card: MADE WITH REAL",
+   "shows": "1080x1920 card on a washi-coloured ground: MADE WITH / REAL in a tall serif, \u30ea\u30a2\u30eb set vertically beside it, a vermilion seal, 'edited by REAL, notebook in the repository', and the address github.com/This-Goober/REAL. Drawn by scripts/make_title_card.py.",
+   "use": "B6, the payoff, held to the end.",
+   "beat": "B6",
+   "binds_to": "a `<show image of a plain title card, MADE WITH REAL ...>` type component",
+   "tags": [
+    "real-title",
+    "title-card",
+    "payoff",
+    "made-with-real"
+   ],
+   "dur": 0.0,
+   "w": 1080,
+   "h": 1920,
+   "fps": 25.0,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "1080x1920 png 25fps \u00b7 0.1 MB"
+  },
+  {
+   "id": "A03",
+   "file": "Videos/T-finalcut-editor.mov",
+   "name": "T-finalcut-editor.mov",
+   "kind": "video",
+   "role": "\u2605 The Paganini timeline inside Final Cut Pro (the creator's screen recording)",
+   "shows": "6.07 s, 1918x1200, 30 fps, silent. The whole Final Cut Pro window: the viewer top centre playing the tutorial with a yellow caption on it, the timeline across the bottom with the primary storyline, connected title clips above it and the playhead moving right. Window 16.0-22.0 s of the creator's 93 s recording of the .fcpxml import.",
+   "use": "B5, under 'a real timeline for Final Cut Pro'. Landscape in a portrait reel: letterboxed, which is fine for four seconds.",
+   "beat": "B5",
+   "binds_to": "a `<video clip of a REAL timeline imported into Final Cut Pro ...>` type component",
+   "tags": [
+    "editor-finalcut",
+    "final-cut-pro",
+    "fcpxml",
+    "timeline",
+    "screen-recording"
+   ],
+   "dur": 6.07,
+   "w": 1918,
+   "h": 1200,
+   "fps": 30.0,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "6.07s \u00b7 1918x1200 h264 30fps \u00b7 0.5 MB"
+  },
+  {
+   "id": "A04",
+   "file": "Videos/T-side-by-side.mov",
+   "name": "T-side-by-side.mov",
+   "kind": "video",
+   "role": "\u2605 Final Cut Pro | DaVinci Resolve, the same storyboard side by side",
+   "shows": "8.0 s, 2160x1920, 30 fps, silent. Two 1080x1920 renders side by side, Final Cut Pro left, DaVinci Resolve right. The caption 'same interval, smaller space' lands at ~0.8 s on both, the cut to the fingerboard close-up at ~2.0 s on both, 'why not octaves?' at ~3.9 s on both. Window 33.4-41.4 s of the two-panel comparison movie of the current build.",
+   "use": "B5, under 'Final Cut Pro or DaVinci Resolve'; the picture that says 'two editors, one storyboard'.",
+   "beat": "B5",
+   "binds_to": "a `<video clip of the same storyboard rendered by Final Cut Pro and by DaVinci Resolve side by side>` type component",
+   "tags": [
+    "side-by-side",
+    "two-editors",
+    "davinci-resolve",
+    "final-cut-pro",
+    "same-frame"
+   ],
+   "dur": 8.0,
+   "w": 2160,
+   "h": 1920,
+   "fps": 30.0,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "8.0s \u00b7 2160x1920 h264 30fps \u00b7 6.3 MB \u00b7 G5 \u26a0 CHECK"
+  },
+  {
+   "id": "A14",
+   "file": "Videos/T-tracks.mov",
+   "name": "T-tracks.mov",
+   "kind": "video",
+   "role": "\u2605 This trailer's own REEL-TRACKS.html, the playhead moving",
+   "shows": "7.17 s, 1920x1080, 30 fps, silent. The tracks page of this very reel, captured by Chrome through its #t= deep link at 15 captures per second: the playhead crosses the hook and the first four-files beat (reel time 0-7.17 s), the preview pane composites the frame at the playhead, the caption block 'it shows its work' sits on its anchor word in the text lane. Landscape; the storyboard letterboxes it.",
+   "use": "B4, under 'Every picture is pinned to a word, not a timestamp'. The beat the trailer exists for.",
+   "beat": "B4",
+   "binds_to": "a `<video clip of REAL's own REEL-TRACKS.html for this trailer, the playhead moving ...>` type component",
+   "tags": [
+    "real-tracks",
+    "tracks-page",
+    "storyboard",
+    "screen-capture",
+    "the-reel"
+   ],
+   "dur": 7.2,
+   "w": 1920,
+   "h": 1080,
+   "fps": 30.0,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "7.2s \u00b7 1920x1080 h264 30fps \u00b7 0.3 MB \u00b7 G6 \u26a0 CHECK"
+  },
+  {
+   "id": "A05",
+   "file": "Videos/T-tutorial-render.mov",
+   "name": "T-tutorial-render.mov",
+   "kind": "video",
+   "role": "\u2605 The finished tutorial as Final Cut Pro rendered it (hook)",
+   "shows": "5.8 s, 1080x1920, 30 fps, WITH the tutorial's own narration (the violinist speaking; keep it silent under the trailer's voice). Opens on the score-excerpt still over the violinist; the caption 'fingered octaves, Paganini 23' lands at ~0.8 s and holds to ~2.6 s; the cut to the fingerboard close-up at ~2.9 s; the close-up to the end. Window 18.8-24.6 s of the creator's Final Cut export of the current build.",
+   "use": "B1, the hook: 'REAL edits yours' over the creator's own footage already edited, a caption landing, then a cut.",
+   "beat": "B1",
+   "binds_to": "a `<video clip of the finished Paganini tutorial as rendered by Final Cut Pro ...>` type component",
+   "tags": [
+    "tutorial-render",
+    "final-cut-pro",
+    "caption-landing",
+    "hook",
+    "paganini"
+   ],
+   "dur": 5.8,
+   "w": 1080,
+   "h": 1920,
+   "fps": 30.0,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "5.8s \u00b7 1080x1920 h264 30fps \u00b7 aac 2ch 48k \u00b7 2.3 MB \u00b7 G7 \u26a0 CHECK"
+  },
+  {
+   "id": "A06",
+   "file": "Audio/bed-paganini-performance.wav",
+   "name": "bed-paganini-performance.wav",
+   "kind": "audio",
+   "role": "Music bed: the creator's own Paganini No. 23 performance",
+   "shows": "40.0 s, mono 48 kHz, violin only, no speech. The opening performance passage of the recording (0.2-8.1 s) and the closing passage (201.3-220.3 s), joined with 1 s crossfades, repeated once, 3 s fade-out at the end.",
+   "use": "Under the whole trailer, ducked beneath the narration. A bed, never a source lane.",
+   "beat": "any",
+   "binds_to": "an `<audio of the creator's own Paganini performance under the whole trailer ...>` type component",
+   "tags": [
+    "bed",
+    "music",
+    "performance",
+    "paganini",
+    "under-the-whole"
+   ],
+   "dur": 40.0,
+   "w": null,
+   "h": null,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "40.0s \u00b7 pcm_s16le 1ch 48k \u00b7 3.8 MB"
+  },
+  {
+   "id": "A07",
+   "file": "Audio/take-01.wav",
+   "name": "take-01.wav",
+   "kind": "audio",
+   "role": "Voice take 01 \u2014 HOOK",
+   "shows": "Narration, 5.1 s: \"Most AI video tools generate a video. REAL edits yours, and shows its work.\" A synthesized read (edge-tts, en-US-AndrewMultilingualNeural, +12%) standing in for a human recording; replace the file and re-measure, the anchors are words.",
+   "use": "B1. The clock for this beat.",
+   "beat": "B1",
+   "binds_to": "the narration spine for the hook cell, i.e. the spoken line itself",
+   "tags": [
+    "narration",
+    "take-01",
+    "hook"
+   ],
+   "dur": 5.1,
+   "w": null,
+   "h": null,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "5.1s \u00b7 pcm_s16le 1ch 48k \u00b7 0.5 MB"
+  },
+  {
+   "id": "A08",
+   "file": "Audio/take-02.wav",
+   "name": "take-02.wav",
+   "kind": "audio",
+   "role": "Voice take 02 \u2014 FOUR FILES NOTEBOOK",
+   "shows": "Narration, 5.2 s: \"Four steps, four files you can read. A notebook: your script, with the shots marked inline.\" A synthesized read (edge-tts, en-US-AndrewMultilingualNeural, +12%) standing in for a human recording; replace the file and re-measure, the anchors are words.",
+   "use": "B2. The clock for this beat.",
+   "beat": "B2",
+   "binds_to": "the narration spine for the four files notebook cell, i.e. the spoken line itself",
+   "tags": [
+    "narration",
+    "take-02",
+    "four-files-notebook"
+   ],
+   "dur": 5.2,
+   "w": null,
+   "h": null,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "5.2s \u00b7 pcm_s16le 1ch 48k \u00b7 0.5 MB"
+  },
+  {
+   "id": "A09",
+   "file": "Audio/take-03.wav",
+   "name": "take-03.wav",
+   "kind": "audio",
+   "role": "Voice take 03 \u2014 FOUR FILES CATALOGUE",
+   "shows": "Narration, 4.8 s: \"A catalogue: every clip described, anything unverified marked unknown.\" A synthesized read (edge-tts, en-US-AndrewMultilingualNeural, +12%) standing in for a human recording; replace the file and re-measure, the anchors are words.",
+   "use": "B3. The clock for this beat.",
+   "beat": "B3",
+   "binds_to": "the narration spine for the four files catalogue cell, i.e. the spoken line itself",
+   "tags": [
+    "narration",
+    "take-03",
+    "four-files-catalogue"
+   ],
+   "dur": 4.81,
+   "w": null,
+   "h": null,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "4.81s \u00b7 pcm_s16le 1ch 48k \u00b7 0.5 MB"
+  },
+  {
+   "id": "A10",
+   "file": "Audio/take-04.wav",
+   "name": "take-04.wav",
+   "kind": "audio",
+   "role": "Voice take 04 \u2014 THE REEL",
+   "shows": "Narration, 6.8 s: \"Then the reel. Every picture is pinned to a word, not a timestamp, so re-recording the voice moves nothing you approved.\" A synthesized read (edge-tts, en-US-AndrewMultilingualNeural, +12%) standing in for a human recording; replace the file and re-measure, the anchors are words.",
+   "use": "B4. The clock for this beat.",
+   "beat": "B4",
+   "binds_to": "the narration spine for the the reel cell, i.e. the spoken line itself",
+   "tags": [
+    "narration",
+    "take-04",
+    "the-reel"
+   ],
+   "dur": 6.76,
+   "w": null,
+   "h": null,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "6.76s \u00b7 pcm_s16le 1ch 48k \u00b7 0.6 MB"
+  },
+  {
+   "id": "A11",
+   "file": "Audio/take-05.wav",
+   "name": "take-05.wav",
+   "kind": "audio",
+   "role": "Voice take 05 \u2014 COMPILE",
+   "shows": "Narration, 9.2 s: \"Last, a real timeline for Final Cut Pro or DaVinci Resolve: editable clips, titles, lanes. What it cannot represent, it refuses.\" A synthesized read (edge-tts, en-US-AndrewMultilingualNeural, +12%) standing in for a human recording; replace the file and re-measure, the anchors are words.",
+   "use": "B5. The clock for this beat.",
+   "beat": "B5",
+   "binds_to": "the narration spine for the compile cell, i.e. the spoken line itself",
+   "tags": [
+    "narration",
+    "take-05",
+    "compile"
+   ],
+   "dur": 9.17,
+   "w": null,
+   "h": null,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "9.17s \u00b7 pcm_s16le 1ch 48k \u00b7 0.9 MB"
+  },
+  {
+   "id": "A12",
+   "file": "Audio/take-06.wav",
+   "name": "take-06.wav",
+   "kind": "audio",
+   "role": "Voice take 06 \u2014 PAYOFF",
+   "shows": "Narration, 3.6 s: \"This trailer was made with REAL. Its notebook is in the repository.\" A synthesized read (edge-tts, en-US-AndrewMultilingualNeural, +12%) standing in for a human recording; replace the file and re-measure, the anchors are words.",
+   "use": "B6. The clock for this beat.",
+   "beat": "B6",
+   "binds_to": "the narration spine for the payoff cell, i.e. the spoken line itself",
+   "tags": [
+    "narration",
+    "take-06",
+    "payoff"
+   ],
+   "dur": 3.62,
+   "w": null,
+   "h": null,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "3.62s \u00b7 pcm_s16le 1ch 48k \u00b7 0.3 MB"
+  }
+ ],
+ "bindings": {
+  "C4.b74": {
+   "component": "C4.b74",
+   "cell": "C4",
+   "type": "video",
+   "text": "video clip of the same storyboard rendered by Final Cut Pro and by DaVinci Resolve side by side, every cut landing on the same frame",
+   "tags": [
+    "side-by-side"
+   ],
+   "asset": "A04",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#side-by-side matches the asset's tags (+6.0); binds_to shares davinci, final, pro, rendered, resolve (+4.0); role shares davinci, final, pro, resolve, same (+2.5); shows shares davinci, final, pro, resolve, same (+3.0); use shares davinci, final, pro (+1.9); video component / video asset (+2.0)",
+   "signals": [
+    "#side-by-side matches the asset's tags (+6.0)",
+    "binds_to shares davinci, final, pro, rendered, resolve (+4.0)",
+    "role shares davinci, final, pro, resolve, same (+2.5)",
+    "shows shares davinci, final, pro, resolve, same (+3.0)",
+    "use shares davinci, final, pro (+1.9)",
+    "video component / video asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A05",
+     "score": 7.412,
+     "why": "binds_to shares final, pro, rendered (+1.9); role shares final, pro, rendered (+1.9)"
+    },
+    {
+     "asset": "A03",
+     "score": 5.831,
+     "why": "binds_to shares final, pro (+1.1); role shares final, pro (+1.1)"
+    },
+    {
+     "asset": "A14",
+     "score": 3.362,
+     "why": "shows shares storyboard (+0.8); use shares every (+0.5)"
+    }
+   ],
+   "stub": null
+  },
+  "C3.d9d": {
+   "component": "C3.d9d",
+   "cell": "C3",
+   "type": "video",
+   "text": "video clip of REAL's own REEL-TRACKS.html for this trailer, the playhead moving across the lanes and a caption block sitting on its anchor word",
+   "tags": [
+    "real-tracks"
+   ],
+   "asset": "A14",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#real-tracks matches the asset's tags (+6.0); binds_to shares html, moving, own, playhead, real's (+4.0); role shares html, moving, own, playhead, reel-tracks (+2.5); shows shares anchor, block, playhead, word (+3.0); use shares trailer, word (+1.3); video component / video asset (+2.0)",
+   "signals": [
+    "#real-tracks matches the asset's tags (+6.0)",
+    "binds_to shares html, moving, own, playhead, real's (+4.0)",
+    "role shares html, moving, own, playhead, reel-tracks (+2.5)",
+    "shows shares anchor, block, playhead, word (+3.0)",
+    "use shares trailer, word (+1.3)",
+    "video component / video asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A03",
+     "score": 4.676,
+     "why": "shows shares across, moving, playhead (+2.7); video component / video asset (+2.0)"
+    },
+    {
+     "asset": "A05",
+     "score": 2.912,
+     "why": "shows shares own (+0.5); use shares own (+0.5)"
+    },
+    {
+     "asset": "A13",
+     "score": 1.973,
+     "why": "binds_to shares html, own, real's (+1.9); role shares html, own (+1.3)"
+    }
+   ],
+   "stub": null
+  },
+  "C4.d3a": {
+   "component": "C4.d3a",
+   "cell": "C4",
+   "type": "video",
+   "text": "video clip of a REAL timeline imported into Final Cut Pro, the lanes and the connected titles visible, from the creator's screen recording",
+   "tags": [
+    "editor-finalcut"
+   ],
+   "asset": "A03",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#editor-finalcut matches the asset's tags (+6.0); binds_to shares final, imported, pro, real, timeline (+3.3); role shares creator's, final, pro, recording, timeline (+2.5); shows shares connected, creator's, final, pro, recording (+3.0); use shares final, real, timeline (+1.7); video component / video asset (+2.0)",
+   "signals": [
+    "#editor-finalcut matches the asset's tags (+6.0)",
+    "binds_to shares final, imported, pro, real, timeline (+3.3)",
+    "role shares creator's, final, pro, recording, timeline (+2.5)",
+    "shows shares connected, creator's, final, pro, recording (+3.0)",
+    "use shares final, real, timeline (+1.7)",
+    "video component / video asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A05",
+     "score": 6.439,
+     "why": "binds_to shares final, pro (+1.1); role shares final, pro (+1.1)"
+    },
+    {
+     "asset": "A04",
+     "score": 3.378,
+     "why": "binds_to shares final, pro (+1.1); role shares final, pro (+1.1)"
+    }
+   ],
+   "stub": null
+  },
+  "C1.f09": {
+   "component": "C1.f09",
+   "cell": "C1",
+   "type": "audio",
+   "text": "audio of the creator's own Paganini performance under the whole trailer, ducked beneath the narration",
+   "tags": [
+    "bed"
+   ],
+   "asset": "A06",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#bed matches the asset's tags (+6.0); binds_to shares creator's, own, paganini, performance, trailer (+4.0); role shares creator's, own, paganini, performance (+2.5); shows shares performance (+1.0); use shares beneath, ducked, narration, trailer, whole (+2.0); audio component / audio asset (+2.0)",
+   "signals": [
+    "#bed matches the asset's tags (+6.0)",
+    "binds_to shares creator's, own, paganini, performance, trailer (+4.0)",
+    "role shares creator's, own, paganini, performance (+2.5)",
+    "shows shares performance (+1.0)",
+    "use shares beneath, ducked, narration, trailer, whole (+2.0)",
+    "audio component / audio asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A09",
+     "score": 4.915,
+     "why": "#bed appears in the asset's description (+2.5); binds_to shares narration (+0.2)"
+    },
+    {
+     "asset": "A12",
+     "score": 2.871,
+     "why": "binds_to shares narration (+0.2); shows shares narration, trailer (+0.7)"
+    },
+    {
+     "asset": "A05",
+     "score": 2.766,
+     "why": "binds_to shares paganini (+0.7); shows shares creator's, narration, own, paganini (+2.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C1.860": {
+   "component": "C1.860",
+   "cell": "C1",
+   "type": "video",
+   "text": "video clip of the finished Paganini tutorial as rendered by Final Cut Pro from a REAL timeline, a caption landing on the spoken word and then the cut to the next shot",
+   "tags": [
+    "tutorial-render"
+   ],
+   "asset": "A05",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#tutorial-render matches the asset's tags (+6.0); binds_to shares final, finished, paganini, pro, rendered (+4.0); role shares final, finished, pro, rendered, tutorial (+2.5); shows shares final, paganini (+1.2); use shares landing, real (+1.4); video component / video asset (+2.0)",
+   "signals": [
+    "#tutorial-render matches the asset's tags (+6.0)",
+    "binds_to shares final, finished, paganini, pro, rendered (+4.0)",
+    "role shares final, finished, pro, rendered, tutorial (+2.5)",
+    "shows shares final, paganini (+1.2)",
+    "use shares landing, real (+1.4)",
+    "video component / video asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A03",
+     "score": 8.254,
+     "why": "binds_to shares final, pro, real, timeline (+2.3); role shares final, paganini, pro, timeline (+2.5)"
+    },
+    {
+     "asset": "A04",
+     "score": 4.193,
+     "why": "binds_to shares final, pro, rendered (+1.9); role shares final, pro (+1.1)"
+    }
+   ],
+   "stub": null
+  },
+  "C2.67c": {
+   "component": "C2.67c",
+   "cell": "C2",
+   "type": "image",
+   "text": "show image of a screenshot of REAL's own ASSET-CATALOG.html for this trailer, thumbnails with short labels",
+   "tags": [
+    "real-catalogue"
+   ],
+   "asset": "A13",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#real-catalogue matches the asset's tags (+6.0); binds_to shares asset-catalog, html, own, real's, screenshot (+3.8); role shares asset-catalog, html, own (+2.3); shows shares asset-catalog, html, thumbnails, trailer (+3.0); image component / image asset (+2.0)",
+   "signals": [
+    "#real-catalogue matches the asset's tags (+6.0)",
+    "binds_to shares asset-catalog, html, own, real's, screenshot (+3.8)",
+    "role shares asset-catalog, html, own (+2.3)",
+    "shows shares asset-catalog, html, thumbnails, trailer (+3.0)",
+    "image component / image asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A01",
+     "score": 4.844,
+     "why": "binds_to shares own, real's, screenshot (+1.9); role shares own (+0.5)"
+    },
+    {
+     "asset": "A02",
+     "score": 2.0,
+     "why": "image component / image asset (+2.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C2.1db": {
+   "component": "C2.1db",
+   "cell": "C2",
+   "type": "image",
+   "text": "show image of a screenshot of REAL's own NOTEBOOK.md for this trailer in a dark editor, the angle-bracket components visible",
+   "tags": [
+    "real-notebook"
+   ],
+   "asset": "A01",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#real-notebook matches the asset's tags (+6.0); binds_to shares notebook, own, real's, screenshot (+2.5); role shares dark, editor, notebook, own (+2.5); shows shares components, notebook, visible (+2.6); use shares notebook, trailer (+1.0); image component / image asset (+2.0)",
+   "signals": [
+    "#real-notebook matches the asset's tags (+6.0)",
+    "binds_to shares notebook, own, real's, screenshot (+2.5)",
+    "role shares dark, editor, notebook, own (+2.5)",
+    "shows shares components, notebook, visible (+2.6)",
+    "use shares notebook, trailer (+1.0)",
+    "image component / image asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A02",
+     "score": 5.047,
+     "why": "#real-notebook appears in the asset's description (+2.5); shows shares notebook (+0.5)"
+    },
+    {
+     "asset": "A13",
+     "score": 1.844,
+     "why": "binds_to shares own, real's, screenshot (+1.9); role shares own (+0.5)"
+    }
+   ],
+   "stub": null
+  },
+  "C5.1b1": {
+   "component": "C5.1b1",
+   "cell": "C5",
+   "type": "image",
+   "text": "show image of a plain title card, MADE WITH REAL, with the repository address under it",
+   "tags": [
+    "real-title"
+   ],
+   "asset": "A02",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#real-title matches the asset's tags (+6.0); binds_to shares card, made, plain, real (+3.3); role shares card, made, real (+2.2); shows shares address, card, made, real (+3.0); image component / image asset (+2.0)",
+   "signals": [
+    "#real-title matches the asset's tags (+6.0)",
+    "binds_to shares card, made, plain, real (+3.3)",
+    "role shares card, made, real (+2.2)",
+    "shows shares address, card, made, real (+3.0)",
+    "image component / image asset (+2.0)"
+   ],
+   "candidates": [],
+   "stub": null
+  },
+  "C2.b12": {
+   "component": "C2.b12",
+   "cell": "C2",
+   "type": "narration",
+   "text": "Four steps, four files you can read. A notebook: your script, with the shots marked inline.",
+   "tags": [],
+   "asset": "A08",
+   "confidence": "low",
+   "chosen_by": "claude",
+   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares files, four, notebook (+2.0); role shares files, four, notebook (+2.0)",
+   "signals": [
+    "binds_to shares files, four, notebook (+2.0)",
+    "role shares files, four, notebook (+2.0)",
+    "shows shares files, four, inline, marked, notebook (+3.0)",
+    "narration component / audio asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A08",
+     "score": 9.046,
+     "why": "binds_to shares files, four, notebook (+2.0); role shares files, four, notebook (+2.0)"
+    },
+    {
+     "asset": "A09",
+     "score": 5.879,
+     "why": "binds_to shares files, four (+1.5); role shares files, four (+1.5)"
+    },
+    {
+     "asset": "A12",
+     "score": 2.927,
+     "why": "shows shares notebook, read (+0.9); narration component / audio asset (+2.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C4.1b6": {
+   "component": "C4.1b6",
+   "cell": "C4",
+   "type": "narration",
+   "text": "Last, a real timeline for Final Cut Pro or DaVinci Resolve: editable clips, titles, lanes. What it cannot represent, it refuses.",
+   "tags": [],
+   "asset": "A11",
+   "confidence": "low",
+   "chosen_by": "claude",
+   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares cannot, clips, davinci, editable, final (+3.0); narration component / audio asset (+2.0)",
+   "signals": [
+    "shows shares cannot, clips, davinci, editable, final (+3.0)",
+    "narration component / audio asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A11",
+     "score": 5.0,
+     "why": "shows shares cannot, clips, davinci, editable, final (+3.0); narration component / audio asset (+2.0)"
+    },
+    {
+     "asset": "A07",
+     "score": 2.38,
+     "why": "shows shares real (+0.4); narration component / audio asset (+2.0)"
+    },
+    {
+     "asset": "A12",
+     "score": 2.38,
+     "why": "shows shares real (+0.4); narration component / audio asset (+2.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C3.301": {
+   "component": "C3.301",
+   "cell": "C3",
+   "type": "narration",
+   "text": "Then the reel. Every picture is pinned to a word, not a timestamp, so re-recording the voice moves nothing you approved.",
+   "tags": [],
+   "asset": "A10",
+   "confidence": "low",
+   "chosen_by": "claude",
+   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares reel (+0.7); role shares reel, voice (+1.0)",
+   "signals": [
+    "binds_to shares reel (+0.7)",
+    "role shares reel, voice (+1.0)",
+    "shows shares approved, every, moves, nothing, pinned (+3.0)",
+    "narration component / audio asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A10",
+     "score": 6.638,
+     "why": "binds_to shares reel (+0.7); role shares reel, voice (+1.0)"
+    },
+    {
+     "asset": "A09",
+     "score": 2.862,
+     "why": "role shares voice (+0.3); shows shares every (+0.5)"
+    },
+    {
+     "asset": "A07",
+     "score": 2.315,
+     "why": "role shares voice (+0.3); narration component / audio asset (+2.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C2.7e3": {
+   "component": "C2.7e3",
+   "cell": "C2",
+   "type": "narration",
+   "text": "A catalogue: every clip described, anything unverified marked unknown.",
+   "tags": [],
+   "asset": "A09",
+   "confidence": "low",
+   "chosen_by": "claude",
+   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares catalogue (+0.8); role shares catalogue (+0.8)",
+   "signals": [
+    "binds_to shares catalogue (+0.8)",
+    "role shares catalogue (+0.8)",
+    "shows shares anything, catalogue, described, every, marked (+3.0)",
+    "narration component / audio asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A09",
+     "score": 6.629,
+     "why": "binds_to shares catalogue (+0.8); role shares catalogue (+0.8)"
+    },
+    {
+     "asset": "A08",
+     "score": 2.547,
+     "why": "shows shares marked (+0.5); narration component / audio asset (+2.0)"
+    },
+    {
+     "asset": "A10",
+     "score": 2.547,
+     "why": "shows shares every (+0.5); narration component / audio asset (+2.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C1.79b": {
+   "component": "C1.79b",
+   "cell": "C1",
+   "type": "narration",
+   "text": "Most AI video tools generate a video. REAL edits yours, and shows its work.",
+   "tags": [],
+   "asset": "A07",
+   "confidence": "low",
+   "chosen_by": "claude",
+   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares edits, generate, most, real, shows (+3.0); narration component / audio asset (+2.0)",
+   "signals": [
+    "shows shares edits, generate, most, real, shows (+3.0)",
+    "narration component / audio asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A07",
+     "score": 5.0,
+     "why": "shows shares edits, generate, most, real, shows (+3.0); narration component / audio asset (+2.0)"
+    },
+    {
+     "asset": "A11",
+     "score": 2.38,
+     "why": "shows shares real (+0.4); narration component / audio asset (+2.0)"
+    },
+    {
+     "asset": "A12",
+     "score": 2.38,
+     "why": "shows shares real (+0.4); narration component / audio asset (+2.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C5.99d": {
+   "component": "C5.99d",
+   "cell": "C5",
+   "type": "narration",
+   "text": "This trailer was made with REAL. Its notebook is in the repository.",
+   "tags": [],
+   "asset": "A12",
+   "confidence": "low",
+   "chosen_by": "claude",
+   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares made, notebook, real, repository, trailer (+3.0); narration component / audio asset (+2.0)",
+   "signals": [
+    "shows shares made, notebook, real, repository, trailer (+3.0)",
+    "narration component / audio asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A12",
+     "score": 5.0,
+     "why": "shows shares made, notebook, real, repository, trailer (+3.0); narration component / audio asset (+2.0)"
+    },
+    {
+     "asset": "A08",
+     "score": 3.642,
+     "why": "binds_to shares notebook (+0.5); role shares notebook (+0.5)"
+    },
+    {
+     "asset": "A06",
+     "score": 2.912,
+     "why": "binds_to shares trailer (+0.5); use shares trailer (+0.5)"
+    }
+   ],
+   "stub": null
+  },
+  "C1.165": {
+   "component": "C1.165",
+   "cell": "C1",
+   "type": "text",
+   "text": "caption: it shows its work",
+   "tags": [],
+   "asset": null,
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "on-screen text is its own content; no asset needed",
+   "signals": [],
+   "candidates": [],
+   "stub": null,
+   "content": "it shows its work"
+  },
+  "C3.699": {
+   "component": "C3.699",
+   "cell": "C3",
+   "type": "text",
+   "text": "caption: pinned to words",
+   "tags": [],
+   "asset": null,
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "on-screen text is its own content; no asset needed",
+   "signals": [],
+   "candidates": [],
+   "stub": null,
+   "content": "pinned to words"
+  },
+  "C4.356": {
+   "component": "C4.356",
+   "cell": "C4",
+   "type": "text",
+   "text": "caption: refuses, never guesses",
+   "tags": [],
+   "asset": null,
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "on-screen text is its own content; no asset needed",
+   "signals": [],
+   "candidates": [],
+   "stub": null,
+   "content": "refuses, never guesses"
+  }
+ },
+ "unused_assets": [],
+ "unused_reasons": {},
+ "warnings": []
+}

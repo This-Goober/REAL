@@ -74,10 +74,21 @@ def thumb_video(path, source_s=1):
         return None
 
 
+def asset_path(reel, a):
+    """An asset's file as reachable from here: relative files hang off the
+    reel's local root (assets_root_local, else assets_root), absolute ones
+    stand as they are."""
+    p = a.get("file") or ""
+    if p and not os.path.isabs(p):
+        root = reel.get("assets_root_local") or reel.get("assets_root") or ""
+        p = os.path.join(root, p) if root else p
+    return p
+
+
 def collect_thumbs(reel):
     out, misses = {}, []
     for a in reel.get("assets", []):
-        p = a.get("file") or ""
+        p = asset_path(reel, a)
         if not p or not os.path.exists(p):
             misses.append(a["id"])
             continue
@@ -89,8 +100,9 @@ def collect_thumbs(reel):
         for L in b.get("layers", []):
             if L.get("kind") == "video" and "src_in" in L:
                 a = next((a for a in reel.get("assets", []) if a["id"] == L.get("asset")), {})
-                if a.get("file") and os.path.exists(a["file"]):
-                    t = thumb_video(a["file"], L["src_in"])
+                ap = asset_path(reel, a)
+                if ap and os.path.exists(ap):
+                    t = thumb_video(ap, L["src_in"])
                     if t:
                         out["source:" + L["id"]] = t
             st = L.get("stub") or {}
@@ -614,6 +626,10 @@ document.addEventListener("keydown",function(e){
 });
 window.addEventListener("resize",movePh);
 header(); tracks(); panels(); preview(); refresh();
+/* deep link: REEL-TRACKS.html#t=12.4 opens with the playhead at 12.4 s, so a review
+   note can point at a moment and a headless browser can capture one. */
+function hashSeek(){ var m=/^#t=([\d.]+)/.exec(location.hash||""); if(m) seekTo(parseFloat(m[1])); }
+window.addEventListener("hashchange", hashSeek); hashSeek();
 </script></body></html>
 """
 

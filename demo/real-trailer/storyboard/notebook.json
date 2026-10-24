@@ -1,0 +1,411 @@
+{
+ "meta": {
+  "reel": "REAL in 30 seconds",
+  "target": "30s",
+  "aspect": "9:16",
+  "target_s": 30.0
+ },
+ "cells": [
+  {
+   "id": "C1",
+   "uid": "9f1b55c1fd",
+   "name": "hook",
+   "variant": null,
+   "alternate": false,
+   "line": 7,
+   "note": "Open on the thing itself: the creator's own footage, already edited by REAL, a caption landing on the word. No abstraction before the proof.",
+   "groups": [
+    {
+     "id": "G1",
+     "parallel": false,
+     "line": 11,
+     "components": [
+      {
+       "id": "C1.79b",
+       "uid": "79b563fdee",
+       "type": "narration",
+       "text": "Most AI video tools generate a video. REAL edits yours, and shows its work.",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [],
+       "raw": "<Most AI video tools generate a video. REAL edits yours, and shows its work.>",
+       "line": 11,
+       "words": 14
+      }
+     ]
+    },
+    {
+     "id": "G2",
+     "parallel": true,
+     "line": 12,
+     "components": [
+      {
+       "id": "C1.860",
+       "uid": "86076e9c3a",
+       "type": "video",
+       "text": "video clip of the finished Paganini tutorial as rendered by Final Cut Pro from a REAL timeline, a caption landing on the spoken word and then the cut to the next shot",
+       "dur_s": null,
+       "essential": true,
+       "unsure": false,
+       "tags": [
+        "tutorial-render"
+       ],
+       "raw": "<video clip of the finished Paganini tutorial as rendered by Final Cut Pro from a REAL timeline, a caption landing on the spoken word and then the cut to the next shot ! #tutorial-render>",
+       "line": 12,
+       "words": 0
+      },
+      {
+       "id": "C1.f09",
+       "uid": "f09c96aa89",
+       "type": "audio",
+       "text": "audio of the creator's own Paganini performance under the whole trailer, ducked beneath the narration",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [
+        "bed"
+       ],
+       "raw": "<audio of the creator's own Paganini performance under the whole trailer, ducked beneath the narration #bed>",
+       "line": 12,
+       "words": 0
+      }
+     ]
+    },
+    {
+     "id": "G3",
+     "parallel": false,
+     "line": 13,
+     "components": [
+      {
+       "id": "C1.165",
+       "uid": "165d211ebd",
+       "type": "text",
+       "text": "caption: it shows its work",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [],
+       "raw": "<caption: it shows its work>",
+       "line": 13,
+       "words": 0,
+       "content": "it shows its work"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C2",
+   "uid": "dea8cb6004",
+   "name": "four files",
+   "variant": null,
+   "alternate": false,
+   "line": 15,
+   "note": "One idea per visual. The file names must be readable on a phone.",
+   "groups": [
+    {
+     "id": "G1",
+     "parallel": false,
+     "line": 19,
+     "components": [
+      {
+       "id": "C2.b12",
+       "uid": "b12ff6eff0",
+       "type": "narration",
+       "text": "Four steps, four files you can read. A notebook: your script, with the shots marked inline.",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [],
+       "raw": "<Four steps, four files you can read. A notebook: your script, with the shots marked inline.>",
+       "line": 19,
+       "words": 16
+      }
+     ]
+    },
+    {
+     "id": "G2",
+     "parallel": false,
+     "line": 20,
+     "components": [
+      {
+       "id": "C2.1db",
+       "uid": "1db5cb5562",
+       "type": "image",
+       "text": "show image of a screenshot of REAL's own NOTEBOOK.md for this trailer in a dark editor, the angle-bracket components visible",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [
+        "real-notebook"
+       ],
+       "raw": "<show image of a screenshot of REAL's own NOTEBOOK.md for this trailer in a dark editor, the angle-bracket components visible #real-notebook>",
+       "line": 20,
+       "words": 0
+      }
+     ]
+    },
+    {
+     "id": "G3",
+     "parallel": false,
+     "line": 21,
+     "components": [
+      {
+       "id": "C2.7e3",
+       "uid": "7e3de8abb4",
+       "type": "narration",
+       "text": "A catalogue: every clip described, anything unverified marked unknown.",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [],
+       "raw": "<A catalogue: every clip described, anything unverified marked unknown.>",
+       "line": 21,
+       "words": 9
+      }
+     ]
+    },
+    {
+     "id": "G4",
+     "parallel": false,
+     "line": 22,
+     "components": [
+      {
+       "id": "C2.67c",
+       "uid": "67cc4fd2fc",
+       "type": "image",
+       "text": "show image of a screenshot of REAL's own ASSET-CATALOG.html for this trailer, thumbnails with short labels",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [
+        "real-catalogue"
+       ],
+       "raw": "<show image of a screenshot of REAL's own ASSET-CATALOG.html for this trailer, thumbnails with short labels #real-catalogue>",
+       "line": 22,
+       "words": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C3",
+   "uid": "de12e4a104",
+   "name": "the reel",
+   "variant": null,
+   "alternate": false,
+   "line": 24,
+   "note": "The beat the whole trailer exists for. Hold the tracks page.",
+   "groups": [
+    {
+     "id": "G1",
+     "parallel": false,
+     "line": 28,
+     "components": [
+      {
+       "id": "C3.301",
+       "uid": "3017b22c0e",
+       "type": "narration",
+       "text": "Then the reel. Every picture is pinned to a word, not a timestamp, so re-recording the voice moves nothing you approved.",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [],
+       "raw": "<Then the reel. Every picture is pinned to a word, not a timestamp, so re-recording the voice moves nothing you approved.>",
+       "line": 28,
+       "words": 21
+      }
+     ]
+    },
+    {
+     "id": "G2",
+     "parallel": false,
+     "line": 29,
+     "components": [
+      {
+       "id": "C3.d9d",
+       "uid": "d9d6f4c88b",
+       "type": "video",
+       "text": "video clip of REAL's own REEL-TRACKS.html for this trailer, the playhead moving across the lanes and a caption block sitting on its anchor word",
+       "dur_s": null,
+       "essential": true,
+       "unsure": false,
+       "tags": [
+        "real-tracks"
+       ],
+       "raw": "<video clip of REAL's own REEL-TRACKS.html for this trailer, the playhead moving across the lanes and a caption block sitting on its anchor word ! #real-tracks>",
+       "line": 29,
+       "words": 0
+      }
+     ]
+    },
+    {
+     "id": "G3",
+     "parallel": false,
+     "line": 30,
+     "components": [
+      {
+       "id": "C3.699",
+       "uid": "699fc2301e",
+       "type": "text",
+       "text": "caption: pinned to words",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [],
+       "raw": "<caption: pinned to words>",
+       "line": 30,
+       "words": 0,
+       "content": "pinned to words"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C4",
+   "uid": "f6c32a94b3",
+   "name": "compile",
+   "variant": null,
+   "alternate": false,
+   "line": 32,
+   "note": "",
+   "groups": [
+    {
+     "id": "G1",
+     "parallel": false,
+     "line": 34,
+     "components": [
+      {
+       "id": "C4.1b6",
+       "uid": "1b61782b0c",
+       "type": "narration",
+       "text": "Last, a real timeline for Final Cut Pro or DaVinci Resolve: editable clips, titles, lanes. What it cannot represent, it refuses.",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [],
+       "raw": "<Last, a real timeline for Final Cut Pro or DaVinci Resolve: editable clips, titles, lanes. What it cannot represent, it refuses.>",
+       "line": 34,
+       "words": 21
+      }
+     ]
+    },
+    {
+     "id": "G2",
+     "parallel": false,
+     "line": 35,
+     "components": [
+      {
+       "id": "C4.d3a",
+       "uid": "d3ad1fa5c0",
+       "type": "video",
+       "text": "video clip of a REAL timeline imported into Final Cut Pro, the lanes and the connected titles visible, from the creator's screen recording",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [
+        "editor-finalcut"
+       ],
+       "raw": "<video clip of a REAL timeline imported into Final Cut Pro, the lanes and the connected titles visible, from the creator's screen recording #editor-finalcut>",
+       "line": 35,
+       "words": 0
+      }
+     ]
+    },
+    {
+     "id": "G3",
+     "parallel": true,
+     "line": 36,
+     "components": [
+      {
+       "id": "C4.b74",
+       "uid": "b7406d9426",
+       "type": "video",
+       "text": "video clip of the same storyboard rendered by Final Cut Pro and by DaVinci Resolve side by side, every cut landing on the same frame",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [
+        "side-by-side"
+       ],
+       "raw": "<video clip of the same storyboard rendered by Final Cut Pro and by DaVinci Resolve side by side, every cut landing on the same frame #side-by-side>",
+       "line": 36,
+       "words": 0
+      },
+      {
+       "id": "C4.356",
+       "uid": "356f41a650",
+       "type": "text",
+       "text": "caption: refuses, never guesses",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [],
+       "raw": "<caption: refuses, never guesses>",
+       "line": 36,
+       "words": 0,
+       "content": "refuses, never guesses"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C5",
+   "uid": "1bf9c08276",
+   "name": "payoff",
+   "variant": null,
+   "alternate": false,
+   "line": 38,
+   "note": "",
+   "groups": [
+    {
+     "id": "G1",
+     "parallel": false,
+     "line": 40,
+     "components": [
+      {
+       "id": "C5.99d",
+       "uid": "99d26c4354",
+       "type": "narration",
+       "text": "This trailer was made with REAL. Its notebook is in the repository.",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [],
+       "raw": "<This trailer was made with REAL. Its notebook is in the repository.>",
+       "line": 40,
+       "words": 12
+      }
+     ]
+    },
+    {
+     "id": "G2",
+     "parallel": false,
+     "line": 41,
+     "components": [
+      {
+       "id": "C5.1b1",
+       "uid": "1b1de30373",
+       "type": "image",
+       "text": "show image of a plain title card, MADE WITH REAL, with the repository address under it",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [
+        "real-title"
+       ],
+       "raw": "<show image of a plain title card, MADE WITH REAL, with the repository address under it #real-title>",
+       "line": 41,
+       "words": 0
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "warnings": []
+}

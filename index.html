@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>REAL</title>
+<meta name="description" content="REAL: an AI production crew for the director's own footage. It plans, catalogues, storyboards and compiles a script and footage into an editable Final Cut Pro or DaVinci Resolve timeline. It edits; it does not generate; it shows its work.">
+<meta name="theme-color" content="#F4EFE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15140F" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4EFE5; --ink:#1C1A18; --verm:#B82E24; --grey:#787268; --panel:#E9E2D4; --code:#EDE6D8;
+  --rule:rgba(28,26,24,.28); --seal-ink:#F4EFE5;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --paper:#15140F; --ink:#E8E2D6; --verm:#C9463B; --grey:#9A9283; --panel:#201E18; --code:#1C1A15; --rule:rgba(232,226,214,.26); }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+/* grid and flex children may shrink below their content: code blocks scroll, the page never does */
+.hero>*,.two>*,.try>*,.steps>*,.videos>*,.paper>*{min-width:0}
+pre{max-width:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-size:19px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+a:hover{border-bottom-color:var(--verm)}
+img,svg,video{max-width:100%}
+.jp{font-family:'Shippori Mincho','Noto Serif JP','Hiragino Mincho ProN','Yu Mincho',serif}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+
+/* top line */
+.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0 0;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+.top a{border:0}
+.top nav a{margin-left:22px}
+.top nav a:hover{color:var(--verm)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr;gap:56px;padding-top:64px;padding-bottom:48px;align-items:center}
+.wordmark{display:flex;align-items:flex-start;gap:clamp(10px,2vw,22px)}
+.real{font-weight:500;font-size:clamp(92px,20vw,212px);line-height:.82;letter-spacing:-.015em;margin-left:-.04em}
+.kana{writing-mode:vertical-rl;text-orientation:upright;font-size:clamp(24px,4.4vw,40px);letter-spacing:.14em;line-height:1;margin-top:.25em;color:var(--ink)}
+.seal{display:inline-block;writing-mode:vertical-rl;text-orientation:upright;background:var(--verm);color:var(--seal-ink);font-weight:700;font-size:clamp(16px,2.4vw,22px);line-height:1;letter-spacing:.12em;padding:9px 6px 7px;border-radius:4px;margin-top:.5em;align-self:flex-end;margin-bottom:.1em}
+.tagline{font-size:clamp(22px,2.6vw,30px);line-height:1.35;margin:34px 0 0;max-width:22em;font-weight:400}
+.actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.btn{display:inline-block;padding:11px 22px;border:1px solid var(--ink);border-radius:2px;font-size:16px;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:var(--paper)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:hover{border-color:var(--verm);background:var(--verm);color:#F4EFE5}
+
+/* hanging scroll */
+.scroll{margin:0 auto;width:min(320px,88vw)}
+.cord{width:1px;height:30px;background:var(--ink);margin:0 auto;opacity:.6}
+.roller{height:12px;background:var(--ink);border-radius:6px;margin:0 -16px;position:relative}
+.roller::before,.roller::after{content:"";position:absolute;top:1px;width:10px;height:10px;border-radius:50%;background:var(--paper);opacity:.35}
+.roller::before{left:3px}.roller::after{right:3px}
+.mount{background:var(--panel);padding:26px 20px;border-left:1px solid var(--rule);border-right:1px solid var(--rule)}
+.video-box{aspect-ratio:9/16;background:var(--code);border:1px solid var(--ink);overflow:hidden;position:relative}
+.video-box video{width:100%;height:100%;display:block;object-fit:cover;background:var(--code)}
+.video-box::before{content:"REAL in 30 seconds";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--grey);font-size:17px;letter-spacing:.1em;pointer-events:none;z-index:0}
+.video-box video{position:relative;z-index:1}
+.scroll figcaption{font-size:16px;line-height:1.5;color:var(--grey);margin-top:18px;text-align:center}
+.scroll figcaption a{color:var(--ink)}
+
+/* sections */
+.sec{padding-top:64px;padding-bottom:12px;border-top:1px solid var(--rule)}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:26px;flex-wrap:wrap}
+.mark{color:var(--verm);font-size:30px;line-height:1}
+.sec h2{font-weight:500;font-size:clamp(30px,4vw,42px);margin:0;letter-spacing:.005em;line-height:1.1}
+.sec .sub{color:var(--grey);font-size:14px;letter-spacing:.32em;margin-left:auto}
+.lede{font-size:clamp(20px,2.2vw,24px);line-height:1.5;max-width:40em;margin:0}
+.body{max-width:40em;margin:18px 0 0}
+.quote{font-style:italic;font-size:clamp(24px,3vw,32px);line-height:1.3;border-left:2px solid var(--verm);padding-left:22px;margin:40px 0 24px;max-width:24em}
+.quote small{display:block;font-style:normal;font-size:15px;letter-spacing:.12em;color:var(--grey);margin-top:10px;text-transform:uppercase}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:10px}
+.step{border-top:1px solid var(--ink);padding-top:18px;min-width:0}
+.step .k{font-size:58px;color:var(--verm);line-height:1;margin:0 0 12px}
+.step .cmd{font-size:13px;color:var(--grey);letter-spacing:.02em}
+.step h3{font-weight:500;font-size:17px;margin:8px 0 10px;letter-spacing:.01em;word-break:break-word}
+.step p{margin:0;font-size:17px;line-height:1.5}
+pre{background:var(--code);border-left:2px solid var(--verm);padding:14px 18px;overflow-x:auto;font-size:14px;line-height:1.55;margin:0;color:var(--ink);white-space:pre}
+.grammar{margin-top:40px;max-width:720px}
+.grammar pre{white-space:pre-wrap;word-break:break-word}
+.grammar p{margin:0 0 10px;font-size:17px;color:var(--grey)}
+
+/* word anchors */
+.anchor{display:block;width:100%;max-width:640px;height:auto;margin:14px 0 0}
+.anchor text{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;fill:currentColor}
+.anchor .lab{font-size:14px;fill:var(--grey);letter-spacing:.14em;text-transform:uppercase}
+.anchor .v{fill:var(--verm)}
+.anchor .cap{font-size:16px;fill:var(--seal-ink)}
+.anchor line{stroke:currentColor;stroke-width:1}
+.anchor .base{stroke-opacity:.3}
+.anchor .vl{stroke:var(--verm);stroke-width:1.2}
+.anchor rect{fill:var(--verm)}
+.anchor .note{font-size:15px;font-style:italic;fill:var(--grey)}
+.two{display:grid;grid-template-columns:1fr;gap:36px;align-items:start}
+
+/* numbers + videos */
+.nums{border-collapse:collapse;width:100%;max-width:520px;margin:10px 0 0}
+.nums td{padding:10px 0;border-bottom:1px solid var(--rule);font-size:18px;vertical-align:top}
+.nums td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;padding-left:20px}
+.videos{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 22px;margin-top:40px}
+.vid{min-width:0}
+.yt{position:relative;display:block;aspect-ratio:16/9;background:var(--panel);overflow:hidden;border:1px solid var(--rule)}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.8) contrast(.98)}
+.yt .play{position:absolute;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;background:var(--verm);box-shadow:0 2px 12px rgba(0,0,0,.25)}
+.yt .play::after{content:"";position:absolute;left:21px;top:16px;border-left:17px solid #F4EFE5;border-top:11px solid transparent;border-bottom:11px solid transparent}
+.yt:hover .play{transform:scale(1.06)}
+.vid iframe{width:100%;aspect-ratio:16/9;border:0;display:block;background:#000}
+.yt-cap{font-size:16px;line-height:1.4;margin:9px 0 0;color:var(--ink)}
+.yt-cap em{color:var(--grey);font-style:normal}
+.vid .fold{margin-top:12px}
+
+/* try it */
+.try{display:grid;grid-template-columns:1fr;gap:34px;margin-top:6px}
+.links{list-style:none;margin:0;padding:0}
+.links li{padding:12px 0;border-bottom:1px solid var(--rule);font-size:18px}
+.links li span{display:block;font-size:15px;color:var(--grey)}
+.links a{border:0;border-bottom:1px solid var(--rule)}
+.steplist{margin:14px 0 0;padding-left:1.2em;color:var(--ink);font-size:17px}
+.steplist li{margin:6px 0}
+
+/* paper */
+.paper{display:flex;gap:26px;align-items:flex-start;flex-wrap:wrap}
+.paper .pdf{flex:0 0 auto;width:120px;aspect-ratio:1/1.414;background:var(--panel);border:1px solid var(--rule);display:flex;align-items:flex-end;justify-content:center;padding:12px;font-size:13px;letter-spacing:.2em;color:var(--grey);text-transform:uppercase}
+.paper div{flex:1 1 300px}
+
+/* footer */
+.foot{border-top:1px solid var(--rule);margin-top:72px;padding:40px 16px 70px;text-align:center;color:var(--grey);font-size:15px;letter-spacing:.06em}
+.foot .end{display:block;color:var(--verm);font-size:22px;margin-bottom:14px}
+.foot a{border:0;color:var(--ink)}
+
+@media (min-width:900px){
+  .hero{grid-template-columns:1.15fr .85fr;padding-top:84px;padding-bottom:64px}
+  .scroll{justify-self:end}
+  .two{grid-template-columns:1.1fr .9fr}
+  .try{grid-template-columns:1fr 1fr}
+}
+@media (max-width:980px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){.videos{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){
+  .steps,.videos{grid-template-columns:1fr}
+  .sec{padding-top:52px}
+  .top{font-size:13px;letter-spacing:.1em}
+  .top nav a{margin-left:14px}
+  .sec .sub{margin-left:0;width:100%;order:3}
+  .quote{font-size:22px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="top">
+    <a href="#top" class="jp">リアル</a>
+    <nav>
+      <a href="#steps">Steps</a>
+      <a href="#demo">Demo</a>
+      <a href="#try">Try it</a>
+      <a href="https://github.com/This-Goober/REAL">GitHub</a>
+    </nav>
+  </div>
+</div>
+
+<header class="wrap hero" id="top">
+  <div>
+    <div class="wordmark">
+      <span class="real">REAL</span>
+      <span class="kana jp" lang="ja">リアル</span>
+      <span class="seal jp" lang="ja" aria-hidden="true">実写</span>
+    </div>
+    <p class="tagline">An AI production crew for the director's own footage. It edits. It does not generate. It shows its work.</p>
+    <div class="actions">
+      <a class="btn" href="https://github.com/This-Goober/REAL">GitHub</a>
+      <a class="btn ghost" href="paper/himas-2027/REAL-HIMAS-2027.pdf">Technical report</a>
+    </div>
+  </div>
+  <figure class="scroll">
+    <div class="cord" aria-hidden="true"></div>
+    <div class="roller" aria-hidden="true"></div>
+    <div class="mount">
+      <div class="video-box">
+        <video controls playsinline preload="metadata" poster="assets/trailer/poster.jpg">
+          <source src="assets/trailer/real-trailer.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <div class="roller" aria-hidden="true"></div>
+    <figcaption>REAL in 30 seconds, a trailer of REAL made with REAL. Its notebook is in the repository (<a href="demo/real-trailer/">demo/real-trailer/</a>).</figcaption>
+  </figure>
+</header>
+
+<main>
+
+<section class="wrap sec" id="idea">
+  <div class="sec-head">
+    <span class="mark jp" lang="ja" aria-hidden="true">想</span>
+    <h2>The idea</h2>
+    <span class="sub jp" lang="ja" aria-hidden="true">構想</span>
+  </div>
+  <p class="lede">Most AI video tools generate a video. REAL is a crew for a human director: it plans, catalogues, storyboards and compiles the director's own script and footage into a real, editable timeline for Final Cut Pro or DaVinci Resolve.</p>
+  <p class="body">The human makes every creative call. The agent does the bookkeeping, and when it cannot be sure, it refuses to guess. Every decision has one owner, every handoff is one file you can read, and every step validates rather than trusts.</p>
+  <blockquote class="quote">“A random error looks like noise. A coherent error reads as an editorial fact.”<small>The finding behind every design decision</small></blockquote>
+</section>
+
+<section class="wrap sec" id="steps">
+  <div class="sec-head">
+    <span class="mark jp" lang="ja" aria-hidden="true">四</span>
+    <h2>Four steps, four files</h2>
+    <span class="sub jp" lang="ja" aria-hidden="true">起承転結</span>
+  </div>
+  <p class="lede">Each step owns one kind of decision and hands the next step one file. Nothing downstream re-decides what was settled upstream.</p>
+  <div class="steps">
+    <article class="step">
+      <div class="k jp" lang="ja" aria-hidden="true">起</div>
+      <div class="cmd mono">1 · /real-brainstorm</div>
+      <h3 class="mono">NOTEBOOK.md</h3>
+      <p>Your script, with the shots marked inline. What comes after what, and what sits on top of what. No times, no files.</p>
+    </article>
+    <article class="step">
+      <div class="k jp" lang="ja" aria-hidden="true">承</div>
+      <div class="cmd mono">2 · /real-create-catalogue</div>
+      <h3 class="mono">asset-catalog.json</h3>
+      <p>Every clip in your folder described: what it shows, where it earns its place. Anything unverified is marked unknown, never guessed.</p>
+    </article>
+    <article class="step">
+      <div class="k jp" lang="ja" aria-hidden="true">転</div>
+      <div class="cmd mono">3 · /real-storyboarding</div>
+      <h3 class="mono">reel.json + the tracks page</h3>
+      <p>Every picture is pinned to a word, not a timestamp, so re-recording the voice moves nothing you approved. One owner per decision; you correct it by clicking.</p>
+    </article>
+    <article class="step">
+      <div class="k jp" lang="ja" aria-hidden="true">結</div>
+      <div class="cmd mono">4 · /real-compile</div>
+      <h3 class="mono">.fcpxml and .otio</h3>
+      <p>A real timeline: editable clips, titles, lanes. What it cannot represent, it refuses. It never renders video; the editor does the rest.</p>
+    </article>
+  </div>
+  <div class="grammar">
+    <p>The notebook grammar is the only syntax anyone learns. One angle bracket is one thing on screen or in the ear; a bar means at the same time.</p>
+<pre class="mono">&lt;show image of two sine waves drifting apart | audio of a beating minor second&gt;
+&lt;caption: they interfere&gt;</pre>
+  </div>
+</section>
+
+<section class="wrap sec" id="anchors">
+  <div class="sec-head">
+    <span class="mark jp" lang="ja" aria-hidden="true">言</span>
+    <h2>Word anchors</h2>
+    <span class="sub jp" lang="ja" aria-hidden="true">言葉の錨</span>
+  </div>
+  <div class="two">
+    <div>
+      <p class="lede">The word is the identity. The timestamp is derived.</p>
+      <p class="body">A caption, a still or a cut is placed on a spoken word, not on a second. The storyboard runs first on an estimated clock; once the narration is recorded, the recording is measured word by word and the clock is swapped. The words move, the placements follow, and nothing is re-planned. Re-timing never re-decides.</p>
+    </div>
+    <svg class="anchor" viewBox="0 0 520 300" role="img" aria-labelledby="wa-t">
+      <title id="wa-t">A caption pinned to the word “interfere”. When the clock is re-measured the words move and the caption follows its word.</title>
+      <!-- estimated clock -->
+      <text class="lab" x="20" y="130">estimated clock</text>
+      <line class="base" x1="12" y1="100" x2="508" y2="100"/>
+      <g>
+        <text x="20" y="92">when</text><line x1="20" y1="96" x2="20" y2="106"/>
+        <text x="75" y="92">two</text><line x1="75" y1="96" x2="75" y2="106"/>
+        <text x="117" y="92">notes</text><line x1="117" y1="96" x2="117" y2="106"/>
+        <text x="175" y="92">fight,</text><line x1="175" y1="96" x2="175" y2="106"/>
+        <text x="233" y="92">they</text><line x1="233" y1="96" x2="233" y2="106"/>
+        <text class="v" x="281" y="92">interfere</text><line class="vl" x1="281" y1="96" x2="281" y2="106"/>
+        <text x="369" y="92">and</text><line x1="369" y1="96" x2="369" y2="106"/>
+        <text x="413" y="92">beat.</text><line x1="413" y1="96" x2="413" y2="106"/>
+      </g>
+      <rect x="275" y="22" width="118" height="30" rx="2"/>
+      <text class="cap" x="334" y="42" text-anchor="middle">they interfere</text>
+      <line class="vl" x1="283" y1="52" x2="283" y2="78"/>
+      <!-- the shift -->
+      <line class="vl" x1="283" y1="112" x2="302" y2="222" stroke-dasharray="3 4"/>
+      <text class="note" x="505" y="150" text-anchor="end">the clock changes; the anchor does not</text>
+      <!-- measured clock -->
+      <text class="lab" x="20" y="286">measured clock</text>
+      <line class="base" x1="12" y1="254" x2="508" y2="254"/>
+      <g>
+        <text x="20" y="246">when</text><line x1="20" y1="250" x2="20" y2="260"/>
+        <text x="70" y="246">two</text><line x1="70" y1="250" x2="70" y2="260"/>
+        <text x="108" y="246">notes</text><line x1="108" y1="250" x2="108" y2="260"/>
+        <text x="164" y="246">fight,</text><line x1="164" y1="250" x2="164" y2="260"/>
+        <text x="240" y="246">they</text><line x1="240" y1="250" x2="240" y2="260"/>
+        <text class="v" x="300" y="246">interfere</text><line class="vl" x1="300" y1="250" x2="300" y2="260"/>
+        <text x="420" y="246">and</text><line x1="420" y1="250" x2="420" y2="260"/>
+        <text x="462" y="246">beat.</text><line x1="462" y1="250" x2="462" y2="260"/>
+      </g>
+      <rect x="294" y="176" width="118" height="30" rx="2"/>
+      <text class="cap" x="353" y="196" text-anchor="middle">they interfere</text>
+      <line class="vl" x1="302" y1="206" x2="302" y2="232"/>
+    </svg>
+  </div>
+</section>
+
+<section class="wrap sec" id="demo">
+  <div class="sec-head">
+    <span class="mark jp" lang="ja" aria-hidden="true">二</span>
+    <h2>One storyboard, two editors</h2>
+    <span class="sub jp" lang="ja" aria-hidden="true">二つの編集</span>
+  </div>
+  <div class="two">
+    <div>
+      <p class="lede">The Paganini No. 23 tutorial, cut from a violinist's own recording, compiled once to FCPXML and once to OpenTimelineIO, then rendered by Final Cut Pro and by DaVinci Resolve. The two renders were measured against each other, frame by frame.</p>
+      <p class="body"><a href="demo/paganini-no23/">Demo folder and measurements</a>: the prompts, the source media, both timelines, the measurement report and the scripts, so the result can be rebuilt and re-measured.</p>
+    </div>
+    <table class="nums" aria-label="Measurements of the two renders">
+      <tr><td>Frames in both renders</td><td>2629</td></tr>
+      <tr><td>Cuts on the specified frame, both editors</td><td>5 of 5</td></tr>
+      <tr><td>Dissolves rendered, both editors</td><td>1 of 1</td></tr>
+      <tr><td>Caption edges on the specified frame</td><td>22 of 22</td></tr>
+      <tr><td>SSIM, median over the tutorial</td><td>0.992</td></tr>
+      <tr><td>Audio lag between the renders</td><td>0 ms</td></tr>
+    </table>
+  </div>
+  <div class="videos">
+    <div class="vid">
+      <a class="yt" href="https://youtu.be/a0LTt26_SCA" data-id="a0LTt26_SCA" aria-label="Play: Final Cut Pro and DaVinci Resolve side by side"><img loading="lazy" src="https://img.youtube.com/vi/a0LTt26_SCA/hqdefault.jpg" alt=""><span class="play" aria-hidden="true"></span></a>
+      <p class="yt-cap">Final Cut Pro and DaVinci Resolve side by side</p>
+    </div>
+    <div class="vid">
+      <a class="yt" href="https://youtu.be/MrtiP02ugpc" data-id="MrtiP02ugpc" aria-label="Play: with the difference as a third panel"><img loading="lazy" src="https://img.youtube.com/vi/MrtiP02ugpc/hqdefault.jpg" alt=""><span class="play" aria-hidden="true"></span></a>
+      <p class="yt-cap">With the difference as a third panel</p>
+    </div>
+    <div class="vid">
+      <a class="yt" href="https://youtu.be/Oz6rBUQU4j8" data-id="Oz6rBUQU4j8" aria-label="Play: word-anchor precision demo"><img loading="lazy" src="https://img.youtube.com/vi/Oz6rBUQU4j8/hqdefault.jpg" alt=""><span class="play" aria-hidden="true"></span></a>
+      <p class="yt-cap">Word-anchor precision demo</p>
+    </div>
+    <div class="vid">
+      <a class="yt" href="https://youtube.com/shorts/w9lWkhKRVTI" data-id="w9lWkhKRVTI" aria-label="Play: rendered by Final Cut Pro"><img loading="lazy" src="https://img.youtube.com/vi/w9lWkhKRVTI/hqdefault.jpg" alt=""><span class="play" aria-hidden="true"></span></a>
+      <p class="yt-cap">Rendered by Final Cut Pro <em>· a Short</em></p>
+    </div>
+    <div class="vid">
+      <a class="yt" href="https://youtube.com/shorts/h0sJ6EmI2Ho" data-id="h0sJ6EmI2Ho" aria-label="Play: rendered by DaVinci Resolve"><img loading="lazy" src="https://img.youtube.com/vi/h0sJ6EmI2Ho/hqdefault.jpg" alt=""><span class="play" aria-hidden="true"></span></a>
+      <p class="yt-cap">Rendered by DaVinci Resolve <em>· a Short</em></p>
+    </div>
+    <div class="vid">
+      <a class="yt" href="https://youtu.be/cChPjcEszls" data-id="cChPjcEszls" aria-label="Play: the .fcpxml imported in Final Cut Pro"><img loading="lazy" src="https://img.youtube.com/vi/cChPjcEszls/hqdefault.jpg" alt=""><span class="play" aria-hidden="true"></span></a>
+      <p class="yt-cap">The <span class="mono">.fcpxml</span> imported in Final Cut Pro</p>
+    </div>
+    <div class="vid">
+      <a class="yt" href="https://youtu.be/lE2qhSmuxRM" data-id="lE2qhSmuxRM" aria-label="Play: the .otio imported in DaVinci Resolve"><img loading="lazy" src="https://img.youtube.com/vi/lE2qhSmuxRM/hqdefault.jpg" alt=""><span class="play" aria-hidden="true"></span></a>
+      <p class="yt-cap">The <span class="mono">.otio</span> imported in DaVinci Resolve</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap sec" id="try">
+  <div class="sec-head">
+    <span class="mark jp" lang="ja" aria-hidden="true">試</span>
+    <h2>Try it</h2>
+    <span class="sub jp" lang="ja" aria-hidden="true">試す</span>
+  </div>
+  <div class="try">
+    <div>
+      <ul class="links">
+        <li><a href="skills/batch-1/outputs/STORYBOARD-segment.html">Open the live interactive storyboard</a><span>A real review page from a field session: embedded thumbnails, per-scene layers, candidate alternatives, click to correct.</span></li>
+        <li><a href="skills/batch-2/REAL-PIPELINE-MANUAL.md">The user manual</a><span>What to bring to each step, what happens, and what you get out.</span></li>
+        <li><a href="journal/">The capability journal</a><span>One capability, one measurement, one entry at a time.</span></li>
+        <li><a href="https://github.com/This-Goober/REAL">The repository</a><span>Skills, benchmark, demos, paper sources. MIT license.</span></li>
+      </ul>
+    </div>
+    <div>
+      <p class="body" style="margin-top:0">The four skills run in Claude. Clone, package, upload, then start a session in the folder that holds your footage.</p>
+<pre class="mono">git clone https://github.com/This-Goober/REAL.git
+cd REAL/skills/batch-2/skills
+for s in real-*; do zip -r "$s.skill" "$s"; done
+# upload each .skill: Claude → Settings → Capabilities → Skills</pre>
+      <ol class="steplist">
+        <li>Put everything in one folder on the Mac that runs your editor.</li>
+        <li><span class="mono">/real-brainstorm</span> your idea, then go shoot the shotlist. Record the narration early.</li>
+        <li><span class="mono">/real-create-catalogue</span> the folder and approve the rename list.</li>
+        <li><span class="mono">/real-storyboarding</span>, then review by clicking in the tracks page.</li>
+        <li><span class="mono">/real-compile</span>, import the timeline, finish the edit in your editor.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="wrap sec" id="paper">
+  <div class="sec-head">
+    <span class="mark jp" lang="ja" aria-hidden="true">論</span>
+    <h2>Paper</h2>
+    <span class="sub jp" lang="ja" aria-hidden="true">論文</span>
+  </div>
+  <div class="paper">
+    <a class="pdf" href="paper/himas-2027/REAL-HIMAS-2027.pdf" aria-label="Open the technical report PDF">PDF</a>
+    <div>
+      <p class="lede" style="margin:0">REAL technical report, a HIMAS 2027 workshop short paper.</p>
+      <p class="body">The paper states the architecture, the word-anchor invariant and the cross-editor measurement. <a href="paper/himas-2027/REAL-HIMAS-2027.pdf">Read the PDF</a>, or <a href="paper/himas-2027/">browse the sources</a>.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <span class="end jp" lang="ja" aria-hidden="true">了</span>
+  REAL · <a href="https://github.com/This-Goober/REAL">github.com/This-Goober/REAL</a> · MIT license
+</footer>
+
+<script>
+(function(){
+  var facades=document.querySelectorAll('.yt');
+  for(var i=0;i<facades.length;i++){
+    facades[i].addEventListener('click',function(e){
+      e.preventDefault();
+      var id=this.getAttribute('data-id');
+      var f=document.createElement('iframe');
+      f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
+      f.title=this.getAttribute('aria-label')||'Video';
+      f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.setAttribute('allowfullscreen','');
+      this.parentNode.replaceChild(f,this);
+    });
+  }
+})();
+</script>
+</body>
+</html>
