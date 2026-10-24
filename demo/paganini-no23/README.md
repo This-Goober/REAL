@@ -1,6 +1,6 @@
 # Paganini No. 23 tutorial — one storyboard, two editors
 
-A 91-second violin tutorial (fingered octaves in Paganini's Caprice No. 23),
+An 88-second violin tutorial (fingered octaves in Paganini's Caprice No. 23),
 cut by REAL from the creator's recording and compiled from **one storyboard**
 to **two public timeline specifications**: FCPXML 1.13 for Final Cut Pro and
 OpenTimelineIO for DaVinci Resolve. Both editors imported their file, both
@@ -44,10 +44,10 @@ opaque drawing match within one level. Final Cut blends the 45 %-black card in
 linear light and Resolve in display values. That is an editor policy, not
 something either timeline file can express. Details: `comparison/COMPARISON.md`.
 
-The renders measured here used the excerpts' earlier composite. The excerpts
-now in `media/Videos` are the creator's final composite of the same recording,
-cut at the same windows with the same audio, so the cut and caption frames are
-unchanged; the SSIM and PSNR figures have not been re-measured on them.
+The renders measured here were made from the excerpts' earlier composite and
+before the narration trims in `source/narration-trims.json`. The current
+timeline is 103 frames shorter, so the frame counts above describe that earlier
+build; re-render and re-measure with the steps under Reproduce.
 
 ## Files
 
@@ -60,12 +60,13 @@ unchanged; the SSIM and PSNR figures have not been re-measured on them.
 | `timeline/equivalence.json`, `build-receipt.json` | the cross-target check (two independent readers) and the build receipt with file hashes |
 | `source/storyboard.json`, `source/word-clock.json` | the approved earlier edit this one starts from (five passages, three stills, five captions, opening performance) and its measured word clock, which places each caption on the word it belongs to |
 | `source/NOTEBOOK.md`, `source/TRANSCRIPT.md` | the script and the chosen windows of the recording |
+| `source/narration-trims.json` | the creator's three narration trims, applied by the build before anything else: beat 2 starts on "for example", beat 3 ends after "smaller", beat 4 starts just before "interval" |
 | `media/Videos`, `media/Audio`, `media/Images` | the five studio-background excerpts, the opening and closing clips, the five narration takes, the three stills (26 MB) |
 | `comparison/` | `COMPARISON.md`, `report.json`, `cuts.csv`, `captions.csv`, `captions-sheet.png` (caption band, Final Cut above Resolve, at each caption) |
 | `native-playback-confirmation.json` | the creator's playback check of the earlier edit in Final Cut (18 October 2026), cited by the paper |
 | `scripts/build_timelines.py` | rebuilds both timelines from `source/` and `media/` |
 | `scripts/compare_exports.py` | measures two native exports against the timeline |
-| `scripts/cut_excerpts.sh` | how the excerpts and the closing clip were cut |
+| `scripts/cut_excerpts.sh` | how the excerpts, the narration takes and the closing clip were cut |
 
 Both timelines reference the media by absolute path under this folder, so
 open them on the machine that holds the checkout or relink after moving.
@@ -97,8 +98,9 @@ ffmpeg -i finalcut.mov -i resolve.mp4 -filter_complex \
   -map "[v]" -map 0:a:0 -c:v libx264 -crf 18 -pix_fmt yuv420p -c:a aac -shortest side-by-side.mp4
 ```
 
-Step 1 checks, before it compiles, that the excerpts' audio is the same
-recording as the narration takes (cross-correlation lag under 1 ms), that
+Step 1 applies the narration trims in `source/narration-trims.json`, then
+checks, before it compiles, that the excerpts' audio is the same recording as
+the earlier excerpts at the declared offsets (cross-correlation lag under 1 ms), that
 every caption line fits the frame in the actual font, that no two captions
 overlap on a lane, and after compiling that the two exports describe the same
 frames (`timeline/equivalence.json`). The FCPXML passes Apple's 1.13 DTD.

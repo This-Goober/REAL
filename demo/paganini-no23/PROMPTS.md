@@ -1,7 +1,7 @@
 # The prompts that produced this demo
 
 Everything in this folder came from the exchanges below between the creator
-and the REAL assistant (Claude) on 19 and 23 October 2026, in the order given. The
+and the REAL assistant (Claude) on 19, 23 and 24 October 2026, in the order given. The
 creator's requests are quoted verbatim; what each produced is summarised
 underneath, with the command that reproduces it from this folder. Earlier
 steps (the earlier edit this demo starts from) are summarised at the end.
@@ -141,6 +141,35 @@ command and came out byte-identical, as they should: they reference the
 excerpts by path and duration, and nothing in the edit changed. The opening
 and closing clips are unchanged. The measurements in `comparison/` and the
 videos linked from `README.md` were rendered from the earlier excerpts.
+
+## 8. Three narration trims
+
+> I want to fix the narration -- take 02.wav there is a "hallo we all know".
+> The first few seconds where it says ".... we all know" should be cut. Also
+> take 03-04.wav transition is not smooth. The beginning 0.5 sec of 04 sounds
+> also like a blip noise.
+
+Produced: `source/narration-trims.json`, the three trims as data, and a step
+in `scripts/build_timelines.py` that applies them before anything else. A trim
+moves a beat's source window by whole frames; the words outside the window
+leave the clock, the remaining words are renumbered, every caption and still
+keeps its anchor word, the beat's base shot and narration move to the new
+first word, and the beats that follow move up by the time removed. The build
+refuses a trim that would cut a word a caption or still is anchored to.
+
+- Beat 2 starts 75 frames later, on "for example"; "So we all know that" is
+  gone, with the cut in the pause before "for".
+- Beat 3 ends 11 frames earlier. Its window had run into the next word
+  ("because"); it now ends in the closure before it, after "smaller".
+- Beat 4 starts 17 frames later, just before "interval". The first half
+  second held a word fragment ("the") and a click.
+
+The three excerpts and their narration takes were re-cut at the new windows
+(`scripts/cut_excerpts.sh`, 12 ms fades on the edges that fall inside speech),
+their audio checked against the earlier recording at the declared offsets
+(0 ms lag). The tutorial is 103 frames shorter: 2644 frames, 88.1 s. All
+eleven captions keep their anchors; both timelines rebuilt, 0 errors,
+21/21 events equivalent across the two targets.
 
 ## Before this demo: the edit it starts from (18 October 2026)
 

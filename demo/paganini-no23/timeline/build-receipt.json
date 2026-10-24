@@ -2,22 +2,23 @@
   "project": "Paganini No. 23 tutorial",
   "built_from": {
     "start_storyboard_sha256": "342b74797ec72a9996880b3083e9196a741c787ac1df92eae2b9dba93f904a86",
-    "start_clock_sha256": "20228945aeeffb939b68064f7f12d278532ab26aea9ee711cce6d447da4b1ea5"
+    "start_clock_sha256": "20228945aeeffb939b68064f7f12d278532ab26aea9ee711cce6d447da4b1ea5",
+    "narration_trims_sha256": "9181567452c98b9d09849ab25e5874095d60a120f66935fe122cd8b8e1f6a93a"
   },
   "face": "off",
   "checks": {
-    "equivalence": "cross-target: EQUIVALENT — 21/21 visual events, 7/7 audio clips, total 2747/2747 frames",
-    "total_s": 91.5667,
-    "total_frames": 2747
+    "equivalence": "cross-target: EQUIVALENT — 21/21 visual events, 7/7 audio clips, total 2644/2644 frames",
+    "total_s": 88.1333,
+    "total_frames": 2644
   },
   "captions_added": [
     {
       "id": "B2.L4",
       "text": "a whole step\nin first position",
-      "anchor_word": 32,
+      "anchor_word": 27,
       "anchor_text": "first",
-      "t0": 29.2747,
-      "t1": 31.7947,
+      "t0": 26.7747,
+      "t1": 29.2947,
       "line_widths_px": [
         335.0,
         391.0
@@ -26,10 +27,10 @@
     {
       "id": "B2.L5",
       "text": "the same step,\nhigher up",
-      "anchor_word": 41,
+      "anchor_word": 36,
       "anchor_text": "up",
-      "t0": 32.8267,
-      "t1": 35.0267,
+      "t0": 30.3267,
+      "t1": 32.5267,
       "line_widths_px": [
         388.0,
         249.0
@@ -38,10 +39,10 @@
     {
       "id": "B3.L3",
       "text": "why not\noctaves?",
-      "anchor_word": 59,
+      "anchor_word": 54,
       "anchor_text": "why",
-      "t0": 40.5787,
-      "t1": 42.1387,
+      "t0": 38.0787,
+      "t1": 39.6387,
       "line_widths_px": [
         208.0,
         239.0
@@ -50,10 +51,10 @@
     {
       "id": "B4.L4",
       "text": "shift one\nwhole step",
-      "anchor_word": 91,
+      "anchor_word": 85,
       "anchor_text": "shifting",
-      "t0": 51.8827,
-      "t1": 53.7627,
+      "t0": 48.4493,
+      "t1": 50.3293,
       "line_widths_px": [
         228.0,
         288.0
@@ -62,10 +63,10 @@
     {
       "id": "B5.L3",
       "text": "the first finger\nmoves more",
-      "anchor_word": 119,
+      "anchor_word": 113,
       "anchor_text": "first",
-      "t0": 65.5167,
-      "t1": 67.7167,
+      "t0": 62.0833,
+      "t1": 64.2833,
       "line_widths_px": [
         368.0,
         327.0
@@ -74,10 +75,10 @@
     {
       "id": "B5.L4",
       "text": "third and fourth\nmove less",
-      "anchor_word": 129,
+      "anchor_word": 123,
       "anchor_text": "not",
-      "t0": 71.3327,
-      "t1": 73.5327,
+      "t0": 67.8993,
+      "t1": 70.0993,
       "line_widths_px": [
         408.0,
         266.0
@@ -99,18 +100,18 @@
       "asset": "A02",
       "old": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-02.mov",
       "new": "/Users/Shared/REAL/demo/paganini-no23/media/Videos/P-studio-02.mov",
-      "new_dur_s": 16.5,
-      "beat_s": 16.5,
+      "new_dur_s": 14.0,
+      "beat_s": 14.0,
       "audio_reference": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-02.mov",
       "audio_lag_ms": 0.0,
-      "audio_corr": 1.0
+      "audio_corr": 0.9999
     },
     {
       "asset": "A03",
       "old": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-03.mov",
       "new": "/Users/Shared/REAL/demo/paganini-no23/media/Videos/P-studio-03.mov",
-      "new_dur_s": 11.2,
-      "beat_s": 11.2,
+      "new_dur_s": 10.833008,
+      "beat_s": 10.8333,
       "audio_reference": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-03.mov",
       "audio_lag_ms": 0.0,
       "audio_corr": 1.0
@@ -119,8 +120,8 @@
       "asset": "A04",
       "old": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-04.mov",
       "new": "/Users/Shared/REAL/demo/paganini-no23/media/Videos/P-studio-04.mov",
-      "new_dur_s": 12.8,
-      "beat_s": 12.8,
+      "new_dur_s": 12.233008,
+      "beat_s": 12.2333,
       "audio_reference": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-04.mov",
       "audio_lag_ms": 0.0,
       "audio_corr": 1.0
@@ -134,6 +135,70 @@
       "audio_reference": "/Users/Shared/REAL/bench/work/media/paganini-23-octaves-60s/takes/P-src-05.mov",
       "audio_lag_ms": 0.0,
       "audio_corr": 1.0
+    }
+  ],
+  "narration_trims": [
+    {
+      "beat": "B2",
+      "source_window_s": [
+        31.5,
+        45.5
+      ],
+      "was_source_window_s": [
+        29.0,
+        45.5
+      ],
+      "frames_removed": 75,
+      "dropped_words": [
+        "So",
+        "we",
+        "all",
+        "know",
+        "that"
+      ],
+      "beat_s": [
+        21.8667,
+        35.8667
+      ],
+      "why": "The opening 'So we all know that' is cut; the beat starts on 'for example'. The cut sits in the pause before 'for'."
+    },
+    {
+      "beat": "B3",
+      "source_window_s": [
+        61.2,
+        72.033333
+      ],
+      "was_source_window_s": [
+        61.2,
+        72.4
+      ],
+      "frames_removed": 11,
+      "dropped_words": [],
+      "beat_s": [
+        35.8667,
+        46.7
+      ],
+      "why": "The window ran 11 frames into the next word ('because'); it now ends in the closure before it, after 'smaller'."
+    },
+    {
+      "beat": "B4",
+      "source_window_s": [
+        150.966667,
+        163.2
+      ],
+      "was_source_window_s": [
+        150.4,
+        163.2
+      ],
+      "frames_removed": 17,
+      "dropped_words": [
+        "the"
+      ],
+      "beat_s": [
+        46.7,
+        58.9333
+      ],
+      "why": "The first 17 frames held a word fragment and a click; the beat starts just before 'interval'."
     }
   ],
   "captions": [
@@ -154,8 +219,8 @@
     {
       "id": "B2.L3",
       "text": "same interval,\nsmaller space",
-      "t0": 37.203,
-      "t1": 38.367,
+      "t0": 34.703,
+      "t1": 35.867,
       "font_size": 55,
       "glow": true,
       "face": false,
@@ -168,8 +233,8 @@
     {
       "id": "B2.L4",
       "text": "a whole step\nin first position",
-      "t0": 29.275,
-      "t1": 31.795,
+      "t0": 26.775,
+      "t1": 29.295,
       "font_size": 55,
       "glow": true,
       "face": false,
@@ -182,8 +247,8 @@
     {
       "id": "B2.L5",
       "text": "the same step,\nhigher up",
-      "t0": 32.827,
-      "t1": 35.027,
+      "t0": 30.327,
+      "t1": 32.527,
       "font_size": 55,
       "glow": true,
       "face": false,
@@ -196,8 +261,8 @@
     {
       "id": "B3.L2",
       "text": "octaves:\ndon't just squeeze",
-      "t0": 47.195,
-      "t1": 49.075,
+      "t0": 44.695,
+      "t1": 46.575,
       "font_size": 55,
       "glow": true,
       "face": false,
@@ -210,8 +275,8 @@
     {
       "id": "B3.L3",
       "text": "why not\noctaves?",
-      "t0": 40.579,
-      "t1": 42.139,
+      "t0": 38.079,
+      "t1": 39.639,
       "font_size": 55,
       "glow": true,
       "face": false,
@@ -224,8 +289,8 @@
     {
       "id": "B4.L3",
       "text": "the first finger\ntravels further",
-      "t0": 58.637,
-      "t1": 60.837,
+      "t0": 55.203,
+      "t1": 57.403,
       "font_size": 55,
       "glow": true,
       "face": false,
@@ -238,8 +303,8 @@
     {
       "id": "B4.L4",
       "text": "shift one\nwhole step",
-      "t0": 51.883,
-      "t1": 53.763,
+      "t0": 48.449,
+      "t1": 50.329,
       "font_size": 55,
       "glow": true,
       "face": false,
@@ -252,8 +317,8 @@
     {
       "id": "B5.L2",
       "text": "let the first\nfinger lead",
-      "t0": 79.121,
-      "t1": 81.321,
+      "t0": 75.687,
+      "t1": 77.887,
       "font_size": 55,
       "glow": true,
       "face": false,
@@ -266,8 +331,8 @@
     {
       "id": "B5.L3",
       "text": "the first finger\nmoves more",
-      "t0": 65.517,
-      "t1": 67.717,
+      "t0": 62.083,
+      "t1": 64.283,
       "font_size": 55,
       "glow": true,
       "face": false,
@@ -280,8 +345,8 @@
     {
       "id": "B5.L4",
       "text": "third and fourth\nmove less",
-      "t0": 71.333,
-      "t1": 73.533,
+      "t0": 67.899,
+      "t1": 70.099,
       "font_size": 55,
       "glow": true,
       "face": false,
@@ -301,15 +366,15 @@
       "fps": 60.0
     },
     "beat": "B6",
-    "t0": 81.3667,
-    "t1": 91.5667,
+    "t0": 77.9333,
+    "t1": 88.1333,
     "frames": 306
   },
   "outputs": {
     "fcpxml": "/Users/Shared/REAL/demo/paganini-no23/timeline/paganini-no23.fcpxml",
-    "fcpxml_sha256": "98d0f6dbace46e90b5a5ce603c5a096bceb10dcef7136d95f8f66d103a788b40",
+    "fcpxml_sha256": "df458251af40cb8574ea95ffea32791893682427770c1a0179b7d903910c377b",
     "otio": "/Users/Shared/REAL/demo/paganini-no23/timeline/paganini-no23.otio",
-    "otio_sha256": "9f8f73f49f0de6c5c14e49e4af2b13553013c347e6032084cdd5fd726086b009",
+    "otio_sha256": "8439cb341d1179ff86ed73d2f93d49175003eba9eceb74fb769f5cb28fd9d434",
     "titles_dir": "/Users/Shared/REAL/demo/paganini-no23/timeline/paganini-no23-titles"
   }
 }
