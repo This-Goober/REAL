@@ -1,6 +1,6 @@
 <h1 align="center">🎬 REAL Pipeline</h1>
 
-📄 [Technical report](paper/himas-2027/REAL-HIMAS-2027.pdf)
+<p align="center">📄 <a href="paper/himas-2027/REAL-HIMAS-2027.pdf">Technical report</a></p>
 
 <p align="center"><b>A vision for AI-assisted video editing — and a running journal testing whether it's reachable, one capability at a time.</b></p>
 
