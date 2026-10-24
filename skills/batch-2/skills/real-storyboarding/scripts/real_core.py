@@ -261,3 +261,63 @@ def refit_beat(beat, log=None):
     beat["t1"] = new_t1
     if log is not None:
         log.append("%s: beat now ends at %.3fs (was %.3fs)" % (beat["id"], new_t1, old_t1))
+
+
+def base_shot(beat):
+    """The layer that carries a beat's picture: the one flagged `base`, else the
+    lowest layer that spans the whole beat."""
+    layers = beat.get("layers") or []
+    for L in layers:
+        if L.get("base"):
+            return L
+    for L in sorted(layers, key=lambda l: l.get("z", 0)):
+        if (L.get("kind") in ("video", "image")
+                and abs(float(L.get("t0", 0)) - float(beat.get("t0", 0))) < 1e-6
+                and abs(float(L.get("t1", 0)) - float(beat.get("t1", 0))) < 1e-6):
+            return L
+    return None
+
+
+def transition_problems(beat, prev_beat, assets_by_id):
+    """Why a dissolve into `beat` cannot be cut. A transition borrows media on
+    both sides of the cut, half its length from each: the shot before must have
+    that much file left after its out point, and this beat's shot must start
+    that far into its file (`src_in`). Stills and stubs have unlimited handles.
+    Returns plain sentences; an empty list means the dissolve is safe."""
+    tr = beat.get("transition_in") or {}
+    dur = float(tr.get("dur_s") or tr.get("duration") or 0)
+    if dur <= 0:
+        return ["a transition needs a positive duration"]
+    if prev_beat is None:
+        return ["%s is the first beat; there is nothing before it to dissolve from"
+                % beat.get("id")]
+    half = dur / 2.0
+    tol = 0.02          # container durations are written to the millisecond; a probe can read a hair short
+    out = []
+    for side, b in (("before", prev_beat), ("into", beat)):
+        shot = base_shot(b)
+        if shot is None or (shot.get("asset") is None and not shot.get("stub")):
+            out.append("%s has no shot to dissolve %s" % (b.get("id"), side))
+            continue
+        if shot.get("kind") == "image" or shot.get("stub"):
+            continue
+        asset = assets_by_id.get(shot.get("asset") or "") or {}
+        file_s = asset.get("dur_s")
+        if not file_s:
+            out.append("%s: how long %s runs is unknown; probe the file before asking "
+                       "for a dissolve" % (b.get("id"), shot.get("asset")))
+            continue
+        src_in = float(shot.get("src_in") or 0)
+        used = float(shot.get("t1", 0)) - float(shot.get("t0", 0))
+        if side == "into" and src_in + tol < half:
+            out.append("%s's shot starts %.2f s into %s; a %.2f s dissolve needs %.2f s of "
+                       "handle before the cut, so start it later in the source "
+                       "(`%s: L1 source = %.2f-%.2f`) or shorten the dissolve"
+                       % (b.get("id"), src_in, shot.get("asset"), dur, half, b.get("id"),
+                          half, half + used))
+        if side == "before" and float(file_s) - (src_in + used) + tol < half:
+            out.append("%s's shot ends %.2f s before %s does; a %.2f s dissolve needs %.2f s "
+                       "of handle after the cut, so cut the file longer or shorten the dissolve"
+                       % (b.get("id"), float(file_s) - (src_in + used), shot.get("asset"),
+                          dur, half))
+    return out

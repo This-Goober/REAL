@@ -101,8 +101,14 @@ def parse(path):
         return None
 
     cursor = 0
+    transitions = []
     for item in seq.find("spine"):
         if item.tag == "transition":
+            # centred on the cut: offset = cut - duration/2 (the writer keeps it even)
+            d = frames(T(item.get("duration")))
+            off = frames(T(item.get("offset", "0s")))
+            transitions.append({"f": off + d // 2, "in_f": d // 2, "out_f": d - d // 2,
+                                "name": item.get("name")})
             continue
         off = frames(T(item.get("offset", "0s")))
         dur = frames(T(item.get("duration")))
@@ -133,6 +139,7 @@ def parse(path):
         cursor = off + dur
     return {"fps": fps, "w": W, "h": H, "total_f": frames(T(seq.get("duration"))),
             "spine_end_f": cursor, "events": events, "audio": audio,
+            "transitions": transitions,
             "project": root.find(".//project").get("name")}
 
 

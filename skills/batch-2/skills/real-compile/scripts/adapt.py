@@ -40,7 +40,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from real_core import FRAME_DURATIONS, Frames  # noqa: E402
+from real_core import FRAME_DURATIONS, Frames, transition_problems  # noqa: E402
 
 VISUAL_KINDS = ("video", "image", "text")
 
@@ -678,6 +678,7 @@ def adapt(reel, opts, notes):
 
     muted = 0
     cursor = 0
+    prev_b = None
     for b in reel["beats"]:
         b0, b1 = F.f(b["t0"]), F.f(b["t1"])
         if b0 > cursor:
@@ -714,6 +715,18 @@ def adapt(reel, opts, notes):
             backing["duration"] = F.s(b1 - b0)
 
         backing["name"] = ("%s %s" % (b["id"], b.get("name") or "")).strip()
+        tr = b.get("transition_in")
+        if tr:
+            # a dissolve borrows media on both sides of the cut; without the
+            # handles the editor shows a freeze or refuses, so refuse here
+            problems = transition_problems(b, prev_b, by_id)
+            if backing.get("type") == "gap":
+                problems.append("this beat's picture is a gap; a dissolve needs a shot")
+            if problems:
+                raise Refusal("%s: transition in: %s" % (b["id"], "; ".join(problems)))
+            backing["transition_in"] = {
+                "name": tr.get("name", "Cross Dissolve"),
+                "duration": float(tr.get("dur_s") or tr.get("duration") or 0.5)}
         if opts["markers"]:
             note = beat_note(b)
             if note:
@@ -735,6 +748,7 @@ def adapt(reel, opts, notes):
             backing["overlays"] = overlays
         story["beats"].append(backing)
         cursor = b1
+        prev_b = b
 
     if total_f > cursor:
         story["beats"].append({

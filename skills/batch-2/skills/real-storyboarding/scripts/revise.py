@@ -41,7 +41,7 @@ import argparse
 import json
 import re
 import sys
-from real_core import narration_end, refit_beat
+from real_core import narration_end, refit_beat, transition_problems
 
 CLOCK_WORDS = re.compile(
     r"^(duration|length|time|t0|t1|hold|longer|shorter|trim|retime|tempo|pace|"
@@ -321,6 +321,34 @@ def apply_one(reel, bid, instr, clock, log, unhandled):
         item["snapped"] = False
         touched(item, beat, "the creator wants this cue deliberately separate")
         log.append("%s %s marked stagger" % (beat["id"], item["id"]))
+        return
+
+    m = re.match(r"^transition(?:\s+in)?\s*=\s*(.+)$", t, re.I)
+    if m:
+        # a dissolve into this beat: a decision on the beat, centred on the cut
+        val = m.group(1).strip().strip('"\'').lower()
+        if val in ("none", "cut", "off"):
+            if beat.pop("transition_in", None) is None:
+                unhandled.append("%s: there is no transition in to remove" % beat["id"])
+            else:
+                log.append("%s transition in -> cut" % beat["id"])
+            return
+        dm = re.match(r"^(?:cross\s*)?dissolve(?:\s+(\d+(?:\.\d+)?)\s*s?)?$", val)
+        if not dm:
+            unhandled.append("%s: a transition is `dissolve [seconds]` or `none`, not %r"
+                             % (beat["id"], m.group(1).strip()))
+            return
+        dur = float(dm.group(1)) if dm.group(1) else 1.0
+        idx = reel["beats"].index(beat)
+        prev = reel["beats"][idx - 1] if idx else None
+        trial = dict(beat, transition_in={"dur_s": dur})
+        problems = transition_problems(trial, prev, {a["id"]: a for a in reel.get("assets", [])})
+        if problems:
+            unhandled.append("%s: %s" % (beat["id"], "; ".join(problems)))
+            return
+        beat["transition_in"] = {"name": "Cross Dissolve", "dur_s": dur, "chosen_by": "creator",
+                                 "why": "the creator asked for a dissolve into this beat"}
+        log.append("%s transition in -> dissolve %.2fs" % (beat["id"], dur))
         return
 
     m = re.match(r"^stub\s+([LA]?\d+)\s+spec\s*=\s*(.+)$", t, re.I)

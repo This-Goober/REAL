@@ -68,6 +68,8 @@ force an absolute position.
                "duration": 4.5},
 
   "transition_out": {"name": "Cross Dissolve", "duration": 0.6},
+  "transition_in":  {"name": "Cross Dissolve", "duration": 1.0},   // into this beat; the adapter
+                                                                   // writes it from the reel
 
   "note": "narration: …  |  moment: …  |  words 0–11",
   "markers": [{"t": 0, "value": "the beating must be unmistakable by ~2s in"}],
