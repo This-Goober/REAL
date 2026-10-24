@@ -1,7 +1,7 @@
 # The prompts that produced this demo
 
 Everything in this folder came from the exchanges below between the creator
-and the REAL assistant (Claude) on 19 October 2026, in the order given. The
+and the REAL assistant (Claude) on 19 and 23 October 2026, in the order given. The
 creator's requests are quoted verbatim; what each produced is summarised
 underneath, with the command that reproduces it from this folder. Earlier
 steps (the earlier edit this demo starts from) are summarised at the end.
@@ -116,6 +116,31 @@ python3 scripts/compare_exports.py "FINALCUT-EXPORT.mov" "RESOLVE-EXPORT.mp4" ti
 Produced: the two-panel movie (Final Cut | Resolve, 2160×1920, Final Cut's
 audio) with the ffmpeg command recorded in `README.md`. The rendered movies
 are not in the repository; they are the YouTube links in `README.md`.
+
+## 7. The excerpts on the final composite
+
+Context: the five excerpts had been cut from the first studio composite. The
+creator's final composite, with a band across the bottom tenth that hides the
+matte edge, had been made the same day under a different file name and was
+never picked up. The creator noticed while reviewing the demo.
+
+> hey I just realized the media in paganini no 23 is not actually the ones
+> with the band how come? where are those medias where I edited with the band
+> at the bottom to remove flickering from removing the background
+
+> ok it is now here ~/Downloads/paganini_no23_fingering_studio_band.mp4 can
+> you redo the paganini demo with REAL and this time I want to replace our
+> official demo media with this version of the source fingering video. Can you
+> just cut it at the same time frames and then replace the demo media versions?
+
+Produced: the five excerpts in `media/Videos`, re-cut from that file at the
+same windows with the same command (`scripts/cut_excerpts.sh`). Each has the
+same frame count as before, and its audio lines up with the earlier cut at
+0 ms lag (correlation 1.000). Both timelines were rebuilt with the step 2
+command and came out byte-identical, as they should: they reference the
+excerpts by path and duration, and nothing in the edit changed. The opening
+and closing clips are unchanged. The measurements in `comparison/` and the
+videos linked from `README.md` were rendered from the earlier excerpts.
 
 ## Before this demo: the edit it starts from (18 October 2026)
 

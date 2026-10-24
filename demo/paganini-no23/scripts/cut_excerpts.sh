@@ -2,11 +2,12 @@
 # How the source media in ../media/Videos was cut. Run from this folder.
 #
 # The studio-background recording (3:41, 540x960, 30 fps; the creator's BiRefNet
-# re-render of the original bedroom recording, same audio sample for sample) is
-# not in the repository; only the five excerpts the tutorial uses are. The
-# windows are the ones chosen for the earlier edit (../source/TRANSCRIPT.md).
+# re-render of the original bedroom recording, with a band across the bottom
+# tenth that hides the matte edge; same audio sample for sample) is not in the
+# repository; only the five excerpts the tutorial uses are. The windows are the
+# ones chosen for the earlier edit (../source/TRANSCRIPT.md).
 set -e
-SRC=${1:-/tmp/paganini_no23_fingering_studio.mp4}
+SRC=${1:-$HOME/Downloads/paganini_no23_fingering_studio_band.mp4}
 CLOSURE=${2:-$HOME/Downloads/paganini_no23_closure.mov}
 OUT=../media/Videos
 i=0

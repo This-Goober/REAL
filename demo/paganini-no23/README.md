@@ -44,6 +44,11 @@ opaque drawing match within one level. Final Cut blends the 45 %-black card in
 linear light and Resolve in display values. That is an editor policy, not
 something either timeline file can express. Details: `comparison/COMPARISON.md`.
 
+The renders measured here used the excerpts' earlier composite. The excerpts
+now in `media/Videos` are the creator's final composite of the same recording,
+cut at the same windows with the same audio, so the cut and caption frames are
+unchanged; the SSIM and PSNR figures have not been re-measured on them.
+
 ## Files
 
 | | |
