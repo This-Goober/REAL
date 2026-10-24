@@ -25,7 +25,7 @@
             "rate": 30.0,
             "text": "text overlays are rendered to transparent PNG stills (metadata.REAL.kind == 'title'); the requested styling is kept in metadata.REAL.title and the files live in /Users/Shared/REAL/demo/paganini-no23/timeline/paganini-no23-titles",
             "titles": "raster",
-            "total_frames": 2747,
+            "total_frames": 2629,
             "width": 1080
         }
     },
@@ -177,7 +177,7 @@
                         "OTIO_SCHEMA": "Clip.2",
                         "metadata": {
                             "REAL": {
-                                "note": "narration: So we all know that for example a whole step down here in first position is obviously larger than a whole step up here. So as you go up the fingerboard the intervals get smaller.  |  from C2/C2.bf0  |  words 19–53",
+                                "note": "narration: For example a whole step down here in first position is obviously larger than a whole step up here. So as you go up the fingerboard the intervals get smaller.  |  from C2/C2.bf0  |  words 19–48",
                                 "role": "effects",
                                 "volume_db": -60
                             }
@@ -188,7 +188,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 495.0
+                                "value": 405.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -205,7 +205,7 @@
                                 "OTIO_SCHEMA": "ExternalReference.1",
                                 "metadata": {
                                     "REAL": {
-                                        "asset_seconds": 16.5,
+                                        "asset_seconds": 13.5,
                                         "has_audio": true,
                                         "height": 960,
                                         "kind": "video",
@@ -218,7 +218,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 495.0
+                                        "value": 405.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -236,7 +236,7 @@
                         "OTIO_SCHEMA": "Clip.2",
                         "metadata": {
                             "REAL": {
-                                "note": "narration: Now you obviously would think why didn't you apply this to octaves? But the thing is when you're tuning octaves it's not as simple as just making your finger smaller.  |  from C3/C3.afc  |  words 54–83",
+                                "note": "narration: Now you obviously would think why didn't you apply this to octaves? But the thing is when you're tuning octaves it's not as simple as just making your finger smaller.  |  from C3/C3.afc  |  words 49–78",
                                 "role": "effects",
                                 "volume_db": -60
                             }
@@ -247,7 +247,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 336.0
+                                "value": 325.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -264,7 +264,7 @@
                                 "OTIO_SCHEMA": "ExternalReference.1",
                                 "metadata": {
                                     "REAL": {
-                                        "asset_seconds": 11.2,
+                                        "asset_seconds": 11.333,
                                         "has_audio": true,
                                         "height": 960,
                                         "kind": "video",
@@ -277,7 +277,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 336.0
+                                        "value": 340.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -292,10 +292,32 @@
                         "active_media_reference_key": "DEFAULT_MEDIA"
                     },
                     {
+                        "OTIO_SCHEMA": "Transition.1",
+                        "metadata": {
+                            "REAL": {
+                                "duration_s": 1.0,
+                                "name": "Cross Dissolve",
+                                "uid": "FxPlug:4731E73A-8DAC-4113-9A30-AE85B1761265"
+                            }
+                        },
+                        "name": "Cross Dissolve",
+                        "in_offset": {
+                            "OTIO_SCHEMA": "RationalTime.1",
+                            "rate": 30.0,
+                            "value": 15.0
+                        },
+                        "out_offset": {
+                            "OTIO_SCHEMA": "RationalTime.1",
+                            "rate": 30.0,
+                            "value": 15.0
+                        },
+                        "transition_type": "SMPTE_Dissolve"
+                    },
+                    {
                         "OTIO_SCHEMA": "Clip.2",
                         "metadata": {
                             "REAL": {
-                                "note": "narration: the interval that we go from just shifting maybe one whole step in an octave our first finger is actually traveling more distance than our fourth finger in this case.  |  from C4/C4.bdb  |  words 84–113",
+                                "note": "narration: Interval that we go from just shifting maybe one whole step in an octave our first finger is actually traveling more distance than our fourth finger in this case.  |  from C4/C4.bdb  |  words 79–107",
                                 "role": "effects",
                                 "volume_db": -60
                             }
@@ -306,12 +328,12 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 384.0
+                                "value": 367.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 0.0
+                                "value": 15.0
                             }
                         },
                         "effects": [],
@@ -323,7 +345,7 @@
                                 "OTIO_SCHEMA": "ExternalReference.1",
                                 "metadata": {
                                     "REAL": {
-                                        "asset_seconds": 12.8,
+                                        "asset_seconds": 12.7333,
                                         "has_audio": true,
                                         "height": 960,
                                         "kind": "video",
@@ -336,7 +358,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 384.0
+                                        "value": 382.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -354,7 +376,7 @@
                         "OTIO_SCHEMA": "Clip.2",
                         "metadata": {
                             "REAL": {
-                                "note": "narration: I'm moving more of my first finger along and my third and fourth finger are not moving as far so they just consequentially get closer to my first finger but actually my first finger is leading majority of the movement.  |  from C5/C5.372  |  words 114–153",
+                                "note": "narration: I'm moving more of my first finger along and my third and fourth finger are not moving as far so they just consequentially get closer to my first finger but actually my first finger is leading majority of the movement.  |  from C5/C5.372  |  words 108–147",
                                 "role": "effects",
                                 "volume_db": -60
                             }
@@ -563,7 +585,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 284.0
+                                "value": 194.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -658,7 +680,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 56.0
+                                "value": 45.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -717,7 +739,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 56.0
+                                        "value": 45.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -740,7 +762,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 84.0
+                                "value": 67.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -1056,7 +1078,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 471.0
+                                "value": 381.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -1264,7 +1286,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 495.0
+                                "value": 467.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -1368,7 +1390,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 141.0
+                                "value": 140.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -1472,7 +1494,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 715.0
+                                "value": 716.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -1507,7 +1529,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 878.0
+                                "value": 788.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -1611,7 +1633,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 602.0
+                                "value": 574.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -1854,7 +1876,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 985.0
+                                "value": 895.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -1958,7 +1980,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 1696.0
+                                "value": 1668.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -2078,7 +2100,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 495.0
+                                "value": 405.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -2095,7 +2117,7 @@
                                 "OTIO_SCHEMA": "ExternalReference.1",
                                 "metadata": {
                                     "REAL": {
-                                        "asset_seconds": 16.5,
+                                        "asset_seconds": 13.5,
                                         "has_audio": true,
                                         "height": null,
                                         "kind": "audio",
@@ -2108,7 +2130,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 495.0
+                                        "value": 405.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -2136,7 +2158,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 336.0
+                                "value": 325.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -2153,7 +2175,7 @@
                                 "OTIO_SCHEMA": "ExternalReference.1",
                                 "metadata": {
                                     "REAL": {
-                                        "asset_seconds": 11.2,
+                                        "asset_seconds": 10.8333,
                                         "has_audio": true,
                                         "height": null,
                                         "kind": "audio",
@@ -2166,7 +2188,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 336.0
+                                        "value": 325.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -2194,7 +2216,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 384.0
+                                "value": 367.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -2211,7 +2233,7 @@
                                 "OTIO_SCHEMA": "ExternalReference.1",
                                 "metadata": {
                                     "REAL": {
-                                        "asset_seconds": 12.8,
+                                        "asset_seconds": 12.2333,
                                         "has_audio": true,
                                         "height": null,
                                         "kind": "audio",
@@ -2224,7 +2246,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 384.0
+                                        "value": 367.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -2399,7 +2421,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 2022.0
+                                "value": 1904.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",

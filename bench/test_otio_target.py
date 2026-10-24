@@ -68,6 +68,39 @@ class OTIOTargetTests(unittest.TestCase):
         self.assertIn("otio", names)
         self.assertEqual(targets.get("otio").extension, ".otio")
 
+    def test_transition_between_clips(self):
+        """A dissolve into a beat is one Transition between the two V1 clips, centred
+        on the cut, read back the same from both files; without a handle both
+        targets say so and the OTIO validator refuses."""
+        story = copy.deepcopy(STORY)
+        story["beats"] = [
+            {"type": "video", "src": "Videos/a.mov", "start": 1.5, "duration": 4.0,
+             "asset_duration": 10.0, "name": "B1"},
+            {"type": "video", "src": "Videos/b.mov", "start": 1.0, "duration": 3.0,
+             "asset_duration": 10.0, "name": "B2",
+             "transition_in": {"name": "Cross Dissolve", "duration": 1.0}}]
+        story["connected"] = []
+        with tempfile.TemporaryDirectory() as tmp:
+            f_path, o_path, rf, ro = build_both(story, tmp)
+            self.assertFalse(targets.get("otio").validate(o_path).errors)
+            v1 = json.load(open(o_path))["tracks"]["children"][0]["children"]
+            self.assertEqual([c["OTIO_SCHEMA"].split(".")[0] for c in v1],
+                             ["Clip", "Transition", "Clip"])
+            self.assertEqual((v1[1]["in_offset"]["value"], v1[1]["out_offset"]["value"]), (15, 15))
+            edl_o, edl_f = otio_edl.parse(o_path), fcpxml_edl.parse(f_path)
+            self.assertEqual(edl_o["transitions"], edl_f["transitions"])
+            self.assertEqual(edl_o["transitions"][0]["f"], 120)       # the cut, 4.0 s at 30 fps
+            rep = otio_edl.compare(edl_o, edl_f)
+            self.assertTrue(rep["equal"], json.dumps(rep, indent=1))
+            self.assertEqual((rep["transitions"]["n_otio"], rep["transitions"]["n_fcpxml"]), (1, 1))
+            self.assertFalse(any("not enough" in w for w in ro.warnings + rf.warnings), ro.warnings)
+        story["beats"][1]["start"] = 0.0                               # no head handle
+        with tempfile.TemporaryDirectory() as tmp:
+            f2, o2, rf2, ro2 = build_both(story, tmp)
+            self.assertTrue(any("head handle" in w for w in rf2.warnings), rf2.warnings)
+            self.assertTrue(any("head handle" in w for w in ro2.warnings), ro2.warnings)
+            self.assertTrue(targets.get("otio").validate(o2).errors)
+
     def test_cross_target_equivalence(self):
         with tempfile.TemporaryDirectory() as tmp:
             f_path, o_path, rf, ro = build_both(STORY, tmp)

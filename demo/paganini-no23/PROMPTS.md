@@ -1,7 +1,7 @@
 # The prompts that produced this demo
 
 Everything in this folder came from the exchanges below between the creator
-and the REAL assistant (Claude) on 19 October 2026, in the order given. The
+and the REAL assistant (Claude) on 19, 23 and 24 October 2026, in the order given. The
 creator's requests are quoted verbatim; what each produced is summarised
 underneath, with the command that reproduces it from this folder. Earlier
 steps (the earlier edit this demo starts from) are summarised at the end.
@@ -116,6 +116,121 @@ python3 scripts/compare_exports.py "FINALCUT-EXPORT.mov" "RESOLVE-EXPORT.mp4" ti
 Produced: the two-panel movie (Final Cut | Resolve, 2160×1920, Final Cut's
 audio) with the ffmpeg command recorded in `README.md`. The rendered movies
 are not in the repository; they are the YouTube links in `README.md`.
+
+## 7. The excerpts on the final composite
+
+Context: the five excerpts had been cut from the first studio composite. The
+creator's final composite, with a band across the bottom tenth that hides the
+matte edge, had been made the same day under a different file name and was
+never picked up. The creator noticed while reviewing the demo.
+
+> hey I just realized the media in paganini no 23 is not actually the ones
+> with the band how come? where are those medias where I edited with the band
+> at the bottom to remove flickering from removing the background
+
+> ok it is now here ~/Downloads/paganini_no23_fingering_studio_band.mp4 can
+> you redo the paganini demo with REAL and this time I want to replace our
+> official demo media with this version of the source fingering video. Can you
+> just cut it at the same time frames and then replace the demo media versions?
+
+Produced: the five excerpts in `media/Videos`, re-cut from that file at the
+same windows with the same command (`scripts/cut_excerpts.sh`). Each has the
+same frame count as before, and its audio lines up with the earlier cut at
+0 ms lag (correlation 1.000). Both timelines were rebuilt with the step 2
+command and came out byte-identical, as they should: they reference the
+excerpts by path and duration, and nothing in the edit changed. The opening
+and closing clips are unchanged. The measurements in `comparison/` and the
+videos linked from `README.md` were rendered from the earlier excerpts.
+
+## 8. Three narration trims
+
+> I want to fix the narration -- take 02.wav there is a "hallo we all know".
+> The first few seconds where it says ".... we all know" should be cut. Also
+> take 03-04.wav transition is not smooth. The beginning 0.5 sec of 04 sounds
+> also like a blip noise.
+
+Produced: the three trims as data (`source/narration-trims.json`, since folded
+into `source/revisions.json`) and a step in `scripts/build_timelines.py` that
+applies them before anything else. A trim
+moves a beat's source window by whole frames; the words outside the window
+leave the clock, the remaining words are renumbered, every caption and still
+keeps its anchor word, the beat's base shot and narration move to the new
+first word, and the beats that follow move up by the time removed. The build
+refuses a trim that would cut a word a caption or still is anchored to.
+
+- Beat 2 starts 75 frames later, on "for example"; "So we all know that" is
+  gone, with the cut in the pause before "for".
+- Beat 3 ends 11 frames earlier. Its window had run into the next word
+  ("because"); it now ends in the closure before it, after "smaller".
+- Beat 4 starts 17 frames later, just before "interval". The first half
+  second held a word fragment ("the") and a click.
+
+The three excerpts and their narration takes were re-cut at the new windows
+(`scripts/cut_excerpts.sh`, 12 ms fades on the edges that fall inside speech),
+their audio checked against the earlier recording at the declared offsets
+(0 ms lag). The tutorial is 103 frames shorter: 2644 frames, 88.1 s. All
+eleven captions keep their anchors; both timelines rebuilt, 0 errors,
+21/21 events equivalent across the two targets.
+
+## 9. The cut in beat 2 moved, and a dissolve between beats 3 and 4
+
+> narration 002 still have beginning of "That! ..." Actually can I also ask
+> you to add 1s transition between take 03 and take 04 the seam just too
+> sudden
+
+> maybe this should be part of the skills itself to consider adding
+> transitions?
+
+Produced, in the skills: a dissolve is now a decision the storyboard carries.
+A beat may ask for a cross dissolve into it (`B4: transition in = dissolve 1s`
+on the tracks page, or `transition_in` on the beat); a dissolve borrows half
+its length of picture on each side of the cut, so the storyboard's validator
+and the compiler both refuse it unless the shot before has that much file
+after its out point and the shot after starts that far into its file; a
+creator's dissolve survives a rebuild like any other creator choice; the FCPXML
+target writes the `<transition>` it already knew, the OpenTimelineIO target
+now writes a real `Transition` (it used to park it in metadata), and the two
+independent readers read both back and count them in the cross-target check.
+
+Produced, in this folder: `source/revisions.json` (the trims and the
+transition together). Beat 2 now starts at 32.0 s in the recording, in the
+pause after "that", so it opens on "for example"; beats 3 and 4 are cut with
+half a second of extra picture beyond their windows, beat 4's shot starts
+0.5 s into its file, and a one-second cross dissolve joins them, centred on
+the cut. The narration takes are unchanged at the cut, so the words stay
+clean; only the picture dissolves. The tutorial is 2629 frames, 87.6 s; both
+timelines rebuilt, 0 errors, 21/21 events, 7/7 audio clips and 1/1
+transitions equivalent across the two targets.
+
+## 10. The dissolve rendered black
+
+> the transition is a black screen I dont think it looks good especially the
+> caption from previous frames was showing dissapears very quickly
+
+Two causes, both fixed in the skills. The FCPXML named the Cross Dissolve
+effect by an identifier from Apple's early samples
+(`FFTransition_CrossDissolve`); Final Cut imports that as a missing effect
+and renders the transition black. The compiler now writes the identifier
+Final Cut itself exports for its Cross Dissolve
+(`FxPlug:4731E73A-8DAC-4113-9A30-AE85B1761265`). And the caption of beat 3
+("octaves: don't just squeeze") ran 0.375 s into the mix: the storyboard now
+keeps overlays out of a dissolve. A caption or still of the beat before ends
+where the dissolve starts (the span rule), one of the later beat may not
+start inside it, and the validator and the compiler refuse either. Here the
+caption ends at 45.7 s instead of 46.075 s, 1.5 s on screen. Same frame
+count, 0 errors, 21/21 events, 7/7 audio clips, 1/1 transitions.
+
+## 11. The new exports, measured
+
+> the videos are in ~/Downloads/paganini-no23-finalcutpro and *-davinci
+
+Produced: `comparison/` re-measured on the creator's exports of the current
+build (step 4 under Reproduce, 38 s). 2629 frames in both, no offset; the
+five cuts and all 22 caption edges on the specified frame in both editors;
+the dissolve renders in both, its strongest change 4 and 5 frames after its
+centre; glyph boxes within 1.2 %; SSIM median 0.992; audio lag 0 ms, levels
+equal; the semi-transparent cards still darker in Resolve (mean RGB 125 vs
+168). The two-panel movie was rendered again with the command under Reproduce.
 
 ## Before this demo: the edit it starts from (18 October 2026)
 

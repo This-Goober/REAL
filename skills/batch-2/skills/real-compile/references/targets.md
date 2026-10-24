@@ -125,7 +125,8 @@ edition included) and Premiere Pro 25.6+ import `.otio` natively.
 | connected clip on lane −*n* | audio track `A(n)` (A1 narration, A2 source, A3 bed, A4 sfx) |
 | text overlay | `titles="native"` (default): Clip with a `REAL.title` GeneratorReference; words, font, size, colour, alignment and pixel position are generator parameters. `titles="raster"` (`compile.py build … --target otio --titles raster`): the same text drawn by `targets/title_raster.py` to a transparent PNG at the sequence size in `<out>-titles/`, referenced as an ordinary still; the parameters stay in `metadata.REAL.title` with `metadata.REAL.kind == "title"` |
 | `note`, `markers` | `metadata.REAL.note`, OTIO Markers |
-| transform, opacity, fades, volume, ducking, transitions | `metadata.REAL` only — one build warning says so; the editor does not apply them |
+| `transition_in` / `transition_out` on a beat | an OTIO `Transition` (`SMPTE_Dissolve`, in and out offsets of half the duration) between the two `V1` clips, centred on the cut like the FCPXML `<transition>`; the editor borrows the handles from the media, so both sides need spare media beyond the cut, and the build warns when a handle is missing |
+| transform, opacity, fades, volume, ducking | `metadata.REAL` only — one build warning says so; the editor does not apply them |
 
 Times are integer frames at the sequence rate (`RationalTime(frames, rate)`),
 computed with the same layout arithmetic as the FCPXML target, and media facts

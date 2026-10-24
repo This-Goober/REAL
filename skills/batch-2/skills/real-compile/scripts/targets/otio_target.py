@@ -63,8 +63,7 @@ META = "REAL"
 # Story fields OTIO cannot express. They are copied into metadata so nothing is
 # lost, and the build says once that the importing editor will not apply them.
 PASSTHROUGH = ("transform", "kenburns", "opacity", "fade_in", "fade_out",
-               "volume_db", "ducking", "volume_keyframes", "transition_in",
-               "transition_out", "video_role")
+               "volume_db", "ducking", "volume_keyframes", "video_role")
 TEXT_FIELDS = ("font", "font_size", "font_face", "color", "align", "position",
                "stroke_color", "stroke_width", "shadow", "shadow_color",
                "shadow_offset", "shadow_blur", "line_spacing", "face", "style",
@@ -195,8 +194,15 @@ class OTIOTarget:
 
         tracks = []
         v1 = otio.schema.Track(name="V1", kind=otio.schema.TrackKind.Video)
-        for beat, off_f, dur_f in placed:
+        n_transitions = 0
+        for i, (beat, off_f, dur_f) in enumerate(placed):
             v1.append(self._item(S, beat, dur_f, RT, TR, warnings, tally))
+            tr = beat.get("transition_out") or (
+                placed[i + 1][0].get("transition_in") if i + 1 < len(placed) else None)
+            if tr and i + 1 < len(placed):
+                v1.append(self._transition(S, tr, placed[i], placed[i + 1],
+                                           off_f + dur_f, RT, warnings))
+                n_transitions += 1
         tracks.append(v1)
         for lane in sorted(l for l in lanes if l > 0):
             tr = otio.schema.Track(name="V%d" % (lane + 1), kind=otio.schema.TrackKind.Video)
@@ -239,6 +245,10 @@ class OTIOTarget:
                     os.remove(os.path.join(self._titles_dir, f))
 
         warnings = list(S.warnings) + warnings
+        if n_transitions:
+            warnings.append(
+                "%d transition(s) exported as OTIO SMPTE_Dissolve between V1 clips; the "
+                "importing editor borrows the handles from the media" % n_transitions)
         if tally:
             warnings.append(
                 "OTIO readers do not apply REAL's %s; the values travel in each "
@@ -348,6 +358,44 @@ class OTIOTarget:
             clip.metadata[META] = meta
         return clip
 
+    def _transition(self, S, tr, left, right, boundary_f, RT, warnings):
+        """A dissolve between two V1 clips, centred on the cut: the same even frame
+        count and the same handle check as the FCPXML target."""
+        F = S.clock
+        d_f = F.frames(tr.get("duration", 0.5))
+        if d_f % 2:
+            d_f += 1
+        half = d_f // 2
+        name = tr.get("name", "Cross Dissolve")
+        for side, (beat, off_f, dur_f) in (("left", left), ("right", right)):
+            kind = beat.get("type") or (
+                fcpxml.guess_kind(beat.get("src", "")) if beat.get("src") else "gap")
+            if kind == "gap":
+                warnings.append("transition at %.2fs: the %s side is a gap, there is "
+                                "nothing to dissolve" % (F.seconds(boundary_f), side))
+                continue
+            if kind == "image" or not beat.get("src"):
+                continue
+            m = S._resolve_media(beat["src"], None, beat.get("asset_duration"))
+            start_f = F.frames(beat.get("start", 0))
+            if not m["asset_frames"]:
+                continue
+            if side == "left" and start_f + dur_f + half > m["asset_frames"]:
+                warnings.append(
+                    "transition at %.2fs: not enough tail handle on %s (needs %.2fs "
+                    "more media)" % (F.seconds(boundary_f), beat["src"], F.seconds(half)))
+            if side == "right" and start_f - half < 0:
+                warnings.append(
+                    "transition at %.2fs: not enough head handle on %s (start it "
+                    "%.2fs later in the source)"
+                    % (F.seconds(boundary_f), beat["src"], F.seconds(half)))
+        t = otio.schema.Transition(
+            name=name, transition_type=otio.schema.TransitionTypes.SMPTE_Dissolve,
+            in_offset=RT(half), out_offset=RT(half))
+        t.metadata[META] = _plain({"name": name, "duration_s": F.seconds(d_f),
+                                   "uid": tr.get("uid", fcpxml.CROSS_DISSOLVE_UID)})
+        return t
+
     # ---- validate --------------------------------------------------------
 
     def validate(self, path, local_root=None):
@@ -384,8 +432,33 @@ class OTIOTarget:
 
         missing = []
         for tr in tl.tracks:
-            for it in tr:
+            items = list(tr)
+            for idx, it in enumerate(items):
                 label = "%s/%s" % (tr.name, it.name or type(it).__name__)
+                if isinstance(it, otio.schema.Transition):
+                    if not (on_grid(it.in_offset) and on_grid(it.out_offset)):
+                        errors.append("%s: offsets are not on the %.6g fps frame grid"
+                                      % (label, rate))
+                    prev = items[idx - 1] if idx else None
+                    nxt = items[idx + 1] if idx + 1 < len(items) else None
+                    if not isinstance(prev, otio.schema.Clip) or not isinstance(nxt, otio.schema.Clip):
+                        errors.append("%s needs a clip on both sides of the cut" % label)
+                        continue
+                    for side, clip, need in (("before", prev, it.in_offset.value),
+                                             ("after", nxt, it.out_offset.value)):
+                        mr = clip.media_reference
+                        ar = getattr(mr, "available_range", None)
+                        kind = (dict(mr.metadata.get(META) or {}) if mr is not None else {}).get("kind")
+                        if ar is None or clip.source_range is None or kind in ("image", "title"):
+                            continue
+                        if side == "before":
+                            spare = ar.end_time_exclusive().value - clip.source_range.end_time_exclusive().value
+                        else:
+                            spare = clip.source_range.start_time.value - ar.start_time.value
+                        if spare + 1e-6 < need:
+                            errors.append("%s: the clip %s the cut has %d frames of handle; "
+                                          "the dissolve needs %d" % (label, side, spare, need))
+                    continue
                 sr = it.source_range
                 if sr is None:
                     errors.append("%s has no source_range" % label)

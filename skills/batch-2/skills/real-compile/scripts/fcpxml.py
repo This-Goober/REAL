@@ -48,7 +48,10 @@ BASIC_TITLE_UID = (
 # Basic Title's style object path, observed in a native FCP 1.14 export.
 # Child channel IDs are defined by Apple's installed Basic Title.moti.
 BASIC_TITLE_STYLE_KEY = "9999/999166631/999166633/5/999166635"
-CROSS_DISSOLVE_UID = "FFTransition_CrossDissolve"
+# The identifier Final Cut Pro 10.4+ writes for its own Cross Dissolve. The older
+# "FFTransition_CrossDissolve" from Apple's early samples imports as a missing
+# effect, which renders the transition as black.
+CROSS_DISSOLVE_UID = "FxPlug:4731E73A-8DAC-4113-9A30-AE85B1761265"
 
 # FCP's own convention: generators/titles/gaps live on an internal timeline
 # that starts one hour in. Harmless for assets, expected for these.
@@ -66,7 +69,7 @@ def basic_title_appearance(spec):
     inside the Basic Title style. Paths derive from a creator-exported title;
     IDs 38/39/40/43/45/77 are Apple's Glow group/fill/color/opacity/radius/blur.
     These exact Glow paths are inferred, not specified by Apple's public
-    FCPXML reference. The authors confirmed visible Glow after importing Paganini
+    FCPXML reference. The advisor confirmed visible Glow after importing Paganini
     v4 on 2026-10-18. Individual checkbox states and export round-trip fidelity
     are not covered by that confirmation (see references/fcpxml-notes.md).
     """

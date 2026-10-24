@@ -63,6 +63,13 @@ Three rules with teeth:
   the identity) alongside `anchor_word` (the index) — the tracks page shows
   it, revisions can say `B7: L1 anchor = pressure`, and validate refuses a
   reel where text and index disagree.
+- **A cut can dissolve.** A beat may ask for a cross dissolve into it
+  (`B4: transition in = dissolve 1s`). A dissolve borrows half its length of
+  media on each side of the cut, so the shot before needs that much file after
+  its out point and the shot after must start that far into its file; validate
+  refuses it otherwise, and compile carries it to both targets. Captions and
+  stills keep out of the mix: the beat before's end where the dissolve starts,
+  the later beat's may not start inside it.
 
 ## The clock — this skill owns it, and it measures FIRST
 

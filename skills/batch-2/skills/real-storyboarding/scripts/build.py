@@ -20,6 +20,7 @@ Stdlib + PIL only.
 """
 
 from real_core import read_json, write_json
+from real_core import transition_problems, transition_overlap  # noqa: E402
 import argparse
 import json
 import os
@@ -624,6 +625,17 @@ def preserve_creator(reel, old_reel):
             tb["flags"] = [f for f in tb.get("flags", [])
                            if f.get("layer") != t["id"]]
             kept += 1
+    # a dissolve the creator asked for is a decision on the beat, not on a layer
+    new_beats = {b["id"]: b for b in reel.get("beats", [])}
+    for b in old_reel.get("beats", []):
+        tr = b.get("transition_in")
+        if tr and tr.get("chosen_by") == "creator":
+            if b["id"] in new_beats:
+                new_beats[b["id"]]["transition_in"] = dict(tr)
+                kept += 1
+            else:
+                conflicts.append("%s: the creator's dissolve into this beat has no beat "
+                                 "to land on in the rebuilt reel" % b["id"])
     qs = reel["open"]["questions"]
     for c in conflicts:
         qs.append({"beat": None, "layer": None, "code": "preserve",
@@ -757,6 +769,17 @@ def validate(reel):
                                  % (b["id"], L.get("id"), c))
             if L.get("t1", 0) < L.get("t0", 0):
                 errs.append("%s: layer %s t1 < t0" % (b["id"], L.get("id")))
+        if b.get("transition_in"):
+            idx = reel["beats"].index(b)
+            prev = reel["beats"][idx - 1] if idx else None
+            for msg in transition_problems(b, prev, assets_by_id):
+                errs.append("%s: transition in: %s" % (b["id"], msg))
+            for L, side, over in transition_overlap(prev, b):
+                errs.append("%s: transition in: %s %s the dissolve by %.2f s — %s"
+                            % (b["id"], L.get("id"),
+                               "runs into" if side == "before" else "starts inside",
+                               over, "end it where the dissolve starts" if side == "before"
+                               else "anchor it on a later word or shorten the dissolve"))
         for A in b.get("audio", []):
             if A.get("asset") and A["asset"] not in ids:
                 errs.append("%s: audio %s binds unknown asset %s"

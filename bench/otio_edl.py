@@ -54,7 +54,7 @@ def parse(path):
     tracks = (raw.get("tracks") or {}).get("children") or []
     vtracks = [t for t in tracks if t.get("kind") == "Video"]
     atracks = [t for t in tracks if t.get("kind") == "Audio"]
-    events, audio = [], []
+    events, audio, transitions = [], [], []
     spine_end = 0
 
     def scale_of(it):
@@ -67,9 +67,16 @@ def parse(path):
     for z, tr in enumerate(vtracks):
         cursor = 0
         for it in tr.get("children") or []:
+            sch = _schema(it)
+            if sch == "Transition":
+                # sits between two clips and takes no track time of its own
+                if z == 0:
+                    transitions.append({"f": cursor, "in_f": frames(it["in_offset"]),
+                                        "out_f": frames(it["out_offset"]),
+                                        "name": it.get("name")})
+                continue
             sr = it["source_range"]
             d, s0 = frames(sr["duration"]), frames(sr["start_time"])
-            sch = _schema(it)
             if sch == "Gap":
                 if z == 0:
                     events.append({"kind": "gap", "asset": None, "f0": cursor,
@@ -141,7 +148,8 @@ def parse(path):
 
     total = int(meta.get("total_frames")) if meta.get("total_frames") is not None else spine_end
     return {"fps": fps, "w": W, "h": H, "total_f": total, "spine_end_f": spine_end,
-            "events": events, "audio": audio, "project": raw.get("name")}
+            "events": events, "audio": audio, "transitions": transitions,
+            "project": raw.get("name")}
 
 
 # ----------------------------------------------------------------- compare
@@ -156,6 +164,10 @@ def _ev_key(e):
 
 def _au_key(a):
     return (a["lane"], a["f0"], a["f1"], a.get("src_enable"))
+
+
+def _tr_key(t):
+    return (t["f"], t["in_f"], t["out_f"])
 
 
 def compare(a, b, names=("otio", "fcpxml")):
@@ -176,7 +188,12 @@ def compare(a, b, names=("otio", "fcpxml")):
     out["audio"] = {"n_" + names[0]: len(aa), "n_" + names[1]: len(ab),
                     "only_in_" + names[0]: [k for k in aa if k not in ab],
                     "only_in_" + names[1]: [k for k in ab if k not in aa]}
-    if only_a or only_b or ea != eb or aa != ab:
+    ta = sorted(_tr_key(x) for x in a.get("transitions") or [])
+    tb = sorted(_tr_key(x) for x in b.get("transitions") or [])
+    out["transitions"] = {"n_" + names[0]: len(ta), "n_" + names[1]: len(tb),
+                          "only_in_" + names[0]: [k for k in ta if k not in tb],
+                          "only_in_" + names[1]: [k for k in tb if k not in ta]}
+    if only_a or only_b or ea != eb or aa != ab or ta != tb:
         out["equal"] = False
     return out
 
@@ -198,10 +215,13 @@ def main(argv):
                         "fcpxml": os.path.abspath(argv[argv.index("--against") + 1])}
         if "--report" in argv:
             json.dump(rep, open(argv[argv.index("--report") + 1], "w"), indent=1)
-        print("cross-target: %s — %d/%d visual events, %d/%d audio clips, total %s/%s frames"
+        trn = rep["transitions"]
+        extra = ((", %d/%d transitions" % (trn["n_otio"], trn["n_fcpxml"]))
+                 if trn["n_otio"] or trn["n_fcpxml"] else "")
+        print("cross-target: %s — %d/%d visual events, %d/%d audio clips%s, total %s/%s frames"
               % ("EQUIVALENT" if rep["equal"] else "DIFFERENT",
                  rep["events"]["n_otio"], rep["events"]["n_fcpxml"],
-                 rep["audio"]["n_otio"], rep["audio"]["n_fcpxml"],
+                 rep["audio"]["n_otio"], rep["audio"]["n_fcpxml"], extra,
                  rep["header"]["total_f"]["otio"], rep["header"]["total_f"]["fcpxml"]))
         if not rep["equal"]:
             for side in ("otio", "fcpxml"):
@@ -209,6 +229,8 @@ def main(argv):
                     print("  only in %s: %s" % (side, k))
                 for k in rep["audio"]["only_in_" + side][:20]:
                     print("  only in %s (audio): %s" % (side, k))
+                for k in trn["only_in_" + side][:20]:
+                    print("  only in %s (transition): %s" % (side, k))
             return 1
     return 0
 

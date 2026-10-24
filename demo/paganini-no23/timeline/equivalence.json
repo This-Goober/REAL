@@ -14,12 +14,12 @@
    "fcpxml": 1920
   },
   "total_f": {
-   "otio": 2747,
-   "fcpxml": 2747
+   "otio": 2629,
+   "fcpxml": 2629
   },
   "spine_end_f": {
-   "otio": 2747,
-   "fcpxml": 2747
+   "otio": 2629,
+   "fcpxml": 2629
   }
  },
  "events": {
@@ -31,6 +31,12 @@
  "audio": {
   "n_otio": 7,
   "n_fcpxml": 7,
+  "only_in_otio": [],
+  "only_in_fcpxml": []
+ },
+ "transitions": {
+  "n_otio": 1,
+  "n_fcpxml": 1,
   "only_in_otio": [],
   "only_in_fcpxml": []
  },

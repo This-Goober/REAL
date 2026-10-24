@@ -186,7 +186,11 @@ the well-trodden parts of the format and are what the generator leans on.
 Two constructs are worth watching on the first real import, because they are
 the ones where sources disagree:
 
-- the Cross Dissolve effect `uid` (`FFTransition_CrossDissolve`)
+- the Cross Dissolve effect `uid`: `FxPlug:4731E73A-8DAC-4113-9A30-AE85B1761265`,
+  the identifier Final Cut 10.4+ writes for its own Cross Dissolve. The
+  `FFTransition_CrossDissolve` of Apple's early samples imported as a missing
+  effect and rendered the transition black; the FxPlug identifier imported and
+  rendered as a cross dissolve in Final Cut Pro 11 (Paganini demo, 24 October 2026)
 - keyframed `adjust-volume` (constant `amount="…dB"` is certain; the
   keyframed form is the less-documented path)
 

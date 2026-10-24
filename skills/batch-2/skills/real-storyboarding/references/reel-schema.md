@@ -73,6 +73,8 @@ reason this file exists at all.
       ],
 
       "moment": "the beating must be unmistakable by ~2s in",
+      "transition_in": {"name": "Cross Dissolve", "dur_s": 1.0, "chosen_by": "creator"},
+                                          // optional: a dissolve into this beat (see Transitions)
       "flags": [{"code": "low-confidence", "layer": "B1.L1", "msg": "two clips fit; picked the wider one"}]
     }
   ],
@@ -137,6 +139,21 @@ reason this file exists at all.
 - **`chosen_by`** distinguishes a placement the skill made from one the creator
   made. The creator's choices are not up for reconsideration; the skill's always
   are. Keep the distinction through every revision.
+
+### Transitions
+
+A beat may carry `transition_in`: a cross dissolve of `dur_s` seconds into it,
+centred on the cut. A dissolve borrows media on both sides, half its length
+from each, so the shot before must have that much file left after its out
+point and this beat's shot must start that far into its file (`src_in`).
+Stills and stubs have unlimited handles. `validate` refuses a dissolve without
+its handles; the revision line is `B4: transition in = dissolve 1s`
+(`= none` removes it); a creator's dissolve survives a rebuild like any other
+creator choice, and compile carries it to both targets. Overlays keep out of
+the mix: a caption or still of the beat before ends where the dissolve starts
+(the span rule, applied when the line is accepted), and one of the later beat
+may not start inside it (re-anchor it or shorten the dissolve); `validate`
+and the compiler refuse either.
 
 ### Source intervals
 

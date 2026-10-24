@@ -18,6 +18,13 @@ measured word clock source/word-clock.json) and changes exactly three things:
      on a lane; every caption line is measured in the actual font.
   3. a closing beat: media/Videos/P-closure.mov, full length, its own sound.
 
+Before those three it applies the creator's revisions (source/revisions.json):
+narration trims, where a beat's source window starts later or ends earlier,
+the words outside it leave the clock, every other anchor is kept, and the
+beats that follow move up by the time removed; and transitions, a cross
+dissolve into a beat, which the compiler refuses unless both shots carry the
+handles it borrows (the excerpts are cut with them).
+
 Everything else — the opening performance, the three stills, the earlier
 captions and their anchors — is carried over, and the script checks that
 before compiling. It then compiles the storyboard to FCPXML and to
@@ -85,17 +92,18 @@ def sha256(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def audio_lag_ms(a_path, b_path, t0=1.0, dur=5.0, sr=16000):
-    """Cross-correlation lag between two files' audio (ms, b relative to a)."""
+def audio_lag_ms(a_path, b_path, t0=1.0, dur=5.0, sr=16000, b_t0=None):
+    """Cross-correlation lag between two files' audio (ms, b relative to a).
+    b_t0 reads b from a different offset, for a window that starts later in the same recording."""
     import numpy as np
 
-    def grab(p):
-        raw = subprocess.run(["ffmpeg", "-v", "error", "-ss", str(t0), "-t", str(dur), "-i", str(p),
+    def grab(p, at):
+        raw = subprocess.run(["ffmpeg", "-v", "error", "-ss", str(at), "-t", str(dur), "-i", str(p),
                               "-vn", "-ac", "1", "-ar", str(sr), "-f", "s16le", "-"],
                              capture_output=True, check=True).stdout
         x = np.frombuffer(raw, dtype=np.int16).astype(np.float32)
         return x - x.mean()
-    a, b = grab(a_path), grab(b_path)
+    a, b = grab(a_path, t0), grab(b_path, t0 if b_t0 is None else b_t0)
     n = min(len(a), len(b))
     a, b = a[:n], b[:n]
     best = (0, -1.0)
@@ -109,6 +117,154 @@ def audio_lag_ms(a_path, b_path, t0=1.0, dur=5.0, sr=16000):
 
 def frames(s):
     return int(round(s * FPS))
+
+
+def audio_dur(path):
+    return float(sh("ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", path))
+
+
+def apply_trims(reel, clock, trims):
+    """The creator's narration trims. A beat's source window starts later or ends
+    earlier. Seconds change, anchors do not: the words outside the window leave the
+    clock and the rest are renumbered in order; every placement keeps its anchor
+    word, except the beat's base shot and narration, which move to the new first
+    word; the beats that follow move up by the time removed. Refuses a trim that is
+    not a whole number of frames, that drops words other than the beat's first
+    ones, or that would cut a word a caption or still is anchored to."""
+    import re
+    cbeats = {b["id"]: b for b in clock["beats"]}
+    by_beat = {t["beat"]: t for t in trims}
+    words = clock["words"]
+    dropped, report, heads = set(), [], {}        # heads: beat -> (trim at the head, handle in the file)
+    shift = 0.0                                    # seconds removed before this beat
+    for b in reel["beats"]:
+        bid, cb, t = b["id"], cbeats[b["id"]], by_beat.get(b["id"])
+        head = tail = 0.0
+        drops = []
+        if t:
+            head = t.get("src_in_s", t["was_src_in_s"]) - t["was_src_in_s"]
+            tail = t["was_src_out_s"] - t.get("src_out_s", t["was_src_out_s"])
+            for edge, v in (("start", head), ("end", tail)):
+                if v < 0 or abs(v * FPS - round(v * FPS)) > 1e-3:
+                    sys.exit("%s: the %s trim %.6f s is not a whole number of frames" % (bid, edge, v))
+            head, tail = round(head * FPS) / FPS, round(tail * FPS) / FPS
+            drops = list(t.get("drops", []))
+        bw = [w for w in words if w["beat"] == bid]
+        if [w["w"] for w in bw[:len(drops)]] != drops:
+            sys.exit("%s: the words to drop %r are not the beat's first words %r"
+                     % (bid, drops, [w["w"] for w in bw[:len(drops)]]))
+        kept = bw[len(drops):]
+        dropped.update(w["i"] for w in bw[:len(drops)])
+        old_t0, old_t1 = b["t0"], b["t1"]
+        new_t0, new_t1 = old_t0 - shift, old_t1 - shift - head - tail
+        for w in kept:
+            s0, e0 = w["start"] - shift - head, w["end"] - shift - head
+            if s0 >= new_t1 - 1e-6:
+                sys.exit("%s: word %r (#%d) falls outside the trimmed window" % (bid, w["w"], w["i"]))
+            w["start"] = max(new_t0, s0)
+            w["end"] = min(new_t1, max(w["start"], e0))
+        first = kept[0] if kept else None
+        for item in b["layers"] + b["audio"]:
+            aw = item.get("anchor_word")
+            spans = bool(item.get("base")) or item.get("kind") == "narration"
+            if aw in dropped and not spans:
+                sys.exit("%s: %s is anchored to a dropped word (#%s %r)" % (bid, item["id"], aw, item.get("anchor_text")))
+            if spans:
+                item["t0"], item["t1"] = new_t0, new_t1
+                if aw is not None and first is not None and (aw in dropped or aw == b.get("w0")):
+                    item["anchor_word"], item["anchor_text"] = first["i"], first["w"]
+            else:
+                length = item["t1"] - item["t0"]
+                item["t0"] = item["t0"] - shift - head
+                item["t1"] = min(item["t0"] + length, new_t1)
+            if item.get("src_in") is not None and item.get("src_out") is not None:
+                item["src_out"] = item["src_in"] + (item["t1"] - item["t0"])
+        for p in clock.get("placements", []):
+            if p["beat"] != bid:
+                continue
+            aw = p.get("anchor_word")
+            if p.get("base") or p.get("dur_source") in ("narration", "to-next") or (aw is not None and aw in dropped):
+                p["t0"], p["t1"] = new_t0, new_t1
+                if aw is not None and first is not None and (aw in dropped or aw == b.get("w0")):
+                    p["anchor_word"] = first["i"]
+            else:
+                length = p["t1"] - p["t0"]
+                p["t0"] = p["t0"] - shift - head
+                p["t1"] = min(p["t0"] + length, new_t1)
+            p["span_s"] = round(p["t1"] - p["t0"], 4)
+            if p.get("dur_source") in ("narration", "to-next"):
+                p["dur_s"] = p["span_s"]
+        b["t0"], b["t1"] = new_t0, new_t1
+        cb["t0"], cb["t1"] = new_t0, new_t1
+        head_handle = float((t or {}).get("head_handle_s") or 0)
+        if head_handle:
+            # the excerpt file carries picture before the window: the shot starts that far in
+            shot = next((L for L in b["layers"] if L.get("base")), None)
+            if shot is None:
+                sys.exit("%s: a head handle needs a base shot to apply src_in to" % bid)
+            shot["src_in"] = head_handle
+        if drops:
+            prefix = " ".join(drops)
+            narr = b["narration"]
+            if not narr.startswith(prefix):
+                sys.exit("%s: narration does not start with %r" % (bid, prefix))
+            narr = narr[len(prefix):].lstrip()
+            narr = narr[:1].upper() + narr[1:]
+            b["narration"] = cb["narration"] = narr
+            for item in b["audio"]:
+                if item.get("text"):
+                    item["text"] = narr
+        if t:
+            win = (t.get("src_in_s", t["was_src_in_s"]), t.get("src_out_s", t["was_src_out_s"]))
+            for holder in (b, cb):
+                holder["note"] = re.sub(r"from [\d.]+ s to [\d.]+ s \([\d.]+ s\)",
+                                        "from %.4g s to %.4g s (%.1f s)" % (win[0], win[1], win[1] - win[0]),
+                                        holder.get("note", ""))
+            for ew in clock.get("excerpt_windows", []):
+                if ew["beat"] == bid:
+                    ew.update({"start": new_t0, "end": new_t1, "duration": round(new_t1 - new_t0, 4),
+                               "source_start": ew["source_start"] + head})
+            heads[bid] = (head, head_handle)
+            report.append({"beat": bid, "source_window_s": [round(win[0], 6), round(win[1], 6)],
+                           "was_source_window_s": [t["was_src_in_s"], t["was_src_out_s"]],
+                           "frames_removed": frames(head + tail), "dropped_words": drops,
+                           "head_handle_s": head_handle, "tail_handle_s": float(t.get("tail_handle_s") or 0),
+                           "beat_s": [round(new_t0, 4), round(new_t1, 4)], "why": t.get("why", "")})
+        else:
+            for ew in clock.get("excerpt_windows", []):
+                if ew["beat"] == bid:
+                    ew.update({"start": new_t0, "end": new_t1})
+        shift += head + tail
+    # renumber the words; every anchor follows its word
+    kept_words = [w for w in words if w["i"] not in dropped]
+    remap = {}
+    for n, w in enumerate(kept_words):
+        remap[w["i"]] = n
+        w["i"] = n
+    clock["words"] = kept_words
+    by_new = {w["i"]: w for w in kept_words}
+    for b in reel["beats"]:
+        bw = [w for w in kept_words if w["beat"] == b["id"]]
+        if bw:
+            b["w0"], b["w1"] = bw[0]["i"], bw[-1]["i"]
+            cbeats[b["id"]]["w0"], cbeats[b["id"]]["w1"] = b["w0"], b["w1"]
+        for item in b["layers"] + b["audio"]:
+            aw = item.get("anchor_word")
+            if aw is None:
+                continue
+            item["anchor_word"] = remap[aw]
+            if item.get("anchor_text") and by_new[item["anchor_word"]]["w"] != item["anchor_text"]:
+                sys.exit("%s: anchor text %r is not word #%d %r"
+                         % (item["id"], item["anchor_text"], item["anchor_word"], by_new[item["anchor_word"]]["w"]))
+    for p in clock.get("placements", []):
+        if p.get("anchor_word") is not None:
+            p["anchor_word"] = remap[p["anchor_word"]]
+    clock["total_words"] = len(kept_words)
+    for k in ("narration_s", "audio_total_s", "total_s", "target_s"):
+        if clock.get(k):
+            clock[k] = round(clock[k] - shift, 6)
+    reel["clock"]["total_s"] = reel["beats"][-1]["t1"]
+    return report, heads
 
 
 def text_model_dur(text, rates):
@@ -170,6 +326,15 @@ def main():
                                                  "start_clock_sha256": start_hash["clock"]},
                "face": a.face, "checks": {}, "captions_added": [], "asset_swaps": []}
 
+    # ---- 0. the creator's revisions: narration trims, then transitions ----
+    rev_path = start / "revisions.json"
+    heads, transitions = {}, []
+    if rev_path.is_file():
+        revisions = json.loads(rev_path.read_text())
+        receipt["built_from"]["revisions_sha256"] = sha256(rev_path)
+        receipt["narration_trims"], heads = apply_trims(reel, clock, revisions.get("trims") or [])
+        transitions = revisions.get("transitions") or []
+
     # ---- 1. the studio excerpts replace A01–A05 ---------------------------
     for i in range(1, 6):
         aid = "A%02d" % i
@@ -181,16 +346,17 @@ def main():
             sys.exit("missing %s — cut it from the studio file first (see SHOTLIST.md)" % new)
         p = probe(new)
         beat = beats["B%d" % i]
-        need = beat["t1"] - beat["t0"]
+        head, head_handle = heads.get("B%d" % i, (0.0, 0.0))   # a trimmed window starts later; a handle is extra file before it
+        need = beat["t1"] - beat["t0"] + head_handle
         if p["dur_s"] + 0.5 / FPS < need:
-            sys.exit("%s is %.3fs, shorter than beat B%d (%.3fs)" % (new.name, p["dur_s"], i, need))
+            sys.exit("%s is %.3fs, shorter than beat B%d needs (%.3fs)" % (new.name, p["dur_s"], i, need))
         swap = {"asset": aid, "old": str(old), "new": str(new),
                 "new_dur_s": p["dur_s"], "beat_s": round(need, 4)}
         # the earlier bedroom excerpt, when present, proves the audio is the same recording
         take = Path(assets["A%02d" % (i + 5)]["file"])
         ref = old if old.is_file() else (take if take.is_file() else None)
         if ref is not None:
-            lag, corr = audio_lag_ms(ref, new)
+            lag, corr = audio_lag_ms(ref, new, t0=1.0 + head - head_handle, b_t0=1.0)
             if abs(lag) > 1.0 or corr < 0.98:
                 sys.exit("%s audio does not line up with %s (lag %.2f ms, corr %.3f)"
                          % (new.name, ref.name, lag, corr))
@@ -207,6 +373,29 @@ def main():
                                  "replaced by the creator with BiRefNet, 19 October 2026); same "
                                  "source window, same audio.")
         x["catalog"]["original_file"] = str(old)
+    for x in reel["assets"]:                      # the takes' durations follow their files
+        if x.get("kind") == "audio" and Path(x["file"]).is_file():
+            x["dur_s"] = round(audio_dur(x["file"]), 4)
+
+    # ---- 0b. transitions: a dissolve into a beat, a decision on the beat ---
+    sys.path.insert(0, str(STORY))
+    from real_core import transition_overlap, clip_to_transition   # the storyboard's own rules
+    receipt["transitions"] = []
+    order = [b["id"] for b in reel["beats"]]
+    for t in transitions:
+        beat = beats[t["beat"]]
+        prev = beats[order[order.index(t["beat"]) - 1]] if order.index(t["beat"]) else None
+        beat["transition_in"] = {"name": t.get("name", "Cross Dissolve"), "dur_s": float(t["dur_s"]),
+                                 "chosen_by": "creator", "why": t.get("why", "the creator asked for a dissolve")}
+        early = [L["id"] for L, side, _o in transition_overlap(prev, beat) if side == "into"]
+        if early:
+            sys.exit("%s: %s would start inside the dissolve; anchor it on a later word or shorten "
+                     "the dissolve" % (t["beat"], ", ".join(early)))
+        clipped = clip_to_transition(prev, beat)     # an overlay ends where a dissolve starts
+        receipt["transitions"].append({"beat": t["beat"], "name": beat["transition_in"]["name"],
+                                       "dur_s": beat["transition_in"]["dur_s"],
+                                       "cut_s": round(beat["t0"], 4), "clipped": clipped,
+                                       "why": t.get("why", "")})
 
     # ---- 2. more captions ------------------------------------------------
     words = clock["words"]
