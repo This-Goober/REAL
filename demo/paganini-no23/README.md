@@ -12,9 +12,11 @@ report and the scripts, so the result can be rebuilt and re-measured.
 
 ## Watch
 
-<a href="https://youtu.be/8C-FRg3pOzM"><img src="https://img.youtube.com/vi/8C-FRg3pOzM/hqdefault.jpg" alt="Final Cut Pro and DaVinci Resolve side by side" width="560"/></a>
+<a href="https://youtu.be/a0LTt26_SCA"><img src="https://img.youtube.com/vi/a0LTt26_SCA/hqdefault.jpg" alt="Final Cut Pro and DaVinci Resolve side by side" width="560"/></a>
 
-**Side by side:** Final Cut Pro (left) and DaVinci Resolve (right) rendering the same storyboard. [Watch on YouTube](https://youtu.be/8C-FRg3pOzM)
+**Side by side:** Final Cut Pro (left) and DaVinci Resolve (right) rendering the same storyboard. [Watch on YouTube](https://youtu.be/a0LTt26_SCA)
+
+**With the difference:** the same two renders and |Final Cut − Resolve| amplified four times as a third panel, the analysis movie written by `scripts/compare_exports.py`. [Watch on YouTube](https://youtu.be/MrtiP02ugpc)
 
 | Final Cut Pro (`.fcpxml`) | DaVinci Resolve (`.otio`) |
 |---|---|
@@ -24,9 +26,9 @@ report and the scripts, so the result can be rebuilt and re-measured.
 | [The tutorial as rendered by Final Cut Pro](https://youtube.com/shorts/w9lWkhKRVTI) | [The tutorial as rendered by DaVinci Resolve](https://youtube.com/shorts/h0sJ6EmI2Ho) |
 
 The rendered movies are not in the repository; the links above are the
-outputs. Everything that produced them is. The two rendered tutorials and the
-measurement below are from the current build, with the dissolve; the
-side-by-side and the two editor views were recorded from the earlier one.
+outputs. Everything that produced them is. The renders, the side-by-side and
+the measurement below are from the current build, with the dissolve; the two
+editor views were recorded from the earlier one.
 
 ## What the measurement found
 
