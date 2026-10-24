@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fcpxml>
+<fcpxml version="1.13">
+    <resources>
+        <format id="r1" name="FFVideoFormatRateUndefined" frameDuration="100/3000s" width="1080" height="1920" colorSpace="1-1-1 (Rec. 709)"/>
+        <format id="r3" name="FFVideoFormatRateUndefined" frameDuration="100/3000s" width="1080" height="1920" colorSpace="1-1-1 (Rec. 709)"/>
+        <asset id="r2" name="T-tutorial-render" start="0s" hasVideo="1" hasAudio="1" duration="29/5s" format="r3" videoSources="1" audioSources="1" audioChannels="2" audioRate="48000">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/real-trailer/media/Videos/T-tutorial-render.mov"/>
+        </asset>
+        <format id="r5" name="FFVideoFormatRateUndefined" width="1080" height="1920" colorSpace="1-13-1"/>
+        <asset id="r4" name="T-notebook" start="0s" hasVideo="1" duration="0s" format="r5" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/real-trailer/media/Images/T-notebook.png"/>
+        </asset>
+        <asset id="r6" name="T-catalogue" start="0s" hasVideo="1" duration="0s" format="r5" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/real-trailer/media/Images/T-catalogue.png"/>
+        </asset>
+        <format id="r8" name="FFVideoFormatRateUndefined" frameDuration="100/3000s" width="1920" height="1080" colorSpace="1-1-1 (Rec. 709)"/>
+        <asset id="r7" name="T-tracks" start="0s" hasVideo="1" hasAudio="0" duration="36/5s" format="r8" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/real-trailer/media/Videos/T-tracks.mov"/>
+        </asset>
+        <format id="r10" name="FFVideoFormatRateUndefined" frameDuration="100/3000s" width="1918" height="1200" colorSpace="1-1-1 (Rec. 709)"/>
+        <asset id="r9" name="T-finalcut-editor" start="0s" hasVideo="1" hasAudio="0" duration="61/10s" format="r10" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/real-trailer/media/Videos/T-finalcut-editor.mov"/>
+        </asset>
+        <format id="r12" name="FFVideoFormatRateUndefined" frameDuration="100/3000s" width="2160" height="1920" colorSpace="1-1-1 (Rec. 709)"/>
+        <asset id="r11" name="T-side-by-side" start="0s" hasVideo="1" hasAudio="0" duration="8s" format="r12" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/real-trailer/media/Videos/T-side-by-side.mov"/>
+        </asset>
+        <asset id="r13" name="T-title-made-with-real" start="0s" hasVideo="1" duration="0s" format="r5" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/real-trailer/media/Images/T-title-made-with-real.png"/>
+        </asset>
+        <effect id="r14" name="Basic Title" uid=".../Titles.localized/Bumper:Opener.localized/Basic Title.localized/Basic Title.moti"/>
+        <asset id="r15" name="take-01" start="0s" hasAudio="1" duration="51/10s" audioSources="1" audioChannels="1" audioRate="48000">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/real-trailer/media/Audio/take-01.wav"/>
+        </asset>
+        <asset id="r16" name="take-02" start="0s" hasAudio="1" duration="26/5s" audioSources="1" audioChannels="1" audioRate="48000">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/real-trailer/media/Audio/take-02.wav"/>
+        </asset>
+        <asset id="r17" name="take-03" start="0s" hasAudio="1" duration="29/6s" audioSources="1" audioChannels="1" audioRate="48000">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/real-trailer/media/Audio/take-03.wav"/>
+        </asset>
+        <asset id="r18" name="take-04" start="0s" hasAudio="1" duration="203/30s" audioSources="1" audioChannels="1" audioRate="48000">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/real-trailer/media/Audio/take-04.wav"/>
+        </asset>
+        <asset id="r19" name="take-05" start="0s" hasAudio="1" duration="46/5s" audioSources="1" audioChannels="1" audioRate="48000">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/real-trailer/media/Audio/take-05.wav"/>
+        </asset>
+        <asset id="r20" name="take-06" start="0s" hasAudio="1" duration="109/30s" audioSources="1" audioChannels="1" audioRate="48000">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/real-trailer/media/Audio/take-06.wav"/>
+        </asset>
+        <asset id="r21" name="bed-paganini-performance" start="0s" hasAudio="1" duration="40s" audioSources="1" audioChannels="1" audioRate="48000">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/real-trailer/media/Audio/bed-paganini-performance.wav"/>
+        </asset>
+        <effect id="r22" name="Cross Dissolve" uid="FxPlug:4731E73A-8DAC-4113-9A30-AE85B1761265"/>
+    </resources>
+    <library>
+        <event name="REAL">
+            <project name="REAL in 30 seconds">
+                <sequence format="r1" duration="119/3s" tcStart="0s" tcFormat="NDF" audioLayout="stereo" audioRate="48k">
+                    <spine>
+                        <asset-clip ref="r2" name="B1 hook" start="0s" audioRole="effects" offset="0s" duration="27/5s">
+                            <note>narration: Most AI video tools generate a video. REAL edits yours, and shows its work.  |  from C1/C1.79b  |  words 0–13  |  flag text-type: classified as 'caption' by heuristic — confirm title / caption / subtitle in the tracks page</note>
+                            <adjust-volume amount="-60dB"/>
+                            <title ref="r14" name="B1.L2 — it shows its work" start="3600s" offset="44/15s" duration="19/10s" lane="1">
+                                <text>
+                                    <text-style ref="ts1">it shows its work</text-style>
+                                </text>
+                                <text-style-def id="ts1">
+                                    <text-style font="Helvetica Neue" fontSize="40" fontFace="Bold" fontColor="1 1 1 1" alignment="center" shadowColor="0 0 0 0.75" shadowOffset="8 315" shadowBlurRadius="12"/>
+                                </text-style-def>
+                                <adjust-transform position="0 -32.291666666666664"/>
+                            </title>
+                            <asset-clip ref="r15" name="narration — take-01.wav" start="0s" audioRole="dialogue" offset="0s" duration="73/15s" lane="-1">
+                                <note>voice take — which take covers this line has to be confirmed by ear; shows shares edits, generate, most, real, shows (+3.0); narration component / audio asset (+2.0)</note>
+                            </asset-clip>
+                            <asset-clip ref="r16" name="narration — take-02.wav" start="0s" audioRole="dialogue" offset="11/2s" duration="5s" lane="-1">
+                                <note>voice take — which take covers this line has to be confirmed by ear; binds_to shares files, four, notebook (+2.0); role shares files, four, notebook (+2.0)</note>
+                            </asset-clip>
+                            <asset-clip ref="r17" name="narration — take-03.wav" start="0s" audioRole="dialogue" offset="111/10s" duration="137/30s" lane="-1">
+                                <note>voice take — which take covers this line has to be confirmed by ear; binds_to shares catalogue (+0.8); role shares catalogue (+0.8)</note>
+                            </asset-clip>
+                            <asset-clip ref="r18" name="narration — take-04.wav" start="0s" audioRole="dialogue" offset="49/3s" duration="13/2s" lane="-1">
+                                <note>voice take — which take covers this line has to be confirmed by ear; binds_to shares reel (+0.7); role shares reel, voice (+1.0)</note>
+                            </asset-clip>
+                            <asset-clip ref="r19" name="narration — take-05.wav" start="0s" audioRole="dialogue" offset="47/2s" duration="89/10s" lane="-1">
+                                <note>voice take — which take covers this line has to be confirmed by ear; shows shares cannot, clips, davinci, editable, final (+3.0); narration component / audio asset (+2.0)</note>
+                            </asset-clip>
+                            <asset-clip ref="r20" name="narration — take-06.wav" start="0s" audioRole="dialogue" offset="991/30s" duration="17/5s" lane="-1">
+                                <note>voice take — which take covers this line has to be confirmed by ear; shows shares made, notebook, real, repository, trailer (+3.0); narration component / audio asset (+2.0)</note>
+                            </asset-clip>
+                            <asset-clip ref="r21" name="bed — bed-paganini-performance.wav" start="0s" audioRole="music" offset="0s" duration="119/3s" lane="-3">
+                                <note>audio of the creator's own Paganini performance under the whole trailer, ducked beneath the narration</note>
+                                <adjust-volume amount="-14dB"/>
+                            </asset-clip>
+                        </asset-clip>
+                        <video ref="r4" name="B2 four files" start="0s" offset="27/5s" duration="28/5s">
+                            <note>narration: Four steps, four files you can read. A notebook: your script, with the shots marked inline.  |  moment: The file names must be readable on a phone.  |  from C2/C2.b12  |  words 14–29</note>
+                            <marker start="0s" duration="1/30s" value="The file names must be readable on a phone."/>
+                        </video>
+                        <video ref="r6" name="B3 four files" start="0s" offset="11s" duration="157/30s">
+                            <note>narration: A catalogue: every clip described, anything unverified marked unknown.  |  moment: The file names must be readable on a phone.  |  from C2/C2.7e3  |  words 30–38</note>
+                            <marker start="0s" duration="1/30s" value="The file names must be readable on a phone."/>
+                        </video>
+                        <asset-clip ref="r7" name="B4 the reel" start="0s" srcEnable="video" offset="487/30s" duration="43/6s">
+                            <note>narration: Then the reel. Every picture is pinned to a word, not a timestamp, so re-recording the voice moves nothing you approved.  |  from C3/C3.301  |  words 39–59  |  flag aspect-mismatch: A14 is 1920x1080 in a 9:16 reel — it will be cropped or letterboxed  |  flag text-type: classified as 'caption' by heuristic — confirm title / caption / subtitle in the tracks page</note>
+                            <title ref="r14" name="B4.L2 — pinned to words" start="3600s" offset="29/15s" duration="47/30s" lane="1">
+                                <text>
+                                    <text-style ref="ts2">pinned to words</text-style>
+                                </text>
+                                <text-style-def id="ts2">
+                                    <text-style font="Helvetica Neue" fontSize="40" fontFace="Bold" fontColor="1 1 1 1" alignment="center" shadowColor="0 0 0 0.75" shadowOffset="8 315" shadowBlurRadius="12"/>
+                                </text-style-def>
+                                <adjust-transform position="0 -32.291666666666664"/>
+                            </title>
+                        </asset-clip>
+                        <asset-clip ref="r9" name="B5 compile (1·2)" start="0s" srcEnable="video" offset="117/5s" duration="17/5s">
+                            <note>narration: Last, a real timeline for Final Cut Pro or DaVinci Resolve: editable clips, titles, lanes. What it cannot represent, it refuses.  |  from C4/C4.1b6  |  words 60–80  |  flag aspect-mismatch: A03 is 1918x1200 in a 9:16 reel — it will be cropped or letterboxed  |  flag aspect-mismatch: A04 is 2160x1920 in a 9:16 reel — it will be cropped or letterboxed  |  flag text-type: classified as 'caption' by heuristic — confirm title / caption / subtitle in the tracks page</note>
+                        </asset-clip>
+                        <asset-clip ref="r11" name="B5 compile (2·2)" start="0s" srcEnable="video" offset="134/5s" duration="92/15s">
+                            <title ref="r14" name="B5.L3 — refuses, never guesses" start="3600s" offset="56/15s" duration="47/30s" lane="1">
+                                <text>
+                                    <text-style ref="ts3">refuses, never guesses</text-style>
+                                </text>
+                                <text-style-def id="ts3">
+                                    <text-style font="Helvetica Neue" fontSize="40" fontFace="Bold" fontColor="1 1 1 1" alignment="center" shadowColor="0 0 0 0.75" shadowOffset="8 315" shadowBlurRadius="12"/>
+                                </text-style-def>
+                                <adjust-transform position="0 -32.291666666666664"/>
+                            </title>
+                        </asset-clip>
+                        <transition name="Cross Dissolve" offset="973/30s" duration="1s">
+                            <filter-video ref="r22" name="Cross Dissolve"/>
+                        </transition>
+                        <video ref="r13" name="B6 payoff" start="0s" offset="494/15s" duration="101/15s">
+                            <note>narration: This trailer was made with REAL. Its notebook is in the repository.  |  from C5/C5.99d  |  words 81–92</note>
+                        </video>
+                    </spine>
+                </sequence>
+            </project>
+        </event>
+    </library>
+</fcpxml>

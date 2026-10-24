@@ -248,6 +248,10 @@ def assemble(nb, C, BND, args):
                 continue
 
             if p["lane"] == "audio":
+                if is_connected(comp):
+                    # audio that runs under the whole reel is one connected span
+                    # (built below), not also a lane inside the beat it was written in
+                    continue
                 ai += 1
                 own = bool(asset) and (assets.get(asset, {}).get("kind") == "video") \
                     and asset in beat_video_assets
@@ -427,11 +431,16 @@ def assemble(nb, C, BND, args):
     for cid, (cell, g, comp) in comps.items():
         if comp["type"] == "audio" and is_connected(comp):
             bnd = bindings.get(cid, {})
+            # a span is one of the four audio kinds like any lane (the schema
+            # has no fifth kind): music or ambience under the whole reel is a
+            # bed and ducks; a clip's own sound running across the reel is a
+            # source lane and does not
+            kind = audio_kind(comp.get("text"), hint=bnd.get("audio_kind"))
             connected.append({
-                "id": "X%d" % (len(connected) + 1), "kind": "audio",
+                "id": "X%d" % (len(connected) + 1), "kind": kind,
                 "asset": bnd.get("asset"), "t0": 0.0, "t1": C["total_s"],
-                "duck_db": -14, "source_component": cid,
-                "note": comp["text"]})
+                "duck_db": 0 if kind == "source" else -14,
+                "source_component": cid, "note": comp["text"]})
             if bnd.get("asset"):
                 used_assets.add(bnd["asset"])
 

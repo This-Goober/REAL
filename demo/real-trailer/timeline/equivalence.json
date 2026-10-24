@@ -1,0 +1,47 @@
+{
+ "equal": true,
+ "header": {
+  "fps": {
+   "otio": 30,
+   "fcpxml": 30
+  },
+  "w": {
+   "otio": 1080,
+   "fcpxml": 1080
+  },
+  "h": {
+   "otio": 1920,
+   "fcpxml": 1920
+  },
+  "total_f": {
+   "otio": 1190,
+   "fcpxml": 1190
+  },
+  "spine_end_f": {
+   "otio": 1190,
+   "fcpxml": 1190
+  }
+ },
+ "events": {
+  "n_otio": 10,
+  "n_fcpxml": 10,
+  "only_in_otio": [],
+  "only_in_fcpxml": []
+ },
+ "audio": {
+  "n_otio": 7,
+  "n_fcpxml": 7,
+  "only_in_otio": [],
+  "only_in_fcpxml": []
+ },
+ "transitions": {
+  "n_otio": 1,
+  "n_fcpxml": 1,
+  "only_in_otio": [],
+  "only_in_fcpxml": []
+ },
+ "files": {
+  "otio": "/Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer.otio",
+  "fcpxml": "/Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer.fcpxml"
+ }
+}

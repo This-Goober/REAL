@@ -703,54 +703,73 @@ def adapt(reel, opts, notes):
                     % (b["id"], l.get("id")))
             specs.append((l, spec))
 
-        backing = None
-        if specs:
-            l0, s0 = specs[0]
-            if s0 is not None and F.f(l0["t0"]) == b0 and F.f(l0["t1"]) == b1:
-                backing = s0
-                specs = specs[1:]
-        if backing is None:
-            backing = {"type": "gap", "duration": F.s(b1 - b0)}
+        # The beat's primary storyline: one layer spanning the beat, or its base
+        # shots tiling it in sequence (two shots under one line, each holding
+        # until the next starts). Anything else is a gap with everything
+        # connected above it. Each tile is its own spine item; overlays attach
+        # to the tile they start in.
+        segments = []                      # [f0, f1, backing, [(layer, spec)]]
+        rest = specs
+        if specs and specs[0][1] is not None \
+                and F.f(specs[0][0]["t0"]) == b0 and F.f(specs[0][0]["t1"]) == b1:
+            segments = [[b0, b1, specs[0][1], []]]
+            rest = specs[1:]
         else:
-            backing["duration"] = F.s(b1 - b0)
-
-        backing["name"] = ("%s %s" % (b["id"], b.get("name") or "")).strip()
-        tr = b.get("transition_in")
-        if tr:
-            # a dissolve borrows media on both sides of the cut; without the
-            # handles the editor shows a freeze or refuses, so refuse here
-            problems = transition_problems(b, prev_b, by_id)
-            if backing.get("type") == "gap":
-                problems.append("this beat's picture is a gap; a dissolve needs a shot")
-            for L, side, over in transition_overlap(prev_b, b):
-                problems.append("%s %s the dissolve by %.2f s; the storyboard clips an overlay "
-                                "where a dissolve starts and does not start one inside it"
-                                % (L.get("id"), "runs into" if side == "before" else "starts inside", over))
-            if problems:
-                raise Refusal("%s: transition in: %s" % (b["id"], "; ".join(problems)))
-            backing["transition_in"] = {
-                "name": tr.get("name", "Cross Dissolve"),
-                "duration": float(tr.get("dur_s") or tr.get("duration") or 0.5)}
-        if opts["markers"]:
-            note = beat_note(b)
-            if note:
-                backing["note"] = note
-            if b.get("moment"):
-                backing["markers"] = [{"t": 0, "value": b["moment"]}]
-
-        lane = 1
-        overlays = []
-        for l, spec in specs:
+            tiles = sorted([(l, s) for l, s in specs if l.get("base") and s is not None
+                            and s.get("type") in ("video", "image")],
+                           key=lambda t: F.f(t[0]["t0"]))
+            ends = [F.f(l["t0"]) for l, _s in tiles[1:]] + [b1]
+            if tiles and F.f(tiles[0][0]["t0"]) == b0 \
+                    and all(F.f(l["t1"]) == e for (l, _s), e in zip(tiles, ends)):
+                segments = [[F.f(l["t0"]), F.f(l["t1"]), s, []] for l, s in tiles]
+                rest = [(l, s) for l, s in specs if not any(l is tl for tl, _s in tiles)]
+            else:
+                segments = [[b0, b1, {"type": "gap"}, []]]
+        for l, spec in rest:
             if spec is None:
                 continue
-            spec["lane"] = lane
-            lane += 1
-            spec["offset"] = F.s(F.f(l["t0"]) - b0)
-            spec["duration"] = F.s(F.f(l["t1"]) - F.f(l["t0"]))
-            overlays.append(spec)
-        if overlays:
-            backing["overlays"] = overlays
-        story["beats"].append(backing)
+            f0 = F.f(l["t0"])
+            seg = next((sg for sg in segments if sg[0] <= f0 < sg[1]), segments[-1])
+            seg[3].append((l, spec))
+
+        for si, (s0, s1, backing, ovs) in enumerate(segments):
+            backing["duration"] = F.s(s1 - s0)
+            backing["name"] = ("%s %s" % (b["id"], b.get("name") or "")).strip() + (
+                " (%d/%d)" % (si + 1, len(segments)) if len(segments) > 1 else "")
+            tr = b.get("transition_in")
+            if tr and si == 0:
+                # a dissolve borrows media on both sides of the cut; without the
+                # handles the editor shows a freeze or refuses, so refuse here
+                problems = transition_problems(b, prev_b, by_id)
+                if backing.get("type") == "gap":
+                    problems.append("this beat's picture is a gap; a dissolve needs a shot")
+                for L, side, over in transition_overlap(prev_b, b):
+                    problems.append("%s %s the dissolve by %.2f s; the storyboard clips an overlay "
+                                    "where a dissolve starts and does not start one inside it"
+                                    % (L.get("id"), "runs into" if side == "before" else "starts inside", over))
+                if problems:
+                    raise Refusal("%s: transition in: %s" % (b["id"], "; ".join(problems)))
+                backing["transition_in"] = {
+                    "name": tr.get("name", "Cross Dissolve"),
+                    "duration": float(tr.get("dur_s") or tr.get("duration") or 0.5)}
+            if opts["markers"] and si == 0:
+                note = beat_note(b)
+                if note:
+                    backing["note"] = note
+                if b.get("moment"):
+                    backing["markers"] = [{"t": 0, "value": b["moment"]}]
+
+            lane = 1
+            overlays = []
+            for l, spec in ovs:
+                spec["lane"] = lane
+                lane += 1
+                spec["offset"] = F.s(F.f(l["t0"]) - s0)
+                spec["duration"] = F.s(F.f(l["t1"]) - F.f(l["t0"]))
+                overlays.append(spec)
+            if overlays:
+                backing["overlays"] = overlays
+            story["beats"].append(backing)
         cursor = b1
         prev_b = b
 
@@ -785,9 +804,10 @@ def adapt(reel, opts, notes):
 
     # ---- parity: every storyboard element accounted for ----
     layers_in = sum(len(b.get("layers") or []) for b in reel["beats"])
-    # a gap backing is structure (a beat with no full-span layer, or real
-    # silence between beats) — layer representations are the non-gap backings
-    # plus every overlay. layer_spec never emits a gap for a real layer.
+    # a gap backing is structure (a beat with no full-span layer or tiling
+    # base shots, or real silence between beats) — layer representations are
+    # the non-gap backings plus every overlay. layer_spec never emits a gap for
+    # a real layer.
     elements_out = sum((0 if bt.get("type") == "gap" else 1)
                        + len(bt.get("overlays") or [])
                        for bt in story["beats"])

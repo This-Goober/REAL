@@ -181,7 +181,15 @@ report instead of reading as a hole.
 `adapt.py` emits one of these wherever the reel's beats do not touch — real
 silence between beats is a fact of the reel, not a defect, and `clock.total_s`
 is what says how long the whole thing is. Never reconstruct runtime by summing
-beats.
+beats. (The storyboard's `--pauses hold` policy holds each shot through the
+pause that follows its line instead, so no gap is emitted between lines.)
+
+A beat whose base shots tile it in sequence — two shots under one line, each
+holding until the next starts, from the beat's first frame to its last — is
+several consecutive spine items, named `B5 compile (1/2)`, `(2/2)`; an overlay
+attaches to the tile it starts in, and a dissolve into the next beat borrows
+from the tile that closes this one. Base shots that leave a hole are still a
+gap with everything connected above it.
 
 ## Editorial metadata
 
