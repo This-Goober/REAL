@@ -220,6 +220,18 @@ start inside it, and the validator and the compiler refuse either. Here the
 caption ends at 45.7 s instead of 46.075 s, 1.5 s on screen. Same frame
 count, 0 errors, 21/21 events, 7/7 audio clips, 1/1 transitions.
 
+## 11. The new exports, measured
+
+> the videos are in ~/Downloads/paganini-no23-finalcutpro and *-davinci
+
+Produced: `comparison/` re-measured on the creator's exports of the current
+build (step 4 under Reproduce, 38 s). 2629 frames in both, no offset; the
+five cuts and all 22 caption edges on the specified frame in both editors;
+the dissolve renders in both, its strongest change 4 and 5 frames after its
+centre; glyph boxes within 1.2 %; SSIM median 0.992; audio lag 0 ms, levels
+equal; the semi-transparent cards still darker in Resolve (mean RGB 125 vs
+168). The two-panel movie was rendered again with the command under Reproduce.
+
 ## Before this demo: the edit it starts from (18 October 2026)
 
 The storyboard in `source/` was built from the team's notes

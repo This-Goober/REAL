@@ -4,8 +4,9 @@ An 88-second violin tutorial (fingered octaves in Paganini's Caprice No. 23),
 cut by REAL from the creator's recording and compiled from **one storyboard**
 to **two public timeline specifications**: FCPXML 1.13 for Final Cut Pro and
 OpenTimelineIO for DaVinci Resolve. Both editors imported their file, both
-exports were measured against each other, and every cut and every caption
-edge lands on the frame the storyboard specifies. This folder holds the
+exports were measured against each other, every cut and every caption edge
+lands on the frame the storyboard specifies, and the one dissolve renders in
+both. This folder holds the
 prompts that produced it, the source media, both timelines, the measurement
 report and the scripts, so the result can be rebuilt and re-measured.
 
@@ -23,33 +24,28 @@ report and the scripts, so the result can be rebuilt and re-measured.
 | [The tutorial as rendered by Final Cut Pro](https://youtube.com/shorts/w9lWkhKRVTI) | [The tutorial as rendered by DaVinci Resolve](https://youtube.com/shorts/h0sJ6EmI2Ho) |
 
 The rendered movies are not in the repository; the links above are the
-outputs. Everything that produced them is. The two rendered tutorials show
-the current build, with the dissolve; the side-by-side and the two editor
-views were recorded from the earlier one.
+outputs. Everything that produced them is. The two rendered tutorials and the
+measurement below are from the current build, with the dissolve; the
+side-by-side and the two editor views were recorded from the earlier one.
 
 ## What the measurement found
 
-Both exports: 1080×1920, 30 fps, 2747 frames, no offset between them.
+Both exports: 1080×1920, 30 fps, 2629 frames, no offset between them.
 
 | check | result |
 |---|---|
-| picture changes (6 cuts) | on the specified frame in both exports, 0 frames of error |
+| picture changes (5 cuts and 1 dissolve) | the five cuts on the specified frame in both exports, 0 frames of error; the one-second dissolve, centred on frame 1386, renders in both, its strongest change 4 frames after the centre in Final Cut and 5 in Resolve |
 | caption on/off (11 captions, 22 edges) | on the specified frame in both exports, 0 frames of error |
-| caption glyph boxes, Resolve vs Final Cut | 0.4–0.9 % wider, ≤ 0.5 % taller, same centre line (two font engines) |
-| SSIM per frame, Resolve vs Final Cut | median 0.992 overall; 0.992 plain frames, 0.982 with a diagram card, 0.966 with a caption, 0.958 with both; worst frame 0.953 |
-| PSNR per frame | median 44.5 dB (31.5 dB on caption frames) |
-| audio | lag 0.0 ms, correlation 0.994–1.000; levels equal except 2 dB lower in Resolve during the intro |
+| caption glyph boxes, Resolve vs Final Cut | 0.3–1.2 % wider, ≤ 1.1 % taller, same centre line (two font engines) |
+| SSIM per frame, Resolve vs Final Cut | median 0.992 overall; 0.993 on plain frames, 0.975 with a caption; worst frame 0.964 |
+| PSNR per frame | median 44.7 dB (33.9 dB on caption frames) |
+| audio | lag 0.0 ms, correlation ≥ 0.9997, levels equal in all three windows |
 
 The one rendering difference worth knowing: the semi-transparent diagram cards
-are darker in Resolve (mean RGB 129 vs 166) while the uncovered wall and the
+are darker in Resolve (mean RGB 125 vs 168) while the uncovered wall and the
 opaque drawing match within one level. Final Cut blends the 45 %-black card in
 linear light and Resolve in display values. That is an editor policy, not
 something either timeline file can express. Details: `comparison/COMPARISON.md`.
-
-The renders measured here were made from the excerpts' earlier composite and
-before the revisions in `source/revisions.json`. The current timeline is 118
-frames shorter and has a dissolve, so the frame counts above describe that
-earlier build; re-render and re-measure with the steps under Reproduce.
 
 ## Files
 
