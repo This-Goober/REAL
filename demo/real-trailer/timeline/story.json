@@ -18,10 +18,10 @@
       "duration": 5.633333,
       "overlays": [
         {
-          "font_size": 60,
+          "font_size": 83,
           "position": [
             0,
-            -620
+            0
           ],
           "font_face": "Bold",
           "shadow": true,
@@ -81,7 +81,7 @@
       "note": "narration: Then the reel. Every picture is pinned to a word, not a timestamp, so re-recording the voice moves nothing you approved.  |  from C3/C3.301  |  words 39\u201359  |  flag aspect-mismatch: A14 is 1920x1080 in a 9:16 reel \u2014 it will be cropped or letterboxed  |  flag text-type: classified as 'caption' by heuristic \u2014 confirm title / caption / subtitle in the tracks page  |  flag cut-moved: the footage ends 0.111s before the planned cut, so the cut moved earlier to 24.119s (still after the line ends)",
       "overlays": [
         {
-          "font_size": 60,
+          "font_size": 83,
           "position": [
             0,
             -620
@@ -124,15 +124,15 @@
       "duration": 6.666667,
       "overlays": [
         {
-          "font_size": 60,
+          "font_size": 83,
           "position": [
             0,
             -620
           ],
           "font_face": "Bold",
           "shadow": true,
-          "text": "refuses,\nnever guesses",
-          "name": "B5.L3 \u2014 refuses,\nnever guesses",
+          "text": "refuses,\nnever\nguesses",
+          "name": "B5.L3 \u2014 refuses,\nnever\nguesses",
           "color": [
             0.7215686274509804,
             0.1803921568627451,

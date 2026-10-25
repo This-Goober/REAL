@@ -67,9 +67,9 @@
 its work</text-style>
                                 </text>
                                 <text-style-def id="ts1">
-                                    <text-style font="Helvetica Neue" fontSize="60" fontFace="Bold" fontColor="0.7215686274509804 0.1803921568627451 0.1411764705882353 1" alignment="center" shadowColor="0 0 0 0.75" shadowOffset="8 315" shadowBlurRadius="12"/>
+                                    <text-style font="Helvetica Neue" fontSize="83" fontFace="Bold" fontColor="0.7215686274509804 0.1803921568627451 0.1411764705882353 1" alignment="center" shadowColor="0 0 0 0.75" shadowOffset="8 315" shadowBlurRadius="12"/>
                                 </text-style-def>
-                                <adjust-transform position="0 -32.291666666666664"/>
+                                <adjust-transform position="0 0"/>
                             </title>
                             <asset-clip ref="r15" name="narration — take-01.wav" start="0s" audioRole="dialogue" offset="0s" duration="76/15s" lane="-1">
                                 <note>voice take — which take covers this line has to be confirmed by ear; shows shares edits, generate, most, real, shows (+3.0); narration component / audio asset (+2.0)</note>
@@ -110,7 +110,7 @@ its work</text-style>
 to words</text-style>
                                 </text>
                                 <text-style-def id="ts2">
-                                    <text-style font="Helvetica Neue" fontSize="60" fontFace="Bold" fontColor="0.7215686274509804 0.1803921568627451 0.1411764705882353 1" alignment="center" shadowColor="0 0 0 0.75" shadowOffset="8 315" shadowBlurRadius="12"/>
+                                    <text-style font="Helvetica Neue" fontSize="83" fontFace="Bold" fontColor="0.7215686274509804 0.1803921568627451 0.1411764705882353 1" alignment="center" shadowColor="0 0 0 0.75" shadowOffset="8 315" shadowBlurRadius="12"/>
                                 </text-style-def>
                                 <adjust-transform position="0 -32.291666666666664"/>
                             </title>
@@ -122,10 +122,11 @@ to words</text-style>
                             <title ref="r14" name="B5.L3 — refuses, never guesses" start="3600s" offset="127/30s" duration="47/30s" lane="1">
                                 <text>
                                     <text-style ref="ts3">refuses,
-never guesses</text-style>
+never
+guesses</text-style>
                                 </text>
                                 <text-style-def id="ts3">
-                                    <text-style font="Helvetica Neue" fontSize="60" fontFace="Bold" fontColor="0.7215686274509804 0.1803921568627451 0.1411764705882353 1" alignment="center" shadowColor="0 0 0 0.75" shadowOffset="8 315" shadowBlurRadius="12"/>
+                                    <text-style font="Helvetica Neue" fontSize="83" fontFace="Bold" fontColor="0.7215686274509804 0.1803921568627451 0.1411764705882353 1" alignment="center" shadowColor="0 0 0 0.75" shadowOffset="8 315" shadowBlurRadius="12"/>
                                 </text-style-def>
                                 <adjust-transform position="0 -32.291666666666664"/>
                             </title>

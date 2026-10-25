@@ -23,7 +23,7 @@ DaVinci Resolve (`.otio`), and imports into either as an editable project.
 | | |
 |---|---|
 | `source/NOTEBOOK.md` | the script notebook: five cells, six narration lines, one component per picture, `#tags` pointing at files |
-| `source/revisions.txt` | the creator's corrections in the tracks page's grammar: three captures letterboxed, two captions re-anchored, a dissolve into the card, the captions' look (60 pt, two lines, vermilion, shadow) |
+| `source/revisions.txt` | the creator's corrections in the tracks page's grammar: three captures letterboxed, two captions re-anchored, a dissolve into the card, the captions' look (83 pt, split to fit, vermilion, shadow, the first one centred) |
 | `source/narration.txt`, `source/oov.json` | the script the recording is aligned to, and three words the aligner's dictionary lacks |
 | `source/narration/` | the earlier read (edge) and the ElevenLabs receipt; `media/Audio` holds the read in use, with its receipt |
 | `media/` | the twelve files the trailer is cut from (see `scripts/cut_media.sh` for where each came from) |
@@ -40,7 +40,7 @@ DaVinci Resolve (`.otio`), and imports into either as an editable project.
 | Beats | 6 (the notebook's "four files" cell carries two lines, so it is two beats) |
 | Narration | 93 words, 34.8 s spoken (ElevenLabs, George), measured word by word by forced alignment |
 | Runtime | 41.38 s, 1241 frames; the notebook's 30 s target is reported as +11.4 s and not enforced |
-| Picture | 10 layers: 4 videos, 3 stills, 3 captions (60 pt, two lines, vermilion, drop shadow); 0 stubs, 0 low-confidence bindings after the second pass |
+| Picture | 10 layers: 4 videos, 3 stills, 3 captions (83 pt, split to fit the width, vermilion, drop shadow, the first centred); 0 stubs, 0 low-confidence bindings after the second pass |
 | Sound | 6 narration takes, 1 bed under the whole reel, ducked −14 dB |
 | Transition | 1 cross dissolve, 1.0 s, into the closing card |
 | Cross-target | `EQUIVALENT — 10/10 visual events, 7/7 audio clips, 1/1 transitions, total 1241/1241 frames` |

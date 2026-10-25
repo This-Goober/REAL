@@ -49,6 +49,14 @@ class CaptionLookTests(unittest.TestCase):
             self.assertEqual(unhandled, [], val)
             self.assertEqual([round(x, 3) for x in L['color'][:3]], rgb)
 
+    def test_position(self):
+        for val, pos in (('center', [0, 0]), ('bottom', [0, -620]), ('0 300', [0.0, 300.0])):
+            L, _log, unhandled = self.apply(reel(), 'L2 position = ' + val)
+            self.assertEqual(unhandled, [], val)
+            self.assertEqual(L['position'], pos)
+        _L, _log, unhandled = self.apply(reel(), 'L2 position = somewhere')
+        self.assertEqual(len(unhandled), 1)
+
     def test_refusals(self):
         L, _log, unhandled = self.apply(reel(), 'L1 size = 60')
         self.assertEqual(len(unhandled), 1)              # not a text layer

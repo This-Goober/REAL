@@ -440,14 +440,18 @@
      "content": "it shows\nits work",
      "style": "caption",
      "style_by": "creator",
-     "font_size": 60,
+     "font_size": 83,
      "color": [
       0.7215686274509804,
       0.1803921568627451,
       0.1411764705882353,
       1
      ],
-     "shadow": true
+     "shadow": true,
+     "position": [
+      0,
+      0
+     ]
     }
    ],
    "audio": [
@@ -686,7 +690,7 @@
      "content": "pinned\nto words",
      "style": "caption",
      "style_by": "creator",
-     "font_size": 60,
+     "font_size": 83,
      "color": [
       0.7215686274509804,
       0.1803921568627451,
@@ -818,10 +822,10 @@
      "unsure": false,
      "base": false,
      "snapped": false,
-     "content": "refuses,\nnever guesses",
+     "content": "refuses,\nnever\nguesses",
      "style": "caption",
      "style_by": "creator",
-     "font_size": 60,
+     "font_size": 83,
      "color": [
       0.7215686274509804,
       0.1803921568627451,
