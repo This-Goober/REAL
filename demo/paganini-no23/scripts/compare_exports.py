@@ -75,17 +75,68 @@ def yellow_mask(rgb):
     return (r > 200) & (g > 170) & (b < 110) & ((r - b) > 110)
 
 
-def stream_stats(path, fps, band_rows):
-    """Decode at analysis size; return per-frame luma delta, band ink, and stored luma."""
+# --captions-from-timeline: each caption's band and ink colour come from the timeline
+FCP_TITLE_SCALE = 1.73      # Final Cut draws a title in a 1080x1920 project at 1.73x its point size
+
+
+def _hsv(rgb):
+    a = rgb.astype(np.float32) / 255.0
+    r, g, b = a[..., 0], a[..., 1], a[..., 2]
+    mx, mn = a.max(-1), a.min(-1)
+    d = mx - mn + 1e-9
+    h = np.where(mx == r, ((g - b) / d) % 6, np.where(mx == g, (b - r) / d + 2, (r - g) / d + 4)) * 60.0
+    s = np.where(mx > 0, (mx - mn) / (mx + 1e-9), 0.0)
+    return h, s, mx
+
+
+def ink_mask_for(color):
+    """The pixels that are a caption's ink, from the colour the timeline declares.
+    Yellow keeps the tutorial's mask. Any other saturated colour is matched by
+    hue (within 10 degrees), saturation and brightness, which keeps a vermilion
+    caption apart from a violin's wood; an unsaturated one by brightness."""
+    if not color:
+        return yellow_mask
+    ref = np.array([[[int(round(float(c) * 255)) for c in color[:3]]]], dtype=np.uint8)
+    if ref[0, 0, 0] > 200 and ref[0, 0, 1] > 170 and ref[0, 0, 2] < 110:
+        return yellow_mask
+    h0, s0, v0 = (float(x[0, 0]) for x in _hsv(ref))
+
+    def mask(rgb):
+        h, s, v = _hsv(rgb)
+        if s0 < 0.2:
+            return (s <= 0.2) & (v >= 0.85 * v0)
+        dh = np.abs(((h - h0) + 180.0) % 360.0 - 180.0)
+        return (dh <= 10.0) & (s >= 0.75 * s0) & (v >= 0.6 * v0)
+    return mask
+
+
+def caption_band(c, height):
+    """Rows of the full frame a caption occupies, the way Final Cut lays it out:
+    the first line's baseline at the caption's position (px from the centre, y
+    up), each further line 1.25 em below, ascenders 0.75 em above the first and
+    descenders 0.25 em below the last (measured on the trailer's render), a
+    third of a line of air, clipped to the frame — so a line that runs off the
+    frame shows as ink on the frame's edge row."""
+    lines = (c.get("text") or "").count("\n") + 1
+    px = float(c.get("font_size") or 40) * FCP_TITLE_SCALE
+    row0 = height / 2.0 - float((c.get("position") or [0, 0])[1])
+    top = row0 - 0.75 * px - 0.35 * px
+    bottom = row0 + max(lines - 1, 1) * 1.25 * px + 0.25 * px + 0.35 * px
+    return (max(0, int(top)), min(height, int(bottom)))
+
+
+def stream_stats(path, fps, specs):
+    """Decode at analysis size; return per-frame luma delta, ink in each
+    (band rows, mask) spec, and stored luma."""
     # -map 0:v:0 — the Final Cut export carries a cover-art MJPEG stream too
     cmd = ["ffmpeg", "-v", "error", "-i", str(path), "-map", "0:v:0", "-vf",
            "fps=%g,scale=%d:%d:flags=area" % (fps, AN_W, AN_H),
            "-f", "rawvideo", "-pix_fmt", "rgb24", "-"]
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, bufsize=10 ** 7)
     n = AN_W * AN_H * 3
-    deltas, inks, lumas = [], [], []
+    deltas, lumas = [], []
+    inks = [[] for _ in specs]
     prev = None
-    y0, y1 = band_rows
     while True:
         buf = p.stdout.read(n)
         if len(buf) < n:
@@ -94,11 +145,12 @@ def stream_stats(path, fps, band_rows):
         y = (0.299 * rgb[..., 0] + 0.587 * rgb[..., 1] + 0.114 * rgb[..., 2]).astype(np.float32)
         deltas.append(0.0 if prev is None else float(np.abs(y - prev).mean()))
         prev = y
-        inks.append(int(yellow_mask(rgb[y0:y1]).sum()))
+        for k, ((y0, y1), mask) in enumerate(specs):
+            inks[k].append(int(mask(rgb[y0:y1]).sum()))
         lumas.append(y.reshape(PAIR_H, 2, PAIR_W, 2).mean(axis=(1, 3)).astype(np.uint8))
     p.stdout.close()
     p.wait()
-    return np.array(deltas), np.array(inks), np.stack(lumas) if lumas else np.zeros((0, PAIR_H, PAIR_W))
+    return np.array(deltas), [np.array(i) for i in inks], np.stack(lumas) if lumas else np.zeros((0, PAIR_H, PAIR_W))
 
 
 def detect_cut(delta, expected, radius=6):
@@ -134,9 +186,9 @@ def grab(path, frame, fps, out_png):
     return Image.open(out_png).convert("RGB")
 
 
-def glyph_box(img, band):
+def glyph_box(img, band, mask=yellow_mask):
     a = np.asarray(img.crop((0, band[0], img.width, band[1])))
-    m = yellow_mask(a)
+    m = mask(a)
     ys, xs = np.where(m)
     if len(ys) < 30:
         return None
@@ -246,6 +298,11 @@ def main():
     ap.add_argument("--label-b", default="DaVinci Resolve (OTIO)")
     ap.add_argument("--band", nargs=2, type=int, default=[740, 1080],
                     help="rows of the caption band in the full frame")
+    ap.add_argument("--captions-from-timeline", action="store_true",
+                    help="take each caption's band (position, size, lines) and ink colour from the "
+                         "timeline instead of one --band and the yellow mask")
+    ap.add_argument("--audio-at", nargs="+", type=float, default=[10.0, 50.0, 85.0],
+                    help="start of each 6 s audio window, in seconds")
     args = ap.parse_args()
     A, B, out = Path(args.a), Path(args.b), Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -265,12 +322,25 @@ def main():
                            "captions": [(c["f0"], c["f1"], c["text"]) for c in captions],
                            "stills": [(s["f0"], s["f1"]) for s in stills]}}
     scale = pa["height"] / 1920.0
-    band_an = (int(args.band[0] * scale * AN_H / pa["height"]), int(args.band[1] * scale * AN_H / pa["height"]))
+    # one (band, mask) spec per distinct caption look; a single one by default
+    if args.captions_from_timeline:
+        keys, spec_of = [], []
+        for c in captions:
+            key = (caption_band(c, 1920), tuple(c.get("color") or ()))
+            if key not in keys:
+                keys.append(key)
+            spec_of.append(keys.index(key))
+        bands = [k[0] for k in keys]
+        masks = [ink_mask_for(list(k[1]) or None) for k in keys]
+    else:
+        bands, masks, spec_of = [tuple(args.band)], [yellow_mask], [0] * len(captions)
+    specs = [((int(b[0] * scale * AN_H / pa["height"]), int(b[1] * scale * AN_H / pa["height"])), m)
+             for b, m in zip(bands, masks)]
 
     print("decoding A ...", flush=True)
-    dA, inkA, YA = stream_stats(A, fps, band_an)
+    dA, inkA, YA = stream_stats(A, fps, specs)
     print("decoding B ...", flush=True)
-    dB, inkB, YB = stream_stats(B, fps, band_an)
+    dB, inkB, YB = stream_stats(B, fps, specs)
     report["frames"] = {"a": int(len(dA)), "b": int(len(dB)), "expected": total_f}
 
     # cuts and the constant offset between the exports
@@ -319,17 +389,20 @@ def main():
         for i in range(m):
             ib = i + shift_b
             w.writerow([i, round(float(mad[i]), 3), round(float(ssim[i]), 5), round(float(psnr[i]), 3),
-                        int(inkA[i]), int(inkB[ib]) if 0 <= ib < len(inkB) else ""])
+                        int(sum(x[i] for x in inkA)),
+                        int(sum(x[ib] for x in inkB)) if 0 <= ib < len(inkB[0]) else ""])
 
     # caption timing and appearance
     crows, tiles = [], []
-    for c in captions:
-        da = detect_caption(inkA, c["f0"], c["f1"])
-        db = detect_caption(np.roll(inkB, -shift_b) if shift_b else inkB, c["f0"], c["f1"])
+    for ci, c in enumerate(captions):
+        k = spec_of[ci]
+        band, mask = bands[k], masks[k]
+        da = detect_caption(inkA[k], c["f0"], c["f1"])
+        db = detect_caption(np.roll(inkB[k], -shift_b) if shift_b else inkB[k], c["f0"], c["f1"])
         mid = (c["f0"] + c["f1"]) // 2
         fa = grab(A, mid, fps, work / ("a-%04d.png" % mid))
         fb = grab(B, mid + shift_b, fps, work / ("b-%04d.png" % mid))
-        ga, gb = glyph_box(fa, args.band), glyph_box(fb, args.band)
+        ga, gb = glyph_box(fa, band, mask), glyph_box(fb, band, mask)
         row = {"text": c["text"].replace("\n", " / "), "expected_on": c["f0"], "expected_off": c["f1"],
                "a_on": da and da.get("on"), "a_off": da and da.get("off"),
                "b_on": db and db.get("on"), "b_off": db and db.get("off"),
@@ -343,8 +416,8 @@ def main():
         row["b_over_a_height"] = round(gb["h"] / ga["h"], 3) if ga and gb else None
         crows.append(row)
         # tile: A band over B band, half size
-        ba_ = fa.crop((0, args.band[0], fa.width, args.band[1])).resize((540, (args.band[1] - args.band[0]) // 2))
-        bb_ = fb.crop((0, args.band[0], fb.width, args.band[1])).resize((540, (args.band[1] - args.band[0]) // 2))
+        ba_ = fa.crop((0, band[0], fa.width, band[1])).resize((540, (band[1] - band[0]) // 2))
+        bb_ = fb.crop((0, band[0], fb.width, band[1])).resize((540, (band[1] - band[0]) // 2))
         tile = Image.new("RGB", (540, ba_.height * 2 + 30), (20, 20, 20))
         tile.paste(ba_, (0, 24)); tile.paste(bb_, (0, 24 + ba_.height + 6))
         d = ImageDraw.Draw(tile)
@@ -357,14 +430,14 @@ def main():
         w.writeheader(); w.writerows(crows)
     cols = 3
     rows_n = (len(tiles) + cols - 1) // cols
-    tw, th = tiles[0].size
+    tw, th = tiles[0].size[0], max(t.size[1] for t in tiles)
     sheet = Image.new("RGB", (cols * tw + 8 * (cols - 1), rows_n * th + 8 * (rows_n - 1)), (0, 0, 0))
     for i, t in enumerate(tiles):
         sheet.paste(t, ((i % cols) * (tw + 8), (i // cols) * (th + 8)))
     sheet.save(out / "captions-sheet.png")
 
     # audio
-    report["audio"] = audio_compare(A, B, [10.0, 50.0, 85.0])
+    report["audio"] = audio_compare(A, B, args.audio_at)
 
     # movie
     print("side-by-side ...", flush=True)

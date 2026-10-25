@@ -30,3 +30,8 @@ B5: L3 text = refuses, / never / guesses
 B5: L3 size = 83
 B5: L3 color = #B82E24
 B5: L3 shadow = on
+# Final Cut keeps a caption's first line at its position and adds lines below:
+# at the bottom position this third line ran off the frame. One line (1.25 em
+# at 83 pt, about 180 px) higher puts its last line where the two-line
+# captions' last line is.
+B5: L3 position = 0 -440

@@ -88,6 +88,28 @@ pixels from the frame centre); at 83 points "never guesses" would have
 spanned 92 % of the width, so the last caption is three lines
 (`refuses, / never / guesses`), the widest at 56 %.
 
+## Proof that it passes the bar
+
+After the creator's Final Cut render went on the page:
+
+> ok you can do now mostly just a proof that our real trailer pass our bar?
+
+Produced: the Paganini demo's comparison script, given an opt-in mode that
+reads each caption's band and colour from the timeline (the trailer's
+captions are vermilion, one of them centred; the tutorial's are yellow, in
+one band), and `scripts/check_bar.py`, which turns the measurement into the
+bar's seven checks. The first render failed one: the three-line caption's
+last line ran off the bottom of the frame, because Final Cut grows a caption
+longer than two lines downward from where a two-line caption's first line
+sits. The caption moved up one line, the caption check gained a height rule,
+and the OTIO's rastered titles now lay long captions out the same way. The
+creator re-rendered:
+
+> regenerated in ~/Downloads/real-trailer-finalcutpro.mov
+
+and the new render passes seven of seven (`comparison/BAR.md`). It replaced
+the trailer on the page.
+
 ## What the pipeline refused or got wrong on the way, and the fix
 
 - `build.py` wrote the whole-reel bed as `kind: audio` and its own validator

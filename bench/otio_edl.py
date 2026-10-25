@@ -97,6 +97,7 @@ def parse(path):
                                "z": z, "text": str(p.get("text", "")),
                                "font_size": int(float(p.get("font_size", 96))),
                                "position": (float(pos[0]), float(pos[1])),
+                               "color": p.get("color"),
                                "name": it.get("name")})
             elif ms == "ExternalReference":
                 url = mr.get("target_url") or ""
@@ -115,6 +116,7 @@ def parse(path):
                                    "f1": cursor + d, "z": z, "text": str(p.get("text", "")),
                                    "font_size": int(float(p.get("font_size", 96))),
                                    "position": (float(pos[0]), float(pos[1])),
+                                   "color": p.get("color"),
                                    "name": it.get("name"), "rendered": url})
                 elif kind == "image":
                     events.append({"kind": "image", "asset": aid, "f0": cursor,

@@ -233,6 +233,22 @@ class OTIOTargetTests(unittest.TestCase):
             targets.get("otio").build(story, o_path, base_dir=tmp, probe=False, titles="raster")
             self.assertFalse([p for p in os.listdir(tdir) if p.startswith("attention-is")])
 
+    def test_raster_long_block_grows_downward_like_final_cut(self):
+        # Final Cut keeps the first line where a two-line block has it and adds the rest
+        # below: in the trailer's render a 2- and a 3-line caption at the same position
+        # both start on row 1476, and the third line ran off the frame.
+        k = title_raster.template_scale(1920)
+        font = title_raster.load_font("Helvetica Neue", "Bold", int(round(83 * k)))
+        base = {"font_size": 83, "position": [0, -620], "align": "center"}
+        one, _ = title_raster.layout(dict(base, text="never"), 1080, 1920, font, k)
+        two, _ = title_raster.layout(dict(base, text="pinned\nto words"), 1080, 1920, font, k)
+        three, _ = title_raster.layout(dict(base, text="refuses,\nnever\nguesses"), 1080, 1920, font, k)
+        self.assertAlmostEqual(three[0][1], two[0][1], places=6)          # same first baseline
+        pitch = two[1][1] - two[0][1]
+        self.assertAlmostEqual(three[2][1] - three[0][1], 2 * pitch, places=6)
+        # one line was never measured and stays centred, as before
+        self.assertAlmostEqual(one[0][1], two[0][1] + pitch / 2, places=6)
+
     def test_raster_glow_only_title_is_visible(self):
         from PIL import Image
         story = copy.deepcopy(STORY)
