@@ -2,6 +2,7 @@
 """make_title_card.py — the closing card of the trailer, 1080x1920.
 
     python3 scripts/make_title_card.py media/Images/T-title-made-with-real.png
+    python3 scripts/make_title_card.py --paper paper.png      (the ground alone)
 
 Washi-coloured ground, the word REAL in a tall serif, リアル set vertically
 beside it, a vermilion seal, and the repository address. The same elements
@@ -22,20 +23,25 @@ def font(path, size, index=0):
     return ImageFont.truetype(path, size, index=index)
 
 
-def main(out):
-    img = Image.new("RGB", (W, H), PAPER)
-    d = ImageDraw.Draw(img)
-    # faint paper grain: a few hundred soft specks, then a blur
+def paper(w=W, h=H):
+    """The card's ground: washi #F4EFE5 with a faint grain (seeded, so every
+    file drawn from it is the same paper)."""
     import random
+    img = Image.new("RGB", (w, h), PAPER)
     random.seed(7)
-    grain = Image.new("L", (W, H), 0)
+    grain = Image.new("L", (w, h), 0)
     g = ImageDraw.Draw(grain)
-    for _ in range(2600):
-        x, y = random.randrange(W), random.randrange(H)
+    for _ in range(int(2600 * w * h / (W * H))):
+        x, y = random.randrange(w), random.randrange(h)
         r = random.choice((1, 1, 2))
         g.ellipse((x, y, x + r, y + r), fill=random.randrange(18, 42))
     grain = grain.filter(ImageFilter.GaussianBlur(1.2))
-    img.paste(Image.new("RGB", (W, H), (214, 206, 192)), mask=grain)
+    img.paste(Image.new("RGB", (w, h), (214, 206, 192)), mask=grain)
+    return img
+
+
+def main(out):
+    img = paper()
     d = ImageDraw.Draw(img)
 
     didot = "/System/Library/Fonts/Supplemental/Didot.ttc"
@@ -92,4 +98,8 @@ def main(out):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1] if len(sys.argv) > 1 else "T-title-made-with-real.png")
+    if len(sys.argv) > 2 and sys.argv[1] == "--paper":          # the plain paper, for panel.py
+        paper().save(sys.argv[2])
+        print("wrote", sys.argv[2])
+    else:
+        main(sys.argv[1] if len(sys.argv) > 1 else "T-title-made-with-real.png")

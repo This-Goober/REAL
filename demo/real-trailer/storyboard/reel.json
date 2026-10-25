@@ -97,20 +97,20 @@
    }
   },
   {
-   "id": "A03",
-   "file": "Videos/T-finalcut-editor.mov",
+   "id": "A36",
+   "file": "Videos/T-finalcut-editor-washi.mov",
    "kind": "video",
-   "dur_s": 6.07,
-   "w": 1918,
-   "h": 1200,
+   "dur_s": 6.0,
+   "w": 1080,
+   "h": 1920,
    "fps": 30.0,
    "rotation": 0,
    "exists": true,
    "catalog": {
     "role": "\u2605 The Paganini timeline inside Final Cut Pro (the creator's screen recording)",
     "beat": "B5",
-    "shows": "6.07 s, 1918x1200, 30 fps, silent. The whole Final Cut Pro window: the viewer top centre playing the tutorial with a yellow caption on it, the timeline across the bottom with the primary storyline, connected title clips above it and the playhead moving right. Window 16.0-22.0 s of the creator's 93 s recording of the .fcpxml import.",
-    "use": "B5, under 'a real timeline for Final Cut Pro'. Landscape in a portrait reel: letterboxed, which is fine for four seconds.",
+    "shows": "6.0 s, 1080x1920, 30 fps, silent: a 1918x1200 recording cropped to cover the top three quarters of the frame, the bottom quarter the closing card's paper at 85 % opacity, the paper showing through; a news-style frame over it (head banner: seal, REAL, \u30ea\u30a2\u30eb, \u7d50 COMPILE; lower strip: FINAL CUT PRO, the .fcpxml REAL wrote, imported). The Final Cut Pro window, its middle: the viewer top centre playing the tutorial with a yellow caption on it, the timeline across the bottom with the primary storyline, connected title clips above it and the playhead moving right. Window 16.0-22.0 s of the creator's 93 s recording of the .fcpxml import.",
+    "use": "B5, under 'a real timeline for Final Cut Pro'. Already 9:16, so it fills the frame as is; the caption goes in the paper quarter.",
     "binds_to": "a `<video clip of a REAL timeline imported into Final Cut Pro ...>` type component",
     "tags": [
      "editor-finalcut",
@@ -123,11 +123,11 @@
    }
   },
   {
-   "id": "A04",
-   "file": "Videos/T-side-by-side.mov",
+   "id": "A37",
+   "file": "Videos/T-side-by-side-washi.mov",
    "kind": "video",
    "dur_s": 8.0,
-   "w": 2160,
+   "w": 1080,
    "h": 1920,
    "fps": 30.0,
    "rotation": 0,
@@ -135,7 +135,7 @@
    "catalog": {
     "role": "\u2605 Final Cut Pro | DaVinci Resolve, the same storyboard side by side",
     "beat": "B5",
-    "shows": "8.0 s, 2160x1920, 30 fps, silent. Two 1080x1920 renders side by side, Final Cut Pro left, DaVinci Resolve right. The caption 'same interval, smaller space' lands at ~0.8 s on both, the cut to the fingerboard close-up at ~2.0 s on both, 'why not octaves?' at ~3.9 s on both. Window 33.4-41.4 s of the two-panel comparison movie of the current build.",
+    "shows": "8.0 s, 1080x1920, 30 fps, silent: the 2160x1920 two-panel movie cropped to cover the top three quarters of the frame (the inner two thirds of each panel), the bottom quarter the closing card's paper at 85 % opacity, the paper showing through; a news-style frame over it (\u7d50 COMPILE; FINAL CUT PRO \u00b7 DAVINCI RESOLVE, one storyboard, two editors). Two 1080x1920 renders side by side, Final Cut Pro left, DaVinci Resolve right. The caption 'same interval, smaller space' lands at ~0.8 s on both, the cut to the fingerboard close-up at ~2.0 s on both, 'why not octaves?' at ~3.9 s on both. Window 33.4-41.4 s of the two-panel comparison movie of the current build.",
     "use": "B5, under 'Final Cut Pro or DaVinci Resolve'; the picture that says 'two editors, one storyboard'.",
     "binds_to": "a `<video clip of the same storyboard rendered by Final Cut Pro and by DaVinci Resolve side by side>` type component",
     "tags": [
@@ -149,19 +149,19 @@
    }
   },
   {
-   "id": "A14",
-   "file": "Videos/T-tracks.mov",
+   "id": "A38",
+   "file": "Videos/T-tracks-washi.mov",
    "kind": "video",
    "dur_s": 7.2,
-   "w": 1920,
-   "h": 1080,
+   "w": 1080,
+   "h": 1920,
    "fps": 30.0,
    "rotation": 0,
    "exists": true,
    "catalog": {
     "role": "\u2605 This trailer's own REEL-TRACKS.html, the playhead moving",
     "beat": "B4",
-    "shows": "7.17 s, 1920x1080, 30 fps, silent. The tracks page of this very reel, captured by Chrome through its #t= deep link at 15 captures per second: the playhead crosses the hook and the first four-files beat (reel time 0-7.17 s), the preview pane composites the frame at the playhead, the caption block 'it shows its work' sits on its anchor word in the text lane. Landscape; the storyboard letterboxes it.",
+    "shows": "7.2 s, 1080x1920, 30 fps, silent: a 1920x1080 capture, its preview pane and the start of the lanes, covering the top three quarters of the frame, the bottom quarter the closing card's paper at 85 % opacity, the paper showing through; a news-style frame over it (\u8ee2 STORYBOARD; THE TRACKS PAGE, this trailer's own storyboard). The tracks page of this very reel, captured by Chrome through its #t= deep link at 15 captures per second: the playhead crosses the hook and the first four-files beat (reel time 0-7.17 s), the preview pane composites the frame at the playhead, the caption block 'it shows its work' sits on its anchor word in the text lane.",
     "use": "B4, under 'Every picture is pinned to a word, not a timestamp'. The beat the trailer exists for.",
     "binds_to": "a `<video clip of REAL's own REEL-TRACKS.html for this trailer, the playhead moving ...>` type component",
     "tags": [
@@ -399,12 +399,12 @@
      "chosen_by": "claude",
      "confidence": "high",
      "candidates": [
-      "A03",
-      "A04"
+      "A36",
+      "A37"
      ],
      "candidates_why": {
-      "A03": "binds_to shares final, pro, real, timeline (+2.3); role shares final, paganini, pro, timeline (+2.5)",
-      "A04": "binds_to shares final, pro, rendered (+1.9); role shares final, pro (+1.1)"
+      "A36": "binds_to shares final, pro, real, timeline (+2.3); role shares final, paganini, pro, timeline (+2.5)",
+      "A37": "binds_to shares final, pro, rendered (+1.9); role shares final, pro (+1.1)"
      },
      "why": "#tutorial-render matches the asset's tags (+6.0); binds_to shares final, finished, paganini, pro, rendered (+4.0); role shares final, finished, pro, rendered, tutorial (+2.5); shows shares final, paganini (+1.2); use shares landing, real (+1.4); video component / video asset (+2.0)",
      "source_component": "C1.860",
@@ -550,7 +550,7 @@
       "A09",
       "A12"
      ],
-     "why": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares files, four, notebook (+2.0); role shares files, four, notebook (+2.0)"
+     "why": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares files, four, notebook (+2.2); role shares files, four, notebook (+2.2)"
     }
    ],
    "held_to": 11.46,
@@ -647,16 +647,26 @@
      "id": "B4.L1",
      "z": 0,
      "kind": "video",
-     "asset": "A14",
+     "asset": "A38",
      "anchor_word": 39,
      "anchor_text": "Then",
      "offset_ms": 0,
      "t0": 16.919999999999998,
      "t1": 24.119,
-     "fit": "fit",
-     "chosen_by": "creator",
+     "fit": "fill",
+     "chosen_by": "claude",
      "confidence": "high",
-     "why": "the creator chose this",
+     "candidates": [
+      "A36",
+      "A05",
+      "A13"
+     ],
+     "candidates_why": {
+      "A36": "shows shares across, moving, playhead (+2.7); video component / video asset (+2.0)",
+      "A05": "shows shares own (+0.5); use shares own (+0.5)",
+      "A13": "binds_to shares html, own, real's (+1.9); role shares html, own (+1.3)"
+     },
+     "why": "#real-tracks matches the asset's tags (+6.0); binds_to shares html, moving, own, playhead, real's (+4.0); role shares html, moving, own, playhead, reel-tracks (+2.5); shows shares anchor, block, lanes, own, playhead (+3.0); use shares trailer, word (+1.3); video component / video asset (+2.0)",
      "source_component": "C3.d9d",
      "source_text": "video clip of REAL's own REEL-TRACKS.html for this trailer, the playhead moving across the lanes and a caption block sitting on its anchor word",
      "placement": "inline",
@@ -674,7 +684,7 @@
      "anchor_text": "pinned",
      "offset_ms": 0,
      "t0": 18.942,
-     "t1": 20.502,
+     "t1": 21.516,
      "fit": "fit",
      "chosen_by": "creator",
      "confidence": "high",
@@ -682,7 +692,7 @@
      "source_component": "C3.699",
      "source_text": "caption: pinned to words",
      "placement": "inline",
-     "dur_source": "text-model",
+     "dur_source": "to-next",
      "essential": false,
      "unsure": false,
      "base": false,
@@ -697,7 +707,124 @@
       0.1411764705882353,
       1
      ],
-     "shadow": true
+     "shadow": true,
+     "hold_to_next": true,
+     "position": [
+      0.0,
+      -692.0
+     ],
+     "dur_s": 2.574
+    },
+    {
+     "id": "B4.L3",
+     "z": 2,
+     "kind": "text",
+     "asset": null,
+     "content": "then\nthe reel",
+     "style": "caption",
+     "style_by": "creator",
+     "anchor_text": "Then",
+     "anchor_word": 39,
+     "offset_ms": 0,
+     "t0": 17.02,
+     "t1": 18.942,
+     "fit": "fit",
+     "chosen_by": "creator",
+     "confidence": "high",
+     "why": "the creator chose this",
+     "source_component": "revision:B4.L3",
+     "source_text": "then\nthe reel",
+     "placement": "inline",
+     "dur_source": "to-next",
+     "base": false,
+     "font_size": 83,
+     "color": [
+      0.7215686274509804,
+      0.1803921568627451,
+      0.1411764705882353,
+      1
+     ],
+     "shadow": true,
+     "hold_to_next": true,
+     "position": [
+      0.0,
+      -692.0
+     ],
+     "dur_s": 1.922
+    },
+    {
+     "id": "B4.L4",
+     "z": 3,
+     "kind": "text",
+     "asset": null,
+     "content": "re-record\nthe voice",
+     "style": "caption",
+     "style_by": "creator",
+     "anchor_text": "re-recording",
+     "anchor_word": 53,
+     "offset_ms": 0,
+     "t0": 21.516,
+     "t1": 22.462,
+     "fit": "fit",
+     "chosen_by": "creator",
+     "confidence": "high",
+     "why": "the creator chose this",
+     "source_component": "revision:B4.L4",
+     "source_text": "re-record\nthe voice",
+     "placement": "inline",
+     "dur_source": "to-next",
+     "base": false,
+     "font_size": 83,
+     "color": [
+      0.7215686274509804,
+      0.1803921568627451,
+      0.1411764705882353,
+      1
+     ],
+     "shadow": true,
+     "hold_to_next": true,
+     "position": [
+      0.0,
+      -692.0
+     ],
+     "dur_s": 0.946
+    },
+    {
+     "id": "B4.L5",
+     "z": 4,
+     "kind": "text",
+     "asset": null,
+     "content": "nothing\nmoves",
+     "style": "caption",
+     "style_by": "creator",
+     "anchor_text": "moves",
+     "anchor_word": 56,
+     "offset_ms": 0,
+     "t0": 22.462,
+     "t1": 24.119,
+     "fit": "fit",
+     "chosen_by": "creator",
+     "confidence": "high",
+     "why": "the creator chose this",
+     "source_component": "revision:B4.L5",
+     "source_text": "nothing\nmoves",
+     "placement": "inline",
+     "dur_source": "to-next",
+     "base": false,
+     "font_size": 83,
+     "color": [
+      0.7215686274509804,
+      0.1803921568627451,
+      0.1411764705882353,
+      1
+     ],
+     "shadow": true,
+     "hold_to_next": true,
+     "position": [
+      0.0,
+      -692.0
+     ],
+     "dur_s": 1.657
     }
    ],
    "audio": [
@@ -719,17 +846,12 @@
       "A09",
       "A07"
      ],
-     "why": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares reel (+0.7); role shares reel, voice (+1.0)"
+     "why": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares reel (+0.8); role shares reel, voice (+1.1)"
     }
    ],
    "held_to": 24.119,
    "note": "The beat the whole trailer exists for. Hold the tracks page.",
    "flags": [
-    {
-     "code": "aspect-mismatch",
-     "layer": "B4.L1",
-     "msg": "A14 is 1920x1080 in a 9:16 reel \u2014 it will be cropped or letterboxed"
-    },
     {
      "code": "text-type",
      "layer": "B4.L2",
@@ -759,16 +881,24 @@
      "id": "B5.L1",
      "z": 0,
      "kind": "video",
-     "asset": "A03",
+     "asset": "A36",
      "anchor_word": 60,
      "anchor_text": "Last",
      "offset_ms": 0,
      "t0": 24.119,
      "t1": 28.066,
-     "fit": "fit",
-     "chosen_by": "creator",
+     "fit": "fill",
+     "chosen_by": "claude",
      "confidence": "high",
-     "why": "the creator chose this",
+     "candidates": [
+      "A05",
+      "A37"
+     ],
+     "candidates_why": {
+      "A05": "binds_to shares final, pro (+1.1); role shares final, pro (+1.1)",
+      "A37": "binds_to shares final, pro (+1.1); role shares final, pro (+1.1)"
+     },
+     "why": "#editor-finalcut matches the asset's tags (+6.0); binds_to shares final, imported, pro, real, timeline (+3.3); role shares creator's, final, pro, recording, timeline (+2.5); shows shares connected, creator's, final, imported, pro (+3.0); use shares final, real, timeline (+1.7); video component / video asset (+2.0)",
      "source_component": "C4.d3a",
      "source_text": "video clip of a REAL timeline imported into Final Cut Pro, the lanes and the connected titles visible, from the creator's screen recording",
      "placement": "inline",
@@ -782,16 +912,26 @@
      "id": "B5.L2",
      "z": 1,
      "kind": "video",
-     "asset": "A04",
+     "asset": "A37",
      "anchor_word": 70,
      "anchor_text": "Resolve:",
      "offset_ms": 0,
      "t0": 28.066,
      "t1": 34.75,
-     "fit": "fit",
-     "chosen_by": "creator",
+     "fit": "fill",
+     "chosen_by": "claude",
      "confidence": "high",
-     "why": "the creator chose this",
+     "candidates": [
+      "A05",
+      "A36",
+      "A38"
+     ],
+     "candidates_why": {
+      "A05": "binds_to shares final, pro, rendered (+1.9); role shares final, pro, rendered (+1.9)",
+      "A36": "binds_to shares final, pro (+1.1); role shares final, pro (+1.1)",
+      "A38": "shows shares storyboard (+0.8); use shares every (+0.5)"
+     },
+     "why": "#side-by-side matches the asset's tags (+6.0); binds_to shares davinci, final, pro, rendered, resolve (+4.0); role shares davinci, final, pro, resolve, same (+2.5); shows shares davinci, final, pro, resolve, same (+3.0); use shares davinci, final, pro (+1.9); video component / video asset (+2.0)",
      "source_component": "C4.b74",
      "source_text": "video clip of the same storyboard rendered by Final Cut Pro and by DaVinci Resolve side by side, every cut landing on the same frame",
      "placement": "inline",
@@ -809,7 +949,7 @@
      "anchor_text": "cannot",
      "offset_ms": 0,
      "t0": 32.3,
-     "t1": 33.86,
+     "t1": 34.25,
      "fit": "fit",
      "chosen_by": "creator",
      "confidence": "high",
@@ -817,14 +957,51 @@
      "source_component": "C4.356",
      "source_text": "caption: refuses, never guesses",
      "placement": "inline",
-     "dur_source": "text-model",
+     "dur_source": "to-next",
      "essential": false,
      "unsure": false,
      "base": false,
      "snapped": false,
-     "content": "refuses,\nnever\nguesses",
+     "content": "refuses never\nguesses",
      "style": "caption",
      "style_by": "creator",
+     "font_size": 82,
+     "color": [
+      0.7215686274509804,
+      0.1803921568627451,
+      0.1411764705882353,
+      1
+     ],
+     "shadow": true,
+     "hold_to_next": true,
+     "position": [
+      0.0,
+      -692.0
+     ],
+     "dur_s": 1.95
+    },
+    {
+     "id": "B5.L4",
+     "z": 3,
+     "kind": "text",
+     "asset": null,
+     "content": "a real\ntimeline",
+     "style": "caption",
+     "style_by": "creator",
+     "anchor_text": "Last",
+     "anchor_word": 60,
+     "offset_ms": 0,
+     "t0": 24.33,
+     "t1": 26.132,
+     "fit": "fit",
+     "chosen_by": "creator",
+     "confidence": "high",
+     "why": "the creator chose this",
+     "source_component": "revision:B5.L4",
+     "source_text": "a real\ntimeline",
+     "placement": "inline",
+     "dur_source": "to-next",
+     "base": false,
      "font_size": 83,
      "color": [
       0.7215686274509804,
@@ -833,10 +1010,86 @@
       1
      ],
      "shadow": true,
+     "hold_to_next": true,
      "position": [
       0.0,
-      -440.0
-     ]
+      -692.0
+     ],
+     "dur_s": 1.802
+    },
+    {
+     "id": "B5.L5",
+     "z": 4,
+     "kind": "text",
+     "asset": null,
+     "content": "Final Cut Pro\nor Resolve",
+     "style": "caption",
+     "style_by": "creator",
+     "anchor_text": "Final",
+     "anchor_word": 65,
+     "offset_ms": 0,
+     "t0": 26.132,
+     "t1": 28.98,
+     "fit": "fit",
+     "chosen_by": "creator",
+     "confidence": "high",
+     "why": "the creator chose this",
+     "source_component": "revision:B5.L5",
+     "source_text": "Final Cut Pro\nor Resolve",
+     "placement": "inline",
+     "dur_source": "to-next",
+     "base": false,
+     "font_size": 83,
+     "color": [
+      0.7215686274509804,
+      0.1803921568627451,
+      0.1411764705882353,
+      1
+     ],
+     "shadow": true,
+     "hold_to_next": true,
+     "position": [
+      0.0,
+      -692.0
+     ],
+     "dur_s": 2.848
+    },
+    {
+     "id": "B5.L6",
+     "z": 5,
+     "kind": "text",
+     "asset": null,
+     "content": "editable clips\ntitles, lanes",
+     "style": "caption",
+     "style_by": "creator",
+     "anchor_text": "editable",
+     "anchor_word": 71,
+     "offset_ms": 0,
+     "t0": 28.98,
+     "t1": 32.3,
+     "fit": "fit",
+     "chosen_by": "creator",
+     "confidence": "high",
+     "why": "the creator chose this",
+     "source_component": "revision:B5.L6",
+     "source_text": "editable clips\ntitles, lanes",
+     "placement": "inline",
+     "dur_source": "to-next",
+     "base": false,
+     "font_size": 83,
+     "color": [
+      0.7215686274509804,
+      0.1803921568627451,
+      0.1411764705882353,
+      1
+     ],
+     "shadow": true,
+     "hold_to_next": true,
+     "position": [
+      0.0,
+      -692.0
+     ],
+     "dur_s": 3.32
     }
    ],
    "audio": [
@@ -864,16 +1117,6 @@
    "held_to": 34.75,
    "note": "",
    "flags": [
-    {
-     "code": "aspect-mismatch",
-     "layer": "B5.L1",
-     "msg": "A03 is 1918x1200 in a 9:16 reel \u2014 it will be cropped or letterboxed"
-    },
-    {
-     "code": "aspect-mismatch",
-     "layer": "B5.L2",
-     "msg": "A04 is 2160x1920 in a 9:16 reel \u2014 it will be cropped or letterboxed"
-    },
     {
      "code": "text-type",
      "layer": "B5.L3",

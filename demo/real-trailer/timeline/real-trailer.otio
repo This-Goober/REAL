@@ -19,8 +19,8 @@
                 "audio_lanes_in": 7,
                 "connected_out": 7,
                 "dropped": [],
-                "layers_in": 10,
-                "visual_elements_out": 10
+                "layers_in": 16,
+                "visual_elements_out": 16
             },
             "rate": 30.0,
             "text": "text overlays are rendered to transparent PNG stills (metadata.REAL.kind == 'title'); the requested styling is kept in metadata.REAL.title and the files live in /Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles",
@@ -270,7 +270,7 @@
                         "OTIO_SCHEMA": "Clip.2",
                         "metadata": {
                             "REAL": {
-                                "note": "narration: Then the reel. Every picture is pinned to a word, not a timestamp, so re-recording the voice moves nothing you approved.  |  from C3/C3.301  |  words 39–59  |  flag aspect-mismatch: A14 is 1920x1080 in a 9:16 reel — it will be cropped or letterboxed  |  flag text-type: classified as 'caption' by heuristic — confirm title / caption / subtitle in the tracks page  |  flag cut-moved: the footage ends 0.111s before the planned cut, so the cut moved earlier to 24.119s (still after the line ends)",
+                                "note": "narration: Then the reel. Every picture is pinned to a word, not a timestamp, so re-recording the voice moves nothing you approved.  |  from C3/C3.301  |  words 39–59  |  flag text-type: classified as 'caption' by heuristic — confirm title / caption / subtitle in the tracks page  |  flag cut-moved: the footage ends 0.111s before the planned cut, so the cut moved earlier to 24.119s (still after the line ends)",
                                 "role": "effects",
                                 "volume_db": -60
                             }
@@ -300,9 +300,9 @@
                                     "REAL": {
                                         "asset_seconds": 7.2,
                                         "has_audio": false,
-                                        "height": 1080,
+                                        "height": 1920,
                                         "kind": "video",
-                                        "width": 1920
+                                        "width": 1080
                                     }
                                 },
                                 "name": "",
@@ -320,7 +320,7 @@
                                     }
                                 },
                                 "available_image_bounds": null,
-                                "target_url": "file:///Users/Shared/REAL/demo/real-trailer/media/Videos/T-tracks.mov"
+                                "target_url": "file:///Users/Shared/REAL/demo/real-trailer/media/Videos/T-tracks-washi.mov"
                             }
                         },
                         "active_media_reference_key": "DEFAULT_MEDIA"
@@ -329,7 +329,7 @@
                         "OTIO_SCHEMA": "Clip.2",
                         "metadata": {
                             "REAL": {
-                                "note": "narration: Last, a real timeline for Final Cut Pro or DaVinci Resolve: editable clips, titles, lanes. What it cannot represent, it refuses.  |  from C4/C4.1b6  |  words 60–80  |  flag aspect-mismatch: A03 is 1918x1200 in a 9:16 reel — it will be cropped or letterboxed  |  flag aspect-mismatch: A04 is 2160x1920 in a 9:16 reel — it will be cropped or letterboxed  |  flag text-type: classified as 'caption' by heuristic — confirm title / caption / subtitle in the tracks page",
+                                "note": "narration: Last, a real timeline for Final Cut Pro or DaVinci Resolve: editable clips, titles, lanes. What it cannot represent, it refuses.  |  from C4/C4.1b6  |  words 60–80  |  flag text-type: classified as 'caption' by heuristic — confirm title / caption / subtitle in the tracks page",
                                 "role": "effects",
                                 "volume_db": -60
                             }
@@ -357,11 +357,11 @@
                                 "OTIO_SCHEMA": "ExternalReference.1",
                                 "metadata": {
                                     "REAL": {
-                                        "asset_seconds": 6.07,
+                                        "asset_seconds": 6.0,
                                         "has_audio": false,
-                                        "height": 1200,
+                                        "height": 1920,
                                         "kind": "video",
-                                        "width": 1918
+                                        "width": 1080
                                     }
                                 },
                                 "name": "",
@@ -370,7 +370,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 183.0
+                                        "value": 180.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -379,7 +379,7 @@
                                     }
                                 },
                                 "available_image_bounds": null,
-                                "target_url": "file:///Users/Shared/REAL/demo/real-trailer/media/Videos/T-finalcut-editor.mov"
+                                "target_url": "file:///Users/Shared/REAL/demo/real-trailer/media/Videos/T-finalcut-editor-washi.mov"
                             }
                         },
                         "active_media_reference_key": "DEFAULT_MEDIA"
@@ -388,6 +388,7 @@
                         "OTIO_SCHEMA": "Clip.2",
                         "metadata": {
                             "REAL": {
+                                "note": "picked by claude (confidence: high); also considered A05, A36, A38",
                                 "role": "effects",
                                 "volume_db": -60
                             }
@@ -419,7 +420,7 @@
                                         "has_audio": false,
                                         "height": 1920,
                                         "kind": "video",
-                                        "width": 2160
+                                        "width": 1080
                                     }
                                 },
                                 "name": "",
@@ -437,7 +438,7 @@
                                     }
                                 },
                                 "available_image_bounds": null,
-                                "target_url": "file:///Users/Shared/REAL/demo/real-trailer/media/Videos/T-side-by-side.mov"
+                                "target_url": "file:///Users/Shared/REAL/demo/real-trailer/media/Videos/T-side-by-side-washi.mov"
                             }
                         },
                         "active_media_reference_key": "DEFAULT_MEDIA"
@@ -655,99 +656,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 47.0
-                            },
-                            "start_time": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 30.0,
-                                "value": 0.0
-                            }
-                        },
-                        "effects": [],
-                        "markers": [],
-                        "enabled": true,
-                        "color": null,
-                        "media_references": {
-                            "DEFAULT_MEDIA": {
-                                "OTIO_SCHEMA": "ExternalReference.1",
-                                "metadata": {
-                                    "REAL": {
-                                        "height": 1920,
-                                        "kind": "title",
-                                        "rendered": "png",
-                                        "title": {
-                                            "align": "center",
-                                            "color": [
-                                                0.7215686274509804,
-                                                0.1803921568627451,
-                                                0.1411764705882353,
-                                                1
-                                            ],
-                                            "font": "Helvetica Neue",
-                                            "font_face": "Bold",
-                                            "font_size": 83,
-                                            "position": [
-                                                0,
-                                                -620
-                                            ],
-                                            "shadow": true,
-                                            "text": "pinned\nto words"
-                                        },
-                                        "width": 1080
-                                    }
-                                },
-                                "name": "",
-                                "available_range": {
-                                    "OTIO_SCHEMA": "TimeRange.1",
-                                    "duration": {
-                                        "OTIO_SCHEMA": "RationalTime.1",
-                                        "rate": 30.0,
-                                        "value": 47.0
-                                    },
-                                    "start_time": {
-                                        "OTIO_SCHEMA": "RationalTime.1",
-                                        "rate": 30.0,
-                                        "value": 0.0
-                                    }
-                                },
-                                "available_image_bounds": null,
-                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/pinned-to-words-bfeb77de.png"
-                            }
-                        },
-                        "active_media_reference_key": "DEFAULT_MEDIA"
-                    },
-                    {
-                        "OTIO_SCHEMA": "Gap.1",
-                        "metadata": {},
-                        "name": "",
-                        "source_range": {
-                            "OTIO_SCHEMA": "TimeRange.1",
-                            "duration": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 30.0,
-                                "value": 354.0
-                            },
-                            "start_time": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 30.0,
-                                "value": 0.0
-                            }
-                        },
-                        "effects": [],
-                        "markers": [],
-                        "enabled": true,
-                        "color": null
-                    },
-                    {
-                        "OTIO_SCHEMA": "Clip.2",
-                        "metadata": {},
-                        "name": "B5.L3 — refuses,\nnever\nguesses",
-                        "source_range": {
-                            "OTIO_SCHEMA": "TimeRange.1",
-                            "duration": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 30.0,
-                                "value": 47.0
+                                "value": 77.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -780,10 +689,10 @@
                                             "font_size": 83,
                                             "position": [
                                                 0.0,
-                                                -440.0
+                                                -692.0
                                             ],
                                             "shadow": true,
-                                            "text": "refuses,\nnever\nguesses"
+                                            "text": "pinned\nto words"
                                         },
                                         "width": 1080
                                     }
@@ -794,7 +703,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 47.0
+                                        "value": 77.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -803,7 +712,7 @@
                                     }
                                 },
                                 "available_image_bounds": null,
-                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/refuses-never-guesses-25f671d8.png"
+                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/pinned-to-words-907e0382.png"
                             }
                         },
                         "active_media_reference_key": "DEFAULT_MEDIA"
@@ -817,7 +726,734 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 225.0
+                                "value": 85.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null
+                    },
+                    {
+                        "OTIO_SCHEMA": "Clip.2",
+                        "metadata": {},
+                        "name": "B5.L4 — a real\ntimeline",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 54.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null,
+                        "media_references": {
+                            "DEFAULT_MEDIA": {
+                                "OTIO_SCHEMA": "ExternalReference.1",
+                                "metadata": {
+                                    "REAL": {
+                                        "height": 1920,
+                                        "kind": "title",
+                                        "rendered": "png",
+                                        "title": {
+                                            "align": "center",
+                                            "color": [
+                                                0.7215686274509804,
+                                                0.1803921568627451,
+                                                0.1411764705882353,
+                                                1
+                                            ],
+                                            "font": "Helvetica Neue",
+                                            "font_face": "Bold",
+                                            "font_size": 83,
+                                            "position": [
+                                                0.0,
+                                                -692.0
+                                            ],
+                                            "shadow": true,
+                                            "text": "a real\ntimeline"
+                                        },
+                                        "width": 1080
+                                    }
+                                },
+                                "name": "",
+                                "available_range": {
+                                    "OTIO_SCHEMA": "TimeRange.1",
+                                    "duration": {
+                                        "OTIO_SCHEMA": "RationalTime.1",
+                                        "rate": 30.0,
+                                        "value": 54.0
+                                    },
+                                    "start_time": {
+                                        "OTIO_SCHEMA": "RationalTime.1",
+                                        "rate": 30.0,
+                                        "value": 0.0
+                                    }
+                                },
+                                "available_image_bounds": null,
+                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/a-real-timeline-9180b8aa.png"
+                            }
+                        },
+                        "active_media_reference_key": "DEFAULT_MEDIA"
+                    },
+                    {
+                        "OTIO_SCHEMA": "Gap.1",
+                        "metadata": {},
+                        "name": "",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 185.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null
+                    },
+                    {
+                        "OTIO_SCHEMA": "Clip.2",
+                        "metadata": {},
+                        "name": "B5.L3 — refuses never\nguesses",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 59.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null,
+                        "media_references": {
+                            "DEFAULT_MEDIA": {
+                                "OTIO_SCHEMA": "ExternalReference.1",
+                                "metadata": {
+                                    "REAL": {
+                                        "height": 1920,
+                                        "kind": "title",
+                                        "rendered": "png",
+                                        "title": {
+                                            "align": "center",
+                                            "color": [
+                                                0.7215686274509804,
+                                                0.1803921568627451,
+                                                0.1411764705882353,
+                                                1
+                                            ],
+                                            "font": "Helvetica Neue",
+                                            "font_face": "Bold",
+                                            "font_size": 82,
+                                            "position": [
+                                                0.0,
+                                                -692.0
+                                            ],
+                                            "shadow": true,
+                                            "text": "refuses never\nguesses"
+                                        },
+                                        "width": 1080
+                                    }
+                                },
+                                "name": "",
+                                "available_range": {
+                                    "OTIO_SCHEMA": "TimeRange.1",
+                                    "duration": {
+                                        "OTIO_SCHEMA": "RationalTime.1",
+                                        "rate": 30.0,
+                                        "value": 59.0
+                                    },
+                                    "start_time": {
+                                        "OTIO_SCHEMA": "RationalTime.1",
+                                        "rate": 30.0,
+                                        "value": 0.0
+                                    }
+                                },
+                                "available_image_bounds": null,
+                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/refuses-never-guesses-1d7baf43.png"
+                            }
+                        },
+                        "active_media_reference_key": "DEFAULT_MEDIA"
+                    },
+                    {
+                        "OTIO_SCHEMA": "Gap.1",
+                        "metadata": {},
+                        "name": "",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 213.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null
+                    }
+                ],
+                "kind": "Video"
+            },
+            {
+                "OTIO_SCHEMA": "Track.1",
+                "metadata": {},
+                "name": "V3",
+                "source_range": null,
+                "effects": [],
+                "markers": [],
+                "enabled": true,
+                "color": null,
+                "children": [
+                    {
+                        "OTIO_SCHEMA": "Gap.1",
+                        "metadata": {},
+                        "name": "",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 511.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null
+                    },
+                    {
+                        "OTIO_SCHEMA": "Clip.2",
+                        "metadata": {},
+                        "name": "B4.L3 — then\nthe reel",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 57.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null,
+                        "media_references": {
+                            "DEFAULT_MEDIA": {
+                                "OTIO_SCHEMA": "ExternalReference.1",
+                                "metadata": {
+                                    "REAL": {
+                                        "height": 1920,
+                                        "kind": "title",
+                                        "rendered": "png",
+                                        "title": {
+                                            "align": "center",
+                                            "color": [
+                                                0.7215686274509804,
+                                                0.1803921568627451,
+                                                0.1411764705882353,
+                                                1
+                                            ],
+                                            "font": "Helvetica Neue",
+                                            "font_face": "Bold",
+                                            "font_size": 83,
+                                            "position": [
+                                                0.0,
+                                                -692.0
+                                            ],
+                                            "shadow": true,
+                                            "text": "then\nthe reel"
+                                        },
+                                        "width": 1080
+                                    }
+                                },
+                                "name": "",
+                                "available_range": {
+                                    "OTIO_SCHEMA": "TimeRange.1",
+                                    "duration": {
+                                        "OTIO_SCHEMA": "RationalTime.1",
+                                        "rate": 30.0,
+                                        "value": 57.0
+                                    },
+                                    "start_time": {
+                                        "OTIO_SCHEMA": "RationalTime.1",
+                                        "rate": 30.0,
+                                        "value": 0.0
+                                    }
+                                },
+                                "available_image_bounds": null,
+                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/then-the-reel-6b453c5b.png"
+                            }
+                        },
+                        "active_media_reference_key": "DEFAULT_MEDIA"
+                    },
+                    {
+                        "OTIO_SCHEMA": "Gap.1",
+                        "metadata": {},
+                        "name": "",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 216.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null
+                    },
+                    {
+                        "OTIO_SCHEMA": "Clip.2",
+                        "metadata": {},
+                        "name": "B5.L5 — Final Cut Pro\nor Resolve",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 85.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null,
+                        "media_references": {
+                            "DEFAULT_MEDIA": {
+                                "OTIO_SCHEMA": "ExternalReference.1",
+                                "metadata": {
+                                    "REAL": {
+                                        "height": 1920,
+                                        "kind": "title",
+                                        "rendered": "png",
+                                        "title": {
+                                            "align": "center",
+                                            "color": [
+                                                0.7215686274509804,
+                                                0.1803921568627451,
+                                                0.1411764705882353,
+                                                1
+                                            ],
+                                            "font": "Helvetica Neue",
+                                            "font_face": "Bold",
+                                            "font_size": 83,
+                                            "position": [
+                                                0.0,
+                                                -692.0
+                                            ],
+                                            "shadow": true,
+                                            "text": "Final Cut Pro\nor Resolve"
+                                        },
+                                        "width": 1080
+                                    }
+                                },
+                                "name": "",
+                                "available_range": {
+                                    "OTIO_SCHEMA": "TimeRange.1",
+                                    "duration": {
+                                        "OTIO_SCHEMA": "RationalTime.1",
+                                        "rate": 30.0,
+                                        "value": 85.0
+                                    },
+                                    "start_time": {
+                                        "OTIO_SCHEMA": "RationalTime.1",
+                                        "rate": 30.0,
+                                        "value": 0.0
+                                    }
+                                },
+                                "available_image_bounds": null,
+                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/final-cut-pro-or-resolve-dbe8c7f3.png"
+                            }
+                        },
+                        "active_media_reference_key": "DEFAULT_MEDIA"
+                    },
+                    {
+                        "OTIO_SCHEMA": "Clip.2",
+                        "metadata": {},
+                        "name": "B5.L6 — editable clips\ntitles, lanes",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 100.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null,
+                        "media_references": {
+                            "DEFAULT_MEDIA": {
+                                "OTIO_SCHEMA": "ExternalReference.1",
+                                "metadata": {
+                                    "REAL": {
+                                        "height": 1920,
+                                        "kind": "title",
+                                        "rendered": "png",
+                                        "title": {
+                                            "align": "center",
+                                            "color": [
+                                                0.7215686274509804,
+                                                0.1803921568627451,
+                                                0.1411764705882353,
+                                                1
+                                            ],
+                                            "font": "Helvetica Neue",
+                                            "font_face": "Bold",
+                                            "font_size": 83,
+                                            "position": [
+                                                0.0,
+                                                -692.0
+                                            ],
+                                            "shadow": true,
+                                            "text": "editable clips\ntitles, lanes"
+                                        },
+                                        "width": 1080
+                                    }
+                                },
+                                "name": "",
+                                "available_range": {
+                                    "OTIO_SCHEMA": "TimeRange.1",
+                                    "duration": {
+                                        "OTIO_SCHEMA": "RationalTime.1",
+                                        "rate": 30.0,
+                                        "value": 100.0
+                                    },
+                                    "start_time": {
+                                        "OTIO_SCHEMA": "RationalTime.1",
+                                        "rate": 30.0,
+                                        "value": 0.0
+                                    }
+                                },
+                                "available_image_bounds": null,
+                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/editable-clips-titles-lanes-a19ef42e.png"
+                            }
+                        },
+                        "active_media_reference_key": "DEFAULT_MEDIA"
+                    },
+                    {
+                        "OTIO_SCHEMA": "Gap.1",
+                        "metadata": {},
+                        "name": "",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 272.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null
+                    }
+                ],
+                "kind": "Video"
+            },
+            {
+                "OTIO_SCHEMA": "Track.1",
+                "metadata": {},
+                "name": "V4",
+                "source_range": null,
+                "effects": [],
+                "markers": [],
+                "enabled": true,
+                "color": null,
+                "children": [
+                    {
+                        "OTIO_SCHEMA": "Gap.1",
+                        "metadata": {},
+                        "name": "",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 645.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null
+                    },
+                    {
+                        "OTIO_SCHEMA": "Clip.2",
+                        "metadata": {},
+                        "name": "B4.L4 — re-record\nthe voice",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 29.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null,
+                        "media_references": {
+                            "DEFAULT_MEDIA": {
+                                "OTIO_SCHEMA": "ExternalReference.1",
+                                "metadata": {
+                                    "REAL": {
+                                        "height": 1920,
+                                        "kind": "title",
+                                        "rendered": "png",
+                                        "title": {
+                                            "align": "center",
+                                            "color": [
+                                                0.7215686274509804,
+                                                0.1803921568627451,
+                                                0.1411764705882353,
+                                                1
+                                            ],
+                                            "font": "Helvetica Neue",
+                                            "font_face": "Bold",
+                                            "font_size": 83,
+                                            "position": [
+                                                0.0,
+                                                -692.0
+                                            ],
+                                            "shadow": true,
+                                            "text": "re-record\nthe voice"
+                                        },
+                                        "width": 1080
+                                    }
+                                },
+                                "name": "",
+                                "available_range": {
+                                    "OTIO_SCHEMA": "TimeRange.1",
+                                    "duration": {
+                                        "OTIO_SCHEMA": "RationalTime.1",
+                                        "rate": 30.0,
+                                        "value": 29.0
+                                    },
+                                    "start_time": {
+                                        "OTIO_SCHEMA": "RationalTime.1",
+                                        "rate": 30.0,
+                                        "value": 0.0
+                                    }
+                                },
+                                "available_image_bounds": null,
+                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/re-record-the-voice-1261f0a8.png"
+                            }
+                        },
+                        "active_media_reference_key": "DEFAULT_MEDIA"
+                    },
+                    {
+                        "OTIO_SCHEMA": "Gap.1",
+                        "metadata": {},
+                        "name": "",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 567.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null
+                    }
+                ],
+                "kind": "Video"
+            },
+            {
+                "OTIO_SCHEMA": "Track.1",
+                "metadata": {},
+                "name": "V5",
+                "source_range": null,
+                "effects": [],
+                "markers": [],
+                "enabled": true,
+                "color": null,
+                "children": [
+                    {
+                        "OTIO_SCHEMA": "Gap.1",
+                        "metadata": {},
+                        "name": "",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 674.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null
+                    },
+                    {
+                        "OTIO_SCHEMA": "Clip.2",
+                        "metadata": {},
+                        "name": "B4.L5 — nothing\nmoves",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 50.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null,
+                        "media_references": {
+                            "DEFAULT_MEDIA": {
+                                "OTIO_SCHEMA": "ExternalReference.1",
+                                "metadata": {
+                                    "REAL": {
+                                        "height": 1920,
+                                        "kind": "title",
+                                        "rendered": "png",
+                                        "title": {
+                                            "align": "center",
+                                            "color": [
+                                                0.7215686274509804,
+                                                0.1803921568627451,
+                                                0.1411764705882353,
+                                                1
+                                            ],
+                                            "font": "Helvetica Neue",
+                                            "font_face": "Bold",
+                                            "font_size": 83,
+                                            "position": [
+                                                0.0,
+                                                -692.0
+                                            ],
+                                            "shadow": true,
+                                            "text": "nothing\nmoves"
+                                        },
+                                        "width": 1080
+                                    }
+                                },
+                                "name": "",
+                                "available_range": {
+                                    "OTIO_SCHEMA": "TimeRange.1",
+                                    "duration": {
+                                        "OTIO_SCHEMA": "RationalTime.1",
+                                        "rate": 30.0,
+                                        "value": 50.0
+                                    },
+                                    "start_time": {
+                                        "OTIO_SCHEMA": "RationalTime.1",
+                                        "rate": 30.0,
+                                        "value": 0.0
+                                    }
+                                },
+                                "available_image_bounds": null,
+                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/nothing-moves-4d5cd6bb.png"
+                            }
+                        },
+                        "active_media_reference_key": "DEFAULT_MEDIA"
+                    },
+                    {
+                        "OTIO_SCHEMA": "Gap.1",
+                        "metadata": {},
+                        "name": "",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 517.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -927,7 +1563,7 @@
                         "OTIO_SCHEMA": "Clip.2",
                         "metadata": {
                             "REAL": {
-                                "note": "voice take — which take covers this line has to be confirmed by ear; binds_to shares files, four, notebook (+2.0); role shares files, four, notebook (+2.0)",
+                                "note": "voice take — which take covers this line has to be confirmed by ear; binds_to shares files, four, notebook (+2.2); role shares files, four, notebook (+2.2)",
                                 "role": "dialogue"
                             }
                         },
@@ -1087,7 +1723,7 @@
                         "OTIO_SCHEMA": "Clip.2",
                         "metadata": {
                             "REAL": {
-                                "note": "voice take — which take covers this line has to be confirmed by ear; binds_to shares reel (+0.7); role shares reel, voice (+1.0)",
+                                "note": "voice take — which take covers this line has to be confirmed by ear; binds_to shares reel (+0.8); role shares reel, voice (+1.1)",
                                 "role": "dialogue"
                             }
                         },

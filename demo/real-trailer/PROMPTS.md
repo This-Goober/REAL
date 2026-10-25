@@ -110,6 +110,70 @@ creator re-rendered:
 and the new render passes seven of seven (`comparison/BAR.md`). It replaced
 the trailer on the page.
 
+## The look, after the proof
+
+Notes from the creator over the next renders, verbatim, and what each did:
+
+> the last caption is weird though I think better "refuses never" \n "guesses"
+> and keep it at the bottom also can you use white background mostly instead
+> of black I feel for B4 B5 B5 with black background does not look as good
+
+> ok the white background looks white, what color do you use for the last B6?
+> we should use the same. Also is it possible for B4-B5-B5 you make the sub
+> videos you are showing instead of small in the center like that can you make
+> it so that it fill the 3/4 top of the video it is ok to get cropped […] the
+> bottom 25% is for caption
+
+> ok since we reserve the bottom 25% for caption then if we dont see one or a
+> lot of empty slots then it looks weird can you just then add more caption to
+> fill between B4-B5(1-2)-B5(2-2)
+
+> ok almost there, we just need the caption lower by half of the height of
+> the current caption font
+
+> also just to look nicer can you make that video above the caption to look
+> like a in CNN news have some banner or head banner and with opacity […] add
+> REAL and japanese character you use for the demo page […] remember japanese
+> flair character design beautiful
+
+> great one last tweak can you make the video on B4, B51/2, B52/2 have opacity
+> as well and the background should
+
+Produced, in order: the last caption as "refuses never / guesses" at 82 pt
+(at 83 pt the first line would be 86 % of the width); the three landscape
+shots as panels over the top three quarters, cropped, on the closing card's
+washi paper (#F4EFE5 with its grain), the bottom quarter for captions
+(`scripts/panel.py`); six more captions on the words of B4 and B5, each held
+until the next (a `hold = next` revision the storyboard gained), so the
+quarter is never empty; the bottom captions 72 px lower, half the 83-pt
+font's drawn height; a news-style frame over the panels
+(`scripts/make_panel_frame.py`: a sumi head banner with a seigaiha pattern,
+the 実写 seal, REAL, リアル and the step, 転 storyboard or 結 compile; a lower
+strip with an icon tag; a vermilion rule); and the panels at 85 % opacity over
+the paper. The last note ended mid-sentence; the paper showing through was
+the reading taken.
+
+The creator then rendered both timelines:
+
+> all is good, wondering why the otio davinci has louder background audio
+> whereas the final cut pro stays in the background not as loud?
+
+The `.otio` keeps the bed's −14 dB only in REAL's metadata; OpenTimelineIO has
+no field for audio level and Resolve does not read the metadata. Measured
+after the last word, where the bed plays alone: Resolve 14.0 dB louder.
+
+> ok then I will leave it as is. https://youtube.com/shorts/5HnNZilTbSg this
+> is the finalcutpro real-trailer uploaded to youtube. The davinci otio
+> rendered is https://youtube.com/shorts/FaJ4WnhnU8E.
+
+> update the github and the index.html with all these latest assets and the
+> trailer.
+
+Both renders measured against the timeline and each other: seven of seven in
+each (`comparison/BAR.md`). The comparison's caption detector gained one rule
+for it: where one held caption replaces the next, the band never empties, so
+the edge is the frame where the band changes most.
+
 ## What the pipeline refused or got wrong on the way, and the fix
 
 - `build.py` wrote the whole-reel bed as `kind: audio` and its own validator

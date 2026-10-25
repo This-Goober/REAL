@@ -89,13 +89,13 @@
    "specs": "1080x1920 png 25fps \u00b7 0.1 MB"
   },
   {
-   "id": "A03",
-   "file": "Videos/T-finalcut-editor.mov",
-   "name": "T-finalcut-editor.mov",
+   "id": "A36",
+   "file": "Videos/T-finalcut-editor-washi.mov",
+   "name": "T-finalcut-editor-washi.mov",
    "kind": "video",
    "role": "\u2605 The Paganini timeline inside Final Cut Pro (the creator's screen recording)",
-   "shows": "6.07 s, 1918x1200, 30 fps, silent. The whole Final Cut Pro window: the viewer top centre playing the tutorial with a yellow caption on it, the timeline across the bottom with the primary storyline, connected title clips above it and the playhead moving right. Window 16.0-22.0 s of the creator's 93 s recording of the .fcpxml import.",
-   "use": "B5, under 'a real timeline for Final Cut Pro'. Landscape in a portrait reel: letterboxed, which is fine for four seconds.",
+   "shows": "6.0 s, 1080x1920, 30 fps, silent: a 1918x1200 recording cropped to cover the top three quarters of the frame, the bottom quarter the closing card's paper at 85 % opacity, the paper showing through; a news-style frame over it (head banner: seal, REAL, \u30ea\u30a2\u30eb, \u7d50 COMPILE; lower strip: FINAL CUT PRO, the .fcpxml REAL wrote, imported). The Final Cut Pro window, its middle: the viewer top centre playing the tutorial with a yellow caption on it, the timeline across the bottom with the primary storyline, connected title clips above it and the playhead moving right. Window 16.0-22.0 s of the creator's 93 s recording of the .fcpxml import.",
+   "use": "B5, under 'a real timeline for Final Cut Pro'. Already 9:16, so it fills the frame as is; the caption goes in the paper quarter.",
    "beat": "B5",
    "binds_to": "a `<video clip of a REAL timeline imported into Final Cut Pro ...>` type component",
    "tags": [
@@ -105,24 +105,24 @@
     "timeline",
     "screen-recording"
    ],
-   "dur": 6.07,
-   "w": 1918,
-   "h": 1200,
+   "dur": 6.0,
+   "w": 1080,
+   "h": 1920,
    "fps": 30.0,
    "rotation": 0,
    "exists": true,
    "excerpt": "",
    "lines": null,
    "words": null,
-   "specs": "6.07s \u00b7 1918x1200 h264 30fps \u00b7 0.5 MB"
+   "specs": "6.0s \u00b7 1080x1920 h264 30fps \u00b7 0.6 MB \u00b7 G4 \u26a0 CHECK"
   },
   {
-   "id": "A04",
-   "file": "Videos/T-side-by-side.mov",
-   "name": "T-side-by-side.mov",
+   "id": "A37",
+   "file": "Videos/T-side-by-side-washi.mov",
+   "name": "T-side-by-side-washi.mov",
    "kind": "video",
    "role": "\u2605 Final Cut Pro | DaVinci Resolve, the same storyboard side by side",
-   "shows": "8.0 s, 2160x1920, 30 fps, silent. Two 1080x1920 renders side by side, Final Cut Pro left, DaVinci Resolve right. The caption 'same interval, smaller space' lands at ~0.8 s on both, the cut to the fingerboard close-up at ~2.0 s on both, 'why not octaves?' at ~3.9 s on both. Window 33.4-41.4 s of the two-panel comparison movie of the current build.",
+   "shows": "8.0 s, 1080x1920, 30 fps, silent: the 2160x1920 two-panel movie cropped to cover the top three quarters of the frame (the inner two thirds of each panel), the bottom quarter the closing card's paper at 85 % opacity, the paper showing through; a news-style frame over it (\u7d50 COMPILE; FINAL CUT PRO \u00b7 DAVINCI RESOLVE, one storyboard, two editors). Two 1080x1920 renders side by side, Final Cut Pro left, DaVinci Resolve right. The caption 'same interval, smaller space' lands at ~0.8 s on both, the cut to the fingerboard close-up at ~2.0 s on both, 'why not octaves?' at ~3.9 s on both. Window 33.4-41.4 s of the two-panel comparison movie of the current build.",
    "use": "B5, under 'Final Cut Pro or DaVinci Resolve'; the picture that says 'two editors, one storyboard'.",
    "beat": "B5",
    "binds_to": "a `<video clip of the same storyboard rendered by Final Cut Pro and by DaVinci Resolve side by side>` type component",
@@ -134,7 +134,7 @@
     "same-frame"
    ],
    "dur": 8.0,
-   "w": 2160,
+   "w": 1080,
    "h": 1920,
    "fps": 30.0,
    "rotation": 0,
@@ -142,15 +142,15 @@
    "excerpt": "",
    "lines": null,
    "words": null,
-   "specs": "8.0s \u00b7 2160x1920 h264 30fps \u00b7 6.3 MB \u00b7 G5 \u26a0 CHECK"
+   "specs": "8.0s \u00b7 1080x1920 h264 30fps \u00b7 2.5 MB \u00b7 G5 \u26a0 CHECK"
   },
   {
-   "id": "A14",
-   "file": "Videos/T-tracks.mov",
-   "name": "T-tracks.mov",
+   "id": "A38",
+   "file": "Videos/T-tracks-washi.mov",
+   "name": "T-tracks-washi.mov",
    "kind": "video",
    "role": "\u2605 This trailer's own REEL-TRACKS.html, the playhead moving",
-   "shows": "7.17 s, 1920x1080, 30 fps, silent. The tracks page of this very reel, captured by Chrome through its #t= deep link at 15 captures per second: the playhead crosses the hook and the first four-files beat (reel time 0-7.17 s), the preview pane composites the frame at the playhead, the caption block 'it shows its work' sits on its anchor word in the text lane. Landscape; the storyboard letterboxes it.",
+   "shows": "7.2 s, 1080x1920, 30 fps, silent: a 1920x1080 capture, its preview pane and the start of the lanes, covering the top three quarters of the frame, the bottom quarter the closing card's paper at 85 % opacity, the paper showing through; a news-style frame over it (\u8ee2 STORYBOARD; THE TRACKS PAGE, this trailer's own storyboard). The tracks page of this very reel, captured by Chrome through its #t= deep link at 15 captures per second: the playhead crosses the hook and the first four-files beat (reel time 0-7.17 s), the preview pane composites the frame at the playhead, the caption block 'it shows its work' sits on its anchor word in the text lane.",
    "use": "B4, under 'Every picture is pinned to a word, not a timestamp'. The beat the trailer exists for.",
    "beat": "B4",
    "binds_to": "a `<video clip of REAL's own REEL-TRACKS.html for this trailer, the playhead moving ...>` type component",
@@ -162,15 +162,15 @@
     "the-reel"
    ],
    "dur": 7.2,
-   "w": 1920,
-   "h": 1080,
+   "w": 1080,
+   "h": 1920,
    "fps": 30.0,
    "rotation": 0,
    "exists": true,
    "excerpt": "",
    "lines": null,
    "words": null,
-   "specs": "7.2s \u00b7 1920x1080 h264 30fps \u00b7 0.2 MB \u00b7 G6 \u26a0 CHECK"
+   "specs": "7.2s \u00b7 1080x1920 h264 30fps \u00b7 0.3 MB \u00b7 G6 \u26a0 CHECK"
   },
   {
    "id": "A05",
@@ -198,7 +198,7 @@
    "excerpt": "",
    "lines": null,
    "words": null,
-   "specs": "5.8s \u00b7 1080x1920 h264 30fps \u00b7 aac 2ch 48k \u00b7 2.3 MB \u00b7 G7 \u26a0 CHECK"
+   "specs": "5.8s \u00b7 1080x1920 h264 30fps \u00b7 aac 2ch 48k \u00b7 2.3 MB"
   },
   {
    "id": "A06",
@@ -394,7 +394,7 @@
    "tags": [
     "side-by-side"
    ],
-   "asset": "A04",
+   "asset": "A37",
    "confidence": "high",
    "chosen_by": "claude",
    "why": "#side-by-side matches the asset's tags (+6.0); binds_to shares davinci, final, pro, rendered, resolve (+4.0); role shares davinci, final, pro, resolve, same (+2.5); shows shares davinci, final, pro, resolve, same (+3.0); use shares davinci, final, pro (+1.9); video component / video asset (+2.0)",
@@ -413,12 +413,12 @@
      "why": "binds_to shares final, pro, rendered (+1.9); role shares final, pro, rendered (+1.9)"
     },
     {
-     "asset": "A03",
+     "asset": "A36",
      "score": 5.831,
      "why": "binds_to shares final, pro (+1.1); role shares final, pro (+1.1)"
     },
     {
-     "asset": "A14",
+     "asset": "A38",
      "score": 3.362,
      "why": "shows shares storyboard (+0.8); use shares every (+0.5)"
     }
@@ -433,21 +433,21 @@
    "tags": [
     "real-tracks"
    ],
-   "asset": "A14",
+   "asset": "A38",
    "confidence": "high",
    "chosen_by": "claude",
-   "why": "#real-tracks matches the asset's tags (+6.0); binds_to shares html, moving, own, playhead, real's (+4.0); role shares html, moving, own, playhead, reel-tracks (+2.5); shows shares anchor, block, playhead, word (+3.0); use shares trailer, word (+1.3); video component / video asset (+2.0)",
+   "why": "#real-tracks matches the asset's tags (+6.0); binds_to shares html, moving, own, playhead, real's (+4.0); role shares html, moving, own, playhead, reel-tracks (+2.5); shows shares anchor, block, lanes, own, playhead (+3.0); use shares trailer, word (+1.3); video component / video asset (+2.0)",
    "signals": [
     "#real-tracks matches the asset's tags (+6.0)",
     "binds_to shares html, moving, own, playhead, real's (+4.0)",
     "role shares html, moving, own, playhead, reel-tracks (+2.5)",
-    "shows shares anchor, block, playhead, word (+3.0)",
+    "shows shares anchor, block, lanes, own, playhead (+3.0)",
     "use shares trailer, word (+1.3)",
     "video component / video asset (+2.0)"
    ],
    "candidates": [
     {
-     "asset": "A03",
+     "asset": "A36",
      "score": 4.676,
      "why": "shows shares across, moving, playhead (+2.7); video component / video asset (+2.0)"
     },
@@ -472,15 +472,15 @@
    "tags": [
     "editor-finalcut"
    ],
-   "asset": "A03",
+   "asset": "A36",
    "confidence": "high",
    "chosen_by": "claude",
-   "why": "#editor-finalcut matches the asset's tags (+6.0); binds_to shares final, imported, pro, real, timeline (+3.3); role shares creator's, final, pro, recording, timeline (+2.5); shows shares connected, creator's, final, pro, recording (+3.0); use shares final, real, timeline (+1.7); video component / video asset (+2.0)",
+   "why": "#editor-finalcut matches the asset's tags (+6.0); binds_to shares final, imported, pro, real, timeline (+3.3); role shares creator's, final, pro, recording, timeline (+2.5); shows shares connected, creator's, final, imported, pro (+3.0); use shares final, real, timeline (+1.7); video component / video asset (+2.0)",
    "signals": [
     "#editor-finalcut matches the asset's tags (+6.0)",
     "binds_to shares final, imported, pro, real, timeline (+3.3)",
     "role shares creator's, final, pro, recording, timeline (+2.5)",
-    "shows shares connected, creator's, final, pro, recording (+3.0)",
+    "shows shares connected, creator's, final, imported, pro (+3.0)",
     "use shares final, real, timeline (+1.7)",
     "video component / video asset (+2.0)"
    ],
@@ -491,7 +491,7 @@
      "why": "binds_to shares final, pro (+1.1); role shares final, pro (+1.1)"
     },
     {
-     "asset": "A04",
+     "asset": "A37",
      "score": 3.378,
      "why": "binds_to shares final, pro (+1.1); role shares final, pro (+1.1)"
     }
@@ -559,12 +559,12 @@
    ],
    "candidates": [
     {
-     "asset": "A03",
-     "score": 8.254,
+     "asset": "A36",
+     "score": 8.531,
      "why": "binds_to shares final, pro, real, timeline (+2.3); role shares final, paganini, pro, timeline (+2.5)"
     },
     {
-     "asset": "A04",
+     "asset": "A37",
      "score": 4.193,
      "why": "binds_to shares final, pro, rendered (+1.9); role shares final, pro (+1.1)"
     }
@@ -669,23 +669,23 @@
    "asset": "A08",
    "confidence": "low",
    "chosen_by": "claude",
-   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares files, four, notebook (+2.0); role shares files, four, notebook (+2.0)",
+   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares files, four, notebook (+2.2); role shares files, four, notebook (+2.2)",
    "signals": [
-    "binds_to shares files, four, notebook (+2.0)",
-    "role shares files, four, notebook (+2.0)",
+    "binds_to shares files, four, notebook (+2.2)",
+    "role shares files, four, notebook (+2.2)",
     "shows shares files, four, inline, marked, notebook (+3.0)",
     "narration component / audio asset (+2.0)"
    ],
    "candidates": [
     {
      "asset": "A08",
-     "score": 9.046,
-     "why": "binds_to shares files, four, notebook (+2.0); role shares files, four, notebook (+2.0)"
+     "score": 9.352,
+     "why": "binds_to shares files, four, notebook (+2.2); role shares files, four, notebook (+2.2)"
     },
     {
      "asset": "A09",
-     "score": 5.879,
-     "why": "binds_to shares files, four (+1.5); role shares files, four (+1.5)"
+     "score": 6.185,
+     "why": "binds_to shares files, four (+1.6); role shares files, four (+1.6)"
     },
     {
      "asset": "A12",
@@ -737,18 +737,18 @@
    "asset": "A10",
    "confidence": "low",
    "chosen_by": "claude",
-   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares reel (+0.7); role shares reel, voice (+1.0)",
+   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares reel (+0.8); role shares reel, voice (+1.1)",
    "signals": [
-    "binds_to shares reel (+0.7)",
-    "role shares reel, voice (+1.0)",
+    "binds_to shares reel (+0.8)",
+    "role shares reel, voice (+1.1)",
     "shows shares approved, every, moves, nothing, pinned (+3.0)",
     "narration component / audio asset (+2.0)"
    ],
    "candidates": [
     {
      "asset": "A10",
-     "score": 6.638,
-     "why": "binds_to shares reel (+0.7); role shares reel, voice (+1.0)"
+     "score": 6.944,
+     "why": "binds_to shares reel (+0.8); role shares reel, voice (+1.1)"
     },
     {
      "asset": "A09",

@@ -29,6 +29,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from real_core import refit_beat, words_of  # noqa: E402
+from real_core import settle_holds  # noqa: E402
 
 ASPECTS = {"9:16": (1080, 1920), "16:9": (1920, 1080), "1:1": (1080, 1080),
            "4:5": (1080, 1350), "5:4": (1350, 1080), "2:3": (1080, 1620),
@@ -587,7 +588,7 @@ def clamp_held_cuts(reel):
 
 # ------------------------------------------------------------------ retime
 
-PRESERVE_FIELDS = ("asset", "anchor_word", "anchor_text", "offset_ms", "fit",
+PRESERVE_FIELDS = ("asset", "anchor_word", "anchor_text", "offset_ms", "fit", "hold_to_next",
                    "style", "style_by", "content", "stagger", "transform", "opacity", "fade_in", "fade_out", "stroke_color", "shadow", "shadow_color", "shadow_offset", "shadow_blur", "font", "font_face", "stroke_width", "font_size", "position", "color", "align", "t0", "t1", "src_in", "src_out", "temporal_evidence", "source_video_component")
 
 
@@ -699,6 +700,7 @@ def retime(reel, C):
         refit_beat(beat)
     for x in reel.get("connected", []):
         x["t1"] = C["total_s"]
+    settle_holds(reel)                 # held captions follow the words to the new clock
     reel["clock"].update({"mode": C.get("mode"), "rate_wps": C.get("rate_wps"),
                           "rate_source": C.get("rate_source"),
                           "total_s": C.get("total_s"), "note": C.get("note")})
