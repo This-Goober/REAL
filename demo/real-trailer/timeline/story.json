@@ -126,8 +126,8 @@
         {
           "font_size": 83,
           "position": [
-            0,
-            -620
+            0.0,
+            -440.0
           ],
           "font_face": "Bold",
           "shadow": true,

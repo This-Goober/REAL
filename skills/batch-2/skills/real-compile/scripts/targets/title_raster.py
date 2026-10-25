@@ -20,9 +20,16 @@ Conventions, the same ones fcpxml.py gives Final Cut's Basic Title:
                    Cut also sits the block BASELINE_SHIFT_EM lower than the
                    glyph centre; the same export gave 0.2 em. `size_scale`
                    overrides the factor. Strokes, shadows and glow scale too.
-    position       [x, y] pixels from the frame centre, y up; the text block
-                   is centred on that point (FCPXML moves the title layer the
-                   same way before position_percent converts the units)
+    position       [x, y] pixels from the frame centre, y up; a one- or
+                   two-line block is centred on that point (FCPXML moves the
+                   title layer the same way before position_percent converts
+                   the units). Final Cut keeps the first line where a two-line
+                   block puts it and grows a longer block downward: a 3-line
+                   83-pt caption in the trailer's Final Cut render starts its
+                   first line on the same row as a 2-line one at the same
+                   position (row 1476) and runs past the frame. Blocks of three
+                   or more lines are laid out that way. One-line blocks were
+                   never measured and stay centred.
     align          center | left | right, for the lines inside the block
     color          [r, g, b, a] floats 0..1 (ints 0..255 are accepted too)
     shadow         bool; shadow_color [0, 0, 0, .75], shadow_offset "8 315"
@@ -256,7 +263,9 @@ def layout(params, width, height, font, k=1.0):
     pos = params.get("position") or [0, 0]
     cx = width / 2.0 + float(pos[0])
     cy = height / 2.0 - float(pos[1]) + BASELINE_SHIFT_EM * getattr(font, "size", asc + desc)
-    top = cy - block_h / 2.0
+    # one or two lines: centred (calibrated on 2-line captions); three or more:
+    # the first line stays where a 2-line block's is, the rest go below it
+    top = cy - line_h * min(len(lines), 2) / 2.0
     align = str(params.get("align", "center")).lower()
 
     def x_of(w):

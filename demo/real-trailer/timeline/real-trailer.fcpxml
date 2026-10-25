@@ -128,7 +128,7 @@ guesses</text-style>
                                 <text-style-def id="ts3">
                                     <text-style font="Helvetica Neue" fontSize="83" fontFace="Bold" fontColor="0.7215686274509804 0.1803921568627451 0.1411764705882353 1" alignment="center" shadowColor="0 0 0 0.75" shadowOffset="8 315" shadowBlurRadius="12"/>
                                 </text-style-def>
-                                <adjust-transform position="0 -32.291666666666664"/>
+                                <adjust-transform position="0 -22.916666666666668"/>
                             </title>
                         </asset-clip>
                         <transition name="Cross Dissolve" offset="1027/30s" duration="1s">

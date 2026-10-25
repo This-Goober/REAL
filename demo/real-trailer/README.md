@@ -21,6 +21,40 @@ DaVinci Resolve (`.otio`), and imports into either as an editable project;
 `scripts/render_preview.py` draws a preview of it with ffmpeg before an
 editor is opened.
 
+## Does it pass the bar?
+
+Yes, seven of seven: the bar the Paganini No. 23 demo set for "one storyboard,
+two editors", applied to the Final Cut Pro render
+([`comparison/BAR.md`](comparison/BAR.md)).
+
+| check | the bar | the Final Cut render |
+|---|---|---|
+| length | the timeline's 1241 frames | 1241 |
+| cuts | each of 5 on its frame | 5 of 5 exact |
+| dissolve | change peaks within ±15 frames of the cut | −6 frames |
+| caption timing | each caption on and off on its frame | 3 of 3 exact |
+| caption width | widest line within 85 % of the frame | 53 %, 57 %, 53 % |
+| caption in frame | no caption touches the frame's edge | all 3 inside |
+| sound | within half a frame of an independent render | 0.25–0.5 ms |
+
+The first render failed "caption in frame": Final Cut keeps a caption's first
+line where a two-line caption has it and adds further lines below, so the
+three-line caption at the bottom position ran off the frame. The caption moved
+up one line (`source/revisions.txt`), `scripts/check_captions.py` now checks
+height as well as width, and the OTIO's rastered titles lay long captions out
+the same way; the second render passes. The measurement
+(`comparison/COMPARISON.md`, `report.json`, `cuts.csv`, `captions.csv`,
+`captions-sheet.png`) is the Paganini demo's script with each caption's band
+and colour read from the timeline; B, the independent render it compares the
+sound and picture against, is `scripts/render_preview.py`'s preview.
+
+```sh
+python3 ../paganini-no23/scripts/compare_exports.py FINALCUT-EXPORT.mov preview/real-trailer-preview.mp4 \
+    timeline/real-trailer.otio comparison --captions-from-timeline --audio-at 2 17 32 \
+    --label-a "Final Cut Pro render (FCPXML)" --label-b "REAL preview render (ffmpeg, from the OTIO)"
+python3 scripts/check_bar.py comparison/report.json timeline/real-trailer.otio --out comparison/BAR.md
+```
+
 ## What is in this folder
 
 | | |
@@ -33,7 +67,8 @@ editor is opened.
 | `catalogue/` | the catalogue: `catalog_data.json` (measured specs plus the judgement), `asset-catalog.json` (the handoff), `ASSET-CATALOG.html` |
 | `storyboard/` | the measured clock (`measured.json`, `clock.json`), the bindings, **`reel.json`** (the edit) and `REEL-TRACKS.html` |
 | `timeline/` | `real-trailer.fcpxml`, `real-trailer.otio` with its rendered captions, `equivalence.json` (the cross-target check), `report.html` |
-| `scripts/` | `build.sh` (the whole chain), `narrate.py` (ElevenLabs, Kokoro or edge, each take trimmed to its first aligned word), `cut_media.sh`, `capture_pages.py`, `make_title_card.py`, `catalogue_judgement.py`, `check_captions.py`, `render_preview.py` |
+| `comparison/` | the Final Cut render measured against the timeline, and `BAR.md`, the verdict |
+| `scripts/` | `build.sh` (the whole chain), `narrate.py` (ElevenLabs, Kokoro or edge, each take trimmed to its first aligned word), `cut_media.sh`, `capture_pages.py`, `make_title_card.py`, `catalogue_judgement.py`, `check_captions.py`, `render_preview.py`, `check_bar.py` |
 | `PROMPTS.md` | the request that produced this, verbatim, and what each step did |
 
 ## The edit, by the numbers
@@ -99,7 +134,7 @@ the editor will see.
 
 ## What the trailer taught the pipeline
 
-Five things in the skills changed while this was made, each with a test:
+Six things in the skills changed while this was made, each with a test:
 
 - an audio component "under the whole reel" is one connected span of a real
   audio kind (`bed`), not also a lane in the beat it was written in;
@@ -113,4 +148,8 @@ Five things in the skills changed while this was made, each with a test:
   and a browser can capture the page;
 - a still that touches a dissolve is written to FCPXML with Final Cut's
   infinite-media start, since a dissolve borrows picture from before the
-  still's in-point and Final Cut refuses a file where there is none.
+  still's in-point and Final Cut refuses a file where there is none;
+- a caption of three or more lines grows downward from where a two-line
+  caption's first line sits, in Final Cut and now in the OTIO's rastered
+  titles too, and the trailer's caption check measures height as well as
+  width.

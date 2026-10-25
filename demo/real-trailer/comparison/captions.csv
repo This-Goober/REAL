@@ -1,0 +1,4 @@
+text,expected_on,expected_off,a_on,a_off,b_on,b_off,a_box_w,a_box_h,a_center_y,b_box_w,b_box_h,b_center_y,a_on_err,b_on_err,a_off_err,b_off_err,b_over_a_width,b_over_a_height
+it shows / its work,91,148,91,148,91,148,572,286,998.5,574,284,993.5,0,0,0,0,1.003,0.993
+pinned / to words,568,615,568,615,568,615,612,286,1618.5,614,284,1613.5,0,0,0,0,1.003,0.993
+"refuses, / never / guesses",969,1016,969,1016,969,1016,574,520,1529.5,617,532,1515.5,0,0,0,0,1.075,1.023

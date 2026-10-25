@@ -1,0 +1,315 @@
+{
+ "a": {
+  "file": "real-trailer-finalcutpro.mov",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30.0,
+  "codec": "h264",
+  "pix_fmt": "yuv420p",
+  "color_space": "bt709",
+  "color_transfer": "bt709",
+  "duration_s": 41.366667,
+  "audio": {
+   "codec": "aac",
+   "rate": "48000",
+   "channels": 2
+  },
+  "label": "Final Cut Pro render (FCPXML)"
+ },
+ "b": {
+  "file": "real-trailer-preview.mp4",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30.0,
+  "codec": "h264",
+  "pix_fmt": "yuv420p",
+  "color_space": "bt709",
+  "color_transfer": "bt709",
+  "duration_s": 41.366667,
+  "audio": {
+   "codec": "aac",
+   "rate": "48000",
+   "channels": 1
+  },
+  "label": "REAL preview render (ffmpeg, from the OTIO)"
+ },
+ "expected": {
+  "fps": 30.0,
+  "frames": 1241,
+  "cuts": [
+   169,
+   344,
+   508,
+   724,
+   842,
+   1042
+  ],
+  "captions": [
+   [
+    91,
+    148,
+    "it shows\nits work"
+   ],
+   [
+    568,
+    615,
+    "pinned\nto words"
+   ],
+   [
+    969,
+    1016,
+    "refuses,\nnever\nguesses"
+   ]
+  ],
+  "stills": []
+ },
+ "frames": {
+  "a": 1241,
+  "b": 1241,
+  "expected": 1241
+ },
+ "cuts": [
+  {
+   "expected": 169,
+   "a": 169,
+   "a_minus_expected": 0,
+   "a_strength": 447.5,
+   "b": 169,
+   "b_minus_expected": 0,
+   "b_strength": 449.4
+  },
+  {
+   "expected": 344,
+   "a": 344,
+   "a_minus_expected": 0,
+   "a_strength": 20018827.4,
+   "b": 344,
+   "b_minus_expected": 0,
+   "b_strength": 177802.4
+  },
+  {
+   "expected": 508,
+   "a": 508,
+   "a_minus_expected": 0,
+   "a_strength": 336642.6,
+   "b": 508,
+   "b_minus_expected": 0,
+   "b_strength": 28899.2
+  },
+  {
+   "expected": 724,
+   "a": 724,
+   "a_minus_expected": 0,
+   "a_strength": 1063.1,
+   "b": 724,
+   "b_minus_expected": 0,
+   "b_strength": 1157.9
+  },
+  {
+   "expected": 842,
+   "a": 842,
+   "a_minus_expected": 0,
+   "a_strength": 430.6,
+   "b": 842,
+   "b_minus_expected": 0,
+   "b_strength": 435.7
+  },
+  {
+   "expected": 1042,
+   "a": 1036,
+   "a_minus_expected": -6,
+   "a_strength": 2.8,
+   "b": 1040,
+   "b_minus_expected": -2,
+   "b_strength": 3.5
+  }
+ ],
+ "shift_b_minus_a_frames": 0,
+ "picture": {
+  "frames_compared": 1241,
+  "mad_luma": {
+   "all": {
+    "n": 1241,
+    "mean": 1.686,
+    "median": 0.711,
+    "p05": 0.191,
+    "p95": 3.017,
+    "min": 0.1498,
+    "max": 34.961
+   },
+   "with_caption": {
+    "n": 151,
+    "mean": 1.4983,
+    "median": 1.4974,
+    "p05": 1.4143,
+    "p95": 1.5912,
+    "min": 1.3621,
+    "max": 1.5954
+   },
+   "without_caption": {
+    "n": 1090,
+    "mean": 1.712,
+    "median": 0.7082,
+    "p05": 0.1886,
+    "p95": 3.017,
+    "min": 0.1498,
+    "max": 34.961
+   }
+  },
+  "ssim": {
+   "all": {
+    "n": 1241,
+    "mean": 0.9938,
+    "median": 0.9968,
+    "p05": 0.9706,
+    "p95": 0.9994,
+    "min": 0.8728,
+    "max": 0.9994
+   },
+   "with_caption": {
+    "n": 151,
+    "mean": 0.976,
+    "median": 0.9817,
+    "p05": 0.9632,
+    "p95": 0.982,
+    "min": 0.9631,
+    "max": 0.9822
+   },
+   "without_caption": {
+    "n": 1090,
+    "mean": 0.9963,
+    "median": 0.9975,
+    "p05": 0.9952,
+    "p95": 0.9994,
+    "min": 0.8728,
+    "max": 0.9994
+   }
+  },
+  "psnr_db": {
+   "all": {
+    "n": 1241,
+    "mean": 42.6155,
+    "median": 43.81,
+    "p05": 31.68,
+    "p95": 50.58,
+    "min": 18.18,
+    "max": 52.61
+   },
+   "with_caption": {
+    "n": 151,
+    "mean": 32.6496,
+    "median": 31.73,
+    "p05": 31.65,
+    "p95": 34.72,
+    "min": 31.64,
+    "max": 34.73
+   },
+   "without_caption": {
+    "n": 1090,
+    "mean": 43.9961,
+    "median": 43.81,
+    "p05": 42.34,
+    "p95": 50.8,
+    "min": 18.18,
+    "max": 52.61
+   }
+  },
+  "worst_frames_by_ssim": [
+   1028,
+   1029,
+   1027,
+   1030,
+   1031,
+   1032,
+   1033,
+   1034,
+   1035,
+   1036
+  ]
+ },
+ "captions": [
+  {
+   "text": "it shows / its work",
+   "expected_on": 91,
+   "expected_off": 148,
+   "a_on": 91,
+   "a_off": 148,
+   "b_on": 91,
+   "b_off": 148,
+   "a_box_w": 572,
+   "a_box_h": 286,
+   "a_center_y": 998.5,
+   "b_box_w": 574,
+   "b_box_h": 284,
+   "b_center_y": 993.5,
+   "a_on_err": 0,
+   "b_on_err": 0,
+   "a_off_err": 0,
+   "b_off_err": 0,
+   "b_over_a_width": 1.003,
+   "b_over_a_height": 0.993
+  },
+  {
+   "text": "pinned / to words",
+   "expected_on": 568,
+   "expected_off": 615,
+   "a_on": 568,
+   "a_off": 615,
+   "b_on": 568,
+   "b_off": 615,
+   "a_box_w": 612,
+   "a_box_h": 286,
+   "a_center_y": 1618.5,
+   "b_box_w": 614,
+   "b_box_h": 284,
+   "b_center_y": 1613.5,
+   "a_on_err": 0,
+   "b_on_err": 0,
+   "a_off_err": 0,
+   "b_off_err": 0,
+   "b_over_a_width": 1.003,
+   "b_over_a_height": 0.993
+  },
+  {
+   "text": "refuses, / never / guesses",
+   "expected_on": 969,
+   "expected_off": 1016,
+   "a_on": 969,
+   "a_off": 1016,
+   "b_on": 969,
+   "b_off": 1016,
+   "a_box_w": 574,
+   "a_box_h": 520,
+   "a_center_y": 1529.5,
+   "b_box_w": 617,
+   "b_box_h": 532,
+   "b_center_y": 1515.5,
+   "a_on_err": 0,
+   "b_on_err": 0,
+   "a_off_err": 0,
+   "b_off_err": 0,
+   "b_over_a_width": 1.075,
+   "b_over_a_height": 1.023
+  }
+ ],
+ "audio": [
+  {
+   "t0": 2.0,
+   "lag_ms": 0.25,
+   "corr": null,
+   "level_b_minus_a_db": null
+  },
+  {
+   "t0": 17.0,
+   "lag_ms": 0.25,
+   "corr": null,
+   "level_b_minus_a_db": null
+  },
+  {
+   "t0": 32.0,
+   "lag_ms": 0.5,
+   "corr": null,
+   "level_b_minus_a_db": null
+  }
+ ]
+}

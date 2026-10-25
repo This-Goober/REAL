@@ -779,8 +779,8 @@
                                             "font_face": "Bold",
                                             "font_size": 83,
                                             "position": [
-                                                0,
-                                                -620
+                                                0.0,
+                                                -440.0
                                             ],
                                             "shadow": true,
                                             "text": "refuses,\nnever\nguesses"
@@ -803,7 +803,7 @@
                                     }
                                 },
                                 "available_image_bounds": null,
-                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/refuses-never-guesses-b65de62b.png"
+                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/refuses-never-guesses-25f671d8.png"
                             }
                         },
                         "active_media_reference_key": "DEFAULT_MEDIA"

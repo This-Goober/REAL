@@ -832,7 +832,11 @@
       0.1411764705882353,
       1
      ],
-     "shadow": true
+     "shadow": true,
+     "position": [
+      0.0,
+      -440.0
+     ]
     }
    ],
    "audio": [
