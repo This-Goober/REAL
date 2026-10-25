@@ -50,6 +50,33 @@ folder, made by running the four REAL skills on REAL's own material.
 9. **Preview.** `scripts/render_preview.py` rendered the `.otio` to
    `assets/trailer/real-trailer.mp4` for the landing page.
 
+## After the first import
+
+The creator loaded the timeline in Final Cut Pro and sent three notes:
+
+> for the narration use elevenlabs
+
+> ok I can load up the trailer. Not bad. Few tweaks the caption is too small,
+> can you make it larger to 60 and split lines make sure fit the width. Can
+> you use red color font like the japanese logo you have and with shadow on
+> so it can be read better.
+
+> oh on the index.html make sure it has good preview to share over whatsapp
+> or iMessage
+
+Produced: `scripts/narrate.py` (ElevenLabs, voice George; Kokoro and edge as
+alternatives, each take trimmed to its first aligned word); the captions'
+look as creator revisions in `source/revisions.txt` — `size = 60`, `color =
+#B82E24` (the seal's vermilion), `shadow = on`, and the words with their
+line break (`text = it shows / its work`) — a grammar `revise.py` gained for
+it; `scripts/check_captions.py`, which measures every line at the size Final
+Cut draws it (1.73× the point size) and fails the build above 85 % of the
+width; the bed lengthened to 48 s because the new read runs 41.4 s; and the
+page's Open Graph and Twitter tags with a 1200×630 card
+(`assets/site/og-image.jpg`) and a touch icon, so a pasted link shows a
+preview. Runtime 41.38 s, 1241 frames; cross-target EQUIVALENT 10/10, 7/7,
+1/1, 1241/1241.
+
 ## What the pipeline refused or got wrong on the way, and the fix
 
 - `build.py` wrote the whole-reel bed as `kind: audio` and its own validator
@@ -76,6 +103,10 @@ folder, made by running the four REAL skills on REAL's own material.
   the still's in-point. The generator now writes a still that touches a
   transition with `start="3600s"`, Final Cut's convention for media without
   an end. Test: `bench/test_fcpxml_still_transition.py`.
+- The compiler refused the rebuilt reel because the music bed (40 s) was
+  shorter than the new read (41.4 s): "audio X1 reads 0.00–41.37s of
+  bed-paganini-performance.wav but that file is only 40.00s long". The bed
+  was cut longer; nothing was stretched.
 - The notebook first carried explicit durations (`~5s`, `~6s`) on the base
   shots; the clock treats a timed visual that outruns its line as a hold after
   the words, and a timed visual after a running shot as an insert, so the base

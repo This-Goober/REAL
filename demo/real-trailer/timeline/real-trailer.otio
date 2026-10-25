@@ -25,7 +25,7 @@
             "rate": 30.0,
             "text": "text overlays are rendered to transparent PNG stills (metadata.REAL.kind == 'title'); the requested styling is kept in metadata.REAL.title and the files live in /Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles",
             "titles": "raster",
-            "total_frames": 1190,
+            "total_frames": 1241,
             "width": 1080
         }
     },
@@ -70,7 +70,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 162.0
+                                "value": 169.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -127,7 +127,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 168.0
+                                "value": 175.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -176,7 +176,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 168.0
+                                        "value": 175.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -203,7 +203,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 157.0
+                                "value": 164.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -252,7 +252,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 157.0
+                                        "value": 164.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -270,7 +270,7 @@
                         "OTIO_SCHEMA": "Clip.2",
                         "metadata": {
                             "REAL": {
-                                "note": "narration: Then the reel. Every picture is pinned to a word, not a timestamp, so re-recording the voice moves nothing you approved.  |  from C3/C3.301  |  words 39–59  |  flag aspect-mismatch: A14 is 1920x1080 in a 9:16 reel — it will be cropped or letterboxed  |  flag text-type: classified as 'caption' by heuristic — confirm title / caption / subtitle in the tracks page",
+                                "note": "narration: Then the reel. Every picture is pinned to a word, not a timestamp, so re-recording the voice moves nothing you approved.  |  from C3/C3.301  |  words 39–59  |  flag aspect-mismatch: A14 is 1920x1080 in a 9:16 reel — it will be cropped or letterboxed  |  flag text-type: classified as 'caption' by heuristic — confirm title / caption / subtitle in the tracks page  |  flag cut-moved: the footage ends 0.111s before the planned cut, so the cut moved earlier to 24.119s (still after the line ends)",
                                 "role": "effects",
                                 "volume_db": -60
                             }
@@ -281,7 +281,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 215.0
+                                "value": 216.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -340,7 +340,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 102.0
+                                "value": 118.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -398,7 +398,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 184.0
+                                "value": 200.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -477,7 +477,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 202.0
+                                "value": 199.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -505,7 +505,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 202.0
+                                        "value": 199.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -541,7 +541,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 88.0
+                                "value": 91.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -557,7 +557,7 @@
                     {
                         "OTIO_SCHEMA": "Clip.2",
                         "metadata": {},
-                        "name": "B1.L2 — it shows its work",
+                        "name": "B1.L2 — it shows\nits work",
                         "source_range": {
                             "OTIO_SCHEMA": "TimeRange.1",
                             "duration": {
@@ -586,20 +586,20 @@
                                         "title": {
                                             "align": "center",
                                             "color": [
-                                                1,
-                                                1,
-                                                1,
+                                                0.7215686274509804,
+                                                0.1803921568627451,
+                                                0.1411764705882353,
                                                 1
                                             ],
                                             "font": "Helvetica Neue",
                                             "font_face": "Bold",
-                                            "font_size": 40,
+                                            "font_size": 60,
                                             "position": [
                                                 0,
                                                 -620
                                             ],
                                             "shadow": true,
-                                            "text": "it shows its work"
+                                            "text": "it shows\nits work"
                                         },
                                         "width": 1080
                                     }
@@ -619,7 +619,7 @@
                                     }
                                 },
                                 "available_image_bounds": null,
-                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/it-shows-its-work-2eff0458.png"
+                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/it-shows-its-work-8eadd55a.png"
                             }
                         },
                         "active_media_reference_key": "DEFAULT_MEDIA"
@@ -633,7 +633,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 400.0
+                                "value": 420.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -649,7 +649,7 @@
                     {
                         "OTIO_SCHEMA": "Clip.2",
                         "metadata": {},
-                        "name": "B4.L2 — pinned to words",
+                        "name": "B4.L2 — pinned\nto words",
                         "source_range": {
                             "OTIO_SCHEMA": "TimeRange.1",
                             "duration": {
@@ -678,20 +678,20 @@
                                         "title": {
                                             "align": "center",
                                             "color": [
-                                                1,
-                                                1,
-                                                1,
+                                                0.7215686274509804,
+                                                0.1803921568627451,
+                                                0.1411764705882353,
                                                 1
                                             ],
                                             "font": "Helvetica Neue",
                                             "font_face": "Bold",
-                                            "font_size": 40,
+                                            "font_size": 60,
                                             "position": [
                                                 0,
                                                 -620
                                             ],
                                             "shadow": true,
-                                            "text": "pinned to words"
+                                            "text": "pinned\nto words"
                                         },
                                         "width": 1080
                                     }
@@ -711,7 +711,7 @@
                                     }
                                 },
                                 "available_image_bounds": null,
-                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/pinned-to-words-3cff6aea.png"
+                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/pinned-to-words-39a26acc.png"
                             }
                         },
                         "active_media_reference_key": "DEFAULT_MEDIA"
@@ -725,7 +725,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 324.0
+                                "value": 354.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -741,7 +741,7 @@
                     {
                         "OTIO_SCHEMA": "Clip.2",
                         "metadata": {},
-                        "name": "B5.L3 — refuses, never guesses",
+                        "name": "B5.L3 — refuses,\nnever guesses",
                         "source_range": {
                             "OTIO_SCHEMA": "TimeRange.1",
                             "duration": {
@@ -770,20 +770,20 @@
                                         "title": {
                                             "align": "center",
                                             "color": [
-                                                1,
-                                                1,
-                                                1,
+                                                0.7215686274509804,
+                                                0.1803921568627451,
+                                                0.1411764705882353,
                                                 1
                                             ],
                                             "font": "Helvetica Neue",
                                             "font_face": "Bold",
-                                            "font_size": 40,
+                                            "font_size": 60,
                                             "position": [
                                                 0,
                                                 -620
                                             ],
                                             "shadow": true,
-                                            "text": "refuses, never guesses"
+                                            "text": "refuses,\nnever guesses"
                                         },
                                         "width": 1080
                                     }
@@ -803,7 +803,7 @@
                                     }
                                 },
                                 "available_image_bounds": null,
-                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/refuses-never-guesses-1870e99e.png"
+                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/refuses-never-guesses-683d2e12.png"
                             }
                         },
                         "active_media_reference_key": "DEFAULT_MEDIA"
@@ -817,7 +817,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 227.0
+                                "value": 225.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -857,7 +857,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 146.0
+                                "value": 152.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -874,7 +874,7 @@
                                 "OTIO_SCHEMA": "ExternalReference.1",
                                 "metadata": {
                                     "REAL": {
-                                        "asset_seconds": 5.1,
+                                        "asset_seconds": 5.31,
                                         "has_audio": true,
                                         "height": null,
                                         "kind": "audio",
@@ -887,7 +887,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 153.0
+                                        "value": 160.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -897,166 +897,6 @@
                                 },
                                 "available_image_bounds": null,
                                 "target_url": "file:///Users/Shared/REAL/demo/real-trailer/media/Audio/take-01.wav"
-                            }
-                        },
-                        "active_media_reference_key": "DEFAULT_MEDIA"
-                    },
-                    {
-                        "OTIO_SCHEMA": "Gap.1",
-                        "metadata": {},
-                        "name": "",
-                        "source_range": {
-                            "OTIO_SCHEMA": "TimeRange.1",
-                            "duration": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 30.0,
-                                "value": 19.0
-                            },
-                            "start_time": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 30.0,
-                                "value": 0.0
-                            }
-                        },
-                        "effects": [],
-                        "markers": [],
-                        "enabled": true,
-                        "color": null
-                    },
-                    {
-                        "OTIO_SCHEMA": "Clip.2",
-                        "metadata": {
-                            "REAL": {
-                                "note": "voice take — which take covers this line has to be confirmed by ear; binds_to shares files, four, notebook (+2.0); role shares files, four, notebook (+2.0)",
-                                "role": "dialogue"
-                            }
-                        },
-                        "name": "narration — take-02.wav",
-                        "source_range": {
-                            "OTIO_SCHEMA": "TimeRange.1",
-                            "duration": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 30.0,
-                                "value": 150.0
-                            },
-                            "start_time": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 30.0,
-                                "value": 0.0
-                            }
-                        },
-                        "effects": [],
-                        "markers": [],
-                        "enabled": true,
-                        "color": null,
-                        "media_references": {
-                            "DEFAULT_MEDIA": {
-                                "OTIO_SCHEMA": "ExternalReference.1",
-                                "metadata": {
-                                    "REAL": {
-                                        "asset_seconds": 5.2,
-                                        "has_audio": true,
-                                        "height": null,
-                                        "kind": "audio",
-                                        "width": null
-                                    }
-                                },
-                                "name": "",
-                                "available_range": {
-                                    "OTIO_SCHEMA": "TimeRange.1",
-                                    "duration": {
-                                        "OTIO_SCHEMA": "RationalTime.1",
-                                        "rate": 30.0,
-                                        "value": 156.0
-                                    },
-                                    "start_time": {
-                                        "OTIO_SCHEMA": "RationalTime.1",
-                                        "rate": 30.0,
-                                        "value": 0.0
-                                    }
-                                },
-                                "available_image_bounds": null,
-                                "target_url": "file:///Users/Shared/REAL/demo/real-trailer/media/Audio/take-02.wav"
-                            }
-                        },
-                        "active_media_reference_key": "DEFAULT_MEDIA"
-                    },
-                    {
-                        "OTIO_SCHEMA": "Gap.1",
-                        "metadata": {},
-                        "name": "",
-                        "source_range": {
-                            "OTIO_SCHEMA": "TimeRange.1",
-                            "duration": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 30.0,
-                                "value": 18.0
-                            },
-                            "start_time": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 30.0,
-                                "value": 0.0
-                            }
-                        },
-                        "effects": [],
-                        "markers": [],
-                        "enabled": true,
-                        "color": null
-                    },
-                    {
-                        "OTIO_SCHEMA": "Clip.2",
-                        "metadata": {
-                            "REAL": {
-                                "note": "voice take — which take covers this line has to be confirmed by ear; binds_to shares catalogue (+0.8); role shares catalogue (+0.8)",
-                                "role": "dialogue"
-                            }
-                        },
-                        "name": "narration — take-03.wav",
-                        "source_range": {
-                            "OTIO_SCHEMA": "TimeRange.1",
-                            "duration": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 30.0,
-                                "value": 137.0
-                            },
-                            "start_time": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 30.0,
-                                "value": 0.0
-                            }
-                        },
-                        "effects": [],
-                        "markers": [],
-                        "enabled": true,
-                        "color": null,
-                        "media_references": {
-                            "DEFAULT_MEDIA": {
-                                "OTIO_SCHEMA": "ExternalReference.1",
-                                "metadata": {
-                                    "REAL": {
-                                        "asset_seconds": 4.81,
-                                        "has_audio": true,
-                                        "height": null,
-                                        "kind": "audio",
-                                        "width": null
-                                    }
-                                },
-                                "name": "",
-                                "available_range": {
-                                    "OTIO_SCHEMA": "TimeRange.1",
-                                    "duration": {
-                                        "OTIO_SCHEMA": "RationalTime.1",
-                                        "rate": 30.0,
-                                        "value": 145.0
-                                    },
-                                    "start_time": {
-                                        "OTIO_SCHEMA": "RationalTime.1",
-                                        "rate": 30.0,
-                                        "value": 0.0
-                                    }
-                                },
-                                "available_image_bounds": null,
-                                "target_url": "file:///Users/Shared/REAL/demo/real-trailer/media/Audio/take-03.wav"
                             }
                         },
                         "active_media_reference_key": "DEFAULT_MEDIA"
@@ -1087,17 +927,17 @@
                         "OTIO_SCHEMA": "Clip.2",
                         "metadata": {
                             "REAL": {
-                                "note": "voice take — which take covers this line has to be confirmed by ear; binds_to shares reel (+0.7); role shares reel, voice (+1.0)",
+                                "note": "voice take — which take covers this line has to be confirmed by ear; binds_to shares files, four, notebook (+2.0); role shares files, four, notebook (+2.0)",
                                 "role": "dialogue"
                             }
                         },
-                        "name": "narration — take-04.wav",
+                        "name": "narration — take-02.wav",
                         "source_range": {
                             "OTIO_SCHEMA": "TimeRange.1",
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 195.0
+                                "value": 154.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -1114,7 +954,7 @@
                                 "OTIO_SCHEMA": "ExternalReference.1",
                                 "metadata": {
                                     "REAL": {
-                                        "asset_seconds": 6.76,
+                                        "asset_seconds": 5.41,
                                         "has_audio": true,
                                         "height": null,
                                         "kind": "audio",
@@ -1127,7 +967,167 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 203.0
+                                        "value": 163.0
+                                    },
+                                    "start_time": {
+                                        "OTIO_SCHEMA": "RationalTime.1",
+                                        "rate": 30.0,
+                                        "value": 0.0
+                                    }
+                                },
+                                "available_image_bounds": null,
+                                "target_url": "file:///Users/Shared/REAL/demo/real-trailer/media/Audio/take-02.wav"
+                            }
+                        },
+                        "active_media_reference_key": "DEFAULT_MEDIA"
+                    },
+                    {
+                        "OTIO_SCHEMA": "Gap.1",
+                        "metadata": {},
+                        "name": "",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 21.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null
+                    },
+                    {
+                        "OTIO_SCHEMA": "Clip.2",
+                        "metadata": {
+                            "REAL": {
+                                "note": "voice take — which take covers this line has to be confirmed by ear; binds_to shares catalogue (+0.8); role shares catalogue (+0.8)",
+                                "role": "dialogue"
+                            }
+                        },
+                        "name": "narration — take-03.wav",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 143.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null,
+                        "media_references": {
+                            "DEFAULT_MEDIA": {
+                                "OTIO_SCHEMA": "ExternalReference.1",
+                                "metadata": {
+                                    "REAL": {
+                                        "asset_seconds": 5.06,
+                                        "has_audio": true,
+                                        "height": null,
+                                        "kind": "audio",
+                                        "width": null
+                                    }
+                                },
+                                "name": "",
+                                "available_range": {
+                                    "OTIO_SCHEMA": "TimeRange.1",
+                                    "duration": {
+                                        "OTIO_SCHEMA": "RationalTime.1",
+                                        "rate": 30.0,
+                                        "value": 152.0
+                                    },
+                                    "start_time": {
+                                        "OTIO_SCHEMA": "RationalTime.1",
+                                        "rate": 30.0,
+                                        "value": 0.0
+                                    }
+                                },
+                                "available_image_bounds": null,
+                                "target_url": "file:///Users/Shared/REAL/demo/real-trailer/media/Audio/take-03.wav"
+                            }
+                        },
+                        "active_media_reference_key": "DEFAULT_MEDIA"
+                    },
+                    {
+                        "OTIO_SCHEMA": "Gap.1",
+                        "metadata": {},
+                        "name": "",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 21.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null
+                    },
+                    {
+                        "OTIO_SCHEMA": "Clip.2",
+                        "metadata": {
+                            "REAL": {
+                                "note": "voice take — which take covers this line has to be confirmed by ear; binds_to shares reel (+0.7); role shares reel, voice (+1.0)",
+                                "role": "dialogue"
+                            }
+                        },
+                        "name": "narration — take-04.wav",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 199.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 30.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "enabled": true,
+                        "color": null,
+                        "media_references": {
+                            "DEFAULT_MEDIA": {
+                                "OTIO_SCHEMA": "ExternalReference.1",
+                                "metadata": {
+                                    "REAL": {
+                                        "asset_seconds": 6.93,
+                                        "has_audio": true,
+                                        "height": null,
+                                        "kind": "audio",
+                                        "width": null
+                                    }
+                                },
+                                "name": "",
+                                "available_range": {
+                                    "OTIO_SCHEMA": "TimeRange.1",
+                                    "duration": {
+                                        "OTIO_SCHEMA": "RationalTime.1",
+                                        "rate": 30.0,
+                                        "value": 208.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -1177,7 +1177,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 267.0
+                                "value": 296.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -1194,7 +1194,7 @@
                                 "OTIO_SCHEMA": "ExternalReference.1",
                                 "metadata": {
                                     "REAL": {
-                                        "asset_seconds": 9.17,
+                                        "asset_seconds": 10.1,
                                         "has_audio": true,
                                         "height": null,
                                         "kind": "audio",
@@ -1207,7 +1207,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 276.0
+                                        "value": 303.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -1230,7 +1230,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 19.0
+                                "value": 20.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -1257,7 +1257,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 102.0
+                                "value": 98.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -1274,7 +1274,7 @@
                                 "OTIO_SCHEMA": "ExternalReference.1",
                                 "metadata": {
                                     "REAL": {
-                                        "asset_seconds": 3.62,
+                                        "asset_seconds": 3.57,
                                         "has_audio": true,
                                         "height": null,
                                         "kind": "audio",
@@ -1287,7 +1287,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 109.0
+                                        "value": 108.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",
@@ -1351,7 +1351,7 @@
                             "duration": {
                                 "OTIO_SCHEMA": "RationalTime.1",
                                 "rate": 30.0,
-                                "value": 1190.0
+                                "value": 1241.0
                             },
                             "start_time": {
                                 "OTIO_SCHEMA": "RationalTime.1",
@@ -1368,7 +1368,7 @@
                                 "OTIO_SCHEMA": "ExternalReference.1",
                                 "metadata": {
                                     "REAL": {
-                                        "asset_seconds": 40.0,
+                                        "asset_seconds": 48.0,
                                         "has_audio": true,
                                         "height": null,
                                         "kind": "audio",
@@ -1381,7 +1381,7 @@
                                     "duration": {
                                         "OTIO_SCHEMA": "RationalTime.1",
                                         "rate": 30.0,
-                                        "value": 1200.0
+                                        "value": 1440.0
                                     },
                                     "start_time": {
                                         "OTIO_SCHEMA": "RationalTime.1",

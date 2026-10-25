@@ -35,7 +35,7 @@ ffmpeg -v error -y -ss 16.0 -to 22.0 -i "$FCP_RECORDING" -r 30 -c:v libx264 -crf
 ffmpeg -v error -y -ss 0.2 -to 8.1 -i "$RECORDING" -vn -ac 1 -ar 48000 -c:a pcm_s16le /tmp/bed-a.wav
 ffmpeg -v error -y -ss 201.3 -to 220.3 -i "$RECORDING" -vn -ac 1 -ar 48000 -c:a pcm_s16le /tmp/bed-b.wav
 ffmpeg -v error -y -i /tmp/bed-a.wav -i /tmp/bed-b.wav -i /tmp/bed-a.wav -i /tmp/bed-b.wav \
-  -filter_complex "[0][1]acrossfade=d=1[ab];[ab][2]acrossfade=d=1[abc];[abc][3]acrossfade=d=1,atrim=0:40,afade=t=out:st=37:d=3" \
+  -filter_complex "[0][1]acrossfade=d=1[ab];[ab][2]acrossfade=d=1[abc];[abc][3]acrossfade=d=1,atrim=0:48,afade=t=out:st=45:d=3" \
   -ac 1 -ar 48000 -c:a pcm_s16le "$A/bed-paganini-performance.wav"
 python3 scripts/make_title_card.py "$I/T-title-made-with-real.png"
 python3 scripts/capture_pages.py notebook source/NOTEBOOK.md "$I/T-notebook.png"

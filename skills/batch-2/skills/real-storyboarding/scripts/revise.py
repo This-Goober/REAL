@@ -16,6 +16,10 @@ the same block:
     B7: L1 anchor = pressure
     B7: L1 offset = +200          nudge, in ms
     B7: L1 fit = contain
+    B7: L2 size = 60              a caption's look: size (points, as the editor shows it),
+    B7: L2 color = #B82E24        color (#RRGGBB, three numbers, or a name),
+    B7: L2 shadow = on            shadow / glow / face on or off,
+    B7: L2 text = pinned / to words   the words, " / " breaking the line
     B7: remove L1
     B7: confirm L1                promotes a claude placement to a creator one
     B7: stagger L1                keep it deliberately off the snapped frame
@@ -135,6 +139,31 @@ def word_index(beat, clock, text):
     for w in clock.get("words", []):
         if beat["w0"] <= w["i"] <= beat["w1"] and w["w"].lower().strip(".,;:!?\"'") == want:
             return w["i"]
+    return None
+
+
+NAMED_COLORS = {"white": (1, 1, 1), "black": (0, 0, 0), "ink": (0.11, 0.11, 0.11),
+                "yellow": (1, 0.8784, 0.2627), "vermilion": (0.7216, 0.1804, 0.1412),
+                "red": (0.8, 0.1, 0.1), "paper": (0.957, 0.937, 0.898)}
+
+
+def parse_color(val):
+    """#RRGGBB, three numbers (0-1 or 0-255), or a name -> [r, g, b, 1]."""
+    v = val.strip().lower()
+    if v in NAMED_COLORS:
+        return list(NAMED_COLORS[v]) + [1]
+    hx = v[1:] if v.startswith("#") else v
+    if re.fullmatch(r"[0-9a-f]{6}", hx):
+        return [int(hx[i:i + 2], 16) / 255.0 for i in (0, 2, 4)] + [1]
+    parts = re.split(r"[,\s]+", v)
+    if len(parts) == 3:
+        try:
+            nums = [float(x) for x in parts]
+        except ValueError:
+            return None
+        if max(nums) > 1:
+            nums = [n / 255.0 for n in nums]
+        return [round(n, 4) for n in nums] + [1]
     return None
 
 
@@ -277,6 +306,43 @@ def apply_one(reel, bid, instr, clock, log, unhandled):
                              if not (f.get("layer") == item["id"]
                                      and f.get("code") == "text-type")]
         item[key] = val
+        touched(item, beat)
+        log.append("%s %s %s -> %s" % (beat["id"], item["id"], key, val))
+        return
+
+    # the look of a caption: `L2 size = 60`, `L2 color = #B82E24`, `L2 shadow = on`,
+    # `L2 glow = off`, `L2 face = on`, `L2 text = it shows / its work` (" / " breaks the line)
+    m = re.match(r"^([LA]?\d+)\s+(size|color|colour|shadow|glow|face|text)\s*=\s*(.+)$", t, re.I)
+    if m:
+        item = find_item(beat, m.group(1))
+        if item is None:
+            unhandled.append("%s: no %s here" % (beat["id"], m.group(1)))
+            return
+        if item.get("kind") != "text":
+            unhandled.append("%s: %s is not a text layer — %s applies to text only"
+                             % (beat["id"], item["id"], m.group(2).lower()))
+            return
+        key, val = m.group(2).lower(), m.group(3).strip().strip('"\'')
+        if key == "size":
+            try:
+                item["font_size"] = float(val) if "." in val else int(val)
+            except ValueError:
+                unhandled.append("%s: size %r is not a number" % (beat["id"], val))
+                return
+        elif key in ("color", "colour"):
+            rgba = parse_color(val)
+            if rgba is None:
+                unhandled.append("%s: color %r — use #RRGGBB, three numbers, or a name" % (beat["id"], val))
+                return
+            item["color"] = rgba
+        elif key in ("shadow", "glow", "face"):
+            if val.lower() not in ("on", "off", "yes", "no", "true", "false", "1", "0"):
+                unhandled.append("%s: %s = %r — say on or off" % (beat["id"], key, val))
+                return
+            item[key] = val.lower() in ("on", "yes", "true", "1")
+        else:   # text
+            item["content"] = val.replace(" / ", "\n")
+        item["style_by"] = "creator"
         touched(item, beat)
         log.append("%s %s %s -> %s" % (beat["id"], item["id"], key, val))
         return

@@ -13,3 +13,18 @@ B5: L3 anchor = cannot
 
 # the title card dissolves in over the last shot
 B6: transition in = dissolve 1s
+
+# captions after the first Final Cut import (24 October): 60 pt, two lines that
+# fit the width, vermilion like the seal on the card, drop shadow
+B1: L2 text = it shows / its work
+B1: L2 size = 60
+B1: L2 color = #B82E24
+B1: L2 shadow = on
+B4: L2 text = pinned / to words
+B4: L2 size = 60
+B4: L2 color = #B82E24
+B4: L2 shadow = on
+B5: L3 text = refuses, / never guesses
+B5: L3 size = 60
+B5: L3 color = #B82E24
+B5: L3 shadow = on
