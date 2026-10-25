@@ -11,10 +11,13 @@ The narration is Eidee's voice, cloned with F5-TTS through `/narrate` from her r
 
 ## Watch
 
-There is no editor render of this one yet. The timeline imports as an editable project:
-`timeline/minuet-abc.fcpxml` into Final Cut Pro (File → Import → XML) and `timeline/minuet-abc.otio` into
-DaVinci Resolve (File → Import → Timeline). `storyboard/REEL-TRACKS.html` shows every placement on its
-lanes in a browser.
+<a href="https://youtu.be/h2a__qpvURk"><img src="https://img.youtube.com/vi/h2a__qpvURk/hqdefault.jpg" alt="The Minuet in ABC notation" width="560"/></a>
+
+**The rendered explainer.** [Watch on YouTube](https://youtu.be/h2a__qpvURk)
+
+The timeline also imports as an editable project: `timeline/minuet-abc.fcpxml` into Final Cut Pro
+(File → Import → XML) and `timeline/minuet-abc.otio` into DaVinci Resolve (File → Import → Timeline).
+`storyboard/REEL-TRACKS.html` shows every placement on its lanes in a browser.
 
 ## What is in this folder
 
