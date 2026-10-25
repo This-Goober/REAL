@@ -6,37 +6,37 @@
   {
    "id": "B1",
    "take": "Audio/take-01.wav",
-   "dur": 5.1,
+   "dur": 5.31,
    "gist": "Hook. Most AI video tools generate a video; REAL edits yours and shows its work."
   },
   {
    "id": "B2",
    "take": "Audio/take-02.wav",
-   "dur": 5.2,
+   "dur": 5.41,
    "gist": "Four steps, four files: the notebook, your script with the shots marked inline."
   },
   {
    "id": "B3",
    "take": "Audio/take-03.wav",
-   "dur": 4.81,
+   "dur": 5.06,
    "gist": "The catalogue: every clip described, anything unverified marked unknown."
   },
   {
    "id": "B4",
    "take": "Audio/take-04.wav",
-   "dur": 6.76,
+   "dur": 6.93,
    "gist": "The reel: every picture pinned to a word, not a timestamp; re-recording moves nothing you approved."
   },
   {
    "id": "B5",
    "take": "Audio/take-05.wav",
-   "dur": 9.17,
+   "dur": 10.1,
    "gist": "Compile: a real timeline for Final Cut Pro or DaVinci Resolve; what it cannot represent, it refuses."
   },
   {
    "id": "B6",
    "take": "Audio/take-06.wav",
-   "dur": 3.62,
+   "dur": 3.57,
    "gist": "Payoff: this trailer was made with REAL; its notebook is in the repository."
   }
  ],
@@ -380,7 +380,7 @@
    "f": "Audio/bed-paganini-performance.wav",
    "k": "audio",
    "role": "Music bed: the creator's own Paganini No. 23 performance",
-   "shows": "40.0 s, mono 48 kHz, violin only, no speech. The opening performance passage of the recording (0.2-8.1 s) and the closing passage (201.3-220.3 s), joined with 1 s crossfades, repeated once, 3 s fade-out at the end.",
+   "shows": "48.0 s, mono 48 kHz, violin only, no speech. The opening performance passage of the recording (0.2-8.1 s) and the closing passage (201.3-220.3 s), joined with 1 s crossfades, repeated once, 3 s fade-out at the end.",
    "use": "Under the whole trailer, ducked beneath the narration. A bed, never a source lane.",
    "beat": "any",
    "binds_to": "an `<audio of the creator's own Paganini performance under the whole trailer ...>` type component",
@@ -400,14 +400,14 @@
     "end_state": "",
     "moments": []
    },
-   "dur": 40.0
+   "dur": 48.0
   },
   {
    "id": "A07",
    "f": "Audio/take-01.wav",
    "k": "audio",
    "role": "Voice take 01 — HOOK",
-   "shows": "Narration, 5.1 s: \"Most AI video tools generate a video. REAL edits yours, and shows its work.\" A synthesized read (edge-tts, en-US-AndrewMultilingualNeural, +12%) standing in for a human recording; replace the file and re-measure, the anchors are words.",
+   "shows": "Narration, 5.3 s: \"Most AI video tools generate a video. REAL edits yours, and shows its work.\" A synthesized read (edge-tts, en-US-AndrewMultilingualNeural, +12%) standing in for a human recording; replace the file and re-measure, the anchors are words.",
    "use": "B1. The clock for this beat.",
    "beat": "B1",
    "binds_to": "the narration spine for the hook cell, i.e. the spoken line itself",
@@ -425,14 +425,14 @@
     "end_state": "",
     "moments": []
    },
-   "dur": 5.1
+   "dur": 5.31
   },
   {
    "id": "A08",
    "f": "Audio/take-02.wav",
    "k": "audio",
    "role": "Voice take 02 — FOUR FILES NOTEBOOK",
-   "shows": "Narration, 5.2 s: \"Four steps, four files you can read. A notebook: your script, with the shots marked inline.\" A synthesized read (edge-tts, en-US-AndrewMultilingualNeural, +12%) standing in for a human recording; replace the file and re-measure, the anchors are words.",
+   "shows": "Narration, 5.4 s: \"Four steps, four files you can read. A notebook: your script, with the shots marked inline.\" A synthesized read (edge-tts, en-US-AndrewMultilingualNeural, +12%) standing in for a human recording; replace the file and re-measure, the anchors are words.",
    "use": "B2. The clock for this beat.",
    "beat": "B2",
    "binds_to": "the narration spine for the four files notebook cell, i.e. the spoken line itself",
@@ -450,14 +450,14 @@
     "end_state": "",
     "moments": []
    },
-   "dur": 5.2
+   "dur": 5.41
   },
   {
    "id": "A09",
    "f": "Audio/take-03.wav",
    "k": "audio",
    "role": "Voice take 03 — FOUR FILES CATALOGUE",
-   "shows": "Narration, 4.8 s: \"A catalogue: every clip described, anything unverified marked unknown.\" A synthesized read (edge-tts, en-US-AndrewMultilingualNeural, +12%) standing in for a human recording; replace the file and re-measure, the anchors are words.",
+   "shows": "Narration, 5.1 s: \"A catalogue: every clip described, anything unverified marked unknown.\" A synthesized read (edge-tts, en-US-AndrewMultilingualNeural, +12%) standing in for a human recording; replace the file and re-measure, the anchors are words.",
    "use": "B3. The clock for this beat.",
    "beat": "B3",
    "binds_to": "the narration spine for the four files catalogue cell, i.e. the spoken line itself",
@@ -475,14 +475,14 @@
     "end_state": "",
     "moments": []
    },
-   "dur": 4.81
+   "dur": 5.06
   },
   {
    "id": "A10",
    "f": "Audio/take-04.wav",
    "k": "audio",
    "role": "Voice take 04 — THE REEL",
-   "shows": "Narration, 6.8 s: \"Then the reel. Every picture is pinned to a word, not a timestamp, so re-recording the voice moves nothing you approved.\" A synthesized read (edge-tts, en-US-AndrewMultilingualNeural, +12%) standing in for a human recording; replace the file and re-measure, the anchors are words.",
+   "shows": "Narration, 6.9 s: \"Then the reel. Every picture is pinned to a word, not a timestamp, so re-recording the voice moves nothing you approved.\" A synthesized read (edge-tts, en-US-AndrewMultilingualNeural, +12%) standing in for a human recording; replace the file and re-measure, the anchors are words.",
    "use": "B4. The clock for this beat.",
    "beat": "B4",
    "binds_to": "the narration spine for the the reel cell, i.e. the spoken line itself",
@@ -500,14 +500,14 @@
     "end_state": "",
     "moments": []
    },
-   "dur": 6.76
+   "dur": 6.93
   },
   {
    "id": "A11",
    "f": "Audio/take-05.wav",
    "k": "audio",
    "role": "Voice take 05 — COMPILE",
-   "shows": "Narration, 9.2 s: \"Last, a real timeline for Final Cut Pro or DaVinci Resolve: editable clips, titles, lanes. What it cannot represent, it refuses.\" A synthesized read (edge-tts, en-US-AndrewMultilingualNeural, +12%) standing in for a human recording; replace the file and re-measure, the anchors are words.",
+   "shows": "Narration, 10.1 s: \"Last, a real timeline for Final Cut Pro or DaVinci Resolve: editable clips, titles, lanes. What it cannot represent, it refuses.\" A synthesized read (edge-tts, en-US-AndrewMultilingualNeural, +12%) standing in for a human recording; replace the file and re-measure, the anchors are words.",
    "use": "B5. The clock for this beat.",
    "beat": "B5",
    "binds_to": "the narration spine for the compile cell, i.e. the spoken line itself",
@@ -525,7 +525,7 @@
     "end_state": "",
     "moments": []
    },
-   "dur": 9.17
+   "dur": 10.1
   },
   {
    "id": "A12",
@@ -550,7 +550,7 @@
     "end_state": "",
     "moments": []
    },
-   "dur": 3.62
+   "dur": 3.57
   }
  ]
 }

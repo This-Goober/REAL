@@ -1,0 +1,51 @@
+{
+ "engine": "elevenlabs",
+ "voice": "George",
+ "model": "eleven_multilingual_v2",
+ "rate": null,
+ "speed": null,
+ "takes": [
+  {
+   "file": "take-01.wav",
+   "line": "Most AI video tools generate a video. REAL edits yours, and shows its work.",
+   "seconds": 5.31,
+   "words": 14,
+   "trimmed_s": 0.0
+  },
+  {
+   "file": "take-02.wav",
+   "line": "Four steps, four files you can read. A notebook: your script, with the shots marked inline.",
+   "seconds": 5.415,
+   "words": 16,
+   "trimmed_s": 0.0
+  },
+  {
+   "file": "take-03.wav",
+   "line": "A catalogue: every clip described, anything unverified marked unknown.",
+   "seconds": 5.062,
+   "words": 9,
+   "trimmed_s": 0.0
+  },
+  {
+   "file": "take-04.wav",
+   "line": "Then the reel. Every picture is pinned to a word, not a timestamp, so re-recording the voice moves nothing you approved.",
+   "seconds": 6.933,
+   "words": 21,
+   "trimmed_s": 0.0
+  },
+  {
+   "file": "take-05.wav",
+   "line": "Last, a real timeline for Final Cut Pro or DaVinci Resolve: editable clips, titles, lanes. What it cannot represent, it refuses.",
+   "seconds": 10.097,
+   "words": 21,
+   "trimmed_s": 0.0
+  },
+  {
+   "file": "take-06.wav",
+   "line": "This trailer was made with REAL. Its notebook is in the repository.",
+   "seconds": 3.566,
+   "words": 12,
+   "trimmed_s": 0.0
+  }
+ ]
+}

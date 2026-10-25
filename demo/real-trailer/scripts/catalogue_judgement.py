@@ -123,7 +123,7 @@ J = {
                                     {"t": 5.41, "what": "playhead crosses into B2"}]}),
     "Audio/bed-paganini-performance.wav": dict(
         role="Music bed: the creator's own Paganini No. 23 performance",
-        shows="40.0 s, mono 48 kHz, violin only, no speech. The opening performance passage of the recording "
+        shows="48.0 s, mono 48 kHz, violin only, no speech. The opening performance passage of the recording "
               "(0.2-8.1 s) and the closing passage (201.3-220.3 s), joined with 1 s crossfades, repeated once, "
               "3 s fade-out at the end.",
         use="Under the whole trailer, ducked beneath the narration. A bed, never a source lane.",

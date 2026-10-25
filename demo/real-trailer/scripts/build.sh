@@ -34,9 +34,13 @@ one_pass() {
       -o storyboard/reel.json --stubs-dir storyboard/stubs --assets-root "$ASSETS_ROOT"
   python3 "$ST/revise.py" apply storyboard/reel.json source/revisions.txt -o storyboard/reel.json --clock storyboard/clock.json
   python3 "$ST/build.py" validate storyboard/reel.json
+  python3 scripts/check_captions.py storyboard/reel.json          # every caption line fits the frame
   python3 "$ST/tracks.py" tracks storyboard/reel.json storyboard/REEL-TRACKS.html --clock storyboard/clock.json
 }
 
+# 0. the narration: media/Audio/take-01..06.wav, one per line of source/narration.txt,
+#    each starting on its first word. scripts/narrate.py writes them (ElevenLabs, Kokoro
+#    or edge); the other reads tried are kept under source/narration/<engine>/.
 # 1. the measured clock: the six takes, concatenated with 0.4 s between them and
 #    3 s of silence after the last, force-aligned to the script
 A=media/Audio

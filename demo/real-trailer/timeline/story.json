@@ -15,20 +15,26 @@
       "role": "effects",
       "volume_db": -60,
       "note": "narration: Most AI video tools generate a video. REAL edits yours, and shows its work.  |  from C1/C1.79b  |  words 0\u201313  |  flag text-type: classified as 'caption' by heuristic \u2014 confirm title / caption / subtitle in the tracks page",
-      "duration": 5.4,
+      "duration": 5.633333,
       "overlays": [
         {
-          "font_size": 40,
+          "font_size": 60,
           "position": [
             0,
             -620
           ],
           "font_face": "Bold",
           "shadow": true,
-          "text": "it shows its work",
-          "name": "B1.L2 \u2014 it shows its work",
+          "text": "it shows\nits work",
+          "name": "B1.L2 \u2014 it shows\nits work",
+          "color": [
+            0.7215686274509804,
+            0.1803921568627451,
+            0.1411764705882353,
+            1
+          ],
           "lane": 1,
-          "offset": 2.933333,
+          "offset": 3.033333,
           "duration": 1.9
         }
       ]
@@ -40,7 +46,7 @@
       "width": 1080,
       "height": 1920,
       "note": "narration: Four steps, four files you can read. A notebook: your script, with the shots marked inline.  |  moment: The file names must be readable on a phone.  |  from C2/C2.b12  |  words 14\u201329",
-      "duration": 5.6,
+      "duration": 5.833333,
       "markers": [
         {
           "t": 0,
@@ -55,7 +61,7 @@
       "width": 1080,
       "height": 1920,
       "note": "narration: A catalogue: every clip described, anything unverified marked unknown.  |  moment: The file names must be readable on a phone.  |  from C2/C2.7e3  |  words 30\u201338",
-      "duration": 5.233333,
+      "duration": 5.466667,
       "markers": [
         {
           "t": 0,
@@ -71,21 +77,27 @@
       "asset_duration": 7.2,
       "role": "effects",
       "volume_db": -60,
-      "duration": 7.166667,
-      "note": "narration: Then the reel. Every picture is pinned to a word, not a timestamp, so re-recording the voice moves nothing you approved.  |  from C3/C3.301  |  words 39\u201359  |  flag aspect-mismatch: A14 is 1920x1080 in a 9:16 reel \u2014 it will be cropped or letterboxed  |  flag text-type: classified as 'caption' by heuristic \u2014 confirm title / caption / subtitle in the tracks page",
+      "duration": 7.2,
+      "note": "narration: Then the reel. Every picture is pinned to a word, not a timestamp, so re-recording the voice moves nothing you approved.  |  from C3/C3.301  |  words 39\u201359  |  flag aspect-mismatch: A14 is 1920x1080 in a 9:16 reel \u2014 it will be cropped or letterboxed  |  flag text-type: classified as 'caption' by heuristic \u2014 confirm title / caption / subtitle in the tracks page  |  flag cut-moved: the footage ends 0.111s before the planned cut, so the cut moved earlier to 24.119s (still after the line ends)",
       "overlays": [
         {
-          "font_size": 40,
+          "font_size": 60,
           "position": [
             0,
             -620
           ],
           "font_face": "Bold",
           "shadow": true,
-          "text": "pinned to words",
-          "name": "B4.L2 \u2014 pinned to words",
+          "text": "pinned\nto words",
+          "name": "B4.L2 \u2014 pinned\nto words",
+          "color": [
+            0.7215686274509804,
+            0.1803921568627451,
+            0.1411764705882353,
+            1
+          ],
           "lane": 1,
-          "offset": 1.933333,
+          "offset": 2.0,
           "duration": 1.566667
         }
       ]
@@ -98,7 +110,7 @@
       "asset_duration": 6.07,
       "role": "effects",
       "volume_db": -60,
-      "duration": 3.4,
+      "duration": 3.933333,
       "note": "narration: Last, a real timeline for Final Cut Pro or DaVinci Resolve: editable clips, titles, lanes. What it cannot represent, it refuses.  |  from C4/C4.1b6  |  words 60\u201380  |  flag aspect-mismatch: A03 is 1918x1200 in a 9:16 reel \u2014 it will be cropped or letterboxed  |  flag aspect-mismatch: A04 is 2160x1920 in a 9:16 reel \u2014 it will be cropped or letterboxed  |  flag text-type: classified as 'caption' by heuristic \u2014 confirm title / caption / subtitle in the tracks page"
     },
     {
@@ -109,20 +121,26 @@
       "asset_duration": 8.0,
       "role": "effects",
       "volume_db": -60,
-      "duration": 6.133333,
+      "duration": 6.666667,
       "overlays": [
         {
-          "font_size": 40,
+          "font_size": 60,
           "position": [
             0,
             -620
           ],
           "font_face": "Bold",
           "shadow": true,
-          "text": "refuses, never guesses",
-          "name": "B5.L3 \u2014 refuses, never guesses",
+          "text": "refuses,\nnever guesses",
+          "name": "B5.L3 \u2014 refuses,\nnever guesses",
+          "color": [
+            0.7215686274509804,
+            0.1803921568627451,
+            0.1411764705882353,
+            1
+          ],
           "lane": 1,
-          "offset": 3.733333,
+          "offset": 4.233333,
           "duration": 1.566667
         }
       ]
@@ -134,7 +152,7 @@
       "width": 1080,
       "height": 1920,
       "note": "narration: This trailer was made with REAL. Its notebook is in the repository.  |  from C5/C5.99d  |  words 81\u201392",
-      "duration": 6.733333,
+      "duration": 6.633333,
       "transition_in": {
         "name": "Cross Dissolve",
         "duration": 1.0
@@ -147,9 +165,9 @@
       "lane": -1,
       "role": "dialogue",
       "offset": 0.0,
-      "duration": 4.866667,
+      "duration": 5.066667,
       "start": 0.0,
-      "asset_duration": 5.1,
+      "asset_duration": 5.31,
       "name": "narration \u2014 take-01.wav",
       "note": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares edits, generate, most, real, shows (+3.0); narration component / audio asset (+2.0)"
     },
@@ -157,10 +175,10 @@
       "src": "Audio/take-02.wav",
       "lane": -1,
       "role": "dialogue",
-      "offset": 5.5,
-      "duration": 5.0,
+      "offset": 5.733333,
+      "duration": 5.133333,
       "start": 0.0,
-      "asset_duration": 5.2,
+      "asset_duration": 5.41,
       "name": "narration \u2014 take-02.wav",
       "note": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares files, four, notebook (+2.0); role shares files, four, notebook (+2.0)"
     },
@@ -168,10 +186,10 @@
       "src": "Audio/take-03.wav",
       "lane": -1,
       "role": "dialogue",
-      "offset": 11.1,
-      "duration": 4.566667,
+      "offset": 11.566667,
+      "duration": 4.766667,
       "start": 0.0,
-      "asset_duration": 4.81,
+      "asset_duration": 5.06,
       "name": "narration \u2014 take-03.wav",
       "note": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares catalogue (+0.8); role shares catalogue (+0.8)"
     },
@@ -179,10 +197,10 @@
       "src": "Audio/take-04.wav",
       "lane": -1,
       "role": "dialogue",
-      "offset": 16.333333,
-      "duration": 6.5,
+      "offset": 17.033333,
+      "duration": 6.633333,
       "start": 0.0,
-      "asset_duration": 6.76,
+      "asset_duration": 6.93,
       "name": "narration \u2014 take-04.wav",
       "note": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares reel (+0.7); role shares reel, voice (+1.0)"
     },
@@ -190,10 +208,10 @@
       "src": "Audio/take-05.wav",
       "lane": -1,
       "role": "dialogue",
-      "offset": 23.5,
-      "duration": 8.9,
+      "offset": 24.333333,
+      "duration": 9.866667,
       "start": 0.0,
-      "asset_duration": 9.17,
+      "asset_duration": 10.1,
       "name": "narration \u2014 take-05.wav",
       "note": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares cannot, clips, davinci, editable, final (+3.0); narration component / audio asset (+2.0)"
     },
@@ -201,10 +219,10 @@
       "src": "Audio/take-06.wav",
       "lane": -1,
       "role": "dialogue",
-      "offset": 33.033333,
-      "duration": 3.4,
+      "offset": 34.866667,
+      "duration": 3.266667,
       "start": 0.0,
-      "asset_duration": 3.62,
+      "asset_duration": 3.57,
       "name": "narration \u2014 take-06.wav",
       "note": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares made, notebook, real, repository, trailer (+3.0); narration component / audio asset (+2.0)"
     },
@@ -213,9 +231,9 @@
       "lane": -3,
       "role": "music",
       "offset": 0.0,
-      "duration": 39.666667,
+      "duration": 41.366667,
       "start": 0.0,
-      "asset_duration": 40.0,
+      "asset_duration": 48.0,
       "name": "bed \u2014 bed-paganini-performance.wav",
       "note": "audio of the creator's own Paganini performance under the whole trailer, ducked beneath the narration",
       "volume_db": -14.0
@@ -224,8 +242,8 @@
   "_generated_by": "adapt.py \u2014 regenerate from reel.json, never hand-edit",
   "_clock": {
     "mode": "measured",
-    "total_s": 39.664,
-    "rate_wps": 2.798,
+    "total_s": 41.383,
+    "rate_wps": 2.674,
     "rate_source": "rates.json@2026-08-03 v3",
     "note": "measured first \u2014 word-level alignment (93 words); placement decided on the recording"
   },
