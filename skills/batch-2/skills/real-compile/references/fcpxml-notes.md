@@ -146,7 +146,14 @@ offsets and durations — the transition borrows handles from the source media,
 which means both sides need spare media beyond the cut. The generator warns
 when a handle isn't there. Duration is forced to an even frame count so the
 two halves are equal. Stills have infinite handles, so image-to-image
-dissolves are always safe.
+dissolves are always safe — but only if the still's in-point leaves room: a
+`<video>` still touching a transition is written with `start="3600s"` (the
+same convention titles and gaps use), because a dissolve borrows half its
+length *before* the in-point and `start="0s"` has nothing there. Final Cut
+refuses such a file at the transition with "Encountered an unexpected value"
+(seen on the trailer's dissolve into its closing card). Stills elsewhere keep
+`start="0s"`; a still's in-point changes nothing on screen, so the readers
+do not compare it.
 
 **`<adjust-transform>`** — XML `position` is a percentage of project height
 on **both** axes, origin at centre and positive y upward. REAL story/reel

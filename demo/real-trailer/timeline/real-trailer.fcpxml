@@ -130,7 +130,7 @@
                         <transition name="Cross Dissolve" offset="973/30s" duration="1s">
                             <filter-video ref="r22" name="Cross Dissolve"/>
                         </transition>
-                        <video ref="r13" name="B6 payoff" start="0s" offset="494/15s" duration="101/15s">
+                        <video ref="r13" name="B6 payoff" start="3600s" offset="494/15s" duration="101/15s">
                             <note>narration: This trailer was made with REAL. Its notebook is in the repository.  |  from C5/C5.99d  |  words 81–92</note>
                         </video>
                     </spine>
