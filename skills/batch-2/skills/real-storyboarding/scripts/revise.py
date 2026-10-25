@@ -20,6 +20,7 @@ the same block:
     B7: L2 color = #B82E24        color (#RRGGBB, three numbers, or a name),
     B7: L2 shadow = on            shadow / glow / face on or off,
     B7: L2 text = pinned / to words   the words, " / " breaking the line
+    B7: L2 position = center      where it sits: center, bottom, top, or pixels from the centre (y up)
     B7: remove L1
     B7: confirm L1                promotes a claude placement to a creator one
     B7: stagger L1                keep it deliberately off the snapped frame
@@ -145,6 +146,24 @@ def word_index(beat, clock, text):
 NAMED_COLORS = {"white": (1, 1, 1), "black": (0, 0, 0), "ink": (0.11, 0.11, 0.11),
                 "yellow": (1, 0.8784, 0.2627), "vermilion": (0.7216, 0.1804, 0.1412),
                 "red": (0.8, 0.1, 0.1), "paper": (0.957, 0.937, 0.898)}
+
+
+NAMED_POSITIONS = {"center": [0, 0], "centre": [0, 0], "middle": [0, 0],
+                   "bottom": [0, -620], "top": [0, 620]}     # the caption and kicker heights
+
+
+def parse_position(val):
+    """center | bottom | top, or two numbers: pixels from the frame centre, y up."""
+    v = val.strip().lower()
+    if v in NAMED_POSITIONS:
+        return list(NAMED_POSITIONS[v])
+    parts = re.split(r"[,\s]+", v)
+    if len(parts) == 2:
+        try:
+            return [float(parts[0]), float(parts[1])]
+        except ValueError:
+            return None
+    return None
 
 
 def parse_color(val):
@@ -312,7 +331,7 @@ def apply_one(reel, bid, instr, clock, log, unhandled):
 
     # the look of a caption: `L2 size = 60`, `L2 color = #B82E24`, `L2 shadow = on`,
     # `L2 glow = off`, `L2 face = on`, `L2 text = it shows / its work` (" / " breaks the line)
-    m = re.match(r"^([LA]?\d+)\s+(size|color|colour|shadow|glow|face|text)\s*=\s*(.+)$", t, re.I)
+    m = re.match(r"^([LA]?\d+)\s+(size|color|colour|shadow|glow|face|text|position)\s*=\s*(.+)$", t, re.I)
     if m:
         item = find_item(beat, m.group(1))
         if item is None:
@@ -340,6 +359,13 @@ def apply_one(reel, bid, instr, clock, log, unhandled):
                 unhandled.append("%s: %s = %r — say on or off" % (beat["id"], key, val))
                 return
             item[key] = val.lower() in ("on", "yes", "true", "1")
+        elif key == "position":
+            pos = parse_position(val)
+            if pos is None:
+                unhandled.append("%s: position %r — say center, bottom, top, or two numbers "
+                                 "(pixels from the frame centre, y up)" % (beat["id"], val))
+                return
+            item["position"] = pos
         else:   # text
             item["content"] = val.replace(" / ", "\n")
         item["style_by"] = "creator"

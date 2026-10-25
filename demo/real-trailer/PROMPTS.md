@@ -77,6 +77,17 @@ page's Open Graph and Twitter tags with a 1200×630 card
 preview. Runtime 41.38 s, 1241 frames; cross-target EQUIVALENT 10/10, 7/7,
 1/1, 1241/1241.
 
+A fourth note after the second import:
+
+> make font size 83 and the first caption shows it on the middle but the
+> other 2 captions fine staying at the bottom
+
+Produced: `size = 83` on the three captions and `position = center` on the
+first (a `position` key added to the look grammar: center, bottom, top, or
+pixels from the frame centre); at 83 points "never guesses" would have
+spanned 92 % of the width, so the last caption is three lines
+(`refuses, / never / guesses`), the widest at 56 %.
+
 ## What the pipeline refused or got wrong on the way, and the fix
 
 - `build.py` wrote the whole-reel bed as `kind: audio` and its own validator

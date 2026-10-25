@@ -593,10 +593,10 @@
                                             ],
                                             "font": "Helvetica Neue",
                                             "font_face": "Bold",
-                                            "font_size": 60,
+                                            "font_size": 83,
                                             "position": [
                                                 0,
-                                                -620
+                                                0
                                             ],
                                             "shadow": true,
                                             "text": "it shows\nits work"
@@ -619,7 +619,7 @@
                                     }
                                 },
                                 "available_image_bounds": null,
-                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/it-shows-its-work-8eadd55a.png"
+                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/it-shows-its-work-3245b154.png"
                             }
                         },
                         "active_media_reference_key": "DEFAULT_MEDIA"
@@ -685,7 +685,7 @@
                                             ],
                                             "font": "Helvetica Neue",
                                             "font_face": "Bold",
-                                            "font_size": 60,
+                                            "font_size": 83,
                                             "position": [
                                                 0,
                                                 -620
@@ -711,7 +711,7 @@
                                     }
                                 },
                                 "available_image_bounds": null,
-                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/pinned-to-words-39a26acc.png"
+                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/pinned-to-words-bfeb77de.png"
                             }
                         },
                         "active_media_reference_key": "DEFAULT_MEDIA"
@@ -741,7 +741,7 @@
                     {
                         "OTIO_SCHEMA": "Clip.2",
                         "metadata": {},
-                        "name": "B5.L3 — refuses,\nnever guesses",
+                        "name": "B5.L3 — refuses,\nnever\nguesses",
                         "source_range": {
                             "OTIO_SCHEMA": "TimeRange.1",
                             "duration": {
@@ -777,13 +777,13 @@
                                             ],
                                             "font": "Helvetica Neue",
                                             "font_face": "Bold",
-                                            "font_size": 60,
+                                            "font_size": 83,
                                             "position": [
                                                 0,
                                                 -620
                                             ],
                                             "shadow": true,
-                                            "text": "refuses,\nnever guesses"
+                                            "text": "refuses,\nnever\nguesses"
                                         },
                                         "width": 1080
                                     }
@@ -803,7 +803,7 @@
                                     }
                                 },
                                 "available_image_bounds": null,
-                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/refuses-never-guesses-683d2e12.png"
+                                "target_url": "file:///Users/henrytan/Documents/git/REAL/demo/real-trailer/timeline/real-trailer-titles/refuses-never-guesses-b65de62b.png"
                             }
                         },
                         "active_media_reference_key": "DEFAULT_MEDIA"
