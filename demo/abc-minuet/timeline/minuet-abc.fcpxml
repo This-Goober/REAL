@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fcpxml>
+<fcpxml version="1.13">
+    <resources>
+        <format id="r1" name="FFVideoFormatRateUndefined" frameDuration="100/3000s" width="1920" height="1080" colorSpace="1-1-1 (Rec. 709)"/>
+        <format id="r3" name="FFVideoFormatRateUndefined" width="1920" height="1080" colorSpace="1-13-1"/>
+        <asset id="r2" name="score-plain" start="0s" hasVideo="1" duration="0s" format="r3" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/abc-minuet/media/Images/score-plain.png"/>
+        </asset>
+        <asset id="r4" name="abc-full" start="0s" hasVideo="1" duration="0s" format="r3" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/abc-minuet/media/Images/abc-full.png"/>
+        </asset>
+        <asset id="r5" name="abc-header" start="0s" hasVideo="1" duration="0s" format="r3" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/abc-minuet/media/Images/abc-header.png"/>
+        </asset>
+        <asset id="r6" name="pitch-c" start="0s" hasVideo="1" duration="0s" format="r3" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/abc-minuet/media/Images/pitch-c.png"/>
+        </asset>
+        <asset id="r7" name="length-slash" start="0s" hasVideo="1" duration="0s" format="r3" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/abc-minuet/media/Images/length-slash.png"/>
+        </asset>
+        <asset id="r8" name="bar-1" start="0s" hasVideo="1" duration="0s" format="r3" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/abc-minuet/media/Images/bar-1.png"/>
+        </asset>
+        <asset id="r9" name="bar-2" start="0s" hasVideo="1" duration="0s" format="r3" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/abc-minuet/media/Images/bar-2.png"/>
+        </asset>
+        <asset id="r10" name="bar-3" start="0s" hasVideo="1" duration="0s" format="r3" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/abc-minuet/media/Images/bar-3.png"/>
+        </asset>
+        <asset id="r11" name="bar-4" start="0s" hasVideo="1" duration="0s" format="r3" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/abc-minuet/media/Images/bar-4.png"/>
+        </asset>
+        <asset id="r12" name="bar-sums" start="0s" hasVideo="1" duration="0s" format="r3" videoSources="1">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/abc-minuet/media/Images/bar-sums.png"/>
+        </asset>
+        <asset id="r13" name="narration-master" start="0s" hasAudio="1" duration="1133/15s" audioSources="1" audioChannels="1" audioRate="48000">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/abc-minuet/media/Audio/narration-master.mp3"/>
+        </asset>
+        <asset id="r14" name="minuet-piano" start="0s" hasAudio="1" duration="121/15s" audioSources="1" audioChannels="2" audioRate="48000">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/abc-minuet/media/Audio/minuet-piano.mp3"/>
+        </asset>
+        <asset id="r15" name="minuet-piano-end" start="0s" hasAudio="1" duration="121/15s" audioSources="1" audioChannels="2" audioRate="48000">
+            <media-rep kind="original-media" src="file:///Users/Shared/REAL/demo/abc-minuet/media/Audio/minuet-piano-end.mp3"/>
+        </asset>
+    </resources>
+    <library>
+        <event name="REAL">
+            <project name="The Minuet in ABC">
+                <sequence format="r1" duration="1252/15s" tcStart="0s" tcFormat="NDF" audioLayout="stereo" audioRate="48k">
+                    <spine>
+                        <video ref="r2" name="B1 hook (1·2)" start="0s" offset="0s" duration="8s">
+                            <note>narration: That's the opening of the Minuet in G, from Anna Magdalena Bach's notebook. Here it is in C, written as a single line of text.  |  from C1/C1.1c5  |  words 0–24</note>
+                            <asset-clip ref="r13" name="narration — narration-master.mp3" start="0s" audioRole="dialogue" offset="0s" duration="493/30s" lane="-1">
+                                <note>voice take — which take covers this line has to be confirmed by ear; shows shares anna, bach's, here, line, magdalena (+3.0); narration component / audio asset (+2.0)</note>
+                            </asset-clip>
+                            <asset-clip ref="r13" name="narration — narration-master.mp3" start="493/30s" audioRole="dialogue" offset="493/30s" duration="63/5s" lane="-1">
+                                <note>voice take — which take covers this line has to be confirmed by ear; binds_to shares every (+0.8); shows shares bar, beat, beats, default, every (+3.0)</note>
+                            </asset-clip>
+                            <asset-clip ref="r13" name="narration — narration-master.mp3" start="871/30s" audioRole="dialogue" offset="871/30s" duration="94/15s" lane="-1">
+                                <note>voice take — which take covers this line has to be confirmed by ear; shows shares capital, each, higher, letter, lowercase (+3.0); narration component / audio asset (+2.0)</note>
+                            </asset-clip>
+                            <asset-clip ref="r13" name="narration — narration-master.mp3" start="353/10s" audioRole="dialogue" offset="353/10s" duration="119/15s" lane="-1">
+                                <note>voice take — which take covers this line has to be confirmed by ear; shows shares beat, cuts, eighth, fill, half (+3.0); narration component / audio asset (+2.0)</note>
+                            </asset-clip>
+                            <asset-clip ref="r13" name="narration — narration-master.mp3" start="1297/30s" audioRole="dialogue" offset="1297/30s" duration="65/6s" lane="-1">
+                                <note>voice take — which take covers this line has to be confirmed by ear; shows shares bar, beat, eighth, four, halves (+3.0); narration component / audio asset (+2.0)</note>
+                            </asset-clip>
+                            <asset-clip ref="r13" name="narration — narration-master.mp3" start="811/15s" audioRole="dialogue" offset="811/15s" duration="269/30s" lane="-1">
+                                <note>voice take — which take covers this line has to be confirmed by ear; shows shares bar, higher, same, shape, step (+3.0); narration component / audio asset (+2.0)</note>
+                            </asset-clip>
+                            <asset-clip ref="r13" name="narration — narration-master.mp3" start="1891/30s" audioRole="dialogue" offset="1891/30s" duration="22/3s" lane="-1">
+                                <note>voice take — which take covers this line has to be confirmed by ear; binds_to shares every (+0.8); shows shares add, bar, doesn't, every, line (+3.0)</note>
+                            </asset-clip>
+                            <asset-clip ref="r13" name="narration — narration-master.mp3" start="2111/30s" audioRole="dialogue" offset="2111/30s" duration="77/15s" lane="-1">
+                                <note>voice take — which take covers this line has to be confirmed by ear; shows shares about, again, bars, characters, forty (+3.0); narration component / audio asset (+2.0)</note>
+                            </asset-clip>
+                            <asset-clip ref="r14" name="sfx — minuet-piano.mp3" start="0s" audioRole="effects" offset="0s" duration="8s" lane="-4">
+                                <note>audio of the first four bars of the Minuet in G, transposed to C, on a plain piano, steady minuet tempo, no voice over it, full volume</note>
+                            </asset-clip>
+                            <asset-clip ref="r15" name="sfx — minuet-piano-end.mp3" start="0s" audioRole="effects" offset="1132/15s" duration="8s" lane="-4">
+                                <note>audio of the four bars of the Minuet on piano again, full volume, nothing spoken over it</note>
+                            </asset-clip>
+                        </video>
+                        <video ref="r4" name="B1 hook (2·2)" start="0s" offset="8s" duration="25/3s">
+                            <note>picked by claude (confidence: high); also considered A03, A06, A07</note>
+                        </video>
+                        <video ref="r5" name="B2 the header" start="0s" offset="49/3s" duration="63/5s">
+                            <note>narration: The lines at the top set the rules. M is the meter, three beats in every bar. L is the default length, so a plain letter lasts one beat. And K is the key, C, which means no sharps or flats.  |  from C2/C2.625  |  words 25–65</note>
+                        </video>
+                        <video ref="r6" name="B3 pitch" start="0s" offset="434/15s" duration="94/15s">
+                            <note>narration: Each letter is a note. A capital C is middle C, and a lowercase c is the C one octave higher.  |  from C3/C3.d19  |  words 66–86</note>
+                        </video>
+                        <video ref="r7" name="B4 length" start="0s" offset="176/5s" duration="119/15s">
+                            <note>narration: A slash cuts a note in half. So C slash is an eighth note, half a beat, and two of them fill the space of one plain C.  |  from C4/C4.1db  |  words 87–114</note>
+                        </video>
+                        <video ref="r8" name="B5 the bars" start="0s" offset="647/15s" duration="37/5s">
+                            <note>narration: Bar one is G for one beat, then C, D, E, F as four quick eighth notes. One beat, plus four halves, makes three.  |  from C5/C5.39d  |  words 115–138</note>
+                        </video>
+                        <video ref="r9" name="B6 the bars" start="0s" offset="758/15s" duration="103/30s">
+                            <note>narration: Bar two is G, C, C. Three plain letters, three beats.  |  from C5/C5.ea0  |  words 139–149</note>
+                        </video>
+                        <video ref="r10" name="B7 the bars" start="0s" offset="1619/30s" duration="49/10s">
+                            <note>narration: Bar three is the same shape as bar one, a step higher: A, then F, G, A, B.  |  from C5/C5.ecc  |  words 150–167</note>
+                        </video>
+                        <video ref="r11" name="B8 the bars" start="0s" offset="883/15s" duration="61/15s">
+                            <note>narration: And bar four jumps up to the high c, then back down to C, C.  |  from C5/C5.a04  |  words 168–182</note>
+                        </video>
+                        <video ref="r12" name="B9 the check" start="0s" offset="944/15s" duration="22/3s">
+                            <note>narration: Every bar should add up to three. If one doesn't, then a note is missing, or a bar line is in the wrong place.  |  from C6/C6.6ae  |  words 183–206</note>
+                        </video>
+                        <video ref="r4" name="B10 payoff (1·2)" start="0s" offset="1054/15s" duration="26/5s">
+                            <note>narration: That's the whole idea. Four bars of music, in about forty characters. Here it is again.  |  from C7/C7.093  |  words 207–222</note>
+                        </video>
+                        <video ref="r2" name="B10 payoff (2·2)" start="0s" offset="1132/15s" duration="8s">
+                            <note>picked by claude (confidence: high); also considered A06, A07, A08</note>
+                        </video>
+                    </spine>
+                </sequence>
+            </project>
+        </event>
+    </library>
+</fcpxml>

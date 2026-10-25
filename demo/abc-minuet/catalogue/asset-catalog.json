@@ -1,0 +1,436 @@
+{
+ "project": "The Minuet in ABC",
+ "root": "/home/henrytan/git/REAL/chat/projects/abc-minuet/media",
+ "generated": "2026-10-25",
+ "script_beats": [
+  {
+   "id": "B1",
+   "take": "Audio/narration-master.mp3",
+   "dur": 0,
+   "gist": "That's the opening of the Minuet in G from Anna Magdalena Bach's notebook Here it is in C written as a single line of text The lines at the top set the rules M is the meter three beats in every bar L "
+  }
+ ],
+ "assets": [
+  {
+   "f": "Images/score-plain.png",
+   "k": "image",
+   "role": "\u2605 The four bars, engraved",
+   "shows": "The opening four bars of the Minuet in G transposed to C on one treble staff, 3/4, black on white, nothing highlighted.",
+   "use": "The cold open under the piano, and the closing play-through.",
+   "beat": "any",
+   "binds_to": "a `<show image of the four bars engraved on one treble staff \u2026>` type component",
+   "tags": [
+    "score-plain",
+    "score"
+   ],
+   "inspection": {
+    "level": "full"
+   },
+   "temporal": null,
+   "temporal_notes": {
+    "start_state": "still",
+    "end_state": "still",
+    "moments": []
+   },
+   "id": "A01",
+   "specs": "1920x1080 png 25fps",
+   "exists": true,
+   "dur": 0.0,
+   "mb": 0.0,
+   "v": "1920x1080 png 25fps",
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "codec": "png"
+  },
+  {
+   "f": "Images/abc-full.png",
+   "k": "image",
+   "role": "\u2605 The whole ABC text",
+   "shows": "White frame, monospace: the header lines X:1, M:3/4, L:1/4, K:C and below them the melody line of four bars with bar lines.",
+   "use": "The hook, when the text first appears, and again before the last play-through.",
+   "beat": "any",
+   "binds_to": "a `<show image of the whole ABC text \u2026>` type component",
+   "tags": [
+    "abc-full",
+    "abc-text"
+   ],
+   "inspection": {
+    "level": "full"
+   },
+   "temporal": null,
+   "temporal_notes": {
+    "start_state": "still",
+    "end_state": "still",
+    "moments": []
+   },
+   "id": "A02",
+   "specs": "1920x1080 png 25fps",
+   "exists": true,
+   "dur": 0.0,
+   "mb": 0.0,
+   "v": "1920x1080 png 25fps",
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "codec": "png"
+  },
+  {
+   "f": "Images/abc-header.png",
+   "k": "image",
+   "role": "Header lines in red, labelled",
+   "shows": "The four header lines in red with gray labels: tune number; meter, three beats a bar; a letter lasts one beat; key C, no sharps or flats. The melody line below in gray.",
+   "use": "The header explanation.",
+   "beat": "any",
+   "binds_to": "a `<show image of the same ABC text with only the header lines in red \u2026>` type component",
+   "tags": [
+    "abc-header",
+    "abc-text"
+   ],
+   "inspection": {
+    "level": "full"
+   },
+   "temporal": null,
+   "temporal_notes": {
+    "start_state": "still",
+    "end_state": "still",
+    "moments": []
+   },
+   "id": "A03",
+   "specs": "1920x1080 png 25fps \u00b7 0.1 MB",
+   "exists": true,
+   "dur": 0.0,
+   "mb": 0.1,
+   "v": "1920x1080 png 25fps",
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "codec": "png"
+  },
+  {
+   "f": "Images/pitch-c.png",
+   "k": "image",
+   "role": "C and c on the staff",
+   "shows": "Two treble staves side by side: middle C as a half note on its ledger line labelled C, middle C, and the C an octave up labelled c, one octave higher.",
+   "use": "The pitch explanation.",
+   "beat": "any",
+   "binds_to": "a `<show image of a treble staff with \u2026 middle C \u2026 and the C an octave up \u2026>` type component",
+   "tags": [
+    "pitch-c"
+   ],
+   "inspection": {
+    "level": "full"
+   },
+   "temporal": null,
+   "temporal_notes": {
+    "start_state": "still",
+    "end_state": "still",
+    "moments": []
+   },
+   "id": "A04",
+   "specs": "1920x1080 png 25fps",
+   "exists": true,
+   "dur": 0.0,
+   "mb": 0.0,
+   "v": "1920x1080 png 25fps",
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "codec": "png"
+  },
+  {
+   "f": "Images/length-slash.png",
+   "k": "image",
+   "role": "C versus C/ C/",
+   "shows": "Two treble staves: one quarter note C labelled C, 1 beat; two beamed eighth notes labelled C/ C/, 1 beat.",
+   "use": "The length explanation.",
+   "beat": "any",
+   "binds_to": "a `<show image of two panels side by side: \"C\" over a single quarter note, and \"C/ C/\" \u2026>` type component",
+   "tags": [
+    "length-slash"
+   ],
+   "inspection": {
+    "level": "full"
+   },
+   "temporal": null,
+   "temporal_notes": {
+    "start_state": "still",
+    "end_state": "still",
+    "moments": []
+   },
+   "id": "A05",
+   "specs": "1920x1080 png 25fps",
+   "exists": true,
+   "dur": 0.0,
+   "mb": 0.0,
+   "v": "1920x1080 png 25fps",
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "codec": "png"
+  },
+  {
+   "f": "Images/bar-1.png",
+   "k": "image",
+   "role": "Bar 1 lit in red",
+   "shows": "The four engraved bars with bar 1 in red and the others gray; below, the ABC melody line with bar 1's text in red.",
+   "use": "While the narration walks through bar 1.",
+   "beat": "any",
+   "binds_to": "a `<show image of the score \u2026 with bar 1 in red \u2026>` type component",
+   "tags": [
+    "bar-1",
+    "bars"
+   ],
+   "inspection": {
+    "level": "full"
+   },
+   "temporal": null,
+   "temporal_notes": {
+    "start_state": "still",
+    "end_state": "still",
+    "moments": []
+   },
+   "id": "A06",
+   "specs": "1920x1080 png 25fps",
+   "exists": true,
+   "dur": 0.0,
+   "mb": 0.0,
+   "v": "1920x1080 png 25fps",
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "codec": "png"
+  },
+  {
+   "f": "Images/bar-2.png",
+   "k": "image",
+   "role": "Bar 2 lit in red",
+   "shows": "The four engraved bars with bar 2 in red and the others gray; below, the ABC melody line with bar 2's text in red.",
+   "use": "While the narration walks through bar 2.",
+   "beat": "any",
+   "binds_to": "a `<show image of the score \u2026 with bar 2 in red \u2026>` type component",
+   "tags": [
+    "bar-2",
+    "bars"
+   ],
+   "inspection": {
+    "level": "full"
+   },
+   "temporal": null,
+   "temporal_notes": {
+    "start_state": "still",
+    "end_state": "still",
+    "moments": []
+   },
+   "id": "A07",
+   "specs": "1920x1080 png 25fps",
+   "exists": true,
+   "dur": 0.0,
+   "mb": 0.0,
+   "v": "1920x1080 png 25fps",
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "codec": "png"
+  },
+  {
+   "f": "Images/bar-3.png",
+   "k": "image",
+   "role": "Bar 3 lit in red",
+   "shows": "The four engraved bars with bar 3 in red and the others gray; below, the ABC melody line with bar 3's text in red.",
+   "use": "While the narration walks through bar 3.",
+   "beat": "any",
+   "binds_to": "a `<show image of the score \u2026 with bar 3 in red \u2026>` type component",
+   "tags": [
+    "bar-3",
+    "bars"
+   ],
+   "inspection": {
+    "level": "full"
+   },
+   "temporal": null,
+   "temporal_notes": {
+    "start_state": "still",
+    "end_state": "still",
+    "moments": []
+   },
+   "id": "A08",
+   "specs": "1920x1080 png 25fps",
+   "exists": true,
+   "dur": 0.0,
+   "mb": 0.0,
+   "v": "1920x1080 png 25fps",
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "codec": "png"
+  },
+  {
+   "f": "Images/bar-4.png",
+   "k": "image",
+   "role": "Bar 4 lit in red",
+   "shows": "The four engraved bars with bar 4 in red and the others gray; below, the ABC melody line with bar 4's text in red.",
+   "use": "While the narration walks through bar 4.",
+   "beat": "any",
+   "binds_to": "a `<show image of the score \u2026 with bar 4 in red \u2026>` type component",
+   "tags": [
+    "bar-4",
+    "bars"
+   ],
+   "inspection": {
+    "level": "full"
+   },
+   "temporal": null,
+   "temporal_notes": {
+    "start_state": "still",
+    "end_state": "still",
+    "moments": []
+   },
+   "id": "A09",
+   "specs": "1920x1080 png 25fps",
+   "exists": true,
+   "dur": 0.0,
+   "mb": 0.0,
+   "v": "1920x1080 png 25fps",
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "codec": "png"
+  },
+  {
+   "f": "Images/bar-sums.png",
+   "k": "image",
+   "role": "Each bar adds to three",
+   "shows": "The four bars of ABC text in a row, each with a red '3 \u2713' under it.",
+   "use": "The check: every bar adds up to three.",
+   "beat": "any",
+   "binds_to": "a `<show image of the four bars written as text with a small \"3\" under each bar \u2026>` type component",
+   "tags": [
+    "bar-sums"
+   ],
+   "inspection": {
+    "level": "full"
+   },
+   "temporal": null,
+   "temporal_notes": {
+    "start_state": "still",
+    "end_state": "still",
+    "moments": []
+   },
+   "id": "A10",
+   "specs": "1920x1080 png 25fps",
+   "exists": true,
+   "dur": 0.0,
+   "mb": 0.0,
+   "v": "1920x1080 png 25fps",
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "codec": "png"
+  },
+  {
+   "f": "Audio/minuet-piano.mp3",
+   "k": "audio",
+   "role": "\u2605 The Minuet on piano (opening)",
+   "shows": "The four bars on a plain grand piano (FluidR3), 110 quarter notes a minute, 8.0 s with a soft start and a 1 s fade.",
+   "use": "The cold open, at full level, before anything is spoken.",
+   "beat": "any",
+   "binds_to": "an `<audio of the first four bars of the Minuet \u2026 on a plain piano \u2026>` type component",
+   "tags": [
+    "minuet-piano",
+    "piano"
+   ],
+   "inspection": {
+    "level": "full"
+   },
+   "temporal": null,
+   "temporal_notes": {
+    "start_state": "first note at 0.25 s",
+    "end_state": "1 s fade",
+    "moments": []
+   },
+   "id": "A11",
+   "specs": "8.04s \u00b7 mp3 2ch 48k \u00b7 0.3 MB",
+   "exists": true,
+   "dur": 8.04,
+   "mb": 0.3,
+   "a": "mp3 2ch 48k",
+   "audio_channels": 2,
+   "audio_rate": 48000,
+   "audio_codec": "mp3"
+  },
+  {
+   "f": "Audio/minuet-piano-end.mp3",
+   "k": "audio",
+   "role": "The Minuet on piano (closing)",
+   "shows": "The same 8.0 s piano rendering, a separate file for the last play-through.",
+   "use": "The payoff, at full level, after the last spoken line.",
+   "beat": "any",
+   "binds_to": "an `<audio of the four bars of the Minuet on piano again \u2026>` type component",
+   "tags": [
+    "minuet-piano-end",
+    "piano"
+   ],
+   "inspection": {
+    "level": "full"
+   },
+   "temporal": null,
+   "temporal_notes": {
+    "start_state": "first note at 0.25 s",
+    "end_state": "1 s fade",
+    "moments": []
+   },
+   "id": "A12",
+   "specs": "8.04s \u00b7 mp3 2ch 48k \u00b7 0.3 MB",
+   "exists": true,
+   "dur": 8.04,
+   "mb": 0.3,
+   "a": "mp3 2ch 48k",
+   "audio_channels": 2,
+   "audio_rate": 48000,
+   "audio_codec": "mp3"
+  },
+  {
+   "f": "Audio/narration-master.mp3",
+   "k": "audio",
+   "role": "\u2605 Narration master",
+   "shows": "The seven narration takes in a voice cloned with F5-TTS from Eidee's own recorded narration (with her consent), laid on one track at the measured clock, file time equal to reel time. Transcript: \"That's the opening of the Minuet in G from Anna Magdalena Bach's notebook Here it is in C written as a single line of text The lines at the top set the rules M is the meter three beats in every bar L is the default length so a plain letter lasts one beat And K is the key C which means no sharps or flats Each letter is a note A capital C is middle C and a lowercase c is the C one octave higher A slash cuts a note in half So C slash is an eighth note half a beat and two of them fill the space of one plain C Bar one is G for one beat then C D E F as four quick eighth notes One beat plus four halves makes three Bar two is G C C Three plain letters three beats Bar three is the same shape as bar one a step higher: A then F G A B And bar four jumps up to the high c then back down to C C Every bar should add up to three If one doesn't then a note is missing or a bar line is in the wrong place That's the whole idea Four bars of music in about forty characters Here it is again\"",
+   "use": "Every spoken narration component.",
+   "beat": "any",
+   "binds_to": "every spoken `<...>` narration component \u2014 the voice itself",
+   "tags": [
+    "narration",
+    "voice",
+    "master"
+   ],
+   "inspection": {
+    "level": "full"
+   },
+   "temporal": null,
+   "temporal_notes": {
+    "start_state": "silence under the piano until the first word",
+    "end_state": "last word, then silence",
+    "moments": []
+   },
+   "id": "A13",
+   "specs": "75.53s \u00b7 mp3 1ch 48k \u00b7 2.4 MB",
+   "exists": true,
+   "dur": 75.53,
+   "mb": 2.4,
+   "a": "mp3 1ch 48k",
+   "audio_channels": 1,
+   "audio_rate": 48000,
+   "audio_codec": "mp3"
+  }
+ ]
+}

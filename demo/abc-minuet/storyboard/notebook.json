@@ -1,0 +1,582 @@
+{
+ "meta": {
+  "reel": "The Minuet in ABC",
+  "target": "90s",
+  "aspect": "16:9",
+  "target_s": 90.0
+ },
+ "cells": [
+  {
+   "id": "C1",
+   "uid": "9f1b55c1fd",
+   "name": "hook",
+   "variant": null,
+   "alternate": false,
+   "line": 7,
+   "note": "The creator's own call: open on the music. The four bars play on piano with no voice, over the engraved score, so the viewer hears the tune before any letters appear.",
+   "groups": [
+    {
+     "id": "G1",
+     "parallel": true,
+     "line": 13,
+     "components": [
+      {
+       "id": "C1.348",
+       "uid": "3485e72ac3",
+       "type": "audio",
+       "text": "audio of the first four bars of the Minuet in G, transposed to C, on a plain piano, steady minuet tempo, no voice over it, full volume",
+       "dur_s": 8.0,
+       "essential": true,
+       "unsure": false,
+       "tags": [
+        "minuet-piano"
+       ],
+       "raw": "<audio of the first four bars of the Minuet in G, transposed to C, on a plain piano, steady minuet tempo, no voice over it, full volume ~8s ! #minuet-piano>",
+       "line": 13,
+       "words": 0
+      },
+      {
+       "id": "C1.236",
+       "uid": "236bb06d7e",
+       "type": "image",
+       "text": "show image of the four bars engraved on one treble staff, black notes on white, 3/4 time signature, nothing highlighted",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [
+        "score-plain"
+       ],
+       "raw": "<show image of the four bars engraved on one treble staff, black notes on white, 3/4 time signature, nothing highlighted #score-plain>",
+       "line": 13,
+       "words": 0
+      }
+     ]
+    },
+    {
+     "id": "G2",
+     "parallel": false,
+     "line": 15,
+     "components": [
+      {
+       "id": "C1.1c5",
+       "uid": "1c5a1bb7ca",
+       "type": "narration",
+       "text": "That's the opening of the Minuet in G, from Anna Magdalena Bach's notebook. Here it is in C, written as a single line of text.",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [],
+       "raw": "<That's the opening of the Minuet in G, from Anna Magdalena Bach's notebook. Here it is in C, written as a single line of text.>",
+       "line": 15,
+       "words": 25
+      }
+     ]
+    },
+    {
+     "id": "G3",
+     "parallel": false,
+     "line": 16,
+     "components": [
+      {
+       "id": "C1.88a",
+       "uid": "88a4d81c9d",
+       "type": "image",
+       "text": "show image of the whole ABC text on white in a large monospace font: the four header lines (tune number, meter 3/4, length 1/4, key C) above the one melody line of four bars, bar lines between them",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [
+        "abc-full"
+       ],
+       "raw": "<show image of the whole ABC text on white in a large monospace font: the four header lines (tune number, meter 3/4, length 1/4, key C) above the one melody line of four bars, bar lines between them #abc-full>",
+       "line": 16,
+       "words": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C2",
+   "uid": "c0b22ad98c",
+   "name": "the header",
+   "variant": null,
+   "alternate": false,
+   "line": 18,
+   "note": "",
+   "groups": [
+    {
+     "id": "G1",
+     "parallel": false,
+     "line": 20,
+     "components": [
+      {
+       "id": "C2.625",
+       "uid": "6258a02e7b",
+       "type": "narration",
+       "text": "The lines at the top set the rules. M is the meter, three beats in every bar. L is the default length, so a plain letter lasts one beat. And K is the key, C, which means no sharps or flats.",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [],
+       "raw": "<The lines at the top set the rules. M is the meter, three beats in every bar. L is the default length, so a plain letter lasts one beat. And K is the key, C, which means no sharps or flats.>",
+       "line": 20,
+       "words": 41
+      }
+     ]
+    },
+    {
+     "id": "G2",
+     "parallel": false,
+     "line": 21,
+     "components": [
+      {
+       "id": "C2.6fd",
+       "uid": "6fd7f27d56",
+       "type": "image",
+       "text": "show image of the same ABC text with only the header lines in red and a short gray label beside each: \"meter: 3 beats a bar\", \"a letter = 1 beat\", \"key: C\"",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [
+        "abc-header"
+       ],
+       "raw": "<show image of the same ABC text with only the header lines in red and a short gray label beside each: \"meter: 3 beats a bar\", \"a letter = 1 beat\", \"key: C\" #abc-header>",
+       "line": 21,
+       "words": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C3",
+   "uid": "d5de208f8a",
+   "name": "pitch",
+   "variant": null,
+   "alternate": false,
+   "line": 23,
+   "note": "",
+   "groups": [
+    {
+     "id": "G1",
+     "parallel": false,
+     "line": 25,
+     "components": [
+      {
+       "id": "C3.d19",
+       "uid": "d19bb74216",
+       "type": "narration",
+       "text": "Each letter is a note. A capital C is middle C, and a lowercase c is the C one octave higher.",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [],
+       "raw": "<Each letter is a note. A capital C is middle C, and a lowercase c is the C one octave higher.>",
+       "line": 25,
+       "words": 21
+      }
+     ]
+    },
+    {
+     "id": "G2",
+     "parallel": false,
+     "line": 26,
+     "components": [
+      {
+       "id": "C3.69e",
+       "uid": "69e862bc6f",
+       "type": "image",
+       "text": "show image of a treble staff with two notes, middle C on its ledger line and the C an octave up in the third space, the letters \"C\" and \"c\" in large monospace type under each",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [
+        "pitch-c"
+       ],
+       "raw": "<show image of a treble staff with two notes, middle C on its ledger line and the C an octave up in the third space, the letters \"C\" and \"c\" in large monospace type under each #pitch-c>",
+       "line": 26,
+       "words": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C4",
+   "uid": "d1821ec799",
+   "name": "length",
+   "variant": null,
+   "alternate": false,
+   "line": 28,
+   "note": "",
+   "groups": [
+    {
+     "id": "G1",
+     "parallel": false,
+     "line": 30,
+     "components": [
+      {
+       "id": "C4.1db",
+       "uid": "1db0d55d4e",
+       "type": "narration",
+       "text": "A slash cuts a note in half. So C slash is an eighth note, half a beat, and two of them fill the space of one plain C.",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [],
+       "raw": "<A slash cuts a note in half. So C slash is an eighth note, half a beat, and two of them fill the space of one plain C.>",
+       "line": 30,
+       "words": 28
+      }
+     ]
+    },
+    {
+     "id": "G2",
+     "parallel": false,
+     "line": 31,
+     "components": [
+      {
+       "id": "C4.543",
+       "uid": "5439ba7e0b",
+       "type": "image",
+       "text": "show image of two panels side by side: \"C\" over a single quarter note, and \"C/ C/\" over two beamed eighth notes, the same width on the page, with \"1 beat\" under both",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [
+        "length-slash"
+       ],
+       "raw": "<show image of two panels side by side: \"C\" over a single quarter note, and \"C/ C/\" over two beamed eighth notes, the same width on the page, with \"1 beat\" under both #length-slash>",
+       "line": 31,
+       "words": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C5",
+   "uid": "5b175e773f",
+   "name": "the bars",
+   "variant": null,
+   "alternate": false,
+   "line": 33,
+   "note": "Slow and even: one bar at a time, the bar lit up red in the score and in the text at the same moment, everything else gray.",
+   "groups": [
+    {
+     "id": "G1",
+     "parallel": false,
+     "line": 38,
+     "components": [
+      {
+       "id": "C5.39d",
+       "uid": "39ddb9e13a",
+       "type": "narration",
+       "text": "Bar one is G for one beat, then C, D, E, F as four quick eighth notes. One beat, plus four halves, makes three.",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [],
+       "raw": "<Bar one is G for one beat, then C, D, E, F as four quick eighth notes. One beat, plus four halves, makes three.>",
+       "line": 38,
+       "words": 24
+      }
+     ]
+    },
+    {
+     "id": "G2",
+     "parallel": false,
+     "line": 39,
+     "components": [
+      {
+       "id": "C5.d45",
+       "uid": "d4538031d0",
+       "type": "image",
+       "text": "show image of the score with bar 1 in red and the rest gray, and under it the ABC line with \"G C/ D/ E/ F/\" in red",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [
+        "bar-1"
+       ],
+       "raw": "<show image of the score with bar 1 in red and the rest gray, and under it the ABC line with \"G C/ D/ E/ F/\" in red #bar-1>",
+       "line": 39,
+       "words": 0
+      }
+     ]
+    },
+    {
+     "id": "G3",
+     "parallel": false,
+     "line": 40,
+     "components": [
+      {
+       "id": "C5.ea0",
+       "uid": "ea08b5263a",
+       "type": "narration",
+       "text": "Bar two is G, C, C. Three plain letters, three beats.",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [],
+       "raw": "<Bar two is G, C, C. Three plain letters, three beats.>",
+       "line": 40,
+       "words": 11
+      }
+     ]
+    },
+    {
+     "id": "G4",
+     "parallel": false,
+     "line": 41,
+     "components": [
+      {
+       "id": "C5.794",
+       "uid": "794660807e",
+       "type": "image",
+       "text": "show image of the same score and ABC line with bar 2 in red, same framing",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [
+        "bar-2"
+       ],
+       "raw": "<show image of the same score and ABC line with bar 2 in red, same framing #bar-2>",
+       "line": 41,
+       "words": 0
+      }
+     ]
+    },
+    {
+     "id": "G5",
+     "parallel": false,
+     "line": 42,
+     "components": [
+      {
+       "id": "C5.ecc",
+       "uid": "ecce84f383",
+       "type": "narration",
+       "text": "Bar three is the same shape as bar one, a step higher: A, then F, G, A, B.",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [],
+       "raw": "<Bar three is the same shape as bar one, a step higher: A, then F, G, A, B.>",
+       "line": 42,
+       "words": 18
+      }
+     ]
+    },
+    {
+     "id": "G6",
+     "parallel": false,
+     "line": 43,
+     "components": [
+      {
+       "id": "C5.c88",
+       "uid": "c88c92a25a",
+       "type": "image",
+       "text": "show image of the same score and ABC line with bar 3 in red, same framing",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [
+        "bar-3"
+       ],
+       "raw": "<show image of the same score and ABC line with bar 3 in red, same framing #bar-3>",
+       "line": 43,
+       "words": 0
+      }
+     ]
+    },
+    {
+     "id": "G7",
+     "parallel": false,
+     "line": 44,
+     "components": [
+      {
+       "id": "C5.a04",
+       "uid": "a0448a237c",
+       "type": "narration",
+       "text": "And bar four jumps up to the high c, then back down to C, C.",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [],
+       "raw": "<And bar four jumps up to the high c, then back down to C, C.>",
+       "line": 44,
+       "words": 15
+      }
+     ]
+    },
+    {
+     "id": "G8",
+     "parallel": false,
+     "line": 45,
+     "components": [
+      {
+       "id": "C5.5a8",
+       "uid": "5a856b44d0",
+       "type": "image",
+       "text": "show image of the same score and ABC line with bar 4 in red, same framing",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [
+        "bar-4"
+       ],
+       "raw": "<show image of the same score and ABC line with bar 4 in red, same framing #bar-4>",
+       "line": 45,
+       "words": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C6",
+   "uid": "58cbb9d770",
+   "name": "the check",
+   "variant": null,
+   "alternate": false,
+   "line": 47,
+   "note": "",
+   "groups": [
+    {
+     "id": "G1",
+     "parallel": false,
+     "line": 49,
+     "components": [
+      {
+       "id": "C6.6ae",
+       "uid": "6aec9ffc30",
+       "type": "narration",
+       "text": "Every bar should add up to three. If one doesn't, then a note is missing, or a bar line is in the wrong place.",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [],
+       "raw": "<Every bar should add up to three. If one doesn't, then a note is missing, or a bar line is in the wrong place.>",
+       "line": 49,
+       "words": 24
+      }
+     ]
+    },
+    {
+     "id": "G2",
+     "parallel": false,
+     "line": 50,
+     "components": [
+      {
+       "id": "C6.271",
+       "uid": "2719252648",
+       "type": "image",
+       "text": "show image of the four bars written as text with a small \"3\" under each bar, all four in gray, checkmarks in red",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [
+        "bar-sums"
+       ],
+       "raw": "<show image of the four bars written as text with a small \"3\" under each bar, all four in gray, checkmarks in red #bar-sums>",
+       "line": 50,
+       "words": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C7",
+   "uid": "1bf9c08276",
+   "name": "payoff",
+   "variant": null,
+   "alternate": false,
+   "line": 52,
+   "note": "Let the music run clean at the end, no voice over it.",
+   "groups": [
+    {
+     "id": "G1",
+     "parallel": false,
+     "line": 56,
+     "components": [
+      {
+       "id": "C7.093",
+       "uid": "093fff0b5f",
+       "type": "narration",
+       "text": "That's the whole idea. Four bars of music, in about forty characters. Here it is again.",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [],
+       "raw": "<That's the whole idea. Four bars of music, in about forty characters. Here it is again.>",
+       "line": 56,
+       "words": 16
+      }
+     ]
+    },
+    {
+     "id": "G2",
+     "parallel": false,
+     "line": 57,
+     "components": [
+      {
+       "id": "C7.5a4",
+       "uid": "5a4a180b87",
+       "type": "image",
+       "text": "show image of the complete ABC text, the same framing as the hook",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [
+        "abc-full"
+       ],
+       "raw": "<show image of the complete ABC text, the same framing as the hook #abc-full>",
+       "line": 57,
+       "words": 0
+      }
+     ]
+    },
+    {
+     "id": "G3",
+     "parallel": true,
+     "line": 58,
+     "components": [
+      {
+       "id": "C7.91c",
+       "uid": "91c31012a1",
+       "type": "image",
+       "text": "show image of the four bars engraved, nothing highlighted, the same framing as the cold open",
+       "dur_s": null,
+       "essential": false,
+       "unsure": false,
+       "tags": [
+        "score-plain"
+       ],
+       "raw": "<show image of the four bars engraved, nothing highlighted, the same framing as the cold open #score-plain>",
+       "line": 58,
+       "words": 0
+      },
+      {
+       "id": "C7.e15",
+       "uid": "e15bcf8d8c",
+       "type": "audio",
+       "text": "audio of the four bars of the Minuet on piano again, full volume, nothing spoken over it",
+       "dur_s": 8.0,
+       "essential": true,
+       "unsure": false,
+       "tags": [
+        "minuet-piano-end"
+       ],
+       "raw": "<audio of the four bars of the Minuet on piano again, full volume, nothing spoken over it ~8s ! #minuet-piano-end>",
+       "line": 58,
+       "words": 0
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "warnings": []
+}

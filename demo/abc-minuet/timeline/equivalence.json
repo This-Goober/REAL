@@ -1,0 +1,47 @@
+{
+ "equal": true,
+ "header": {
+  "fps": {
+   "otio": 30,
+   "fcpxml": 30
+  },
+  "w": {
+   "otio": 1920,
+   "fcpxml": 1920
+  },
+  "h": {
+   "otio": 1080,
+   "fcpxml": 1080
+  },
+  "total_f": {
+   "otio": 2504,
+   "fcpxml": 2504
+  },
+  "spine_end_f": {
+   "otio": 2504,
+   "fcpxml": 2504
+  }
+ },
+ "events": {
+  "n_otio": 12,
+  "n_fcpxml": 12,
+  "only_in_otio": [],
+  "only_in_fcpxml": []
+ },
+ "audio": {
+  "n_otio": 10,
+  "n_fcpxml": 10,
+  "only_in_otio": [],
+  "only_in_fcpxml": []
+ },
+ "transitions": {
+  "n_otio": 0,
+  "n_fcpxml": 0,
+  "only_in_otio": [],
+  "only_in_fcpxml": []
+ },
+ "files": {
+  "otio": "/home/henrytan/git/REAL-demo-abc/demo/abc-minuet/timeline/minuet-abc.otio",
+  "fcpxml": "/home/henrytan/git/REAL-demo-abc/demo/abc-minuet/timeline/minuet-abc.fcpxml"
+ }
+}

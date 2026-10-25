@@ -1,0 +1,136 @@
+{
+ "engine": "F5-TTS (F5TTS_v1_Base, vocos)",
+ "reference": "demo/paganini-no23/media/Audio/take-01.wav",
+ "clip": null,
+ "reference_text": "So I have a community performance today and I'm going to be performing Paganini's twenty-third Caprice for solo violin.",
+ "speed": 1.0,
+ "nfe": 32,
+ "takes": [
+  {
+   "file": "01-hook-1.mp3",
+   "name": "hook",
+   "text": "That's the opening of the Minuet in G, from Anna Magdalena Bach's notebook. Here it is in C, written as a single line of text.",
+   "seed": 7,
+   "dur_s": 7.78,
+   "heard": "That's the opening of the minuet in G from Anna Magdalena Bach's notebook. Here it is in C, written as a single line of text.",
+   "match": 1.0
+  },
+  {
+   "file": "01-hook-2.mp3",
+   "name": "hook",
+   "text": "That's the opening of the Minuet in G, from Anna Magdalena Bach's notebook. Here it is in C, written as a single line of text.",
+   "seed": 8,
+   "dur_s": 7.85,
+   "heard": "That's the opening of the minuit in G from Anna Magdalena Bach's notebook. Here it is in C, written as a single line of text.",
+   "match": 0.963
+  },
+  {
+   "file": "02-the-header-1.mp3",
+   "name": "the-header",
+   "text": "The lines at the top set the rules. M is the meter, three beats in every bar. L is the default length, so a plain letter lasts one beat. And K is the key, C, which means no sharps or flats.",
+   "seed": 7,
+   "dur_s": 11.9,
+   "heard": "The lines at the top set the rules. M is the meter three beats in every bar. L is the default length, so a plain letter lasts one beat. And K is the key, C, which means no sharps or flats.",
+   "match": 1.0
+  },
+  {
+   "file": "02-the-header-2.mp3",
+   "name": "the-header",
+   "text": "The lines at the top set the rules. M is the meter, three beats in every bar. L is the default length, so a plain letter lasts one beat. And K is the key, C, which means no sharps or flats.",
+   "seed": 8,
+   "dur_s": 12.1,
+   "heard": "The lines at the top set the rules. M is the meter, three beats in every bar. L is the default length, so a plain letter lasts one beat. And K is the key, C, which means no sharps or flats.",
+   "match": 1.0
+  },
+  {
+   "file": "03-pitch-1.mp3",
+   "name": "pitch",
+   "text": "Each letter is a note. A capital C is middle C, and a lowercase c is the C one octave higher.",
+   "seed": 7,
+   "dur_s": 5.62,
+   "heard": "Each letter is a note. A capital C is middle C and a lowercase c is the C1 octave higher.",
+   "match": 1.0
+  },
+  {
+   "file": "03-pitch-2.mp3",
+   "name": "pitch",
+   "text": "Each letter is a note. A capital C is middle C, and a lowercase c is the C one octave higher.",
+   "seed": 8,
+   "dur_s": 5.59,
+   "heard": "Each letter is a note, a capital C is middle C, and a lowercase c is the C1 octave higher.",
+   "match": 1.0
+  },
+  {
+   "file": "04-length-1.mp3",
+   "name": "length",
+   "text": "A slash cuts a note in half. So C slash is an eighth note, half a beat, and two of them fill the space of one plain C.",
+   "seed": 7,
+   "dur_s": 7.27,
+   "heard": "A slash cuts a note in half. So C slash is an eighth note, half a beat, and two of them fill the space of one plain C.",
+   "match": 1.0
+  },
+  {
+   "file": "04-length-2.mp3",
+   "name": "length",
+   "text": "A slash cuts a note in half. So C slash is an eighth note, half a beat, and two of them fill the space of one plain C.",
+   "seed": 8,
+   "dur_s": 7.44,
+   "heard": "slash cuts a note in half. So C slash is an eighth note, half a beat, and two of them fill the space of one plain C.",
+   "match": 0.982
+  },
+  {
+   "file": "05-the-bars-1.mp3",
+   "name": "the-bars",
+   "text": "Bar one is G for one beat, then C, D, E, F as four quick eighth notes. One beat, plus four halves, makes three. Bar two is G, C, C. Three plain letters, three beats. Bar three is the same shape as bar one, a step higher: A, then F, G, A, B. And bar four jumps up to the high c, then back down to C, C.",
+   "seed": 7,
+   "dur_s": 19.13,
+   "heard": "Bar one is G for one beat, then C, D, E, F as four quick eighth notes. One beat plus four halves makes three. Bar two is G, C, C, three plain letters, three beats. Bar three is the same shape as bar one, a step higher A than F, G, A, B, and bar four jumps up to the high C, then back down to C, C.",
+   "match": 0.985
+  },
+  {
+   "file": "05-the-bars-2.mp3",
+   "name": "the-bars",
+   "text": "Bar one is G for one beat, then C, D, E, F as four quick eighth notes. One beat, plus four halves, makes three. Bar two is G, C, C. Three plain letters, three beats. Bar three is the same shape as bar one, a step higher: A, then F, G, A, B. And bar four jumps up to the high c, then back down to C, C.",
+   "seed": 8,
+   "dur_s": 19.2,
+   "heard": "Bar 1 is G for 1 beat, then C, D, E, F as 4, quick 8th notes, 1 beat, plus 4 halves, makes 3. Bar 2 is G, C, C, 3 plain letters, 3 beats. Bar 3 is the same shape as bar 1, a step higher A, then F, G, A, B. And bar 4 jumps up to the high C, then back down to C, C.",
+   "match": 0.978
+  },
+  {
+   "file": "06-the-check-1.mp3",
+   "name": "the-check",
+   "text": "Every bar should add up to three. When one doesn't, a note is missing, or a bar line is in the wrong place.",
+   "seed": 7,
+   "dur_s": 6.55,
+   "heard": "Every bar should add up to three. When a note is missing or a bar line is in the wrong place,",
+   "match": 0.933
+  },
+  {
+   "file": "06-the-check-2.mp3",
+   "name": "the-check",
+   "text": "Every bar should add up to three. When one doesn't, a note is missing, or a bar line is in the wrong place.",
+   "seed": 8,
+   "dur_s": 5.78,
+   "heard": "Every bar should add up to 3 when a note is missing or a bar line is in the wrong place.",
+   "match": 0.933
+  },
+  {
+   "file": "07-payoff-1.mp3",
+   "name": "payoff",
+   "text": "That's the whole idea: four bars of music in about forty characters. Here it is again.",
+   "seed": 7,
+   "dur_s": 5.14,
+   "heard": "That's the whole idea of four bars of music in about 40 characters. Here it is again.",
+   "match": 0.889
+  },
+  {
+   "file": "07-payoff-2.mp3",
+   "name": "payoff",
+   "text": "That's the whole idea: four bars of music in about forty characters. Here it is again.",
+   "seed": 8,
+   "dur_s": 5.18,
+   "heard": "That's the whole idea of four bars of music in about 40 characters. Here it is again.",
+   "match": 0.889
+  }
+ ]
+}

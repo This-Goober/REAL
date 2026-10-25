@@ -1,0 +1,246 @@
+{
+ "project": "The Minuet in ABC",
+ "event": "REAL",
+ "frame_rate": "30",
+ "width": 1920,
+ "height": 1080,
+ "assets_root": "/Users/Shared/REAL/demo/abc-minuet/media",
+ "beats": [
+  {
+   "type": "image",
+   "src": "Images/score-plain.png",
+   "name": "B1 hook (1/2)",
+   "width": 1920,
+   "height": 1080,
+   "note": "narration: That's the opening of the Minuet in G, from Anna Magdalena Bach's notebook. Here it is in C, written as a single line of text.  |  from C1/C1.1c5  |  words 0\u201324",
+   "duration": 8.0
+  },
+  {
+   "type": "image",
+   "src": "Images/abc-full.png",
+   "name": "B1 hook (2/2)",
+   "width": 1920,
+   "height": 1080,
+   "note": "picked by claude (confidence: high); also considered A03, A06, A07",
+   "duration": 8.333333
+  },
+  {
+   "type": "image",
+   "src": "Images/abc-header.png",
+   "name": "B2 the header",
+   "width": 1920,
+   "height": 1080,
+   "note": "narration: The lines at the top set the rules. M is the meter, three beats in every bar. L is the default length, so a plain letter lasts one beat. And K is the key, C, which means no sharps or flats.  |  from C2/C2.625  |  words 25\u201365",
+   "duration": 12.6
+  },
+  {
+   "type": "image",
+   "src": "Images/pitch-c.png",
+   "name": "B3 pitch",
+   "width": 1920,
+   "height": 1080,
+   "note": "narration: Each letter is a note. A capital C is middle C, and a lowercase c is the C one octave higher.  |  from C3/C3.d19  |  words 66\u201386",
+   "duration": 6.266667
+  },
+  {
+   "type": "image",
+   "src": "Images/length-slash.png",
+   "name": "B4 length",
+   "width": 1920,
+   "height": 1080,
+   "note": "narration: A slash cuts a note in half. So C slash is an eighth note, half a beat, and two of them fill the space of one plain C.  |  from C4/C4.1db  |  words 87\u2013114",
+   "duration": 7.933333
+  },
+  {
+   "type": "image",
+   "src": "Images/bar-1.png",
+   "name": "B5 the bars",
+   "width": 1920,
+   "height": 1080,
+   "note": "narration: Bar one is G for one beat, then C, D, E, F as four quick eighth notes. One beat, plus four halves, makes three.  |  from C5/C5.39d  |  words 115\u2013138",
+   "duration": 7.4
+  },
+  {
+   "type": "image",
+   "src": "Images/bar-2.png",
+   "name": "B6 the bars",
+   "width": 1920,
+   "height": 1080,
+   "note": "narration: Bar two is G, C, C. Three plain letters, three beats.  |  from C5/C5.ea0  |  words 139\u2013149",
+   "duration": 3.433333
+  },
+  {
+   "type": "image",
+   "src": "Images/bar-3.png",
+   "name": "B7 the bars",
+   "width": 1920,
+   "height": 1080,
+   "note": "narration: Bar three is the same shape as bar one, a step higher: A, then F, G, A, B.  |  from C5/C5.ecc  |  words 150\u2013167",
+   "duration": 4.9
+  },
+  {
+   "type": "image",
+   "src": "Images/bar-4.png",
+   "name": "B8 the bars",
+   "width": 1920,
+   "height": 1080,
+   "note": "narration: And bar four jumps up to the high c, then back down to C, C.  |  from C5/C5.a04  |  words 168\u2013182",
+   "duration": 4.066667
+  },
+  {
+   "type": "image",
+   "src": "Images/bar-sums.png",
+   "name": "B9 the check",
+   "width": 1920,
+   "height": 1080,
+   "note": "narration: Every bar should add up to three. If one doesn't, then a note is missing, or a bar line is in the wrong place.  |  from C6/C6.6ae  |  words 183\u2013206",
+   "duration": 7.333333
+  },
+  {
+   "type": "image",
+   "src": "Images/abc-full.png",
+   "name": "B10 payoff (1/2)",
+   "width": 1920,
+   "height": 1080,
+   "note": "narration: That's the whole idea. Four bars of music, in about forty characters. Here it is again.  |  from C7/C7.093  |  words 207\u2013222",
+   "duration": 5.2
+  },
+  {
+   "type": "image",
+   "src": "Images/score-plain.png",
+   "name": "B10 payoff (2/2)",
+   "width": 1920,
+   "height": 1080,
+   "note": "picked by claude (confidence: high); also considered A06, A07, A08",
+   "duration": 8.0
+  }
+ ],
+ "connected": [
+  {
+   "src": "Audio/narration-master.mp3",
+   "lane": -1,
+   "role": "dialogue",
+   "offset": 0.0,
+   "duration": 16.433333,
+   "start": 0.0,
+   "asset_duration": 75.53,
+   "name": "narration \u2014 narration-master.mp3",
+   "note": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares anna, bach's, here, line, magdalena (+3.0); narration component / audio asset (+2.0)"
+  },
+  {
+   "src": "Audio/narration-master.mp3",
+   "lane": -1,
+   "role": "dialogue",
+   "offset": 16.433333,
+   "duration": 12.6,
+   "start": 16.433333,
+   "asset_duration": 75.53,
+   "name": "narration \u2014 narration-master.mp3",
+   "note": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares every (+0.8); shows shares bar, beat, beats, default, every (+3.0)"
+  },
+  {
+   "src": "Audio/narration-master.mp3",
+   "lane": -1,
+   "role": "dialogue",
+   "offset": 29.033333,
+   "duration": 6.266667,
+   "start": 29.033333,
+   "asset_duration": 75.53,
+   "name": "narration \u2014 narration-master.mp3",
+   "note": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares capital, each, higher, letter, lowercase (+3.0); narration component / audio asset (+2.0)"
+  },
+  {
+   "src": "Audio/narration-master.mp3",
+   "lane": -1,
+   "role": "dialogue",
+   "offset": 35.3,
+   "duration": 7.933333,
+   "start": 35.3,
+   "asset_duration": 75.53,
+   "name": "narration \u2014 narration-master.mp3",
+   "note": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares beat, cuts, eighth, fill, half (+3.0); narration component / audio asset (+2.0)"
+  },
+  {
+   "src": "Audio/narration-master.mp3",
+   "lane": -1,
+   "role": "dialogue",
+   "offset": 43.233333,
+   "duration": 10.833333,
+   "start": 43.233333,
+   "asset_duration": 75.53,
+   "name": "narration \u2014 narration-master.mp3",
+   "note": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares bar, beat, eighth, four, halves (+3.0); narration component / audio asset (+2.0)"
+  },
+  {
+   "src": "Audio/narration-master.mp3",
+   "lane": -1,
+   "role": "dialogue",
+   "offset": 54.066667,
+   "duration": 8.966667,
+   "start": 54.066667,
+   "asset_duration": 75.53,
+   "name": "narration \u2014 narration-master.mp3",
+   "note": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares bar, higher, same, shape, step (+3.0); narration component / audio asset (+2.0)"
+  },
+  {
+   "src": "Audio/narration-master.mp3",
+   "lane": -1,
+   "role": "dialogue",
+   "offset": 63.033333,
+   "duration": 7.333333,
+   "start": 63.033333,
+   "asset_duration": 75.53,
+   "name": "narration \u2014 narration-master.mp3",
+   "note": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares every (+0.8); shows shares add, bar, doesn't, every, line (+3.0)"
+  },
+  {
+   "src": "Audio/narration-master.mp3",
+   "lane": -1,
+   "role": "dialogue",
+   "offset": 70.366667,
+   "duration": 5.133333,
+   "start": 70.366667,
+   "asset_duration": 75.53,
+   "name": "narration \u2014 narration-master.mp3",
+   "note": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares about, again, bars, characters, forty (+3.0); narration component / audio asset (+2.0)"
+  },
+  {
+   "src": "Audio/minuet-piano.mp3",
+   "lane": -4,
+   "role": "effects",
+   "offset": 0.0,
+   "duration": 8.0,
+   "start": 0.0,
+   "asset_duration": 8.04,
+   "name": "sfx \u2014 minuet-piano.mp3",
+   "note": "audio of the first four bars of the Minuet in G, transposed to C, on a plain piano, steady minuet tempo, no voice over it, full volume"
+  },
+  {
+   "src": "Audio/minuet-piano-end.mp3",
+   "lane": -4,
+   "role": "effects",
+   "offset": 75.466667,
+   "duration": 8.0,
+   "start": 0.0,
+   "asset_duration": 8.04,
+   "name": "sfx \u2014 minuet-piano-end.mp3",
+   "note": "audio of the four bars of the Minuet on piano again, full volume, nothing spoken over it"
+  }
+ ],
+ "_generated_by": "adapt.py \u2014 regenerate from reel.json, never hand-edit",
+ "_clock": {
+  "mode": "measured",
+  "total_s": 83.47,
+  "rate_wps": 3.576,
+  "rate_source": "rates.json@2026-08-03 v3",
+  "note": "measured first \u2014 word-level alignment (223 words); placement decided on the recording"
+ },
+ "assets_root_local": "/home/henrytan/git/REAL-demo-abc/demo/abc-minuet/media",
+ "_parity": {
+  "layers_in": 12,
+  "visual_elements_out": 12,
+  "audio_lanes_in": 12,
+  "connected_out": 10,
+  "dropped": []
+ }
+}
