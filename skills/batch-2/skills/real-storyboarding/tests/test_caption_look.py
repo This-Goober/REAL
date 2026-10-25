@@ -57,6 +57,34 @@ class CaptionLookTests(unittest.TestCase):
         _L, _log, unhandled = self.apply(reel(), 'L2 position = somewhere')
         self.assertEqual(len(unhandled), 1)
 
+    def test_hold_until_the_next_caption(self):
+        r = reel()
+        log, unhandled = [], []
+        revise.apply_one(r, 'B1', 'add text = "its / work" anchor 3', {"words": [
+            {"i": i, "w": w, "start": float(i), "end": float(i) + 0.8} for i, w in enumerate("it shows its work".split())]},
+            log, unhandled)
+        self.assertEqual(unhandled, [])
+        new = r['beats'][0]['layers'][2]
+        self.assertEqual(new['content'], 'its\nwork')             # " / " breaks the line
+        self.assertIsInstance(new['source_component'], str)        # the reel schema requires one
+        for line in ('L2 hold = next', 'L3 hold = next'):
+            self.apply(r, line)
+        from real_core import settle_holds
+        self.assertEqual(settle_holds(r), 2)
+        first, second = r['beats'][0]['layers'][1], r['beats'][0]['layers'][2]
+        self.assertAlmostEqual(first['t1'], second['t0'])          # held until the next caption
+        self.assertAlmostEqual(second['t1'], 6.0)                  # the last holds to the beat's end
+        # a dissolve into the next beat ends the hold where the dissolve starts
+        r['beats'].append(dict(id='B2', name='two', t0=6.0, t1=9.0, w0=4, w1=4, narration='x', layers=[],
+                               audio=[], flags=[], transition_in={'name': 'Cross Dissolve', 'dur_s': 1.0}))
+        settle_holds(r)
+        self.assertAlmostEqual(second['t1'], 5.5)
+        # off releases it
+        L, _log, unhandled = self.apply(r, 'L3 hold = off')
+        self.assertNotIn('hold_to_next', r['beats'][0]['layers'][2])
+        _L, _log, unhandled = self.apply(reel(), 'L2 hold = forever')
+        self.assertEqual(len(unhandled), 1)
+
     def test_refusals(self):
         L, _log, unhandled = self.apply(reel(), 'L1 size = 60')
         self.assertEqual(len(unhandled), 1)              # not a text layer

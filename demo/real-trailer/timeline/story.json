@@ -71,20 +71,20 @@
     },
     {
       "type": "video",
-      "src": "Videos/T-tracks.mov",
+      "src": "Videos/T-tracks-washi.mov",
       "name": "B4 the reel",
       "start": 0,
       "asset_duration": 7.2,
       "role": "effects",
       "volume_db": -60,
+      "note": "narration: Then the reel. Every picture is pinned to a word, not a timestamp, so re-recording the voice moves nothing you approved.  |  from C3/C3.301  |  words 39\u201359  |  flag text-type: classified as 'caption' by heuristic \u2014 confirm title / caption / subtitle in the tracks page  |  flag cut-moved: the footage ends 0.111s before the planned cut, so the cut moved earlier to 24.119s (still after the line ends)",
       "duration": 7.2,
-      "note": "narration: Then the reel. Every picture is pinned to a word, not a timestamp, so re-recording the voice moves nothing you approved.  |  from C3/C3.301  |  words 39\u201359  |  flag aspect-mismatch: A14 is 1920x1080 in a 9:16 reel \u2014 it will be cropped or letterboxed  |  flag text-type: classified as 'caption' by heuristic \u2014 confirm title / caption / subtitle in the tracks page  |  flag cut-moved: the footage ends 0.111s before the planned cut, so the cut moved earlier to 24.119s (still after the line ends)",
       "overlays": [
         {
           "font_size": 83,
           "position": [
-            0,
-            -620
+            0.0,
+            -692.0
           ],
           "font_face": "Bold",
           "shadow": true,
@@ -98,41 +98,144 @@
           ],
           "lane": 1,
           "offset": 2.0,
-          "duration": 1.566667
+          "duration": 2.566667
+        },
+        {
+          "font_size": 83,
+          "position": [
+            0.0,
+            -692.0
+          ],
+          "font_face": "Bold",
+          "shadow": true,
+          "text": "then\nthe reel",
+          "name": "B4.L3 \u2014 then\nthe reel",
+          "color": [
+            0.7215686274509804,
+            0.1803921568627451,
+            0.1411764705882353,
+            1
+          ],
+          "lane": 2,
+          "offset": 0.1,
+          "duration": 1.9
+        },
+        {
+          "font_size": 83,
+          "position": [
+            0.0,
+            -692.0
+          ],
+          "font_face": "Bold",
+          "shadow": true,
+          "text": "re-record\nthe voice",
+          "name": "B4.L4 \u2014 re-record\nthe voice",
+          "color": [
+            0.7215686274509804,
+            0.1803921568627451,
+            0.1411764705882353,
+            1
+          ],
+          "lane": 3,
+          "offset": 4.566667,
+          "duration": 0.966667
+        },
+        {
+          "font_size": 83,
+          "position": [
+            0.0,
+            -692.0
+          ],
+          "font_face": "Bold",
+          "shadow": true,
+          "text": "nothing\nmoves",
+          "name": "B4.L5 \u2014 nothing\nmoves",
+          "color": [
+            0.7215686274509804,
+            0.1803921568627451,
+            0.1411764705882353,
+            1
+          ],
+          "lane": 4,
+          "offset": 5.533333,
+          "duration": 1.666667
         }
       ]
     },
     {
       "type": "video",
-      "src": "Videos/T-finalcut-editor.mov",
+      "src": "Videos/T-finalcut-editor-washi.mov",
       "name": "B5 compile (1/2)",
       "start": 0,
-      "asset_duration": 6.07,
+      "asset_duration": 6.0,
       "role": "effects",
       "volume_db": -60,
+      "note": "narration: Last, a real timeline for Final Cut Pro or DaVinci Resolve: editable clips, titles, lanes. What it cannot represent, it refuses.  |  from C4/C4.1b6  |  words 60\u201380  |  flag text-type: classified as 'caption' by heuristic \u2014 confirm title / caption / subtitle in the tracks page",
       "duration": 3.933333,
-      "note": "narration: Last, a real timeline for Final Cut Pro or DaVinci Resolve: editable clips, titles, lanes. What it cannot represent, it refuses.  |  from C4/C4.1b6  |  words 60\u201380  |  flag aspect-mismatch: A03 is 1918x1200 in a 9:16 reel \u2014 it will be cropped or letterboxed  |  flag aspect-mismatch: A04 is 2160x1920 in a 9:16 reel \u2014 it will be cropped or letterboxed  |  flag text-type: classified as 'caption' by heuristic \u2014 confirm title / caption / subtitle in the tracks page"
-    },
-    {
-      "type": "video",
-      "src": "Videos/T-side-by-side.mov",
-      "name": "B5 compile (2/2)",
-      "start": 0,
-      "asset_duration": 8.0,
-      "role": "effects",
-      "volume_db": -60,
-      "duration": 6.666667,
       "overlays": [
         {
           "font_size": 83,
           "position": [
             0.0,
-            -440.0
+            -692.0
           ],
           "font_face": "Bold",
           "shadow": true,
-          "text": "refuses,\nnever\nguesses",
-          "name": "B5.L3 \u2014 refuses,\nnever\nguesses",
+          "text": "a real\ntimeline",
+          "name": "B5.L4 \u2014 a real\ntimeline",
+          "color": [
+            0.7215686274509804,
+            0.1803921568627451,
+            0.1411764705882353,
+            1
+          ],
+          "lane": 1,
+          "offset": 0.2,
+          "duration": 1.8
+        },
+        {
+          "font_size": 83,
+          "position": [
+            0.0,
+            -692.0
+          ],
+          "font_face": "Bold",
+          "shadow": true,
+          "text": "Final Cut Pro\nor Resolve",
+          "name": "B5.L5 \u2014 Final Cut Pro\nor Resolve",
+          "color": [
+            0.7215686274509804,
+            0.1803921568627451,
+            0.1411764705882353,
+            1
+          ],
+          "lane": 2,
+          "offset": 2.0,
+          "duration": 2.833333
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "src": "Videos/T-side-by-side-washi.mov",
+      "name": "B5 compile (2/2)",
+      "start": 0,
+      "asset_duration": 8.0,
+      "role": "effects",
+      "volume_db": -60,
+      "note": "picked by claude (confidence: high); also considered A05, A36, A38",
+      "duration": 6.666667,
+      "overlays": [
+        {
+          "font_size": 82,
+          "position": [
+            0.0,
+            -692.0
+          ],
+          "font_face": "Bold",
+          "shadow": true,
+          "text": "refuses never\nguesses",
+          "name": "B5.L3 \u2014 refuses never\nguesses",
           "color": [
             0.7215686274509804,
             0.1803921568627451,
@@ -141,7 +244,27 @@
           ],
           "lane": 1,
           "offset": 4.233333,
-          "duration": 1.566667
+          "duration": 1.966667
+        },
+        {
+          "font_size": 83,
+          "position": [
+            0.0,
+            -692.0
+          ],
+          "font_face": "Bold",
+          "shadow": true,
+          "text": "editable clips\ntitles, lanes",
+          "name": "B5.L6 \u2014 editable clips\ntitles, lanes",
+          "color": [
+            0.7215686274509804,
+            0.1803921568627451,
+            0.1411764705882353,
+            1
+          ],
+          "lane": 2,
+          "offset": 0.9,
+          "duration": 3.333333
         }
       ]
     },
@@ -180,7 +303,7 @@
       "start": 0.0,
       "asset_duration": 5.41,
       "name": "narration \u2014 take-02.wav",
-      "note": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares files, four, notebook (+2.0); role shares files, four, notebook (+2.0)"
+      "note": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares files, four, notebook (+2.2); role shares files, four, notebook (+2.2)"
     },
     {
       "src": "Audio/take-03.wav",
@@ -202,7 +325,7 @@
       "start": 0.0,
       "asset_duration": 6.93,
       "name": "narration \u2014 take-04.wav",
-      "note": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares reel (+0.7); role shares reel, voice (+1.0)"
+      "note": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares reel (+0.8); role shares reel, voice (+1.1)"
     },
     {
       "src": "Audio/take-05.wav",
@@ -249,8 +372,8 @@
   },
   "assets_root_local": "/Users/henrytan/Documents/git/REAL/demo/real-trailer/media",
   "_parity": {
-    "layers_in": 10,
-    "visual_elements_out": 10,
+    "layers_in": 16,
+    "visual_elements_out": 16,
     "audio_lanes_in": 7,
     "connected_out": 7,
     "dropped": []

@@ -178,7 +178,8 @@ python3 scripts/tracks.py tracks reel.json REEL-TRACKS.html --clock clock.json
 could not parse rather than dropping it**. Chat notes work too — same grammar,
 addressed by beat id (`B7: layer L1 = A03`). A caption's look is a creator
 decision in the same grammar — `B7: L2 size = 60`, `L2 color = #B82E24`,
-`L2 shadow = on`, `L2 position = center`, `L2 text = pinned / to words` (the
+`L2 shadow = on`, `L2 position = center`, `L2 hold = next` (on until the next
+caption, the beat's end or a dissolve), `L2 text = pinned / to words` (the
 ` / ` breaks the line) —
 and survives a rebuild like any other creator choice.
 

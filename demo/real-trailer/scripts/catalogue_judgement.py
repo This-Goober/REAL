@@ -55,22 +55,22 @@ J = {
         beat="B6",
         binds_to="a `<show image of a plain title card, MADE WITH REAL ...>` type component",
         tags=["real-title", "title-card", "payoff", "made-with-real"]),
-    "Videos/T-finalcut-editor.mov": dict(
+    "Videos/T-finalcut-editor-washi.mov": dict(
         role="★ The Paganini timeline inside Final Cut Pro (the creator's screen recording)",
-        shows="6.07 s, 1918x1200, 30 fps, silent. The whole Final Cut Pro window: the viewer top centre playing "
+        shows="6.0 s, 1080x1920, 30 fps, silent: a 1918x1200 recording cropped to cover the top three quarters of the frame, the bottom quarter the closing card's paper at 85 % opacity, the paper showing through; a news-style frame over it (head banner: seal, REAL, リアル, 結 COMPILE; lower strip: FINAL CUT PRO, the .fcpxml REAL wrote, imported). The Final Cut Pro window, its middle: the viewer top centre playing "
               "the tutorial with a yellow caption on it, the timeline across the bottom with the primary storyline, "
               "connected title clips above it and the playhead moving right. Window 16.0-22.0 s of the creator's "
               "93 s recording of the .fcpxml import.",
-        use="B5, under 'a real timeline for Final Cut Pro'. Landscape in a portrait reel: letterboxed, which is fine for four seconds.",
+        use="B5, under 'a real timeline for Final Cut Pro'. Already 9:16, so it fills the frame as is; the caption goes in the paper quarter.",
         beat="B5",
         binds_to="a `<video clip of a REAL timeline imported into Final Cut Pro ...>` type component",
         tags=["editor-finalcut", "final-cut-pro", "fcpxml", "timeline", "screen-recording"],
         temporal_notes={"start": "viewer shows the tutorial with a caption; playhead a third of the way along the timeline",
                         "end": "playhead ~4 s further right, lanes unchanged",
                         "moments": []}),
-    "Videos/T-side-by-side.mov": dict(
+    "Videos/T-side-by-side-washi.mov": dict(
         role="★ Final Cut Pro | DaVinci Resolve, the same storyboard side by side",
-        shows="8.0 s, 2160x1920, 30 fps, silent. Two 1080x1920 renders side by side, Final Cut Pro left, "
+        shows="8.0 s, 1080x1920, 30 fps, silent: the 2160x1920 two-panel movie cropped to cover the top three quarters of the frame (the inner two thirds of each panel), the bottom quarter the closing card's paper at 85 % opacity, the paper showing through; a news-style frame over it (結 COMPILE; FINAL CUT PRO · DAVINCI RESOLVE, one storyboard, two editors). Two 1080x1920 renders side by side, Final Cut Pro left, "
               "DaVinci Resolve right. The caption 'same interval, smaller space' lands at ~0.8 s on both, "
               "the cut to the fingerboard close-up at ~2.0 s on both, 'why not octaves?' at ~3.9 s on both. "
               "Window 33.4-41.4 s of the two-panel comparison movie of the current build.",
@@ -106,13 +106,12 @@ J = {
         beat="B3",
         binds_to="a `<show image of a screenshot of REAL's own ASSET-CATALOG.html ...>` type component",
         tags=["real-catalogue", "catalogue", "screenshot", "four-files"]),
-    "Videos/T-tracks.mov": dict(
+    "Videos/T-tracks-washi.mov": dict(
         role="★ This trailer's own REEL-TRACKS.html, the playhead moving",
-        shows="7.17 s, 1920x1080, 30 fps, silent. The tracks page of this very reel, captured by Chrome through "
+        shows="7.2 s, 1080x1920, 30 fps, silent: a 1920x1080 capture, its preview pane and the start of the lanes, covering the top three quarters of the frame, the bottom quarter the closing card's paper at 85 % opacity, the paper showing through; a news-style frame over it (転 STORYBOARD; THE TRACKS PAGE, this trailer's own storyboard). The tracks page of this very reel, captured by Chrome through "
               "its #t= deep link at 15 captures per second: the playhead crosses the hook and the first "
               "four-files beat (reel time 0-7.17 s), the preview pane composites the frame at the playhead, the "
-              "caption block 'it shows its work' sits on its anchor word in the text lane. Landscape; the "
-              "storyboard letterboxes it.",
+              "caption block 'it shows its work' sits on its anchor word in the text lane.",
         use="B4, under 'Every picture is pinned to a word, not a timestamp'. The beat the trailer exists for.",
         beat="B4",
         binds_to="a `<video clip of REAL's own REEL-TRACKS.html for this trailer, the playhead moving ...>` type component",

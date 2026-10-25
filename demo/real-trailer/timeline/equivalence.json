@@ -23,8 +23,8 @@
   }
  },
  "events": {
-  "n_otio": 10,
-  "n_fcpxml": 10,
+  "n_otio": 16,
+  "n_fcpxml": 16,
   "only_in_otio": [],
   "only_in_fcpxml": []
  },

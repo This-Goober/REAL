@@ -8,9 +8,9 @@
 # the Paganini performance) are not in the repository; only the excerpts are.
 #
 #   Videos/T-tutorial-render.mov   18.8–24.6 s of the Final Cut Pro export of demo/paganini-no23
-#   Videos/T-side-by-side.mov      33.4–41.4 s of that demo's two-panel comparison movie (silent)
-#   Videos/T-finalcut-editor.mov   16.0–22.0 s of the creator's screen recording of the import (silent, 30 fps)
-#   Videos/T-tracks.mov            this reel's own tracks page, captured frame by frame (capture_pages.py)
+#   Videos/T-side-by-side-washi.mov     33.4–41.4 s of that demo's two-panel comparison movie (silent), as a framed panel on washi
+#   Videos/T-finalcut-editor-washi.mov  16.0–22.0 s of the creator's screen recording of the import (silent), as a framed panel on washi
+#   Videos/T-tracks-washi.mov           this reel's own tracks page, captured frame by frame (capture_pages.py), as a framed panel on washi
 #   Images/T-notebook.png          this reel's own notebook, rendered in an editor-style page (capture_pages.py)
 #   Images/T-catalogue.png         this reel's own catalogue page (capture_pages.py)
 #   Images/T-title-made-with-real.png  the closing card (make_title_card.py)
@@ -30,8 +30,19 @@ FCP_RECORDING=${3:-$HOME/Desktop/final_cut_pro_fcpxml_paganini_no_23_tutorial.mo
 RECORDING=${4:-$HOME/Downloads/paganini_no23_fingering_studio_band.mp4}
 V=media/Videos; A=media/Audio; I=media/Images
 ffmpeg -v error -y -ss 18.8 -to 24.6 -i "$FCP_EXPORT" -c:v libx264 -crf 18 -pix_fmt yuv420p -c:a aac -b:a 160k "$V/T-tutorial-render.mov"
-ffmpeg -v error -y -ss 33.4 -to 41.4 -i "$SIDE_BY_SIDE" -c:v libx264 -crf 18 -pix_fmt yuv420p -an "$V/T-side-by-side.mov"
-ffmpeg -v error -y -ss 16.0 -to 22.0 -i "$FCP_RECORDING" -r 30 -c:v libx264 -crf 18 -pix_fmt yuv420p -an "$V/T-finalcut-editor.mov"
+# the landscape shots become panels across the top three quarters of a portrait
+# frame, cropped to cover it; the bottom quarter is the closing card's paper,
+# where the captions sit (scripts/panel.py)
+# at 85 % opacity, so the washi shows through, and each gets the news-style frame: head banner with the seal, REAL, リアル
+# and the step (結 compile), a lower strip saying what the shot is
+F=$(mktemp -d)
+python3 scripts/make_panel_frame.py "$F/editor.png" --step 結 --label COMPILE --of "4 / 4" --tag editor \
+    --headline "FINAL CUT PRO" --deck "the .fcpxml REAL wrote, imported"
+python3 scripts/make_panel_frame.py "$F/pair.png" --step 結 --label COMPILE --of "4 / 4" --tag pair \
+    --headline "FINAL CUT PRO · DAVINCI RESOLVE" --deck "one storyboard, two editors"
+python3 scripts/panel.py "$SIDE_BY_SIDE" "$V/T-side-by-side-washi.mov" --start 33.4 --end 41.4 --opacity 0.85 --frame "$F/pair.png"
+python3 scripts/panel.py "$FCP_RECORDING" "$V/T-finalcut-editor-washi.mov" --start 16.0 --end 22.0 --opacity 0.85 --frame "$F/editor.png"
+rm -rf "$F"
 ffmpeg -v error -y -ss 0.2 -to 8.1 -i "$RECORDING" -vn -ac 1 -ar 48000 -c:a pcm_s16le /tmp/bed-a.wav
 ffmpeg -v error -y -ss 201.3 -to 220.3 -i "$RECORDING" -vn -ac 1 -ar 48000 -c:a pcm_s16le /tmp/bed-b.wav
 ffmpeg -v error -y -i /tmp/bed-a.wav -i /tmp/bed-b.wav -i /tmp/bed-a.wav -i /tmp/bed-b.wav \

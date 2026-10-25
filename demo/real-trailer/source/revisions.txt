@@ -2,10 +2,9 @@
 # (python3 .../revise.py apply reel.json revisions.txt). Applied after the
 # second catalogue pass bound the two page captures.
 
-# the three landscape captures are letterboxed, not cropped to fill the portrait frame
-B4: L1 fit = fit
-B5: L1 fit = fit
-B5: L2 fit = fit
+# (the three landscape shots arrive as 9:16 panels — the shot across the top
+# three quarters, the closing card's paper below — so they fill the frame as
+# they are: no fit revision needed)
 
 # captions land on the word they are about
 B4: L2 anchor = pinned
@@ -26,12 +25,32 @@ B4: L2 text = pinned / to words
 B4: L2 size = 83
 B4: L2 color = #B82E24
 B4: L2 shadow = on
-B5: L3 text = refuses, / never / guesses
-B5: L3 size = 83
+# two lines, at the bottom like the others; at 83 pt "refuses never" would be
+# 86 % of the width, at 82 pt it is 85 %
+B5: L3 text = refuses never / guesses
+B5: L3 size = 82
 B5: L3 color = #B82E24
 B5: L3 shadow = on
-# Final Cut keeps a caption's first line at its position and adds lines below:
-# at the bottom position this third line ran off the frame. One line (1.25 em
-# at 83 pt, about 180 px) higher puts its last line where the two-line
-# captions' last line is.
-B5: L3 position = 0 -440
+
+# captions through B4 and B5, so the paper quarter under the shots is never
+# empty: each holds until the next one starts, the last until the dissolve
+B4: add text = "then / the reel" anchor Then
+B4: L3 size = 83; L3 color = #B82E24; L3 shadow = on; L3 hold = next
+B4: L2 hold = next
+B4: add text = "re-record / the voice" anchor re-recording
+B4: L4 size = 83; L4 color = #B82E24; L4 shadow = on; L4 hold = next
+B4: add text = "nothing / moves" anchor moves
+B4: L5 size = 83; L5 color = #B82E24; L5 shadow = on; L5 hold = next
+B5: add text = "a real / timeline" anchor Last
+B5: L4 size = 83; L4 color = #B82E24; L4 shadow = on; L4 hold = next
+B5: add text = "Final Cut Pro / or Resolve" anchor Final
+B5: L5 size = 83; L5 color = #B82E24; L5 shadow = on; L5 hold = next
+B5: add text = "editable clips / titles, lanes" anchor editable
+B5: L6 size = 83; L6 color = #B82E24; L6 shadow = on; L6 hold = next
+B5: L3 hold = next
+
+# the bottom captions half the font's height lower (83 pt draws about 144 px
+# tall in a 1080x1920 project; half is about 72 px), so they sit in the middle
+# of the paper quarter; one baseline for all eight, the 82-pt one included
+B4: L2 position = 0 -692; L3 position = 0 -692; L4 position = 0 -692; L5 position = 0 -692
+B5: L3 position = 0 -692; L4 position = 0 -692; L5 position = 0 -692; L6 position = 0 -692

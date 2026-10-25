@@ -143,6 +143,15 @@ reason this file exists at all.
   made. The creator's choices are not up for reconsideration; the skill's always
   are. Keep the distinction through every revision.
 
+### Captions that hold
+
+A text layer with `"hold_to_next": true` stays on screen until the next caption
+of its beat starts, else to the beat's end, else — when the next beat
+dissolves in — to where the dissolve starts. Its `t1` is derived, like every
+other time: revisions and `retime` recompute it (`dur_source: "to-next"`),
+so the hold follows the words when the clock changes. Set it with
+`B7: L2 hold = next`.
+
 ### Transitions
 
 A beat may carry `transition_in`: a cross dissolve of `dur_s` seconds into it,

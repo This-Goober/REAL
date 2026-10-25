@@ -331,6 +331,34 @@ def transition_problems(beat, prev_beat, assets_by_id):
     return out
 
 
+def settle_holds(reel):
+    """A caption marked `hold_to_next` stays on screen until the next caption of
+    its beat starts, or to the end of its beat, or — when the next beat
+    dissolves in — to where the dissolve starts (an overlay of the beat before
+    ends there). Recomputed after every revision and every retime, so the hold
+    follows the words when the clock changes. Returns how many were settled."""
+    beats = reel.get("beats") or []
+    n = 0
+    for k, b in enumerate(beats):
+        texts = [L for L in b.get("layers") or [] if L.get("kind") == "text"]
+        end_of_beat = float(b["t1"])
+        nxt = beats[k + 1] if k + 1 < len(beats) else None
+        tr = (nxt or {}).get("transition_in") or {}
+        if tr:
+            half = float(tr.get("dur_s") or tr.get("duration") or 0) / 2.0
+            end_of_beat = min(end_of_beat, float(nxt["t0"]) - half)
+        for L in texts:
+            if not L.get("hold_to_next"):
+                continue
+            t0 = float(L["t0"])
+            later = [float(M["t0"]) for M in texts if M is not L and float(M["t0"]) > t0 + 1e-6]
+            L["t1"] = min(later + [end_of_beat])
+            L["dur_source"] = "to-next"
+            L["dur_s"] = round(L["t1"] - t0, 4)
+            n += 1
+    return n
+
+
 def transition_overlap(prev_beat, beat):
     """Overlays that run into a dissolve. The dissolve into `beat` occupies the
     half-duration before and after the cut: an overlay of the beat before must

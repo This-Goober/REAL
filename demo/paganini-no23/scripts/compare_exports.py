@@ -136,6 +136,7 @@ def stream_stats(path, fps, specs):
     n = AN_W * AN_H * 3
     deltas, lumas = [], []
     inks = [[] for _ in specs]
+    bdeltas = [[] for _ in specs]      # luma change inside each band, frame to frame
     prev = None
     while True:
         buf = p.stdout.read(n)
@@ -143,13 +144,16 @@ def stream_stats(path, fps, specs):
             break
         rgb = np.frombuffer(buf, dtype=np.uint8).reshape(AN_H, AN_W, 3)
         y = (0.299 * rgb[..., 0] + 0.587 * rgb[..., 1] + 0.114 * rgb[..., 2]).astype(np.float32)
+        last = prev                    # the frame before this one, for the band changes below
         deltas.append(0.0 if prev is None else float(np.abs(y - prev).mean()))
         prev = y
         for k, ((y0, y1), mask) in enumerate(specs):
             inks[k].append(int(mask(rgb[y0:y1]).sum()))
+            bdeltas[k].append(0.0 if last is None else float(np.abs(y[y0:y1] - last[y0:y1]).mean()))
         lumas.append(y.reshape(PAIR_H, 2, PAIR_W, 2).mean(axis=(1, 3)).astype(np.uint8))
     p.stdout.close()
     p.wait()
+    stream_stats.band_deltas = [np.array(b) for b in bdeltas]
     return np.array(deltas), [np.array(i) for i in inks], np.stack(lumas) if lumas else np.zeros((0, PAIR_H, PAIR_W))
 
 
@@ -248,8 +252,9 @@ def audio_compare(a, b, windows, sr=16000):
             if c > best[1]:
                 best = (lag, c)
         rms_a, rms_b = np.sqrt((xa ** 2).mean()) + 1e-9, np.sqrt((xb ** 2).mean()) + 1e-9
-        out.append({"t0": t0, "lag_ms": round(best[0] * 1000.0 / sr, 2), "corr": round(best[1], 4),
-                    "level_b_minus_a_db": round(20 * np.log10(rms_b / rms_a), 2)})
+        # plain floats: NumPy scalars are not JSON and came out as null in report.json
+        out.append({"t0": t0, "lag_ms": round(float(best[0]) * 1000.0 / sr, 2), "corr": round(float(best[1]), 4),
+                    "level_b_minus_a_db": round(float(20 * np.log10(rms_b / rms_a)), 2)})
     return out
 
 
@@ -339,8 +344,10 @@ def main():
 
     print("decoding A ...", flush=True)
     dA, inkA, YA = stream_stats(A, fps, specs)
+    bdA = stream_stats.band_deltas
     print("decoding B ...", flush=True)
     dB, inkB, YB = stream_stats(B, fps, specs)
+    bdB = stream_stats.band_deltas
     report["frames"] = {"a": int(len(dA)), "b": int(len(dB)), "expected": total_f}
 
     # cuts and the constant offset between the exports
@@ -399,6 +406,20 @@ def main():
         band, mask = bands[k], masks[k]
         da = detect_caption(inkA[k], c["f0"], c["f1"])
         db = detect_caption(np.roll(inkB[k], -shift_b) if shift_b else inkB[k], c["f0"], c["f1"])
+        if args.captions_from_timeline:
+            # held captions abut: the band never empties between them, so where one
+            # replaces another the edge is the frame where the band changes most
+            for edge, f in (("on", c["f0"]), ("off", c["f1"])):
+                if not any(o is not c and abs((o["f1"] if edge == "on" else o["f0"]) - f) <= 1
+                           for o in captions):
+                    continue
+                for det, bd, sh in ((da, bdA[k], 0), (db, bdB[k], shift_b)):
+                    if det is None:
+                        continue
+                    lo, hi = max(1, f + sh - 6), min(len(bd), f + sh + 7)
+                    if hi > lo:
+                        det[edge] = int(lo + int(np.argmax(bd[lo:hi]))) - sh
+                        det["by_band_change"] = True
         mid = (c["f0"] + c["f1"]) // 2
         fa = grab(A, mid, fps, work / ("a-%04d.png" % mid))
         fb = grab(B, mid + shift_b, fps, work / ("b-%04d.png" % mid))

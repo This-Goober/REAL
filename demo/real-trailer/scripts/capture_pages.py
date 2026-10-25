@@ -9,8 +9,8 @@
 Every picture is taken by Google Chrome in headless mode, so what the trailer
 shows is the page as a browser renders it, not a mock-up. The notebook and the
 catalogue are captured at the trailer's own frame size (1080x1920); the tracks
-page keeps its natural landscape layout (1920x1080) and is letterboxed by the
-storyboard. `notebook` first wraps the Markdown in a plain
+page keeps its natural landscape layout (1920x1080), and scripts/panel.py
+makes it a panel across the top of the portrait frame. `notebook` first wraps the Markdown in a plain
 dark editor-like page (line numbers, monospace, the angle-bracket components
 in colour); `page` captures a page as is; `tracks` captures the tracks page
 once per frame with the playhead advanced through the page's #t= deep link

@@ -14,10 +14,10 @@
    "rate": "48000",
    "channels": 2
   },
-  "label": "Final Cut Pro render (FCPXML)"
+  "label": "Final Cut Pro (FCPXML)"
  },
  "b": {
-  "file": "real-trailer-preview.mp4",
+  "file": "real-trailer-davinciresolve.mp4",
   "width": 1080,
   "height": 1920,
   "fps": 30.0,
@@ -25,13 +25,13 @@
   "pix_fmt": "yuv420p",
   "color_space": "bt709",
   "color_transfer": "bt709",
-  "duration_s": 41.366667,
+  "duration_s": 41.450667,
   "audio": {
    "codec": "aac",
    "rate": "48000",
-   "channels": 1
+   "channels": 2
   },
-  "label": "REAL preview render (ffmpeg, from the OTIO)"
+  "label": "DaVinci Resolve (OTIO)"
  },
  "expected": {
   "fps": 30.0,
@@ -52,13 +52,43 @@
    ],
    [
     568,
-    615,
+    645,
     "pinned\nto words"
    ],
    [
+    730,
+    784,
+    "a real\ntimeline"
+   ],
+   [
     969,
-    1016,
-    "refuses,\nnever\nguesses"
+    1028,
+    "refuses never\nguesses"
+   ],
+   [
+    511,
+    568,
+    "then\nthe reel"
+   ],
+   [
+    784,
+    869,
+    "Final Cut Pro\nor Resolve"
+   ],
+   [
+    869,
+    969,
+    "editable clips\ntitles, lanes"
+   ],
+   [
+    645,
+    674,
+    "re-record\nthe voice"
+   ],
+   [
+    674,
+    724,
+    "nothing\nmoves"
    ]
   ],
   "stills": []
@@ -73,55 +103,55 @@
    "expected": 169,
    "a": 169,
    "a_minus_expected": 0,
-   "a_strength": 447.5,
+   "a_strength": 447.1,
    "b": 169,
    "b_minus_expected": 0,
-   "b_strength": 449.4
+   "b_strength": 377.9
   },
   {
    "expected": 344,
    "a": 344,
    "a_minus_expected": 0,
-   "a_strength": 20018827.4,
+   "a_strength": 20718519.2,
    "b": 344,
    "b_minus_expected": 0,
-   "b_strength": 177802.4
+   "b_strength": 62316.2
   },
   {
    "expected": 508,
    "a": 508,
    "a_minus_expected": 0,
-   "a_strength": 336642.6,
+   "a_strength": 403047.1,
    "b": 508,
    "b_minus_expected": 0,
-   "b_strength": 28899.2
+   "b_strength": 31313.4
   },
   {
    "expected": 724,
    "a": 724,
    "a_minus_expected": 0,
-   "a_strength": 1063.1,
+   "a_strength": 411.4,
    "b": 724,
    "b_minus_expected": 0,
-   "b_strength": 1157.9
+   "b_strength": 407.7
   },
   {
    "expected": 842,
    "a": 842,
    "a_minus_expected": 0,
-   "a_strength": 430.6,
+   "a_strength": 291.5,
    "b": 842,
    "b_minus_expected": 0,
-   "b_strength": 435.7
+   "b_strength": 287.1
   },
   {
    "expected": 1042,
-   "a": 1036,
-   "a_minus_expected": -6,
-   "a_strength": 2.8,
-   "b": 1040,
-   "b_minus_expected": -2,
-   "b_strength": 3.5
+   "a": 1043,
+   "a_minus_expected": 1,
+   "a_strength": 1.3,
+   "b": 1041,
+   "b_minus_expected": -1,
+   "b_strength": 1.4
   }
  ],
  "shift_b_minus_a_frames": 0,
@@ -130,101 +160,101 @@
   "mad_luma": {
    "all": {
     "n": 1241,
-    "mean": 1.686,
-    "median": 0.711,
-    "p05": 0.191,
-    "p95": 3.017,
-    "min": 0.1498,
-    "max": 34.961
+    "mean": 1.8609,
+    "median": 1.917,
+    "p05": 0.2485,
+    "p95": 3.0438,
+    "min": 0.0525,
+    "max": 5.8255
    },
    "with_caption": {
-    "n": 151,
-    "mean": 1.4983,
-    "median": 1.4974,
-    "p05": 1.4143,
-    "p95": 1.5912,
-    "min": 1.3621,
-    "max": 1.5954
+    "n": 568,
+    "mean": 1.6621,
+    "median": 1.4372,
+    "p05": 1.1142,
+    "p95": 2.251,
+    "min": 1.1129,
+    "max": 2.5764
    },
    "without_caption": {
-    "n": 1090,
-    "mean": 1.712,
-    "median": 0.7082,
-    "p05": 0.1886,
-    "p95": 3.017,
-    "min": 0.1498,
-    "max": 34.961
+    "n": 673,
+    "mean": 2.0288,
+    "median": 2.5819,
+    "p05": 0.1512,
+    "p95": 3.0443,
+    "min": 0.0525,
+    "max": 5.8255
    }
   },
   "ssim": {
    "all": {
     "n": 1241,
-    "mean": 0.9938,
+    "mean": 0.9893,
     "median": 0.9968,
-    "p05": 0.9706,
-    "p95": 0.9994,
-    "min": 0.8728,
-    "max": 0.9994
+    "p05": 0.9725,
+    "p95": 0.9996,
+    "min": 0.9712,
+    "max": 0.9996
    },
    "with_caption": {
-    "n": 151,
-    "mean": 0.976,
-    "median": 0.9817,
-    "p05": 0.9632,
-    "p95": 0.982,
-    "min": 0.9631,
-    "max": 0.9822
+    "n": 568,
+    "mean": 0.9792,
+    "median": 0.9825,
+    "p05": 0.9721,
+    "p95": 0.9854,
+    "min": 0.9712,
+    "max": 0.9854
    },
    "without_caption": {
-    "n": 1090,
-    "mean": 0.9963,
-    "median": 0.9975,
-    "p05": 0.9952,
-    "p95": 0.9994,
-    "min": 0.8728,
-    "max": 0.9994
+    "n": 673,
+    "mean": 0.9979,
+    "median": 0.9978,
+    "p05": 0.9967,
+    "p95": 0.9996,
+    "min": 0.9855,
+    "max": 0.9996
    }
   },
   "psnr_db": {
    "all": {
     "n": 1241,
-    "mean": 42.6155,
-    "median": 43.81,
-    "p05": 31.68,
-    "p95": 50.58,
-    "min": 18.18,
-    "max": 52.61
+    "mean": 37.9304,
+    "median": 40.57,
+    "p05": 29.53,
+    "p95": 51.42,
+    "min": 29.53,
+    "max": 58.82
    },
    "with_caption": {
-    "n": 151,
-    "mean": 32.6496,
-    "median": 31.73,
-    "p05": 31.65,
-    "p95": 34.72,
-    "min": 31.64,
-    "max": 34.73
+    "n": 568,
+    "mean": 30.9119,
+    "median": 31.61,
+    "p05": 29.53,
+    "p95": 32.51,
+    "min": 29.53,
+    "max": 32.88
    },
    "without_caption": {
-    "n": 1090,
-    "mean": 43.9961,
-    "median": 43.81,
-    "p05": 42.34,
-    "p95": 50.8,
-    "min": 18.18,
-    "max": 52.61
+    "n": 673,
+    "mean": 43.854,
+    "median": 42.93,
+    "p05": 40.55,
+    "p95": 54.112,
+    "min": 30.26,
+    "max": 58.82
    }
   },
   "worst_frames_by_ssim": [
-   1028,
-   1029,
    1027,
-   1030,
-   1031,
-   1032,
-   1033,
-   1034,
-   1035,
-   1036
+   1013,
+   993,
+   997,
+   981,
+   989,
+   1007,
+   1001,
+   991,
+   999
   ]
  },
  "captions": [
@@ -240,76 +270,208 @@
    "a_box_h": 286,
    "a_center_y": 998.5,
    "b_box_w": 574,
-   "b_box_h": 284,
-   "b_center_y": 993.5,
+   "b_box_h": 285,
+   "b_center_y": 993.0,
    "a_on_err": 0,
    "b_on_err": 0,
    "a_off_err": 0,
    "b_off_err": 0,
    "b_over_a_width": 1.003,
-   "b_over_a_height": 0.993
+   "b_over_a_height": 0.997
   },
   {
    "text": "pinned / to words",
    "expected_on": 568,
-   "expected_off": 615,
+   "expected_off": 645,
    "a_on": 568,
-   "a_off": 615,
+   "a_off": 645,
    "b_on": 568,
-   "b_off": 615,
-   "a_box_w": 612,
+   "b_off": 645,
+   "a_box_w": 611,
    "a_box_h": 286,
-   "a_center_y": 1618.5,
+   "a_center_y": 1690.5,
    "b_box_w": 614,
-   "b_box_h": 284,
-   "b_center_y": 1613.5,
+   "b_box_h": 285,
+   "b_center_y": 1685.0,
    "a_on_err": 0,
    "b_on_err": 0,
    "a_off_err": 0,
    "b_off_err": 0,
-   "b_over_a_width": 1.003,
+   "b_over_a_width": 1.005,
+   "b_over_a_height": 0.997
+  },
+  {
+   "text": "a real / timeline",
+   "expected_on": 730,
+   "expected_off": 784,
+   "a_on": 730,
+   "a_off": 784,
+   "b_on": 730,
+   "b_off": 784,
+   "a_box_w": 550,
+   "a_box_h": 286,
+   "a_center_y": 1690.5,
+   "b_box_w": 553,
+   "b_box_h": 285,
+   "b_center_y": 1685.0,
+   "a_on_err": 0,
+   "b_on_err": 0,
+   "a_off_err": 0,
+   "b_off_err": 0,
+   "b_over_a_width": 1.005,
+   "b_over_a_height": 0.997
+  },
+  {
+   "text": "refuses never / guesses",
+   "expected_on": 969,
+   "expected_off": 1028,
+   "a_on": 969,
+   "a_off": 1028,
+   "b_on": 969,
+   "b_off": 1028,
+   "a_box_w": 931,
+   "a_box_h": 309,
+   "a_center_y": 1703.0,
+   "b_box_w": 936,
+   "b_box_h": 306,
+   "b_center_y": 1698.5,
+   "a_on_err": 0,
+   "b_on_err": 0,
+   "a_off_err": 0,
+   "b_off_err": 0,
+   "b_over_a_width": 1.005,
+   "b_over_a_height": 0.99
+  },
+  {
+   "text": "then / the reel",
+   "expected_on": 511,
+   "expected_off": 568,
+   "a_on": 511,
+   "a_off": 568,
+   "b_on": 511,
+   "b_off": 568,
+   "a_box_w": 516,
+   "a_box_h": 286,
+   "a_center_y": 1690.5,
+   "b_box_w": 522,
+   "b_box_h": 285,
+   "b_center_y": 1685.0,
+   "a_on_err": 0,
+   "b_on_err": 0,
+   "a_off_err": 0,
+   "b_off_err": 0,
+   "b_over_a_width": 1.012,
+   "b_over_a_height": 0.997
+  },
+  {
+   "text": "Final Cut Pro / or Resolve",
+   "expected_on": 784,
+   "expected_off": 869,
+   "a_on": 784,
+   "a_off": 869,
+   "b_on": 784,
+   "b_off": 869,
+   "a_box_w": 893,
+   "a_box_h": 288,
+   "a_center_y": 1689.5,
+   "b_box_w": 899,
+   "b_box_h": 286,
+   "b_center_y": 1684.5,
+   "a_on_err": 0,
+   "b_on_err": 0,
+   "a_off_err": 0,
+   "b_off_err": 0,
+   "b_over_a_width": 1.007,
    "b_over_a_height": 0.993
   },
   {
-   "text": "refuses, / never / guesses",
-   "expected_on": 969,
-   "expected_off": 1016,
-   "a_on": 969,
-   "a_off": 1016,
-   "b_on": 969,
-   "b_off": 1016,
-   "a_box_w": 574,
-   "a_box_h": 520,
-   "a_center_y": 1529.5,
-   "b_box_w": 617,
-   "b_box_h": 532,
-   "b_center_y": 1515.5,
+   "text": "editable clips / titles, lanes",
+   "expected_on": 869,
+   "expected_off": 969,
+   "a_on": 869,
+   "a_off": 969,
+   "b_on": 869,
+   "b_off": 969,
+   "a_box_w": 924,
+   "a_box_h": 307,
+   "a_center_y": 1701.0,
+   "b_box_w": 925,
+   "b_box_h": 307,
+   "b_center_y": 1696.0,
    "a_on_err": 0,
    "b_on_err": 0,
    "a_off_err": 0,
    "b_off_err": 0,
-   "b_over_a_width": 1.075,
-   "b_over_a_height": 1.023
+   "b_over_a_width": 1.001,
+   "b_over_a_height": 1.0
+  },
+  {
+   "text": "re-record / the voice",
+   "expected_on": 645,
+   "expected_off": 674,
+   "a_on": 645,
+   "a_off": 674,
+   "b_on": 645,
+   "b_off": 674,
+   "a_box_w": 641,
+   "a_box_h": 286,
+   "a_center_y": 1690.5,
+   "b_box_w": 652,
+   "b_box_h": 285,
+   "b_center_y": 1685.0,
+   "a_on_err": 0,
+   "b_on_err": 0,
+   "a_off_err": 0,
+   "b_off_err": 0,
+   "b_over_a_width": 1.017,
+   "b_over_a_height": 0.997
+  },
+  {
+   "text": "nothing / moves",
+   "expected_on": 674,
+   "expected_off": 724,
+   "a_on": 674,
+   "a_off": 724,
+   "b_on": 674,
+   "b_off": 724,
+   "a_box_w": 515,
+   "a_box_h": 286,
+   "a_center_y": 1690.5,
+   "b_box_w": 516,
+   "b_box_h": 285,
+   "b_center_y": 1685.0,
+   "a_on_err": 0,
+   "b_on_err": 0,
+   "a_off_err": 0,
+   "b_off_err": 0,
+   "b_over_a_width": 1.002,
+   "b_over_a_height": 0.997
   }
  ],
  "audio": [
   {
    "t0": 2.0,
-   "lag_ms": 0.25,
-   "corr": null,
-   "level_b_minus_a_db": null
+   "lag_ms": 0.0,
+   "corr": 0.9842,
+   "level_b_minus_a_db": 0.21
   },
   {
    "t0": 17.0,
-   "lag_ms": 0.25,
-   "corr": null,
-   "level_b_minus_a_db": null
+   "lag_ms": 0.0,
+   "corr": 0.976,
+   "level_b_minus_a_db": 0.31
   },
   {
    "t0": 32.0,
-   "lag_ms": 0.5,
-   "corr": null,
-   "level_b_minus_a_db": null
+   "lag_ms": 0.0,
+   "corr": 0.9712,
+   "level_b_minus_a_db": 0.39
+  },
+  {
+   "t0": 38.6,
+   "lag_ms": 0.0,
+   "corr": 0.9999,
+   "level_b_minus_a_db": 14.0
   }
  ]
 }

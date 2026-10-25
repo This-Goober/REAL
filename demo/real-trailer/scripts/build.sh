@@ -5,7 +5,7 @@
 # The notebook (source/NOTEBOOK.md) and the creator's revisions
 # (source/revisions.txt) are the inputs a person wrote; everything under
 # catalogue/, storyboard/ and timeline/ is produced here. The two captures of
-# REAL's own pages (media/Images/T-catalogue.png, media/Videos/T-tracks.mov)
+# REAL's own pages (media/Images/T-catalogue.png, media/Videos/T-tracks-washi.mov)
 # were taken from an earlier pass of this same build, before they existed as
 # assets (see PROMPTS.md); with --captures they are taken again from the
 # catalogue and tracks page this run writes, and the build runs once more so
@@ -34,7 +34,9 @@ one_pass() {
       -o storyboard/reel.json --stubs-dir storyboard/stubs --assets-root "$ASSETS_ROOT"
   python3 "$ST/revise.py" apply storyboard/reel.json source/revisions.txt -o storyboard/reel.json --clock storyboard/clock.json
   python3 "$ST/build.py" validate storyboard/reel.json
-  python3 scripts/check_captions.py storyboard/reel.json          # every caption line fits the frame
+  # every caption line fits the frame; the bottom captions sit in the middle of the
+  # paper quarter, closer to the edge than the default 5 % margin
+  python3 scripts/check_captions.py storyboard/reel.json --margin 0.025
   python3 "$ST/tracks.py" tracks storyboard/reel.json storyboard/REEL-TRACKS.html --clock storyboard/clock.json
 }
 
@@ -58,7 +60,15 @@ rm -f storyboard/gap.wav storyboard/takes.txt
 one_pass
 if [ "$1" = "--captures" ]; then
   python3 scripts/capture_pages.py page catalogue/ASSET-CATALOG.html media/Images/T-catalogue.png
-  python3 scripts/capture_pages.py tracks storyboard/REEL-TRACKS.html media/Videos/T-tracks.mov --from 0 --to 7.17
+  TMPC=$(mktemp -d)
+  python3 scripts/capture_pages.py tracks storyboard/REEL-TRACKS.html "$TMPC/tracks.mov" --from 0 --to 7.17
+  # the preview pane and the start of the lanes, where the playhead moves, as a
+  # framed panel on washi (転 storyboard)
+  python3 scripts/make_panel_frame.py "$TMPC/frame.png" --step 転 --label STORYBOARD --of "3 / 4" --tag tracks \
+      --headline "THE TRACKS PAGE" --deck "this trailer's own storyboard"
+  python3 scripts/panel.py "$TMPC/tracks.mov" media/Videos/T-tracks-washi.mov --crop 280:1090 --opacity 0.85 \
+      --frame "$TMPC/frame.png"
+  rm -rf "$TMPC"
   one_pass
 fi
 

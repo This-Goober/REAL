@@ -21,6 +21,7 @@ the same block:
     B7: L2 shadow = on            shadow / glow / face on or off,
     B7: L2 text = pinned / to words   the words, " / " breaking the line
     B7: L2 position = center      where it sits: center, bottom, top, or pixels from the centre (y up)
+    B7: L2 hold = next            stays on until the next caption (or the beat's end, or a dissolve)
     B7: remove L1
     B7: confirm L1                promotes a claude placement to a creator one
     B7: stagger L1                keep it deliberately off the snapped frame
@@ -47,6 +48,7 @@ import json
 import re
 import sys
 from real_core import narration_end, refit_beat, transition_problems, transition_overlap, clip_to_transition
+from real_core import settle_holds
 
 CLOCK_WORDS = re.compile(
     r"^(duration|length|time|t0|t1|hold|longer|shorter|trim|retime|tempo|pace|"
@@ -331,7 +333,7 @@ def apply_one(reel, bid, instr, clock, log, unhandled):
 
     # the look of a caption: `L2 size = 60`, `L2 color = #B82E24`, `L2 shadow = on`,
     # `L2 glow = off`, `L2 face = on`, `L2 text = it shows / its work` (" / " breaks the line)
-    m = re.match(r"^([LA]?\d+)\s+(size|color|colour|shadow|glow|face|text|position)\s*=\s*(.+)$", t, re.I)
+    m = re.match(r"^([LA]?\d+)\s+(size|color|colour|shadow|glow|face|text|position|hold)\s*=\s*(.+)$", t, re.I)
     if m:
         item = find_item(beat, m.group(1))
         if item is None:
@@ -359,6 +361,13 @@ def apply_one(reel, bid, instr, clock, log, unhandled):
                 unhandled.append("%s: %s = %r — say on or off" % (beat["id"], key, val))
                 return
             item[key] = val.lower() in ("on", "yes", "true", "1")
+        elif key == "hold":
+            if val.lower() not in ("next", "off"):
+                unhandled.append("%s: hold = %r — say next (until the next caption) or off" % (beat["id"], val))
+                return
+            item["hold_to_next"] = val.lower() == "next"
+            if not item["hold_to_next"]:
+                item.pop("hold_to_next")
         elif key == "position":
             pos = parse_position(val)
             if pos is None:
@@ -467,20 +476,27 @@ def apply_one(reel, bid, instr, clock, log, unhandled):
     if m:
         rest = m.group(1).strip()
         tm = re.match(r'^"([^"]*)"|^\'([^\']*)\'|^(\S+)', rest)
-        content = next(g for g in tm.groups() if g is not None)
+        content = next(g for g in tm.groups() if g is not None).replace(" / ", "\n")
         anc = re.search(r"anchor\s+(\S+)", rest, re.I)
         idx = word_index(beat, clock, anc.group(1)) if anc else beat["w0"]
         if idx is None:
             idx = beat["w0"]
         t0 = word_time(clock, idx) or beat["t0"]
-        layer = {"id": "%s.L%d" % (beat["id"], len(beat["layers"]) + 1),
+        if idx == beat.get("w0") and clock:
+            # a cue on a line's first word starts with the line, as the clock and
+            # retime place it (bench finding 002-A), not 40 % into the word
+            t0 = next((w["start"] for w in clock.get("words", []) if w["i"] == idx), t0)
+        lid = "%s.L%d" % (beat["id"], len(beat["layers"]) + 1)
+        layer = {"id": lid,
                  "z": len(beat["layers"]), "kind": "text", "asset": None,
                  "content": content, "style": "caption", "style_by": "creator",
                  "anchor_text": word_text(clock, idx),
                  "anchor_word": idx, "offset_ms": 0,
                  "t0": t0, "t1": min(beat["t1"], t0 + 1.6),
                  "fit": "fit", "chosen_by": "creator", "confidence": "high",
-                 "why": "the creator added this", "source_component": None,
+                 # not from a notebook component: the schema still wants a string,
+                 # and retime re-derives it from its anchor word like any moved layer
+                 "why": "the creator added this", "source_component": "revision:" + lid,
                  "source_text": content, "placement": "inline",
                  "dur_source": "text-model", "base": False}
         beat["layers"].append(layer)
@@ -523,6 +539,9 @@ def cmd_apply(args):
             if instr.strip():
                 apply_one(reel, m.group(1), instr, clock, log, unhandled)
 
+    held = settle_holds(reel)          # captions that hold until the next one
+    if held:
+        log.append("%d caption(s) held until the next one" % held)
     write_json(args.out or args.reel, reel, "reel")
     for l in log:
         print("  " + l)
