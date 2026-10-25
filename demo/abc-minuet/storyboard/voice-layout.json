@@ -1,0 +1,44 @@
+[
+ {
+  "cell": "hook",
+  "take": "source/narration/vo-01-hook.mp3",
+  "at_s": 8.0,
+  "dur_s": 7.776
+ },
+ {
+  "cell": "the header",
+  "take": "source/narration/vo-02-the-header.mp3",
+  "at_s": 16.44,
+  "dur_s": 11.904
+ },
+ {
+  "cell": "pitch",
+  "take": "source/narration/vo-03-pitch.mp3",
+  "at_s": 29.008,
+  "dur_s": 5.616
+ },
+ {
+  "cell": "length",
+  "take": "source/narration/vo-04-length.mp3",
+  "at_s": 35.288,
+  "dur_s": 7.272
+ },
+ {
+  "cell": "the bars",
+  "take": "source/narration/vo-05-the-bars.mp3",
+  "at_s": 43.224,
+  "dur_s": 19.128
+ },
+ {
+  "cell": "the check",
+  "take": "source/narration/vo-06-the-check.mp3",
+  "at_s": 63.016,
+  "dur_s": 6.672
+ },
+ {
+  "cell": "payoff",
+  "take": "source/narration/vo-07-payoff.mp3",
+  "at_s": 70.352,
+  "dur_s": 5.16
+ }
+]

@@ -1,0 +1,37 @@
+{
+ "engine": "F5-TTS (F5TTS_v1_Base, vocos)",
+ "reference": "demo/paganini-no23/media/Audio/take-01.wav",
+ "clip": null,
+ "reference_text": "So I have a community performance today and I'm going to be performing Paganini's twenty-third Caprice for solo violin.",
+ "speed": 1.0,
+ "nfe": 32,
+ "takes": [
+  {
+   "file": "01-the-check-1.mp3",
+   "name": "the-check",
+   "text": "Every bar should add up to three. If one doesn't, then a note is missing, or a bar line is in the wrong place.",
+   "seed": 31,
+   "dur_s": 6.67,
+   "heard": "Every bar should add up to three. If one doesn't, then a note is missing or a bar line is in the wrong place.",
+   "match": 1.0
+  },
+  {
+   "file": "01-the-check-2.mp3",
+   "name": "the-check",
+   "text": "Every bar should add up to three. If one doesn't, then a note is missing, or a bar line is in the wrong place.",
+   "seed": 32,
+   "dur_s": 6.7,
+   "heard": "Every bar should add up to three. If one doesn't, then a note is missing or a bar line is in the wrong place.",
+   "match": 1.0
+  },
+  {
+   "file": "01-the-check-3.mp3",
+   "name": "the-check",
+   "text": "Every bar should add up to three. If one doesn't, then a note is missing, or a bar line is in the wrong place.",
+   "seed": 33,
+   "dur_s": 6.55,
+   "heard": "Every bar should add up to three. If one doesn't, then a note is missing or a bar line is in the wrong place.",
+   "match": 1.0
+  }
+ ]
+}

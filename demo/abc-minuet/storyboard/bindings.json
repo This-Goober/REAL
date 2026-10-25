@@ -1,0 +1,1093 @@
+{
+ "generated_from": {
+  "notebook": "storyboard/notebook.json",
+  "catalog": "catalogue/asset-catalog.json"
+ },
+ "assets_root": "/home/henrytan/git/REAL/chat/projects/abc-minuet/media",
+ "project": "The Minuet in ABC",
+ "assets": [
+  {
+   "id": "A01",
+   "file": "Images/score-plain.png",
+   "name": "score-plain.png",
+   "kind": "image",
+   "role": "\u2605 The four bars, engraved",
+   "shows": "The opening four bars of the Minuet in G transposed to C on one treble staff, 3/4, black on white, nothing highlighted.",
+   "use": "The cold open under the piano, and the closing play-through.",
+   "beat": "any",
+   "binds_to": "a `<show image of the four bars engraved on one treble staff \u2026>` type component",
+   "tags": [
+    "score-plain",
+    "score"
+   ],
+   "dur": 0.0,
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "1920x1080 png 25fps"
+  },
+  {
+   "id": "A02",
+   "file": "Images/abc-full.png",
+   "name": "abc-full.png",
+   "kind": "image",
+   "role": "\u2605 The whole ABC text",
+   "shows": "White frame, monospace: the header lines X:1, M:3/4, L:1/4, K:C and below them the melody line of four bars with bar lines.",
+   "use": "The hook, when the text first appears, and again before the last play-through.",
+   "beat": "any",
+   "binds_to": "a `<show image of the whole ABC text \u2026>` type component",
+   "tags": [
+    "abc-full",
+    "abc-text"
+   ],
+   "dur": 0.0,
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "1920x1080 png 25fps"
+  },
+  {
+   "id": "A03",
+   "file": "Images/abc-header.png",
+   "name": "abc-header.png",
+   "kind": "image",
+   "role": "Header lines in red, labelled",
+   "shows": "The four header lines in red with gray labels: tune number; meter, three beats a bar; a letter lasts one beat; key C, no sharps or flats. The melody line below in gray.",
+   "use": "The header explanation.",
+   "beat": "any",
+   "binds_to": "a `<show image of the same ABC text with only the header lines in red \u2026>` type component",
+   "tags": [
+    "abc-header",
+    "abc-text"
+   ],
+   "dur": 0.0,
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "1920x1080 png 25fps \u00b7 0.1 MB"
+  },
+  {
+   "id": "A04",
+   "file": "Images/pitch-c.png",
+   "name": "pitch-c.png",
+   "kind": "image",
+   "role": "C and c on the staff",
+   "shows": "Two treble staves side by side: middle C as a half note on its ledger line labelled C, middle C, and the C an octave up labelled c, one octave higher.",
+   "use": "The pitch explanation.",
+   "beat": "any",
+   "binds_to": "a `<show image of a treble staff with \u2026 middle C \u2026 and the C an octave up \u2026>` type component",
+   "tags": [
+    "pitch-c"
+   ],
+   "dur": 0.0,
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "1920x1080 png 25fps"
+  },
+  {
+   "id": "A05",
+   "file": "Images/length-slash.png",
+   "name": "length-slash.png",
+   "kind": "image",
+   "role": "C versus C/ C/",
+   "shows": "Two treble staves: one quarter note C labelled C, 1 beat; two beamed eighth notes labelled C/ C/, 1 beat.",
+   "use": "The length explanation.",
+   "beat": "any",
+   "binds_to": "a `<show image of two panels side by side: \"C\" over a single quarter note, and \"C/ C/\" \u2026>` type component",
+   "tags": [
+    "length-slash"
+   ],
+   "dur": 0.0,
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "1920x1080 png 25fps"
+  },
+  {
+   "id": "A06",
+   "file": "Images/bar-1.png",
+   "name": "bar-1.png",
+   "kind": "image",
+   "role": "Bar 1 lit in red",
+   "shows": "The four engraved bars with bar 1 in red and the others gray; below, the ABC melody line with bar 1's text in red.",
+   "use": "While the narration walks through bar 1.",
+   "beat": "any",
+   "binds_to": "a `<show image of the score \u2026 with bar 1 in red \u2026>` type component",
+   "tags": [
+    "bar-1",
+    "bars"
+   ],
+   "dur": 0.0,
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "1920x1080 png 25fps"
+  },
+  {
+   "id": "A07",
+   "file": "Images/bar-2.png",
+   "name": "bar-2.png",
+   "kind": "image",
+   "role": "Bar 2 lit in red",
+   "shows": "The four engraved bars with bar 2 in red and the others gray; below, the ABC melody line with bar 2's text in red.",
+   "use": "While the narration walks through bar 2.",
+   "beat": "any",
+   "binds_to": "a `<show image of the score \u2026 with bar 2 in red \u2026>` type component",
+   "tags": [
+    "bar-2",
+    "bars"
+   ],
+   "dur": 0.0,
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "1920x1080 png 25fps"
+  },
+  {
+   "id": "A08",
+   "file": "Images/bar-3.png",
+   "name": "bar-3.png",
+   "kind": "image",
+   "role": "Bar 3 lit in red",
+   "shows": "The four engraved bars with bar 3 in red and the others gray; below, the ABC melody line with bar 3's text in red.",
+   "use": "While the narration walks through bar 3.",
+   "beat": "any",
+   "binds_to": "a `<show image of the score \u2026 with bar 3 in red \u2026>` type component",
+   "tags": [
+    "bar-3",
+    "bars"
+   ],
+   "dur": 0.0,
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "1920x1080 png 25fps"
+  },
+  {
+   "id": "A09",
+   "file": "Images/bar-4.png",
+   "name": "bar-4.png",
+   "kind": "image",
+   "role": "Bar 4 lit in red",
+   "shows": "The four engraved bars with bar 4 in red and the others gray; below, the ABC melody line with bar 4's text in red.",
+   "use": "While the narration walks through bar 4.",
+   "beat": "any",
+   "binds_to": "a `<show image of the score \u2026 with bar 4 in red \u2026>` type component",
+   "tags": [
+    "bar-4",
+    "bars"
+   ],
+   "dur": 0.0,
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "1920x1080 png 25fps"
+  },
+  {
+   "id": "A10",
+   "file": "Images/bar-sums.png",
+   "name": "bar-sums.png",
+   "kind": "image",
+   "role": "Each bar adds to three",
+   "shows": "The four bars of ABC text in a row, each with a red '3 \u2713' under it.",
+   "use": "The check: every bar adds up to three.",
+   "beat": "any",
+   "binds_to": "a `<show image of the four bars written as text with a small \"3\" under each bar \u2026>` type component",
+   "tags": [
+    "bar-sums"
+   ],
+   "dur": 0.0,
+   "w": 1920,
+   "h": 1080,
+   "fps": 25.0,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "1920x1080 png 25fps"
+  },
+  {
+   "id": "A11",
+   "file": "Audio/minuet-piano.mp3",
+   "name": "minuet-piano.mp3",
+   "kind": "audio",
+   "role": "\u2605 The Minuet on piano (opening)",
+   "shows": "The four bars on a plain grand piano (FluidR3), 110 quarter notes a minute, 8.0 s with a soft start and a 1 s fade.",
+   "use": "The cold open, at full level, before anything is spoken.",
+   "beat": "any",
+   "binds_to": "an `<audio of the first four bars of the Minuet \u2026 on a plain piano \u2026>` type component",
+   "tags": [
+    "minuet-piano",
+    "piano"
+   ],
+   "dur": 8.04,
+   "w": null,
+   "h": null,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "8.04s \u00b7 mp3 2ch 48k \u00b7 0.3 MB"
+  },
+  {
+   "id": "A12",
+   "file": "Audio/minuet-piano-end.mp3",
+   "name": "minuet-piano-end.mp3",
+   "kind": "audio",
+   "role": "The Minuet on piano (closing)",
+   "shows": "The same 8.0 s piano rendering, a separate file for the last play-through.",
+   "use": "The payoff, at full level, after the last spoken line.",
+   "beat": "any",
+   "binds_to": "an `<audio of the four bars of the Minuet on piano again \u2026>` type component",
+   "tags": [
+    "minuet-piano-end",
+    "piano"
+   ],
+   "dur": 8.04,
+   "w": null,
+   "h": null,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "8.04s \u00b7 mp3 2ch 48k \u00b7 0.3 MB"
+  },
+  {
+   "id": "A13",
+   "file": "Audio/narration-master.mp3",
+   "name": "narration-master.mp3",
+   "kind": "audio",
+   "role": "\u2605 Narration master",
+   "shows": "The seven narration takes in a voice cloned with F5-TTS from Eidee's own recorded narration (with her consent), laid on one track at the measured clock, file time equal to reel time. Transcript: \"That's the opening of the Minuet in G from Anna Magdalena Bach's notebook Here it is in C written as a single line of text The lines at the top set the rules M is the meter three beats in every bar L is the default length so a plain letter lasts one beat And K is the key C which means no sharps or flats Each letter is a note A capital C is middle C and a lowercase c is the C one octave higher A slash cuts a note in half So C slash is an eighth note half a beat and two of them fill the space of one plain C Bar one is G for one beat then C D E F as four quick eighth notes One beat plus four halves makes three Bar two is G C C Three plain letters three beats Bar three is the same shape as bar one a step higher: A then F G A B And bar four jumps up to the high c then back down to C C Every bar should add up to three If one doesn't then a note is missing or a bar line is in the wrong place That's the whole idea Four bars of music in about forty characters Here it is again\"",
+   "use": "Every spoken narration component.",
+   "beat": "any",
+   "binds_to": "every spoken `<...>` narration component \u2014 the voice itself",
+   "tags": [
+    "narration",
+    "voice",
+    "master"
+   ],
+   "dur": 75.53,
+   "w": null,
+   "h": null,
+   "fps": null,
+   "rotation": 0,
+   "exists": true,
+   "excerpt": "",
+   "lines": null,
+   "words": null,
+   "specs": "75.53s \u00b7 mp3 1ch 48k \u00b7 2.4 MB"
+  }
+ ],
+ "bindings": {
+  "C2.6fd": {
+   "component": "C2.6fd",
+   "cell": "C2",
+   "type": "image",
+   "text": "show image of the same ABC text with only the header lines in red and a short gray label beside each: \"meter: 3 beats a bar\", \"a letter = 1 beat\", \"key: C\"",
+   "tags": [
+    "abc-header"
+   ],
+   "asset": "A03",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#abc-header matches the asset's tags (+6.0); binds_to shares abc, header, lines, only, red (+3.7); role shares header, lines, red (+1.8); shows shares bar, beat, beats, gray, header (+3.0); use shares header (+0.8); image component / image asset (+2.0)",
+   "signals": [
+    "#abc-header matches the asset's tags (+6.0)",
+    "binds_to shares abc, header, lines, only, red (+3.7)",
+    "role shares header, lines, red (+1.8)",
+    "shows shares bar, beat, beats, gray, header (+3.0)",
+    "use shares header (+0.8)",
+    "image component / image asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A10",
+     "score": 5.662,
+     "why": "binds_to shares bar, each (+1.0); role shares bar, each (+1.0)"
+    },
+    {
+     "asset": "A06",
+     "score": 4.662,
+     "why": "binds_to shares bar, red (+0.6); role shares bar, red (+0.6)"
+    },
+    {
+     "asset": "A07",
+     "score": 4.662,
+     "why": "binds_to shares bar, red (+0.6); role shares bar, red (+0.6)"
+    }
+   ],
+   "stub": null
+  },
+  "C4.543": {
+   "component": "C4.543",
+   "cell": "C4",
+   "type": "image",
+   "text": "show image of two panels side by side: \"C\" over a single quarter note, and \"C/ C/\" over two beamed eighth notes, the same width on the page, with \"1 beat\" under both",
+   "tags": [
+    "length-slash"
+   ],
+   "asset": "A05",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#length-slash matches the asset's tags (+6.0); binds_to shares note, panels, quarter, side, single (+4.0); shows shares beamed, beat, eighth, note, notes (+3.0); image component / image asset (+2.0)",
+   "signals": [
+    "#length-slash matches the asset's tags (+6.0)",
+    "binds_to shares note, panels, quarter, side, single (+4.0)",
+    "shows shares beamed, beat, eighth, note, notes (+3.0)",
+    "image component / image asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A04",
+     "score": 3.413,
+     "why": "shows shares note, side (+1.4); image component / image asset (+2.0)"
+    },
+    {
+     "asset": "A01",
+     "score": 2.0,
+     "why": "image component / image asset (+2.0)"
+    },
+    {
+     "asset": "A02",
+     "score": 2.0,
+     "why": "image component / image asset (+2.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C3.69e": {
+   "component": "C3.69e",
+   "cell": "C3",
+   "type": "image",
+   "text": "show image of a treble staff with two notes, middle C on its ledger line and the C an octave up in the third space, the letters \"C\" and \"c\" in large monospace type under each",
+   "tags": [
+    "pitch-c"
+   ],
+   "asset": "A04",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#pitch-c matches the asset's tags (+6.0); binds_to shares middle, octave, staff, treble, type (+3.0); role shares staff (+0.8); shows shares ledger, line, middle, octave, treble (+3.0); image component / image asset (+2.0)",
+   "signals": [
+    "#pitch-c matches the asset's tags (+6.0)",
+    "binds_to shares middle, octave, staff, treble, type (+3.0)",
+    "role shares staff (+0.8)",
+    "shows shares ledger, line, middle, octave, treble (+3.0)",
+    "image component / image asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A01",
+     "score": 4.878,
+     "why": "binds_to shares staff, treble, type (+1.5); shows shares staff, treble (+1.4)"
+    },
+    {
+     "asset": "A10",
+     "score": 4.401,
+     "why": "binds_to shares each, type (+0.8); role shares each (+0.8)"
+    },
+    {
+     "asset": "A02",
+     "score": 3.243,
+     "why": "binds_to shares type (+0.1); shows shares line, monospace (+1.2)"
+    }
+   ],
+   "stub": null
+  },
+  "C1.348": {
+   "component": "C1.348",
+   "cell": "C1",
+   "type": "audio",
+   "text": "audio of the first four bars of the Minuet in G, transposed to C, on a plain piano, steady minuet tempo, no voice over it, full volume",
+   "tags": [
+    "minuet-piano"
+   ],
+   "asset": "A11",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#minuet-piano matches the asset's tags (+6.0); binds_to shares bars, first, four, minuet, piano (+2.9); role shares minuet, piano (+1.1); shows shares bars, four, piano, plain (+1.6); use shares full (+0.8); audio component / audio asset (+2.0)",
+   "signals": [
+    "#minuet-piano matches the asset's tags (+6.0)",
+    "binds_to shares bars, first, four, minuet, piano (+2.9)",
+    "role shares minuet, piano (+1.1)",
+    "shows shares bars, four, piano, plain (+1.6)",
+    "use shares full (+0.8)",
+    "audio component / audio asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A12",
+     "score": 8.425,
+     "why": "#minuet-piano appears in the asset's description (+2.5); binds_to shares bars, four, minuet, piano (+1.4)"
+    },
+    {
+     "asset": "A13",
+     "score": 5.55,
+     "why": "binds_to shares voice (+1.0); shows shares bars, four, minuet, plain, voice (+2.5)"
+    }
+   ],
+   "stub": null
+  },
+  "C1.236": {
+   "component": "C1.236",
+   "cell": "C1",
+   "type": "image",
+   "text": "show image of the four bars engraved on one treble staff, black notes on white, 3/4 time signature, nothing highlighted",
+   "tags": [
+    "score-plain"
+   ],
+   "asset": "A01",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#score-plain matches the asset's tags (+6.0); binds_to shares bars, engraved, four, staff, treble (+2.1); role shares bars, engraved, four (+0.6); shows shares bars, black, four, highlighted, nothing (+3.0); image component / image asset (+2.0)",
+   "signals": [
+    "#score-plain matches the asset's tags (+6.0)",
+    "binds_to shares bars, engraved, four, staff, treble (+2.1)",
+    "role shares bars, engraved, four (+0.6)",
+    "shows shares bars, black, four, highlighted, nothing (+3.0)",
+    "image component / image asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A02",
+     "score": 3.003,
+     "why": "shows shares bars, four, white (+1.0); image component / image asset (+2.0)"
+    },
+    {
+     "asset": "A06",
+     "score": 2.645,
+     "why": "shows shares bars, engraved, four (+0.6); image component / image asset (+2.0)"
+    },
+    {
+     "asset": "A07",
+     "score": 2.645,
+     "why": "shows shares bars, engraved, four (+0.6); image component / image asset (+2.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C6.271": {
+   "component": "C6.271",
+   "cell": "C6",
+   "type": "image",
+   "text": "show image of the four bars written as text with a small \"3\" under each bar, all four in gray, checkmarks in red",
+   "tags": [
+    "bar-sums"
+   ],
+   "asset": "A10",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#bar-sums matches the asset's tags (+6.0); binds_to shares bar, bars, each, four, small (+3.0); role shares bar, each (+1.0); shows shares bars, each, four, red (+1.4); use shares bar (+0.2); image component / image asset (+2.0)",
+   "signals": [
+    "#bar-sums matches the asset's tags (+6.0)",
+    "binds_to shares bar, bars, each, four, small (+3.0)",
+    "role shares bar, each (+1.0)",
+    "shows shares bars, each, four, red (+1.4)",
+    "use shares bar (+0.2)",
+    "image component / image asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A06",
+     "score": 4.598,
+     "why": "binds_to shares bar, red (+0.6); role shares bar, red (+0.6)"
+    },
+    {
+     "asset": "A07",
+     "score": 4.598,
+     "why": "binds_to shares bar, red (+0.6); role shares bar, red (+0.6)"
+    },
+    {
+     "asset": "A08",
+     "score": 4.598,
+     "why": "binds_to shares bar, red (+0.6); role shares bar, red (+0.6)"
+    }
+   ],
+   "stub": null
+  },
+  "C7.e15": {
+   "component": "C7.e15",
+   "cell": "C7",
+   "type": "audio",
+   "text": "audio of the four bars of the Minuet on piano again, full volume, nothing spoken over it",
+   "tags": [
+    "minuet-piano-end"
+   ],
+   "asset": "A12",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#minuet-piano-end matches the asset's tags (+6.0); binds_to shares again, bars, four, minuet, piano (+2.0); role shares minuet, piano (+1.1); shows shares piano (+0.6); use shares full, spoken (+1.4); audio component / audio asset (+2.0)",
+   "signals": [
+    "#minuet-piano-end matches the asset's tags (+6.0)",
+    "binds_to shares again, bars, four, minuet, piano (+2.0)",
+    "role shares minuet, piano (+1.1)",
+    "shows shares piano (+0.6)",
+    "use shares full, spoken (+1.4)",
+    "audio component / audio asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A13",
+     "score": 4.626,
+     "why": "binds_to shares spoken (+0.6); shows shares again, bars, four, minuet (+1.4)"
+    },
+    {
+     "asset": "A11",
+     "score": 3.776,
+     "why": "binds_to shares bars, four, minuet, piano (+1.4); role shares minuet, piano (+1.1)"
+    }
+   ],
+   "stub": null
+  },
+  "C1.88a": {
+   "component": "C1.88a",
+   "cell": "C1",
+   "type": "image",
+   "text": "show image of the whole ABC text on white in a large monospace font: the four header lines (tune number, meter 3/4, length 1/4, key C) above the one melody line of four bars, bar lines between them",
+   "tags": [
+    "abc-full"
+   ],
+   "asset": "A02",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#abc-full matches the asset's tags (+6.0); binds_to shares abc, whole (+1.1); role shares abc, whole (+1.1); shows shares bar, bars, four, header, line (+3.0); image component / image asset (+2.0)",
+   "signals": [
+    "#abc-full matches the asset's tags (+6.0)",
+    "binds_to shares abc, whole (+1.1)",
+    "role shares abc, whole (+1.1)",
+    "shows shares bar, bars, four, header, line (+3.0)",
+    "image component / image asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A03",
+     "score": 5.893,
+     "why": "binds_to shares abc, header, lines (+1.7); role shares header, lines (+1.4)"
+    },
+    {
+     "asset": "A06",
+     "score": 3.936,
+     "why": "binds_to shares bar (+0.2); role shares bar (+0.2)"
+    },
+    {
+     "asset": "A07",
+     "score": 3.936,
+     "why": "binds_to shares bar (+0.2); role shares bar (+0.2)"
+    }
+   ],
+   "stub": null
+  },
+  "C7.91c": {
+   "component": "C7.91c",
+   "cell": "C7",
+   "type": "image",
+   "text": "show image of the four bars engraved, nothing highlighted, the same framing as the cold open",
+   "tags": [
+    "score-plain"
+   ],
+   "asset": "A01",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#score-plain matches the asset's tags (+6.0); binds_to shares bars, engraved, four (+0.6); role shares bars, engraved, four (+0.6); shows shares bars, four, highlighted, nothing (+2.3); use shares cold, open (+1.6); image component / image asset (+2.0)",
+   "signals": [
+    "#score-plain matches the asset's tags (+6.0)",
+    "binds_to shares bars, engraved, four (+0.6)",
+    "role shares bars, engraved, four (+0.6)",
+    "shows shares bars, four, highlighted, nothing (+2.3)",
+    "use shares cold, open (+1.6)",
+    "image component / image asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A06",
+     "score": 2.645,
+     "why": "shows shares bars, engraved, four (+0.6); image component / image asset (+2.0)"
+    },
+    {
+     "asset": "A07",
+     "score": 2.645,
+     "why": "shows shares bars, engraved, four (+0.6); image component / image asset (+2.0)"
+    },
+    {
+     "asset": "A08",
+     "score": 2.645,
+     "why": "shows shares bars, engraved, four (+0.6); image component / image asset (+2.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C5.d45": {
+   "component": "C5.d45",
+   "cell": "C5",
+   "type": "image",
+   "text": "show image of the score with bar 1 in red and the rest gray, and under it the ABC line with \"G C/ D/ E/ F/\" in red",
+   "tags": [
+    "bar-1"
+   ],
+   "asset": "A06",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#bar-1 matches the asset's tags (+6.0); binds_to shares bar, red, score (+1.0); role shares bar, red (+0.6); shows shares abc, bar, gray, line, red (+1.5); use shares bar (+0.2); image component / image asset (+2.0)",
+   "signals": [
+    "#bar-1 matches the asset's tags (+6.0)",
+    "binds_to shares bar, red, score (+1.0)",
+    "role shares bar, red (+0.6)",
+    "shows shares abc, bar, gray, line, red (+1.5)",
+    "use shares bar (+0.2)",
+    "image component / image asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A07",
+     "score": 5.263,
+     "why": "binds_to shares bar, red, score (+1.0); role shares bar, red (+0.6)"
+    },
+    {
+     "asset": "A08",
+     "score": 5.263,
+     "why": "binds_to shares bar, red, score (+1.0); role shares bar, red (+0.6)"
+    },
+    {
+     "asset": "A09",
+     "score": 5.263,
+     "why": "binds_to shares bar, red, score (+1.0); role shares bar, red (+0.6)"
+    }
+   ],
+   "stub": null
+  },
+  "C5.794": {
+   "component": "C5.794",
+   "cell": "C5",
+   "type": "image",
+   "text": "show image of the same score and ABC line with bar 2 in red, same framing",
+   "tags": [
+    "bar-2"
+   ],
+   "asset": "A07",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#bar-2 matches the asset's tags (+6.0); binds_to shares bar, red, score (+1.0); role shares bar, red (+0.6); shows shares abc, bar, line, red (+1.0); use shares bar (+0.2); image component / image asset (+2.0)",
+   "signals": [
+    "#bar-2 matches the asset's tags (+6.0)",
+    "binds_to shares bar, red, score (+1.0)",
+    "role shares bar, red (+0.6)",
+    "shows shares abc, bar, line, red (+1.0)",
+    "use shares bar (+0.2)",
+    "image component / image asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A08",
+     "score": 4.838,
+     "why": "binds_to shares bar, red, score (+1.0); role shares bar, red (+0.6)"
+    },
+    {
+     "asset": "A09",
+     "score": 4.838,
+     "why": "binds_to shares bar, red, score (+1.0); role shares bar, red (+0.6)"
+    },
+    {
+     "asset": "A01",
+     "score": 2.0,
+     "why": "image component / image asset (+2.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C5.c88": {
+   "component": "C5.c88",
+   "cell": "C5",
+   "type": "image",
+   "text": "show image of the same score and ABC line with bar 3 in red, same framing",
+   "tags": [
+    "bar-3"
+   ],
+   "asset": "A08",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#bar-3 matches the asset's tags (+6.0); binds_to shares bar, red, score (+1.0); role shares bar, red (+0.6); shows shares abc, bar, line, red (+1.0); use shares bar (+0.2); image component / image asset (+2.0)",
+   "signals": [
+    "#bar-3 matches the asset's tags (+6.0)",
+    "binds_to shares bar, red, score (+1.0)",
+    "role shares bar, red (+0.6)",
+    "shows shares abc, bar, line, red (+1.0)",
+    "use shares bar (+0.2)",
+    "image component / image asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A09",
+     "score": 4.838,
+     "why": "binds_to shares bar, red, score (+1.0); role shares bar, red (+0.6)"
+    },
+    {
+     "asset": "A01",
+     "score": 2.0,
+     "why": "image component / image asset (+2.0)"
+    },
+    {
+     "asset": "A06",
+     "score": 1.838,
+     "why": "binds_to shares bar, red, score (+1.0); role shares bar, red (+0.6)"
+    }
+   ],
+   "stub": null
+  },
+  "C5.5a8": {
+   "component": "C5.5a8",
+   "cell": "C5",
+   "type": "image",
+   "text": "show image of the same score and ABC line with bar 4 in red, same framing",
+   "tags": [
+    "bar-4"
+   ],
+   "asset": "A09",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#bar-4 matches the asset's tags (+6.0); binds_to shares bar, red, score (+1.0); role shares bar, red (+0.6); shows shares abc, bar, line, red (+1.0); use shares bar (+0.2); image component / image asset (+2.0)",
+   "signals": [
+    "#bar-4 matches the asset's tags (+6.0)",
+    "binds_to shares bar, red, score (+1.0)",
+    "role shares bar, red (+0.6)",
+    "shows shares abc, bar, line, red (+1.0)",
+    "use shares bar (+0.2)",
+    "image component / image asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A01",
+     "score": 2.0,
+     "why": "image component / image asset (+2.0)"
+    },
+    {
+     "asset": "A06",
+     "score": 1.838,
+     "why": "binds_to shares bar, red, score (+1.0); role shares bar, red (+0.6)"
+    },
+    {
+     "asset": "A07",
+     "score": 1.838,
+     "why": "binds_to shares bar, red, score (+1.0); role shares bar, red (+0.6)"
+    }
+   ],
+   "stub": null
+  },
+  "C7.5a4": {
+   "component": "C7.5a4",
+   "cell": "C7",
+   "type": "image",
+   "text": "show image of the complete ABC text, the same framing as the hook",
+   "tags": [
+    "abc-full"
+   ],
+   "asset": "A02",
+   "confidence": "high",
+   "chosen_by": "claude",
+   "why": "#abc-full matches the asset's tags (+6.0); binds_to shares abc (+0.3); role shares abc (+0.3); use shares hook (+1.0); image component / image asset (+2.0); already placed 1\u00d7 elsewhere (-3.0)",
+   "signals": [
+    "#abc-full matches the asset's tags (+6.0)",
+    "binds_to shares abc (+0.3)",
+    "role shares abc (+0.3)",
+    "use shares hook (+1.0)",
+    "image component / image asset (+2.0)",
+    "already placed 1\u00d7 elsewhere (-3.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A01",
+     "score": 2.0,
+     "why": "image component / image asset (+2.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C2.625": {
+   "component": "C2.625",
+   "cell": "C2",
+   "type": "narration",
+   "text": "The lines at the top set the rules. M is the meter, three beats in every bar. L is the default length, so a plain letter lasts one beat. And K is the key, C, which means no sharps or flats.",
+   "tags": [],
+   "asset": "A13",
+   "confidence": "low",
+   "chosen_by": "claude",
+   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares every (+0.8); shows shares bar, beat, beats, default, every (+3.0)",
+   "signals": [
+    "binds_to shares every (+0.8)",
+    "shows shares bar, beat, beats, default, every (+3.0)",
+    "use shares every (+0.8)",
+    "narration component / audio asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A13",
+     "score": 6.566,
+     "why": "binds_to shares every (+0.8); shows shares bar, beat, beats, default, every (+3.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C6.6ae": {
+   "component": "C6.6ae",
+   "cell": "C6",
+   "type": "narration",
+   "text": "Every bar should add up to three. If one doesn't, then a note is missing, or a bar line is in the wrong place.",
+   "tags": [],
+   "asset": "A13",
+   "confidence": "low",
+   "chosen_by": "claude",
+   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; binds_to shares every (+0.8); shows shares add, bar, doesn't, every, line (+3.0)",
+   "signals": [
+    "binds_to shares every (+0.8)",
+    "shows shares add, bar, doesn't, every, line (+3.0)",
+    "use shares every (+0.8)",
+    "narration component / audio asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A13",
+     "score": 6.566,
+     "why": "binds_to shares every (+0.8); shows shares add, bar, doesn't, every, line (+3.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C1.1c5": {
+   "component": "C1.1c5",
+   "cell": "C1",
+   "type": "narration",
+   "text": "That's the opening of the Minuet in G, from Anna Magdalena Bach's notebook. Here it is in C, written as a single line of text.",
+   "tags": [],
+   "asset": "A13",
+   "confidence": "low",
+   "chosen_by": "claude",
+   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares anna, bach's, here, line, magdalena (+3.0); narration component / audio asset (+2.0)",
+   "signals": [
+    "shows shares anna, bach's, here, line, magdalena (+3.0)",
+    "narration component / audio asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A13",
+     "score": 5.0,
+     "why": "shows shares anna, bach's, here, line, magdalena (+3.0); narration component / audio asset (+2.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C3.d19": {
+   "component": "C3.d19",
+   "cell": "C3",
+   "type": "narration",
+   "text": "Each letter is a note. A capital C is middle C, and a lowercase c is the C one octave higher.",
+   "tags": [],
+   "asset": "A13",
+   "confidence": "low",
+   "chosen_by": "claude",
+   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares capital, each, higher, letter, lowercase (+3.0); narration component / audio asset (+2.0)",
+   "signals": [
+    "shows shares capital, each, higher, letter, lowercase (+3.0)",
+    "narration component / audio asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A13",
+     "score": 5.0,
+     "why": "shows shares capital, each, higher, letter, lowercase (+3.0); narration component / audio asset (+2.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C4.1db": {
+   "component": "C4.1db",
+   "cell": "C4",
+   "type": "narration",
+   "text": "A slash cuts a note in half. So C slash is an eighth note, half a beat, and two of them fill the space of one plain C.",
+   "tags": [],
+   "asset": "A13",
+   "confidence": "low",
+   "chosen_by": "claude",
+   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares beat, cuts, eighth, fill, half (+3.0); narration component / audio asset (+2.0)",
+   "signals": [
+    "shows shares beat, cuts, eighth, fill, half (+3.0)",
+    "narration component / audio asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A13",
+     "score": 5.0,
+     "why": "shows shares beat, cuts, eighth, fill, half (+3.0); narration component / audio asset (+2.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C5.39d": {
+   "component": "C5.39d",
+   "cell": "C5",
+   "type": "narration",
+   "text": "Bar one is G for one beat, then C, D, E, F as four quick eighth notes. One beat, plus four halves, makes three.",
+   "tags": [],
+   "asset": "A13",
+   "confidence": "low",
+   "chosen_by": "claude",
+   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares bar, beat, eighth, four, halves (+3.0); narration component / audio asset (+2.0)",
+   "signals": [
+    "shows shares bar, beat, eighth, four, halves (+3.0)",
+    "narration component / audio asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A13",
+     "score": 5.0,
+     "why": "shows shares bar, beat, eighth, four, halves (+3.0); narration component / audio asset (+2.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C5.ea0": {
+   "component": "C5.ea0",
+   "cell": "C5",
+   "type": "narration",
+   "text": "Bar two is G, C, C. Three plain letters, three beats.",
+   "tags": [],
+   "asset": "A13",
+   "confidence": "low",
+   "chosen_by": "claude",
+   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares bar, beats, letters, plain, three (+3.0); narration component / audio asset (+2.0)",
+   "signals": [
+    "shows shares bar, beats, letters, plain, three (+3.0)",
+    "narration component / audio asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A13",
+     "score": 5.0,
+     "why": "shows shares bar, beats, letters, plain, three (+3.0); narration component / audio asset (+2.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C5.ecc": {
+   "component": "C5.ecc",
+   "cell": "C5",
+   "type": "narration",
+   "text": "Bar three is the same shape as bar one, a step higher: A, then F, G, A, B.",
+   "tags": [],
+   "asset": "A13",
+   "confidence": "low",
+   "chosen_by": "claude",
+   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares bar, higher, same, shape, step (+3.0); narration component / audio asset (+2.0)",
+   "signals": [
+    "shows shares bar, higher, same, shape, step (+3.0)",
+    "narration component / audio asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A13",
+     "score": 5.0,
+     "why": "shows shares bar, higher, same, shape, step (+3.0); narration component / audio asset (+2.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C5.a04": {
+   "component": "C5.a04",
+   "cell": "C5",
+   "type": "narration",
+   "text": "And bar four jumps up to the high c, then back down to C, C.",
+   "tags": [],
+   "asset": "A13",
+   "confidence": "low",
+   "chosen_by": "claude",
+   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares back, bar, down, four, high (+3.0); narration component / audio asset (+2.0)",
+   "signals": [
+    "shows shares back, bar, down, four, high (+3.0)",
+    "narration component / audio asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A13",
+     "score": 5.0,
+     "why": "shows shares back, bar, down, four, high (+3.0); narration component / audio asset (+2.0)"
+    }
+   ],
+   "stub": null
+  },
+  "C7.093": {
+   "component": "C7.093",
+   "cell": "C7",
+   "type": "narration",
+   "text": "That's the whole idea. Four bars of music, in about forty characters. Here it is again.",
+   "tags": [],
+   "asset": "A13",
+   "confidence": "low",
+   "chosen_by": "claude",
+   "why": "voice take \u2014 which take covers this line has to be confirmed by ear; shows shares about, again, bars, characters, forty (+3.0); narration component / audio asset (+2.0)",
+   "signals": [
+    "shows shares about, again, bars, characters, forty (+3.0)",
+    "narration component / audio asset (+2.0)"
+   ],
+   "candidates": [
+    {
+     "asset": "A13",
+     "score": 5.0,
+     "why": "shows shares about, again, bars, characters, forty (+3.0); narration component / audio asset (+2.0)"
+    }
+   ],
+   "stub": null
+  }
+ },
+ "unused_assets": [],
+ "unused_reasons": {},
+ "warnings": []
+}

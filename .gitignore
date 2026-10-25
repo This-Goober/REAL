@@ -26,6 +26,8 @@ demo/*/pipeline/*
 !demo/*/pipeline/timeline.otio
 !demo/*/pipeline/narration.txt
 demo/*/media/ASSET-CATALOG.html
+demo/*/catalogue/work/
+demo/*/work/
 demo/**/*.zip
 demo/**/*.fcpbundle
 demo/**/*.command

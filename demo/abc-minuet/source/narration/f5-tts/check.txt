@@ -1,0 +1,1 @@
+the-check: Every bar should add up to three. If one doesn't, then a note is missing, or a bar line is in the wrong place.
