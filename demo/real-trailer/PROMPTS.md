@@ -70,6 +70,12 @@ folder, made by running the four REAL skills on REAL's own material.
 - Headless Chrome hung once on the 106th of 108 captures; the capture tool now
   times each capture out, retries with a fresh profile, and resumes from the
   frames already on disk.
+- Final Cut Pro refused the first `.fcpxml` at the dissolve ("Encountered an
+  unexpected value" at `spine/transition[1]`): the closing card is a still,
+  written with `start="0s"`, and a dissolve borrows half its length before
+  the still's in-point. The generator now writes a still that touches a
+  transition with `start="3600s"`, Final Cut's convention for media without
+  an end. Test: `bench/test_fcpxml_still_transition.py`.
 - The notebook first carried explicit durations (`~5s`, `~6s`) on the base
   shots; the clock treats a timed visual that outruns its line as a hold after
   the words, and a timed visual after a running shot as an insert, so the base

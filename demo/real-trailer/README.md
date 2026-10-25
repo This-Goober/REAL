@@ -93,7 +93,7 @@ the editor will see.
 
 ## What the trailer taught the pipeline
 
-Four things in the skills changed while this was made, each with a test:
+Five things in the skills changed while this was made, each with a test:
 
 - an audio component "under the whole reel" is one connected span of a real
   audio kind (`bed`), not also a lane in the beat it was written in;
@@ -104,4 +104,7 @@ Four things in the skills changed while this was made, each with a test:
   before it, not the first one written;
 - the tracks page takes `#t=seconds` in its URL and resolves relative asset
   paths against the reel's local root, so a review note can point at a moment
-  and a browser can capture the page.
+  and a browser can capture the page;
+- a still that touches a dissolve is written to FCPXML with Final Cut's
+  infinite-media start, since a dissolve borrows picture from before the
+  still's in-point and Final Cut refuses a file where there is none.

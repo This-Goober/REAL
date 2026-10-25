@@ -709,9 +709,10 @@ class Story:
                 spec["src"], "image", None,
                 [spec.get("width"), spec.get("height")])
             ref = self.res.asset(media)
-            start_f = 0
+            start_f = (self.clock.frames(GENERATOR_START_FRAMES_SECONDS)
+                       if spec.get("_still_handles") else 0)
             el = El("video", ref=ref, name=spec.get("name", media["name"]),
-                    start="0s", **common)
+                    start=self.clock.t(start_f), **common)
         elif kind == "audio":
             media = self._resolve_media(spec["src"], "audio",
                                         spec.get("asset_duration"))
@@ -855,6 +856,18 @@ class Story:
             placed.append((beat, cursor, dur_f))
             cursor += dur_f
         total_f = cursor
+
+        # a still touching a transition is written with start=3600s, Final Cut's
+        # own convention for media without an end (titles and gaps use it too):
+        # a dissolve borrows half its length before the still's in-point, and
+        # an in-point of 0s has nothing before it — FCP refuses the file at the
+        # transition with "Encountered an unexpected value"
+        for idx, (beat, _o, _d) in enumerate(placed):
+            tr = beat.get("transition_out") or (
+                placed[idx + 1][0].get("transition_in") if idx + 1 < len(placed) else None)
+            if tr and idx + 1 < len(placed):
+                beat["_still_handles"] = True
+                placed[idx + 1][0]["_still_handles"] = True
 
         # 2. build each spine item plus its anchored children
         items = []
