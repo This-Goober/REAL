@@ -13,10 +13,13 @@ follows its word. The music under it is the creator's own performance.
 ## Watch
 
 The trailer plays on the project page, [this-goober.github.io/REAL](https://this-goober.github.io/REAL/),
-from `assets/trailer/real-trailer.mp4`: the preview render of the compiled
-timeline (`scripts/render_preview.py`), 1080×1920, 1241 frames at 30 fps.
+from `assets/trailer/real-trailer.mp4`: the creator's Final Cut Pro render of
+`timeline/real-trailer.fcpxml`, 1080×1920, 1241 frames at 30 fps, re-encoded
+for the web. It is also on YouTube: [youtube.com/shorts/ifUjC6DEG3o](https://youtube.com/shorts/ifUjC6DEG3o).
 The timeline itself is in `timeline/`, for Final Cut Pro (`.fcpxml`) and
-DaVinci Resolve (`.otio`), and imports into either as an editable project.
+DaVinci Resolve (`.otio`), and imports into either as an editable project;
+`scripts/render_preview.py` draws a preview of it with ffmpeg before an
+editor is opened.
 
 ## What is in this folder
 
